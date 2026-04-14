@@ -480,6 +480,30 @@ Home to Iga Świątek (WTA #1, 5× Grand Slam champion) and Hubert Hurkacz (ATP 
 
 Home to Simona Halep (WTA #1, 2× Grand Slam champion) and Horia Tecău (ATP doubles #2).
 
+### 📍 Bucharest — Location & Climate
+
+**Nearest Airport:** Henri Coandă International Airport (OTP) — ~18 km north of city center / ~25 min drive
+**Nearest Beach/Sea:** Black Sea coast (Constanța / Mamaia) — ~225 km / ~2 h 15 min drive
+
+| Month | Avg Temp (°C) | Rain (mm) | Rainy Days | Avg Wind (km/h) |
+|-------|:---:|:---:|:---:|:---:|
+| Jan | 0.5 | 40 | 7 | 11 |
+| Feb | 4.0 | 34 | 6 | 12 |
+| Mar | 8.0 | 51 | 7 | 12 |
+| Apr | 12.0 | 45 | 8 | 12 |
+| May | 18.0 | 67 | 9 | 11 |
+| Jun | 23.0 | 82 | 10 | 10 |
+| Jul | 25.5 | 65 | 7 | 9 |
+| Aug | 26.0 | 48 | 6 | 10 |
+| Sep | 18.5 | 50 | 5 | 11 |
+| Oct | 14.5 | 56 | 6 | 11 |
+| Nov | 8.0 | 56 | 6 | 10 |
+| Dec | 1.5 | 49 | 7 | 11 |
+
+> *Continental climate: hot summers (30 °C+), cold winters (can drop below −5 °C). Wettest month is June.*
+
+---
+
 ### 1. Victor Hănescu Academy (AVH) ⭐
 
 | Detail | Info |
@@ -512,6 +536,30 @@ Home to Simona Halep (WTA #1, 2× Grand Slam champion) and Horia Tecău (ATP dou
 
 Home to Grigor Dimitrov (ATP #3) and Tsvetana Pironkova (WTA #31, Wimbledon semifinalist).
 
+### 📍 Sofia — Location & Climate
+
+**Nearest Airport:** Sofia Airport (SOF) — ~10 km east of city center / ~15–20 min drive
+**Nearest Beach/Sea:** Black Sea coast (Burgas) — ~380 km / ~3.5–4 h drive via Trakia motorway
+
+| Month | Avg Temp (°C) | Rain (mm) | Rainy Days | Avg Wind (km/h) |
+|-------|:---:|:---:|:---:|:---:|
+| Jan | −1.8 | 44 | 6 | 7 |
+| Feb | 0.3 | 42 | 6 | 8 |
+| Mar | 4.8 | 58 | 8 | 9 |
+| Apr | 9.9 | 64 | 9 | 9 |
+| May | 14.7 | 77 | 10 | 8 |
+| Jun | 18.5 | 67 | 9 | 7 |
+| Jul | 20.8 | 55 | 7 | 7 |
+| Aug | 21.0 | 38 | 6 | 7 |
+| Sep | 16.2 | 39 | 5 | 7 |
+| Oct | 10.7 | 48 | 5 | 7 |
+| Nov | 5.4 | 40 | 5 | 7 |
+| Dec | 0.2 | 51 | 7 | 7 |
+
+> *Continental climate with mountain influence (~550 m elevation). Cold winters, pleasant summers. Driest in Aug–Sep.*
+
+---
+
 ### 1. Sofia Tennis Club 360
 
 | Detail | Info |
@@ -530,6 +578,30 @@ Home to Grigor Dimitrov (ATP #3) and Tsvetana Pironkova (WTA #31, Wimbledon semi
 ## 🇭🇺 Hungary
 
 Notable players: Márton Fucsovics (ATP #31).
+
+### 📍 Budapest — Location & Climate
+
+**Nearest Airport:** Budapest Ferenc Liszt International Airport (BUD) — ~16 km southeast of city center / ~25 min drive
+**Nearest Beach/Sea:** N/A (inland) — Hungary is landlocked. Nearest coast is the Adriatic Sea in Croatia (Rijeka) — ~480 km / ~5–6 h drive. *(Lake Balaton, ~130 km SW, is the largest freshwater lake in Central Europe.)*
+
+| Month | Avg Temp (°C) | Rain (mm) | Rainy Days | Avg Wind (km/h) |
+|-------|:---:|:---:|:---:|:---:|
+| Jan | −0.5 | 39 | 9 | 11 |
+| Feb | 1.5 | 39 | 9 | 11 |
+| Mar | 6.0 | 36 | 9 | 12 |
+| Apr | 11.0 | 45 | 9 | 12 |
+| May | 16.0 | 72 | 11 | 11 |
+| Jun | 20.0 | 69 | 11 | 10 |
+| Jul | 22.0 | 65 | 9 | 10 |
+| Aug | 21.5 | 54 | 9 | 9 |
+| Sep | 17.0 | 50 | 7 | 10 |
+| Oct | 11.5 | 47 | 7 | 9 |
+| Nov | 5.0 | 55 | 10 | 10 |
+| Dec | 1.5 | 46 | 10 | 11 |
+
+> *Continental climate: warm summers, cold winters. Wettest in May–Jun. Danube thermal baths moderate local microclimate.*
+
+---
 
 ### 1. Római Tennis Academy
 
@@ -558,6 +630,26 @@ Notable players: Márton Fucsovics (ATP #31).
 
 Notable players: Aljaž Bedene (ATP #43), Tamara Zidanšek (WTA #21, French Open semifinalist 2021).
 
+### Ljubljana — Location & Climate
+
+**Nearest Airport:** Ljubljana Jože Pučnik Airport (LJU) — ~26 km / 25 min drive
+**Nearest Beach/Sea:** Adriatic coast (Koper/Piran) — ~95 km / 1h drive
+
+| Month | Avg Temp (°C) | Rain (mm) | Rainy Days | Avg Wind (km/h) |
+|-------|:---:|:---:|:---:|:---:|
+| Jan | 1 | 111 | 8 | 6 |
+| Feb | 5 | 109 | 7 | 6 |
+| Mar | 7 | 99 | 9 | 7 |
+| Apr | 12 | 87 | 10 | 7 |
+| May | 16 | 119 | 11 | 6 |
+| Jun | 21 | 98 | 10 | 5 |
+| Jul | 23 | 110 | 9 | 5 |
+| Aug | 21 | 93 | 8 | 5 |
+| Sep | 17 | 156 | 10 | 5 |
+| Oct | 14 | 106 | 9 | 5 |
+| Nov | 7 | 96 | 10 | 6 |
+| Dec | 3 | 101 | 8 | 6 |
+
 ### 1. Tennis Academy Breskvar
 
 | Detail | Info |
@@ -571,6 +663,26 @@ Premier tennis facility in Ljubljana. Beginner to advanced, expert coaching, com
 ---
 
 ## 🇺🇦 Ukraine
+
+### Kyiv area (Pogreby village) — Location & Climate
+
+**Nearest Airport:** Boryspil International Airport (KBP) — ~33 km / 35 min drive
+**Nearest Beach/Sea:** N/A (inland) — nearest coast is Black Sea (Odesa) ~480 km south
+
+| Month | Avg Temp (°C) | Rain (mm) | Rainy Days | Avg Wind (km/h) |
+|-------|:---:|:---:|:---:|:---:|
+| Jan | -3 | 41 | 13 | 14 |
+| Feb | -2 | 37 | 12 | 14 |
+| Mar | 3 | 35 | 11 | 14 |
+| Apr | 9 | 43 | 12 | 12 |
+| May | 15 | 51 | 12 | 12 |
+| Jun | 19 | 72 | 14 | 11 |
+| Jul | 21 | 78 | 15 | 11 |
+| Aug | 20 | 64 | 12 | 11 |
+| Sep | 15 | 46 | 11 | 12 |
+| Oct | 8 | 36 | 10 | 13 |
+| Nov | 3 | 47 | 13 | 13 |
+| Dec | -2 | 45 | 14 | 14 |
 
 ### 1. Medvedev Tennis Academy (at Marina Tennis Club) ⭐
 
@@ -614,6 +726,26 @@ Premier tennis facility in Ljubljana. Beginner to advanced, expert coaching, com
 
 Notable players: Ričardas Berankis (ATP #50).
 
+### Vilnius — Location & Climate
+
+**Nearest Airport:** Vilnius International Airport (VNO) — ~7 km / 15 min drive
+**Nearest Beach/Sea:** Baltic Sea (Palanga/Klaipėda) — ~310 km / 3.5h drive
+
+| Month | Avg Temp (°C) | Rain (mm) | Rainy Days | Avg Wind (km/h) |
+|-------|:---:|:---:|:---:|:---:|
+| Jan | -5 | 49 | 13 | 15 |
+| Feb | -4 | 37 | 12 | 15 |
+| Mar | 2 | 32 | 9 | 14 |
+| Apr | 7 | 46 | 9 | 14 |
+| May | 13 | 72 | 10 | 12 |
+| Jun | 17 | 81 | 10 | 12 |
+| Jul | 19 | 104 | 11 | 11 |
+| Aug | 18 | 80 | 10 | 11 |
+| Sep | 14 | 50 | 9 | 12 |
+| Oct | 7 | 56 | 10 | 14 |
+| Nov | 3 | 53 | 12 | 14 |
+| Dec | -2 | 54 | 13 | 16 |
+
 ### 1. Vilnius Tennis Academy
 
 | Detail | Info |
@@ -629,6 +761,26 @@ Notable players: Ričardas Berankis (ATP #50).
 ## 🇱🇻 Latvia
 
 Notable players: Ernests Gulbis (ATP #10), Anastasija Sevastova (WTA #11).
+
+### Riga — Location & Climate
+
+**Nearest Airport:** Riga International Airport (RIX) — ~10 km / 15 min drive
+**Nearest Beach/Sea:** Gulf of Riga / Jūrmala beach — ~25 km / 25 min drive
+
+| Month | Avg Temp (°C) | Rain (mm) | Rainy Days | Avg Wind (km/h) |
+|-------|:---:|:---:|:---:|:---:|
+| Jan | -3 | 58 | 10 | 14 |
+| Feb | -3 | 46 | 8 | 13 |
+| Mar | 0 | 45 | 9 | 12 |
+| Apr | 7 | 45 | 7 | 13 |
+| May | 13 | 55 | 8 | 12 |
+| Jun | 16 | 77 | 9 | 11 |
+| Jul | 19 | 76 | 9 | 10 |
+| Aug | 18 | 85 | 10 | 10 |
+| Sep | 14 | 78 | 9 | 11 |
+| Oct | 8 | 87 | 11 | 13 |
+| Nov | 3 | 70 | 11 | 13 |
+| Dec | 0 | 58 | 10 | 14 |
 
 ### 1. Riga Tennis Academy
 
@@ -657,6 +809,26 @@ Comprehensive program: individual + sparring sessions, fitness training, distanc
 ## 🇪🇪 Estonia
 
 Notable players: Anett Kontaveit (WTA #2).
+
+### Tallinn — Location & Climate
+
+**Nearest Airport:** Lennart Meri Tallinn Airport (TLL) — ~4 km / 10 min drive
+**Nearest Beach/Sea:** Baltic Sea / Pirita Beach — ~8 km / 15 min drive (Tallinn is coastal)
+
+| Month | Avg Temp (°C) | Rain (mm) | Rainy Days | Avg Wind (km/h) |
+|-------|:---:|:---:|:---:|:---:|
+| Jan | -4 | 44 | 14 | 22 |
+| Feb | -5 | 37 | 12 | 22 |
+| Mar | -1 | 33 | 10 | 18 |
+| Apr | 4 | 41 | 9 | 16 |
+| May | 10 | 51 | 9 | 14 |
+| Jun | 15 | 79 | 11 | 14 |
+| Jul | 17 | 87 | 12 | 14 |
+| Aug | 17 | 93 | 13 | 14 |
+| Sep | 13 | 63 | 13 | 16 |
+| Oct | 7 | 65 | 15 | 18 |
+| Nov | 4 | 53 | 13 | 22 |
+| Dec | -1 | 54 | 14 | 22 |
 
 ### 1. US Tenniseakadeemia
 
