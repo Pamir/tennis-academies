@@ -64,7 +64,13 @@ function filterByCoachATP(academies) {
 }
 
 function filterByCoachTop10(academies) {
-  return academies.filter(a => a.bestCoachRanking !== null && a.bestCoachRanking <= 10);
+  return academies.filter(a => {
+    // Coach played in top 10
+    const playedTop10 = a.coaches.some(c => c.atpWta && c.bestRanking !== null && c.bestRanking <= 10);
+    // Coach trained a top-10 player
+    const coachedTop10 = a.coachedTopPlayer !== undefined && a.coachedTopPlayer !== null && a.coachedTopPlayer <= 10;
+    return playedTop10 || coachedTop10;
+  });
 }
 
 function filterByPrice(academies) {
@@ -96,8 +102,13 @@ function sortAcademies(academies, sortKey) {
       return copy.sort((a, b) => a.country.localeCompare(b.country) || a.name.localeCompare(b.name));
     case 'ranking':
       return copy.sort((a, b) => {
-        const ra = a.bestCoachRanking ?? Infinity;
-        const rb = b.bestCoachRanking ?? Infinity;
+        // Sort by best coach PLAYING ranking (atpWta coaches with bestRanking)
+        const getPlayingRank = (acad) => {
+          const ranks = acad.coaches.filter(c => c.atpWta && c.bestRanking !== null).map(c => c.bestRanking);
+          return ranks.length ? Math.min(...ranks) : Infinity;
+        };
+        const ra = getPlayingRank(a);
+        const rb = getPlayingRank(b);
         return ra - rb || a.name.localeCompare(b.name);
       });
     case 'price':

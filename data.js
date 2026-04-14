@@ -24,13 +24,13 @@ const ACADEMIES = [
       { name: "VIP", price: "€4,500/mo", desc: "Unlimited tennis, conditioning, massages, mental training" }
     ],
     coaches: [
-      { name: "David Savić", credential: "GPTCA B (ATP Certified)", background: "Coached top-100 ATP & WTA players", atpWta: true, bestRanking: null, rankingNote: "Top-100 ATP/WTA coach" },
-      { name: "Ivan Đurđević", credential: "GPTCA B (ATP Certified)", background: "Experience with top WTA players & Serbian national team", atpWta: true, bestRanking: null },
+      { name: "David Savić", credential: "GPTCA B (ATP Certified)", background: "Coached top-100 ATP & WTA players", atpWta: false, bestRanking: null, rankingNote: "Top-100 ATP/WTA coach" },
+      { name: "Ivan Đurđević", credential: "GPTCA B (ATP Certified)", background: "Experience with top WTA players & Serbian national team", atpWta: false, bestRanking: null },
       { name: "Milana Spremo", credential: "GPTCA B", background: "Former WTA player; coach of Serbian national team U18", atpWta: true, bestRanking: null, rankingNote: "Former WTA player" },
       { name: "Marko Savić", credential: "ITF Level 2", background: "National coach of Serbia 10+ years", atpWta: false, bestRanking: null },
       { name: "Milenko Pisarić", credential: "C TSS, C GPTCA", background: "20+ years international experience (Serbia, USA)", atpWta: false, bestRanking: null }
     ],
-    bestCoachRanking: 100,
+    bestCoachRanking: null,
     facilities: "Multiple locations in Belgrade",
     notableAlumni: [],
     description: "Full-service academy with transparent pricing, conditioning, mental coaching, injury prevention, tournament travel, accommodation & logistics."
@@ -83,9 +83,10 @@ const ACADEMIES = [
       { name: "Junior Programs", price: "Contact", desc: "Holistic approach: nutrition, mental conditioning, recovery" }
     ],
     coaches: [
-      { name: "Dejan Vraneš", credential: "Former Fed Cup Captain", background: "Coached Novak Djokovic (early dev), Ana Ivanovic (WTA #1), Olga Danilovic; Serbian Men's Olympic Team coach 2008 & 2012", atpWta: true, bestRanking: null, rankingNote: "Coached ATP #1 & WTA #1" }
+      { name: "Dejan Vraneš", credential: "Former Fed Cup Captain", background: "Coached Novak Djokovic (early dev), Ana Ivanovic (WTA #1), Olga Danilovic; Serbian Men's Olympic Team coach 2008 & 2012", atpWta: false, bestRanking: null, rankingNote: "Coached ATP #1 & WTA #1" }
     ],
-    bestCoachRanking: 1,
+    bestCoachRanking: null,
+    coachedTopPlayer: 1,
     facilities: "Belgrade-based courts",
     notableAlumni: ["Novak Djokovic (early)", "Ana Ivanovic", "Olga Danilovic"],
     description: "Headed by former Serbian Fed Cup captain who coached Novak Djokovic and Ana Ivanovic."
@@ -109,9 +110,10 @@ const ACADEMIES = [
       { name: "Personalized Training", price: "Contact", desc: "Sparring, fitness, career planning, mental training" }
     ],
     coaches: [
-      { name: "Ognjen Jovanovic", credential: "ATP Top-50 Coach", background: "Co-head coach for Miomir Kecmanovic (ATP ~30)", atpWta: true, bestRanking: null, rankingNote: "ATP top-50 coach" }
+      { name: "Ognjen Jovanovic", credential: "ATP Top-50 Coach", background: "Co-head coach for Miomir Kecmanovic (ATP ~30)", atpWta: false, bestRanking: null, rankingNote: "ATP top-50 coach" }
     ],
-    bestCoachRanking: 30,
+    bestCoachRanking: null,
+    coachedTopPlayer: 30,
     facilities: "Professional courts, accommodation for international players",
     notableAlumni: ["Miomir Kecmanovic"],
     description: "Headed by ATP top-50 coach, co-head coach for Miomir Kecmanovic."
@@ -135,9 +137,10 @@ const ACADEMIES = [
       { name: "Junior Tennis School", price: "Contact", desc: "Ages 6+, clay courts" }
     ],
     coaches: [
-      { name: "Bogdan Obradovic", credential: "Former Djokovic Coach", background: "Former coach of Novak Djokovic (early years)", atpWta: true, bestRanking: null, rankingNote: "Coached ATP #1" }
+      { name: "Bogdan Obradovic", credential: "Former Djokovic Coach", background: "Former coach of Novak Djokovic (early years)", atpWta: false, bestRanking: null, rankingNote: "Coached ATP #1" }
     ],
-    bestCoachRanking: 1,
+    bestCoachRanking: null,
+    coachedTopPlayer: 1,
     facilities: "7 courts (5 clay + additional surfaces), Ada Ciganlija",
     notableAlumni: ["Novak Djokovic (early)"],
     description: "Founded by Bogdan Obradovic, former coach of Novak Djokovic's early years."
@@ -245,11 +248,12 @@ const ACADEMIES = [
       { name: "Tennis + Nature", price: "€750/wk", desc: "National Park excursions included" }
     ],
     coaches: [
-      { name: "Milan Zorić", credential: "ATP Coach", background: "Private coach of Iva Majoli (WTA #2, RG champion); coached Ana Vrljić, Darija Jurak", atpWta: true, bestRanking: null, rankingNote: "Coached WTA #2" },
+      { name: "Milan Zorić", credential: "ATP Coach", background: "Private coach of Iva Majoli (WTA #2, RG champion); coached Ana Vrljić, Darija Jurak", atpWta: false, bestRanking: null, rankingNote: "Coached WTA #2" },
       { name: "Robert Suevich", credential: "Former ATP Player", background: "ATP ~850, played Wimbledon & RG; coached Andrei Pavel (ATP #13)", atpWta: true, bestRanking: 850, rankingNote: "ATP ~850; coached ATP #13" },
       { name: "Mario Jukić", credential: "Former Junior International", background: "Hitting coach for Borna Ćorić and Donna Vekić", atpWta: false, bestRanking: null, rankingNote: "Coached ATP/WTA players" }
     ],
-    bestCoachRanking: 2,
+    bestCoachRanking: 850,
+    coachedTopPlayer: 2,
     facilities: "20+ coaches, courts in Biograd na Moru (Dalmatian coast)",
     notableAlumni: ["Ajla Tomljanović", "Borna Ćorić (connection)", "Donna Vekić (connection)"],
     description: "Combines tennis with Croatian tourism: sailing, national parks, yoga, cycling. 20+ coaches."
@@ -369,9 +373,10 @@ const ACADEMIES = [
       { name: "Mentality Coaching", price: "Contact", desc: "With Marian Jelínek" }
     ],
     coaches: [
-      { name: "Ondřej Dohnal", credential: "30+ years", background: "Coached Karolína Plíšková (WTA #1) and Kateřina Siniaková", atpWta: true, bestRanking: null, rankingNote: "Coached WTA #1" }
+      { name: "Ondřej Dohnal", credential: "30+ years", background: "Coached Karolína Plíšková (WTA #1) and Kateřina Siniaková", atpWta: false, bestRanking: null, rankingNote: "Coached WTA #1" }
     ],
-    bestCoachRanking: 1,
+    bestCoachRanking: null,
+    coachedTopPlayer: 1,
     facilities: "5 clay + 2 indoor courts, gym, restaurant. Expansion planned.",
     notableAlumni: ["Karolína Plíšková (WTA #1)"],
     description: "Founded 2020. Karolína Plíšková (WTA #1) personally trains here. Mental coach Marian Jelínek on staff."
