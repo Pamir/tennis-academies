@@ -425,8 +425,10 @@ const ACADEMIES = [
       { name: "Tennis Camp", price: "Contact", desc: "Advanced players 10+, summer" },
       { name: "Online Training", price: "Contact", desc: "Fitness, tennis, mental coaching" }
     ],
-    coaches: [],
-    bestCoachRanking: null,
+    coaches: [
+      { name: "Dominika Cibulková", credential: "Founder / Former WTA Player", background: "WTA #4 (2014 Australian Open finalist, 2016 WTA Finals champion)", atpWta: true, bestRanking: 4, rankingNote: "WTA #4" }
+    ],
+    bestCoachRanking: 4,
     facilities: "Full-service academy. 60+ pro players from 15 countries. 5 in ATP/WTA TOP 100.",
     notableAlumni: ["Elena Rybakina (WTA #3, Wimbledon champion)", "Filip Polášek (ATP #1 doubles)", "Lukáš Lacko (ATP #64)", "Kristína Kučová (WTA #67)"],
     description: "Named after Dominika Cibulková (WTA #4). One of Europe's best academies. Rybakina as alumna."
