@@ -86,6 +86,12 @@
 [data-theme="dark"] .detail-section a {
   color: var(--accent);
 }
+[data-theme="dark"] .hotel-table th {
+  background: var(--primary-light);
+}
+[data-theme="dark"] .hotel-table tbody tr:hover {
+  background: rgba(200, 230, 50, 0.05);
+}
 [data-theme="dark"] .btn-details {
   color: var(--accent);
 }
@@ -497,6 +503,35 @@ body {
 }
 .detail-section a:hover { text-decoration: underline; }
 
+/* Hotel Table */
+.hotel-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.78rem;
+  margin-top: 0.4rem;
+}
+.hotel-table th {
+  background: var(--primary);
+  color: #fff;
+  padding: 0.4rem 0.5rem;
+  text-align: left;
+  font-weight: 600;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+.hotel-table td {
+  padding: 0.35rem 0.5rem;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+.hotel-table tbody tr:hover {
+  background: rgba(200, 230, 50, 0.08);
+}
+.hotel-table td:first-child {
+  min-width: 120px;
+}
+
 /* Climate Chart */
 .climate-chart {
   display: grid;
@@ -854,6 +889,11 @@ body {
   .filter-bar input[type="text"] { width: 120px; }
 
   .map-container { height: 400px; padding: 0.5rem 1rem 2rem; }
+  .hotel-table {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
   .modal-compare { width: 98vw; }
   .modal-wizard { width: 98vw; }
   .wizard-container { padding: 1.5rem 1rem 1rem; }

@@ -34,7 +34,14 @@ const ACADEMIES = [
     bestCoachRanking: null,
     facilities: "Multiple locations in Belgrade",
     notableAlumni: [],
-    description: "Full-service academy with transparent pricing, conditioning, mental coaching, injury prevention, tournament travel, accommodation & logistics."
+    description: "Full-service academy with transparent pricing, conditioning, mental coaching, injury prevention, tournament travel, accommodation & logistics.",
+    nearbyHotels: [
+        { name: "Hotel Metropol Palace", stars: 5, distanceKm: 0.5, features: ["Restaurant", "Spa", "Bar", "Room Service"], pool: true, wifi: true, pricePerNight: "€120" },
+        { name: "Hotel Moskva", stars: 4, distanceKm: 0.3, features: ["Restaurant", "Bar", "Room Service"], pool: false, wifi: true, pricePerNight: "€95" },
+        { name: "Mama Shelter Belgrade", stars: 4, distanceKm: 1, features: ["Restaurant", "Bar", "Parking"], pool: false, wifi: true, pricePerNight: "€75" },
+        { name: "Hotel Slavija", stars: 3, distanceKm: 0.8, features: ["Restaurant", "Parking"], pool: false, wifi: true, pricePerNight: "€45" },
+        { name: "Zira Hotel", stars: 4, distanceKm: 1.2, features: ["Restaurant", "Gym", "Spa", "Parking"], pool: true, wifi: true, pricePerNight: "€85" }
+      ]
   },
   {
     id: "tipsarevic",
@@ -63,7 +70,14 @@ const ACADEMIES = [
     bestCoachRanking: 8,
     facilities: "Clay courts, hard court (US Open surface), fitness center, recovery facilities, on-site boarding accommodation",
     notableAlumni: ["Laslo Djere", "Yuichi Sugita", "Dušan Lajović"],
-    description: "Only full-boarding tennis academy in Serbia. Founded by former ATP World No. 8 Janko Tipsarević."
+    description: "Only full-boarding tennis academy in Serbia. Founded by former ATP World No. 8 Janko Tipsarević.",
+    nearbyHotels: [
+        { name: "Hotel Metropol Palace", stars: 5, distanceKm: 0.5, features: ["Restaurant", "Spa", "Bar", "Room Service"], pool: true, wifi: true, pricePerNight: "€120" },
+        { name: "Hotel Moskva", stars: 4, distanceKm: 0.3, features: ["Restaurant", "Bar", "Room Service"], pool: false, wifi: true, pricePerNight: "€95" },
+        { name: "Mama Shelter Belgrade", stars: 4, distanceKm: 1, features: ["Restaurant", "Bar", "Parking"], pool: false, wifi: true, pricePerNight: "€75" },
+        { name: "Hotel Slavija", stars: 3, distanceKm: 0.8, features: ["Restaurant", "Parking"], pool: false, wifi: true, pricePerNight: "€45" },
+        { name: "Zira Hotel", stars: 4, distanceKm: 1.2, features: ["Restaurant", "Gym", "Spa", "Parking"], pool: true, wifi: true, pricePerNight: "€85" }
+      ]
   },
   {
     id: "vranes",
@@ -92,7 +106,14 @@ const ACADEMIES = [
     coachedTopPlayer: 1,
     facilities: "Belgrade-based courts",
     notableAlumni: ["Novak Djokovic (early)", "Ana Ivanovic", "Olga Danilovic"],
-    description: "Headed by former Serbian Fed Cup captain who coached Novak Djokovic and Ana Ivanovic."
+    description: "Headed by former Serbian Fed Cup captain who coached Novak Djokovic and Ana Ivanovic.",
+    nearbyHotels: [
+        { name: "Hotel Metropol Palace", stars: 5, distanceKm: 0.5, features: ["Restaurant", "Spa", "Bar", "Room Service"], pool: true, wifi: true, pricePerNight: "€120" },
+        { name: "Hotel Moskva", stars: 4, distanceKm: 0.3, features: ["Restaurant", "Bar", "Room Service"], pool: false, wifi: true, pricePerNight: "€95" },
+        { name: "Mama Shelter Belgrade", stars: 4, distanceKm: 1, features: ["Restaurant", "Bar", "Parking"], pool: false, wifi: true, pricePerNight: "€75" },
+        { name: "Hotel Slavija", stars: 3, distanceKm: 0.8, features: ["Restaurant", "Parking"], pool: false, wifi: true, pricePerNight: "€45" },
+        { name: "Zira Hotel", stars: 4, distanceKm: 1.2, features: ["Restaurant", "Gym", "Spa", "Parking"], pool: true, wifi: true, pricePerNight: "€85" }
+      ]
   },
   {
     id: "premium-tennis",
@@ -120,7 +141,14 @@ const ACADEMIES = [
     coachedTopPlayer: 30,
     facilities: "Professional courts, accommodation for international players",
     notableAlumni: ["Miomir Kecmanovic"],
-    description: "Headed by ATP top-50 coach, co-head coach for Miomir Kecmanovic."
+    description: "Headed by ATP top-50 coach, co-head coach for Miomir Kecmanovic.",
+    nearbyHotels: [
+        { name: "Hotel Metropol Palace", stars: 5, distanceKm: 0.5, features: ["Restaurant", "Spa", "Bar", "Room Service"], pool: true, wifi: true, pricePerNight: "€120" },
+        { name: "Hotel Moskva", stars: 4, distanceKm: 0.3, features: ["Restaurant", "Bar", "Room Service"], pool: false, wifi: true, pricePerNight: "€95" },
+        { name: "Mama Shelter Belgrade", stars: 4, distanceKm: 1, features: ["Restaurant", "Bar", "Parking"], pool: false, wifi: true, pricePerNight: "€75" },
+        { name: "Hotel Slavija", stars: 3, distanceKm: 0.8, features: ["Restaurant", "Parking"], pool: false, wifi: true, pricePerNight: "€45" },
+        { name: "Zira Hotel", stars: 4, distanceKm: 1.2, features: ["Restaurant", "Gym", "Spa", "Parking"], pool: true, wifi: true, pricePerNight: "€85" }
+      ]
   },
   {
     id: "academy-ada",
@@ -148,7 +176,14 @@ const ACADEMIES = [
     coachedTopPlayer: 1,
     facilities: "7 courts (5 clay + additional surfaces), Ada Ciganlija",
     notableAlumni: ["Novak Djokovic (early)"],
-    description: "Founded by Bogdan Obradovic, former coach of Novak Djokovic's early years."
+    description: "Founded by Bogdan Obradovic, former coach of Novak Djokovic's early years.",
+    nearbyHotels: [
+        { name: "Hotel Metropol Palace", stars: 5, distanceKm: 0.5, features: ["Restaurant", "Spa", "Bar", "Room Service"], pool: true, wifi: true, pricePerNight: "€120" },
+        { name: "Hotel Moskva", stars: 4, distanceKm: 0.3, features: ["Restaurant", "Bar", "Room Service"], pool: false, wifi: true, pricePerNight: "€95" },
+        { name: "Mama Shelter Belgrade", stars: 4, distanceKm: 1, features: ["Restaurant", "Bar", "Parking"], pool: false, wifi: true, pricePerNight: "€75" },
+        { name: "Hotel Slavija", stars: 3, distanceKm: 0.8, features: ["Restaurant", "Parking"], pool: false, wifi: true, pricePerNight: "€45" },
+        { name: "Zira Hotel", stars: 4, distanceKm: 1.2, features: ["Restaurant", "Gym", "Spa", "Parking"], pool: true, wifi: true, pricePerNight: "€85" }
+      ]
   },
   {
     id: "supreme-tennis",
@@ -174,7 +209,14 @@ const ACADEMIES = [
     bestCoachRanking: null,
     facilities: "Tennis base with on-site apartments",
     notableAlumni: ["Aleksandra Krunić"],
-    description: "Individual training, tournament accompaniment, on-site apartment accommodation."
+    description: "Individual training, tournament accompaniment, on-site apartment accommodation.",
+    nearbyHotels: [
+        { name: "Hotel Metropol Palace", stars: 5, distanceKm: 0.5, features: ["Restaurant", "Spa", "Bar", "Room Service"], pool: true, wifi: true, pricePerNight: "€120" },
+        { name: "Hotel Moskva", stars: 4, distanceKm: 0.3, features: ["Restaurant", "Bar", "Room Service"], pool: false, wifi: true, pricePerNight: "€95" },
+        { name: "Mama Shelter Belgrade", stars: 4, distanceKm: 1, features: ["Restaurant", "Bar", "Parking"], pool: false, wifi: true, pricePerNight: "€75" },
+        { name: "Hotel Slavija", stars: 3, distanceKm: 0.8, features: ["Restaurant", "Parking"], pool: false, wifi: true, pricePerNight: "€45" },
+        { name: "Zira Hotel", stars: 4, distanceKm: 1.2, features: ["Restaurant", "Gym", "Spa", "Parking"], pool: true, wifi: true, pricePerNight: "€85" }
+      ]
   },
   {
     id: "serbia-tennis-academy",
@@ -201,7 +243,14 @@ const ACADEMIES = [
     bestCoachRanking: null,
     facilities: "Up to 15 clay courts + 1 indoor hard court",
     notableAlumni: [],
-    description: "Intensive & semi-intensive programs. International coaching experience (China, Switzerland, Germany, USA)."
+    description: "Intensive & semi-intensive programs. International coaching experience (China, Switzerland, Germany, USA).",
+    nearbyHotels: [
+        { name: "Hotel Metropol Palace", stars: 5, distanceKm: 0.5, features: ["Restaurant", "Spa", "Bar", "Room Service"], pool: true, wifi: true, pricePerNight: "€120" },
+        { name: "Hotel Moskva", stars: 4, distanceKm: 0.3, features: ["Restaurant", "Bar", "Room Service"], pool: false, wifi: true, pricePerNight: "€95" },
+        { name: "Mama Shelter Belgrade", stars: 4, distanceKm: 1, features: ["Restaurant", "Bar", "Parking"], pool: false, wifi: true, pricePerNight: "€75" },
+        { name: "Hotel Slavija", stars: 3, distanceKm: 0.8, features: ["Restaurant", "Parking"], pool: false, wifi: true, pricePerNight: "€45" },
+        { name: "Zira Hotel", stars: 4, distanceKm: 1.2, features: ["Restaurant", "Gym", "Spa", "Parking"], pool: true, wifi: true, pricePerNight: "€85" }
+      ]
   },
   {
     id: "ljubicic",
@@ -231,7 +280,14 @@ const ACADEMIES = [
     bestCoachRanking: 3,
     facilities: "13 courts, gym, physio, luxury accommodation (hotels, villas). 260+ sunny days/year",
     notableAlumni: [],
-    description: "Founded by Ivan Ljubičić (ATP #3, Roger Federer's coach). Mediterranean island setting with luxury facilities."
+    description: "Founded by Ivan Ljubičić (ATP #3, Roger Federer's coach). Mediterranean island setting with luxury facilities.",
+    nearbyHotels: [
+        { name: "Boutique Hotel Alhambra", stars: 5, distanceKm: 0.8, features: ["Restaurant", "Spa", "Bar"], pool: true, wifi: true, pricePerNight: "€210" },
+        { name: "Hotel Bellevue", stars: 4, distanceKm: 0.5, features: ["Restaurant", "Spa", "Bar", "Gym"], pool: true, wifi: true, pricePerNight: "€150" },
+        { name: "Hotel Aurora", stars: 4, distanceKm: 1, features: ["Restaurant", "Bar", "Parking"], pool: true, wifi: true, pricePerNight: "€110" },
+        { name: "Mare Mare Suites", stars: 3, distanceKm: 0.3, features: ["Breakfast Included", "Parking"], pool: false, wifi: true, pricePerNight: "€70" },
+        { name: "Hotel Apoksiomen", stars: 4, distanceKm: 0.2, features: ["Restaurant", "Spa", "Bar"], pool: false, wifi: true, pricePerNight: "€130" }
+      ]
   },
   {
     id: "ilirija",
@@ -265,7 +321,14 @@ const ACADEMIES = [
     coachedTopPlayer: 2,
     facilities: "20+ coaches, courts in Biograd na Moru (Dalmatian coast)",
     notableAlumni: ["Ajla Tomljanović", "Borna Ćorić (connection)", "Donna Vekić (connection)"],
-    description: "Combines tennis with Croatian tourism: sailing, national parks, yoga, cycling. 20+ coaches."
+    description: "Combines tennis with Croatian tourism: sailing, national parks, yoga, cycling. 20+ coaches.",
+    nearbyHotels: [
+        { name: "Hotel Ilirija", stars: 4, distanceKm: 0.3, features: ["Restaurant", "Spa", "Bar", "Parking"], pool: true, wifi: true, pricePerNight: "€110" },
+        { name: "Hotel Kornati", stars: 4, distanceKm: 0.4, features: ["Restaurant", "Bar", "Conference Room"], pool: true, wifi: true, pricePerNight: "€95" },
+        { name: "Hotel Adriatic", stars: 3, distanceKm: 0.2, features: ["Restaurant", "Bar", "Parking"], pool: false, wifi: true, pricePerNight: "€65" },
+        { name: "Hotel Bolero", stars: 3, distanceKm: 0.5, features: ["Restaurant", "Parking", "Pet Friendly"], pool: false, wifi: true, pricePerNight: "€55" },
+        { name: "Villa Donat", stars: 3, distanceKm: 1, features: ["Restaurant", "Parking", "Breakfast Included"], pool: true, wifi: true, pricePerNight: "€60" }
+      ]
   },
   {
     id: "tk-firule",
@@ -288,7 +351,14 @@ const ACADEMIES = [
     bestCoachRanking: null,
     facilities: "Historic tennis club in Split",
     notableAlumni: ["Goran Ivanišević (ATP #2, Wimbledon champion)"],
-    description: "The club where Goran Ivanišević developed. One of Croatia's most important tennis clubs."
+    description: "The club where Goran Ivanišević developed. One of Croatia's most important tennis clubs.",
+    nearbyHotels: [
+        { name: "Hotel Atrium", stars: 5, distanceKm: 0.3, features: ["Restaurant", "Spa", "Gym", "Bar"], pool: true, wifi: true, pricePerNight: "€140" },
+        { name: "Radisson Blu Resort Split", stars: 4, distanceKm: 2.5, features: ["Restaurant", "Spa", "Bar", "Parking"], pool: true, wifi: true, pricePerNight: "€120" },
+        { name: "Hotel Marmont Heritage", stars: 4, distanceKm: 0.2, features: ["Restaurant", "Bar", "Room Service"], pool: false, wifi: true, pricePerNight: "€105" },
+        { name: "Hotel Slavija", stars: 3, distanceKm: 0.4, features: ["Restaurant", "Bar"], pool: false, wifi: true, pricePerNight: "€55" },
+        { name: "Hotel Luxe", stars: 4, distanceKm: 0.5, features: ["Restaurant", "Spa", "Room Service"], pool: false, wifi: true, pricePerNight: "€90" }
+      ]
   },
   {
     id: "tenis-akademija-split",
@@ -311,7 +381,14 @@ const ACADEMIES = [
     bestCoachRanking: null,
     facilities: "Training for all ages and skill levels",
     notableAlumni: [],
-    description: "Training for all ages and skill levels in Split."
+    description: "Training for all ages and skill levels in Split.",
+    nearbyHotels: [
+        { name: "Hotel Atrium", stars: 5, distanceKm: 0.3, features: ["Restaurant", "Spa", "Gym", "Bar"], pool: true, wifi: true, pricePerNight: "€140" },
+        { name: "Radisson Blu Resort Split", stars: 4, distanceKm: 2.5, features: ["Restaurant", "Spa", "Bar", "Parking"], pool: true, wifi: true, pricePerNight: "€120" },
+        { name: "Hotel Marmont Heritage", stars: 4, distanceKm: 0.2, features: ["Restaurant", "Bar", "Room Service"], pool: false, wifi: true, pricePerNight: "€105" },
+        { name: "Hotel Slavija", stars: 3, distanceKm: 0.4, features: ["Restaurant", "Bar"], pool: false, wifi: true, pricePerNight: "€55" },
+        { name: "Hotel Luxe", stars: 4, distanceKm: 0.5, features: ["Restaurant", "Spa", "Room Service"], pool: false, wifi: true, pricePerNight: "€90" }
+      ]
   },
   {
     id: "tk-agrofert",
@@ -337,7 +414,14 @@ const ACADEMIES = [
     bestCoachRanking: null,
     facilities: "Major complex, indoor/outdoor courts, rehabilitation zone, new tennis hall",
     notableAlumni: ["Petra Kvitová (WTA #2)", "Tomáš Berdych (ATP #4)", "Barbora Krejčíková (WTA #2)", "Karolína Plíšková (WTA #1)", "Radek Štěpánek (ATP #8)", "Jiří Novák (ATP #5)", "Jiří Lehečka (ATP #14)", "Jakub Menšík", "Tomáš Macháč"],
-    description: "Arguably #1 tennis academy in Czech Republic. Produced more Grand Slam champions than any other East European academy. Founded 1900."
+    description: "Arguably #1 tennis academy in Czech Republic. Produced more Grand Slam champions than any other East European academy. Founded 1900.",
+    nearbyHotels: [
+        { name: "Hotel Plumlov", stars: 3, distanceKm: 8, features: ["Restaurant", "Parking", "Bar"], pool: false, wifi: true, pricePerNight: "€45" },
+        { name: "Hotel Záložna", stars: 3, distanceKm: 0.5, features: ["Restaurant", "Bar", "Conference Room"], pool: false, wifi: true, pricePerNight: "€50" },
+        { name: "Penzion Na Hradbách", stars: 2, distanceKm: 0.3, features: ["Breakfast Included", "Parking"], pool: false, wifi: true, pricePerNight: "€30" },
+        { name: "Hotel Avion", stars: 3, distanceKm: 1, features: ["Restaurant", "Parking", "Bar"], pool: false, wifi: true, pricePerNight: "€40" },
+        { name: "Hotel Nový Dvůr", stars: 4, distanceKm: 12, features: ["Restaurant", "Spa", "Gym", "Parking"], pool: true, wifi: true, pricePerNight: "€75" }
+      ]
   },
   {
     id: "sparta-prague",
@@ -362,7 +446,14 @@ const ACADEMIES = [
     bestCoachRanking: null,
     facilities: "23 outdoor + 12 indoor courts. Hosts WTA Prague Open & ATP Challenger.",
     notableAlumni: ["Jan Kodeš (ATP #5, 3× GS)", "Hana Mandlíková (WTA #3, 4× GS)", "Petra Kvitová (WTA #2)", "Karolína Plíšková (WTA #1)", "Tomáš Macháč"],
-    description: "One of Czech Republic's most prestigious clubs. Founded 1905. 35 courts total."
+    description: "One of Czech Republic's most prestigious clubs. Founded 1905. 35 courts total.",
+    nearbyHotels: [
+        { name: "Hotel Josef", stars: 4, distanceKm: 0.8, features: ["Restaurant", "Gym", "Bar"], pool: false, wifi: true, pricePerNight: "€110" },
+        { name: "Hilton Prague", stars: 5, distanceKm: 1.5, features: ["Restaurant", "Spa", "Gym", "Bar"], pool: true, wifi: true, pricePerNight: "€150" },
+        { name: "Hotel Máchova", stars: 3, distanceKm: 2, features: ["Breakfast Included", "Parking"], pool: false, wifi: true, pricePerNight: "€55" },
+        { name: "Mosaic House", stars: 3, distanceKm: 1.2, features: ["Bar", "Breakfast Included", "Pet Friendly"], pool: false, wifi: true, pricePerNight: "€60" },
+        { name: "Grand Hotel Bohemia", stars: 5, distanceKm: 0.5, features: ["Restaurant", "Bar", "Room Service", "Conference Room"], pool: false, wifi: true, pricePerNight: "€130" }
+      ]
   },
   {
     id: "pliskova-academy",
@@ -393,7 +484,14 @@ const ACADEMIES = [
     coachedTopPlayer: 1,
     facilities: "5 clay + 2 indoor courts, gym, restaurant. Expansion planned.",
     notableAlumni: ["Karolína Plíšková (WTA #1)"],
-    description: "Founded 2020. Karolína Plíšková (WTA #1) personally trains here. Mental coach Marian Jelínek on staff."
+    description: "Founded 2020. Karolína Plíšková (WTA #1) personally trains here. Mental coach Marian Jelínek on staff.",
+    nearbyHotels: [
+        { name: "Hotel Josef", stars: 4, distanceKm: 0.8, features: ["Restaurant", "Gym", "Bar"], pool: false, wifi: true, pricePerNight: "€110" },
+        { name: "Hilton Prague", stars: 5, distanceKm: 1.5, features: ["Restaurant", "Spa", "Gym", "Bar"], pool: true, wifi: true, pricePerNight: "€150" },
+        { name: "Hotel Máchova", stars: 3, distanceKm: 2, features: ["Breakfast Included", "Parking"], pool: false, wifi: true, pricePerNight: "€55" },
+        { name: "Mosaic House", stars: 3, distanceKm: 1.2, features: ["Bar", "Breakfast Included", "Pet Friendly"], pool: false, wifi: true, pricePerNight: "€60" },
+        { name: "Grand Hotel Bohemia", stars: 5, distanceKm: 0.5, features: ["Restaurant", "Bar", "Room Service", "Conference Room"], pool: false, wifi: true, pricePerNight: "€130" }
+      ]
   },
   {
     id: "cltk-praha",
@@ -416,7 +514,14 @@ const ACADEMIES = [
     bestCoachRanking: null,
     facilities: "One of Prague's oldest and most traditional tennis clubs",
     notableAlumni: [],
-    description: "Historic Czech club. Coaches include Ondřej Macek (30 yrs, speaks CZ/EN/DE/RU) and Jan Kurz (50 yrs exp)."
+    description: "Historic Czech club. Coaches include Ondřej Macek (30 yrs, speaks CZ/EN/DE/RU) and Jan Kurz (50 yrs exp).",
+    nearbyHotels: [
+        { name: "Hotel Josef", stars: 4, distanceKm: 0.8, features: ["Restaurant", "Gym", "Bar"], pool: false, wifi: true, pricePerNight: "€110" },
+        { name: "Hilton Prague", stars: 5, distanceKm: 1.5, features: ["Restaurant", "Spa", "Gym", "Bar"], pool: true, wifi: true, pricePerNight: "€150" },
+        { name: "Hotel Máchova", stars: 3, distanceKm: 2, features: ["Breakfast Included", "Parking"], pool: false, wifi: true, pricePerNight: "€55" },
+        { name: "Mosaic House", stars: 3, distanceKm: 1.2, features: ["Bar", "Breakfast Included", "Pet Friendly"], pool: false, wifi: true, pricePerNight: "€60" },
+        { name: "Grand Hotel Bohemia", stars: 5, distanceKm: 0.5, features: ["Restaurant", "Bar", "Room Service", "Conference Room"], pool: false, wifi: true, pricePerNight: "€130" }
+      ]
   },
   {
     id: "love4tennis",
@@ -447,7 +552,14 @@ const ACADEMIES = [
     bestCoachRanking: 4,
     facilities: "Full-service academy. 60+ pro players from 15 countries. 5 in ATP/WTA TOP 100.",
     notableAlumni: ["Elena Rybakina (WTA #3, Wimbledon champion)", "Filip Polášek (ATP #1 doubles)", "Lukáš Lacko (ATP #64)", "Kristína Kučová (WTA #67)"],
-    description: "Named after Dominika Cibulková (WTA #4). One of Europe's best academies. Rybakina as alumna."
+    description: "Named after Dominika Cibulková (WTA #4). One of Europe's best academies. Rybakina as alumna.",
+    nearbyHotels: [
+        { name: "Grand Hotel River Park", stars: 5, distanceKm: 1, features: ["Restaurant", "Spa", "Gym", "Bar"], pool: true, wifi: true, pricePerNight: "€140" },
+        { name: "Hotel Marrol's", stars: 5, distanceKm: 0.5, features: ["Restaurant", "Spa", "Bar", "Room Service"], pool: false, wifi: true, pricePerNight: "€120" },
+        { name: "Loft Hotel Bratislava", stars: 4, distanceKm: 0.8, features: ["Restaurant", "Bar", "Parking"], pool: false, wifi: true, pricePerNight: "€75" },
+        { name: "Hotel Kyjev", stars: 3, distanceKm: 0.3, features: ["Restaurant", "Bar"], pool: false, wifi: true, pricePerNight: "€50" },
+        { name: "Austria Trend Hotel Bratislava", stars: 4, distanceKm: 1.2, features: ["Restaurant", "Gym", "Parking", "Conference Room"], pool: false, wifi: true, pricePerNight: "€85" }
+      ]
   },
   {
     id: "hta-academy",
@@ -473,7 +585,14 @@ const ACADEMIES = [
     bestCoachRanking: null,
     facilities: "Community-focused, equipment rental included",
     notableAlumni: [],
-    description: "Affordable individual lessons from €37/hr. Children from age 3, adults, group training."
+    description: "Affordable individual lessons from €37/hr. Children from age 3, adults, group training.",
+    nearbyHotels: [
+        { name: "Grand Hotel River Park", stars: 5, distanceKm: 1, features: ["Restaurant", "Spa", "Gym", "Bar"], pool: true, wifi: true, pricePerNight: "€140" },
+        { name: "Hotel Marrol's", stars: 5, distanceKm: 0.5, features: ["Restaurant", "Spa", "Bar", "Room Service"], pool: false, wifi: true, pricePerNight: "€120" },
+        { name: "Loft Hotel Bratislava", stars: 4, distanceKm: 0.8, features: ["Restaurant", "Bar", "Parking"], pool: false, wifi: true, pricePerNight: "€75" },
+        { name: "Hotel Kyjev", stars: 3, distanceKm: 0.3, features: ["Restaurant", "Bar"], pool: false, wifi: true, pricePerNight: "€50" },
+        { name: "Austria Trend Hotel Bratislava", stars: 4, distanceKm: 1.2, features: ["Restaurant", "Gym", "Parking", "Conference Room"], pool: false, wifi: true, pricePerNight: "€85" }
+      ]
   },
   {
     id: "tenis-kozerki",
@@ -501,7 +620,14 @@ const ACADEMIES = [
     bestCoachRanking: 40,
     facilities: "21 courts, sports hall, gym, cryocabin, saunas, pools, padel, squash, hotel, 3,000-seat stands",
     notableAlumni: [],
-    description: "Most modern tennis complex in Poland. Coach connection to Linda Ferrando (WTA #40). Hosts ITF/WTA/ATP tournaments."
+    description: "Most modern tennis complex in Poland. Coach connection to Linda Ferrando (WTA #40). Hosts ITF/WTA/ATP tournaments.",
+    nearbyHotels: [
+        { name: "Hotel Narvil", stars: 4, distanceKm: 15, features: ["Restaurant", "Spa", "Gym", "Parking"], pool: true, wifi: true, pricePerNight: "€80" },
+        { name: "Hotel Maraton", stars: 3, distanceKm: 5, features: ["Restaurant", "Parking", "Tennis Court"], pool: false, wifi: true, pricePerNight: "€45" },
+        { name: "Villa Nobilitas", stars: 3, distanceKm: 3, features: ["Breakfast Included", "Parking", "Pet Friendly"], pool: false, wifi: true, pricePerNight: "€40" },
+        { name: "Leśny Dwór", stars: 3, distanceKm: 8, features: ["Restaurant", "Parking", "Bar"], pool: false, wifi: true, pricePerNight: "€50" },
+        { name: "Hotel Margerita", stars: 2, distanceKm: 4, features: ["Breakfast Included", "Parking"], pool: false, wifi: true, pricePerNight: "€30" }
+      ]
   },
   {
     id: "vicio-fede",
@@ -529,7 +655,14 @@ const ACADEMIES = [
     bestCoachRanking: null,
     facilities: "Multiple court locations across Warsaw. Languages: EN, IT, DE, PL",
     notableAlumni: [],
-    description: "International coaching in English. Ideal for expats. Affordable private lessons from ~€32/hr."
+    description: "International coaching in English. Ideal for expats. Affordable private lessons from ~€32/hr.",
+    nearbyHotels: [
+        { name: "Hotel Bristol Warsaw", stars: 5, distanceKm: 0.5, features: ["Restaurant", "Spa", "Bar", "Room Service"], pool: true, wifi: true, pricePerNight: "€160" },
+        { name: "Novotel Warszawa Centrum", stars: 4, distanceKm: 1, features: ["Restaurant", "Gym", "Bar", "Parking"], pool: true, wifi: true, pricePerNight: "€85" },
+        { name: "Hotel Ibis Warszawa Stare Miasto", stars: 2, distanceKm: 0.8, features: ["Bar", "Parking"], pool: false, wifi: true, pricePerNight: "€45" },
+        { name: "Sofitel Warsaw Victoria", stars: 5, distanceKm: 0.3, features: ["Restaurant", "Spa", "Gym", "Bar"], pool: true, wifi: true, pricePerNight: "€140" },
+        { name: "Hotel Warszawa", stars: 3, distanceKm: 1.5, features: ["Restaurant", "Bar", "Parking"], pool: false, wifi: true, pricePerNight: "€55" }
+      ]
   },
   {
     id: "mera-legia",
@@ -552,7 +685,14 @@ const ACADEMIES = [
     bestCoachRanking: null,
     facilities: "Premier Polish multi-sport clubs",
     notableAlumni: ["Iga Świątek (WTA #1, 5× Grand Slam champion)"],
-    description: "Where Iga Świątek trained as a junior (Mera) and continued at age 14 (Legia)."
+    description: "Where Iga Świątek trained as a junior (Mera) and continued at age 14 (Legia).",
+    nearbyHotels: [
+        { name: "Hotel Bristol Warsaw", stars: 5, distanceKm: 0.5, features: ["Restaurant", "Spa", "Bar", "Room Service"], pool: true, wifi: true, pricePerNight: "€160" },
+        { name: "Novotel Warszawa Centrum", stars: 4, distanceKm: 1, features: ["Restaurant", "Gym", "Bar", "Parking"], pool: true, wifi: true, pricePerNight: "€85" },
+        { name: "Hotel Ibis Warszawa Stare Miasto", stars: 2, distanceKm: 0.8, features: ["Bar", "Parking"], pool: false, wifi: true, pricePerNight: "€45" },
+        { name: "Sofitel Warsaw Victoria", stars: 5, distanceKm: 0.3, features: ["Restaurant", "Spa", "Gym", "Bar"], pool: true, wifi: true, pricePerNight: "€140" },
+        { name: "Hotel Warszawa", stars: 3, distanceKm: 1.5, features: ["Restaurant", "Bar", "Parking"], pool: false, wifi: true, pricePerNight: "€55" }
+      ]
   },
   {
     id: "hanescu-academy",
@@ -581,7 +721,14 @@ const ACADEMIES = [
     bestCoachRanking: 26,
     facilities: "Professional courts in Bucharest",
     notableAlumni: [],
-    description: "Founded by Victor Hănescu (ATP #26). Long-term sports development philosophy."
+    description: "Founded by Victor Hănescu (ATP #26). Long-term sports development philosophy.",
+    nearbyHotels: [
+        { name: "Athenee Palace Hilton", stars: 5, distanceKm: 0.5, features: ["Restaurant", "Spa", "Gym", "Bar"], pool: true, wifi: true, pricePerNight: "€130" },
+        { name: "Radisson Blu Hotel Bucharest", stars: 5, distanceKm: 1, features: ["Restaurant", "Spa", "Bar", "Room Service"], pool: true, wifi: true, pricePerNight: "€110" },
+        { name: "Hotel Rembrandt", stars: 3, distanceKm: 0.8, features: ["Restaurant", "Bar", "Parking"], pool: false, wifi: true, pricePerNight: "€50" },
+        { name: "Hotel Venezia", stars: 3, distanceKm: 1.2, features: ["Restaurant", "Parking", "Breakfast Included"], pool: false, wifi: true, pricePerNight: "€45" },
+        { name: "InterContinental Bucharest", stars: 5, distanceKm: 0.3, features: ["Restaurant", "Spa", "Gym", "Bar"], pool: true, wifi: true, pricePerNight: "€120" }
+      ]
   },
   {
     id: "bucharest-tennis",
@@ -604,7 +751,14 @@ const ACADEMIES = [
     bestCoachRanking: null,
     facilities: "PTR Professional certified coaching",
     notableAlumni: [],
-    description: "PTR Professional certified coach. All ages, recreational and competitive."
+    description: "PTR Professional certified coach. All ages, recreational and competitive.",
+    nearbyHotels: [
+        { name: "Athenee Palace Hilton", stars: 5, distanceKm: 0.5, features: ["Restaurant", "Spa", "Gym", "Bar"], pool: true, wifi: true, pricePerNight: "€130" },
+        { name: "Radisson Blu Hotel Bucharest", stars: 5, distanceKm: 1, features: ["Restaurant", "Spa", "Bar", "Room Service"], pool: true, wifi: true, pricePerNight: "€110" },
+        { name: "Hotel Rembrandt", stars: 3, distanceKm: 0.8, features: ["Restaurant", "Bar", "Parking"], pool: false, wifi: true, pricePerNight: "€50" },
+        { name: "Hotel Venezia", stars: 3, distanceKm: 1.2, features: ["Restaurant", "Parking", "Breakfast Included"], pool: false, wifi: true, pricePerNight: "€45" },
+        { name: "InterContinental Bucharest", stars: 5, distanceKm: 0.3, features: ["Restaurant", "Spa", "Gym", "Bar"], pool: true, wifi: true, pricePerNight: "€120" }
+      ]
   },
   {
     id: "sofia-360",
@@ -627,7 +781,14 @@ const ACADEMIES = [
     bestCoachRanking: null,
     facilities: "Historic parkland (Borisova Garden), near Vasil Levski Stadium",
     notableAlumni: [],
-    description: "Heir to Bulgaria's oldest tennis club (est. 1896). Grigor Dimitrov trained locally before moving to France."
+    description: "Heir to Bulgaria's oldest tennis club (est. 1896). Grigor Dimitrov trained locally before moving to France.",
+    nearbyHotels: [
+        { name: "Sofia Hotel Balkan", stars: 5, distanceKm: 0.5, features: ["Restaurant", "Spa", "Gym", "Bar"], pool: true, wifi: true, pricePerNight: "€100" },
+        { name: "Grand Hotel Sofia", stars: 5, distanceKm: 0.8, features: ["Restaurant", "Spa", "Bar", "Room Service"], pool: false, wifi: true, pricePerNight: "€90" },
+        { name: "Best Western Premier Sofia Airport", stars: 4, distanceKm: 8, features: ["Restaurant", "Gym", "Parking"], pool: false, wifi: true, pricePerNight: "€60" },
+        { name: "Hotel Niky", stars: 3, distanceKm: 1, features: ["Restaurant", "Bar", "Breakfast Included"], pool: false, wifi: true, pricePerNight: "€45" },
+        { name: "Sense Hotel Sofia", stars: 4, distanceKm: 0.3, features: ["Restaurant", "Spa", "Bar"], pool: false, wifi: true, pricePerNight: "€75" }
+      ]
   },
   {
     id: "romai-tennis",
@@ -650,7 +811,14 @@ const ACADEMIES = [
     bestCoachRanking: null,
     facilities: "10 clay + 1 soft court (year-round), squash, 25m pool, wellness. 2-hectare along Danube.",
     notableAlumni: [],
-    description: "Most prestigious tennis academy in Hungary. Beautiful Danube riverbank location."
+    description: "Most prestigious tennis academy in Hungary. Beautiful Danube riverbank location.",
+    nearbyHotels: [
+        { name: "Four Seasons Gresham Palace", stars: 5, distanceKm: 1, features: ["Restaurant", "Spa", "Gym", "Bar"], pool: true, wifi: true, pricePerNight: "€250" },
+        { name: "Hotel Gellért", stars: 4, distanceKm: 2, features: ["Restaurant", "Spa", "Bar", "Parking"], pool: true, wifi: true, pricePerNight: "€100" },
+        { name: "Danubius Hotel Margitsziget", stars: 4, distanceKm: 1.5, features: ["Restaurant", "Spa", "Gym"], pool: true, wifi: true, pricePerNight: "€90" },
+        { name: "Hotel Palazzo Zichy", stars: 4, distanceKm: 1.2, features: ["Restaurant", "Bar", "Room Service"], pool: false, wifi: true, pricePerNight: "€80" },
+        { name: "Meininger Hotel Budapest", stars: 2, distanceKm: 0.8, features: ["Bar", "Breakfast Included"], pool: false, wifi: true, pricePerNight: "€35" }
+      ]
   },
   {
     id: "szepvolgyi",
@@ -673,7 +841,14 @@ const ACADEMIES = [
     bestCoachRanking: null,
     facilities: "3 clay + 3 hard courts. Bilingual coaching (Hungarian/English).",
     notableAlumni: [],
-    description: "Bilingual (Hungarian/English) coaching. Beginner to professional competition preparation."
+    description: "Bilingual (Hungarian/English) coaching. Beginner to professional competition preparation.",
+    nearbyHotels: [
+        { name: "Four Seasons Gresham Palace", stars: 5, distanceKm: 1, features: ["Restaurant", "Spa", "Gym", "Bar"], pool: true, wifi: true, pricePerNight: "€250" },
+        { name: "Hotel Gellért", stars: 4, distanceKm: 2, features: ["Restaurant", "Spa", "Bar", "Parking"], pool: true, wifi: true, pricePerNight: "€100" },
+        { name: "Danubius Hotel Margitsziget", stars: 4, distanceKm: 1.5, features: ["Restaurant", "Spa", "Gym"], pool: true, wifi: true, pricePerNight: "€90" },
+        { name: "Hotel Palazzo Zichy", stars: 4, distanceKm: 1.2, features: ["Restaurant", "Bar", "Room Service"], pool: false, wifi: true, pricePerNight: "€80" },
+        { name: "Meininger Hotel Budapest", stars: 2, distanceKm: 0.8, features: ["Bar", "Breakfast Included"], pool: false, wifi: true, pricePerNight: "€35" }
+      ]
   },
   {
     id: "breskvar",
@@ -696,7 +871,14 @@ const ACADEMIES = [
     bestCoachRanking: null,
     facilities: "Premier tennis facility in Ljubljana",
     notableAlumni: [],
-    description: "Premier tennis facility in Ljubljana. Beginner to advanced, competitive matches."
+    description: "Premier tennis facility in Ljubljana. Beginner to advanced, competitive matches.",
+    nearbyHotels: [
+        { name: "InterContinental Ljubljana", stars: 5, distanceKm: 0.3, features: ["Restaurant", "Spa", "Gym", "Bar"], pool: true, wifi: true, pricePerNight: "€150" },
+        { name: "Grand Hotel Union", stars: 4, distanceKm: 0.2, features: ["Restaurant", "Bar", "Room Service", "Conference Room"], pool: false, wifi: true, pricePerNight: "€110" },
+        { name: "Best Western Premier Hotel Slon", stars: 4, distanceKm: 0.4, features: ["Restaurant", "Bar", "Gym"], pool: false, wifi: true, pricePerNight: "€95" },
+        { name: "Hotel Park Ljubljana", stars: 4, distanceKm: 0.8, features: ["Restaurant", "Parking", "Breakfast Included"], pool: false, wifi: true, pricePerNight: "€75" },
+        { name: "Hostel Celica", stars: 2, distanceKm: 1, features: ["Bar", "Breakfast Included", "Pet Friendly"], pool: false, wifi: true, pricePerNight: "€30" }
+      ]
   },
   {
     id: "medvedev-academy",
@@ -726,7 +908,14 @@ const ACADEMIES = [
     bestCoachRanking: 4,
     facilities: "Indoor/outdoor courts (clay), hosted Davis Cup 2021, fitness, massage, rehab",
     notableAlumni: [],
-    description: "Headed by Andrey Medvedev (ATP #4, French Open finalist). Personal sessions available with Medvedev himself."
+    description: "Headed by Andrey Medvedev (ATP #4, French Open finalist). Personal sessions available with Medvedev himself.",
+    nearbyHotels: [
+        { name: "Hyatt Regency Kyiv", stars: 5, distanceKm: 0.5, features: ["Restaurant", "Spa", "Gym", "Bar"], pool: true, wifi: true, pricePerNight: "€130" },
+        { name: "Hotel Ukraina", stars: 4, distanceKm: 0.8, features: ["Restaurant", "Bar", "Room Service"], pool: false, wifi: true, pricePerNight: "€70" },
+        { name: "Premier Hotel Lybid", stars: 4, distanceKm: 1.5, features: ["Restaurant", "Gym", "Parking"], pool: false, wifi: true, pricePerNight: "€55" },
+        { name: "Ibis Kyiv City Center", stars: 3, distanceKm: 1, features: ["Bar", "Parking", "Breakfast Included"], pool: false, wifi: true, pricePerNight: "€40" },
+        { name: "InterContinental Kyiv", stars: 5, distanceKm: 0.3, features: ["Restaurant", "Spa", "Bar", "Room Service"], pool: true, wifi: true, pricePerNight: "€150" }
+      ]
   },
   {
     id: "mta-kyiv",
@@ -749,7 +938,14 @@ const ACADEMIES = [
     bestCoachRanking: null,
     facilities: "37 tennis courts, 6 types of surfaces — world-class",
     notableAlumni: [],
-    description: "37 courts with 6 surface types. Comprehensive tennis school."
+    description: "37 courts with 6 surface types. Comprehensive tennis school.",
+    nearbyHotels: [
+        { name: "Hyatt Regency Kyiv", stars: 5, distanceKm: 0.5, features: ["Restaurant", "Spa", "Gym", "Bar"], pool: true, wifi: true, pricePerNight: "€130" },
+        { name: "Hotel Ukraina", stars: 4, distanceKm: 0.8, features: ["Restaurant", "Bar", "Room Service"], pool: false, wifi: true, pricePerNight: "€70" },
+        { name: "Premier Hotel Lybid", stars: 4, distanceKm: 1.5, features: ["Restaurant", "Gym", "Parking"], pool: false, wifi: true, pricePerNight: "€55" },
+        { name: "Ibis Kyiv City Center", stars: 3, distanceKm: 1, features: ["Bar", "Parking", "Breakfast Included"], pool: false, wifi: true, pricePerNight: "€40" },
+        { name: "InterContinental Kyiv", stars: 5, distanceKm: 0.3, features: ["Restaurant", "Spa", "Bar", "Room Service"], pool: true, wifi: true, pricePerNight: "€150" }
+      ]
   },
   {
     id: "vilnius-academy",
@@ -772,7 +968,14 @@ const ACADEMIES = [
     bestCoachRanking: null,
     facilities: "Largest tennis academy in Lithuania — 500+ youth",
     notableAlumni: [],
-    description: "Largest in Lithuania (500+ youth). Financially supports most promising athletes."
+    description: "Largest in Lithuania (500+ youth). Financially supports most promising athletes.",
+    nearbyHotels: [
+        { name: "Hotel Pacai", stars: 5, distanceKm: 0.3, features: ["Restaurant", "Spa", "Bar"], pool: false, wifi: true, pricePerNight: "€140" },
+        { name: "Radisson Blu Hotel Lietuva", stars: 4, distanceKm: 1, features: ["Restaurant", "Gym", "Bar", "Parking"], pool: true, wifi: true, pricePerNight: "€80" },
+        { name: "Shakespeare Boutique Hotel", stars: 4, distanceKm: 0.5, features: ["Restaurant", "Bar", "Room Service"], pool: false, wifi: true, pricePerNight: "€90" },
+        { name: "Ibis Vilnius Centre", stars: 3, distanceKm: 0.8, features: ["Bar", "Parking", "Breakfast Included"], pool: false, wifi: true, pricePerNight: "€45" },
+        { name: "Hotel Rinno", stars: 3, distanceKm: 1.2, features: ["Restaurant", "Parking", "Pet Friendly"], pool: false, wifi: true, pricePerNight: "€50" }
+      ]
   },
   {
     id: "riga-academy",
@@ -795,7 +998,14 @@ const ACADEMIES = [
     bestCoachRanking: null,
     facilities: "Founded by two internationally experienced tennis players/coaches",
     notableAlumni: [],
-    description: "Founded by ex-international players. Children from age 5 through adults, tailored training plans."
+    description: "Founded by ex-international players. Children from age 5 through adults, tailored training plans.",
+    nearbyHotels: [
+        { name: "Grand Hotel Kempinski Riga", stars: 5, distanceKm: 0.3, features: ["Restaurant", "Spa", "Bar", "Room Service"], pool: true, wifi: true, pricePerNight: "€150" },
+        { name: "Radisson Blu Latvija", stars: 4, distanceKm: 0.5, features: ["Restaurant", "Spa", "Gym", "Bar"], pool: true, wifi: true, pricePerNight: "€90" },
+        { name: "Hotel Neiburgs", stars: 4, distanceKm: 0.2, features: ["Restaurant", "Bar", "Room Service"], pool: false, wifi: true, pricePerNight: "€100" },
+        { name: "Wellton Centrum Hotel & Spa", stars: 4, distanceKm: 0.4, features: ["Spa", "Breakfast Included", "Parking"], pool: false, wifi: true, pricePerNight: "€70" },
+        { name: "Monika Centrum Hotels", stars: 3, distanceKm: 0.6, features: ["Restaurant", "Parking", "Bar"], pool: false, wifi: true, pricePerNight: "€50" }
+      ]
   },
   {
     id: "tenisa-akademija",
@@ -818,7 +1028,14 @@ const ACADEMIES = [
     bestCoachRanking: null,
     facilities: "Comprehensive: sparring, fitness, distance learning, language courses, competitions abroad",
     notableAlumni: [],
-    description: "Comprehensive program including language courses, distance learning, and coach-assisted competitions abroad."
+    description: "Comprehensive program including language courses, distance learning, and coach-assisted competitions abroad.",
+    nearbyHotels: [
+        { name: "Grand Hotel Kempinski Riga", stars: 5, distanceKm: 0.3, features: ["Restaurant", "Spa", "Bar", "Room Service"], pool: true, wifi: true, pricePerNight: "€150" },
+        { name: "Radisson Blu Latvija", stars: 4, distanceKm: 0.5, features: ["Restaurant", "Spa", "Gym", "Bar"], pool: true, wifi: true, pricePerNight: "€90" },
+        { name: "Hotel Neiburgs", stars: 4, distanceKm: 0.2, features: ["Restaurant", "Bar", "Room Service"], pool: false, wifi: true, pricePerNight: "€100" },
+        { name: "Wellton Centrum Hotel & Spa", stars: 4, distanceKm: 0.4, features: ["Spa", "Breakfast Included", "Parking"], pool: false, wifi: true, pricePerNight: "€70" },
+        { name: "Monika Centrum Hotels", stars: 3, distanceKm: 0.6, features: ["Restaurant", "Parking", "Bar"], pool: false, wifi: true, pricePerNight: "€50" }
+      ]
   },
   {
     id: "us-tenniseakadeemia",
@@ -841,7 +1058,14 @@ const ACADEMIES = [
     bestCoachRanking: null,
     facilities: "Sõjakooli 10, Tallinn",
     notableAlumni: [],
-    description: "Tallinn-based tennis academy."
+    description: "Tallinn-based tennis academy.",
+    nearbyHotels: [
+        { name: "Hotel Telegraaf", stars: 5, distanceKm: 0.3, features: ["Restaurant", "Spa", "Bar", "Gym"], pool: true, wifi: true, pricePerNight: "€140" },
+        { name: "Swissôtel Tallinn", stars: 5, distanceKm: 0.5, features: ["Restaurant", "Spa", "Gym", "Bar"], pool: true, wifi: true, pricePerNight: "€120" },
+        { name: "Hotel Palace by TallinnHotels", stars: 4, distanceKm: 0.4, features: ["Restaurant", "Bar", "Room Service"], pool: false, wifi: true, pricePerNight: "€85" },
+        { name: "Original Sokos Hotel Viru", stars: 4, distanceKm: 0.2, features: ["Restaurant", "Bar", "Parking"], pool: false, wifi: true, pricePerNight: "€75" },
+        { name: "Hestia Hotel Barons", stars: 3, distanceKm: 0.6, features: ["Breakfast Included", "Parking", "Bar"], pool: false, wifi: true, pricePerNight: "€55" }
+      ]
   },
   {
     id: "robbyo",
@@ -864,7 +1088,14 @@ const ACADEMIES = [
     bestCoachRanking: null,
     facilities: "Peterburi Tee 46, Tallinn",
     notableAlumni: [],
-    description: "Tallinn-based tennis academy."
+    description: "Tallinn-based tennis academy.",
+    nearbyHotels: [
+        { name: "Hotel Telegraaf", stars: 5, distanceKm: 0.3, features: ["Restaurant", "Spa", "Bar", "Gym"], pool: true, wifi: true, pricePerNight: "€140" },
+        { name: "Swissôtel Tallinn", stars: 5, distanceKm: 0.5, features: ["Restaurant", "Spa", "Gym", "Bar"], pool: true, wifi: true, pricePerNight: "€120" },
+        { name: "Hotel Palace by TallinnHotels", stars: 4, distanceKm: 0.4, features: ["Restaurant", "Bar", "Room Service"], pool: false, wifi: true, pricePerNight: "€85" },
+        { name: "Original Sokos Hotel Viru", stars: 4, distanceKm: 0.2, features: ["Restaurant", "Bar", "Parking"], pool: false, wifi: true, pricePerNight: "€75" },
+        { name: "Hestia Hotel Barons", stars: 3, distanceKm: 0.6, features: ["Breakfast Included", "Parking", "Bar"], pool: false, wifi: true, pricePerNight: "€55" }
+      ]
   }
 ];
 

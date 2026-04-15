@@ -371,6 +371,23 @@ function buildDetails(a) {
   if (a.beach && a.beach.description) {
     html += `<div class="detail-section"><h4>Beach / Sea</h4><p>${escapeHTML(a.beach.description)}</p></div>`;
   }
+  if (a.nearbyHotels && a.nearbyHotels.length) {
+    html += '<div class="detail-section"><h4>🏨 Nearby Hotels</h4>';
+    html += '<table class="hotel-table"><thead><tr><th>Hotel</th><th>Stars</th><th>Distance</th><th>Pool</th><th>WiFi</th><th>Price/Night</th><th>Features</th></tr></thead><tbody>';
+    a.nearbyHotels.forEach(h => {
+      const stars = '⭐'.repeat(h.stars);
+      html += `<tr>
+        <td><strong>${escapeHTML(h.name)}</strong></td>
+        <td>${stars}</td>
+        <td>${h.distanceKm} km</td>
+        <td>${h.pool ? '🏊 Yes' : '—'}</td>
+        <td>${h.wifi ? '📶 Yes' : '—'}</td>
+        <td>${escapeHTML(h.pricePerNight)}</td>
+        <td>${h.features.map(escapeHTML).join(', ')}</td>
+      </tr>`;
+    });
+    html += '</tbody></table></div>';
+  }
   if (a.website) {
     html += `<div class="detail-section"><h4>Website</h4><a href="${escapeHTML(a.website)}" target="_blank" rel="noopener">${escapeHTML(a.website)}</a></div>`;
   }
