@@ -6,6 +6,12 @@
   <title>East European Tennis Academies</title>
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
   <link rel="stylesheet" href="style.css">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#1a472a">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Tennis Academies">
+  <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎾</text></svg>">
 </head>
 <body>
   <a class="skip-link" href="#cardGrid">Skip to content</a>
@@ -14,6 +20,12 @@
   <header class="site-header" role="banner">
     <h1>🎾 East European Tennis Academies</h1>
     <p class="subtitle">Find the perfect academy for your tennis journey</p>
+    <select class="lang-select" id="langSelect" aria-label="Select language">
+      <option value="en">🇬🇧 EN</option>
+      <option value="tr">🇹🇷 TR</option>
+      <option value="de">🇩🇪 DE</option>
+      <option value="sr">🇷🇸 SR</option>
+    </select>
     <button class="btn-darkmode" id="btnDarkMode" title="Toggle dark mode" aria-label="Toggle dark mode">🌙</button>
     <button class="btn-wizard" id="btnWizard" aria-label="Help me choose an academy">🧙 Help Me Choose</button>
   </header>
@@ -40,6 +52,12 @@
       <span class="stat-number" data-stat="beach">0</span>
       <span class="stat-label">Near Beach</span>
     </div>
+  </div>
+
+  <!-- News Ticker -->
+  <div class="news-ticker" id="newsTicker">
+    <span class="news-label">📰 Latest:</span>
+    <div class="news-scroll" id="newsScroll"></div>
   </div>
 
   <!-- Filter Bar -->
@@ -164,6 +182,25 @@
     </div>
   </div>
 
+  <!-- Inquiry Modal -->
+  <div class="modal-overlay" id="inquiryModal" style="display:none;">
+    <div class="modal-content modal-inquiry">
+      <div class="modal-header">
+        <h2>📩 Send Inquiry</h2>
+        <button class="modal-close" id="inquiryClose">&times;</button>
+      </div>
+      <form id="inquiryForm" class="inquiry-form">
+        <input type="hidden" id="inquiryAcademyId">
+        <div class="form-group"><label>Your Name</label><input type="text" id="inquiryName" required></div>
+        <div class="form-group"><label>Your Email</label><input type="email" id="inquiryEmail" required></div>
+        <div class="form-group"><label>Level</label><select id="inquiryLevel"><option>Beginner</option><option>Intermediate</option><option>Advanced</option><option>Professional</option></select></div>
+        <div class="form-group"><label>Duration</label><select id="inquiryDuration"><option>1 week</option><option>2 weeks</option><option>1 month</option><option>3 months</option><option>6 months</option><option>1 year</option></select></div>
+        <div class="form-group"><label>Message</label><textarea id="inquiryMessage" rows="4" placeholder="Tell us about your goals..."></textarea></div>
+        <button type="submit" class="wizard-btn wizard-btn-primary">Send via Email</button>
+      </form>
+    </div>
+  </div>
+
   <!-- Footer -->
   <footer class="site-footer">
     <p>Data compiled for informational purposes. Verify details directly with each academy.</p>
@@ -171,7 +208,13 @@
   </footer>
 
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="i18n.js"></script>
   <script src="data.js"></script>
   <script src="app.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('sw.js').catch(() => {});
+    }
+  </script>
 </body>
 </html>

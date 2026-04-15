@@ -98,6 +98,30 @@ function updateFavButton() {
 let leafletMap = null;
 let mapMarkers = [];
 
+/* ===== i18n ===== */
+function updateStaticText() {
+  const h1 = document.querySelector('.site-header h1');
+  if (h1) h1.textContent = '🎾 ' + t('title');
+  const sub = document.querySelector('.site-header .subtitle');
+  if (sub) sub.textContent = t('subtitle');
+}
+
+function initLanguageSelector() {
+  const langSelect = document.getElementById('langSelect');
+  if (langSelect) {
+    const savedLang = localStorage.getItem('tennis-lang') || 'en';
+    document.documentElement.lang = savedLang;
+    langSelect.value = savedLang;
+    langSelect.addEventListener('change', e => {
+      document.documentElement.lang = e.target.value;
+      localStorage.setItem('tennis-lang', e.target.value);
+      applyAndRender();
+      updateStaticText();
+    });
+    updateStaticText();
+  }
+}
+
 /* ===== Init ===== */
 document.addEventListener('DOMContentLoaded', () => {
   populateCountryDropdown();
@@ -106,6 +130,8 @@ document.addEventListener('DOMContentLoaded', () => {
   updateFavButton();
   applyAndRender();
   animateStats();
+  renderNews();
+  initLanguageSelector();
 });
 
 /* ===== Stats Dashboard ===== */
@@ -416,6 +442,7 @@ function buildDetails(a) {
   if (a.description) {
     html += `<div class="detail-section"><p>${escapeHTML(a.description)}</p></div>`;
   }
+  html += renderStarRating(a.id);
   if (a.coaches.length) {
     html += '<div class="detail-section"><h4>Coaches</h4><ul>';
     a.coaches.forEach(c => {
@@ -495,6 +522,66 @@ function buildDetails(a) {
     });
     html += '</tbody></table></div>';
   }
+  if (a.nearbyMedical && a.nearbyMedical.length) {
+    html += '<div class="detail-section"><h4>🏥 Nearby Medical</h4>';
+    html += '<table class="hotel-table"><thead><tr><th>Facility</th><th>Type</th><th>Distance</th><th>Phone</th><th>Emergency</th></tr></thead><tbody>';
+    a.nearbyMedical.forEach(m => {
+      html += `<tr><td><strong>${escapeHTML(m.name)}</strong></td><td>${escapeHTML(m.type)}</td><td>${m.distanceKm} km</td><td>${m.phone ? escapeHTML(m.phone) : '—'}</td><td>${m.emergency ? '🚨 Yes' : '—'}</td></tr>`;
+    });
+    html += '</tbody></table></div>';
+  }
+  if (a.costOfLiving) {
+    const col = a.costOfLiving;
+    html += `<div class="detail-section"><h4>💰 Cost of Living</h4>`;
+    html += `<div class="cost-grid">`;
+    html += `<div class="cost-item"><span class="cost-label">🏠 1-Bed Rent</span><span class="cost-value">${escapeHTML(col.rent1Bed)}/mo</span></div>`;
+    html += `<div class="cost-item"><span class="cost-label">🍽️ Avg Meal</span><span class="cost-value">${escapeHTML(col.meal)}</span></div>`;
+    html += `<div class="cost-item"><span class="cost-label">🛒 Monthly Food</span><span class="cost-value">${escapeHTML(col.monthlyFood)}/mo</span></div>`;
+    html += `<div class="cost-item"><span class="cost-label">🚌 Transport</span><span class="cost-value">${escapeHTML(col.transport)}/mo</span></div>`;
+    html += `</div>`;
+    if (col.summary) html += `<p class="cost-summary">${escapeHTML(col.summary)}</p>`;
+    html += `</div>`;
+  }
+  if (a.scholarships) {
+    const icon = a.scholarships.available ? '✅' : '❌';
+    html += `<div class="detail-section"><h4>🎓 Scholarships</h4><p>${icon} ${escapeHTML(a.scholarships.details)}</p></div>`;
+  }
+  if (a.visaInfo) {
+    const badges = [];
+    if (a.visaInfo.eu) badges.push('<span class="tag tag-visa-eu">🇪🇺 EU</span>');
+    if (a.visaInfo.schengen) badges.push('<span class="tag tag-visa-schengen">🛂 Schengen</span>');
+    html += `<div class="detail-section"><h4>🛂 Visa Information</h4>`;
+    if (badges.length) html += `<p>${badges.join(' ')}</p>`;
+    html += `<p><strong>Visa-free:</strong> ${escapeHTML(a.visaInfo.visaFreeCountries)}</p>`;
+    if (a.visaInfo.notes) html += `<p><em>${escapeHTML(a.visaInfo.notes)}</em></p>`;
+    html += `</div>`;
+  }
+  if (a.airportTransfers && a.airportTransfers.length) {
+    html += '<div class="detail-section"><h4>🚕 Airport Transfers</h4>';
+    html += '<table class="hotel-table"><thead><tr><th>Mode</th><th>Duration</th><th>Cost</th><th>Notes</th></tr></thead><tbody>';
+    a.airportTransfers.forEach(t => {
+      html += `<tr><td><strong>${escapeHTML(t.mode)}</strong></td><td>${escapeHTML(t.duration)}</td><td>${escapeHTML(t.cost)}</td><td>${escapeHTML(t.notes)}</td></tr>`;
+    });
+    html += '</tbody></table></div>';
+  }
+  if (a.nearbyTournaments && a.nearbyTournaments.length) {
+    html += '<div class="detail-section"><h4>🏆 Nearby Tournaments</h4><ul>';
+    a.nearbyTournaments.forEach(t => {
+      html += `<li><strong>${escapeHTML(t.name)}</strong> (${escapeHTML(t.level)}) — ${escapeHTML(t.surface)}, ${escapeHTML(t.month)} @ ${escapeHTML(t.venue)}</li>`;
+    });
+    html += '</ul></div>';
+  }
+  if (a.videoTour) {
+    const videoId = a.videoTour.match(/(?:v=|\/embed\/|youtu\.be\/)([^&?]+)/);
+    if (videoId) {
+      html += `<div class="detail-section"><h4>🎥 Video Tour</h4>`;
+      html += `<div class="video-container"><iframe src="https://www.youtube.com/embed/${escapeHTML(videoId[1])}" frameborder="0" allowfullscreen loading="lazy" title="Academy video tour"></iframe></div></div>`;
+    } else {
+      html += `<div class="detail-section"><h4>🎥 Video Tour</h4><a href="${escapeHTML(a.videoTour)}" target="_blank" rel="noopener" class="btn-visit">▶️ Watch Video</a></div>`;
+    }
+  }
+  const weatherId = `weather-${a.id}`;
+  html += `<div class="detail-section"><h4>🌤️ Current Weather — ${escapeHTML(a.city)}</h4><div id="${weatherId}"><em>Loading...</em></div></div>`;
   if (a.website) {
     html += `<div class="detail-section"><h4>Website</h4><a href="${escapeHTML(a.website)}" target="_blank" rel="noopener">${escapeHTML(a.website)}</a></div>`;
   }
@@ -506,15 +593,14 @@ function buildDetails(a) {
 /* ===== Detail Action Buttons ===== */
 function buildDetailActions(a) {
   let html = '<div class="detail-actions">';
-  const name = encodeURIComponent(a.name);
-  let body = `Hi, I found your academy on East European Tennis Academies guide and I'm interested in learning more about your programs.%0A%0AAcademy: ${name}`;
-  if (a.website) body += `%0AWebsite: ${encodeURIComponent(a.website)}`;
-  if (a.contact) body += `%0AContact: ${encodeURIComponent(a.contact)}`;
-  html += `<a href="mailto:?subject=Inquiry about ${name}&body=${body}" class="btn-inquiry">📩 Send Inquiry</a>`;
+  html += `<button class="btn-inquiry" onclick="openInquiry('${a.id}')">📩 Send Inquiry</button>`;
   if (a.website) {
     html += `<a href="${escapeHTML(a.website)}" target="_blank" rel="noopener" class="btn-visit">🌐 Visit Website</a>`;
   }
   html += `<button class="btn-calculator" onclick="showTripCalculator('${a.id}')" aria-label="Estimate trip cost">🧮 Trip Cost</button>`;
+  const partners = getPartnerRequests();
+  const partnerActive = partners[a.id];
+  html += `<button class="btn-partner ${partnerActive ? 'active' : ''}" onclick="togglePartnerRequest('${a.id}')">🤝 ${partnerActive ? 'Looking for Partners ✓' : 'Find Partners'}</button>`;
   html += '</div>';
   return html;
 }
@@ -805,6 +891,25 @@ function bindEvents() {
   document.getElementById('wizardClose').addEventListener('click', closeWizard);
   document.getElementById('wizardModal').addEventListener('click', e => {
     if (e.target === e.currentTarget) closeWizard();
+  });
+
+  // Inquiry modal
+  document.getElementById('inquiryClose').addEventListener('click', closeInquiry);
+  document.getElementById('inquiryModal').addEventListener('click', e => { if (e.target === e.currentTarget) closeInquiry(); });
+  document.getElementById('inquiryForm').addEventListener('submit', e => {
+    e.preventDefault();
+    const id = document.getElementById('inquiryAcademyId').value;
+    const a = ACADEMIES.find(ac => ac.id === id);
+    const name = document.getElementById('inquiryName').value;
+    const email = document.getElementById('inquiryEmail').value;
+    const level = document.getElementById('inquiryLevel').value;
+    const duration = document.getElementById('inquiryDuration').value;
+    const msg = document.getElementById('inquiryMessage').value;
+    const subject = encodeURIComponent(`Inquiry about ${a.name}`);
+    const body = encodeURIComponent(`Hi,\n\nI found ${a.name} on East European Tennis Academies and I'm interested in learning more.\n\nName: ${name}\nEmail: ${email}\nLevel: ${level}\nDuration: ${duration}\n\n${msg}\n\nBest regards,\n${name}`);
+    window.location.href = `mailto:${a.contact || ''}?subject=${subject}&body=${body}`;
+    closeInquiry();
+    showToast('Opening email client...');
   });
 }
 
@@ -1225,6 +1330,91 @@ function buildReasons(a, answers) {
   else reasons.push('Contact for pricing');
   reasons.push(a.city + ', ' + a.country);
   return reasons;
+}
+
+/* ===== User Ratings ===== */
+function getUserRatings() {
+  try { return JSON.parse(localStorage.getItem('tennis-ratings')) || {}; } catch { return {}; }
+}
+function saveUserRating(id, rating) {
+  const ratings = getUserRatings();
+  ratings[id] = rating;
+  localStorage.setItem('tennis-ratings', JSON.stringify(ratings));
+}
+function renderStarRating(academyId) {
+  const ratings = getUserRatings();
+  const current = ratings[academyId] || 0;
+  let html = '<div class="user-rating">';
+  for (let i = 1; i <= 5; i++) {
+    const cls = i <= current ? 'star-filled' : 'star-empty';
+    html += `<span class="rate-star ${cls}" onclick="rateAcademy('${academyId}', ${i})" title="Rate ${i} stars">${i <= current ? '★' : '☆'}</span>`;
+  }
+  if (current > 0) html += `<span class="rating-text">(Your rating: ${current}/5)</span>`;
+  html += '</div>';
+  return html;
+}
+function rateAcademy(id, rating) {
+  saveUserRating(id, rating);
+  applyAndRender();
+  showToast(`Rated ${rating} ⭐`);
+}
+
+/* ===== Weather Widget ===== */
+function loadWeather(city, elementId) {
+  const el = document.getElementById(elementId);
+  if (!el) return;
+  el.innerHTML = '<em>Loading weather...</em>';
+  fetch(`https://wttr.in/${encodeURIComponent(city)}?format=%C+%t+%w&lang=en`)
+    .then(r => r.text())
+    .then(text => { el.innerHTML = `🌤️ <strong>Now:</strong> ${escapeHTML(text.trim())}`; })
+    .catch(() => { el.innerHTML = '<em>Weather unavailable</em>'; });
+}
+
+/* ===== Inquiry Modal ===== */
+function openInquiry(id) {
+  const a = ACADEMIES.find(ac => ac.id === id);
+  if (!a) return;
+  document.getElementById('inquiryAcademyId').value = id;
+  document.getElementById('inquiryModal').style.display = 'flex';
+  document.getElementById('inquiryModal').querySelector('h2').textContent = `📩 Inquiry — ${a.name}`;
+}
+function closeInquiry() { document.getElementById('inquiryModal').style.display = 'none'; }
+
+/* ===== Training Partners ===== */
+function getPartnerRequests() {
+  try { return JSON.parse(localStorage.getItem('tennis-partners')) || {}; } catch { return {}; }
+}
+function togglePartnerRequest(id) {
+  const partners = getPartnerRequests();
+  if (partners[id]) delete partners[id];
+  else partners[id] = { date: new Date().toISOString().split('T')[0] };
+  localStorage.setItem('tennis-partners', JSON.stringify(partners));
+  applyAndRender();
+  showToast(partners[id] ? '🤝 Marked as looking for partners!' : 'Removed partner request');
+}
+
+/* ===== News Feed ===== */
+const NEWS_ITEMS = [
+  { date: "2026-04-15", text: "Tipsarević Tennis Academy announces new summer camp dates", academy: "tipsarevic" },
+  { date: "2026-04-10", text: "Belgrade Open 2026 draws announced — several academy players competing", academy: null },
+  { date: "2026-04-05", text: "Love4Tennis Academy opens new indoor courts in Bratislava", academy: "love4tennis" },
+  { date: "2026-03-28", text: "Ilirija Tennis Academy launches Tennis + Nature program for 2026 season", academy: "ilirija" },
+  { date: "2026-03-20", text: "Czech Republic academies report record junior enrollment", academy: null },
+  { date: "2026-03-15", text: "New partnership: PZTA and local Belgrade schools for junior development", academy: "pzta" }
+];
+
+function renderNews() {
+  const scroll = document.getElementById('newsScroll');
+  if (!scroll) return;
+  scroll.innerHTML = NEWS_ITEMS.map(n => {
+    const link = n.academy ? ` <a href="#academy=${n.academy}" onclick="scrollToAcademy('${n.academy}')">[View]</a>` : '';
+    return `<span class="news-item"><strong>${n.date}:</strong> ${escapeHTML(n.text)}${link}</span>`;
+  }).join('<span class="news-sep">•</span>');
+}
+
+function scrollToAcademy(id) {
+  const card = document.getElementById('card-' + id);
+  if (card) card.scrollIntoView({ behavior: 'smooth', block: 'center' });
 }
 
 /* ===== Dark Mode Toggle ===== */
