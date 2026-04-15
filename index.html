@@ -13,8 +13,33 @@
   <header class="site-header">
     <h1>🎾 East European Tennis Academies</h1>
     <p class="subtitle">Find the perfect academy for your tennis journey</p>
+    <button class="btn-darkmode" id="btnDarkMode" title="Toggle dark mode">🌙</button>
     <button class="btn-wizard" id="btnWizard">🧙 Help Me Choose</button>
   </header>
+
+  <!-- Stats Dashboard -->
+  <div class="stats-bar" id="statsBar">
+    <div class="stat-item">
+      <span class="stat-number" data-stat="countries">0</span>
+      <span class="stat-label">Countries</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-number" data-stat="academies">0</span>
+      <span class="stat-label">Academies</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-number" data-stat="atpWta">0</span>
+      <span class="stat-label">ATP/WTA Coaches</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-number" data-stat="boarding">0</span>
+      <span class="stat-label">Boarding Options</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-number" data-stat="beach">0</span>
+      <span class="stat-label">Near Beach</span>
+    </div>
+  </div>
 
   <!-- Filter Bar -->
   <div class="filter-bar">
@@ -68,6 +93,7 @@
           <button class="toggle-btn" id="toggleATP" data-filter="atp">🎾 Coach Played ATP/WTA</button>
           <button class="toggle-btn" id="toggleTop10" data-filter="top10">🏆 Top-10 Connection</button>
           <button class="btn-reset" id="btnReset">✕ Reset Filters</button>
+          <button class="btn-print" id="btnPrint" title="Print shortlist">🖨️ Print</button>
         </div>
 
       </div>
@@ -93,6 +119,7 @@
     <div class="modal-content modal-compare">
       <div class="modal-header">
         <h2>Compare Academies</h2>
+        <button class="btn-share" id="btnShareCompare" onclick="shareComparison()" title="Share Comparison">📤</button>
         <button class="modal-close" id="compareClose">&times;</button>
       </div>
       <div class="compare-table-wrap" id="compareTableWrap"></div>

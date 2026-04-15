@@ -61,7 +61,60 @@ document.addEventListener('DOMContentLoaded', () => {
   bindEvents();
   updateFavButton();
   applyAndRender();
+  animateStats();
 });
+
+/* ===== Stats Dashboard ===== */
+function animateStats() {
+  const stats = {
+    countries: new Set(ACADEMIES.map(a => a.country)).size,
+    academies: ACADEMIES.length,
+    atpWta: ACADEMIES.filter(a => a.coaches.some(c => c.atpWta)).length,
+    boarding: ACADEMIES.filter(a => a.boarding).length,
+    beach: ACADEMIES.filter(a => typeof a.beach.distance === 'number').length
+  };
+
+  const els = document.querySelectorAll('.stat-number[data-stat]');
+  els.forEach(el => {
+    const key = el.getAttribute('data-stat');
+    const target = stats[key] || 0;
+    el.setAttribute('data-target', target);
+  });
+
+  const statsBar = document.getElementById('statsBar');
+  if (!statsBar) return;
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        runCountAnimation();
+        observer.disconnect();
+      }
+    });
+  }, { threshold: 0.3 });
+  observer.observe(statsBar);
+}
+
+function runCountAnimation() {
+  const duration = 1500;
+  const els = document.querySelectorAll('.stat-number[data-target]');
+  const start = performance.now();
+
+  function tick(now) {
+    const elapsed = now - start;
+    const progress = Math.min(elapsed / duration, 1);
+    const ease = 1 - Math.pow(1 - progress, 3);
+
+    els.forEach(el => {
+      const target = parseInt(el.getAttribute('data-target'), 10);
+      el.textContent = Math.round(target * ease);
+    });
+
+    if (progress < 1) requestAnimationFrame(tick);
+  }
+
+  requestAnimationFrame(tick);
+}
 
 /* ===== Populate Country Dropdown ===== */
 function populateCountryDropdown() {
@@ -894,3 +947,26 @@ function buildReasons(a, answers) {
   reasons.push(a.city + ', ' + a.country);
   return reasons;
 }
+
+/* ===== Dark Mode Toggle ===== */
+(function initDarkMode() {
+  const btn = document.getElementById('btnDarkMode');
+  const html = document.documentElement;
+  const saved = localStorage.getItem('theme');
+  if (saved === 'dark') {
+    html.setAttribute('data-theme', 'dark');
+    btn.textContent = '☀️';
+  }
+  btn.addEventListener('click', () => {
+    const isDark = html.getAttribute('data-theme') === 'dark';
+    if (isDark) {
+      html.removeAttribute('data-theme');
+      localStorage.setItem('theme', 'light');
+      btn.textContent = '🌙';
+    } else {
+      html.setAttribute('data-theme', 'dark');
+      localStorage.setItem('theme', 'dark');
+      btn.textContent = '☀️';
+    }
+  });
+})();
