@@ -17,6 +17,50 @@ const state = {
   nearMe: false
 };
 
+/* ===== Sport Config ===== */
+const SPORT_CONFIG = {
+  tennis: {
+    icon: '🎾',
+    name: 'Tennis',
+    coachLabel: 'ATP/WTA Coaches',
+    coachFilterLabel: '🎾 Coach Played ATP/WTA',
+    surfaceLabel: 'Court Surfaces',
+    storagePrefix: 'tennis',
+  },
+  golf: {
+    icon: '⛳',
+    name: 'Golf',
+    coachLabel: 'Pro Coaches',
+    coachFilterLabel: '⛳ PGA Professional',
+    surfaceLabel: 'Course Types',
+    storagePrefix: 'golf',
+  },
+  football: {
+    icon: '⚽',
+    name: 'Football',
+    coachLabel: 'Licensed Coaches',
+    coachFilterLabel: '⚽ Pro Experience',
+    surfaceLabel: 'Pitch Types',
+    storagePrefix: 'football',
+  },
+  basketball: {
+    icon: '🏀',
+    name: 'Basketball',
+    coachLabel: 'Pro Coaches',
+    coachFilterLabel: '🏀 Pro Experience',
+    surfaceLabel: 'Court Types',
+    storagePrefix: 'basketball',
+  }
+};
+
+function getSportType() {
+  return (typeof SPORT_TYPE !== 'undefined') ? SPORT_TYPE : 'tennis';
+}
+
+function getSportConfig() {
+  return SPORT_CONFIG[getSportType()] || SPORT_CONFIG.tennis;
+}
+
 /* ===== Currency Converter ===== */
 const CURRENCY_RATES = {
   EUR: { symbol: '€', rate: 1 },
@@ -63,11 +107,11 @@ const compareSet = new Set();
 
 /* ===== Favorites ===== */
 function getFavorites() {
-  try { return JSON.parse(localStorage.getItem('tennis-favorites')) || []; }
+  try { return JSON.parse(localStorage.getItem(getSportConfig().storagePrefix + '-favorites')) || []; }
   catch { return []; }
 }
 function saveFavorites(favs) {
-  localStorage.setItem('tennis-favorites', JSON.stringify(favs));
+  localStorage.setItem(getSportConfig().storagePrefix + '-favorites', JSON.stringify(favs));
 }
 function toggleFavorite(id) {
   let favs = getFavorites();
@@ -100,8 +144,9 @@ let mapMarkers = [];
 
 /* ===== i18n ===== */
 function updateStaticText() {
+  const config = getSportConfig();
   const h1 = document.querySelector('.site-header h1');
-  if (h1) h1.textContent = '🎾 ' + t('title');
+  if (h1) h1.textContent = config.icon + ' ' + t('title');
   const sub = document.querySelector('.site-header .subtitle');
   if (sub) sub.textContent = t('subtitle');
 }
@@ -109,12 +154,12 @@ function updateStaticText() {
 function initLanguageSelector() {
   const langSelect = document.getElementById('langSelect');
   if (langSelect) {
-    const savedLang = localStorage.getItem('tennis-lang') || 'en';
+    const savedLang = localStorage.getItem('sports-lang') || 'en';
     document.documentElement.lang = savedLang;
     langSelect.value = savedLang;
     langSelect.addEventListener('change', e => {
       document.documentElement.lang = e.target.value;
-      localStorage.setItem('tennis-lang', e.target.value);
+      localStorage.setItem('sports-lang', e.target.value);
       applyAndRender();
       updateStaticText();
     });
@@ -125,6 +170,7 @@ function initLanguageSelector() {
 /* ===== Init ===== */
 document.addEventListener('DOMContentLoaded', () => {
   populateCountryDropdown();
+  populateSurfaceDropdown();
   loadStateFromHash();
   bindEvents();
   updateFavButton();
@@ -132,6 +178,7 @@ document.addEventListener('DOMContentLoaded', () => {
   animateStats();
   renderNews();
   initLanguageSelector();
+  updateSportLabels();
 });
 
 /* ===== Stats Dashboard ===== */
@@ -139,9 +186,9 @@ function animateStats() {
   const stats = {
     countries: new Set(ACADEMIES.map(a => a.country)).size,
     academies: ACADEMIES.length,
-    atpWta: ACADEMIES.filter(a => a.coaches.some(c => c.atpWta)).length,
+    atpWta: ACADEMIES.filter(a => a.coaches && a.coaches.some(c => c.atpWta)).length,
     boarding: ACADEMIES.filter(a => a.boarding).length,
-    beach: ACADEMIES.filter(a => typeof a.beach.distance === 'number').length
+    beach: ACADEMIES.filter(a => typeof a.beach?.distance === 'number').length
   };
 
   const els = document.querySelectorAll('.stat-number[data-stat]');
@@ -198,6 +245,35 @@ function populateCountryDropdown() {
   });
 }
 
+function populateSurfaceDropdown() {
+  const sel = document.getElementById('filterSurface');
+  if (!sel) return;
+  const firstOption = sel.options[0];
+  sel.innerHTML = '';
+  sel.appendChild(firstOption);
+  const surfaces = new Set();
+  ACADEMIES.forEach(a => {
+    if (a.courtSurfaces) a.courtSurfaces.forEach(s => surfaces.add(s));
+  });
+  [...surfaces].sort().forEach(s => {
+    const opt = document.createElement('option');
+    opt.value = s;
+    opt.textContent = s;
+    sel.appendChild(opt);
+  });
+}
+
+function updateSportLabels() {
+  const config = getSportConfig();
+  const atpLabel = document.querySelector('[data-stat="atpWta"]');
+  if (atpLabel) {
+    const labelEl = atpLabel.parentElement.querySelector('.stat-label');
+    if (labelEl) labelEl.textContent = config.coachLabel;
+  }
+  const atpBtn = document.getElementById('toggleATP');
+  if (atpBtn) atpBtn.innerHTML = config.coachFilterLabel;
+}
+
 /* ===== Filter Functions ===== */
 function filterByCountry(academies, country) {
   if (!country) return academies;
@@ -222,7 +298,7 @@ function filterByBoarding(academies) {
 }
 
 function filterByBeach(academies) {
-  return academies.filter(a => typeof a.beach.distance === 'number');
+  return academies.filter(a => typeof a.beach?.distance === 'number');
 }
 
 function filterByCoachATP(academies) {
@@ -406,7 +482,7 @@ function buildTags(a) {
   let html = `<span class="tag tag-level">${escapeHTML(a.level)}</span>`;
   if (a.individualLessons) html += '<span class="tag tag-individual">✅ Individual</span>';
   if (a.boarding) html += '<span class="tag tag-boarding">🏠 Boarding</span>';
-  if (typeof a.beach.distance === 'number') html += '<span class="tag tag-beach">🏖️ Beach</span>';
+  if (typeof a.beach?.distance === 'number') html += '<span class="tag tag-beach">🏖️ Beach</span>';
   if (a.courtSurfaces) {
     a.courtSurfaces.forEach(s => {
       html += `<span class="tag tag-surface">${escapeHTML(s)}</span>`;
@@ -469,7 +545,7 @@ function buildDetails(a) {
     html += `<div class="detail-section"><h4>Facilities</h4><p>${escapeHTML(a.facilities)}</p></div>`;
   }
   if (a.courtSurfaces && a.courtSurfaces.length) {
-    html += `<div class="detail-section"><h4>🎾 Court Surfaces</h4><p>${a.courtSurfaces.map(escapeHTML).join(' • ')}</p></div>`;
+    html += `<div class="detail-section"><h4>${getSportConfig().icon} ${getSportConfig().surfaceLabel}</h4><p>${a.courtSurfaces.map(escapeHTML).join(' • ')}</p></div>`;
   }
   if (a.notableAlumni && a.notableAlumni.length) {
     html += `<div class="detail-section"><h4>Notable Alumni</h4><p>${a.notableAlumni.map(escapeHTML).join(', ')}</p></div>`;
@@ -693,7 +769,7 @@ function exportCSV() {
   const url = URL.createObjectURL(blob);
   const link = document.createElement('a');
   link.href = url;
-  link.download = 'tennis-academies.csv';
+  link.download = getSportConfig().storagePrefix + '-academies.csv';
   link.click();
   URL.revokeObjectURL(url);
 }
@@ -1038,7 +1114,7 @@ function openCompareModal() {
     }},
     { label: 'Individual Lessons', fn: a => a.individualLessons ? '✅ Yes' : '❌ No' },
     { label: 'Boarding', fn: a => a.boarding ? '✅ Yes' : '❌ No' },
-    { label: 'Beach Distance', fn: a => typeof a.beach.distance === 'number' ? a.beach.distance + ' km' : 'N/A' },
+    { label: 'Beach Distance', fn: a => typeof a.beach?.distance === 'number' ? a.beach.distance + ' km' : 'N/A' },
     { label: 'Airport', fn: a => a.airport ? `${a.airport.code} (${a.airport.distance})` : 'N/A' },
     { label: 'Summer Temp (Jul)', fn: a => {
       if (a.climate && CLIMATE_DATA[a.climate]) {
@@ -1261,7 +1337,7 @@ function scoreAcademy(a, answers) {
   if (answers.who === 'family') {
     const l = a.level.toLowerCase();
     if (l.includes('all') || l.includes('recreational')) score += 2;
-    if (typeof a.beach.distance === 'number') score += 1;
+    if (typeof a.beach?.distance === 'number') score += 1;
   }
 
   // Budget
@@ -1285,7 +1361,7 @@ function scoreAcademy(a, answers) {
     if (a.coaches.some(c => c.bestRanking !== null && c.bestRanking <= 50)) score += priorityWeight;
   }
   if (priorities.includes('beach')) {
-    if (typeof a.beach.distance === 'number') score += priorityWeight;
+    if (typeof a.beach?.distance === 'number') score += priorityWeight;
   }
   if (priorities.includes('boarding')) {
     if (a.boarding) score += priorityWeight;
@@ -1322,7 +1398,7 @@ function buildReasons(a, answers) {
   const reasons = [];
   const priorities = answers.priorities || [];
   if (priorities.includes('coaches') && a.coaches.some(c => c.atpWta)) reasons.push('ATP/WTA coaches');
-  if (priorities.includes('beach') && typeof a.beach.distance === 'number') reasons.push('Near beach');
+  if (priorities.includes('beach') && typeof a.beach?.distance === 'number') reasons.push('Near beach');
   if (priorities.includes('boarding') && a.boarding) reasons.push('Boarding available');
   if (priorities.includes('pricing') && a.priceRange.from !== null) reasons.push('Clear pricing');
   if (priorities.includes('alumni') && a.notableAlumni && a.notableAlumni.length > 0) reasons.push('Notable alumni');
@@ -1334,12 +1410,12 @@ function buildReasons(a, answers) {
 
 /* ===== User Ratings ===== */
 function getUserRatings() {
-  try { return JSON.parse(localStorage.getItem('tennis-ratings')) || {}; } catch { return {}; }
+  try { return JSON.parse(localStorage.getItem(getSportConfig().storagePrefix + '-ratings')) || {}; } catch { return {}; }
 }
 function saveUserRating(id, rating) {
   const ratings = getUserRatings();
   ratings[id] = rating;
-  localStorage.setItem('tennis-ratings', JSON.stringify(ratings));
+  localStorage.setItem(getSportConfig().storagePrefix + '-ratings', JSON.stringify(ratings));
 }
 function renderStarRating(academyId) {
   const ratings = getUserRatings();
@@ -1382,28 +1458,35 @@ function closeInquiry() { document.getElementById('inquiryModal').style.display 
 
 /* ===== Training Partners ===== */
 function getPartnerRequests() {
-  try { return JSON.parse(localStorage.getItem('tennis-partners')) || {}; } catch { return {}; }
+  try { return JSON.parse(localStorage.getItem(getSportConfig().storagePrefix + '-partners')) || {}; } catch { return {}; }
 }
 function togglePartnerRequest(id) {
   const partners = getPartnerRequests();
   if (partners[id]) delete partners[id];
   else partners[id] = { date: new Date().toISOString().split('T')[0] };
-  localStorage.setItem('tennis-partners', JSON.stringify(partners));
+  localStorage.setItem(getSportConfig().storagePrefix + '-partners', JSON.stringify(partners));
   applyAndRender();
   showToast(partners[id] ? '🤝 Marked as looking for partners!' : 'Removed partner request');
 }
 
 /* ===== News Feed ===== */
-const NEWS_ITEMS = [
-  { date: "2026-04-15", text: "Tipsarević Tennis Academy announces new summer camp dates", academy: "tipsarevic" },
-  { date: "2026-04-10", text: "Belgrade Open 2026 draws announced — several academy players competing", academy: null },
-  { date: "2026-04-05", text: "Love4Tennis Academy opens new indoor courts in Bratislava", academy: "love4tennis" },
-  { date: "2026-03-28", text: "Ilirija Tennis Academy launches Tennis + Nature program for 2026 season", academy: "ilirija" },
-  { date: "2026-03-20", text: "Czech Republic academies report record junior enrollment", academy: null },
-  { date: "2026-03-15", text: "New partnership: PZTA and local Belgrade schools for junior development", academy: "pzta" }
-];
+if (typeof NEWS_ITEMS === 'undefined') {
+  var NEWS_ITEMS = [
+    { date: "2026-04-15", text: "Tipsarević Tennis Academy announces new summer camp dates", academy: "tipsarevic" },
+    { date: "2026-04-10", text: "Belgrade Open 2026 draws announced — several academy players competing", academy: null },
+    { date: "2026-04-05", text: "Love4Tennis Academy opens new indoor courts in Bratislava", academy: "love4tennis" },
+    { date: "2026-03-28", text: "Ilirija Tennis Academy launches Tennis + Nature program for 2026 season", academy: "ilirija" },
+    { date: "2026-03-20", text: "Czech Republic academies report record junior enrollment", academy: null },
+    { date: "2026-03-15", text: "New partnership: PZTA and local Belgrade schools for junior development", academy: "pzta" }
+  ];
+}
 
 function renderNews() {
+  if (typeof NEWS_ITEMS === 'undefined' || !NEWS_ITEMS.length) {
+    const ticker = document.getElementById('newsTicker');
+    if (ticker) ticker.style.display = 'none';
+    return;
+  }
   const scroll = document.getElementById('newsScroll');
   if (!scroll) return;
   scroll.innerHTML = NEWS_ITEMS.map(n => {

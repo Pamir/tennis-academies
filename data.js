@@ -1,3 +1,4 @@
+const SPORT_TYPE = 'tennis';
 const ACADEMIES = [
   {
     id: "pzta",
