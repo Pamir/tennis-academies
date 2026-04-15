@@ -49,7 +49,26 @@ const ACADEMIES = [
         { name: "Kalemegdanska Terasa", cuisine: "Serbian Fine Dining", distanceKm: 0.8, priceRange: "€€€€", rating: 4.7, vegetarian: true, outdoor: true },
         { name: "Burger House", cuisine: "American", distanceKm: 0.4, priceRange: "€", rating: 4.2, vegetarian: false, outdoor: false },
         { name: "Little Bay", cuisine: "International", distanceKm: 1, priceRange: "€€€", rating: 4.4, vegetarian: true, outdoor: false }
-      ]
+      ],
+    nearbyMedical: [
+        { name: "Clinical Center of Serbia (KCS)", type: "Hospital", distanceKm: 2, phone: "+381 11 361 5555", emergency: true },
+        { name: "Atlas General Hospital", type: "Hospital", distanceKm: 3.5, phone: "+381 11 381 2222", emergency: true },
+        { name: "Fiziomedika Sports Physiotherapy", type: "Physiotherapy", distanceKm: 1.5, phone: "+381 11 344 0055", emergency: false }
+      ],
+    costOfLiving: { rent1Bed: "€350", meal: "€6", monthlyFood: "€250", transport: "€30", currency: "RSD", summary: "Belgrade is very affordable by European standards" },
+    scholarships: { available: true, details: "Merit-based scholarships for top junior players. Contact academy for application details and eligibility criteria." },
+    visaInfo: { schengen: false, eu: false, visaFreeCountries: "EU/EEA citizens, USA, Canada, Australia, UK — visa-free up to 90 days", notes: "Non-EU citizens may need a tourist visa for stays over 90 days. Student visa available for long-term programs." },
+    airportTransfers: [
+        { mode: "Taxi", duration: "20 min", cost: "€15–20", notes: "Available at airport, use licensed taxis" },
+        { mode: "Bus", duration: "45 min", cost: "€1.50", notes: "Line 72 airport bus to city center" },
+        { mode: "Private Transfer", duration: "20 min", cost: "€25–35", notes: "Pre-book online" }
+      ],
+    nearbyTournaments: [
+        { name: "Belgrade Open", level: "ATP 250", surface: "Clay", month: "April", venue: "Novak Tennis Center" },
+        { name: "Serbia Open Junior", level: "ITF Junior", surface: "Clay", month: "June", venue: "TC Novak" },
+        { name: "Serbian National Championships", level: "National", surface: "Clay", month: "September", venue: "TC Belgrade" }
+      ],
+    videoTour: null
   },
   {
     id: "tipsarevic",
@@ -93,7 +112,26 @@ const ACADEMIES = [
         { name: "Kalemegdanska Terasa", cuisine: "Serbian Fine Dining", distanceKm: 0.8, priceRange: "€€€€", rating: 4.7, vegetarian: true, outdoor: true },
         { name: "Burger House", cuisine: "American", distanceKm: 0.4, priceRange: "€", rating: 4.2, vegetarian: false, outdoor: false },
         { name: "Little Bay", cuisine: "International", distanceKm: 1, priceRange: "€€€", rating: 4.4, vegetarian: true, outdoor: false }
-      ]
+      ],
+    nearbyMedical: [
+        { name: "Clinical Center of Serbia (KCS)", type: "Hospital", distanceKm: 2, phone: "+381 11 361 5555", emergency: true },
+        { name: "Atlas General Hospital", type: "Hospital", distanceKm: 3.5, phone: "+381 11 381 2222", emergency: true },
+        { name: "Fiziomedika Sports Physiotherapy", type: "Physiotherapy", distanceKm: 1.5, phone: "+381 11 344 0055", emergency: false }
+      ],
+    costOfLiving: { rent1Bed: "€350", meal: "€6", monthlyFood: "€250", transport: "€30", currency: "RSD", summary: "Belgrade is very affordable by European standards" },
+    scholarships: { available: true, details: "Scholarships available for exceptional junior talent. Contact Tipsarević Tennis Academy directly for evaluation." },
+    visaInfo: { schengen: false, eu: false, visaFreeCountries: "EU/EEA citizens, USA, Canada, Australia, UK — visa-free up to 90 days", notes: "Non-EU citizens may need a tourist visa for stays over 90 days. Student visa available for long-term programs." },
+    airportTransfers: [
+        { mode: "Taxi", duration: "20 min", cost: "€15–20", notes: "Available at airport, use licensed taxis" },
+        { mode: "Bus", duration: "45 min", cost: "€1.50", notes: "Line 72 airport bus to city center" },
+        { mode: "Private Transfer", duration: "20 min", cost: "€25–35", notes: "Pre-book online" }
+      ],
+    nearbyTournaments: [
+        { name: "Belgrade Open", level: "ATP 250", surface: "Clay", month: "April", venue: "Novak Tennis Center" },
+        { name: "Serbia Open Junior", level: "ITF Junior", surface: "Clay", month: "June", venue: "TC Novak" },
+        { name: "Serbian National Championships", level: "National", surface: "Clay", month: "September", venue: "TC Belgrade" }
+      ],
+    videoTour: "https://www.youtube.com/watch?v=YqzGMoQE7TE"
   },
   {
     id: "vranes",
@@ -137,7 +175,26 @@ const ACADEMIES = [
         { name: "Kalemegdanska Terasa", cuisine: "Serbian Fine Dining", distanceKm: 0.8, priceRange: "€€€€", rating: 4.7, vegetarian: true, outdoor: true },
         { name: "Burger House", cuisine: "American", distanceKm: 0.4, priceRange: "€", rating: 4.2, vegetarian: false, outdoor: false },
         { name: "Little Bay", cuisine: "International", distanceKm: 1, priceRange: "€€€", rating: 4.4, vegetarian: true, outdoor: false }
-      ]
+      ],
+    nearbyMedical: [
+        { name: "Clinical Center of Serbia (KCS)", type: "Hospital", distanceKm: 2, phone: "+381 11 361 5555", emergency: true },
+        { name: "Atlas General Hospital", type: "Hospital", distanceKm: 3.5, phone: "+381 11 381 2222", emergency: true },
+        { name: "Fiziomedika Sports Physiotherapy", type: "Physiotherapy", distanceKm: 1.5, phone: "+381 11 344 0055", emergency: false }
+      ],
+    costOfLiving: { rent1Bed: "€350", meal: "€6", monthlyFood: "€250", transport: "€30", currency: "RSD", summary: "Belgrade is very affordable by European standards" },
+    scholarships: { available: false, details: "No formal scholarship program currently. Contact academy for group discount options." },
+    visaInfo: { schengen: false, eu: false, visaFreeCountries: "EU/EEA citizens, USA, Canada, Australia, UK — visa-free up to 90 days", notes: "Non-EU citizens may need a tourist visa for stays over 90 days. Student visa available for long-term programs." },
+    airportTransfers: [
+        { mode: "Taxi", duration: "20 min", cost: "€15–20", notes: "Available at airport, use licensed taxis" },
+        { mode: "Bus", duration: "45 min", cost: "€1.50", notes: "Line 72 airport bus to city center" },
+        { mode: "Private Transfer", duration: "20 min", cost: "€25–35", notes: "Pre-book online" }
+      ],
+    nearbyTournaments: [
+        { name: "Belgrade Open", level: "ATP 250", surface: "Clay", month: "April", venue: "Novak Tennis Center" },
+        { name: "Serbia Open Junior", level: "ITF Junior", surface: "Clay", month: "June", venue: "TC Novak" },
+        { name: "Serbian National Championships", level: "National", surface: "Clay", month: "September", venue: "TC Belgrade" }
+      ],
+    videoTour: null
   },
   {
     id: "premium-tennis",
@@ -180,7 +237,26 @@ const ACADEMIES = [
         { name: "Kalemegdanska Terasa", cuisine: "Serbian Fine Dining", distanceKm: 0.8, priceRange: "€€€€", rating: 4.7, vegetarian: true, outdoor: true },
         { name: "Burger House", cuisine: "American", distanceKm: 0.4, priceRange: "€", rating: 4.2, vegetarian: false, outdoor: false },
         { name: "Little Bay", cuisine: "International", distanceKm: 1, priceRange: "€€€", rating: 4.4, vegetarian: true, outdoor: false }
-      ]
+      ],
+    nearbyMedical: [
+        { name: "Clinical Center of Serbia (KCS)", type: "Hospital", distanceKm: 2, phone: "+381 11 361 5555", emergency: true },
+        { name: "Atlas General Hospital", type: "Hospital", distanceKm: 3.5, phone: "+381 11 381 2222", emergency: true },
+        { name: "Fiziomedika Sports Physiotherapy", type: "Physiotherapy", distanceKm: 1.5, phone: "+381 11 344 0055", emergency: false }
+      ],
+    costOfLiving: { rent1Bed: "€350", meal: "€6", monthlyFood: "€250", transport: "€30", currency: "RSD", summary: "Belgrade is very affordable by European standards" },
+    scholarships: { available: false, details: "No formal scholarship program currently. Flexible pricing available for long-term commitments." },
+    visaInfo: { schengen: false, eu: false, visaFreeCountries: "EU/EEA citizens, USA, Canada, Australia, UK — visa-free up to 90 days", notes: "Non-EU citizens may need a tourist visa for stays over 90 days. Student visa available for long-term programs." },
+    airportTransfers: [
+        { mode: "Taxi", duration: "20 min", cost: "€15–20", notes: "Available at airport, use licensed taxis" },
+        { mode: "Bus", duration: "45 min", cost: "€1.50", notes: "Line 72 airport bus to city center" },
+        { mode: "Private Transfer", duration: "20 min", cost: "€25–35", notes: "Pre-book online" }
+      ],
+    nearbyTournaments: [
+        { name: "Belgrade Open", level: "ATP 250", surface: "Clay", month: "April", venue: "Novak Tennis Center" },
+        { name: "Serbia Open Junior", level: "ITF Junior", surface: "Clay", month: "June", venue: "TC Novak" },
+        { name: "Serbian National Championships", level: "National", surface: "Clay", month: "September", venue: "TC Belgrade" }
+      ],
+    videoTour: null
   },
   {
     id: "academy-ada",
@@ -223,7 +299,26 @@ const ACADEMIES = [
         { name: "Kalemegdanska Terasa", cuisine: "Serbian Fine Dining", distanceKm: 0.8, priceRange: "€€€€", rating: 4.7, vegetarian: true, outdoor: true },
         { name: "Burger House", cuisine: "American", distanceKm: 0.4, priceRange: "€", rating: 4.2, vegetarian: false, outdoor: false },
         { name: "Little Bay", cuisine: "International", distanceKm: 1, priceRange: "€€€", rating: 4.4, vegetarian: true, outdoor: false }
-      ]
+      ],
+    nearbyMedical: [
+        { name: "Clinical Center of Serbia (KCS)", type: "Hospital", distanceKm: 2, phone: "+381 11 361 5555", emergency: true },
+        { name: "Atlas General Hospital", type: "Hospital", distanceKm: 3.5, phone: "+381 11 381 2222", emergency: true },
+        { name: "Fiziomedika Sports Physiotherapy", type: "Physiotherapy", distanceKm: 1.5, phone: "+381 11 344 0055", emergency: false }
+      ],
+    costOfLiving: { rent1Bed: "€350", meal: "€6", monthlyFood: "€250", transport: "€30", currency: "RSD", summary: "Belgrade is very affordable by European standards" },
+    scholarships: { available: false, details: "No formal scholarship program currently. Contact for junior development pricing." },
+    visaInfo: { schengen: false, eu: false, visaFreeCountries: "EU/EEA citizens, USA, Canada, Australia, UK — visa-free up to 90 days", notes: "Non-EU citizens may need a tourist visa for stays over 90 days. Student visa available for long-term programs." },
+    airportTransfers: [
+        { mode: "Taxi", duration: "20 min", cost: "€15–20", notes: "Available at airport, use licensed taxis" },
+        { mode: "Bus", duration: "45 min", cost: "€1.50", notes: "Line 72 airport bus to city center" },
+        { mode: "Private Transfer", duration: "20 min", cost: "€25–35", notes: "Pre-book online" }
+      ],
+    nearbyTournaments: [
+        { name: "Belgrade Open", level: "ATP 250", surface: "Clay", month: "April", venue: "Novak Tennis Center" },
+        { name: "Serbia Open Junior", level: "ITF Junior", surface: "Clay", month: "June", venue: "TC Novak" },
+        { name: "Serbian National Championships", level: "National", surface: "Clay", month: "September", venue: "TC Belgrade" }
+      ],
+    videoTour: null
   },
   {
     id: "supreme-tennis",
@@ -264,7 +359,26 @@ const ACADEMIES = [
         { name: "Kalemegdanska Terasa", cuisine: "Serbian Fine Dining", distanceKm: 0.8, priceRange: "€€€€", rating: 4.7, vegetarian: true, outdoor: true },
         { name: "Burger House", cuisine: "American", distanceKm: 0.4, priceRange: "€", rating: 4.2, vegetarian: false, outdoor: false },
         { name: "Little Bay", cuisine: "International", distanceKm: 1, priceRange: "€€€", rating: 4.4, vegetarian: true, outdoor: false }
-      ]
+      ],
+    nearbyMedical: [
+        { name: "Clinical Center of Serbia (KCS)", type: "Hospital", distanceKm: 2, phone: "+381 11 361 5555", emergency: true },
+        { name: "Atlas General Hospital", type: "Hospital", distanceKm: 3.5, phone: "+381 11 381 2222", emergency: true },
+        { name: "Fiziomedika Sports Physiotherapy", type: "Physiotherapy", distanceKm: 1.5, phone: "+381 11 344 0055", emergency: false }
+      ],
+    costOfLiving: { rent1Bed: "€350", meal: "€6", monthlyFood: "€250", transport: "€30", currency: "RSD", summary: "Belgrade is very affordable by European standards" },
+    scholarships: { available: false, details: "No formal scholarship program currently. Contact for package deals." },
+    visaInfo: { schengen: false, eu: false, visaFreeCountries: "EU/EEA citizens, USA, Canada, Australia, UK — visa-free up to 90 days", notes: "Non-EU citizens may need a tourist visa for stays over 90 days. Student visa available for long-term programs." },
+    airportTransfers: [
+        { mode: "Taxi", duration: "20 min", cost: "€15–20", notes: "Available at airport, use licensed taxis" },
+        { mode: "Bus", duration: "45 min", cost: "€1.50", notes: "Line 72 airport bus to city center" },
+        { mode: "Private Transfer", duration: "20 min", cost: "€25–35", notes: "Pre-book online" }
+      ],
+    nearbyTournaments: [
+        { name: "Belgrade Open", level: "ATP 250", surface: "Clay", month: "April", venue: "Novak Tennis Center" },
+        { name: "Serbia Open Junior", level: "ITF Junior", surface: "Clay", month: "June", venue: "TC Novak" },
+        { name: "Serbian National Championships", level: "National", surface: "Clay", month: "September", venue: "TC Belgrade" }
+      ],
+    videoTour: null
   },
   {
     id: "serbia-tennis-academy",
@@ -306,7 +420,26 @@ const ACADEMIES = [
         { name: "Kalemegdanska Terasa", cuisine: "Serbian Fine Dining", distanceKm: 0.8, priceRange: "€€€€", rating: 4.7, vegetarian: true, outdoor: true },
         { name: "Burger House", cuisine: "American", distanceKm: 0.4, priceRange: "€", rating: 4.2, vegetarian: false, outdoor: false },
         { name: "Little Bay", cuisine: "International", distanceKm: 1, priceRange: "€€€", rating: 4.4, vegetarian: true, outdoor: false }
-      ]
+      ],
+    nearbyMedical: [
+        { name: "Clinical Center of Serbia (KCS)", type: "Hospital", distanceKm: 2, phone: "+381 11 361 5555", emergency: true },
+        { name: "Atlas General Hospital", type: "Hospital", distanceKm: 3.5, phone: "+381 11 381 2222", emergency: true },
+        { name: "Fiziomedika Sports Physiotherapy", type: "Physiotherapy", distanceKm: 1.5, phone: "+381 11 344 0055", emergency: false }
+      ],
+    costOfLiving: { rent1Bed: "€350", meal: "€6", monthlyFood: "€250", transport: "€30", currency: "RSD", summary: "Belgrade is very affordable by European standards" },
+    scholarships: { available: true, details: "Scholarships available for talented Serbian junior players through Tennis Federation partnerships." },
+    visaInfo: { schengen: false, eu: false, visaFreeCountries: "EU/EEA citizens, USA, Canada, Australia, UK — visa-free up to 90 days", notes: "Non-EU citizens may need a tourist visa for stays over 90 days. Student visa available for long-term programs." },
+    airportTransfers: [
+        { mode: "Taxi", duration: "20 min", cost: "€15–20", notes: "Available at airport, use licensed taxis" },
+        { mode: "Bus", duration: "45 min", cost: "€1.50", notes: "Line 72 airport bus to city center" },
+        { mode: "Private Transfer", duration: "20 min", cost: "€25–35", notes: "Pre-book online" }
+      ],
+    nearbyTournaments: [
+        { name: "Belgrade Open", level: "ATP 250", surface: "Clay", month: "April", venue: "Novak Tennis Center" },
+        { name: "Serbia Open Junior", level: "ITF Junior", surface: "Clay", month: "June", venue: "TC Novak" },
+        { name: "Serbian National Championships", level: "National", surface: "Clay", month: "September", venue: "TC Belgrade" }
+      ],
+    videoTour: null
   },
   {
     id: "ljubicic",
@@ -351,7 +484,25 @@ const ACADEMIES = [
         { name: "Pizzeria Draga", cuisine: "Italian", distanceKm: 0.3, priceRange: "€", rating: 4.1, vegetarian: true, outdoor: true },
         { name: "Restaurant Diana", cuisine: "Fine Dining", distanceKm: 0.4, priceRange: "€€€€", rating: 4.7, vegetarian: true, outdoor: true },
         { name: "Lanterna Grill", cuisine: "Grilled Meats & Fish", distanceKm: 0.6, priceRange: "€€", rating: 4.3, vegetarian: false, outdoor: true }
-      ]
+      ],
+    nearbyMedical: [
+        { name: "Dom zdravlja Mali Lošinj", type: "Hospital", distanceKm: 1, phone: "+385 51 231 024", emergency: true },
+        { name: "Lječilište Veli Lošinj", type: "Rehabilitation", distanceKm: 3, phone: "+385 51 236 111", emergency: false },
+        { name: "Fizioterapija Mali Lošinj", type: "Physiotherapy", distanceKm: 1.5, phone: "+385 51 232 500", emergency: false }
+      ],
+    costOfLiving: { rent1Bed: "€500", meal: "€10", monthlyFood: "€300", transport: "€40", currency: "EUR", summary: "Seasonal island prices; moderate cost of living, higher in summer" },
+    scholarships: { available: true, details: "Merit-based scholarships for elite junior players. Founded by former ATP No. 3 Ivan Ljubičić." },
+    visaInfo: { schengen: true, eu: true, visaFreeCountries: "EU/EEA citizens have freedom of movement. USA, Canada, Australia, UK — visa-free up to 90 days in Schengen area", notes: "Croatia joined the Schengen Area in 2023. Non-EU citizens can stay up to 90 days in any 180-day period." },
+    airportTransfers: [
+        { mode: "Taxi", duration: "15 min", cost: "€10–15", notes: "From Mali Lošinj airfield; limited flights" },
+        { mode: "Ferry + Bus", duration: "3 hrs", cost: "€15–25", notes: "Ferry from Rijeka or Zadar to Mali Lošinj" },
+        { mode: "Private Transfer", duration: "2.5 hrs", cost: "€120–180", notes: "From Rijeka or Zagreb airport" }
+      ],
+    nearbyTournaments: [
+        { name: "Lošinj Cup", level: "ITF Junior", surface: "Clay", month: "July", venue: "TC Lošinj" },
+        { name: "Croatian Junior Championships", level: "National Junior", surface: "Clay", month: "August", venue: "Various" }
+      ],
+    videoTour: "https://www.youtube.com/watch?v=5F3kcVjGwGI"
   },
   {
     id: "ilirija",
@@ -400,7 +551,25 @@ const ACADEMIES = [
         { name: "Pizzeria Pontus", cuisine: "Italian", distanceKm: 0.4, priceRange: "€", rating: 4, vegetarian: true, outdoor: true },
         { name: "Restoran Marina", cuisine: "Croatian", distanceKm: 0.5, priceRange: "€€", rating: 4.3, vegetarian: false, outdoor: true },
         { name: "Konoba Barba", cuisine: "Grilled Fish", distanceKm: 0.6, priceRange: "€€€", rating: 4.4, vegetarian: false, outdoor: true }
-      ]
+      ],
+    nearbyMedical: [
+        { name: "Dom zdravlja Biograd na Moru", type: "Hospital", distanceKm: 1, phone: "+385 23 383 244", emergency: true },
+        { name: "Opća bolnica Zadar", type: "Hospital", distanceKm: 28, phone: "+385 23 505 505", emergency: true },
+        { name: "Fizikalna terapija Biograd", type: "Physiotherapy", distanceKm: 0.8, phone: "+385 23 384 100", emergency: false }
+      ],
+    costOfLiving: { rent1Bed: "€450", meal: "€9", monthlyFood: "€280", transport: "€35", currency: "EUR", summary: "Moderate coastal Croatian town; cheaper than Split or Dubrovnik" },
+    scholarships: { available: false, details: "No formal scholarship program currently. Seasonal discounts available for multi-week bookings." },
+    visaInfo: { schengen: true, eu: true, visaFreeCountries: "EU/EEA citizens have freedom of movement. USA, Canada, Australia, UK — visa-free up to 90 days in Schengen area", notes: "Croatia joined the Schengen Area in 2023. Non-EU citizens can stay up to 90 days in any 180-day period." },
+    airportTransfers: [
+        { mode: "Taxi", duration: "30 min", cost: "€30–40", notes: "From Zadar Airport (ZAD)" },
+        { mode: "Bus", duration: "50 min", cost: "€5", notes: "Zadar Airport to Biograd via bus" },
+        { mode: "Private Transfer", duration: "25 min", cost: "€40–55", notes: "Pre-book from Zadar Airport" }
+      ],
+    nearbyTournaments: [
+        { name: "Zadar Open", level: "ITF Junior", surface: "Clay", month: "July", venue: "TC Zadar" },
+        { name: "Croatian Dalmatia Cup", level: "National", surface: "Clay", month: "August", venue: "Various Dalmatia venues" }
+      ],
+    videoTour: null
   },
   {
     id: "tk-firule",
@@ -438,7 +607,26 @@ const ACADEMIES = [
         { name: "Uje Oil Bar", cuisine: "Croatian Modern", distanceKm: 0.4, priceRange: "€€", rating: 4.7, vegetarian: true, outdoor: true },
         { name: "Pizzeria Portas", cuisine: "Italian", distanceKm: 0.1, priceRange: "€", rating: 4.2, vegetarian: true, outdoor: false },
         { name: "Dvor", cuisine: "Fine Dining", distanceKm: 1.5, priceRange: "€€€€", rating: 4.8, vegetarian: true, outdoor: true }
-      ]
+      ],
+    nearbyMedical: [
+        { name: "KBC Split (University Hospital)", type: "Hospital", distanceKm: 2.5, phone: "+385 21 556 111", emergency: true },
+        { name: "Poliklinika Medico", type: "Sports Medicine", distanceKm: 1.5, phone: "+385 21 490 290", emergency: false },
+        { name: "Fizioterapija Split Centar", type: "Physiotherapy", distanceKm: 1, phone: "+385 21 345 678", emergency: false }
+      ],
+    costOfLiving: { rent1Bed: "€550", meal: "€10", monthlyFood: "€300", transport: "€35", currency: "EUR", summary: "Moderate to high for Croatia; tourist-area prices in summer" },
+    scholarships: { available: true, details: "Scholarship support through Croatian Tennis Federation for top-ranked juniors." },
+    visaInfo: { schengen: true, eu: true, visaFreeCountries: "EU/EEA citizens have freedom of movement. USA, Canada, Australia, UK — visa-free up to 90 days in Schengen area", notes: "Croatia joined the Schengen Area in 2023. Non-EU citizens can stay up to 90 days in any 180-day period." },
+    airportTransfers: [
+        { mode: "Taxi", duration: "30 min", cost: "€30–40", notes: "From Split Airport (SPU), use licensed taxis" },
+        { mode: "Bus", duration: "50 min", cost: "€5", notes: "Shuttle bus from Split Airport to city center" },
+        { mode: "Private Transfer", duration: "25 min", cost: "€35–50", notes: "Pre-book online" }
+      ],
+    nearbyTournaments: [
+        { name: "Split Open", level: "ITF", surface: "Clay", month: "June", venue: "TK Firule" },
+        { name: "Croatian Junior Championships", level: "National Junior", surface: "Clay", month: "July", venue: "Various" },
+        { name: "Dalmatia Tennis Cup", level: "ITF Junior", surface: "Clay", month: "August", venue: "Split" }
+      ],
+    videoTour: null
   },
   {
     id: "tenis-akademija-split",
@@ -476,7 +664,26 @@ const ACADEMIES = [
         { name: "Uje Oil Bar", cuisine: "Croatian Modern", distanceKm: 0.4, priceRange: "€€", rating: 4.7, vegetarian: true, outdoor: true },
         { name: "Pizzeria Portas", cuisine: "Italian", distanceKm: 0.1, priceRange: "€", rating: 4.2, vegetarian: true, outdoor: false },
         { name: "Dvor", cuisine: "Fine Dining", distanceKm: 1.5, priceRange: "€€€€", rating: 4.8, vegetarian: true, outdoor: true }
-      ]
+      ],
+    nearbyMedical: [
+        { name: "KBC Split (University Hospital)", type: "Hospital", distanceKm: 2.5, phone: "+385 21 556 111", emergency: true },
+        { name: "Poliklinika Medico", type: "Sports Medicine", distanceKm: 1.5, phone: "+385 21 490 290", emergency: false },
+        { name: "Fizioterapija Split Centar", type: "Physiotherapy", distanceKm: 1, phone: "+385 21 345 678", emergency: false }
+      ],
+    costOfLiving: { rent1Bed: "€550", meal: "€10", monthlyFood: "€300", transport: "€35", currency: "EUR", summary: "Moderate to high for Croatia; tourist-area prices in summer" },
+    scholarships: { available: false, details: "No formal scholarship program currently. Contact for junior group rates." },
+    visaInfo: { schengen: true, eu: true, visaFreeCountries: "EU/EEA citizens have freedom of movement. USA, Canada, Australia, UK — visa-free up to 90 days in Schengen area", notes: "Croatia joined the Schengen Area in 2023. Non-EU citizens can stay up to 90 days in any 180-day period." },
+    airportTransfers: [
+        { mode: "Taxi", duration: "30 min", cost: "€30–40", notes: "From Split Airport (SPU), use licensed taxis" },
+        { mode: "Bus", duration: "50 min", cost: "€5", notes: "Shuttle bus from Split Airport to city center" },
+        { mode: "Private Transfer", duration: "25 min", cost: "€35–50", notes: "Pre-book online" }
+      ],
+    nearbyTournaments: [
+        { name: "Split Open", level: "ITF", surface: "Clay", month: "June", venue: "TK Firule" },
+        { name: "Croatian Junior Championships", level: "National Junior", surface: "Clay", month: "July", venue: "Various" },
+        { name: "Dalmatia Tennis Cup", level: "ITF Junior", surface: "Clay", month: "August", venue: "Split" }
+      ],
+    videoTour: null
   },
   {
     id: "tk-agrofert",
@@ -517,7 +724,26 @@ const ACADEMIES = [
         { name: "Restaurace Kovárna", cuisine: "International", distanceKm: 0.4, priceRange: "€€", rating: 4.2, vegetarian: true, outdoor: false },
         { name: "Pizzeria Rosmarino", cuisine: "Italian", distanceKm: 0.6, priceRange: "€", rating: 4, vegetarian: true, outdoor: false },
         { name: "Restaurace Na Zámku", cuisine: "Czech Fine Dining", distanceKm: 0.8, priceRange: "€€€", rating: 4.5, vegetarian: true, outdoor: true }
-      ]
+      ],
+    nearbyMedical: [
+        { name: "Nemocnice Prostějov", type: "Hospital", distanceKm: 2, phone: "+420 582 315 111", emergency: true },
+        { name: "FN Olomouc (University Hospital)", type: "Hospital", distanceKm: 20, phone: "+420 585 851 111", emergency: true },
+        { name: "Rehabilitace Prostějov", type: "Physiotherapy", distanceKm: 1.5, phone: "+420 582 345 678", emergency: false }
+      ],
+    costOfLiving: { rent1Bed: "€350", meal: "€7", monthlyFood: "€220", transport: "€25", currency: "CZK", summary: "Very affordable small Czech city; much cheaper than Prague" },
+    scholarships: { available: true, details: "Major scholarship program through Agrofert sponsorship. One of the most well-funded academies in Central Europe." },
+    visaInfo: { schengen: true, eu: true, visaFreeCountries: "EU/EEA citizens have freedom of movement. USA, Canada, Australia, UK — visa-free up to 90 days in Schengen area", notes: "Schengen visa allows travel across 27 European countries. Long-term student visa available for extended programs." },
+    airportTransfers: [
+        { mode: "Taxi", duration: "1 hr 30 min", cost: "€60–80", notes: "From Brno Airport (BRQ), 80 km" },
+        { mode: "Train + Bus", duration: "2 hrs", cost: "€8–12", notes: "Train from Brno to Prostějov" },
+        { mode: "Private Transfer", duration: "1 hr 20 min", cost: "€70–100", notes: "Pre-book from Brno or Prague airports" }
+      ],
+    nearbyTournaments: [
+        { name: "Czech Open Prostějov", level: "WTA 250", surface: "Clay", month: "April", venue: "TK Agrofert Prostějov" },
+        { name: "Moneta Czech Open", level: "ITF", surface: "Clay", month: "May", venue: "Prostějov" },
+        { name: "Czech Junior Championships", level: "National Junior", surface: "Clay", month: "June", venue: "Prostějov" }
+      ],
+    videoTour: "https://www.youtube.com/watch?v=3jQWMPaVVkQ"
   },
   {
     id: "sparta-prague",
@@ -557,7 +783,26 @@ const ACADEMIES = [
         { name: "Pasta Fresca", cuisine: "Italian", distanceKm: 0.3, priceRange: "€€", rating: 4.3, vegetarian: true, outdoor: true },
         { name: "Café Savoy", cuisine: "French-Czech", distanceKm: 1, priceRange: "€€€", rating: 4.6, vegetarian: true, outdoor: true },
         { name: "Kantýna", cuisine: "Steak & Grill", distanceKm: 0.6, priceRange: "€€", rating: 4.4, vegetarian: false, outdoor: false }
-      ]
+      ],
+    nearbyMedical: [
+        { name: "Všeobecná fakultní nemocnice (VFN)", type: "Hospital", distanceKm: 2, phone: "+420 224 961 111", emergency: true },
+        { name: "Canadian Medical Care Prague", type: "Sports Medicine", distanceKm: 3, phone: "+420 235 360 133", emergency: false },
+        { name: "Klinika Malvazinky", type: "Physiotherapy", distanceKm: 4, phone: "+420 251 116 111", emergency: false }
+      ],
+    costOfLiving: { rent1Bed: "€650", meal: "€8", monthlyFood: "€280", transport: "€25", currency: "CZK", summary: "Moderate by Western European standards; rising rents in the capital" },
+    scholarships: { available: true, details: "Merit-based scholarships for top Czech and international junior players. Contact for tryout schedule." },
+    visaInfo: { schengen: true, eu: true, visaFreeCountries: "EU/EEA citizens have freedom of movement. USA, Canada, Australia, UK — visa-free up to 90 days in Schengen area", notes: "Schengen visa allows travel across 27 European countries. Long-term student visa available for extended programs." },
+    airportTransfers: [
+        { mode: "Taxi", duration: "30 min", cost: "€25–30", notes: "From Václav Havel Airport (PRG), use AAA or Liftago" },
+        { mode: "Bus + Metro", duration: "50 min", cost: "€1.50", notes: "Bus 119 to Nádraží Veleslavín, then metro" },
+        { mode: "Private Transfer", duration: "25 min", cost: "€30–45", notes: "Pre-book online, fixed price" }
+      ],
+    nearbyTournaments: [
+        { name: "Livesport Prague Open", level: "WTA 250", surface: "Clay", month: "July", venue: "TK Sparta Praha" },
+        { name: "Prague Junior Open", level: "ITF Junior", surface: "Clay", month: "May", venue: "CLTK Praha" },
+        { name: "Czech Indoor Championships", level: "National", surface: "Hard", month: "November", venue: "Prague" }
+      ],
+    videoTour: "https://www.youtube.com/watch?v=hIvMLKqwh8c"
   },
   {
     id: "pliskova-academy",
@@ -603,7 +848,26 @@ const ACADEMIES = [
         { name: "Pasta Fresca", cuisine: "Italian", distanceKm: 0.3, priceRange: "€€", rating: 4.3, vegetarian: true, outdoor: true },
         { name: "Café Savoy", cuisine: "French-Czech", distanceKm: 1, priceRange: "€€€", rating: 4.6, vegetarian: true, outdoor: true },
         { name: "Kantýna", cuisine: "Steak & Grill", distanceKm: 0.6, priceRange: "€€", rating: 4.4, vegetarian: false, outdoor: false }
-      ]
+      ],
+    nearbyMedical: [
+        { name: "Všeobecná fakultní nemocnice (VFN)", type: "Hospital", distanceKm: 2, phone: "+420 224 961 111", emergency: true },
+        { name: "Canadian Medical Care Prague", type: "Sports Medicine", distanceKm: 3, phone: "+420 235 360 133", emergency: false },
+        { name: "Klinika Malvazinky", type: "Physiotherapy", distanceKm: 4, phone: "+420 251 116 111", emergency: false }
+      ],
+    costOfLiving: { rent1Bed: "€650", meal: "€8", monthlyFood: "€280", transport: "€25", currency: "CZK", summary: "Moderate by Western European standards; rising rents in the capital" },
+    scholarships: { available: true, details: "Scholarships for promising juniors. Evaluation by former WTA World No. 1 coaching staff." },
+    visaInfo: { schengen: true, eu: true, visaFreeCountries: "EU/EEA citizens have freedom of movement. USA, Canada, Australia, UK — visa-free up to 90 days in Schengen area", notes: "Schengen visa allows travel across 27 European countries. Long-term student visa available for extended programs." },
+    airportTransfers: [
+        { mode: "Taxi", duration: "30 min", cost: "€25–30", notes: "From Václav Havel Airport (PRG), use AAA or Liftago" },
+        { mode: "Bus + Metro", duration: "50 min", cost: "€1.50", notes: "Bus 119 to Nádraží Veleslavín, then metro" },
+        { mode: "Private Transfer", duration: "25 min", cost: "€30–45", notes: "Pre-book online, fixed price" }
+      ],
+    nearbyTournaments: [
+        { name: "Livesport Prague Open", level: "WTA 250", surface: "Clay", month: "July", venue: "TK Sparta Praha" },
+        { name: "Prague Junior Open", level: "ITF Junior", surface: "Clay", month: "May", venue: "CLTK Praha" },
+        { name: "Czech Indoor Championships", level: "National", surface: "Hard", month: "November", venue: "Prague" }
+      ],
+    videoTour: null
   },
   {
     id: "cltk-praha",
@@ -641,7 +905,26 @@ const ACADEMIES = [
         { name: "Pasta Fresca", cuisine: "Italian", distanceKm: 0.3, priceRange: "€€", rating: 4.3, vegetarian: true, outdoor: true },
         { name: "Café Savoy", cuisine: "French-Czech", distanceKm: 1, priceRange: "€€€", rating: 4.6, vegetarian: true, outdoor: true },
         { name: "Kantýna", cuisine: "Steak & Grill", distanceKm: 0.6, priceRange: "€€", rating: 4.4, vegetarian: false, outdoor: false }
-      ]
+      ],
+    nearbyMedical: [
+        { name: "Všeobecná fakultní nemocnice (VFN)", type: "Hospital", distanceKm: 2, phone: "+420 224 961 111", emergency: true },
+        { name: "Canadian Medical Care Prague", type: "Sports Medicine", distanceKm: 3, phone: "+420 235 360 133", emergency: false },
+        { name: "Klinika Malvazinky", type: "Physiotherapy", distanceKm: 4, phone: "+420 251 116 111", emergency: false }
+      ],
+    costOfLiving: { rent1Bed: "€650", meal: "€8", monthlyFood: "€280", transport: "€25", currency: "CZK", summary: "Moderate by Western European standards; rising rents in the capital" },
+    scholarships: { available: true, details: "Scholarship support available through one of the oldest tennis clubs in Czech Republic." },
+    visaInfo: { schengen: true, eu: true, visaFreeCountries: "EU/EEA citizens have freedom of movement. USA, Canada, Australia, UK — visa-free up to 90 days in Schengen area", notes: "Schengen visa allows travel across 27 European countries. Long-term student visa available for extended programs." },
+    airportTransfers: [
+        { mode: "Taxi", duration: "30 min", cost: "€25–30", notes: "From Václav Havel Airport (PRG), use AAA or Liftago" },
+        { mode: "Bus + Metro", duration: "50 min", cost: "€1.50", notes: "Bus 119 to Nádraží Veleslavín, then metro" },
+        { mode: "Private Transfer", duration: "25 min", cost: "€30–45", notes: "Pre-book online, fixed price" }
+      ],
+    nearbyTournaments: [
+        { name: "Livesport Prague Open", level: "WTA 250", surface: "Clay", month: "July", venue: "TK Sparta Praha" },
+        { name: "Prague Junior Open", level: "ITF Junior", surface: "Clay", month: "May", venue: "CLTK Praha" },
+        { name: "Czech Indoor Championships", level: "National", surface: "Hard", month: "November", venue: "Prague" }
+      ],
+    videoTour: null
   },
   {
     id: "love4tennis",
@@ -687,7 +970,26 @@ const ACADEMIES = [
         { name: "Trattoria Piatto", cuisine: "Italian", distanceKm: 0.4, priceRange: "€€", rating: 4.3, vegetarian: true, outdoor: true },
         { name: "Slovak Pub", cuisine: "Slovak", distanceKm: 0.2, priceRange: "€", rating: 4.1, vegetarian: true, outdoor: false },
         { name: "Zylinder Café & Restaurant", cuisine: "International", distanceKm: 0.6, priceRange: "€€€", rating: 4.4, vegetarian: true, outdoor: true }
-      ]
+      ],
+    nearbyMedical: [
+        { name: "Univerzitná nemocnica Bratislava", type: "Hospital", distanceKm: 3, phone: "+421 2 5954 1111", emergency: true },
+        { name: "Nemocnica sv. Michala", type: "Hospital", distanceKm: 2, phone: "+421 2 3266 2030", emergency: true },
+        { name: "ProRecovery Bratislava", type: "Physiotherapy", distanceKm: 2.5, phone: "+421 2 5441 5280", emergency: false }
+      ],
+    costOfLiving: { rent1Bed: "€550", meal: "€8", monthlyFood: "€260", transport: "€30", currency: "EUR", summary: "Moderate cost of living; cheaper than Vienna but rising" },
+    scholarships: { available: true, details: "Merit-based scholarships for top junior players. Contact for evaluation criteria." },
+    visaInfo: { schengen: true, eu: true, visaFreeCountries: "EU/EEA citizens have freedom of movement. USA, Canada, Australia, UK — visa-free up to 90 days in Schengen area", notes: "Schengen visa allows travel across 27 European countries. Long-term student visa available for extended programs." },
+    airportTransfers: [
+        { mode: "Taxi", duration: "15 min", cost: "€10–15", notes: "From Bratislava Airport (BTS)" },
+        { mode: "Bus", duration: "30 min", cost: "€1.50", notes: "Bus 61 from airport to city center" },
+        { mode: "Private Transfer", duration: "15 min", cost: "€15–25", notes: "Pre-book online" }
+      ],
+    nearbyTournaments: [
+        { name: "Bratislava Open", level: "ITF", surface: "Clay", month: "June", venue: "NTC Bratislava" },
+        { name: "Slovak Open Junior", level: "ITF Junior", surface: "Clay", month: "July", venue: "Bratislava" },
+        { name: "Slovak National Championships", level: "National", surface: "Clay", month: "August", venue: "NTC Bratislava" }
+      ],
+    videoTour: null
   },
   {
     id: "hta-academy",
@@ -728,7 +1030,26 @@ const ACADEMIES = [
         { name: "Trattoria Piatto", cuisine: "Italian", distanceKm: 0.4, priceRange: "€€", rating: 4.3, vegetarian: true, outdoor: true },
         { name: "Slovak Pub", cuisine: "Slovak", distanceKm: 0.2, priceRange: "€", rating: 4.1, vegetarian: true, outdoor: false },
         { name: "Zylinder Café & Restaurant", cuisine: "International", distanceKm: 0.6, priceRange: "€€€", rating: 4.4, vegetarian: true, outdoor: true }
-      ]
+      ],
+    nearbyMedical: [
+        { name: "Univerzitná nemocnica Bratislava", type: "Hospital", distanceKm: 3, phone: "+421 2 5954 1111", emergency: true },
+        { name: "Nemocnica sv. Michala", type: "Hospital", distanceKm: 2, phone: "+421 2 3266 2030", emergency: true },
+        { name: "ProRecovery Bratislava", type: "Physiotherapy", distanceKm: 2.5, phone: "+421 2 5441 5280", emergency: false }
+      ],
+    costOfLiving: { rent1Bed: "€550", meal: "€8", monthlyFood: "€260", transport: "€30", currency: "EUR", summary: "Moderate cost of living; cheaper than Vienna but rising" },
+    scholarships: { available: false, details: "No formal scholarship program currently. Contact for group and long-term rates." },
+    visaInfo: { schengen: true, eu: true, visaFreeCountries: "EU/EEA citizens have freedom of movement. USA, Canada, Australia, UK — visa-free up to 90 days in Schengen area", notes: "Schengen visa allows travel across 27 European countries. Long-term student visa available for extended programs." },
+    airportTransfers: [
+        { mode: "Taxi", duration: "15 min", cost: "€10–15", notes: "From Bratislava Airport (BTS)" },
+        { mode: "Bus", duration: "30 min", cost: "€1.50", notes: "Bus 61 from airport to city center" },
+        { mode: "Private Transfer", duration: "15 min", cost: "€15–25", notes: "Pre-book online" }
+      ],
+    nearbyTournaments: [
+        { name: "Bratislava Open", level: "ITF", surface: "Clay", month: "June", venue: "NTC Bratislava" },
+        { name: "Slovak Open Junior", level: "ITF Junior", surface: "Clay", month: "July", venue: "Bratislava" },
+        { name: "Slovak National Championships", level: "National", surface: "Clay", month: "August", venue: "NTC Bratislava" }
+      ],
+    videoTour: null
   },
   {
     id: "tenis-kozerki",
@@ -771,7 +1092,25 @@ const ACADEMIES = [
         { name: "Pizzeria Bella", cuisine: "Italian", distanceKm: 4, priceRange: "€", rating: 4, vegetarian: true, outdoor: false },
         { name: "Karczma Jaskółka", cuisine: "Polish Country", distanceKm: 6, priceRange: "€", rating: 4.2, vegetarian: true, outdoor: true },
         { name: "Restauracja Pałacowa", cuisine: "Fine Dining", distanceKm: 8, priceRange: "€€€€", rating: 4.6, vegetarian: true, outdoor: true }
-      ]
+      ],
+    nearbyMedical: [
+        { name: "Szpital Grochowski", type: "Hospital", distanceKm: 15, phone: "+48 22 518 81 00", emergency: true },
+        { name: "Carolina Medical Center", type: "Sports Medicine", distanceKm: 18, phone: "+48 22 354 67 00", emergency: false },
+        { name: "Fizjoterapia Kozerki", type: "Physiotherapy", distanceKm: 2, phone: "+48 22 757 00 10", emergency: false }
+      ],
+    costOfLiving: { rent1Bed: "€500", meal: "€7", monthlyFood: "€250", transport: "€30", currency: "PLN", summary: "Suburban Warsaw area; slightly cheaper than central Warsaw" },
+    scholarships: { available: true, details: "Scholarships available for talented Polish juniors. Contact academy for details." },
+    visaInfo: { schengen: true, eu: true, visaFreeCountries: "EU/EEA citizens have freedom of movement. USA, Canada, Australia, UK — visa-free up to 90 days in Schengen area", notes: "Schengen visa allows travel across 27 European countries. Long-term student visa available for extended programs." },
+    airportTransfers: [
+        { mode: "Taxi", duration: "40 min", cost: "€25–35", notes: "From Warsaw Chopin Airport (WAW)" },
+        { mode: "Train + Taxi", duration: "1 hr", cost: "€8–12", notes: "Train to Grodzisk Mazowiecki, then taxi" },
+        { mode: "Private Transfer", duration: "35 min", cost: "€35–50", notes: "Pre-book from Warsaw airport" }
+      ],
+    nearbyTournaments: [
+        { name: "Kozerki Open", level: "ITF", surface: "Clay", month: "June", venue: "Tenis Kozerki" },
+        { name: "Warsaw Junior Cup", level: "ITF Junior", surface: "Clay", month: "July", venue: "Legia Warsaw" }
+      ],
+    videoTour: "https://www.youtube.com/watch?v=q-gXdB1N1w8"
   },
   {
     id: "vicio-fede",
@@ -814,7 +1153,26 @@ const ACADEMIES = [
         { name: "Wook", cuisine: "Asian Fusion", distanceKm: 0.5, priceRange: "€€€", rating: 4.5, vegetarian: true, outdoor: false },
         { name: "Trattoria da Antonio", cuisine: "Italian", distanceKm: 0.4, priceRange: "€€", rating: 4.4, vegetarian: true, outdoor: true },
         { name: "Bar Mleczny Familijny", cuisine: "Polish Cafeteria", distanceKm: 0.6, priceRange: "€", rating: 4, vegetarian: true, outdoor: false }
-      ]
+      ],
+    nearbyMedical: [
+        { name: "Centralny Szpital Kliniczny MSWiA", type: "Hospital", distanceKm: 3, phone: "+48 22 508 10 00", emergency: true },
+        { name: "Carolina Medical Center", type: "Sports Medicine", distanceKm: 5, phone: "+48 22 354 67 00", emergency: false },
+        { name: "Rehasport Clinic Warsaw", type: "Physiotherapy", distanceKm: 4, phone: "+48 22 201 20 20", emergency: false }
+      ],
+    costOfLiving: { rent1Bed: "€550", meal: "€7", monthlyFood: "€250", transport: "€25", currency: "PLN", summary: "Affordable European capital; good value for Western expats" },
+    scholarships: { available: false, details: "No formal scholarship program currently. Contact for pricing packages." },
+    visaInfo: { schengen: true, eu: true, visaFreeCountries: "EU/EEA citizens have freedom of movement. USA, Canada, Australia, UK — visa-free up to 90 days in Schengen area", notes: "Schengen visa allows travel across 27 European countries. Long-term student visa available for extended programs." },
+    airportTransfers: [
+        { mode: "Taxi", duration: "25 min", cost: "€15–20", notes: "From Warsaw Chopin Airport (WAW)" },
+        { mode: "Train", duration: "25 min", cost: "€4", notes: "SKM/KM train to city center" },
+        { mode: "Private Transfer", duration: "20 min", cost: "€20–30", notes: "Pre-book online" }
+      ],
+    nearbyTournaments: [
+        { name: "Warsaw Open", level: "ITF", surface: "Clay", month: "June", venue: "Legia Warsaw Tennis" },
+        { name: "Polish National Championships", level: "National", surface: "Clay", month: "August", venue: "Warsaw" },
+        { name: "Legia Cup Junior", level: "ITF Junior", surface: "Clay", month: "July", venue: "KT Mera Legia" }
+      ],
+    videoTour: null
   },
   {
     id: "mera-legia",
@@ -852,7 +1210,26 @@ const ACADEMIES = [
         { name: "Wook", cuisine: "Asian Fusion", distanceKm: 0.5, priceRange: "€€€", rating: 4.5, vegetarian: true, outdoor: false },
         { name: "Trattoria da Antonio", cuisine: "Italian", distanceKm: 0.4, priceRange: "€€", rating: 4.4, vegetarian: true, outdoor: true },
         { name: "Bar Mleczny Familijny", cuisine: "Polish Cafeteria", distanceKm: 0.6, priceRange: "€", rating: 4, vegetarian: true, outdoor: false }
-      ]
+      ],
+    nearbyMedical: [
+        { name: "Centralny Szpital Kliniczny MSWiA", type: "Hospital", distanceKm: 3, phone: "+48 22 508 10 00", emergency: true },
+        { name: "Carolina Medical Center", type: "Sports Medicine", distanceKm: 5, phone: "+48 22 354 67 00", emergency: false },
+        { name: "Rehasport Clinic Warsaw", type: "Physiotherapy", distanceKm: 4, phone: "+48 22 201 20 20", emergency: false }
+      ],
+    costOfLiving: { rent1Bed: "€550", meal: "€7", monthlyFood: "€250", transport: "€25", currency: "PLN", summary: "Affordable European capital; good value for Western expats" },
+    scholarships: { available: true, details: "Scholarships available through Legia Warsaw sports foundation for promising juniors." },
+    visaInfo: { schengen: true, eu: true, visaFreeCountries: "EU/EEA citizens have freedom of movement. USA, Canada, Australia, UK — visa-free up to 90 days in Schengen area", notes: "Schengen visa allows travel across 27 European countries. Long-term student visa available for extended programs." },
+    airportTransfers: [
+        { mode: "Taxi", duration: "25 min", cost: "€15–20", notes: "From Warsaw Chopin Airport (WAW)" },
+        { mode: "Train", duration: "25 min", cost: "€4", notes: "SKM/KM train to city center" },
+        { mode: "Private Transfer", duration: "20 min", cost: "€20–30", notes: "Pre-book online" }
+      ],
+    nearbyTournaments: [
+        { name: "Warsaw Open", level: "ITF", surface: "Clay", month: "June", venue: "Legia Warsaw Tennis" },
+        { name: "Polish National Championships", level: "National", surface: "Clay", month: "August", venue: "Warsaw" },
+        { name: "Legia Cup Junior", level: "ITF Junior", surface: "Clay", month: "July", venue: "KT Mera Legia" }
+      ],
+    videoTour: null
   },
   {
     id: "hanescu-academy",
@@ -896,7 +1273,26 @@ const ACADEMIES = [
         { name: "Trattoria Il Calcio", cuisine: "Italian", distanceKm: 0.4, priceRange: "€€", rating: 4.3, vegetarian: true, outdoor: true },
         { name: "Lacrimi și Sfinți", cuisine: "Romanian Modern", distanceKm: 0.6, priceRange: "€€€", rating: 4.6, vegetarian: true, outdoor: true },
         { name: "Dristor Kebab", cuisine: "Turkish", distanceKm: 0.8, priceRange: "€", rating: 4.1, vegetarian: false, outdoor: false }
-      ]
+      ],
+    nearbyMedical: [
+        { name: "Spitalul Universitar de Urgență București", type: "Hospital", distanceKm: 3, phone: "+40 21 318 0522", emergency: true },
+        { name: "Regina Maria – Baneasa Clinic", type: "Hospital", distanceKm: 5, phone: "+40 21 9268", emergency: true },
+        { name: "Kinetic Sport & Medicine", type: "Sports Medicine", distanceKm: 4, phone: "+40 21 312 5125", emergency: false }
+      ],
+    costOfLiving: { rent1Bed: "€450", meal: "€7", monthlyFood: "€250", transport: "€20", currency: "RON", summary: "Very affordable EU capital; significantly cheaper than Western Europe" },
+    scholarships: { available: true, details: "Merit-based scholarships for top Romanian and international juniors. Founded by former ATP Top-20 player." },
+    visaInfo: { schengen: false, eu: true, visaFreeCountries: "EU/EEA citizens have freedom of movement. USA, Canada, Australia, UK — visa-free up to 90 days", notes: "Romania is an EU member but not yet in the Schengen Area. Non-EU citizens may need a national visa for stays over 90 days." },
+    airportTransfers: [
+        { mode: "Taxi", duration: "25 min", cost: "€10–15", notes: "From Henri Coandă Airport (OTP), use Bolt or licensed taxis" },
+        { mode: "Bus", duration: "40 min", cost: "€1", notes: "Express bus 783 to city center" },
+        { mode: "Private Transfer", duration: "20 min", cost: "€20–30", notes: "Pre-book online" }
+      ],
+    nearbyTournaments: [
+        { name: "Transylvania Open", level: "WTA 250", surface: "Hard", month: "October", venue: "BT Arena, Cluj" },
+        { name: "Bucharest Open", level: "ITF", surface: "Clay", month: "July", venue: "Arenele BNR" },
+        { name: "Romanian Junior Nationals", level: "National Junior", surface: "Clay", month: "August", venue: "Bucharest" }
+      ],
+    videoTour: null
   },
   {
     id: "bucharest-tennis",
@@ -934,7 +1330,26 @@ const ACADEMIES = [
         { name: "Trattoria Il Calcio", cuisine: "Italian", distanceKm: 0.4, priceRange: "€€", rating: 4.3, vegetarian: true, outdoor: true },
         { name: "Lacrimi și Sfinți", cuisine: "Romanian Modern", distanceKm: 0.6, priceRange: "€€€", rating: 4.6, vegetarian: true, outdoor: true },
         { name: "Dristor Kebab", cuisine: "Turkish", distanceKm: 0.8, priceRange: "€", rating: 4.1, vegetarian: false, outdoor: false }
-      ]
+      ],
+    nearbyMedical: [
+        { name: "Spitalul Universitar de Urgență București", type: "Hospital", distanceKm: 3, phone: "+40 21 318 0522", emergency: true },
+        { name: "Regina Maria – Baneasa Clinic", type: "Hospital", distanceKm: 5, phone: "+40 21 9268", emergency: true },
+        { name: "Kinetic Sport & Medicine", type: "Sports Medicine", distanceKm: 4, phone: "+40 21 312 5125", emergency: false }
+      ],
+    costOfLiving: { rent1Bed: "€450", meal: "€7", monthlyFood: "€250", transport: "€20", currency: "RON", summary: "Very affordable EU capital; significantly cheaper than Western Europe" },
+    scholarships: { available: false, details: "No formal scholarship program currently. Contact for seasonal pricing." },
+    visaInfo: { schengen: false, eu: true, visaFreeCountries: "EU/EEA citizens have freedom of movement. USA, Canada, Australia, UK — visa-free up to 90 days", notes: "Romania is an EU member but not yet in the Schengen Area. Non-EU citizens may need a national visa for stays over 90 days." },
+    airportTransfers: [
+        { mode: "Taxi", duration: "25 min", cost: "€10–15", notes: "From Henri Coandă Airport (OTP), use Bolt or licensed taxis" },
+        { mode: "Bus", duration: "40 min", cost: "€1", notes: "Express bus 783 to city center" },
+        { mode: "Private Transfer", duration: "20 min", cost: "€20–30", notes: "Pre-book online" }
+      ],
+    nearbyTournaments: [
+        { name: "Transylvania Open", level: "WTA 250", surface: "Hard", month: "October", venue: "BT Arena, Cluj" },
+        { name: "Bucharest Open", level: "ITF", surface: "Clay", month: "July", venue: "Arenele BNR" },
+        { name: "Romanian Junior Nationals", level: "National Junior", surface: "Clay", month: "August", venue: "Bucharest" }
+      ],
+    videoTour: null
   },
   {
     id: "sofia-360",
@@ -972,7 +1387,26 @@ const ACADEMIES = [
         { name: "Trattoria Pasta e Vino", cuisine: "Italian", distanceKm: 0.4, priceRange: "€€", rating: 4.3, vegetarian: true, outdoor: true },
         { name: "Sushi Bar Sofia", cuisine: "Japanese", distanceKm: 0.6, priceRange: "€€", rating: 4.2, vegetarian: true, outdoor: false },
         { name: "Victoria Restaurant", cuisine: "Fine Dining", distanceKm: 0.8, priceRange: "€€€€", rating: 4.7, vegetarian: true, outdoor: true }
-      ]
+      ],
+    nearbyMedical: [
+        { name: "Pirogov Emergency Hospital", type: "Hospital", distanceKm: 3, phone: "+359 2 915 4411", emergency: true },
+        { name: "Tokuda Hospital Sofia", type: "Hospital", distanceKm: 5, phone: "+359 2 403 4000", emergency: true },
+        { name: "NSA Sports Medicine Clinic", type: "Sports Medicine", distanceKm: 2, phone: "+359 2 963 3063", emergency: false }
+      ],
+    costOfLiving: { rent1Bed: "€350", meal: "€5", monthlyFood: "€200", transport: "€25", currency: "BGN", summary: "One of the most affordable EU capitals; excellent value" },
+    scholarships: { available: false, details: "No formal scholarship program currently. Contact for multi-month discounts." },
+    visaInfo: { schengen: false, eu: true, visaFreeCountries: "EU/EEA citizens have freedom of movement. USA, Canada, Australia, UK — visa-free up to 90 days", notes: "Bulgaria is an EU member but not yet fully in the Schengen Area. Non-EU citizens may need a national visa for longer stays." },
+    airportTransfers: [
+        { mode: "Taxi", duration: "15 min", cost: "€8–10", notes: "From Sofia Airport (SOF), use OK Supertrans" },
+        { mode: "Metro", duration: "20 min", cost: "€0.80", notes: "Direct metro line from airport to center" },
+        { mode: "Private Transfer", duration: "15 min", cost: "€15–20", notes: "Pre-book online" }
+      ],
+    nearbyTournaments: [
+        { name: "Sofia Open", level: "ATP 250", surface: "Hard (Indoor)", month: "February", venue: "Arena Armeec" },
+        { name: "Bulgarian Junior Open", level: "ITF Junior", surface: "Clay", month: "June", venue: "Sofia" },
+        { name: "Bulgarian National Championships", level: "National", surface: "Clay", month: "September", venue: "Sofia" }
+      ],
+    videoTour: null
   },
   {
     id: "romai-tennis",
@@ -1010,7 +1444,26 @@ const ACADEMIES = [
         { name: "Trattoria Pomo D'Oro", cuisine: "Italian", distanceKm: 0.4, priceRange: "€€", rating: 4.5, vegetarian: true, outdoor: true },
         { name: "Café Kör", cuisine: "Hungarian Bistro", distanceKm: 0.6, priceRange: "€€", rating: 4.3, vegetarian: true, outdoor: true },
         { name: "Street Food Karaván", cuisine: "International Street Food", distanceKm: 0.8, priceRange: "€", rating: 4.1, vegetarian: true, outdoor: true }
-      ]
+      ],
+    nearbyMedical: [
+        { name: "Semmelweis Egyetem (University Hospital)", type: "Hospital", distanceKm: 3, phone: "+36 1 459 1500", emergency: true },
+        { name: "Honvédkórház (Military Hospital)", type: "Hospital", distanceKm: 4, phone: "+36 1 475 2600", emergency: true },
+        { name: "Budai Egészségközpont", type: "Sports Medicine", distanceKm: 5, phone: "+36 1 489 5200", emergency: false }
+      ],
+    costOfLiving: { rent1Bed: "€500", meal: "€7", monthlyFood: "€250", transport: "€30", currency: "HUF", summary: "Affordable EU capital; great value especially outside the tourist center" },
+    scholarships: { available: true, details: "Scholarships available for elite juniors. Home of the Hungarian Open." },
+    visaInfo: { schengen: true, eu: true, visaFreeCountries: "EU/EEA citizens have freedom of movement. USA, Canada, Australia, UK — visa-free up to 90 days in Schengen area", notes: "Schengen visa allows travel across 27 European countries. Long-term student visa available for extended programs." },
+    airportTransfers: [
+        { mode: "Taxi", duration: "30 min", cost: "€20–25", notes: "From Budapest Airport (BUD), use Főtaxi" },
+        { mode: "Bus + Metro", duration: "50 min", cost: "€3", notes: "Bus 100E express to Deák Ferenc tér" },
+        { mode: "Private Transfer", duration: "25 min", cost: "€25–35", notes: "Pre-book online, fixed price" }
+      ],
+    nearbyTournaments: [
+        { name: "Hungarian Open", level: "ATP 250", surface: "Clay", month: "April", venue: "Római Teniszakadémia" },
+        { name: "Budapest Grand Prix", level: "WTA 250", surface: "Clay", month: "July", venue: "Római" },
+        { name: "Hungarian Junior Open", level: "ITF Junior", surface: "Clay", month: "June", venue: "Budapest" }
+      ],
+    videoTour: "https://www.youtube.com/watch?v=Q2Yh7eIK_wQ"
   },
   {
     id: "szepvolgyi",
@@ -1048,7 +1501,26 @@ const ACADEMIES = [
         { name: "Trattoria Pomo D'Oro", cuisine: "Italian", distanceKm: 0.4, priceRange: "€€", rating: 4.5, vegetarian: true, outdoor: true },
         { name: "Café Kör", cuisine: "Hungarian Bistro", distanceKm: 0.6, priceRange: "€€", rating: 4.3, vegetarian: true, outdoor: true },
         { name: "Street Food Karaván", cuisine: "International Street Food", distanceKm: 0.8, priceRange: "€", rating: 4.1, vegetarian: true, outdoor: true }
-      ]
+      ],
+    nearbyMedical: [
+        { name: "Semmelweis Egyetem (University Hospital)", type: "Hospital", distanceKm: 3, phone: "+36 1 459 1500", emergency: true },
+        { name: "Honvédkórház (Military Hospital)", type: "Hospital", distanceKm: 4, phone: "+36 1 475 2600", emergency: true },
+        { name: "Budai Egészségközpont", type: "Sports Medicine", distanceKm: 5, phone: "+36 1 489 5200", emergency: false }
+      ],
+    costOfLiving: { rent1Bed: "€500", meal: "€7", monthlyFood: "€250", transport: "€30", currency: "HUF", summary: "Affordable EU capital; great value especially outside the tourist center" },
+    scholarships: { available: false, details: "No formal scholarship program currently. Contact for junior development packages." },
+    visaInfo: { schengen: true, eu: true, visaFreeCountries: "EU/EEA citizens have freedom of movement. USA, Canada, Australia, UK — visa-free up to 90 days in Schengen area", notes: "Schengen visa allows travel across 27 European countries. Long-term student visa available for extended programs." },
+    airportTransfers: [
+        { mode: "Taxi", duration: "30 min", cost: "€20–25", notes: "From Budapest Airport (BUD), use Főtaxi" },
+        { mode: "Bus + Metro", duration: "50 min", cost: "€3", notes: "Bus 100E express to Deák Ferenc tér" },
+        { mode: "Private Transfer", duration: "25 min", cost: "€25–35", notes: "Pre-book online, fixed price" }
+      ],
+    nearbyTournaments: [
+        { name: "Hungarian Open", level: "ATP 250", surface: "Clay", month: "April", venue: "Római Teniszakadémia" },
+        { name: "Budapest Grand Prix", level: "WTA 250", surface: "Clay", month: "July", venue: "Római" },
+        { name: "Hungarian Junior Open", level: "ITF Junior", surface: "Clay", month: "June", venue: "Budapest" }
+      ],
+    videoTour: null
   },
   {
     id: "breskvar",
@@ -1086,7 +1558,25 @@ const ACADEMIES = [
         { name: "Pizzeria Foculus", cuisine: "Italian", distanceKm: 0.2, priceRange: "€", rating: 4.3, vegetarian: true, outdoor: true },
         { name: "Strelec", cuisine: "Slovenian Modern", distanceKm: 0.4, priceRange: "€€€", rating: 4.6, vegetarian: true, outdoor: true },
         { name: "Hood Burger", cuisine: "American", distanceKm: 0.6, priceRange: "€", rating: 4.2, vegetarian: false, outdoor: false }
-      ]
+      ],
+    nearbyMedical: [
+        { name: "UKC Ljubljana (University Medical Centre)", type: "Hospital", distanceKm: 2, phone: "+386 1 522 5050", emergency: true },
+        { name: "Medicofit", type: "Sports Medicine", distanceKm: 3, phone: "+386 1 200 8370", emergency: false },
+        { name: "Fizioterapija Ljubljana", type: "Physiotherapy", distanceKm: 1.5, phone: "+386 1 434 5800", emergency: false }
+      ],
+    costOfLiving: { rent1Bed: "€550", meal: "€9", monthlyFood: "€280", transport: "€35", currency: "EUR", summary: "Mid-range for Europe; smaller city keeps costs reasonable" },
+    scholarships: { available: true, details: "Merit-based scholarships for Slovenian national-level juniors. Contact for evaluation." },
+    visaInfo: { schengen: true, eu: true, visaFreeCountries: "EU/EEA citizens have freedom of movement. USA, Canada, Australia, UK — visa-free up to 90 days in Schengen area", notes: "Schengen visa allows travel across 27 European countries. Long-term student visa available for extended programs." },
+    airportTransfers: [
+        { mode: "Taxi", duration: "25 min", cost: "€25–35", notes: "From Ljubljana Airport (LJU)" },
+        { mode: "Bus", duration: "45 min", cost: "€5", notes: "GoOpti shuttle to city center" },
+        { mode: "Private Transfer", duration: "20 min", cost: "€30–40", notes: "Pre-book online" }
+      ],
+    nearbyTournaments: [
+        { name: "Portorož WTA", level: "WTA 250", surface: "Hard", month: "September", venue: "Portorož" },
+        { name: "Slovenian Junior Open", level: "ITF Junior", surface: "Clay", month: "July", venue: "Ljubljana" }
+      ],
+    videoTour: null
   },
   {
     id: "medvedev-academy",
@@ -1131,7 +1621,25 @@ const ACADEMIES = [
         { name: "Ostannya Barykada", cuisine: "Ukrainian", distanceKm: 0.5, priceRange: "€€", rating: 4.4, vegetarian: true, outdoor: true },
         { name: "Pizzeria Napule", cuisine: "Italian", distanceKm: 0.6, priceRange: "€€", rating: 4.3, vegetarian: true, outdoor: true },
         { name: "Très Français", cuisine: "French Fine Dining", distanceKm: 0.8, priceRange: "€€€€", rating: 4.7, vegetarian: true, outdoor: false }
-      ]
+      ],
+    nearbyMedical: [
+        { name: "Oleksandrivska Clinical Hospital", type: "Hospital", distanceKm: 3, phone: "+380 44 234 9393", emergency: true },
+        { name: "Boris Medical Clinic", type: "Hospital", distanceKm: 4, phone: "+380 44 238 0000", emergency: true },
+        { name: "Sportmedservice", type: "Sports Medicine", distanceKm: 5, phone: "+380 44 537 3636", emergency: false }
+      ],
+    costOfLiving: { rent1Bed: "€350", meal: "€5", monthlyFood: "€200", transport: "€15", currency: "UAH", summary: "Very affordable; one of the cheapest European capitals" },
+    scholarships: { available: true, details: "Scholarships for talented Ukrainian and international juniors. Contact academy for tryout process." },
+    visaInfo: { schengen: false, eu: false, visaFreeCountries: "EU/EEA citizens, USA, Canada, UK — visa-free up to 90 days", notes: "Non-EU citizens may need a tourist visa. Check current travel advisories before visiting. E-visa available for many nationalities." },
+    airportTransfers: [
+        { mode: "Taxi", duration: "40 min", cost: "€10–15", notes: "From Boryspil Airport (KBP), use Bolt or Uklon" },
+        { mode: "SkyBus", duration: "50 min", cost: "€3", notes: "Express bus to Kyiv central station" },
+        { mode: "Private Transfer", duration: "35 min", cost: "€20–30", notes: "Pre-book online" }
+      ],
+    nearbyTournaments: [
+        { name: "Kyiv Open", level: "ITF", surface: "Clay", month: "May", venue: "LMTC Kyiv" },
+        { name: "Ukrainian Junior Championships", level: "National Junior", surface: "Clay", month: "July", venue: "Kyiv" }
+      ],
+    videoTour: null
   },
   {
     id: "mta-kyiv",
@@ -1169,7 +1677,25 @@ const ACADEMIES = [
         { name: "Ostannya Barykada", cuisine: "Ukrainian", distanceKm: 0.5, priceRange: "€€", rating: 4.4, vegetarian: true, outdoor: true },
         { name: "Pizzeria Napule", cuisine: "Italian", distanceKm: 0.6, priceRange: "€€", rating: 4.3, vegetarian: true, outdoor: true },
         { name: "Très Français", cuisine: "French Fine Dining", distanceKm: 0.8, priceRange: "€€€€", rating: 4.7, vegetarian: true, outdoor: false }
-      ]
+      ],
+    nearbyMedical: [
+        { name: "Oleksandrivska Clinical Hospital", type: "Hospital", distanceKm: 3, phone: "+380 44 234 9393", emergency: true },
+        { name: "Boris Medical Clinic", type: "Hospital", distanceKm: 4, phone: "+380 44 238 0000", emergency: true },
+        { name: "Sportmedservice", type: "Sports Medicine", distanceKm: 5, phone: "+380 44 537 3636", emergency: false }
+      ],
+    costOfLiving: { rent1Bed: "€350", meal: "€5", monthlyFood: "€200", transport: "€15", currency: "UAH", summary: "Very affordable; one of the cheapest European capitals" },
+    scholarships: { available: false, details: "No formal scholarship program currently. Contact for group training rates." },
+    visaInfo: { schengen: false, eu: false, visaFreeCountries: "EU/EEA citizens, USA, Canada, UK — visa-free up to 90 days", notes: "Non-EU citizens may need a tourist visa. Check current travel advisories before visiting. E-visa available for many nationalities." },
+    airportTransfers: [
+        { mode: "Taxi", duration: "40 min", cost: "€10–15", notes: "From Boryspil Airport (KBP), use Bolt or Uklon" },
+        { mode: "SkyBus", duration: "50 min", cost: "€3", notes: "Express bus to Kyiv central station" },
+        { mode: "Private Transfer", duration: "35 min", cost: "€20–30", notes: "Pre-book online" }
+      ],
+    nearbyTournaments: [
+        { name: "Kyiv Open", level: "ITF", surface: "Clay", month: "May", venue: "LMTC Kyiv" },
+        { name: "Ukrainian Junior Championships", level: "National Junior", surface: "Clay", month: "July", venue: "Kyiv" }
+      ],
+    videoTour: null
   },
   {
     id: "vilnius-academy",
@@ -1207,7 +1733,26 @@ const ACADEMIES = [
         { name: "Leiciai", cuisine: "Lithuanian", distanceKm: 0.4, priceRange: "€€", rating: 4.4, vegetarian: true, outdoor: true },
         { name: "Da Antonio", cuisine: "Italian", distanceKm: 0.6, priceRange: "€€", rating: 4.3, vegetarian: true, outdoor: true },
         { name: "Wok to Walk", cuisine: "Asian", distanceKm: 0.2, priceRange: "€", rating: 4, vegetarian: true, outdoor: false }
-      ]
+      ],
+    nearbyMedical: [
+        { name: "Vilniaus universiteto ligoninė Santaros klinikos", type: "Hospital", distanceKm: 5, phone: "+370 5 236 5000", emergency: true },
+        { name: "Kardiolita Hospital", type: "Hospital", distanceKm: 3, phone: "+370 5 247 6363", emergency: true },
+        { name: "Sportinė medicina Vilnius", type: "Sports Medicine", distanceKm: 4, phone: "+370 5 278 0505", emergency: false }
+      ],
+    costOfLiving: { rent1Bed: "€500", meal: "€8", monthlyFood: "€250", transport: "€30", currency: "EUR", summary: "Moderate EU capital; good value in the Baltics" },
+    scholarships: { available: true, details: "Scholarships available for top Lithuanian junior players through national federation support." },
+    visaInfo: { schengen: true, eu: true, visaFreeCountries: "EU/EEA citizens have freedom of movement. USA, Canada, Australia, UK — visa-free up to 90 days in Schengen area", notes: "Schengen visa allows travel across 27 European countries. Long-term student visa available for extended programs." },
+    airportTransfers: [
+        { mode: "Taxi", duration: "15 min", cost: "€10–12", notes: "From Vilnius Airport (VNO)" },
+        { mode: "Bus", duration: "20 min", cost: "€1", notes: "Bus 1 or 2 to city center" },
+        { mode: "Private Transfer", duration: "15 min", cost: "€15–20", notes: "Pre-book online" }
+      ],
+    nearbyTournaments: [
+        { name: "Vilnius Open", level: "ITF", surface: "Hard (Indoor)", month: "November", venue: "SEB Arena" },
+        { name: "Lithuanian Junior Championships", level: "National Junior", surface: "Clay", month: "July", venue: "Vilnius" },
+        { name: "Baltic Junior Open", level: "ITF Junior", surface: "Hard", month: "October", venue: "Vilnius" }
+      ],
+    videoTour: null
   },
   {
     id: "riga-academy",
@@ -1245,7 +1790,26 @@ const ACADEMIES = [
         { name: "Steiku Haoss", cuisine: "Steak & Grill", distanceKm: 0.4, priceRange: "€€€", rating: 4.5, vegetarian: false, outdoor: true },
         { name: "Trattoria del Popolo", cuisine: "Italian", distanceKm: 0.6, priceRange: "€€", rating: 4.3, vegetarian: true, outdoor: true },
         { name: "Lido Atpūtas Centrs", cuisine: "Latvian Cafeteria", distanceKm: 1, priceRange: "€", rating: 4.1, vegetarian: true, outdoor: true }
-      ]
+      ],
+    nearbyMedical: [
+        { name: "Pauls Stradiņš Clinical University Hospital", type: "Hospital", distanceKm: 3, phone: "+371 6706 9532", emergency: true },
+        { name: "ARS Medical Centre", type: "Hospital", distanceKm: 2, phone: "+371 6720 1007", emergency: true },
+        { name: "Sporta medicīnas centrs", type: "Sports Medicine", distanceKm: 4, phone: "+371 6754 2222", emergency: false }
+      ],
+    costOfLiving: { rent1Bed: "€450", meal: "€8", monthlyFood: "€250", transport: "€30", currency: "EUR", summary: "Moderate; affordable Baltic capital with good quality of life" },
+    scholarships: { available: true, details: "Merit-based scholarships for Baltic region junior players. Contact for evaluation." },
+    visaInfo: { schengen: true, eu: true, visaFreeCountries: "EU/EEA citizens have freedom of movement. USA, Canada, Australia, UK — visa-free up to 90 days in Schengen area", notes: "Schengen visa allows travel across 27 European countries. Long-term student visa available for extended programs." },
+    airportTransfers: [
+        { mode: "Taxi", duration: "15 min", cost: "€10–15", notes: "From Riga Airport (RIX)" },
+        { mode: "Bus", duration: "30 min", cost: "€2", notes: "Bus 22 from airport to city center" },
+        { mode: "Private Transfer", duration: "15 min", cost: "€15–25", notes: "Pre-book online" }
+      ],
+    nearbyTournaments: [
+        { name: "Riga Open", level: "ITF", surface: "Hard (Indoor)", month: "November", venue: "National Tennis Centre" },
+        { name: "Latvian Junior Open", level: "ITF Junior", surface: "Clay", month: "June", venue: "Riga" },
+        { name: "Baltic Open", level: "WTA 250", surface: "Hard", month: "July", venue: "National Tennis Centre Lielupe" }
+      ],
+    videoTour: null
   },
   {
     id: "tenisa-akademija",
@@ -1283,7 +1847,26 @@ const ACADEMIES = [
         { name: "Steiku Haoss", cuisine: "Steak & Grill", distanceKm: 0.4, priceRange: "€€€", rating: 4.5, vegetarian: false, outdoor: true },
         { name: "Trattoria del Popolo", cuisine: "Italian", distanceKm: 0.6, priceRange: "€€", rating: 4.3, vegetarian: true, outdoor: true },
         { name: "Lido Atpūtas Centrs", cuisine: "Latvian Cafeteria", distanceKm: 1, priceRange: "€", rating: 4.1, vegetarian: true, outdoor: true }
-      ]
+      ],
+    nearbyMedical: [
+        { name: "Pauls Stradiņš Clinical University Hospital", type: "Hospital", distanceKm: 3, phone: "+371 6706 9532", emergency: true },
+        { name: "ARS Medical Centre", type: "Hospital", distanceKm: 2, phone: "+371 6720 1007", emergency: true },
+        { name: "Sporta medicīnas centrs", type: "Sports Medicine", distanceKm: 4, phone: "+371 6754 2222", emergency: false }
+      ],
+    costOfLiving: { rent1Bed: "€450", meal: "€8", monthlyFood: "€250", transport: "€30", currency: "EUR", summary: "Moderate; affordable Baltic capital with good quality of life" },
+    scholarships: { available: false, details: "No formal scholarship program currently. Contact for seasonal packages." },
+    visaInfo: { schengen: true, eu: true, visaFreeCountries: "EU/EEA citizens have freedom of movement. USA, Canada, Australia, UK — visa-free up to 90 days in Schengen area", notes: "Schengen visa allows travel across 27 European countries. Long-term student visa available for extended programs." },
+    airportTransfers: [
+        { mode: "Taxi", duration: "15 min", cost: "€10–15", notes: "From Riga Airport (RIX)" },
+        { mode: "Bus", duration: "30 min", cost: "€2", notes: "Bus 22 from airport to city center" },
+        { mode: "Private Transfer", duration: "15 min", cost: "€15–25", notes: "Pre-book online" }
+      ],
+    nearbyTournaments: [
+        { name: "Riga Open", level: "ITF", surface: "Hard (Indoor)", month: "November", venue: "National Tennis Centre" },
+        { name: "Latvian Junior Open", level: "ITF Junior", surface: "Clay", month: "June", venue: "Riga" },
+        { name: "Baltic Open", level: "WTA 250", surface: "Hard", month: "July", venue: "National Tennis Centre Lielupe" }
+      ],
+    videoTour: null
   },
   {
     id: "us-tenniseakadeemia",
@@ -1321,7 +1904,26 @@ const ACADEMIES = [
         { name: "Pizzeria Maailm", cuisine: "Italian", distanceKm: 0.4, priceRange: "€", rating: 4.2, vegetarian: true, outdoor: false },
         { name: "Leib Resto ja Aed", cuisine: "Estonian Modern", distanceKm: 0.2, priceRange: "€€€", rating: 4.5, vegetarian: true, outdoor: true },
         { name: "Kompressor", cuisine: "Pancakes & Casual", distanceKm: 0.5, priceRange: "€", rating: 4.3, vegetarian: true, outdoor: false }
-      ]
+      ],
+    nearbyMedical: [
+        { name: "Põhja-Eesti Regionaalhaigla (North Estonia Medical Centre)", type: "Hospital", distanceKm: 4, phone: "+372 617 1300", emergency: true },
+        { name: "East Tallinn Central Hospital", type: "Hospital", distanceKm: 3, phone: "+372 666 1900", emergency: true },
+        { name: "Tallinn Sports Medicine Centre", type: "Sports Medicine", distanceKm: 5, phone: "+372 603 1585", emergency: false }
+      ],
+    costOfLiving: { rent1Bed: "€500", meal: "€9", monthlyFood: "€270", transport: "€30", currency: "EUR", summary: "Moderate Baltic capital; digital nomad-friendly, reasonable costs" },
+    scholarships: { available: true, details: "Scholarships available for promising Estonian juniors through Estonian Tennis Federation." },
+    visaInfo: { schengen: true, eu: true, visaFreeCountries: "EU/EEA citizens have freedom of movement. USA, Canada, Australia, UK — visa-free up to 90 days in Schengen area", notes: "Schengen visa allows travel across 27 European countries. Long-term student visa available for extended programs." },
+    airportTransfers: [
+        { mode: "Taxi", duration: "10 min", cost: "€8–10", notes: "From Tallinn Airport (TLL), very close to center" },
+        { mode: "Tram", duration: "20 min", cost: "€2", notes: "Tram 4 from airport to city center" },
+        { mode: "Private Transfer", duration: "10 min", cost: "€12–18", notes: "Pre-book online" }
+      ],
+    nearbyTournaments: [
+        { name: "Tallinn Open", level: "WTA 250", surface: "Hard (Indoor)", month: "September", venue: "Tondiraba Ice Hall" },
+        { name: "Estonian Junior Open", level: "ITF Junior", surface: "Hard", month: "June", venue: "Tallinn" },
+        { name: "Estonian National Championships", level: "National", surface: "Clay", month: "August", venue: "Tallinn" }
+      ],
+    videoTour: null
   },
   {
     id: "robbyo",
@@ -1359,7 +1961,26 @@ const ACADEMIES = [
         { name: "Pizzeria Maailm", cuisine: "Italian", distanceKm: 0.4, priceRange: "€", rating: 4.2, vegetarian: true, outdoor: false },
         { name: "Leib Resto ja Aed", cuisine: "Estonian Modern", distanceKm: 0.2, priceRange: "€€€", rating: 4.5, vegetarian: true, outdoor: true },
         { name: "Kompressor", cuisine: "Pancakes & Casual", distanceKm: 0.5, priceRange: "€", rating: 4.3, vegetarian: true, outdoor: false }
-      ]
+      ],
+    nearbyMedical: [
+        { name: "Põhja-Eesti Regionaalhaigla (North Estonia Medical Centre)", type: "Hospital", distanceKm: 4, phone: "+372 617 1300", emergency: true },
+        { name: "East Tallinn Central Hospital", type: "Hospital", distanceKm: 3, phone: "+372 666 1900", emergency: true },
+        { name: "Tallinn Sports Medicine Centre", type: "Sports Medicine", distanceKm: 5, phone: "+372 603 1585", emergency: false }
+      ],
+    costOfLiving: { rent1Bed: "€500", meal: "€9", monthlyFood: "€270", transport: "€30", currency: "EUR", summary: "Moderate Baltic capital; digital nomad-friendly, reasonable costs" },
+    scholarships: { available: false, details: "No formal scholarship program currently. Contact for junior group rates." },
+    visaInfo: { schengen: true, eu: true, visaFreeCountries: "EU/EEA citizens have freedom of movement. USA, Canada, Australia, UK — visa-free up to 90 days in Schengen area", notes: "Schengen visa allows travel across 27 European countries. Long-term student visa available for extended programs." },
+    airportTransfers: [
+        { mode: "Taxi", duration: "10 min", cost: "€8–10", notes: "From Tallinn Airport (TLL), very close to center" },
+        { mode: "Tram", duration: "20 min", cost: "€2", notes: "Tram 4 from airport to city center" },
+        { mode: "Private Transfer", duration: "10 min", cost: "€12–18", notes: "Pre-book online" }
+      ],
+    nearbyTournaments: [
+        { name: "Tallinn Open", level: "WTA 250", surface: "Hard (Indoor)", month: "September", venue: "Tondiraba Ice Hall" },
+        { name: "Estonian Junior Open", level: "ITF Junior", surface: "Hard", month: "June", venue: "Tallinn" },
+        { name: "Estonian National Championships", level: "National", surface: "Clay", month: "August", venue: "Tallinn" }
+      ],
+    videoTour: null
   }
 ];
 
