@@ -283,6 +283,7 @@ function cardHTML(a) {
         <div class="compare-check ${isCompared ? 'active' : ''}" data-id="${a.id}" onclick="toggleCompare('${a.id}')" title="Add to compare">✓</div>
         <div class="card-title">
           <span class="fav-heart ${isFav ? 'active' : ''}" data-id="${a.id}" onclick="toggleFavorite('${a.id}')">${isFav ? '♥' : '♡'}</span>
+          <button class="btn-share" onclick="shareAcademy('${a.id}')" title="Share">📤</button>
           <span class="flag">${a.countryFlag}</span>
           <span>${escapeHTML(a.name)}${star}</span>
         </div>
@@ -373,7 +374,65 @@ function buildDetails(a) {
   if (a.website) {
     html += `<div class="detail-section"><h4>Website</h4><a href="${escapeHTML(a.website)}" target="_blank" rel="noopener">${escapeHTML(a.website)}</a></div>`;
   }
+  // Action buttons
+  html += buildDetailActions(a);
   return html;
+}
+
+/* ===== Detail Action Buttons ===== */
+function buildDetailActions(a) {
+  let html = '<div class="detail-actions">';
+  const name = encodeURIComponent(a.name);
+  let body = `Hi, I found your academy on East European Tennis Academies guide and I'm interested in learning more about your programs.%0A%0AAcademy: ${name}`;
+  if (a.website) body += `%0AWebsite: ${encodeURIComponent(a.website)}`;
+  if (a.contact) body += `%0AContact: ${encodeURIComponent(a.contact)}`;
+  html += `<a href="mailto:?subject=Inquiry about ${name}&body=${body}" class="btn-inquiry">📩 Send Inquiry</a>`;
+  if (a.website) {
+    html += `<a href="${escapeHTML(a.website)}" target="_blank" rel="noopener" class="btn-visit">🌐 Visit Website</a>`;
+  }
+  html += '</div>';
+  return html;
+}
+
+/* ===== Share Academy ===== */
+function shareAcademy(id) {
+  const a = ACADEMIES.find(ac => ac.id === id);
+  if (!a) return;
+  const url = window.location.origin + window.location.pathname + '#academy=' + id;
+  const title = a.name + ' — East European Tennis Academies';
+  if (navigator.share) {
+    navigator.share({ title, text: `Check out ${a.name} in ${a.city}, ${a.country}`, url }).catch(() => {});
+  } else {
+    navigator.clipboard.writeText(url).then(() => showToast('Link copied!')).catch(() => showToast('Could not copy'));
+  }
+}
+
+function shareComparison() {
+  const ids = [...compareSet];
+  if (ids.length < 2) return;
+  const url = window.location.origin + window.location.pathname + '#compare=' + ids.join(',');
+  if (navigator.share) {
+    navigator.share({ title: 'Compare Tennis Academies', text: 'Check out this academy comparison', url }).catch(() => {});
+  } else {
+    navigator.clipboard.writeText(url).then(() => showToast('Comparison link copied!')).catch(() => showToast('Could not copy'));
+  }
+}
+
+function showToast(msg) {
+  const existing = document.querySelector('.share-toast');
+  if (existing) existing.remove();
+  const el = document.createElement('div');
+  el.className = 'share-toast';
+  el.textContent = msg;
+  document.body.appendChild(el);
+  setTimeout(() => el.remove(), 2100);
+}
+
+/* ===== Print Shortlist ===== */
+function printShortlist() {
+  document.querySelectorAll('.card-details').forEach(d => d.classList.add('open'));
+  document.querySelectorAll('.btn-details').forEach(b => b.classList.add('open'));
+  setTimeout(() => window.print(), 100);
 }
 
 /* ===== Climate Chart ===== */
@@ -517,6 +576,9 @@ function bindEvents() {
   // Compare FAB
   document.getElementById('compareFab').addEventListener('click', openCompareModal);
   document.getElementById('compareClose').addEventListener('click', closeCompareModal);
+
+  // Print
+  document.getElementById('btnPrint').addEventListener('click', printShortlist);
   document.getElementById('compareModal').addEventListener('click', e => {
     if (e.target === e.currentTarget) closeCompareModal();
   });
