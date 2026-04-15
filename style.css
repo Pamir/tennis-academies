@@ -532,6 +532,21 @@ body {
   min-width: 120px;
 }
 
+/* Coach Instagram */
+.coach-instagram {
+  display: inline-block;
+  margin-left: 0.4rem;
+  padding: 0.1rem 0.5rem;
+  background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+  color: #fff !important;
+  border-radius: 12px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+.coach-instagram:hover { opacity: 0.85; text-decoration: none; }
+
 /* Climate Chart */
 .climate-chart {
   display: grid;
@@ -968,4 +983,89 @@ body {
   }
   .card-details { display: block !important; max-height: none !important; }
   .card-details * { color: black !important; }
+}
+
+/* ===== Surface tag ===== */
+.tag-surface { background: #e8f5e9; color: #2e7d32; }
+[data-theme="dark"] .tag-surface { background: #1b5e20; color: #a5d6a7; }
+
+/* ===== Flight link button ===== */
+.btn-flight {
+  display: inline-block;
+  margin-top: 0.3rem;
+  padding: 0.3rem 0.8rem;
+  background: #e3f2fd;
+  color: #1565c0;
+  border-radius: 14px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: var(--transition);
+}
+.btn-flight:hover { background: #1565c0; color: #fff; }
+[data-theme="dark"] .btn-flight { background: #0d47a1; color: #90caf9; }
+[data-theme="dark"] .btn-flight:hover { background: #1565c0; color: #fff; }
+
+/* ===== Calculator button ===== */
+.btn-calculator {
+  font-family: var(--font);
+  padding: 0.45rem 1rem;
+  border-radius: 20px;
+  border: 1px solid var(--primary);
+  background: #fff;
+  color: var(--primary);
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition);
+}
+.btn-calculator:hover { background: var(--primary); color: #fff; }
+
+/* ===== Trip calculator popup ===== */
+.trip-calculator {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1rem;
+  margin-top: 0.5rem;
+  font-size: 0.82rem;
+}
+.trip-calculator h5 { margin: 0 0 0.5rem; color: var(--primary); }
+.trip-calculator .calc-row { display: flex; justify-content: space-between; padding: 0.2rem 0; border-bottom: 1px solid var(--border); }
+.trip-calculator .calc-total { font-weight: 700; border-top: 2px solid var(--primary); border-bottom: none; margin-top: 0.3rem; padding-top: 0.3rem; }
+
+/* ===== Export button ===== */
+.btn-export {
+  font-family: var(--font);
+  padding: 0.35rem 0.8rem;
+  border-radius: 16px;
+  border: 1px solid var(--text-light);
+  background: transparent;
+  color: var(--text);
+  font-size: 0.78rem;
+  cursor: pointer;
+  transition: var(--transition);
+}
+.btn-export:hover { border-color: var(--primary); color: var(--primary); }
+
+/* ===== Skip to content ===== */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--primary);
+  color: #fff;
+  padding: 0.5rem 1rem;
+  z-index: 100;
+  transition: top 0.3s;
+  text-decoration: none;
+}
+.skip-link:focus { top: 0; }
+
+/* ===== Distance display ===== */
+.card-distance {
+  font-size: 0.75rem;
+  color: #1565c0;
+  font-weight: 600;
+  margin-top: 0.2rem;
 }

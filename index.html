@@ -8,13 +8,14 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <a class="skip-link" href="#cardGrid">Skip to content</a>
 
   <!-- Header -->
-  <header class="site-header">
+  <header class="site-header" role="banner">
     <h1>🎾 East European Tennis Academies</h1>
     <p class="subtitle">Find the perfect academy for your tennis journey</p>
-    <button class="btn-darkmode" id="btnDarkMode" title="Toggle dark mode">🌙</button>
-    <button class="btn-wizard" id="btnWizard">🧙 Help Me Choose</button>
+    <button class="btn-darkmode" id="btnDarkMode" title="Toggle dark mode" aria-label="Toggle dark mode">🌙</button>
+    <button class="btn-wizard" id="btnWizard" aria-label="Help me choose an academy">🧙 Help Me Choose</button>
   </header>
 
   <!-- Stats Dashboard -->
@@ -42,9 +43,9 @@
   </div>
 
   <!-- Filter Bar -->
-  <div class="filter-bar">
+  <div class="filter-bar" role="navigation" aria-label="Filter and search academies">
     <div class="filter-bar-inner">
-      <button class="filter-toggle-mobile" id="filterToggle">☰ Filters &amp; Search</button>
+      <button class="filter-toggle-mobile" id="filterToggle" aria-label="Toggle filters">☰ Filters &amp; Search</button>
       <div class="filter-rows-wrap" id="filterRows">
 
         <!-- Row 1: Dropdowns + Search -->
@@ -65,35 +66,62 @@
             </select>
           </div>
           <div class="filter-group">
+            <label for="filterSurface">Surface</label>
+            <select id="filterSurface">
+              <option value="">All Surfaces</option>
+              <option value="Clay">Clay</option>
+              <option value="Hard">Hard</option>
+              <option value="Indoor Hard">Indoor Hard</option>
+              <option value="Grass">Grass</option>
+            </select>
+          </div>
+          <div class="filter-group">
             <label for="filterSort">Sort</label>
             <select id="filterSort">
               <option value="name">Name</option>
               <option value="country">Country</option>
               <option value="ranking">Best Coach Ranking</option>
               <option value="price">Price (low→high)</option>
+              <option value="distance">Distance (nearest)</option>
             </select>
           </div>
           <div class="filter-group">
+            <label for="filterCurrency">Currency</label>
+            <select id="filterCurrency">
+              <option value="EUR">€ EUR</option>
+              <option value="USD">$ USD</option>
+              <option value="GBP">£ GBP</option>
+              <option value="TRY">₺ TRY</option>
+              <option value="RSD">RSD</option>
+              <option value="CZK">CZK</option>
+              <option value="PLN">PLN</option>
+              <option value="RON">RON</option>
+              <option value="HUF">HUF</option>
+            </select>
+          </div>
+          <div class="filter-group" role="search">
             <label for="filterSearch">🔍</label>
-            <input type="text" id="filterSearch" placeholder="Search academies…">
+            <input type="text" id="filterSearch" placeholder="Search academies…" aria-label="Search academies">
           </div>
         </div>
 
         <!-- Row 2: Toggles -->
         <div class="filter-row">
           <div class="view-toggle">
-            <button class="toggle-btn active" id="btnListView" data-view="list">📋 List</button>
-            <button class="toggle-btn" id="btnMapView" data-view="map">🗺️ Map</button>
+            <button class="toggle-btn active" id="btnListView" data-view="list" aria-label="List view">📋 List</button>
+            <button class="toggle-btn" id="btnMapView" data-view="map" aria-label="Map view">🗺️ Map</button>
           </div>
-          <button class="toggle-btn" id="toggleFavorites">❤️ My Shortlist</button>
-          <button class="toggle-btn" id="togglePrice" data-filter="price">💰 Has Pricing</button>
-          <button class="toggle-btn" id="toggleIndividual" data-filter="individual">✅ Individual Lessons</button>
-          <button class="toggle-btn" id="toggleBoarding" data-filter="boarding">🏠 Boarding</button>
-          <button class="toggle-btn" id="toggleBeach" data-filter="beach">🏖️ Near Beach</button>
-          <button class="toggle-btn" id="toggleATP" data-filter="atp">🎾 Coach Played ATP/WTA</button>
-          <button class="toggle-btn" id="toggleTop10" data-filter="top10">🏆 Top-10 Connection</button>
-          <button class="btn-reset" id="btnReset">✕ Reset Filters</button>
-          <button class="btn-print" id="btnPrint" title="Print shortlist">🖨️ Print</button>
+          <button class="toggle-btn" id="toggleFavorites" aria-label="Show my shortlist">❤️ My Shortlist</button>
+          <button class="toggle-btn" id="togglePrice" data-filter="price" aria-label="Filter has pricing">💰 Has Pricing</button>
+          <button class="toggle-btn" id="toggleIndividual" data-filter="individual" aria-label="Filter individual lessons">✅ Individual Lessons</button>
+          <button class="toggle-btn" id="toggleBoarding" data-filter="boarding" aria-label="Filter boarding">🏠 Boarding</button>
+          <button class="toggle-btn" id="toggleBeach" data-filter="beach" aria-label="Filter near beach">🏖️ Near Beach</button>
+          <button class="toggle-btn" id="toggleATP" data-filter="atp" aria-label="Filter ATP WTA coaches">🎾 Coach Played ATP/WTA</button>
+          <button class="toggle-btn" id="toggleTop10" data-filter="top10" aria-label="Filter top 10 connection">🏆 Top-10 Connection</button>
+          <button class="toggle-btn" id="toggleNearMe" data-filter="nearMe" aria-label="Sort by distance from me">📍 Near Me</button>
+          <button class="btn-reset" id="btnReset" aria-label="Reset all filters">✕ Reset Filters</button>
+          <button class="btn-print" id="btnPrint" title="Print shortlist" aria-label="Print shortlist">🖨️ Print</button>
+          <button class="btn-export" id="btnExport" title="Export data" aria-label="Export data as CSV">📥 Export</button>
         </div>
 
       </div>
@@ -101,10 +129,12 @@
   </div>
 
   <!-- Results Count -->
-  <div class="results-bar" id="resultsBar">Showing 0 of 0 academies</div>
+  <div class="results-bar" id="resultsBar" aria-live="polite">Showing 0 of 0 academies</div>
 
   <!-- Card Grid -->
-  <div class="card-grid" id="cardGrid"></div>
+  <main id="mainContent" role="main">
+    <div class="card-grid" id="cardGrid" role="list" aria-label="Tennis academies"></div>
+  </main>
 
   <!-- Map View -->
   <div class="map-container" id="mapContainer" style="display:none;">

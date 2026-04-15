@@ -11,8 +11,52 @@ const state = {
   atp: false,
   top10: false,
   showFavorites: false,
-  viewMode: 'list'
+  viewMode: 'list',
+  currency: 'EUR',
+  surface: '',
+  nearMe: false
 };
+
+/* ===== Currency Converter ===== */
+const CURRENCY_RATES = {
+  EUR: { symbol: '€', rate: 1 },
+  USD: { symbol: '$', rate: 1.08 },
+  GBP: { symbol: '£', rate: 0.86 },
+  TRY: { symbol: '₺', rate: 34.5 },
+  RSD: { symbol: 'RSD ', rate: 117 },
+  CZK: { symbol: 'CZK ', rate: 25.2 },
+  PLN: { symbol: 'PLN ', rate: 4.32 },
+  RON: { symbol: 'RON ', rate: 4.97 },
+  HUF: { symbol: 'HUF ', rate: 395 },
+};
+
+function convertPrice(eurAmount) {
+  const curr = state.currency || 'EUR';
+  const c = CURRENCY_RATES[curr];
+  const converted = Math.round(eurAmount * c.rate);
+  return c.symbol + converted.toLocaleString();
+}
+
+/* ===== Geolocation ===== */
+let userLocation = null;
+
+function getUserLocation() {
+  return new Promise((resolve, reject) => {
+    if (!navigator.geolocation) return reject('No geolocation');
+    navigator.geolocation.getCurrentPosition(
+      pos => { userLocation = { lat: pos.coords.latitude, lng: pos.coords.longitude }; resolve(userLocation); },
+      err => reject(err)
+    );
+  });
+}
+
+function haversineDistance(lat1, lng1, lat2, lng2) {
+  const R = 6371;
+  const dLat = (lat2 - lat1) * Math.PI / 180;
+  const dLng = (lng2 - lng1) * Math.PI / 180;
+  const a = Math.sin(dLat/2)**2 + Math.cos(lat1*Math.PI/180) * Math.cos(lat2*Math.PI/180) * Math.sin(dLng/2)**2;
+  return R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+}
 
 /* ===== Compare State ===== */
 const compareSet = new Set();
@@ -210,6 +254,13 @@ function sortAcademies(academies, sortKey) {
         const pb = b.priceRange.from ?? Infinity;
         return pa - pb || a.name.localeCompare(b.name);
       });
+    case 'distance':
+      if (!userLocation) return copy;
+      return copy.sort((a, b) => {
+        const da = (a.lat && a.lng) ? haversineDistance(userLocation.lat, userLocation.lng, a.lat, a.lng) : Infinity;
+        const db = (b.lat && b.lng) ? haversineDistance(userLocation.lat, userLocation.lng, b.lat, b.lng) : Infinity;
+        return da - db;
+      });
     default:
       return copy;
   }
@@ -227,6 +278,7 @@ function getFilteredAcademies() {
   if (state.beach) result = filterByBeach(result);
   if (state.atp) result = filterByCoachATP(result);
   if (state.top10) result = filterByCoachTop10(result);
+  if (state.surface) result = result.filter(a => a.courtSurfaces && a.courtSurfaces.includes(state.surface));
   if (state.showFavorites) {
     const favs = getFavorites();
     result = result.filter(a => favs.includes(a.id));
@@ -277,13 +329,30 @@ function cardHTML(a) {
   const isFav = favs.includes(a.id);
   const isCompared = compareSet.has(a.id);
 
+  let priceDisplay;
+  if (a.priceRange.from !== null) {
+    priceDisplay = '💰 ' + convertPrice(a.priceRange.from);
+    if (a.priceRange.to !== null && a.priceRange.to !== a.priceRange.from) {
+      priceDisplay += ' – ' + convertPrice(a.priceRange.to);
+    }
+    priceDisplay += '/mo';
+  } else {
+    priceDisplay = '💰 ' + escapeHTML(a.priceRange.display);
+  }
+
+  let distanceStr = '';
+  if (userLocation && a.lat && a.lng) {
+    const dist = haversineDistance(userLocation.lat, userLocation.lng, a.lat, a.lng);
+    distanceStr = `<div class="card-distance">📍 ${Math.round(dist)} km from you</div>`;
+  }
+
   return `
-    <div class="academy-card" data-id="${a.id}" id="card-${a.id}">
+    <div class="academy-card" data-id="${a.id}" id="card-${a.id}" role="listitem">
       <div class="card-header">
         <div class="compare-check ${isCompared ? 'active' : ''}" data-id="${a.id}" onclick="toggleCompare('${a.id}')" title="Add to compare">✓</div>
         <div class="card-title">
           <span class="fav-heart ${isFav ? 'active' : ''}" data-id="${a.id}" onclick="toggleFavorite('${a.id}')">${isFav ? '♥' : '♡'}</span>
-          <button class="btn-share" onclick="shareAcademy('${a.id}')" title="Share">📤</button>
+          <button class="btn-share" onclick="shareAcademy('${a.id}')" title="Share" aria-label="Share ${escapeHTML(a.name)}">📤</button>
           <span class="flag">${a.countryFlag}</span>
           <span>${escapeHTML(a.name)}${star}</span>
         </div>
@@ -291,12 +360,13 @@ function cardHTML(a) {
       </div>
       <div class="card-body">
         <div class="card-tags">${tags}</div>
-        <div class="card-price">💰 ${escapeHTML(a.priceRange.display)}</div>
+        <div class="card-price">${priceDisplay}</div>
         ${topCoach}
         <div class="card-airport">${airportStr}</div>
+        ${distanceStr}
       </div>
       <div class="card-footer">
-        <button class="btn-details" onclick="toggleDetails(this)">
+        <button class="btn-details" onclick="toggleDetails(this)" aria-label="View details for ${escapeHTML(a.name)}">
           View Details <span class="arrow">▼</span>
         </button>
         <div class="card-details">
@@ -311,6 +381,11 @@ function buildTags(a) {
   if (a.individualLessons) html += '<span class="tag tag-individual">✅ Individual</span>';
   if (a.boarding) html += '<span class="tag tag-boarding">🏠 Boarding</span>';
   if (typeof a.beach.distance === 'number') html += '<span class="tag tag-beach">🏖️ Beach</span>';
+  if (a.courtSurfaces) {
+    a.courtSurfaces.forEach(s => {
+      html += `<span class="tag tag-surface">${escapeHTML(s)}</span>`;
+    });
+  }
   return html;
 }
 
@@ -345,7 +420,14 @@ function buildDetails(a) {
     html += '<div class="detail-section"><h4>Coaches</h4><ul>';
     a.coaches.forEach(c => {
       const parts = [c.credential, c.background].filter(Boolean).join(' — ');
-      html += `<li><strong>${escapeHTML(c.name)}</strong>: ${escapeHTML(parts)}</li>`;
+      html += `<li><strong>${escapeHTML(c.name)}</strong>: ${escapeHTML(parts)}`;
+      if (c.languages && c.languages.length) {
+        html += ` <em>(${c.languages.join(', ')})</em>`;
+      }
+      if (c.instagram) {
+        html += ` <a href="https://instagram.com/${escapeHTML(c.instagram)}" target="_blank" rel="noopener" class="coach-instagram" aria-label="Instagram profile">📸 @${escapeHTML(c.instagram)}</a>`;
+      }
+      html += '</li>';
     });
     html += '</ul></div>';
   }
@@ -359,6 +441,9 @@ function buildDetails(a) {
   if (a.facilities) {
     html += `<div class="detail-section"><h4>Facilities</h4><p>${escapeHTML(a.facilities)}</p></div>`;
   }
+  if (a.courtSurfaces && a.courtSurfaces.length) {
+    html += `<div class="detail-section"><h4>🎾 Court Surfaces</h4><p>${a.courtSurfaces.map(escapeHTML).join(' • ')}</p></div>`;
+  }
   if (a.notableAlumni && a.notableAlumni.length) {
     html += `<div class="detail-section"><h4>Notable Alumni</h4><p>${a.notableAlumni.map(escapeHTML).join(', ')}</p></div>`;
   }
@@ -370,6 +455,11 @@ function buildDetails(a) {
   }
   if (a.beach && a.beach.description) {
     html += `<div class="detail-section"><h4>Beach / Sea</h4><p>${escapeHTML(a.beach.description)}</p></div>`;
+  }
+  if (a.airport) {
+    const flightUrl = `https://www.google.com/travel/flights?q=flights+to+${encodeURIComponent(a.airport.code)}`;
+    html += `<div class="detail-section"><h4>✈️ Airport</h4><p>${escapeHTML(a.airport.name)} (${escapeHTML(a.airport.code)}) — ${escapeHTML(a.airport.distance)}, ${escapeHTML(a.airport.driveTime)} drive</p>`;
+    html += `<a href="${flightUrl}" target="_blank" rel="noopener" class="btn-flight">🔍 Search Flights to ${escapeHTML(a.airport.code)}</a></div>`;
   }
   if (a.nearbyHotels && a.nearbyHotels.length) {
     html += '<div class="detail-section"><h4>🏨 Nearby Hotels</h4>';
@@ -384,6 +474,23 @@ function buildDetails(a) {
         <td>${h.wifi ? '📶 Yes' : '—'}</td>
         <td>${escapeHTML(h.pricePerNight)}</td>
         <td>${h.features.map(escapeHTML).join(', ')}</td>
+      </tr>`;
+    });
+    html += '</tbody></table></div>';
+  }
+  if (a.nearbyRestaurants && a.nearbyRestaurants.length) {
+    html += '<div class="detail-section"><h4>🍽️ Nearby Restaurants</h4>';
+    html += '<table class="hotel-table"><thead><tr><th>Restaurant</th><th>Cuisine</th><th>Distance</th><th>Price</th><th>Rating</th><th>Vegetarian</th><th>Outdoor</th></tr></thead><tbody>';
+    a.nearbyRestaurants.forEach(r => {
+      const ratingStars = '⭐'.repeat(Math.round(r.rating));
+      html += `<tr>
+        <td><strong>${escapeHTML(r.name)}</strong></td>
+        <td>${escapeHTML(r.cuisine)}</td>
+        <td>${r.distanceKm} km</td>
+        <td>${escapeHTML(r.priceRange)}</td>
+        <td>${ratingStars}</td>
+        <td>${r.vegetarian ? '🥬 Yes' : '—'}</td>
+        <td>${r.outdoor ? '☀️ Yes' : '—'}</td>
       </tr>`;
     });
     html += '</tbody></table></div>';
@@ -407,6 +514,7 @@ function buildDetailActions(a) {
   if (a.website) {
     html += `<a href="${escapeHTML(a.website)}" target="_blank" rel="noopener" class="btn-visit">🌐 Visit Website</a>`;
   }
+  html += `<button class="btn-calculator" onclick="showTripCalculator('${a.id}')" aria-label="Estimate trip cost">🧮 Trip Cost</button>`;
   html += '</div>';
   return html;
 }
@@ -450,6 +558,58 @@ function printShortlist() {
   document.querySelectorAll('.card-details').forEach(d => d.classList.add('open'));
   document.querySelectorAll('.btn-details').forEach(b => b.classList.add('open'));
   setTimeout(() => window.print(), 100);
+}
+
+/* ===== Trip Cost Calculator ===== */
+function showTripCalculator(id) {
+  const a = ACADEMIES.find(ac => ac.id === id);
+  if (!a) return;
+  const card = document.getElementById('card-' + id);
+  if (!card) return;
+
+  const existing = card.querySelector('.trip-calculator');
+  if (existing) { existing.remove(); return; }
+
+  let programCost = a.priceRange.from || 0;
+  let hotelCost = 0;
+  if (a.nearbyHotels && a.nearbyHotels.length) {
+    const cheapest = a.nearbyHotels.reduce((min, h) => {
+      const price = parseInt(String(h.pricePerNight).replace(/[^0-9]/g, ''), 10) || 0;
+      return price < min ? price : min;
+    }, Infinity);
+    hotelCost = cheapest === Infinity ? 0 : cheapest * 30;
+  }
+  const total = programCost + hotelCost;
+
+  let html = '<div class="trip-calculator">';
+  html += '<h5>🧮 Estimated Monthly Trip Cost</h5>';
+  html += `<div class="calc-row"><span>Program (1 month)</span><span>${convertPrice(programCost)}</span></div>`;
+  html += `<div class="calc-row"><span>Hotel (30 nights, cheapest)</span><span>${convertPrice(hotelCost)}</span></div>`;
+  html += `<div class="calc-row calc-total"><span>Estimated Total</span><span>${convertPrice(total)}</span></div>`;
+  html += '</div>';
+
+  const actions = card.querySelector('.detail-actions');
+  if (actions) {
+    actions.insertAdjacentHTML('afterend', html);
+  }
+}
+
+/* ===== Export CSV ===== */
+function exportCSV() {
+  const filtered = getFilteredAcademies();
+  const headers = ['Name','Country','City','Level','Individual Lessons','Boarding','Price Range','Top Coach','Website'];
+  const rows = filtered.map(a => {
+    const coach = a.coaches.length ? a.coaches[0].name : 'N/A';
+    return [a.name, a.country, a.city, a.level, a.individualLessons ? 'Yes' : 'No', a.boarding ? 'Yes' : 'No', a.priceRange.display, coach, a.website || ''].map(v => `"${v}"`).join(',');
+  });
+  const csv = [headers.join(','), ...rows].join('\n');
+  const blob = new Blob([csv], { type: 'text/csv' });
+  const url = URL.createObjectURL(blob);
+  const link = document.createElement('a');
+  link.href = url;
+  link.download = 'tennis-academies.csv';
+  link.click();
+  URL.revokeObjectURL(url);
 }
 
 /* ===== Climate Chart ===== */
@@ -503,7 +663,9 @@ function saveStateToHash() {
   if (state.level) params.set('level', state.level);
   if (state.sort !== 'name') params.set('sort', state.sort);
   if (state.search) params.set('q', state.search);
-  ['price', 'individual', 'boarding', 'beach', 'atp', 'top10'].forEach(k => {
+  if (state.currency !== 'EUR') params.set('currency', state.currency);
+  if (state.surface) params.set('surface', state.surface);
+  ['price', 'individual', 'boarding', 'beach', 'atp', 'top10', 'nearMe'].forEach(k => {
     if (state[k]) params.set(k, '1');
   });
   if (state.showFavorites) params.set('fav', '1');
@@ -518,7 +680,9 @@ function loadStateFromHash() {
   state.level = params.get('level') || '';
   state.sort = params.get('sort') || 'name';
   state.search = params.get('q') || '';
-  ['price', 'individual', 'boarding', 'beach', 'atp', 'top10'].forEach(k => {
+  state.currency = params.get('currency') || 'EUR';
+  state.surface = params.get('surface') || '';
+  ['price', 'individual', 'boarding', 'beach', 'atp', 'top10', 'nearMe'].forEach(k => {
     state[k] = params.get(k) === '1';
   });
   state.showFavorites = params.get('fav') === '1';
@@ -526,7 +690,9 @@ function loadStateFromHash() {
   document.getElementById('filterLevel').value = state.level;
   document.getElementById('filterSort').value = state.sort;
   document.getElementById('filterSearch').value = state.search;
-  const idMap = { price: 'togglePrice', individual: 'toggleIndividual', boarding: 'toggleBoarding', beach: 'toggleBeach', atp: 'toggleATP', top10: 'toggleTop10' };
+  document.getElementById('filterCurrency').value = state.currency;
+  document.getElementById('filterSurface').value = state.surface;
+  const idMap = { price: 'togglePrice', individual: 'toggleIndividual', boarding: 'toggleBoarding', beach: 'toggleBeach', atp: 'toggleATP', top10: 'toggleTop10', nearMe: 'toggleNearMe' };
   Object.entries(idMap).forEach(([k, id]) => {
     const btn = document.getElementById(id);
     if (btn) btn.classList.toggle('active', state[k]);
@@ -541,6 +707,8 @@ function bindEvents() {
   document.getElementById('filterCountry').addEventListener('change', e => { state.country = e.target.value; applyAndRender(); });
   document.getElementById('filterLevel').addEventListener('change', e => { state.level = e.target.value; applyAndRender(); });
   document.getElementById('filterSort').addEventListener('change', e => { state.sort = e.target.value; applyAndRender(); });
+  document.getElementById('filterCurrency').addEventListener('change', e => { state.currency = e.target.value; applyAndRender(); });
+  document.getElementById('filterSurface').addEventListener('change', e => { state.surface = e.target.value; applyAndRender(); });
 
   let searchTimer;
   document.getElementById('filterSearch').addEventListener('input', e => {
@@ -551,6 +719,31 @@ function bindEvents() {
   document.querySelectorAll('.toggle-btn[data-filter]').forEach(btn => {
     btn.addEventListener('click', () => {
       const key = btn.dataset.filter;
+      if (key === 'nearMe') {
+        state.nearMe = !state.nearMe;
+        btn.classList.toggle('active', state.nearMe);
+        if (state.nearMe && !userLocation) {
+          getUserLocation().then(() => {
+            state.sort = 'distance';
+            document.getElementById('filterSort').value = 'distance';
+            applyAndRender();
+          }).catch(() => {
+            state.nearMe = false;
+            btn.classList.remove('active');
+            showToast('Location access denied');
+          });
+        } else {
+          if (!state.nearMe) {
+            state.sort = 'name';
+            document.getElementById('filterSort').value = 'name';
+          } else {
+            state.sort = 'distance';
+            document.getElementById('filterSort').value = 'distance';
+          }
+          applyAndRender();
+        }
+        return;
+      }
       state[key] = !state[key];
       btn.classList.toggle('active', state[key]);
       applyAndRender();
@@ -568,11 +761,16 @@ function bindEvents() {
   document.getElementById('btnListView').addEventListener('click', () => switchView('list'));
   document.getElementById('btnMapView').addEventListener('click', () => switchView('map'));
 
+  // Export
+  document.getElementById('btnExport').addEventListener('click', exportCSV);
+
   // Reset
   document.getElementById('btnReset').addEventListener('click', () => {
     Object.keys(state).forEach(k => {
       if (k === 'sort') state[k] = 'name';
       else if (k === 'viewMode') { /* keep current view */ }
+      else if (k === 'currency') state[k] = 'EUR';
+      else if (k === 'surface') state[k] = '';
       else if (typeof state[k] === 'boolean') state[k] = false;
       else state[k] = '';
     });
@@ -580,6 +778,8 @@ function bindEvents() {
     document.getElementById('filterLevel').value = '';
     document.getElementById('filterSort').value = 'name';
     document.getElementById('filterSearch').value = '';
+    document.getElementById('filterCurrency').value = 'EUR';
+    document.getElementById('filterSurface').value = '';
     document.querySelectorAll('.toggle-btn.active[data-filter]').forEach(b => b.classList.remove('active'));
     document.getElementById('toggleFavorites').classList.remove('active');
     applyAndRender();

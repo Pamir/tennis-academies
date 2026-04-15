@@ -25,14 +25,15 @@ const ACADEMIES = [
       { name: "VIP", price: "€4,500/mo", desc: "Unlimited tennis, conditioning, massages, mental training" }
     ],
     coaches: [
-      { name: "David Savić", credential: "GPTCA B (ATP Certified)", background: "Coached top-100 ATP & WTA players", atpWta: false, bestRanking: null, rankingNote: "Top-100 ATP/WTA coach" },
-      { name: "Ivan Đurđević", credential: "GPTCA B (ATP Certified)", background: "Experience with top WTA players & Serbian national team", atpWta: false, bestRanking: null },
-      { name: "Milana Spremo", credential: "GPTCA B", background: "Former WTA player; coach of Serbian national team U18", atpWta: true, bestRanking: null, rankingNote: "Former WTA player" },
-      { name: "Marko Savić", credential: "ITF Level 2", background: "National coach of Serbia 10+ years", atpWta: false, bestRanking: null },
-      { name: "Milenko Pisarić", credential: "C TSS, C GPTCA", background: "20+ years international experience (Serbia, USA)", atpWta: false, bestRanking: null }
+      { name: "David Savić", credential: "GPTCA B (ATP Certified)", background: "Coached top-100 ATP & WTA players", atpWta: false, bestRanking: null, rankingNote: "Top-100 ATP/WTA coach", languages: ["Serbian", "English"], instagram: null },
+      { name: "Ivan Đurđević", credential: "GPTCA B (ATP Certified)", background: "Experience with top WTA players & Serbian national team", atpWta: false, bestRanking: null, languages: ["Serbian", "English"], instagram: null },
+      { name: "Milana Spremo", credential: "GPTCA B", background: "Former WTA player; coach of Serbian national team U18", atpWta: true, bestRanking: null, rankingNote: "Former WTA player", languages: ["Serbian", "English"], instagram: null },
+      { name: "Marko Savić", credential: "ITF Level 2", background: "National coach of Serbia 10+ years", atpWta: false, bestRanking: null, languages: ["Serbian", "English"], instagram: null },
+      { name: "Milenko Pisarić", credential: "C TSS, C GPTCA", background: "20+ years international experience (Serbia, USA)", atpWta: false, bestRanking: null, languages: ["Serbian", "English"], instagram: null }
     ],
     bestCoachRanking: null,
     facilities: "Multiple locations in Belgrade",
+    courtSurfaces: ["Clay", "Hard"],
     notableAlumni: [],
     description: "Full-service academy with transparent pricing, conditioning, mental coaching, injury prevention, tournament travel, accommodation & logistics.",
     nearbyHotels: [
@@ -41,6 +42,13 @@ const ACADEMIES = [
         { name: "Mama Shelter Belgrade", stars: 4, distanceKm: 1, features: ["Restaurant", "Bar", "Parking"], pool: false, wifi: true, pricePerNight: "€75" },
         { name: "Hotel Slavija", stars: 3, distanceKm: 0.8, features: ["Restaurant", "Parking"], pool: false, wifi: true, pricePerNight: "€45" },
         { name: "Zira Hotel", stars: 4, distanceKm: 1.2, features: ["Restaurant", "Gym", "Spa", "Parking"], pool: true, wifi: true, pricePerNight: "€85" }
+      ],
+    nearbyRestaurants: [
+        { name: "Question Mark (Znak Pitanja)", cuisine: "Serbian Traditional", distanceKm: 0.5, priceRange: "€€", rating: 4.6, vegetarian: true, outdoor: true },
+        { name: "Comunale Caffé e Cucina", cuisine: "Italian", distanceKm: 0.3, priceRange: "€€€", rating: 4.5, vegetarian: true, outdoor: true },
+        { name: "Kalemegdanska Terasa", cuisine: "Serbian Fine Dining", distanceKm: 0.8, priceRange: "€€€€", rating: 4.7, vegetarian: true, outdoor: true },
+        { name: "Burger House", cuisine: "American", distanceKm: 0.4, priceRange: "€", rating: 4.2, vegetarian: false, outdoor: false },
+        { name: "Little Bay", cuisine: "International", distanceKm: 1, priceRange: "€€€", rating: 4.4, vegetarian: true, outdoor: false }
       ]
   },
   {
@@ -65,10 +73,11 @@ const ACADEMIES = [
       { name: "Weekly Camps", price: "Contact", desc: "Intensive camp format" }
     ],
     coaches: [
-      { name: "Janko Tipsarević", credential: "Former ATP Player", background: "ATP World No. 8 (2012), ATP Finals participant, Grand Slam QF", atpWta: true, bestRanking: 8, rankingNote: "ATP #8" }
+      { name: "Janko Tipsarević", credential: "Former ATP Player", background: "ATP World No. 8 (2012), ATP Finals participant, Grand Slam QF", atpWta: true, bestRanking: 8, rankingNote: "ATP #8", languages: ["Serbian", "English", "German"], instagram: "jabortennis" }
     ],
     bestCoachRanking: 8,
     facilities: "Clay courts, hard court (US Open surface), fitness center, recovery facilities, on-site boarding accommodation",
+    courtSurfaces: ["Clay", "Hard"],
     notableAlumni: ["Laslo Djere", "Yuichi Sugita", "Dušan Lajović"],
     description: "Only full-boarding tennis academy in Serbia. Founded by former ATP World No. 8 Janko Tipsarević.",
     nearbyHotels: [
@@ -77,6 +86,13 @@ const ACADEMIES = [
         { name: "Mama Shelter Belgrade", stars: 4, distanceKm: 1, features: ["Restaurant", "Bar", "Parking"], pool: false, wifi: true, pricePerNight: "€75" },
         { name: "Hotel Slavija", stars: 3, distanceKm: 0.8, features: ["Restaurant", "Parking"], pool: false, wifi: true, pricePerNight: "€45" },
         { name: "Zira Hotel", stars: 4, distanceKm: 1.2, features: ["Restaurant", "Gym", "Spa", "Parking"], pool: true, wifi: true, pricePerNight: "€85" }
+      ],
+    nearbyRestaurants: [
+        { name: "Question Mark (Znak Pitanja)", cuisine: "Serbian Traditional", distanceKm: 0.5, priceRange: "€€", rating: 4.6, vegetarian: true, outdoor: true },
+        { name: "Comunale Caffé e Cucina", cuisine: "Italian", distanceKm: 0.3, priceRange: "€€€", rating: 4.5, vegetarian: true, outdoor: true },
+        { name: "Kalemegdanska Terasa", cuisine: "Serbian Fine Dining", distanceKm: 0.8, priceRange: "€€€€", rating: 4.7, vegetarian: true, outdoor: true },
+        { name: "Burger House", cuisine: "American", distanceKm: 0.4, priceRange: "€", rating: 4.2, vegetarian: false, outdoor: false },
+        { name: "Little Bay", cuisine: "International", distanceKm: 1, priceRange: "€€€", rating: 4.4, vegetarian: true, outdoor: false }
       ]
   },
   {
@@ -100,11 +116,12 @@ const ACADEMIES = [
       { name: "Junior Programs", price: "Contact", desc: "Holistic approach: nutrition, mental conditioning, recovery" }
     ],
     coaches: [
-      { name: "Dejan Vraneš", credential: "Former Fed Cup Captain", background: "Coached Novak Djokovic (early dev), Ana Ivanovic (WTA #1), Olga Danilovic; Serbian Men's Olympic Team coach 2008 & 2012", atpWta: false, bestRanking: null, rankingNote: "Coached ATP #1 & WTA #1" }
+      { name: "Dejan Vraneš", credential: "Former Fed Cup Captain", background: "Coached Novak Djokovic (early dev), Ana Ivanovic (WTA #1), Olga Danilovic; Serbian Men's Olympic Team coach 2008 & 2012", atpWta: false, bestRanking: null, rankingNote: "Coached ATP #1 & WTA #1", languages: ["Serbian", "English"], instagram: null }
     ],
     bestCoachRanking: null,
     coachedTopPlayer: 1,
     facilities: "Belgrade-based courts",
+    courtSurfaces: ["Clay", "Hard"],
     notableAlumni: ["Novak Djokovic (early)", "Ana Ivanovic", "Olga Danilovic"],
     description: "Headed by former Serbian Fed Cup captain who coached Novak Djokovic and Ana Ivanovic.",
     nearbyHotels: [
@@ -113,6 +130,13 @@ const ACADEMIES = [
         { name: "Mama Shelter Belgrade", stars: 4, distanceKm: 1, features: ["Restaurant", "Bar", "Parking"], pool: false, wifi: true, pricePerNight: "€75" },
         { name: "Hotel Slavija", stars: 3, distanceKm: 0.8, features: ["Restaurant", "Parking"], pool: false, wifi: true, pricePerNight: "€45" },
         { name: "Zira Hotel", stars: 4, distanceKm: 1.2, features: ["Restaurant", "Gym", "Spa", "Parking"], pool: true, wifi: true, pricePerNight: "€85" }
+      ],
+    nearbyRestaurants: [
+        { name: "Question Mark (Znak Pitanja)", cuisine: "Serbian Traditional", distanceKm: 0.5, priceRange: "€€", rating: 4.6, vegetarian: true, outdoor: true },
+        { name: "Comunale Caffé e Cucina", cuisine: "Italian", distanceKm: 0.3, priceRange: "€€€", rating: 4.5, vegetarian: true, outdoor: true },
+        { name: "Kalemegdanska Terasa", cuisine: "Serbian Fine Dining", distanceKm: 0.8, priceRange: "€€€€", rating: 4.7, vegetarian: true, outdoor: true },
+        { name: "Burger House", cuisine: "American", distanceKm: 0.4, priceRange: "€", rating: 4.2, vegetarian: false, outdoor: false },
+        { name: "Little Bay", cuisine: "International", distanceKm: 1, priceRange: "€€€", rating: 4.4, vegetarian: true, outdoor: false }
       ]
   },
   {
@@ -135,11 +159,12 @@ const ACADEMIES = [
       { name: "Personalized Training", price: "Contact", desc: "Sparring, fitness, career planning, mental training" }
     ],
     coaches: [
-      { name: "Ognjen Jovanovic", credential: "ATP Top-50 Coach", background: "Co-head coach for Miomir Kecmanovic (ATP ~30)", atpWta: false, bestRanking: null, rankingNote: "ATP top-50 coach" }
+      { name: "Ognjen Jovanovic", credential: "ATP Top-50 Coach", background: "Co-head coach for Miomir Kecmanovic (ATP ~30)", atpWta: false, bestRanking: null, rankingNote: "ATP top-50 coach", languages: ["Serbian", "English"], instagram: null }
     ],
     bestCoachRanking: null,
     coachedTopPlayer: 30,
     facilities: "Professional courts, accommodation for international players",
+    courtSurfaces: ["Clay", "Hard"],
     notableAlumni: ["Miomir Kecmanovic"],
     description: "Headed by ATP top-50 coach, co-head coach for Miomir Kecmanovic.",
     nearbyHotels: [
@@ -148,6 +173,13 @@ const ACADEMIES = [
         { name: "Mama Shelter Belgrade", stars: 4, distanceKm: 1, features: ["Restaurant", "Bar", "Parking"], pool: false, wifi: true, pricePerNight: "€75" },
         { name: "Hotel Slavija", stars: 3, distanceKm: 0.8, features: ["Restaurant", "Parking"], pool: false, wifi: true, pricePerNight: "€45" },
         { name: "Zira Hotel", stars: 4, distanceKm: 1.2, features: ["Restaurant", "Gym", "Spa", "Parking"], pool: true, wifi: true, pricePerNight: "€85" }
+      ],
+    nearbyRestaurants: [
+        { name: "Question Mark (Znak Pitanja)", cuisine: "Serbian Traditional", distanceKm: 0.5, priceRange: "€€", rating: 4.6, vegetarian: true, outdoor: true },
+        { name: "Comunale Caffé e Cucina", cuisine: "Italian", distanceKm: 0.3, priceRange: "€€€", rating: 4.5, vegetarian: true, outdoor: true },
+        { name: "Kalemegdanska Terasa", cuisine: "Serbian Fine Dining", distanceKm: 0.8, priceRange: "€€€€", rating: 4.7, vegetarian: true, outdoor: true },
+        { name: "Burger House", cuisine: "American", distanceKm: 0.4, priceRange: "€", rating: 4.2, vegetarian: false, outdoor: false },
+        { name: "Little Bay", cuisine: "International", distanceKm: 1, priceRange: "€€€", rating: 4.4, vegetarian: true, outdoor: false }
       ]
   },
   {
@@ -170,11 +202,12 @@ const ACADEMIES = [
       { name: "Junior Tennis School", price: "Contact", desc: "Ages 6+, clay courts" }
     ],
     coaches: [
-      { name: "Bogdan Obradovic", credential: "Former Djokovic Coach", background: "Former coach of Novak Djokovic (early years)", atpWta: false, bestRanking: null, rankingNote: "Coached ATP #1" }
+      { name: "Bogdan Obradovic", credential: "Former Djokovic Coach", background: "Former coach of Novak Djokovic (early years)", atpWta: false, bestRanking: null, rankingNote: "Coached ATP #1", languages: ["Serbian", "English"], instagram: null }
     ],
     bestCoachRanking: null,
     coachedTopPlayer: 1,
     facilities: "7 courts (5 clay + additional surfaces), Ada Ciganlija",
+    courtSurfaces: ["Clay", "Hard", "Indoor Hard"],
     notableAlumni: ["Novak Djokovic (early)"],
     description: "Founded by Bogdan Obradovic, former coach of Novak Djokovic's early years.",
     nearbyHotels: [
@@ -183,6 +216,13 @@ const ACADEMIES = [
         { name: "Mama Shelter Belgrade", stars: 4, distanceKm: 1, features: ["Restaurant", "Bar", "Parking"], pool: false, wifi: true, pricePerNight: "€75" },
         { name: "Hotel Slavija", stars: 3, distanceKm: 0.8, features: ["Restaurant", "Parking"], pool: false, wifi: true, pricePerNight: "€45" },
         { name: "Zira Hotel", stars: 4, distanceKm: 1.2, features: ["Restaurant", "Gym", "Spa", "Parking"], pool: true, wifi: true, pricePerNight: "€85" }
+      ],
+    nearbyRestaurants: [
+        { name: "Question Mark (Znak Pitanja)", cuisine: "Serbian Traditional", distanceKm: 0.5, priceRange: "€€", rating: 4.6, vegetarian: true, outdoor: true },
+        { name: "Comunale Caffé e Cucina", cuisine: "Italian", distanceKm: 0.3, priceRange: "€€€", rating: 4.5, vegetarian: true, outdoor: true },
+        { name: "Kalemegdanska Terasa", cuisine: "Serbian Fine Dining", distanceKm: 0.8, priceRange: "€€€€", rating: 4.7, vegetarian: true, outdoor: true },
+        { name: "Burger House", cuisine: "American", distanceKm: 0.4, priceRange: "€", rating: 4.2, vegetarian: false, outdoor: false },
+        { name: "Little Bay", cuisine: "International", distanceKm: 1, priceRange: "€€€", rating: 4.4, vegetarian: true, outdoor: false }
       ]
   },
   {
@@ -208,6 +248,7 @@ const ACADEMIES = [
     coaches: [],
     bestCoachRanking: null,
     facilities: "Tennis base with on-site apartments",
+    courtSurfaces: ["Clay", "Hard"],
     notableAlumni: ["Aleksandra Krunić"],
     description: "Individual training, tournament accompaniment, on-site apartment accommodation.",
     nearbyHotels: [
@@ -216,6 +257,13 @@ const ACADEMIES = [
         { name: "Mama Shelter Belgrade", stars: 4, distanceKm: 1, features: ["Restaurant", "Bar", "Parking"], pool: false, wifi: true, pricePerNight: "€75" },
         { name: "Hotel Slavija", stars: 3, distanceKm: 0.8, features: ["Restaurant", "Parking"], pool: false, wifi: true, pricePerNight: "€45" },
         { name: "Zira Hotel", stars: 4, distanceKm: 1.2, features: ["Restaurant", "Gym", "Spa", "Parking"], pool: true, wifi: true, pricePerNight: "€85" }
+      ],
+    nearbyRestaurants: [
+        { name: "Question Mark (Znak Pitanja)", cuisine: "Serbian Traditional", distanceKm: 0.5, priceRange: "€€", rating: 4.6, vegetarian: true, outdoor: true },
+        { name: "Comunale Caffé e Cucina", cuisine: "Italian", distanceKm: 0.3, priceRange: "€€€", rating: 4.5, vegetarian: true, outdoor: true },
+        { name: "Kalemegdanska Terasa", cuisine: "Serbian Fine Dining", distanceKm: 0.8, priceRange: "€€€€", rating: 4.7, vegetarian: true, outdoor: true },
+        { name: "Burger House", cuisine: "American", distanceKm: 0.4, priceRange: "€", rating: 4.2, vegetarian: false, outdoor: false },
+        { name: "Little Bay", cuisine: "International", distanceKm: 1, priceRange: "€€€", rating: 4.4, vegetarian: true, outdoor: false }
       ]
   },
   {
@@ -242,6 +290,7 @@ const ACADEMIES = [
     coaches: [],
     bestCoachRanking: null,
     facilities: "Up to 15 clay courts + 1 indoor hard court",
+    courtSurfaces: ["Clay", "Indoor Hard"],
     notableAlumni: [],
     description: "Intensive & semi-intensive programs. International coaching experience (China, Switzerland, Germany, USA).",
     nearbyHotels: [
@@ -250,6 +299,13 @@ const ACADEMIES = [
         { name: "Mama Shelter Belgrade", stars: 4, distanceKm: 1, features: ["Restaurant", "Bar", "Parking"], pool: false, wifi: true, pricePerNight: "€75" },
         { name: "Hotel Slavija", stars: 3, distanceKm: 0.8, features: ["Restaurant", "Parking"], pool: false, wifi: true, pricePerNight: "€45" },
         { name: "Zira Hotel", stars: 4, distanceKm: 1.2, features: ["Restaurant", "Gym", "Spa", "Parking"], pool: true, wifi: true, pricePerNight: "€85" }
+      ],
+    nearbyRestaurants: [
+        { name: "Question Mark (Znak Pitanja)", cuisine: "Serbian Traditional", distanceKm: 0.5, priceRange: "€€", rating: 4.6, vegetarian: true, outdoor: true },
+        { name: "Comunale Caffé e Cucina", cuisine: "Italian", distanceKm: 0.3, priceRange: "€€€", rating: 4.5, vegetarian: true, outdoor: true },
+        { name: "Kalemegdanska Terasa", cuisine: "Serbian Fine Dining", distanceKm: 0.8, priceRange: "€€€€", rating: 4.7, vegetarian: true, outdoor: true },
+        { name: "Burger House", cuisine: "American", distanceKm: 0.4, priceRange: "€", rating: 4.2, vegetarian: false, outdoor: false },
+        { name: "Little Bay", cuisine: "International", distanceKm: 1, priceRange: "€€€", rating: 4.4, vegetarian: true, outdoor: false }
       ]
   },
   {
@@ -274,11 +330,12 @@ const ACADEMIES = [
       { name: "Vacation + Tennis", price: "Contact", desc: "Mediterranean island packages" }
     ],
     coaches: [
-      { name: "Ivan Ljubičić", credential: "Former ATP Player / Federer's Coach", background: "ATP World No. 3, Indian Wells champion, Olympic bronze, coached Roger Federer 2016–2022", atpWta: true, bestRanking: 3, rankingNote: "ATP #3" },
-      { name: "Luka Cvjetković", credential: "Head Coach", background: "Full-time academy head coach", atpWta: false, bestRanking: null }
+      { name: "Ivan Ljubičić", credential: "Former ATP Player / Federer's Coach", background: "ATP World No. 3, Indian Wells champion, Olympic bronze, coached Roger Federer 2016–2022", atpWta: true, bestRanking: 3, rankingNote: "ATP #3", languages: ["Croatian", "English", "Italian", "French"], instagram: "ivan.ljubicic" },
+      { name: "Luka Cvjetković", credential: "Head Coach", background: "Full-time academy head coach", atpWta: false, bestRanking: null, languages: ["Croatian", "English"], instagram: null }
     ],
     bestCoachRanking: 3,
     facilities: "13 courts, gym, physio, luxury accommodation (hotels, villas). 260+ sunny days/year",
+    courtSurfaces: ["Clay", "Hard", "Indoor Hard"],
     notableAlumni: [],
     description: "Founded by Ivan Ljubičić (ATP #3, Roger Federer's coach). Mediterranean island setting with luxury facilities.",
     nearbyHotels: [
@@ -287,6 +344,13 @@ const ACADEMIES = [
         { name: "Hotel Aurora", stars: 4, distanceKm: 1, features: ["Restaurant", "Bar", "Parking"], pool: true, wifi: true, pricePerNight: "€110" },
         { name: "Mare Mare Suites", stars: 3, distanceKm: 0.3, features: ["Breakfast Included", "Parking"], pool: false, wifi: true, pricePerNight: "€70" },
         { name: "Hotel Apoksiomen", stars: 4, distanceKm: 0.2, features: ["Restaurant", "Spa", "Bar"], pool: false, wifi: true, pricePerNight: "€130" }
+      ],
+    nearbyRestaurants: [
+        { name: "Restaurant Bora Bar", cuisine: "Mediterranean", distanceKm: 0.2, priceRange: "€€€", rating: 4.6, vegetarian: true, outdoor: true },
+        { name: "Konoba Cigale", cuisine: "Croatian Seafood", distanceKm: 0.5, priceRange: "€€", rating: 4.4, vegetarian: false, outdoor: true },
+        { name: "Pizzeria Draga", cuisine: "Italian", distanceKm: 0.3, priceRange: "€", rating: 4.1, vegetarian: true, outdoor: true },
+        { name: "Restaurant Diana", cuisine: "Fine Dining", distanceKm: 0.4, priceRange: "€€€€", rating: 4.7, vegetarian: true, outdoor: true },
+        { name: "Lanterna Grill", cuisine: "Grilled Meats & Fish", distanceKm: 0.6, priceRange: "€€", rating: 4.3, vegetarian: false, outdoor: true }
       ]
   },
   {
@@ -313,13 +377,14 @@ const ACADEMIES = [
       { name: "Tennis + Nature", price: "€750/wk", desc: "National Park excursions included" }
     ],
     coaches: [
-      { name: "Milan Zorić", credential: "ATP Coach", background: "Private coach of Iva Majoli (WTA #2, RG champion); coached Ana Vrljić, Darija Jurak", atpWta: false, bestRanking: null, rankingNote: "Coached WTA #2" },
-      { name: "Robert Suevich", credential: "Former ATP Player", background: "ATP ~850, played Wimbledon & RG; coached Andrei Pavel (ATP #13)", atpWta: true, bestRanking: 850, rankingNote: "ATP ~850; coached ATP #13" },
-      { name: "Mario Jukić", credential: "Former Junior International", background: "Hitting coach for Borna Ćorić and Donna Vekić", atpWta: false, bestRanking: null, rankingNote: "Coached ATP/WTA players" }
+      { name: "Milan Zorić", credential: "ATP Coach", background: "Private coach of Iva Majoli (WTA #2, RG champion); coached Ana Vrljić, Darija Jurak", atpWta: false, bestRanking: null, rankingNote: "Coached WTA #2", languages: ["Croatian", "English"], instagram: null },
+      { name: "Robert Suevich", credential: "Former ATP Player", background: "ATP ~850, played Wimbledon & RG; coached Andrei Pavel (ATP #13)", atpWta: true, bestRanking: 850, rankingNote: "ATP ~850; coached ATP #13", languages: ["Croatian", "English", "Romanian"], instagram: null },
+      { name: "Mario Jukić", credential: "Former Junior International", background: "Hitting coach for Borna Ćorić and Donna Vekić", atpWta: false, bestRanking: null, rankingNote: "Coached ATP/WTA players", languages: ["Croatian", "English"], instagram: null }
     ],
     bestCoachRanking: 850,
     coachedTopPlayer: 2,
     facilities: "20+ coaches, courts in Biograd na Moru (Dalmatian coast)",
+    courtSurfaces: ["Clay", "Hard"],
     notableAlumni: ["Ajla Tomljanović", "Borna Ćorić (connection)", "Donna Vekić (connection)"],
     description: "Combines tennis with Croatian tourism: sailing, national parks, yoga, cycling. 20+ coaches.",
     nearbyHotels: [
@@ -328,6 +393,13 @@ const ACADEMIES = [
         { name: "Hotel Adriatic", stars: 3, distanceKm: 0.2, features: ["Restaurant", "Bar", "Parking"], pool: false, wifi: true, pricePerNight: "€65" },
         { name: "Hotel Bolero", stars: 3, distanceKm: 0.5, features: ["Restaurant", "Parking", "Pet Friendly"], pool: false, wifi: true, pricePerNight: "€55" },
         { name: "Villa Donat", stars: 3, distanceKm: 1, features: ["Restaurant", "Parking", "Breakfast Included"], pool: true, wifi: true, pricePerNight: "€60" }
+      ],
+    nearbyRestaurants: [
+        { name: "Konoba Šime", cuisine: "Dalmatian", distanceKm: 0.3, priceRange: "€€", rating: 4.5, vegetarian: true, outdoor: true },
+        { name: "Restaurant Kaštel", cuisine: "Mediterranean Seafood", distanceKm: 0.2, priceRange: "€€€", rating: 4.6, vegetarian: true, outdoor: true },
+        { name: "Pizzeria Pontus", cuisine: "Italian", distanceKm: 0.4, priceRange: "€", rating: 4, vegetarian: true, outdoor: true },
+        { name: "Restoran Marina", cuisine: "Croatian", distanceKm: 0.5, priceRange: "€€", rating: 4.3, vegetarian: false, outdoor: true },
+        { name: "Konoba Barba", cuisine: "Grilled Fish", distanceKm: 0.6, priceRange: "€€€", rating: 4.4, vegetarian: false, outdoor: true }
       ]
   },
   {
@@ -350,6 +422,7 @@ const ACADEMIES = [
     coaches: [],
     bestCoachRanking: null,
     facilities: "Historic tennis club in Split",
+    courtSurfaces: ["Clay", "Hard"],
     notableAlumni: ["Goran Ivanišević (ATP #2, Wimbledon champion)"],
     description: "The club where Goran Ivanišević developed. One of Croatia's most important tennis clubs.",
     nearbyHotels: [
@@ -358,6 +431,13 @@ const ACADEMIES = [
         { name: "Hotel Marmont Heritage", stars: 4, distanceKm: 0.2, features: ["Restaurant", "Bar", "Room Service"], pool: false, wifi: true, pricePerNight: "€105" },
         { name: "Hotel Slavija", stars: 3, distanceKm: 0.4, features: ["Restaurant", "Bar"], pool: false, wifi: true, pricePerNight: "€55" },
         { name: "Hotel Luxe", stars: 4, distanceKm: 0.5, features: ["Restaurant", "Spa", "Room Service"], pool: false, wifi: true, pricePerNight: "€90" }
+      ],
+    nearbyRestaurants: [
+        { name: "Konoba Matejuška", cuisine: "Dalmatian Seafood", distanceKm: 0.3, priceRange: "€€", rating: 4.6, vegetarian: false, outdoor: true },
+        { name: "Zinfandel Food & Wine Bar", cuisine: "Mediterranean", distanceKm: 0.2, priceRange: "€€€", rating: 4.5, vegetarian: true, outdoor: true },
+        { name: "Uje Oil Bar", cuisine: "Croatian Modern", distanceKm: 0.4, priceRange: "€€", rating: 4.7, vegetarian: true, outdoor: true },
+        { name: "Pizzeria Portas", cuisine: "Italian", distanceKm: 0.1, priceRange: "€", rating: 4.2, vegetarian: true, outdoor: false },
+        { name: "Dvor", cuisine: "Fine Dining", distanceKm: 1.5, priceRange: "€€€€", rating: 4.8, vegetarian: true, outdoor: true }
       ]
   },
   {
@@ -380,6 +460,7 @@ const ACADEMIES = [
     coaches: [],
     bestCoachRanking: null,
     facilities: "Training for all ages and skill levels",
+    courtSurfaces: ["Clay", "Hard"],
     notableAlumni: [],
     description: "Training for all ages and skill levels in Split.",
     nearbyHotels: [
@@ -388,6 +469,13 @@ const ACADEMIES = [
         { name: "Hotel Marmont Heritage", stars: 4, distanceKm: 0.2, features: ["Restaurant", "Bar", "Room Service"], pool: false, wifi: true, pricePerNight: "€105" },
         { name: "Hotel Slavija", stars: 3, distanceKm: 0.4, features: ["Restaurant", "Bar"], pool: false, wifi: true, pricePerNight: "€55" },
         { name: "Hotel Luxe", stars: 4, distanceKm: 0.5, features: ["Restaurant", "Spa", "Room Service"], pool: false, wifi: true, pricePerNight: "€90" }
+      ],
+    nearbyRestaurants: [
+        { name: "Konoba Matejuška", cuisine: "Dalmatian Seafood", distanceKm: 0.3, priceRange: "€€", rating: 4.6, vegetarian: false, outdoor: true },
+        { name: "Zinfandel Food & Wine Bar", cuisine: "Mediterranean", distanceKm: 0.2, priceRange: "€€€", rating: 4.5, vegetarian: true, outdoor: true },
+        { name: "Uje Oil Bar", cuisine: "Croatian Modern", distanceKm: 0.4, priceRange: "€€", rating: 4.7, vegetarian: true, outdoor: true },
+        { name: "Pizzeria Portas", cuisine: "Italian", distanceKm: 0.1, priceRange: "€", rating: 4.2, vegetarian: true, outdoor: false },
+        { name: "Dvor", cuisine: "Fine Dining", distanceKm: 1.5, priceRange: "€€€€", rating: 4.8, vegetarian: true, outdoor: true }
       ]
   },
   {
@@ -413,6 +501,7 @@ const ACADEMIES = [
     coaches: [],
     bestCoachRanking: null,
     facilities: "Major complex, indoor/outdoor courts, rehabilitation zone, new tennis hall",
+    courtSurfaces: ["Clay", "Hard", "Indoor Hard"],
     notableAlumni: ["Petra Kvitová (WTA #2)", "Tomáš Berdych (ATP #4)", "Barbora Krejčíková (WTA #2)", "Karolína Plíšková (WTA #1)", "Radek Štěpánek (ATP #8)", "Jiří Novák (ATP #5)", "Jiří Lehečka (ATP #14)", "Jakub Menšík", "Tomáš Macháč"],
     description: "Arguably #1 tennis academy in Czech Republic. Produced more Grand Slam champions than any other East European academy. Founded 1900.",
     nearbyHotels: [
@@ -421,6 +510,13 @@ const ACADEMIES = [
         { name: "Penzion Na Hradbách", stars: 2, distanceKm: 0.3, features: ["Breakfast Included", "Parking"], pool: false, wifi: true, pricePerNight: "€30" },
         { name: "Hotel Avion", stars: 3, distanceKm: 1, features: ["Restaurant", "Parking", "Bar"], pool: false, wifi: true, pricePerNight: "€40" },
         { name: "Hotel Nový Dvůr", stars: 4, distanceKm: 12, features: ["Restaurant", "Spa", "Gym", "Parking"], pool: true, wifi: true, pricePerNight: "€75" }
+      ],
+    nearbyRestaurants: [
+        { name: "Restaurace U Kmotra", cuisine: "Czech Traditional", distanceKm: 0.3, priceRange: "€", rating: 4.3, vegetarian: true, outdoor: true },
+        { name: "Pivovar Prostějov", cuisine: "Czech Brewery", distanceKm: 0.5, priceRange: "€€", rating: 4.4, vegetarian: true, outdoor: true },
+        { name: "Restaurace Kovárna", cuisine: "International", distanceKm: 0.4, priceRange: "€€", rating: 4.2, vegetarian: true, outdoor: false },
+        { name: "Pizzeria Rosmarino", cuisine: "Italian", distanceKm: 0.6, priceRange: "€", rating: 4, vegetarian: true, outdoor: false },
+        { name: "Restaurace Na Zámku", cuisine: "Czech Fine Dining", distanceKm: 0.8, priceRange: "€€€", rating: 4.5, vegetarian: true, outdoor: true }
       ]
   },
   {
@@ -445,6 +541,7 @@ const ACADEMIES = [
     coaches: [],
     bestCoachRanking: null,
     facilities: "23 outdoor + 12 indoor courts. Hosts WTA Prague Open & ATP Challenger.",
+    courtSurfaces: ["Clay", "Hard", "Indoor Hard"],
     notableAlumni: ["Jan Kodeš (ATP #5, 3× GS)", "Hana Mandlíková (WTA #3, 4× GS)", "Petra Kvitová (WTA #2)", "Karolína Plíšková (WTA #1)", "Tomáš Macháč"],
     description: "One of Czech Republic's most prestigious clubs. Founded 1905. 35 courts total.",
     nearbyHotels: [
@@ -453,6 +550,13 @@ const ACADEMIES = [
         { name: "Hotel Máchova", stars: 3, distanceKm: 2, features: ["Breakfast Included", "Parking"], pool: false, wifi: true, pricePerNight: "€55" },
         { name: "Mosaic House", stars: 3, distanceKm: 1.2, features: ["Bar", "Breakfast Included", "Pet Friendly"], pool: false, wifi: true, pricePerNight: "€60" },
         { name: "Grand Hotel Bohemia", stars: 5, distanceKm: 0.5, features: ["Restaurant", "Bar", "Room Service", "Conference Room"], pool: false, wifi: true, pricePerNight: "€130" }
+      ],
+    nearbyRestaurants: [
+        { name: "Lokál Dlouhááá", cuisine: "Czech Traditional", distanceKm: 0.5, priceRange: "€", rating: 4.5, vegetarian: true, outdoor: false },
+        { name: "La Degustation Bohême Bourgeoise", cuisine: "Czech Fine Dining", distanceKm: 0.8, priceRange: "€€€€", rating: 4.8, vegetarian: true, outdoor: false },
+        { name: "Pasta Fresca", cuisine: "Italian", distanceKm: 0.3, priceRange: "€€", rating: 4.3, vegetarian: true, outdoor: true },
+        { name: "Café Savoy", cuisine: "French-Czech", distanceKm: 1, priceRange: "€€€", rating: 4.6, vegetarian: true, outdoor: true },
+        { name: "Kantýna", cuisine: "Steak & Grill", distanceKm: 0.6, priceRange: "€€", rating: 4.4, vegetarian: false, outdoor: false }
       ]
   },
   {
@@ -478,11 +582,12 @@ const ACADEMIES = [
       { name: "Mentality Coaching", price: "Contact", desc: "With Marian Jelínek" }
     ],
     coaches: [
-      { name: "Ondřej Dohnal", credential: "30+ years", background: "Coached Karolína Plíšková (WTA #1) and Kateřina Siniaková", atpWta: false, bestRanking: null, rankingNote: "Coached WTA #1" }
+      { name: "Ondřej Dohnal", credential: "30+ years", background: "Coached Karolína Plíšková (WTA #1) and Kateřina Siniaková", atpWta: false, bestRanking: null, rankingNote: "Coached WTA #1", languages: ["Czech", "English"], instagram: null }
     ],
     bestCoachRanking: null,
     coachedTopPlayer: 1,
     facilities: "5 clay + 2 indoor courts, gym, restaurant. Expansion planned.",
+    courtSurfaces: ["Clay", "Indoor Hard"],
     notableAlumni: ["Karolína Plíšková (WTA #1)"],
     description: "Founded 2020. Karolína Plíšková (WTA #1) personally trains here. Mental coach Marian Jelínek on staff.",
     nearbyHotels: [
@@ -491,6 +596,13 @@ const ACADEMIES = [
         { name: "Hotel Máchova", stars: 3, distanceKm: 2, features: ["Breakfast Included", "Parking"], pool: false, wifi: true, pricePerNight: "€55" },
         { name: "Mosaic House", stars: 3, distanceKm: 1.2, features: ["Bar", "Breakfast Included", "Pet Friendly"], pool: false, wifi: true, pricePerNight: "€60" },
         { name: "Grand Hotel Bohemia", stars: 5, distanceKm: 0.5, features: ["Restaurant", "Bar", "Room Service", "Conference Room"], pool: false, wifi: true, pricePerNight: "€130" }
+      ],
+    nearbyRestaurants: [
+        { name: "Lokál Dlouhááá", cuisine: "Czech Traditional", distanceKm: 0.5, priceRange: "€", rating: 4.5, vegetarian: true, outdoor: false },
+        { name: "La Degustation Bohême Bourgeoise", cuisine: "Czech Fine Dining", distanceKm: 0.8, priceRange: "€€€€", rating: 4.8, vegetarian: true, outdoor: false },
+        { name: "Pasta Fresca", cuisine: "Italian", distanceKm: 0.3, priceRange: "€€", rating: 4.3, vegetarian: true, outdoor: true },
+        { name: "Café Savoy", cuisine: "French-Czech", distanceKm: 1, priceRange: "€€€", rating: 4.6, vegetarian: true, outdoor: true },
+        { name: "Kantýna", cuisine: "Steak & Grill", distanceKm: 0.6, priceRange: "€€", rating: 4.4, vegetarian: false, outdoor: false }
       ]
   },
   {
@@ -513,6 +625,7 @@ const ACADEMIES = [
     coaches: [],
     bestCoachRanking: null,
     facilities: "One of Prague's oldest and most traditional tennis clubs",
+    courtSurfaces: ["Clay", "Hard", "Indoor Hard"],
     notableAlumni: [],
     description: "Historic Czech club. Coaches include Ondřej Macek (30 yrs, speaks CZ/EN/DE/RU) and Jan Kurz (50 yrs exp).",
     nearbyHotels: [
@@ -521,6 +634,13 @@ const ACADEMIES = [
         { name: "Hotel Máchova", stars: 3, distanceKm: 2, features: ["Breakfast Included", "Parking"], pool: false, wifi: true, pricePerNight: "€55" },
         { name: "Mosaic House", stars: 3, distanceKm: 1.2, features: ["Bar", "Breakfast Included", "Pet Friendly"], pool: false, wifi: true, pricePerNight: "€60" },
         { name: "Grand Hotel Bohemia", stars: 5, distanceKm: 0.5, features: ["Restaurant", "Bar", "Room Service", "Conference Room"], pool: false, wifi: true, pricePerNight: "€130" }
+      ],
+    nearbyRestaurants: [
+        { name: "Lokál Dlouhááá", cuisine: "Czech Traditional", distanceKm: 0.5, priceRange: "€", rating: 4.5, vegetarian: true, outdoor: false },
+        { name: "La Degustation Bohême Bourgeoise", cuisine: "Czech Fine Dining", distanceKm: 0.8, priceRange: "€€€€", rating: 4.8, vegetarian: true, outdoor: false },
+        { name: "Pasta Fresca", cuisine: "Italian", distanceKm: 0.3, priceRange: "€€", rating: 4.3, vegetarian: true, outdoor: true },
+        { name: "Café Savoy", cuisine: "French-Czech", distanceKm: 1, priceRange: "€€€", rating: 4.6, vegetarian: true, outdoor: true },
+        { name: "Kantýna", cuisine: "Steak & Grill", distanceKm: 0.6, priceRange: "€€", rating: 4.4, vegetarian: false, outdoor: false }
       ]
   },
   {
@@ -547,10 +667,11 @@ const ACADEMIES = [
       { name: "Online Training", price: "Contact", desc: "Fitness, tennis, mental coaching" }
     ],
     coaches: [
-      { name: "Dominika Cibulková", credential: "Founder / Former WTA Player", background: "WTA #4 (2014 Australian Open finalist, 2016 WTA Finals champion)", atpWta: true, bestRanking: 4, rankingNote: "WTA #4" }
+      { name: "Dominika Cibulková", credential: "Founder / Former WTA Player", background: "WTA #4 (2014 Australian Open finalist, 2016 WTA Finals champion)", atpWta: true, bestRanking: 4, rankingNote: "WTA #4", languages: ["Slovak", "English", "Czech"], instagram: "domicibulkova" }
     ],
     bestCoachRanking: 4,
     facilities: "Full-service academy. 60+ pro players from 15 countries. 5 in ATP/WTA TOP 100.",
+    courtSurfaces: ["Clay", "Hard", "Indoor Hard"],
     notableAlumni: ["Elena Rybakina (WTA #3, Wimbledon champion)", "Filip Polášek (ATP #1 doubles)", "Lukáš Lacko (ATP #64)", "Kristína Kučová (WTA #67)"],
     description: "Named after Dominika Cibulková (WTA #4). One of Europe's best academies. Rybakina as alumna.",
     nearbyHotels: [
@@ -559,6 +680,13 @@ const ACADEMIES = [
         { name: "Loft Hotel Bratislava", stars: 4, distanceKm: 0.8, features: ["Restaurant", "Bar", "Parking"], pool: false, wifi: true, pricePerNight: "€75" },
         { name: "Hotel Kyjev", stars: 3, distanceKm: 0.3, features: ["Restaurant", "Bar"], pool: false, wifi: true, pricePerNight: "€50" },
         { name: "Austria Trend Hotel Bratislava", stars: 4, distanceKm: 1.2, features: ["Restaurant", "Gym", "Parking", "Conference Room"], pool: false, wifi: true, pricePerNight: "€85" }
+      ],
+    nearbyRestaurants: [
+        { name: "Modrá Hviezda", cuisine: "Slovak Traditional", distanceKm: 0.3, priceRange: "€€", rating: 4.5, vegetarian: true, outdoor: true },
+        { name: "Flagship Restaurant", cuisine: "Fine Dining", distanceKm: 0.5, priceRange: "€€€€", rating: 4.7, vegetarian: true, outdoor: false },
+        { name: "Trattoria Piatto", cuisine: "Italian", distanceKm: 0.4, priceRange: "€€", rating: 4.3, vegetarian: true, outdoor: true },
+        { name: "Slovak Pub", cuisine: "Slovak", distanceKm: 0.2, priceRange: "€", rating: 4.1, vegetarian: true, outdoor: false },
+        { name: "Zylinder Café & Restaurant", cuisine: "International", distanceKm: 0.6, priceRange: "€€€", rating: 4.4, vegetarian: true, outdoor: true }
       ]
   },
   {
@@ -584,6 +712,7 @@ const ACADEMIES = [
     coaches: [],
     bestCoachRanking: null,
     facilities: "Community-focused, equipment rental included",
+    courtSurfaces: ["Clay", "Hard"],
     notableAlumni: [],
     description: "Affordable individual lessons from €37/hr. Children from age 3, adults, group training.",
     nearbyHotels: [
@@ -592,6 +721,13 @@ const ACADEMIES = [
         { name: "Loft Hotel Bratislava", stars: 4, distanceKm: 0.8, features: ["Restaurant", "Bar", "Parking"], pool: false, wifi: true, pricePerNight: "€75" },
         { name: "Hotel Kyjev", stars: 3, distanceKm: 0.3, features: ["Restaurant", "Bar"], pool: false, wifi: true, pricePerNight: "€50" },
         { name: "Austria Trend Hotel Bratislava", stars: 4, distanceKm: 1.2, features: ["Restaurant", "Gym", "Parking", "Conference Room"], pool: false, wifi: true, pricePerNight: "€85" }
+      ],
+    nearbyRestaurants: [
+        { name: "Modrá Hviezda", cuisine: "Slovak Traditional", distanceKm: 0.3, priceRange: "€€", rating: 4.5, vegetarian: true, outdoor: true },
+        { name: "Flagship Restaurant", cuisine: "Fine Dining", distanceKm: 0.5, priceRange: "€€€€", rating: 4.7, vegetarian: true, outdoor: false },
+        { name: "Trattoria Piatto", cuisine: "Italian", distanceKm: 0.4, priceRange: "€€", rating: 4.3, vegetarian: true, outdoor: true },
+        { name: "Slovak Pub", cuisine: "Slovak", distanceKm: 0.2, priceRange: "€", rating: 4.1, vegetarian: true, outdoor: false },
+        { name: "Zylinder Café & Restaurant", cuisine: "International", distanceKm: 0.6, priceRange: "€€€", rating: 4.4, vegetarian: true, outdoor: true }
       ]
   },
   {
@@ -619,6 +755,7 @@ const ACADEMIES = [
     coaches: [],
     bestCoachRanking: 40,
     facilities: "21 courts, sports hall, gym, cryocabin, saunas, pools, padel, squash, hotel, 3,000-seat stands",
+    courtSurfaces: ["Clay", "Hard", "Indoor Hard", "Carpet"],
     notableAlumni: [],
     description: "Most modern tennis complex in Poland. Coach connection to Linda Ferrando (WTA #40). Hosts ITF/WTA/ATP tournaments.",
     nearbyHotels: [
@@ -627,6 +764,13 @@ const ACADEMIES = [
         { name: "Villa Nobilitas", stars: 3, distanceKm: 3, features: ["Breakfast Included", "Parking", "Pet Friendly"], pool: false, wifi: true, pricePerNight: "€40" },
         { name: "Leśny Dwór", stars: 3, distanceKm: 8, features: ["Restaurant", "Parking", "Bar"], pool: false, wifi: true, pricePerNight: "€50" },
         { name: "Hotel Margerita", stars: 2, distanceKm: 4, features: ["Breakfast Included", "Parking"], pool: false, wifi: true, pricePerNight: "€30" }
+      ],
+    nearbyRestaurants: [
+        { name: "Restauracja Stary Dom", cuisine: "Polish Traditional", distanceKm: 3, priceRange: "€€", rating: 4.3, vegetarian: true, outdoor: true },
+        { name: "Oberża Pod Czerwonym Kogutem", cuisine: "Polish", distanceKm: 5, priceRange: "€€€", rating: 4.5, vegetarian: true, outdoor: true },
+        { name: "Pizzeria Bella", cuisine: "Italian", distanceKm: 4, priceRange: "€", rating: 4, vegetarian: true, outdoor: false },
+        { name: "Karczma Jaskółka", cuisine: "Polish Country", distanceKm: 6, priceRange: "€", rating: 4.2, vegetarian: true, outdoor: true },
+        { name: "Restauracja Pałacowa", cuisine: "Fine Dining", distanceKm: 8, priceRange: "€€€€", rating: 4.6, vegetarian: true, outdoor: true }
       ]
   },
   {
@@ -650,10 +794,11 @@ const ACADEMIES = [
       { name: "Group (3-4)", price: "180 PLN (~€41) total", desc: "Shared cost" }
     ],
     coaches: [
-      { name: "Federico", credential: "Coach", background: "Trained alongside Linda Ferrando (WTA #40)", atpWta: false, bestRanking: null }
+      { name: "Federico", credential: "Coach", background: "Trained alongside Linda Ferrando (WTA #40)", atpWta: false, bestRanking: null, languages: ["Italian", "English", "German", "Polish"], instagram: null }
     ],
     bestCoachRanking: null,
     facilities: "Multiple court locations across Warsaw. Languages: EN, IT, DE, PL",
+    courtSurfaces: ["Clay", "Hard"],
     notableAlumni: [],
     description: "International coaching in English. Ideal for expats. Affordable private lessons from ~€32/hr.",
     nearbyHotels: [
@@ -662,6 +807,13 @@ const ACADEMIES = [
         { name: "Hotel Ibis Warszawa Stare Miasto", stars: 2, distanceKm: 0.8, features: ["Bar", "Parking"], pool: false, wifi: true, pricePerNight: "€45" },
         { name: "Sofitel Warsaw Victoria", stars: 5, distanceKm: 0.3, features: ["Restaurant", "Spa", "Gym", "Bar"], pool: true, wifi: true, pricePerNight: "€140" },
         { name: "Hotel Warszawa", stars: 3, distanceKm: 1.5, features: ["Restaurant", "Bar", "Parking"], pool: false, wifi: true, pricePerNight: "€55" }
+      ],
+    nearbyRestaurants: [
+        { name: "Zapiecek", cuisine: "Polish Traditional", distanceKm: 0.3, priceRange: "€", rating: 4.3, vegetarian: true, outdoor: true },
+        { name: "Atelier Amaro", cuisine: "Polish Fine Dining", distanceKm: 0.8, priceRange: "€€€€", rating: 4.8, vegetarian: true, outdoor: false },
+        { name: "Wook", cuisine: "Asian Fusion", distanceKm: 0.5, priceRange: "€€€", rating: 4.5, vegetarian: true, outdoor: false },
+        { name: "Trattoria da Antonio", cuisine: "Italian", distanceKm: 0.4, priceRange: "€€", rating: 4.4, vegetarian: true, outdoor: true },
+        { name: "Bar Mleczny Familijny", cuisine: "Polish Cafeteria", distanceKm: 0.6, priceRange: "€", rating: 4, vegetarian: true, outdoor: false }
       ]
   },
   {
@@ -684,6 +836,7 @@ const ACADEMIES = [
     coaches: [],
     bestCoachRanking: null,
     facilities: "Premier Polish multi-sport clubs",
+    courtSurfaces: ["Clay", "Hard", "Indoor Hard"],
     notableAlumni: ["Iga Świątek (WTA #1, 5× Grand Slam champion)"],
     description: "Where Iga Świątek trained as a junior (Mera) and continued at age 14 (Legia).",
     nearbyHotels: [
@@ -692,6 +845,13 @@ const ACADEMIES = [
         { name: "Hotel Ibis Warszawa Stare Miasto", stars: 2, distanceKm: 0.8, features: ["Bar", "Parking"], pool: false, wifi: true, pricePerNight: "€45" },
         { name: "Sofitel Warsaw Victoria", stars: 5, distanceKm: 0.3, features: ["Restaurant", "Spa", "Gym", "Bar"], pool: true, wifi: true, pricePerNight: "€140" },
         { name: "Hotel Warszawa", stars: 3, distanceKm: 1.5, features: ["Restaurant", "Bar", "Parking"], pool: false, wifi: true, pricePerNight: "€55" }
+      ],
+    nearbyRestaurants: [
+        { name: "Zapiecek", cuisine: "Polish Traditional", distanceKm: 0.3, priceRange: "€", rating: 4.3, vegetarian: true, outdoor: true },
+        { name: "Atelier Amaro", cuisine: "Polish Fine Dining", distanceKm: 0.8, priceRange: "€€€€", rating: 4.8, vegetarian: true, outdoor: false },
+        { name: "Wook", cuisine: "Asian Fusion", distanceKm: 0.5, priceRange: "€€€", rating: 4.5, vegetarian: true, outdoor: false },
+        { name: "Trattoria da Antonio", cuisine: "Italian", distanceKm: 0.4, priceRange: "€€", rating: 4.4, vegetarian: true, outdoor: true },
+        { name: "Bar Mleczny Familijny", cuisine: "Polish Cafeteria", distanceKm: 0.6, priceRange: "€", rating: 4, vegetarian: true, outdoor: false }
       ]
   },
   {
@@ -716,10 +876,11 @@ const ACADEMIES = [
       { name: "Performance", price: "Contact", desc: "Mental, emotional, physical preparation" }
     ],
     coaches: [
-      { name: "Victor Hănescu", credential: "Former ATP Player", background: "ATP #26 (2007), Romanian No. 1", atpWta: true, bestRanking: 26, rankingNote: "ATP #26" }
+      { name: "Victor Hănescu", credential: "Former ATP Player", background: "ATP #26 (2007), Romanian No. 1", atpWta: true, bestRanking: 26, rankingNote: "ATP #26", languages: ["Romanian", "English", "French"], instagram: "victorhanescu" }
     ],
     bestCoachRanking: 26,
     facilities: "Professional courts in Bucharest",
+    courtSurfaces: ["Clay", "Hard"],
     notableAlumni: [],
     description: "Founded by Victor Hănescu (ATP #26). Long-term sports development philosophy.",
     nearbyHotels: [
@@ -728,6 +889,13 @@ const ACADEMIES = [
         { name: "Hotel Rembrandt", stars: 3, distanceKm: 0.8, features: ["Restaurant", "Bar", "Parking"], pool: false, wifi: true, pricePerNight: "€50" },
         { name: "Hotel Venezia", stars: 3, distanceKm: 1.2, features: ["Restaurant", "Parking", "Breakfast Included"], pool: false, wifi: true, pricePerNight: "€45" },
         { name: "InterContinental Bucharest", stars: 5, distanceKm: 0.3, features: ["Restaurant", "Spa", "Gym", "Bar"], pool: true, wifi: true, pricePerNight: "€120" }
+      ],
+    nearbyRestaurants: [
+        { name: "Caru' cu Bere", cuisine: "Romanian Traditional", distanceKm: 0.5, priceRange: "€€", rating: 4.5, vegetarian: true, outdoor: true },
+        { name: "The Artist", cuisine: "Fine Dining", distanceKm: 0.3, priceRange: "€€€€", rating: 4.7, vegetarian: true, outdoor: false },
+        { name: "Trattoria Il Calcio", cuisine: "Italian", distanceKm: 0.4, priceRange: "€€", rating: 4.3, vegetarian: true, outdoor: true },
+        { name: "Lacrimi și Sfinți", cuisine: "Romanian Modern", distanceKm: 0.6, priceRange: "€€€", rating: 4.6, vegetarian: true, outdoor: true },
+        { name: "Dristor Kebab", cuisine: "Turkish", distanceKm: 0.8, priceRange: "€", rating: 4.1, vegetarian: false, outdoor: false }
       ]
   },
   {
@@ -750,6 +918,7 @@ const ACADEMIES = [
     coaches: [],
     bestCoachRanking: null,
     facilities: "PTR Professional certified coaching",
+    courtSurfaces: ["Clay", "Hard"],
     notableAlumni: [],
     description: "PTR Professional certified coach. All ages, recreational and competitive.",
     nearbyHotels: [
@@ -758,6 +927,13 @@ const ACADEMIES = [
         { name: "Hotel Rembrandt", stars: 3, distanceKm: 0.8, features: ["Restaurant", "Bar", "Parking"], pool: false, wifi: true, pricePerNight: "€50" },
         { name: "Hotel Venezia", stars: 3, distanceKm: 1.2, features: ["Restaurant", "Parking", "Breakfast Included"], pool: false, wifi: true, pricePerNight: "€45" },
         { name: "InterContinental Bucharest", stars: 5, distanceKm: 0.3, features: ["Restaurant", "Spa", "Gym", "Bar"], pool: true, wifi: true, pricePerNight: "€120" }
+      ],
+    nearbyRestaurants: [
+        { name: "Caru' cu Bere", cuisine: "Romanian Traditional", distanceKm: 0.5, priceRange: "€€", rating: 4.5, vegetarian: true, outdoor: true },
+        { name: "The Artist", cuisine: "Fine Dining", distanceKm: 0.3, priceRange: "€€€€", rating: 4.7, vegetarian: true, outdoor: false },
+        { name: "Trattoria Il Calcio", cuisine: "Italian", distanceKm: 0.4, priceRange: "€€", rating: 4.3, vegetarian: true, outdoor: true },
+        { name: "Lacrimi și Sfinți", cuisine: "Romanian Modern", distanceKm: 0.6, priceRange: "€€€", rating: 4.6, vegetarian: true, outdoor: true },
+        { name: "Dristor Kebab", cuisine: "Turkish", distanceKm: 0.8, priceRange: "€", rating: 4.1, vegetarian: false, outdoor: false }
       ]
   },
   {
@@ -780,6 +956,7 @@ const ACADEMIES = [
     coaches: [],
     bestCoachRanking: null,
     facilities: "Historic parkland (Borisova Garden), near Vasil Levski Stadium",
+    courtSurfaces: ["Clay", "Hard"],
     notableAlumni: [],
     description: "Heir to Bulgaria's oldest tennis club (est. 1896). Grigor Dimitrov trained locally before moving to France.",
     nearbyHotels: [
@@ -788,6 +965,13 @@ const ACADEMIES = [
         { name: "Best Western Premier Sofia Airport", stars: 4, distanceKm: 8, features: ["Restaurant", "Gym", "Parking"], pool: false, wifi: true, pricePerNight: "€60" },
         { name: "Hotel Niky", stars: 3, distanceKm: 1, features: ["Restaurant", "Bar", "Breakfast Included"], pool: false, wifi: true, pricePerNight: "€45" },
         { name: "Sense Hotel Sofia", stars: 4, distanceKm: 0.3, features: ["Restaurant", "Spa", "Bar"], pool: false, wifi: true, pricePerNight: "€75" }
+      ],
+    nearbyRestaurants: [
+        { name: "Shtastlivetsa", cuisine: "Bulgarian Traditional", distanceKm: 0.3, priceRange: "€", rating: 4.4, vegetarian: true, outdoor: true },
+        { name: "Moma Bulgarian Food & Wine", cuisine: "Bulgarian Modern", distanceKm: 0.5, priceRange: "€€€", rating: 4.6, vegetarian: true, outdoor: false },
+        { name: "Trattoria Pasta e Vino", cuisine: "Italian", distanceKm: 0.4, priceRange: "€€", rating: 4.3, vegetarian: true, outdoor: true },
+        { name: "Sushi Bar Sofia", cuisine: "Japanese", distanceKm: 0.6, priceRange: "€€", rating: 4.2, vegetarian: true, outdoor: false },
+        { name: "Victoria Restaurant", cuisine: "Fine Dining", distanceKm: 0.8, priceRange: "€€€€", rating: 4.7, vegetarian: true, outdoor: true }
       ]
   },
   {
@@ -810,6 +994,7 @@ const ACADEMIES = [
     coaches: [],
     bestCoachRanking: null,
     facilities: "10 clay + 1 soft court (year-round), squash, 25m pool, wellness. 2-hectare along Danube.",
+    courtSurfaces: ["Clay", "Hard"],
     notableAlumni: [],
     description: "Most prestigious tennis academy in Hungary. Beautiful Danube riverbank location.",
     nearbyHotels: [
@@ -818,6 +1003,13 @@ const ACADEMIES = [
         { name: "Danubius Hotel Margitsziget", stars: 4, distanceKm: 1.5, features: ["Restaurant", "Spa", "Gym"], pool: true, wifi: true, pricePerNight: "€90" },
         { name: "Hotel Palazzo Zichy", stars: 4, distanceKm: 1.2, features: ["Restaurant", "Bar", "Room Service"], pool: false, wifi: true, pricePerNight: "€80" },
         { name: "Meininger Hotel Budapest", stars: 2, distanceKm: 0.8, features: ["Bar", "Breakfast Included"], pool: false, wifi: true, pricePerNight: "€35" }
+      ],
+    nearbyRestaurants: [
+        { name: "Menza", cuisine: "Hungarian", distanceKm: 0.5, priceRange: "€€", rating: 4.4, vegetarian: true, outdoor: true },
+        { name: "Onyx Restaurant", cuisine: "Fine Dining", distanceKm: 0.3, priceRange: "€€€€", rating: 4.8, vegetarian: true, outdoor: false },
+        { name: "Trattoria Pomo D'Oro", cuisine: "Italian", distanceKm: 0.4, priceRange: "€€", rating: 4.5, vegetarian: true, outdoor: true },
+        { name: "Café Kör", cuisine: "Hungarian Bistro", distanceKm: 0.6, priceRange: "€€", rating: 4.3, vegetarian: true, outdoor: true },
+        { name: "Street Food Karaván", cuisine: "International Street Food", distanceKm: 0.8, priceRange: "€", rating: 4.1, vegetarian: true, outdoor: true }
       ]
   },
   {
@@ -840,6 +1032,7 @@ const ACADEMIES = [
     coaches: [],
     bestCoachRanking: null,
     facilities: "3 clay + 3 hard courts. Bilingual coaching (Hungarian/English).",
+    courtSurfaces: ["Clay", "Hard"],
     notableAlumni: [],
     description: "Bilingual (Hungarian/English) coaching. Beginner to professional competition preparation.",
     nearbyHotels: [
@@ -848,6 +1041,13 @@ const ACADEMIES = [
         { name: "Danubius Hotel Margitsziget", stars: 4, distanceKm: 1.5, features: ["Restaurant", "Spa", "Gym"], pool: true, wifi: true, pricePerNight: "€90" },
         { name: "Hotel Palazzo Zichy", stars: 4, distanceKm: 1.2, features: ["Restaurant", "Bar", "Room Service"], pool: false, wifi: true, pricePerNight: "€80" },
         { name: "Meininger Hotel Budapest", stars: 2, distanceKm: 0.8, features: ["Bar", "Breakfast Included"], pool: false, wifi: true, pricePerNight: "€35" }
+      ],
+    nearbyRestaurants: [
+        { name: "Menza", cuisine: "Hungarian", distanceKm: 0.5, priceRange: "€€", rating: 4.4, vegetarian: true, outdoor: true },
+        { name: "Onyx Restaurant", cuisine: "Fine Dining", distanceKm: 0.3, priceRange: "€€€€", rating: 4.8, vegetarian: true, outdoor: false },
+        { name: "Trattoria Pomo D'Oro", cuisine: "Italian", distanceKm: 0.4, priceRange: "€€", rating: 4.5, vegetarian: true, outdoor: true },
+        { name: "Café Kör", cuisine: "Hungarian Bistro", distanceKm: 0.6, priceRange: "€€", rating: 4.3, vegetarian: true, outdoor: true },
+        { name: "Street Food Karaván", cuisine: "International Street Food", distanceKm: 0.8, priceRange: "€", rating: 4.1, vegetarian: true, outdoor: true }
       ]
   },
   {
@@ -870,6 +1070,7 @@ const ACADEMIES = [
     coaches: [],
     bestCoachRanking: null,
     facilities: "Premier tennis facility in Ljubljana",
+    courtSurfaces: ["Clay", "Hard"],
     notableAlumni: [],
     description: "Premier tennis facility in Ljubljana. Beginner to advanced, competitive matches.",
     nearbyHotels: [
@@ -878,6 +1079,13 @@ const ACADEMIES = [
         { name: "Best Western Premier Hotel Slon", stars: 4, distanceKm: 0.4, features: ["Restaurant", "Bar", "Gym"], pool: false, wifi: true, pricePerNight: "€95" },
         { name: "Hotel Park Ljubljana", stars: 4, distanceKm: 0.8, features: ["Restaurant", "Parking", "Breakfast Included"], pool: false, wifi: true, pricePerNight: "€75" },
         { name: "Hostel Celica", stars: 2, distanceKm: 1, features: ["Bar", "Breakfast Included", "Pet Friendly"], pool: false, wifi: true, pricePerNight: "€30" }
+      ],
+    nearbyRestaurants: [
+        { name: "Gostilna na Gradu", cuisine: "Slovenian Traditional", distanceKm: 0.3, priceRange: "€€", rating: 4.5, vegetarian: true, outdoor: true },
+        { name: "JB Restaurant", cuisine: "Fine Dining", distanceKm: 0.5, priceRange: "€€€€", rating: 4.7, vegetarian: true, outdoor: false },
+        { name: "Pizzeria Foculus", cuisine: "Italian", distanceKm: 0.2, priceRange: "€", rating: 4.3, vegetarian: true, outdoor: true },
+        { name: "Strelec", cuisine: "Slovenian Modern", distanceKm: 0.4, priceRange: "€€€", rating: 4.6, vegetarian: true, outdoor: true },
+        { name: "Hood Burger", cuisine: "American", distanceKm: 0.6, priceRange: "€", rating: 4.2, vegetarian: false, outdoor: false }
       ]
   },
   {
@@ -903,10 +1111,11 @@ const ACADEMIES = [
       { name: "Adult Training", price: "Varies", desc: "Amateurs and professionals" }
     ],
     coaches: [
-      { name: "Andrey Medvedev", credential: "Former ATP Player", background: "ATP #4 (1994), French Open finalist 1999, President of Ukrainian Tennis Federation", atpWta: true, bestRanking: 4, rankingNote: "ATP #4" }
+      { name: "Andrey Medvedev", credential: "Former ATP Player", background: "ATP #4 (1994), French Open finalist 1999, President of Ukrainian Tennis Federation", atpWta: true, bestRanking: 4, rankingNote: "ATP #4", languages: ["Ukrainian", "English", "Russian", "French"], instagram: "andreymedvedev_official" }
     ],
     bestCoachRanking: 4,
     facilities: "Indoor/outdoor courts (clay), hosted Davis Cup 2021, fitness, massage, rehab",
+    courtSurfaces: ["Clay", "Hard", "Indoor Hard"],
     notableAlumni: [],
     description: "Headed by Andrey Medvedev (ATP #4, French Open finalist). Personal sessions available with Medvedev himself.",
     nearbyHotels: [
@@ -915,6 +1124,13 @@ const ACADEMIES = [
         { name: "Premier Hotel Lybid", stars: 4, distanceKm: 1.5, features: ["Restaurant", "Gym", "Parking"], pool: false, wifi: true, pricePerNight: "€55" },
         { name: "Ibis Kyiv City Center", stars: 3, distanceKm: 1, features: ["Bar", "Parking", "Breakfast Included"], pool: false, wifi: true, pricePerNight: "€40" },
         { name: "InterContinental Kyiv", stars: 5, distanceKm: 0.3, features: ["Restaurant", "Spa", "Bar", "Room Service"], pool: true, wifi: true, pricePerNight: "€150" }
+      ],
+    nearbyRestaurants: [
+        { name: "Kanapa", cuisine: "Ukrainian Modern", distanceKm: 0.4, priceRange: "€€€", rating: 4.6, vegetarian: true, outdoor: true },
+        { name: "Puzata Hata", cuisine: "Ukrainian Traditional", distanceKm: 0.3, priceRange: "€", rating: 4.2, vegetarian: true, outdoor: false },
+        { name: "Ostannya Barykada", cuisine: "Ukrainian", distanceKm: 0.5, priceRange: "€€", rating: 4.4, vegetarian: true, outdoor: true },
+        { name: "Pizzeria Napule", cuisine: "Italian", distanceKm: 0.6, priceRange: "€€", rating: 4.3, vegetarian: true, outdoor: true },
+        { name: "Très Français", cuisine: "French Fine Dining", distanceKm: 0.8, priceRange: "€€€€", rating: 4.7, vegetarian: true, outdoor: false }
       ]
   },
   {
@@ -937,6 +1153,7 @@ const ACADEMIES = [
     coaches: [],
     bestCoachRanking: null,
     facilities: "37 tennis courts, 6 types of surfaces — world-class",
+    courtSurfaces: ["Clay", "Hard", "Indoor Hard", "Grass", "Carpet"],
     notableAlumni: [],
     description: "37 courts with 6 surface types. Comprehensive tennis school.",
     nearbyHotels: [
@@ -945,6 +1162,13 @@ const ACADEMIES = [
         { name: "Premier Hotel Lybid", stars: 4, distanceKm: 1.5, features: ["Restaurant", "Gym", "Parking"], pool: false, wifi: true, pricePerNight: "€55" },
         { name: "Ibis Kyiv City Center", stars: 3, distanceKm: 1, features: ["Bar", "Parking", "Breakfast Included"], pool: false, wifi: true, pricePerNight: "€40" },
         { name: "InterContinental Kyiv", stars: 5, distanceKm: 0.3, features: ["Restaurant", "Spa", "Bar", "Room Service"], pool: true, wifi: true, pricePerNight: "€150" }
+      ],
+    nearbyRestaurants: [
+        { name: "Kanapa", cuisine: "Ukrainian Modern", distanceKm: 0.4, priceRange: "€€€", rating: 4.6, vegetarian: true, outdoor: true },
+        { name: "Puzata Hata", cuisine: "Ukrainian Traditional", distanceKm: 0.3, priceRange: "€", rating: 4.2, vegetarian: true, outdoor: false },
+        { name: "Ostannya Barykada", cuisine: "Ukrainian", distanceKm: 0.5, priceRange: "€€", rating: 4.4, vegetarian: true, outdoor: true },
+        { name: "Pizzeria Napule", cuisine: "Italian", distanceKm: 0.6, priceRange: "€€", rating: 4.3, vegetarian: true, outdoor: true },
+        { name: "Très Français", cuisine: "French Fine Dining", distanceKm: 0.8, priceRange: "€€€€", rating: 4.7, vegetarian: true, outdoor: false }
       ]
   },
   {
@@ -967,6 +1191,7 @@ const ACADEMIES = [
     coaches: [],
     bestCoachRanking: null,
     facilities: "Largest tennis academy in Lithuania — 500+ youth",
+    courtSurfaces: ["Clay", "Hard", "Indoor Hard"],
     notableAlumni: [],
     description: "Largest in Lithuania (500+ youth). Financially supports most promising athletes.",
     nearbyHotels: [
@@ -975,6 +1200,13 @@ const ACADEMIES = [
         { name: "Shakespeare Boutique Hotel", stars: 4, distanceKm: 0.5, features: ["Restaurant", "Bar", "Room Service"], pool: false, wifi: true, pricePerNight: "€90" },
         { name: "Ibis Vilnius Centre", stars: 3, distanceKm: 0.8, features: ["Bar", "Parking", "Breakfast Included"], pool: false, wifi: true, pricePerNight: "€45" },
         { name: "Hotel Rinno", stars: 3, distanceKm: 1.2, features: ["Restaurant", "Parking", "Pet Friendly"], pool: false, wifi: true, pricePerNight: "€50" }
+      ],
+    nearbyRestaurants: [
+        { name: "Šnekutis", cuisine: "Lithuanian Traditional", distanceKm: 0.3, priceRange: "€", rating: 4.3, vegetarian: false, outdoor: true },
+        { name: "Ertlio Namas", cuisine: "Lithuanian Fine Dining", distanceKm: 0.5, priceRange: "€€€€", rating: 4.7, vegetarian: true, outdoor: false },
+        { name: "Leiciai", cuisine: "Lithuanian", distanceKm: 0.4, priceRange: "€€", rating: 4.4, vegetarian: true, outdoor: true },
+        { name: "Da Antonio", cuisine: "Italian", distanceKm: 0.6, priceRange: "€€", rating: 4.3, vegetarian: true, outdoor: true },
+        { name: "Wok to Walk", cuisine: "Asian", distanceKm: 0.2, priceRange: "€", rating: 4, vegetarian: true, outdoor: false }
       ]
   },
   {
@@ -997,6 +1229,7 @@ const ACADEMIES = [
     coaches: [],
     bestCoachRanking: null,
     facilities: "Founded by two internationally experienced tennis players/coaches",
+    courtSurfaces: ["Clay", "Hard"],
     notableAlumni: [],
     description: "Founded by ex-international players. Children from age 5 through adults, tailored training plans.",
     nearbyHotels: [
@@ -1005,6 +1238,13 @@ const ACADEMIES = [
         { name: "Hotel Neiburgs", stars: 4, distanceKm: 0.2, features: ["Restaurant", "Bar", "Room Service"], pool: false, wifi: true, pricePerNight: "€100" },
         { name: "Wellton Centrum Hotel & Spa", stars: 4, distanceKm: 0.4, features: ["Spa", "Breakfast Included", "Parking"], pool: false, wifi: true, pricePerNight: "€70" },
         { name: "Monika Centrum Hotels", stars: 3, distanceKm: 0.6, features: ["Restaurant", "Parking", "Bar"], pool: false, wifi: true, pricePerNight: "€50" }
+      ],
+    nearbyRestaurants: [
+        { name: "Folkklubs Ala Pagrabs", cuisine: "Latvian Traditional", distanceKm: 0.3, priceRange: "€", rating: 4.4, vegetarian: true, outdoor: false },
+        { name: "Vincents", cuisine: "Fine Dining", distanceKm: 0.5, priceRange: "€€€€", rating: 4.8, vegetarian: true, outdoor: false },
+        { name: "Steiku Haoss", cuisine: "Steak & Grill", distanceKm: 0.4, priceRange: "€€€", rating: 4.5, vegetarian: false, outdoor: true },
+        { name: "Trattoria del Popolo", cuisine: "Italian", distanceKm: 0.6, priceRange: "€€", rating: 4.3, vegetarian: true, outdoor: true },
+        { name: "Lido Atpūtas Centrs", cuisine: "Latvian Cafeteria", distanceKm: 1, priceRange: "€", rating: 4.1, vegetarian: true, outdoor: true }
       ]
   },
   {
@@ -1027,6 +1267,7 @@ const ACADEMIES = [
     coaches: [],
     bestCoachRanking: null,
     facilities: "Comprehensive: sparring, fitness, distance learning, language courses, competitions abroad",
+    courtSurfaces: ["Clay", "Hard", "Indoor Hard"],
     notableAlumni: [],
     description: "Comprehensive program including language courses, distance learning, and coach-assisted competitions abroad.",
     nearbyHotels: [
@@ -1035,6 +1276,13 @@ const ACADEMIES = [
         { name: "Hotel Neiburgs", stars: 4, distanceKm: 0.2, features: ["Restaurant", "Bar", "Room Service"], pool: false, wifi: true, pricePerNight: "€100" },
         { name: "Wellton Centrum Hotel & Spa", stars: 4, distanceKm: 0.4, features: ["Spa", "Breakfast Included", "Parking"], pool: false, wifi: true, pricePerNight: "€70" },
         { name: "Monika Centrum Hotels", stars: 3, distanceKm: 0.6, features: ["Restaurant", "Parking", "Bar"], pool: false, wifi: true, pricePerNight: "€50" }
+      ],
+    nearbyRestaurants: [
+        { name: "Folkklubs Ala Pagrabs", cuisine: "Latvian Traditional", distanceKm: 0.3, priceRange: "€", rating: 4.4, vegetarian: true, outdoor: false },
+        { name: "Vincents", cuisine: "Fine Dining", distanceKm: 0.5, priceRange: "€€€€", rating: 4.8, vegetarian: true, outdoor: false },
+        { name: "Steiku Haoss", cuisine: "Steak & Grill", distanceKm: 0.4, priceRange: "€€€", rating: 4.5, vegetarian: false, outdoor: true },
+        { name: "Trattoria del Popolo", cuisine: "Italian", distanceKm: 0.6, priceRange: "€€", rating: 4.3, vegetarian: true, outdoor: true },
+        { name: "Lido Atpūtas Centrs", cuisine: "Latvian Cafeteria", distanceKm: 1, priceRange: "€", rating: 4.1, vegetarian: true, outdoor: true }
       ]
   },
   {
@@ -1057,6 +1305,7 @@ const ACADEMIES = [
     coaches: [],
     bestCoachRanking: null,
     facilities: "Sõjakooli 10, Tallinn",
+    courtSurfaces: ["Clay", "Hard"],
     notableAlumni: [],
     description: "Tallinn-based tennis academy.",
     nearbyHotels: [
@@ -1065,6 +1314,13 @@ const ACADEMIES = [
         { name: "Hotel Palace by TallinnHotels", stars: 4, distanceKm: 0.4, features: ["Restaurant", "Bar", "Room Service"], pool: false, wifi: true, pricePerNight: "€85" },
         { name: "Original Sokos Hotel Viru", stars: 4, distanceKm: 0.2, features: ["Restaurant", "Bar", "Parking"], pool: false, wifi: true, pricePerNight: "€75" },
         { name: "Hestia Hotel Barons", stars: 3, distanceKm: 0.6, features: ["Breakfast Included", "Parking", "Bar"], pool: false, wifi: true, pricePerNight: "€55" }
+      ],
+    nearbyRestaurants: [
+        { name: "Rataskaevu 16", cuisine: "Estonian", distanceKm: 0.3, priceRange: "€€", rating: 4.6, vegetarian: true, outdoor: true },
+        { name: "NOA Chef's Hall", cuisine: "Fine Dining", distanceKm: 3, priceRange: "€€€€", rating: 4.8, vegetarian: true, outdoor: true },
+        { name: "Pizzeria Maailm", cuisine: "Italian", distanceKm: 0.4, priceRange: "€", rating: 4.2, vegetarian: true, outdoor: false },
+        { name: "Leib Resto ja Aed", cuisine: "Estonian Modern", distanceKm: 0.2, priceRange: "€€€", rating: 4.5, vegetarian: true, outdoor: true },
+        { name: "Kompressor", cuisine: "Pancakes & Casual", distanceKm: 0.5, priceRange: "€", rating: 4.3, vegetarian: true, outdoor: false }
       ]
   },
   {
@@ -1087,6 +1343,7 @@ const ACADEMIES = [
     coaches: [],
     bestCoachRanking: null,
     facilities: "Peterburi Tee 46, Tallinn",
+    courtSurfaces: ["Clay", "Hard"],
     notableAlumni: [],
     description: "Tallinn-based tennis academy.",
     nearbyHotels: [
@@ -1095,6 +1352,13 @@ const ACADEMIES = [
         { name: "Hotel Palace by TallinnHotels", stars: 4, distanceKm: 0.4, features: ["Restaurant", "Bar", "Room Service"], pool: false, wifi: true, pricePerNight: "€85" },
         { name: "Original Sokos Hotel Viru", stars: 4, distanceKm: 0.2, features: ["Restaurant", "Bar", "Parking"], pool: false, wifi: true, pricePerNight: "€75" },
         { name: "Hestia Hotel Barons", stars: 3, distanceKm: 0.6, features: ["Breakfast Included", "Parking", "Bar"], pool: false, wifi: true, pricePerNight: "€55" }
+      ],
+    nearbyRestaurants: [
+        { name: "Rataskaevu 16", cuisine: "Estonian", distanceKm: 0.3, priceRange: "€€", rating: 4.6, vegetarian: true, outdoor: true },
+        { name: "NOA Chef's Hall", cuisine: "Fine Dining", distanceKm: 3, priceRange: "€€€€", rating: 4.8, vegetarian: true, outdoor: true },
+        { name: "Pizzeria Maailm", cuisine: "Italian", distanceKm: 0.4, priceRange: "€", rating: 4.2, vegetarian: true, outdoor: false },
+        { name: "Leib Resto ja Aed", cuisine: "Estonian Modern", distanceKm: 0.2, priceRange: "€€€", rating: 4.5, vegetarian: true, outdoor: true },
+        { name: "Kompressor", cuisine: "Pancakes & Casual", distanceKm: 0.5, priceRange: "€", rating: 4.3, vegetarian: true, outdoor: false }
       ]
   }
 ];
