@@ -865,3 +865,67 @@ body {
   .card-header .card-title { font-size: 0.92rem; }
   .btn-wizard { font-size: 0.85rem; padding: 0.5rem 1.2rem; }
 }
+
+/* ===== Action Buttons in Card Details ===== */
+.detail-actions { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 1rem; }
+.btn-inquiry, .btn-visit {
+  display: inline-flex; align-items: center; gap: 0.3rem;
+  padding: 0.5rem 1rem; border-radius: var(--radius-sm);
+  text-decoration: none; font-size: 0.85rem; font-weight: 600;
+  transition: var(--transition); cursor: pointer; border: none;
+}
+.btn-inquiry { background: var(--accent); color: var(--primary); }
+.btn-inquiry:hover { background: var(--accent-dark); }
+.btn-visit { background: var(--primary); color: white; }
+.btn-visit:hover { background: var(--primary-light); }
+
+/* ===== Share Button ===== */
+.btn-share {
+  background: none; border: none; cursor: pointer;
+  font-size: 1rem; padding: 0.2rem; opacity: 0.6;
+  transition: var(--transition);
+}
+.btn-share:hover { opacity: 1; }
+.share-toast {
+  position: fixed; bottom: 2rem; left: 50%; transform: translateX(-50%);
+  background: var(--primary); color: white; padding: 0.7rem 1.5rem;
+  border-radius: var(--radius); font-size: 0.9rem; z-index: 9999;
+  animation: fadeInOut 2s forwards;
+}
+@keyframes fadeInOut {
+  0% { opacity: 0; transform: translateX(-50%) translateY(10px); }
+  15% { opacity: 1; transform: translateX(-50%) translateY(0); }
+  85% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+/* ===== Print Button ===== */
+.btn-print {
+  background: none; border: 1px solid var(--border); color: var(--text);
+  padding: 0.4rem 0.8rem; border-radius: 20px;
+  cursor: pointer; font-size: 0.8rem; transition: all var(--transition);
+  white-space: nowrap; font-family: var(--font);
+}
+.btn-print:hover { border-color: var(--primary); color: var(--primary); }
+
+/* ===== Print Styles ===== */
+@media print {
+  .filter-bar, .stats-bar, .map-container, .compare-fab, .modal-overlay,
+  .site-footer, .btn-share, .fav-heart, .compare-check,
+  .btn-details, .btn-print, .btn-wizard, .filter-toggle-mobile,
+  .detail-actions, #resultsBar { display: none !important; }
+
+  .site-header { background: white !important; color: black !important; padding: 1rem; }
+  .site-header h1 { font-size: 1.5rem; color: black !important; }
+  .site-header .subtitle { color: #666 !important; }
+
+  body { background: white !important; }
+  .card-grid { display: block !important; }
+  .academy-card {
+    break-inside: avoid; page-break-inside: avoid;
+    border: 1px solid #ccc !important; margin-bottom: 1rem;
+    box-shadow: none !important; background: white !important;
+  }
+  .card-details { display: block !important; max-height: none !important; }
+  .card-details * { color: black !important; }
+}
