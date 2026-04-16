@@ -236,6 +236,7 @@ function runCountAnimation() {
 /* ===== Populate Country Dropdown ===== */
 function populateCountryDropdown() {
   const sel = document.getElementById('filterCountry');
+  if (typeof COUNTRIES === 'undefined') { var COUNTRIES = [...new Set(ACADEMIES.map(a => a.country))]; }
   COUNTRIES.sort().forEach(c => {
     const flag = ACADEMIES.find(a => a.country === c)?.countryFlag || '';
     const opt = document.createElement('option');

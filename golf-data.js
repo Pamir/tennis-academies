@@ -1513,6 +1513,8 @@ const ACADEMIES = [
   }
 ];
 
+const COUNTRIES = [...new Set(ACADEMIES.map(a => a.country))];
+
 const CLIMATE_DATA = {
   "st-andrews": {
     city: "St Andrews", country: "Scotland",
