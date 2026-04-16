@@ -1134,3 +1134,92 @@ body {
 .form-group label { display: block; font-size: 0.78rem; font-weight: 600; color: var(--primary); margin-bottom: 0.2rem; }
 .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 0.5rem; border: 1px solid var(--border); border-radius: var(--radius-sm); font-family: var(--font); font-size: 0.85rem; background: var(--card-bg); color: var(--text); box-sizing: border-box; }
 .form-group textarea { resize: vertical; }
+
+/* ===== Sports Hub ===== */
+.hub-header { text-align: center; padding: 3rem 2rem; }
+.hub-header h1 { font-size: 2.5rem; }
+.hub-main { max-width: 1000px; margin: 0 auto; padding: 2rem; }
+
+.hub-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.hub-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2.5rem 1.5rem;
+  border-radius: var(--radius);
+  background: var(--card-bg);
+  box-shadow: var(--shadow);
+  text-decoration: none;
+  color: var(--text);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  border: 2px solid transparent;
+}
+.hub-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-hover);
+  border-color: var(--accent);
+}
+.hub-icon { font-size: 3.5rem; margin-bottom: 1rem; }
+.hub-card h2 { font-size: 1.4rem; color: var(--primary); margin-bottom: 0.3rem; }
+.hub-card p { font-size: 0.85rem; color: var(--text-light); text-align: center; }
+.hub-arrow {
+  position: absolute;
+  bottom: 1rem;
+  right: 1.2rem;
+  font-size: 1.2rem;
+  color: var(--accent-dark);
+  opacity: 0;
+  transform: translateX(-10px);
+  transition: all 0.3s;
+}
+.hub-card:hover .hub-arrow { opacity: 1; transform: translateX(0); }
+
+.hub-tennis { border-top: 4px solid #c8e632; }
+.hub-golf { border-top: 4px solid #4caf50; }
+.hub-football { border-top: 4px solid #2196f3; }
+.hub-basketball { border-top: 4px solid #ff9800; }
+
+.hub-stats { text-align: center; padding: 2rem 0; }
+.hub-stats h3 { font-size: 1.3rem; color: var(--primary); margin-bottom: 1.5rem; }
+.hub-features {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 1.5rem;
+}
+.hub-feature {
+  padding: 1.5rem;
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+.hub-feature span { font-size: 2rem; display: block; margin-bottom: 0.5rem; }
+.hub-feature strong { color: var(--primary); display: block; margin-bottom: 0.3rem; }
+.hub-feature p { font-size: 0.8rem; color: var(--text-light); }
+
+/* Back link */
+.back-link {
+  position: absolute;
+  top: 1rem;
+  left: 1.5rem;
+  color: rgba(255,255,255,0.8);
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: color 0.2s;
+}
+.back-link:hover { color: var(--accent); }
+
+@media (max-width: 768px) {
+  .hub-header h1 { font-size: 1.8rem; }
+  .hub-grid { grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .hub-card { padding: 1.5rem 1rem; }
+  .hub-icon { font-size: 2.5rem; }
+}
