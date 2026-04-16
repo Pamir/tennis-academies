@@ -37,6 +37,12 @@ const ACADEMIES = [
     facilities: "Multiple locations in Belgrade",
     courtSurfaces: ["Clay", "Hard"],
     notableAlumni: [],
+    photos: [
+      "https://picsum.photos/seed/pzta-1/800/500",
+      "https://picsum.photos/seed/pzta-2/800/500",
+      "https://picsum.photos/seed/pzta-3/800/500",
+      "https://picsum.photos/seed/pzta-4/800/500"
+    ],
     description: "Full-service academy with transparent pricing, conditioning, mental coaching, injury prevention, tournament travel, accommodation & logistics.",
     nearbyHotels: [
         { name: "Hotel Metropol Palace", stars: 5, distanceKm: 0.5, features: ["Restaurant", "Spa", "Bar", "Room Service"], pool: true, wifi: true, pricePerNight: "€120" },
@@ -100,6 +106,13 @@ const ACADEMIES = [
     facilities: "Clay courts, hard court (US Open surface), fitness center, recovery facilities, on-site boarding accommodation",
     courtSurfaces: ["Clay", "Hard"],
     notableAlumni: ["Laslo Djere", "Yuichi Sugita", "Dušan Lajović"],
+    photos: [
+      "https://picsum.photos/seed/tipsarevic-1/800/500",
+      "https://picsum.photos/seed/tipsarevic-2/800/500",
+      "https://picsum.photos/seed/tipsarevic-3/800/500",
+      "https://picsum.photos/seed/tipsarevic-4/800/500",
+      "https://picsum.photos/seed/tipsarevic-5/800/500"
+    ],
     description: "Only full-boarding tennis academy in Serbia. Founded by former ATP World No. 8 Janko Tipsarević.",
     nearbyHotels: [
         { name: "Hotel Metropol Palace", stars: 5, distanceKm: 0.5, features: ["Restaurant", "Spa", "Bar", "Room Service"], pool: true, wifi: true, pricePerNight: "€120" },
@@ -163,6 +176,11 @@ const ACADEMIES = [
     facilities: "Belgrade-based courts",
     courtSurfaces: ["Clay", "Hard"],
     notableAlumni: ["Novak Djokovic (early)", "Ana Ivanovic", "Olga Danilovic"],
+    photos: [
+      "https://picsum.photos/seed/vranes-1/800/500",
+      "https://picsum.photos/seed/vranes-2/800/500",
+      "https://picsum.photos/seed/vranes-3/800/500"
+    ],
     description: "Headed by former Serbian Fed Cup captain who coached Novak Djokovic and Ana Ivanovic.",
     nearbyHotels: [
         { name: "Hotel Metropol Palace", stars: 5, distanceKm: 0.5, features: ["Restaurant", "Spa", "Bar", "Room Service"], pool: true, wifi: true, pricePerNight: "€120" },
@@ -225,6 +243,12 @@ const ACADEMIES = [
     facilities: "Professional courts, accommodation for international players",
     courtSurfaces: ["Clay", "Hard"],
     notableAlumni: ["Miomir Kecmanovic"],
+    photos: [
+      "https://picsum.photos/seed/premium-tennis-1/800/500",
+      "https://picsum.photos/seed/premium-tennis-2/800/500",
+      "https://picsum.photos/seed/premium-tennis-3/800/500",
+      "https://picsum.photos/seed/premium-tennis-4/800/500"
+    ],
     description: "Headed by ATP top-50 coach, co-head coach for Miomir Kecmanovic.",
     nearbyHotels: [
         { name: "Hotel Metropol Palace", stars: 5, distanceKm: 0.5, features: ["Restaurant", "Spa", "Bar", "Room Service"], pool: true, wifi: true, pricePerNight: "€120" },
@@ -287,6 +311,11 @@ const ACADEMIES = [
     facilities: "7 courts (5 clay + additional surfaces), Ada Ciganlija",
     courtSurfaces: ["Clay", "Hard", "Indoor Hard"],
     notableAlumni: ["Novak Djokovic (early)"],
+    photos: [
+      "https://picsum.photos/seed/academy-ada-1/800/500",
+      "https://picsum.photos/seed/academy-ada-2/800/500",
+      "https://picsum.photos/seed/academy-ada-3/800/500"
+    ],
     description: "Founded by Bogdan Obradovic, former coach of Novak Djokovic's early years.",
     nearbyHotels: [
         { name: "Hotel Metropol Palace", stars: 5, distanceKm: 0.5, features: ["Restaurant", "Spa", "Bar", "Room Service"], pool: true, wifi: true, pricePerNight: "€120" },

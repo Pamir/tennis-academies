@@ -32,6 +32,12 @@ const ACADEMIES = [
     facilities: "Driving Range, Putting Green, Short Game Area, Pro Shop, Clubhouse, Video Analysis Suite, Indoor Simulator, Gym",
     courtSurfaces: ["Links"],
     notableAlumni: ["Sam Torrance", "Colin Montgomerie"],
+    photos: [
+      "https://picsum.photos/seed/st-andrews-1/800/500",
+      "https://picsum.photos/seed/st-andrews-2/800/500",
+      "https://picsum.photos/seed/st-andrews-3/800/500",
+      "https://picsum.photos/seed/st-andrews-4/800/500"
+    ],
     description: "The St Andrews Links Golf Academy offers world-class training on the home of golf. Located on the iconic Old Course, this elite academy provides comprehensive instruction in links golf techniques.",
     nearbyHotels: [
       { name: "Old Course Hotel", stars: 5, distanceKm: 0.5, features: ["Restaurant", "Spa", "Golf Views"], pool: true, wifi: true, pricePerNight: "€250" },
@@ -97,6 +103,13 @@ const ACADEMIES = [
     facilities: "Championship Course, Driving Range, Putting Green, Short Game Area, Pro Shop, Clubhouse, Gym, Video Analysis Suite",
     courtSurfaces: ["Parkland", "Links"],
     notableAlumni: ["Sergio Garcia", "Jon Rahm"],
+    photos: [
+      "https://picsum.photos/seed/valderrama-1/800/500",
+      "https://picsum.photos/seed/valderrama-2/800/500",
+      "https://picsum.photos/seed/valderrama-3/800/500",
+      "https://picsum.photos/seed/valderrama-4/800/500",
+      "https://picsum.photos/seed/valderrama-5/800/500"
+    ],
     description: "Valderrama Golf Academy provides elite training at one of Europe most prestigious courses. The academy combines world-class facilities with expert coaching in the heart of Andalusia.",
     nearbyHotels: [
       { name: "SO Sotogrande", stars: 5, distanceKm: 2, features: ["Restaurant", "Spa", "Golf Access"], pool: true, wifi: true, pricePerNight: "€280" },
@@ -162,6 +175,11 @@ const ACADEMIES = [
     facilities: "Championship Course, Driving Range, Putting Green, Pro Shop, Clubhouse, Gym, Short Game Area",
     courtSurfaces: ["Parkland", "Resort"],
     notableAlumni: [],
+    photos: [
+      "https://picsum.photos/seed/penha-longa-1/800/500",
+      "https://picsum.photos/seed/penha-longa-2/800/500",
+      "https://picsum.photos/seed/penha-longa-3/800/500"
+    ],
     description: "Penha Longa Golf Academy offers professional training in a stunning resort setting near Lisbon. The academy provides comprehensive programs with access to championship-level facilities.",
     nearbyHotels: [
       { name: "Penha Longa Resort", stars: 5, distanceKm: 0.1, features: ["Restaurant", "Spa", "Golf Package"], pool: true, wifi: true, pricePerNight: "€250" },
@@ -228,6 +246,12 @@ const ACADEMIES = [
     facilities: "Three Championship Courses, Driving Range, Putting Green, Short Game Area, Pro Shop, Clubhouse, Gym, Video Analysis Suite, Indoor Simulators",
     courtSurfaces: ["Parkland", "Heathland"],
     notableAlumni: ["Ernie Els", "Luke Donald"],
+    photos: [
+      "https://picsum.photos/seed/wentworth-1/800/500",
+      "https://picsum.photos/seed/wentworth-2/800/500",
+      "https://picsum.photos/seed/wentworth-3/800/500",
+      "https://picsum.photos/seed/wentworth-4/800/500"
+    ],
     description: "Wentworth Golf Academy provides elite training at one of England most exclusive clubs. The academy offers world-class facilities and coaching in prestigious Surrey countryside.",
     nearbyHotels: [
       { name: "Wentworth Estate Hotel", stars: 5, distanceKm: 0.5, features: ["Restaurant", "Spa", "Golf Package"], pool: true, wifi: true, pricePerNight: "€400" },
@@ -293,6 +317,11 @@ const ACADEMIES = [
     facilities: "Two Championship Courses, Driving Range, Putting Green, Short Game Area, Pro Shop, Clubhouse, Gym, Video Analysis",
     courtSurfaces: ["Parkland"],
     notableAlumni: ["Padraig Harrington", "Shane Lowry"],
+    photos: [
+      "https://picsum.photos/seed/k-club-1/800/500",
+      "https://picsum.photos/seed/k-club-2/800/500",
+      "https://picsum.photos/seed/k-club-3/800/500"
+    ],
     description: "The K Club Golf Academy provides professional training at the former Ryder Cup venue. The academy offers exceptional coaching with access to world-renowned championship courses.",
     nearbyHotels: [
       { name: "The K Club Hotel", stars: 5, distanceKm: 0.1, features: ["Restaurant", "Spa", "Golf Package"], pool: true, wifi: true, pricePerNight: "€350" },

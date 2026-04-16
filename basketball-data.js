@@ -30,6 +30,12 @@ const ACADEMIES = [
     facilities: 'WiZink Center training courts, 4 indoor hardwood courts, strength and conditioning center, video analysis room, sports science lab',
     courtSurfaces: ['Indoor Hardwood', 'Indoor Synthetic'],
     notableAlumni: ['Luka Doncic', 'Sergio Llull', 'Rudy Fernandez', 'Felipe Reyes'],
+    photos: [
+      "https://picsum.photos/seed/real-madrid-basketball-1/800/500",
+      "https://picsum.photos/seed/real-madrid-basketball-2/800/500",
+      "https://picsum.photos/seed/real-madrid-basketball-3/800/500",
+      "https://picsum.photos/seed/real-madrid-basketball-4/800/500"
+    ],
     description: 'The basketball academy of one of Europe most decorated clubs. Real Madrid Baloncesto has produced numerous EuroLeague and NBA players through its world-class youth development system.',
     nearbyHotels: [
         { name: 'VP Plaza Espana Design', stars: 5, distanceKm: 1.2, features: ['Restaurant', 'Spa', 'Rooftop Bar', 'Gym'], pool: true, wifi: true, pricePerNight: '€180' },
@@ -95,6 +101,13 @@ const ACADEMIES = [
     facilities: 'Palau Blaugrana training facility, 3 indoor hardwood courts, modern gym, recovery center with cryotherapy, video room',
     courtSurfaces: ['Indoor Hardwood', 'Indoor Synthetic', 'Outdoor Asphalt'],
     notableAlumni: ['Ricky Rubio', 'Juan Carlos Navarro', 'Pau Gasol', 'Victor Claver'],
+    photos: [
+      "https://picsum.photos/seed/fc-barcelona-basketball-1/800/500",
+      "https://picsum.photos/seed/fc-barcelona-basketball-2/800/500",
+      "https://picsum.photos/seed/fc-barcelona-basketball-3/800/500",
+      "https://picsum.photos/seed/fc-barcelona-basketball-4/800/500",
+      "https://picsum.photos/seed/fc-barcelona-basketball-5/800/500"
+    ],
     description: 'FC Barcelona basketball academy combines the club famous philosophy of technical excellence with world-class facilities. A proven pathway to professional basketball in Europe and the NBA.',
     nearbyHotels: [
         { name: 'Hotel Arts Barcelona', stars: 5, distanceKm: 8.0, features: ['Restaurant', 'Spa', 'Bar', 'Rooftop Pool'], pool: true, wifi: true, pricePerNight: '€250' },
@@ -160,6 +173,11 @@ const ACADEMIES = [
     facilities: 'Peace and Friendship Stadium training courts, 3 indoor courts, weight room, physiotherapy center, film room',
     courtSurfaces: ['Indoor Hardwood', 'Indoor Synthetic'],
     notableAlumni: ['Vassilis Spanoulis', 'Georgios Printezis', 'Kostas Sloukas'],
+    photos: [
+      "https://picsum.photos/seed/olympiacos-academy-1/800/500",
+      "https://picsum.photos/seed/olympiacos-academy-2/800/500",
+      "https://picsum.photos/seed/olympiacos-academy-3/800/500"
+    ],
     description: 'Olympiacos BC is a powerhouse of European basketball. Their youth academy in Piraeus has produced many Greek national team players and EuroLeague stars.',
     nearbyHotels: [
         { name: 'Piraeus Theoxenia Hotel', stars: 4, distanceKm: 0.5, features: ['Restaurant', 'Bar', 'Sea View'], pool: false, wifi: true, pricePerNight: '€95' },
@@ -224,6 +242,12 @@ const ACADEMIES = [
     facilities: 'OAKA Olympic Indoor Hall training annex, 2 indoor courts, fitness center, video analysis room',
     courtSurfaces: ['Indoor Hardwood', 'Indoor Synthetic'],
     notableAlumni: ['Dimitris Diamantidis', 'Nick Calathes', 'Kostas Antetokounmpo'],
+    photos: [
+      "https://picsum.photos/seed/panathinaikos-academy-1/800/500",
+      "https://picsum.photos/seed/panathinaikos-academy-2/800/500",
+      "https://picsum.photos/seed/panathinaikos-academy-3/800/500",
+      "https://picsum.photos/seed/panathinaikos-academy-4/800/500"
+    ],
     description: 'Panathinaikos is among the most successful basketball clubs in European history. Their academy in Athens is renowned for developing intelligent, fundamentally sound players.',
     nearbyHotels: [
         { name: 'Hotel Grande Bretagne', stars: 5, distanceKm: 5.0, features: ['Restaurant', 'Spa', 'Rooftop Pool', 'Bar'], pool: true, wifi: true, pricePerNight: '€280' },
@@ -288,6 +312,11 @@ const ACADEMIES = [
     facilities: 'Ulker Sports Arena training center, 4 indoor courts, professional gym, recovery suite, performance analytics lab',
     courtSurfaces: ['Indoor Hardwood', 'Indoor Synthetic', 'Outdoor Asphalt'],
     notableAlumni: ['Omer Onan', 'Oguz Savas', 'Melih Mahmutoglu'],
+    photos: [
+      "https://picsum.photos/seed/fenerbahce-basketball-1/800/500",
+      "https://picsum.photos/seed/fenerbahce-basketball-2/800/500",
+      "https://picsum.photos/seed/fenerbahce-basketball-3/800/500"
+    ],
     description: 'Fenerbahce is one of Turkey top basketball programs with deep EuroLeague pedigree. Their youth academy blends Turkish passion with European coaching methodology.',
     nearbyHotels: [
         { name: 'DoubleTree by Hilton Moda', stars: 4, distanceKm: 3.0, features: ['Restaurant', 'Bar', 'Sea View', 'Gym'], pool: false, wifi: true, pricePerNight: '€90' },

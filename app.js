@@ -529,6 +529,9 @@ function buildDetails(a) {
   if (a.description) {
     html += `<div class="detail-section"><p>${escapeHTML(a.description)}</p></div>`;
   }
+  if (Array.isArray(a.photos) && a.photos.length) {
+    html += `<div class="detail-section"><button class="btn-gallery" onclick="gallery_open('${a.id}')">📷 View Photos (${a.photos.length})</button></div>`;
+  }
   html += renderStarRating(a.id);
   if (a.coaches.length) {
     html += '<div class="detail-section"><h4>Coaches</h4><ul>';
@@ -1547,5 +1550,75 @@ function scrollToAcademy(id) {
       localStorage.setItem('theme', 'dark');
       btn.textContent = '☀️';
     }
+  });
+})();
+
+/* ===== Photo Gallery Lightbox ===== */
+(function() {
+  let gallery_currentPhotos = [];
+  let gallery_currentIndex = 0;
+
+  function gallery_getOverlay() {
+    let overlay = document.getElementById('galleryOverlay');
+    if (!overlay) {
+      overlay = document.createElement('div');
+      overlay.id = 'galleryOverlay';
+      overlay.className = 'gallery-overlay';
+      overlay.innerHTML = `
+        <button class="gallery-close" aria-label="Close gallery">&times;</button>
+        <button class="gallery-prev" aria-label="Previous photo">&#10094;</button>
+        <img class="gallery-img" alt="Academy photo">
+        <button class="gallery-next" aria-label="Next photo">&#10095;</button>
+        <div class="gallery-counter"></div>
+      `;
+      overlay.addEventListener('click', function(e) {
+        if (e.target === overlay) gallery_close();
+      });
+      overlay.querySelector('.gallery-close').addEventListener('click', gallery_close);
+      overlay.querySelector('.gallery-prev').addEventListener('click', function() { gallery_navigate(-1); });
+      overlay.querySelector('.gallery-next').addEventListener('click', function() { gallery_navigate(1); });
+      document.body.appendChild(overlay);
+    }
+    return overlay;
+  }
+
+  function gallery_show() {
+    const overlay = gallery_getOverlay();
+    const img = overlay.querySelector('.gallery-img');
+    const counter = overlay.querySelector('.gallery-counter');
+    img.src = gallery_currentPhotos[gallery_currentIndex];
+    counter.textContent = (gallery_currentIndex + 1) + ' / ' + gallery_currentPhotos.length;
+    overlay.querySelector('.gallery-prev').style.display = gallery_currentPhotos.length > 1 ? '' : 'none';
+    overlay.querySelector('.gallery-next').style.display = gallery_currentPhotos.length > 1 ? '' : 'none';
+  }
+
+  function gallery_navigate(dir) {
+    gallery_currentIndex = (gallery_currentIndex + dir + gallery_currentPhotos.length) % gallery_currentPhotos.length;
+    gallery_show();
+  }
+
+  window.gallery_open = function(academyId) {
+    const a = ACADEMIES.find(function(ac) { return ac.id === academyId; });
+    if (!a || !Array.isArray(a.photos) || !a.photos.length) return;
+    gallery_currentPhotos = a.photos;
+    gallery_currentIndex = 0;
+    gallery_show();
+    gallery_getOverlay().style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+  };
+
+  window.gallery_close = gallery_close;
+  function gallery_close() {
+    const overlay = document.getElementById('galleryOverlay');
+    if (overlay) overlay.style.display = 'none';
+    document.body.style.overflow = '';
+  }
+
+  document.addEventListener('keydown', function(e) {
+    const overlay = document.getElementById('galleryOverlay');
+    if (!overlay || overlay.style.display === 'none') return;
+    if (e.key === 'Escape') gallery_close();
+    if (e.key === 'ArrowLeft') gallery_navigate(-1);
+    if (e.key === 'ArrowRight') gallery_navigate(1);
   });
 })();

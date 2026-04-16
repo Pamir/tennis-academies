@@ -51,6 +51,13 @@ const ACADEMIES = [
         facilities: '10 full-size pitches, indoor training center, gym, recovery center, video analysis rooms, residential building',
         courtSurfaces: ['Natural Grass', 'Artificial Turf', 'Indoor'],
         notableAlumni: ['Lionel Messi', 'Xavi Hernandez', 'Andres Iniesta', 'Sergio Busquets', 'Gerard Pique'],
+        photos: [
+          "https://picsum.photos/seed/fc-barcelona-la-masia-1/800/500",
+          "https://picsum.photos/seed/fc-barcelona-la-masia-2/800/500",
+          "https://picsum.photos/seed/fc-barcelona-la-masia-3/800/500",
+          "https://picsum.photos/seed/fc-barcelona-la-masia-4/800/500",
+          "https://picsum.photos/seed/fc-barcelona-la-masia-5/800/500"
+        ],
         description: 'La Masia is one of the most prestigious football academies in the world, renowned for producing technically gifted players who embody the Barcelona philosophy.',
         nearbyHotels: [
                 {
@@ -223,6 +230,12 @@ const ACADEMIES = [
         facilities: '12 training pitches, Ciudad Real Madrid complex, gym, medical center, residence, media rooms',
         courtSurfaces: ['Natural Grass', 'Artificial Turf', 'Indoor'],
         notableAlumni: ['Raul Gonzalez', 'Iker Casillas', 'Emilio Butragueno', 'Alvaro Arbeloa', 'Dani Carvajal'],
+        photos: [
+          "https://picsum.photos/seed/real-madrid-fabrica-1/800/500",
+          "https://picsum.photos/seed/real-madrid-fabrica-2/800/500",
+          "https://picsum.photos/seed/real-madrid-fabrica-3/800/500",
+          "https://picsum.photos/seed/real-madrid-fabrica-4/800/500"
+        ],
         description: 'Real Madrid Fabrica is the youth academy of the most decorated club in European football history, producing world-class talent at Ciudad Real Madrid.',
         nearbyHotels: [
                 {
@@ -394,6 +407,11 @@ const ACADEMIES = [
         facilities: '8 training pitches, Ciudad Deportiva Wanda, gym, medical facility, video analysis center',
         courtSurfaces: ['Natural Grass', 'Artificial Turf', 'Indoor'],
         notableAlumni: ['Fernando Torres', 'Koke', 'Saul Niguez', 'Gabi Fernandez', 'Raul Garcia'],
+        photos: [
+          "https://picsum.photos/seed/atletico-madrid-academy-1/800/500",
+          "https://picsum.photos/seed/atletico-madrid-academy-2/800/500",
+          "https://picsum.photos/seed/atletico-madrid-academy-3/800/500"
+        ],
         description: 'Atletico Madrid Academy is known for producing resilient, tactically disciplined players who embody the club fighting spirit.',
         nearbyHotels: [
                 {
@@ -565,6 +583,12 @@ const ACADEMIES = [
         facilities: 'De Toekomst training complex, 7 pitches, indoor hall, gym, medical center, residential academy',
         courtSurfaces: ['Natural Grass', 'Artificial Turf', 'Indoor'],
         notableAlumni: ['Johan Cruyff', 'Marco van Basten', 'Dennis Bergkamp', 'Edwin van der Sar', 'Frenkie de Jong'],
+        photos: [
+          "https://picsum.photos/seed/ajax-youth-academy-1/800/500",
+          "https://picsum.photos/seed/ajax-youth-academy-2/800/500",
+          "https://picsum.photos/seed/ajax-youth-academy-3/800/500",
+          "https://picsum.photos/seed/ajax-youth-academy-4/800/500"
+        ],
         description: 'Ajax Youth Academy, based at De Toekomst, is the birthplace of Total Football and has produced more world-class talent than almost any other academy.',
         nearbyHotels: [
                 {
@@ -737,6 +761,13 @@ const ACADEMIES = [
         facilities: '13 pitches in forested parkland, indoor complex, gym, swimming pool, medical center, residential campus',
         courtSurfaces: ['Natural Grass', 'Artificial Turf', 'Indoor'],
         notableAlumni: ['Thierry Henry', 'Nicolas Anelka', 'Kylian Mbappe', 'William Gallas', 'Louis Saha'],
+        photos: [
+          "https://picsum.photos/seed/clairefontaine-1/800/500",
+          "https://picsum.photos/seed/clairefontaine-2/800/500",
+          "https://picsum.photos/seed/clairefontaine-3/800/500",
+          "https://picsum.photos/seed/clairefontaine-4/800/500",
+          "https://picsum.photos/seed/clairefontaine-5/800/500"
+        ],
         description: 'Clairefontaine is the French national football center, a prestigious institution nestled in forests that has produced generations of world-class French talent.',
         nearbyHotels: [
                 {
