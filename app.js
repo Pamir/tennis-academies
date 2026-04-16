@@ -14,7 +14,8 @@ const state = {
   viewMode: 'list',
   currency: 'EUR',
   surface: '',
-  nearMe: false
+  nearMe: false,
+  availableOnly: false
 };
 
 /* ===== Sport Config ===== */
@@ -459,6 +460,7 @@ function getFilteredAcademies() {
   if (state.atp) result = filterByCoachATP(result);
   if (state.top10) result = filterByCoachTop10(result);
   if (state.surface) result = result.filter(a => a.courtSurfaces && a.courtSurfaces.includes(state.surface));
+  if (state.availableOnly) result = result.filter(a => a.availability && a.availability.status !== 'closed' && a.availability.status !== 'waitlist');
   if (state.showFavorites) {
     const favs = getFavorites();
     result = result.filter(a => favs.includes(a.id));
@@ -501,6 +503,43 @@ function renderCards(academies) {
   grid.innerHTML = academies.map(a => cardHTML(a)).join('');
 }
 
+/* ===== Availability Helpers ===== */
+function formatIntakeDate(isoStr) {
+  if (!isoStr) return '';
+  const d = new Date(isoStr + 'T00:00:00');
+  return d.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+}
+
+function buildAvailabilityBadge(a) {
+  if (!a.availability || !a.availability.status) return '';
+  const s = a.availability.status;
+  const labels = { open: '🟢 Open', limited: '🟡 Limited', waitlist: '🟠 Waitlist', closed: '🔴 Closed' };
+  let label = labels[s] || s;
+  if (s === 'limited' && a.availability.spotsLeft != null) {
+    label += ` (${a.availability.spotsLeft})`;
+  }
+  if (s === 'closed' && a.availability.nextIntake) {
+    label += ` — ${formatIntakeDate(a.availability.nextIntake)}`;
+  }
+  return `<span class="availability-badge availability-badge-${s}">${label}</span>`;
+}
+
+function buildAvailabilityDetails(a) {
+  if (!a.availability || !a.availability.status) return '';
+  const av = a.availability;
+  const statusLabels = { open: '🟢 Open for enrollment', limited: '🟡 Limited spots available', waitlist: '🟠 Waitlist only', closed: '🔴 Currently closed' };
+  let html = '<div class="detail-section availability-detail"><h4>Availability</h4>';
+  html += `<p>${statusLabels[av.status] || av.status}</p>`;
+  if (av.nextIntake) html += `<p>📅 Next intake: <strong>${formatIntakeDate(av.nextIntake)}</strong></p>`;
+  if (av.spotsLeft != null) html += `<p>🎯 Spots remaining: <strong>${av.spotsLeft}</strong></p>`;
+  if (av.responseTime === '24h') html += '<p class="response-time-badge">⚡ Responds within 24h</p>';
+  else if (av.responseTime) html += `<p>⏱️ Response time: ${escapeHTML(av.responseTime)}</p>`;
+  if (av.privateLessons) html += '<p>👤 Private lessons available</p>';
+  html += av.yearRound ? '<p>📆 Year-round program</p>' : '<p>🌤️ Seasonal program</p>';
+  html += '</div>';
+  return html;
+}
+
 function cardHTML(a) {
   const star = a.starred ? ' <span class="star">⭐</span>' : '';
   const tags = buildTags(a);
@@ -527,8 +566,10 @@ function cardHTML(a) {
     distanceStr = `<div class="card-distance">📍 ${Math.round(dist)} km from you</div>`;
   }
 
+  const availBadge = buildAvailabilityBadge(a);
   return `
     <div class="academy-card" data-id="${a.id}" id="card-${a.id}" role="listitem">
+      ${availBadge}
       <div class="card-header">
         <div class="compare-check ${isCompared ? 'active' : ''}" data-id="${a.id}" onclick="toggleCompare('${a.id}')" tabindex="0" role="checkbox" aria-checked="${isCompared}" aria-label="Add ${escapeHTML(a.name)} to compare" title="Add to compare">✓</div>
         <div class="card-title">
@@ -547,6 +588,7 @@ function cardHTML(a) {
         ${distanceStr}
       </div>
       <div class="card-footer">
+        <button class="btn-quote-small" onclick="event.stopPropagation();openQuoteModal('${a.id}')">📋 Request Quote</button>
         <button class="btn-details" onclick="toggleDetails(this)" aria-label="View details for ${escapeHTML(a.name)}" aria-expanded="false">
           View Details <span class="arrow" aria-hidden="true">▼</span>
         </button>
@@ -597,6 +639,7 @@ function buildDetails(a) {
   if (a.description) {
     html += `<div class="detail-section"><p>${escapeHTML(a.description)}</p></div>`;
   }
+  html += buildAvailabilityDetails(a);
   if (Array.isArray(a.photos) && a.photos.length) {
     html += `<div class="detail-section"><button class="btn-gallery" onclick="gallery_open('${a.id}')">📷 View Photos (${a.photos.length})</button></div>`;
   }
@@ -605,6 +648,7 @@ function buildDetails(a) {
     html += renderUpcomingCamps(a.upcomingCamps);
   }
   html += renderCostCalculator(a);
+  html += renderAccommodationSection(a);
   if (a.coaches.length) {
     html += '<div class="detail-section"><h4>Coaches</h4><ul>';
     a.coaches.forEach(c => {
@@ -797,6 +841,7 @@ function buildDetails(a) {
 /* ===== Detail Action Buttons ===== */
 function buildDetailActions(a) {
   let html = '<div class="detail-actions">';
+  html += `<button class="btn-quote" onclick="openQuoteModal('${a.id}')">📋 Request Quote</button>`;
   html += `<button class="btn-inquiry" onclick="openInquiry('${a.id}')">📩 Send Inquiry</button>`;
   if (a.website) {
     html += `<a href="${escapeHTML(a.website)}" target="_blank" rel="noopener" class="btn-visit">🌐 Visit Website</a>`;
@@ -1049,6 +1094,7 @@ function saveStateToHash() {
     if (state[k]) params.set(k, '1');
   });
   if (state.showFavorites) params.set('fav', '1');
+  if (state.availableOnly) params.set('avail', '1');
   const hash = params.toString();
   history.replaceState(null, '', hash ? '#' + hash : location.pathname);
 }
@@ -1066,6 +1112,7 @@ function loadStateFromHash() {
     state[k] = params.get(k) === '1';
   });
   state.showFavorites = params.get('fav') === '1';
+  state.availableOnly = params.get('avail') === '1';
   document.getElementById('filterCountry').value = state.country;
   document.getElementById('filterLevel').value = state.level;
   document.getElementById('filterSort').value = state.sort;
@@ -1079,6 +1126,10 @@ function loadStateFromHash() {
   });
   if (state.showFavorites) {
     document.getElementById('toggleFavorites').classList.add('active');
+  }
+  if (state.availableOnly) {
+    const ab = document.getElementById('toggleAvailable');
+    if (ab) ab.classList.add('active');
   }
 }
 
@@ -1137,6 +1188,16 @@ function bindEvents() {
     applyAndRender();
   });
 
+  // Availability filter toggle
+  const availBtn = document.getElementById('toggleAvailable');
+  if (availBtn) {
+    availBtn.addEventListener('click', () => {
+      state.availableOnly = !state.availableOnly;
+      availBtn.classList.toggle('active', state.availableOnly);
+      applyAndRender();
+    });
+  }
+
   // View toggle (list/map)
   document.getElementById('btnListView').addEventListener('click', () => switchView('list'));
   document.getElementById('btnMapView').addEventListener('click', () => switchView('map'));
@@ -1162,6 +1223,8 @@ function bindEvents() {
     document.getElementById('filterSurface').value = '';
     document.querySelectorAll('.toggle-btn.active[data-filter]').forEach(b => b.classList.remove('active'));
     document.getElementById('toggleFavorites').classList.remove('active');
+    const availResetBtn = document.getElementById('toggleAvailable');
+    if (availResetBtn) availResetBtn.classList.remove('active');
     applyAndRender();
   });
 
@@ -1204,6 +1267,14 @@ function bindEvents() {
     window.location.href = `mailto:${a.contact || ''}?subject=${subject}&body=${body}`;
     closeInquiry();
     showToast('Opening email client...');
+  });
+
+  // Quote modal
+  document.getElementById('quoteClose').addEventListener('click', closeQuoteModal);
+  document.getElementById('quoteModal').addEventListener('click', e => { if (e.target === e.currentTarget) closeQuoteModal(); });
+  document.getElementById('quoteForm').addEventListener('submit', e => {
+    e.preventDefault();
+    submitQuoteRequest('mailto');
   });
 
   // Keyboard support for star ratings (arrow keys to navigate, Enter/Space to select)
@@ -1252,10 +1323,11 @@ function bindEvents() {
     if (document.getElementById('compareModal').style.display === 'flex') closeCompareModal();
     else if (document.getElementById('wizardModal').style.display === 'flex') closeWizard();
     else if (document.getElementById('inquiryModal').style.display === 'flex') closeInquiry();
+    else if (document.getElementById('quoteModal').style.display === 'flex') closeQuoteModal();
   });
 
   // Add ARIA attributes to static modals
-  ['compareModal', 'wizardModal', 'inquiryModal'].forEach(function(id) {
+  ['compareModal', 'wizardModal', 'inquiryModal', 'quoteModal'].forEach(function(id) {
     var modal = document.getElementById(id);
     if (modal) {
       modal.setAttribute('role', 'dialog');
@@ -1712,51 +1784,134 @@ function renderCostCalculator(a) {
     return '<div class="detail-section cost-calculator"><h4>💰 Trip Cost Calculator</h4><p>Contact academy for pricing</p></div>';
   }
   const calcId = 'calc-' + a.id;
+  const hasAccom = a.accommodation && Array.isArray(a.accommodation.types) && a.accommodation.types.length > 0;
   let html = '<div class="detail-section cost-calculator" id="' + calcId + '">';
   html += '<h4>💰 Trip Cost Calculator</h4>';
   html += '<div class="cost-calc-controls">';
   html += '<div class="cost-calc-row"><label>Duration: <strong class="calc-weeks-label">4 weeks</strong></label>';
   html += '<input type="range" class="cost-slider" min="1" max="12" value="4" data-calc-field="weeks"></div>';
+
+  // Guest configuration
+  html += '<div class="guest-config">';
+  html += '<div class="cost-calc-row"><label>Number of trainees:</label>';
+  html += '<select data-calc-field="trainees"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option></select></div>';
+  html += '<div class="cost-calc-row"><label>Total guests staying:</label>';
+  html += '<select data-calc-field="guests"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option></select></div>';
+  html += '</div>';
+
+  // Accommodation type dropdown
   html += '<div class="cost-calc-row"><label>Accommodation:</label>';
-  html += '<select data-calc-field="accom"><option value="academy">Academy housing</option><option value="external">External</option></select></div>';
+  html += '<select data-calc-field="accom">';
+  if (hasAccom) {
+    a.accommodation.types.forEach(function(t) {
+      var perPerson = t.maxOccupancy > 1 ? ' (~' + convertPrice(Math.round(t.pricePerWeek / t.maxOccupancy)) + '/person)' : '';
+      html += '<option value="' + t.type + '" data-price="' + t.pricePerWeek + '" data-max="' + t.maxOccupancy + '" data-meals="' + (t.mealsIncluded ? '1' : '0') + '">' + escapeHTML(t.label) + ' — ' + convertPrice(t.pricePerWeek) + '/wk' + perPerson + '</option>';
+    });
+    html += '<option value="none">No accommodation</option>';
+  } else {
+    html += '<option value="none">Contact academy for options</option>';
+  }
+  html += '</select></div>';
+
   html += '<div class="cost-calc-row"><label><input type="checkbox" data-calc-field="travel" checked> Include travel estimate</label></div>';
   html += '</div>';
   html += '<div class="cost-breakdown"></div>';
   html += '</div>';
 
   const monthlyFrom = a.priceRange.from;
-  const accomBase = 600;
-  const accomExternal = 400;
   const travelBase = getTravelEstimate(a.country);
   const travelMax = travelBase + 150;
-  const country = a.country || '';
+  const MEAL_COST_PER_DAY = 15;
 
-  // Attach behavior after render via setTimeout
-  setTimeout(() => {
+  setTimeout(function() {
     const container = document.getElementById(calcId);
     if (!container) return;
     const slider = container.querySelector('[data-calc-field="weeks"]');
+    const traineesSel = container.querySelector('[data-calc-field="trainees"]');
+    const guestsSel = container.querySelector('[data-calc-field="guests"]');
     const accomSel = container.querySelector('[data-calc-field="accom"]');
     const travelChk = container.querySelector('[data-calc-field="travel"]');
     const weekLabel = container.querySelector('.calc-weeks-label');
     const breakdown = container.querySelector('.cost-breakdown');
 
+    // Ensure guests >= trainees
+    traineesSel.addEventListener('change', function() {
+      var t = parseInt(traineesSel.value, 10);
+      var g = parseInt(guestsSel.value, 10);
+      if (g < t) { guestsSel.value = String(t); }
+      update();
+    });
+    guestsSel.addEventListener('change', function() {
+      var t = parseInt(traineesSel.value, 10);
+      var g = parseInt(guestsSel.value, 10);
+      if (g < t) { guestsSel.value = String(t); }
+      update();
+    });
+
     function update() {
-      const weeks = parseInt(slider.value, 10);
+      var weeks = parseInt(slider.value, 10);
+      var trainees = parseInt(traineesSel.value, 10);
+      var guests = parseInt(guestsSel.value, 10);
+      if (guests < trainees) { guests = trainees; guestsSel.value = String(guests); }
       weekLabel.textContent = weeks + ' week' + (weeks !== 1 ? 's' : '');
-      const trainingFee = Math.round(monthlyFrom * weeks / 4.33);
-      const accomWeekly = accomSel.value === 'academy' ? Math.round(accomBase / 4.33) : Math.round(accomExternal / 4.33);
-      const accomTotal = accomWeekly * weeks;
-      const includeTravel = travelChk.checked;
-      const travelMid = Math.round((travelBase + travelMax) / 2);
-      let total = trainingFee + accomTotal;
-      let rows = '';
-      rows += '<div class="cost-row"><span>Training fees (' + weeks + ' wk' + (weeks !== 1 ? 's' : '') + ')</span><span>' + convertPrice(trainingFee) + '</span></div>';
-      rows += '<div class="cost-row"><span>Accommodation (' + (accomSel.value === 'academy' ? 'Academy' : 'External') + ')</span><span>' + convertPrice(accomTotal) + '</span></div>';
+
+      var trainingFee = Math.round(monthlyFrom * weeks / 4.33) * trainees;
+      var includeTravel = travelChk.checked;
+      var travelMid = Math.round((travelBase + travelMax) / 2) * guests;
+      var rows = '';
+      var total = trainingFee;
+
+      rows += '<div class="cost-row"><span>Training fees (' + trainees + ' trainee' + (trainees !== 1 ? 's' : '') + ' × ' + weeks + ' wk' + (weeks !== 1 ? 's' : '') + ')</span><span>' + convertPrice(trainingFee) + '</span></div>';
+
+      var selectedOpt = accomSel.options[accomSel.selectedIndex];
+      var accomType = accomSel.value;
+
+      if (accomType !== 'none' && hasAccom) {
+        var pricePerWeek = parseInt(selectedOpt.getAttribute('data-price'), 10);
+        var maxOcc = parseInt(selectedOpt.getAttribute('data-max'), 10);
+        var mealsIncl = selectedOpt.getAttribute('data-meals') === '1';
+        var roomsNeeded = Math.ceil(guests / maxOcc);
+        var accomTotal = pricePerWeek * roomsNeeded * weeks;
+        var perPersonPerWeek = Math.round(accomTotal / (weeks * guests));
+        total += accomTotal;
+
+        var accomLabel = selectedOpt.textContent.split(' — ')[0];
+        if (roomsNeeded > 1) {
+          rows += '<div class="cost-row"><span>' + escapeHTML(accomLabel) + ' (' + roomsNeeded + ' rooms × ' + weeks + ' wk' + (weeks !== 1 ? 's' : '') + ')</span><span>' + convertPrice(accomTotal) + '</span></div>';
+        } else {
+          rows += '<div class="cost-row"><span>' + escapeHTML(accomLabel) + ' (' + weeks + ' wk' + (weeks !== 1 ? 's' : '') + ')</span><span>' + convertPrice(accomTotal) + '</span></div>';
+        }
+        if (guests > 1) {
+          rows += '<div class="cost-row cost-row-sub"><span>↳ ' + convertPrice(perPersonPerWeek) + '/person/week</span><span></span></div>';
+        }
+
+        // Meals estimate if not included
+        if (!mealsIncl) {
+          var mealsCost = MEAL_COST_PER_DAY * 7 * weeks * guests;
+          total += mealsCost;
+          rows += '<div class="cost-row"><span>Meals estimate (' + guests + ' guest' + (guests !== 1 ? 's' : '') + ', €15/day)</span><span>' + convertPrice(mealsCost) + '</span></div>';
+        }
+
+        // Savings vs private rooms
+        if (hasAccom && accomType !== 'private') {
+          var privateType = a.accommodation.types.find(function(t) { return t.type === 'private'; });
+          if (privateType) {
+            var privateCost = privateType.pricePerWeek * guests * weeks;
+            var savings = privateCost - accomTotal;
+            if (savings > 0) {
+              rows += '<div class="cost-row savings-highlight"><span>💰 Save vs. private rooms</span><span>−' + convertPrice(savings) + '</span></div>';
+            }
+          }
+        }
+      } else if (accomType === 'none') {
+        rows += '<div class="cost-row"><span>Accommodation</span><span>—</span></div>';
+      }
+
       if (includeTravel) {
         total += travelMid;
-        rows += '<div class="cost-row"><span>Travel estimate</span><span>' + convertPrice(travelBase) + ' – ' + convertPrice(travelMax) + '</span></div>';
+        rows += '<div class="cost-row"><span>Travel estimate (' + guests + ' guest' + (guests !== 1 ? 's' : '') + ')</span><span>' + convertPrice(travelBase * guests) + ' – ' + convertPrice(travelMax * guests) + '</span></div>';
       }
+
       rows += '<div class="cost-total"><span>Total estimated cost</span><span>' + convertPrice(total) + '</span></div>';
       breakdown.innerHTML = rows;
     }
@@ -1767,6 +1922,50 @@ function renderCostCalculator(a) {
     update();
   }, 0);
 
+  return html;
+}
+
+/* ===== Accommodation Details Section ===== */
+function renderAccommodationSection(a) {
+  if (!a.accommodation || !Array.isArray(a.accommodation.types) || a.accommodation.types.length === 0) {
+    return '';
+  }
+  var acc = a.accommodation;
+  var html = '<div class="detail-section accommodation-section">';
+  html += '<h4>🏠 Accommodation Options</h4>';
+  html += '<div class="accommodation-grid">';
+  acc.types.forEach(function(t) {
+    html += '<div class="accommodation-type">';
+    html += '<div class="accommodation-type-header">';
+    html += '<strong>' + escapeHTML(t.label) + '</strong>';
+    html += '<span class="accommodation-price">' + convertPrice(t.pricePerWeek) + '/wk</span>';
+    html += '</div>';
+    html += '<div class="accommodation-type-details">';
+    html += '<span>👥 Up to ' + t.maxOccupancy + ' guest' + (t.maxOccupancy !== 1 ? 's' : '') + '</span>';
+    if (t.mealsIncluded) {
+      html += ' <span class="accommodation-badge badge-meals">🍽️ Meals included</span>';
+    }
+    html += ' <span class="accommodation-badge badge-bath">' + (t.bathType === 'ensuite' ? '🚿 Ensuite' : '🚿 Shared bath') + '</span>';
+    if (t.maxOccupancy > 1) {
+      html += ' <span class="accommodation-badge badge-perperson">~' + convertPrice(Math.round(t.pricePerWeek / t.maxOccupancy)) + '/person</span>';
+    }
+    html += '</div>';
+    html += '</div>';
+  });
+  html += '</div>';
+
+  // Info badges
+  html += '<div class="accommodation-info">';
+  if (acc.companionsAllowed) html += '<span class="accommodation-badge">👫 Companions welcome</span>';
+  if (acc.childrenAllowed) html += '<span class="accommodation-badge">👶 Children allowed</span>';
+  if (acc.shuttleToTraining) html += '<span class="accommodation-badge">🚐 Shuttle to training</span>';
+  if (acc.minStay && acc.minStay > 1) html += '<span class="accommodation-badge">📅 Min stay: ' + acc.minStay + ' weeks</span>';
+  html += '</div>';
+
+  if (acc.notes) {
+    html += '<p class="accommodation-notes">ℹ️ ' + escapeHTML(acc.notes) + '</p>';
+  }
+  html += '</div>';
   return html;
 }
 
@@ -1842,6 +2041,167 @@ function openInquiry(id) {
 function closeInquiry() {
   document.getElementById('inquiryModal').style.display = 'none';
   if (_inquiryPreviousFocus) { _inquiryPreviousFocus.focus(); _inquiryPreviousFocus = null; }
+}
+
+/* ===== Quote Request Modal ===== */
+var _quotePreviousFocus = null;
+
+function openQuoteModal(id) {
+  var a = ACADEMIES.find(function(ac) { return ac.id === id; });
+  if (!a) return;
+  _quotePreviousFocus = document.activeElement;
+  document.getElementById('quoteAcademyId').value = id;
+  var modal = document.getElementById('quoteModal');
+  modal.style.display = 'flex';
+  modal.querySelector('h2').textContent = '📋 Request Quote — ' + escapeHTML(a.name);
+  modal.querySelector('.modal-close').focus();
+
+  // Pre-fill from cost calculator if user already configured it
+  var calcContainer = document.getElementById('calc-' + id);
+  if (calcContainer) {
+    var slider = calcContainer.querySelector('[data-calc-field="weeks"]');
+    if (slider) {
+      document.getElementById('quoteDuration').value = slider.value;
+    }
+  }
+
+  // Clear previous validation state
+  modal.querySelectorAll('.invalid').forEach(function(el) { el.classList.remove('invalid'); });
+}
+
+function closeQuoteModal() {
+  document.getElementById('quoteModal').style.display = 'none';
+  if (_quotePreviousFocus) { _quotePreviousFocus.focus(); _quotePreviousFocus = null; }
+}
+
+function getQuoteFormData() {
+  var id = document.getElementById('quoteAcademyId').value;
+  var a = ACADEMIES.find(function(ac) { return ac.id === id; });
+  return {
+    academyName: a ? a.name : '',
+    academyContact: a ? (a.contact || '') : '',
+    sport: getSportConfig().name,
+    name: document.getElementById('quoteName').value.trim(),
+    age: document.getElementById('quoteAge').value,
+    level: document.getElementById('quoteLevel').value,
+    goals: document.getElementById('quoteGoals').value.trim(),
+    startDate: document.getElementById('quoteStartDate').value,
+    duration: document.getElementById('quoteDuration').value,
+    flexDates: document.getElementById('quoteFlexDates').checked,
+    trainees: document.getElementById('quoteTrainees').value,
+    travelers: document.getElementById('quoteTravelers').value,
+    accommodation: document.getElementById('quoteAccom').value,
+    budget: document.getElementById('quoteBudget').value,
+    meals: document.getElementById('quoteMeals').checked,
+    transfer: document.getElementById('quoteTransfer').checked,
+    language: document.getElementById('quoteLang').value.trim(),
+    email: document.getElementById('quoteEmail').value.trim(),
+    phone: document.getElementById('quotePhone').value.trim(),
+    contactMethod: document.getElementById('quoteContactMethod').value,
+    notes: document.getElementById('quoteNotes').value.trim()
+  };
+}
+
+function validateQuoteForm() {
+  var valid = true;
+  var fields = [
+    { id: 'quoteName', check: function(v) { return v.trim().length > 0; } },
+    { id: 'quoteAge', check: function(v) { return v && parseInt(v, 10) >= 4 && parseInt(v, 10) <= 99; } },
+    { id: 'quoteEmail', check: function(v) { return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim()); } }
+  ];
+  fields.forEach(function(f) {
+    var el = document.getElementById(f.id);
+    if (!f.check(el.value)) {
+      el.classList.add('invalid');
+      valid = false;
+    } else {
+      el.classList.remove('invalid');
+    }
+  });
+  if (!valid) {
+    var firstInvalid = document.querySelector('.quote-form .invalid');
+    if (firstInvalid) firstInvalid.focus();
+  }
+  return valid;
+}
+
+function formatQuoteBody(data) {
+  var lines = [];
+  lines.push('QUOTE REQUEST — ' + data.academyName);
+  lines.push('Sport: ' + data.sport);
+  lines.push('');
+  lines.push('=== ATHLETE DETAILS ===');
+  lines.push('Name: ' + data.name);
+  lines.push('Age: ' + data.age);
+  lines.push('Level: ' + data.level);
+  if (data.goals) lines.push('Goals: ' + data.goals);
+  lines.push('');
+  lines.push('=== TRIP DETAILS ===');
+  if (data.startDate) lines.push('Start Date: ' + data.startDate);
+  lines.push('Duration: ' + data.duration + ' week(s)');
+  lines.push('Flexible Dates: ' + (data.flexDates ? 'Yes' : 'No'));
+  lines.push('');
+  lines.push('=== GROUP & ACCOMMODATION ===');
+  lines.push('Trainees: ' + data.trainees);
+  lines.push('Total Travelers: ' + data.travelers);
+  lines.push('Accommodation: ' + data.accommodation);
+  lines.push('');
+  lines.push('=== BUDGET & PREFERENCES ===');
+  lines.push('Budget: ' + data.budget);
+  lines.push('Meals: ' + (data.meals ? 'Yes' : 'No'));
+  lines.push('Airport Transfer: ' + (data.transfer ? 'Yes' : 'No'));
+  if (data.language) lines.push('Language: ' + data.language);
+  lines.push('');
+  lines.push('=== CONTACT ===');
+  lines.push('Email: ' + data.email);
+  if (data.phone) lines.push('Phone/WhatsApp: ' + data.phone);
+  lines.push('Preferred Contact: ' + data.contactMethod);
+  if (data.notes) {
+    lines.push('');
+    lines.push('=== ADDITIONAL NOTES ===');
+    lines.push(data.notes);
+  }
+  lines.push('');
+  lines.push('---');
+  lines.push('Sent via European ' + data.sport + ' Academies');
+  return lines.join('\n');
+}
+
+function saveQuoteToLocalStorage(data) {
+  var key = getSportConfig().storagePrefix + '-quotes';
+  var quotes = [];
+  try { quotes = JSON.parse(localStorage.getItem(key)) || []; } catch(e) { /* ignore */ }
+  data.timestamp = new Date().toISOString();
+  quotes.push(data);
+  // Keep last 20 quote requests
+  if (quotes.length > 20) quotes = quotes.slice(-20);
+  localStorage.setItem(key, JSON.stringify(quotes));
+}
+
+function submitQuoteRequest(mode) {
+  if (!validateQuoteForm()) return;
+  var data = getQuoteFormData();
+  var body = formatQuoteBody(data);
+  saveQuoteToLocalStorage(data);
+
+  if (mode === 'clipboard') {
+    navigator.clipboard.writeText(body).then(function() {
+      showToast('📋 Quote request copied to clipboard!');
+    }).catch(function() {
+      showToast('Could not copy to clipboard');
+    });
+  } else {
+    var subject = encodeURIComponent('Quote Request — ' + data.academyName + ' (' + data.sport + ')');
+    var mailBody = encodeURIComponent(body);
+    window.location.href = 'mailto:' + data.academyContact + '?subject=' + subject + '&body=' + mailBody;
+    showToast('Quote request prepared! Your email client will open with the details.');
+  }
+  closeQuoteModal();
+}
+
+function copyQuoteToClipboard() {
+  if (!validateQuoteForm()) return;
+  submitQuoteRequest('clipboard');
 }
 
 /* ===== Training Partners ===== */

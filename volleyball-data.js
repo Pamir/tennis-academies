@@ -3,6 +3,7 @@ const SPORT_TYPE = 'volleyball';
 const ACADEMIES = [
   {
     id: 'trentino-volley-academy',
+    availability: { status: 'open', nextIntake: '2025-05-15', spotsLeft: 17, responseTime: '24h', privateLessons: false, yearRound: false },
     name: 'Trentino Volley Academy',
     country: 'Italy',
     countryFlag: '🇮🇹',
@@ -60,10 +61,23 @@ const ACADEMIES = [
     upcomingCamps: [
       { name: 'Summer Volleyball Camp', startDate: '2025-07-07', endDate: '2025-07-18', price: '€1,200', level: 'Advanced' }
     ],
+    accommodation: {
+      types: [
+        { type: 'private', label: 'Private Room', pricePerWeek: 360, maxOccupancy: 1, bathType: 'ensuite', mealsIncluded: true },
+        { type: 'twin', label: 'Twin Shared Room', pricePerWeek: 240, maxOccupancy: 2, bathType: 'ensuite', mealsIncluded: true },
+        { type: 'triple', label: 'Triple Room', pricePerWeek: 180, maxOccupancy: 3, bathType: 'shared', mealsIncluded: true }
+      ],
+      companionsAllowed: true,
+      childrenAllowed: true,
+      minStay: 1,
+      shuttleToTraining: true,
+      notes: 'Alpine sports residence with mountain views and wellness facilities'
+    },
     videoTour: null
   },
   {
     id: 'warsaw-volley-academy',
+    availability: { status: 'open', nextIntake: '2025-06-15', spotsLeft: 13, responseTime: '48h', privateLessons: true, yearRound: false },
     name: 'PGE Skra Bełchatów Volleyball Academy',
     country: 'Poland',
     countryFlag: '🇵🇱',
@@ -120,10 +134,24 @@ const ACADEMIES = [
     upcomingCamps: [
       { name: 'Polish Volleyball Camp', startDate: '2025-06-23', endDate: '2025-07-04', price: '€800', level: 'Intermediate' }
     ],
+    accommodation: {
+      types: [
+        { type: 'private', label: 'Private Room', pricePerWeek: 230, maxOccupancy: 1, bathType: 'ensuite', mealsIncluded: true },
+        { type: 'twin', label: 'Twin Shared Room', pricePerWeek: 150, maxOccupancy: 2, bathType: 'ensuite', mealsIncluded: true },
+        { type: 'triple', label: 'Triple Room', pricePerWeek: 120, maxOccupancy: 3, bathType: 'shared', mealsIncluded: true },
+        { type: 'dorm', label: 'Dormitory', pricePerWeek: 70, maxOccupancy: 4, bathType: 'shared', mealsIncluded: true }
+      ],
+      companionsAllowed: true,
+      childrenAllowed: true,
+      minStay: 1,
+      shuttleToTraining: true,
+      notes: 'City centre location in Warsaw, walking distance to training venue'
+    },
     videoTour: null
   },
   {
     id: 'istanbul-volley-academy',
+    availability: { status: 'limited', nextIntake: '2025-10-01', spotsLeft: 3, responseTime: '48h', privateLessons: true, yearRound: true },
     name: 'VakıfBank Volleyball Academy',
     country: 'Turkey',
     countryFlag: '🇹🇷',
@@ -181,10 +209,24 @@ const ACADEMIES = [
     upcomingCamps: [
       { name: 'Istanbul Volleyball Camp', startDate: '2025-07-14', endDate: '2025-07-25', price: '€900', level: 'All Levels' }
     ],
+    accommodation: {
+      types: [
+        { type: 'private', label: 'Private Room', pricePerWeek: 270, maxOccupancy: 1, bathType: 'ensuite', mealsIncluded: true },
+        { type: 'twin', label: 'Twin Shared Room', pricePerWeek: 170, maxOccupancy: 2, bathType: 'ensuite', mealsIncluded: true },
+        { type: 'triple', label: 'Triple Room', pricePerWeek: 130, maxOccupancy: 3, bathType: 'shared', mealsIncluded: true },
+        { type: 'dorm', label: 'Dormitory', pricePerWeek: 80, maxOccupancy: 6, bathType: 'shared', mealsIncluded: true }
+      ],
+      companionsAllowed: true,
+      childrenAllowed: true,
+      minStay: 1,
+      shuttleToTraining: false,
+      notes: 'Bosphorus-view residence with gym and recovery centre included'
+    },
     videoTour: null
   },
   {
     id: 'modena-volley-academy',
+    availability: { status: 'limited', nextIntake: '2025-10-01', spotsLeft: 3, responseTime: '48h', privateLessons: true, yearRound: true },
     name: 'Modena Volley Academy',
     country: 'Italy',
     countryFlag: '🇮🇹',
@@ -237,10 +279,23 @@ const ACADEMIES = [
       { name: 'SuperLega', level: 'Professional', surface: 'Indoor', month: 'Oct–Apr', venue: 'PalaPanini' }
     ],
     upcomingCamps: [],
+    accommodation: {
+      types: [
+        { type: 'private', label: 'Private Room', pricePerWeek: 370, maxOccupancy: 1, bathType: 'ensuite', mealsIncluded: true },
+        { type: 'twin', label: 'Twin Shared Room', pricePerWeek: 240, maxOccupancy: 2, bathType: 'ensuite', mealsIncluded: true },
+        { type: 'triple', label: 'Triple Room', pricePerWeek: 180, maxOccupancy: 3, bathType: 'shared', mealsIncluded: true }
+      ],
+      companionsAllowed: true,
+      childrenAllowed: true,
+      minStay: 2,
+      shuttleToTraining: true,
+      notes: 'Historic Emilia-Romagna residence with Italian full-board cuisine'
+    },
     videoTour: null
   },
   {
     id: 'zenit-kazan-academy',
+    availability: { status: 'closed', nextIntake: '2025-12-01', spotsLeft: null, responseTime: '3-5 days', privateLessons: true, yearRound: false },
     name: 'Zenit Kazan Volleyball Academy',
     country: 'Russia',
     countryFlag: '🇷🇺',
@@ -297,6 +352,7 @@ const ACADEMIES = [
   },
   {
     id: 'berlin-recycling-volleys',
+    availability: { status: 'open', nextIntake: '2025-05-15', spotsLeft: 7, responseTime: '24h', privateLessons: false, yearRound: true },
     name: 'Berlin Recycling Volleys Academy',
     country: 'Germany',
     countryFlag: '🇩🇪',
@@ -349,10 +405,23 @@ const ACADEMIES = [
       { name: 'Bundesliga', level: 'Professional', surface: 'Indoor', month: 'Oct–Apr', venue: 'Max-Schmeling-Halle' }
     ],
     upcomingCamps: [],
+    accommodation: {
+      types: [
+        { type: 'private', label: 'Private Room', pricePerWeek: 390, maxOccupancy: 1, bathType: 'ensuite', mealsIncluded: true },
+        { type: 'twin', label: 'Twin Shared Room', pricePerWeek: 260, maxOccupancy: 2, bathType: 'ensuite', mealsIncluded: true },
+        { type: 'triple', label: 'Triple Room', pricePerWeek: 200, maxOccupancy: 3, bathType: 'shared', mealsIncluded: true }
+      ],
+      companionsAllowed: true,
+      childrenAllowed: false,
+      minStay: 1,
+      shuttleToTraining: true,
+      notes: 'Modern sports campus with strength and conditioning facility access'
+    },
     videoTour: null
   },
   {
     id: 'paris-volley-academy',
+    availability: { status: 'limited', nextIntake: '2025-09-15', spotsLeft: 4, responseTime: '24h', privateLessons: true, yearRound: true },
     name: 'Paris Volley Academy',
     country: 'France',
     countryFlag: '🇫🇷',
@@ -403,10 +472,24 @@ const ACADEMIES = [
     ],
     nearbyTournaments: [],
     upcomingCamps: [],
+    accommodation: {
+      types: [
+        { type: 'private', label: 'Private Room', pricePerWeek: 430, maxOccupancy: 1, bathType: 'ensuite', mealsIncluded: true },
+        { type: 'twin', label: 'Twin Shared Room', pricePerWeek: 280, maxOccupancy: 2, bathType: 'ensuite', mealsIncluded: true },
+        { type: 'triple', label: 'Triple Room', pricePerWeek: 220, maxOccupancy: 3, bathType: 'shared', mealsIncluded: true },
+        { type: 'apartment', label: 'Studio Apartment', pricePerWeek: 520, maxOccupancy: 2, bathType: 'ensuite', mealsIncluded: false }
+      ],
+      companionsAllowed: true,
+      childrenAllowed: true,
+      minStay: 1,
+      shuttleToTraining: true,
+      notes: 'Parisian residence with team dining hall and metro access'
+    },
     videoTour: null
   },
   {
     id: 'ankara-volley-academy',
+    availability: { status: 'open', nextIntake: '2025-09-01', spotsLeft: 14, responseTime: '24h', privateLessons: false, yearRound: true },
     name: 'Halkbank Ankara Volleyball Academy',
     country: 'Turkey',
     countryFlag: '🇹🇷',
@@ -463,6 +546,7 @@ const ACADEMIES = [
   },
   {
     id: 'belgrade-volley-academy',
+    availability: { status: 'closed', nextIntake: '2025-12-01', spotsLeft: null, responseTime: '3-5 days', privateLessons: true, yearRound: false },
     name: 'OK Vojvodina Volleyball Academy',
     country: 'Serbia',
     countryFlag: '🇷🇸',
@@ -517,10 +601,24 @@ const ACADEMIES = [
     upcomingCamps: [
       { name: 'Serbian Volleyball Camp', startDate: '2025-07-07', endDate: '2025-07-18', price: '€500', level: 'All Levels' }
     ],
+    accommodation: {
+      types: [
+        { type: 'private', label: 'Private Room', pricePerWeek: 200, maxOccupancy: 1, bathType: 'ensuite', mealsIncluded: true },
+        { type: 'twin', label: 'Twin Shared Room', pricePerWeek: 120, maxOccupancy: 2, bathType: 'shared', mealsIncluded: true },
+        { type: 'triple', label: 'Triple Room', pricePerWeek: 90, maxOccupancy: 3, bathType: 'shared', mealsIncluded: true },
+        { type: 'dorm', label: 'Dormitory', pricePerWeek: 65, maxOccupancy: 6, bathType: 'shared', mealsIncluded: true }
+      ],
+      companionsAllowed: true,
+      childrenAllowed: true,
+      minStay: 1,
+      shuttleToTraining: true,
+      notes: 'Affordable riverside accommodation with traditional Serbian cuisine'
+    },
     videoTour: null
   },
   {
     id: 'athens-volley-academy',
+    availability: { status: 'open', nextIntake: '2025-08-01', spotsLeft: 17, responseTime: '3-5 days', privateLessons: true, yearRound: false },
     name: 'Olympiacos Volleyball Academy',
     country: 'Greece',
     countryFlag: '🇬🇷',
@@ -571,10 +669,23 @@ const ACADEMIES = [
     ],
     nearbyTournaments: [],
     upcomingCamps: [],
+    accommodation: {
+      types: [
+        { type: 'private', label: 'Private Room', pricePerWeek: 310, maxOccupancy: 1, bathType: 'ensuite', mealsIncluded: true },
+        { type: 'twin', label: 'Twin Shared Room', pricePerWeek: 200, maxOccupancy: 2, bathType: 'ensuite', mealsIncluded: true },
+        { type: 'triple', label: 'Triple Room', pricePerWeek: 150, maxOccupancy: 3, bathType: 'shared', mealsIncluded: true }
+      ],
+      companionsAllowed: true,
+      childrenAllowed: true,
+      minStay: 1,
+      shuttleToTraining: false,
+      notes: 'Mediterranean-style residence near Olympic Athletic Center'
+    },
     videoTour: null
   },
   {
     id: 'perugia-volley-academy',
+    availability: { status: 'waitlist', nextIntake: '2025-11-01', spotsLeft: null, responseTime: '48h', privateLessons: true, yearRound: true },
     name: 'Sir Safety Perugia Volleyball Academy',
     country: 'Italy',
     countryFlag: '🇮🇹',
@@ -629,10 +740,24 @@ const ACADEMIES = [
     upcomingCamps: [
       { name: 'Umbria Volleyball Camp', startDate: '2025-06-16', endDate: '2025-06-27', price: '€1,100', level: 'Advanced' }
     ],
+    accommodation: {
+      types: [
+        { type: 'private', label: 'Private Room', pricePerWeek: 350, maxOccupancy: 1, bathType: 'ensuite', mealsIncluded: true },
+        { type: 'twin', label: 'Twin Shared Room', pricePerWeek: 230, maxOccupancy: 2, bathType: 'ensuite', mealsIncluded: true },
+        { type: 'triple', label: 'Triple Room', pricePerWeek: 170, maxOccupancy: 3, bathType: 'shared', mealsIncluded: true },
+        { type: 'apartment', label: 'Studio Apartment', pricePerWeek: 440, maxOccupancy: 2, bathType: 'ensuite', mealsIncluded: false }
+      ],
+      companionsAllowed: true,
+      childrenAllowed: true,
+      minStay: 1,
+      shuttleToTraining: true,
+      notes: 'Umbrian hillside residence with panoramic views and recovery pool'
+    },
     videoTour: null
   },
   {
     id: 'jastrzebski-wegiel-academy',
+    availability: { status: 'limited', nextIntake: '2025-10-01', spotsLeft: 5, responseTime: '48h', privateLessons: true, yearRound: true },
     name: 'Jastrzębski Węgiel Volleyball Academy',
     country: 'Poland',
     countryFlag: '🇵🇱',
@@ -689,6 +814,7 @@ const ACADEMIES = [
   },
   {
     id: 'fenerbahce-volley',
+    availability: { status: 'limited', nextIntake: '2025-10-01', spotsLeft: 5, responseTime: '48h', privateLessons: true, yearRound: true },
     name: 'Fenerbahçe Volleyball Academy',
     country: 'Turkey',
     countryFlag: '🇹🇷',
@@ -745,6 +871,7 @@ const ACADEMIES = [
   },
   {
     id: 'benfica-volley-academy',
+    availability: { status: 'open', nextIntake: '2025-07-01', spotsLeft: 18, responseTime: '48h', privateLessons: true, yearRound: true },
     name: 'SL Benfica Volleyball Academy',
     country: 'Portugal',
     countryFlag: '🇵🇹',
@@ -797,6 +924,18 @@ const ACADEMIES = [
     upcomingCamps: [
       { name: 'Benfica Volleyball Camp', startDate: '2025-07-07', endDate: '2025-07-18', price: '€700', level: 'All Levels' }
     ],
+    accommodation: {
+      types: [
+        { type: 'private', label: 'Private Room', pricePerWeek: 320, maxOccupancy: 1, bathType: 'ensuite', mealsIncluded: true },
+        { type: 'twin', label: 'Twin Shared Room', pricePerWeek: 200, maxOccupancy: 2, bathType: 'ensuite', mealsIncluded: true },
+        { type: 'triple', label: 'Triple Room', pricePerWeek: 160, maxOccupancy: 3, bathType: 'shared', mealsIncluded: true }
+      ],
+      companionsAllowed: true,
+      childrenAllowed: true,
+      minStay: 2,
+      shuttleToTraining: true,
+      notes: 'Benfica campus residence with multi-sport facilities and team dining'
+    },
     videoTour: null
   }
 ];

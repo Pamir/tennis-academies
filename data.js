@@ -3,6 +3,7 @@ const SPORT_TYPE = 'tennis';
 const ACADEMIES = [
   {
     id: "pzta",
+    availability: { status: 'limited', nextIntake: '2025-10-01', spotsLeft: 5, responseTime: '48h', privateLessons: true, yearRound: true },
     name: "Player Zone Tennis Academy (PZTA)",
     country: "Serbia",
     countryFlag: "🇷🇸",
@@ -81,10 +82,24 @@ const ACADEMIES = [
       { name: "Spring Junior Development", startDate: "2025-04-07", endDate: "2025-04-18", price: "€950", level: "Intermediate" },
       { name: "Autumn All-Levels Clinic", startDate: "2025-10-06", endDate: "2025-10-17", price: "€800", level: "All Levels" }
     ],
+    accommodation: {
+      types: [
+        { type: 'private', label: 'Private Room', pricePerWeek: 200, maxOccupancy: 1, bathType: 'ensuite', mealsIncluded: true },
+        { type: 'twin', label: 'Twin Shared Room', pricePerWeek: 130, maxOccupancy: 2, bathType: 'ensuite', mealsIncluded: true },
+        { type: 'triple', label: 'Triple Room', pricePerWeek: 100, maxOccupancy: 3, bathType: 'shared', mealsIncluded: true },
+        { type: 'dorm', label: 'Dormitory (4–6 beds)', pricePerWeek: 65, maxOccupancy: 6, bathType: 'shared', mealsIncluded: false }
+      ],
+      companionsAllowed: true,
+      childrenAllowed: true,
+      minStay: 1,
+      shuttleToTraining: true,
+      notes: 'On-site dormitory available for junior players. Meals served at the academy canteen.'
+    },
     videoTour: null
   },
   {
     id: "tipsarevic",
+    availability: { status: 'open', nextIntake: '2025-08-01', spotsLeft: 9, responseTime: '3-5 days', privateLessons: true, yearRound: false },
     name: "Tipsarević Tennis Academy",
     country: "Serbia",
     countryFlag: "🇷🇸",
@@ -151,10 +166,24 @@ const ACADEMIES = [
         { name: "Serbia Open Junior", level: "ITF Junior", surface: "Clay", month: "June", venue: "TC Novak" },
         { name: "Serbian National Championships", level: "National", surface: "Clay", month: "September", venue: "TC Belgrade" }
       ],
+    accommodation: {
+      types: [
+        { type: 'private', label: 'Private Room', pricePerWeek: 220, maxOccupancy: 1, bathType: 'ensuite', mealsIncluded: true },
+        { type: 'twin', label: 'Twin Shared Room', pricePerWeek: 150, maxOccupancy: 2, bathType: 'ensuite', mealsIncluded: true },
+        { type: 'triple', label: 'Triple Room', pricePerWeek: 120, maxOccupancy: 3, bathType: 'shared', mealsIncluded: true },
+        { type: 'dorm', label: 'Dormitory (4–6 beds)', pricePerWeek: 75, maxOccupancy: 6, bathType: 'shared', mealsIncluded: false }
+      ],
+      companionsAllowed: true,
+      childrenAllowed: true,
+      minStay: 1,
+      shuttleToTraining: false,
+      notes: 'Academy residence in central Belgrade. Walking distance to training courts and city amenities.'
+    },
     videoTour: "https://www.youtube.com/watch?v=YqzGMoQE7TE"
   },
   {
     id: "vranes",
+    availability: { status: 'open', nextIntake: '2025-06-01', spotsLeft: 14, responseTime: '24h', privateLessons: true, yearRound: true },
     name: "Dejan Vraneš Tennis Academy",
     country: "Serbia",
     countryFlag: "🇷🇸",
@@ -223,6 +252,7 @@ const ACADEMIES = [
   },
   {
     id: "premium-tennis",
+    availability: { status: 'open', nextIntake: '2025-06-01', spotsLeft: 20, responseTime: '24h', privateLessons: true, yearRound: true },
     name: "Premium Tennis Academy",
     country: "Serbia",
     countryFlag: "🇷🇸",
@@ -291,6 +321,7 @@ const ACADEMIES = [
   },
   {
     id: "academy-ada",
+    availability: { status: 'open', nextIntake: '2025-09-01', spotsLeft: 18, responseTime: '24h', privateLessons: false, yearRound: true },
     name: "Tennis Academy ADA (Bogdan Obradovic)",
     country: "Serbia",
     countryFlag: "🇷🇸",
@@ -358,6 +389,7 @@ const ACADEMIES = [
   },
   {
     id: "supreme-tennis",
+    availability: { status: 'limited', nextIntake: '2025-10-01', spotsLeft: 3, responseTime: '48h', privateLessons: true, yearRound: true },
     name: "Supreme Tennis Academy",
     country: "Serbia",
     countryFlag: "🇷🇸",
@@ -418,6 +450,7 @@ const ACADEMIES = [
   },
   {
     id: "serbia-tennis-academy",
+    availability: { status: 'open', nextIntake: '2025-06-01', spotsLeft: 8, responseTime: '24h', privateLessons: true, yearRound: true },
     name: "Serbia Tennis Academy (STA)",
     country: "Serbia",
     countryFlag: "🇷🇸",
@@ -479,6 +512,7 @@ const ACADEMIES = [
   },
   {
     id: "ljubicic",
+    availability: { status: 'open', nextIntake: '2025-07-01', spotsLeft: 6, responseTime: '48h', privateLessons: true, yearRound: true },
     name: "Ljubičić Tennis Academy",
     country: "Croatia",
     countryFlag: "🇭🇷",
@@ -542,6 +576,7 @@ const ACADEMIES = [
   },
   {
     id: "ilirija",
+    availability: { status: 'waitlist', nextIntake: '2025-11-01', spotsLeft: null, responseTime: '48h', privateLessons: true, yearRound: false },
     name: "Ilirija Tennis Academy",
     country: "Croatia",
     countryFlag: "🇭🇷",
@@ -605,10 +640,24 @@ const ACADEMIES = [
         { name: "Zadar Open", level: "ITF Junior", surface: "Clay", month: "July", venue: "TC Zadar" },
         { name: "Croatian Dalmatia Cup", level: "National", surface: "Clay", month: "August", venue: "Various Dalmatia venues" }
       ],
+    accommodation: {
+      types: [
+        { type: 'private', label: 'Private Room', pricePerWeek: 280, maxOccupancy: 1, bathType: 'ensuite', mealsIncluded: true },
+        { type: 'twin', label: 'Twin Shared Room', pricePerWeek: 190, maxOccupancy: 2, bathType: 'ensuite', mealsIncluded: true },
+        { type: 'triple', label: 'Triple Room', pricePerWeek: 150, maxOccupancy: 3, bathType: 'shared', mealsIncluded: true },
+        { type: 'quad', label: 'Quad Room', pricePerWeek: 120, maxOccupancy: 4, bathType: 'shared', mealsIncluded: false }
+      ],
+      companionsAllowed: true,
+      childrenAllowed: true,
+      minStay: 1,
+      shuttleToTraining: true,
+      notes: 'Partner hotel on the Adriatic coast with sea-view rooms. Half-board meal plan available.'
+    },
     videoTour: null
   },
   {
     id: "tk-firule",
+    availability: { status: 'open', nextIntake: '2025-06-01', spotsLeft: 16, responseTime: '24h', privateLessons: true, yearRound: true },
     name: "TK Firule",
     country: "Croatia",
     countryFlag: "🇭🇷",
@@ -666,6 +715,7 @@ const ACADEMIES = [
   },
   {
     id: "tenis-akademija-split",
+    availability: { status: 'open', nextIntake: '2025-05-15', spotsLeft: 19, responseTime: '24h', privateLessons: false, yearRound: true },
     name: "Tenis Akademija Split",
     country: "Croatia",
     countryFlag: "🇭🇷",
@@ -723,6 +773,7 @@ const ACADEMIES = [
   },
   {
     id: "tk-agrofert",
+    availability: { status: 'waitlist', nextIntake: '2025-11-01', spotsLeft: null, responseTime: '48h', privateLessons: true, yearRound: true },
     name: "TK Agrofert Prostějov",
     country: "Czech Republic",
     countryFlag: "🇨🇿",
@@ -779,10 +830,24 @@ const ACADEMIES = [
         { name: "Moneta Czech Open", level: "ITF", surface: "Clay", month: "May", venue: "Prostějov" },
         { name: "Czech Junior Championships", level: "National Junior", surface: "Clay", month: "June", venue: "Prostějov" }
       ],
+    accommodation: {
+      types: [
+        { type: 'private', label: 'Private Room', pricePerWeek: 240, maxOccupancy: 1, bathType: 'ensuite', mealsIncluded: true },
+        { type: 'twin', label: 'Twin Shared Room', pricePerWeek: 160, maxOccupancy: 2, bathType: 'ensuite', mealsIncluded: true },
+        { type: 'triple', label: 'Triple Room', pricePerWeek: 120, maxOccupancy: 3, bathType: 'shared', mealsIncluded: true },
+        { type: 'quad', label: 'Quad Room', pricePerWeek: 95, maxOccupancy: 4, bathType: 'shared', mealsIncluded: false }
+      ],
+      companionsAllowed: true,
+      childrenAllowed: true,
+      minStay: 2,
+      shuttleToTraining: true,
+      notes: 'On-campus boarding house with full-board option. Two-week minimum for junior programs.'
+    },
     videoTour: "https://www.youtube.com/watch?v=3jQWMPaVVkQ"
   },
   {
     id: "sparta-prague",
+    availability: { status: 'limited', nextIntake: '2025-09-15', spotsLeft: 4, responseTime: '24h', privateLessons: true, yearRound: true },
     name: "TK Sparta Prague",
     country: "Czech Republic",
     countryFlag: "🇨🇿",
@@ -842,6 +907,7 @@ const ACADEMIES = [
   },
   {
     id: "pliskova-academy",
+    availability: { status: 'open', nextIntake: '2025-08-01', spotsLeft: 17, responseTime: '3-5 days', privateLessons: true, yearRound: false },
     name: "Plíšková Tennis Academy",
     country: "Czech Republic",
     countryFlag: "🇨🇿",
@@ -907,6 +973,7 @@ const ACADEMIES = [
   },
   {
     id: "cltk-praha",
+    availability: { status: 'open', nextIntake: '2025-07-01', spotsLeft: 10, responseTime: '48h', privateLessons: true, yearRound: true },
     name: "I. ČLTK Praha",
     country: "Czech Republic",
     countryFlag: "🇨🇿",
@@ -964,6 +1031,7 @@ const ACADEMIES = [
   },
   {
     id: "love4tennis",
+    availability: { status: 'open', nextIntake: '2025-09-01', spotsLeft: 8, responseTime: '24h', privateLessons: false, yearRound: true },
     name: "Love4Tennis — Dominika Cibulková Academy",
     country: "Slovakia",
     countryFlag: "🇸🇰",
@@ -1029,6 +1097,7 @@ const ACADEMIES = [
   },
   {
     id: "hta-academy",
+    availability: { status: 'waitlist', nextIntake: '2025-11-01', spotsLeft: null, responseTime: '48h', privateLessons: true, yearRound: false },
     name: "HTA Academy",
     country: "Slovakia",
     countryFlag: "🇸🇰",
@@ -1089,6 +1158,7 @@ const ACADEMIES = [
   },
   {
     id: "tenis-kozerki",
+    availability: { status: 'limited', nextIntake: '2025-10-01', spotsLeft: 5, responseTime: '48h', privateLessons: true, yearRound: true },
     name: "Tenis Kozerki Tennis Academy",
     country: "Poland",
     countryFlag: "🇵🇱",
@@ -1146,10 +1216,24 @@ const ACADEMIES = [
         { name: "Kozerki Open", level: "ITF", surface: "Clay", month: "June", venue: "Tenis Kozerki" },
         { name: "Warsaw Junior Cup", level: "ITF Junior", surface: "Clay", month: "July", venue: "Legia Warsaw" }
       ],
+    accommodation: {
+      types: [
+        { type: 'private', label: 'Private Room', pricePerWeek: 220, maxOccupancy: 1, bathType: 'ensuite', mealsIncluded: true },
+        { type: 'twin', label: 'Twin Shared Room', pricePerWeek: 145, maxOccupancy: 2, bathType: 'ensuite', mealsIncluded: true },
+        { type: 'triple', label: 'Triple Room', pricePerWeek: 110, maxOccupancy: 3, bathType: 'shared', mealsIncluded: true },
+        { type: 'quad', label: 'Quad Room', pricePerWeek: 85, maxOccupancy: 4, bathType: 'shared', mealsIncluded: false }
+      ],
+      companionsAllowed: true,
+      childrenAllowed: true,
+      minStay: 1,
+      shuttleToTraining: true,
+      notes: 'Modern residence near the academy grounds. Breakfast and lunch included for private and twin rooms.'
+    },
     videoTour: "https://www.youtube.com/watch?v=q-gXdB1N1w8"
   },
   {
     id: "vicio-fede",
+    availability: { status: 'limited', nextIntake: '2025-10-01', spotsLeft: 5, responseTime: '48h', privateLessons: true, yearRound: true },
     name: "Vicio & Fede Tennis (Breakpoint Warsaw)",
     country: "Poland",
     countryFlag: "🇵🇱",
@@ -1212,6 +1296,7 @@ const ACADEMIES = [
   },
   {
     id: "mera-legia",
+    availability: { status: 'open', nextIntake: '2025-08-01', spotsLeft: 5, responseTime: '3-5 days', privateLessons: true, yearRound: false },
     name: "WKT Mera Warsaw & Legia Warsaw Tennis",
     country: "Poland",
     countryFlag: "🇵🇱",
@@ -1269,6 +1354,7 @@ const ACADEMIES = [
   },
   {
     id: "hanescu-academy",
+    availability: { status: 'open', nextIntake: '2025-05-15', spotsLeft: 17, responseTime: '24h', privateLessons: false, yearRound: false },
     name: "Victor Hănescu Academy (AVH)",
     country: "Romania",
     countryFlag: "🇷🇴",
@@ -1328,10 +1414,24 @@ const ACADEMIES = [
         { name: "Bucharest Open", level: "ITF", surface: "Clay", month: "July", venue: "Arenele BNR" },
         { name: "Romanian Junior Nationals", level: "National Junior", surface: "Clay", month: "August", venue: "Bucharest" }
       ],
+    accommodation: {
+      types: [
+        { type: 'private', label: 'Private Room', pricePerWeek: 190, maxOccupancy: 1, bathType: 'ensuite', mealsIncluded: true },
+        { type: 'twin', label: 'Twin Shared Room', pricePerWeek: 130, maxOccupancy: 2, bathType: 'ensuite', mealsIncluded: true },
+        { type: 'triple', label: 'Triple Room', pricePerWeek: 95, maxOccupancy: 3, bathType: 'shared', mealsIncluded: false },
+        { type: 'dorm', label: 'Dormitory (4–6 beds)', pricePerWeek: 60, maxOccupancy: 6, bathType: 'shared', mealsIncluded: false }
+      ],
+      companionsAllowed: true,
+      childrenAllowed: true,
+      minStay: 1,
+      shuttleToTraining: false,
+      notes: 'Rooms in nearby guesthouse. Affordable dining options within walking distance of the academy.'
+    },
     videoTour: null
   },
   {
     id: "bucharest-tennis",
+    availability: { status: 'open', nextIntake: '2025-07-01', spotsLeft: 16, responseTime: '48h', privateLessons: true, yearRound: true },
     name: "Bucharest Tennis",
     country: "Romania",
     countryFlag: "🇷🇴",
@@ -1389,6 +1489,7 @@ const ACADEMIES = [
   },
   {
     id: "sofia-360",
+    availability: { status: 'open', nextIntake: '2025-08-01', spotsLeft: 7, responseTime: '3-5 days', privateLessons: true, yearRound: true },
     name: "Sofia Tennis Club 360",
     country: "Bulgaria",
     countryFlag: "🇧🇬",
@@ -1446,6 +1547,7 @@ const ACADEMIES = [
   },
   {
     id: "romai-tennis",
+    availability: { status: 'limited', nextIntake: '2025-09-15', spotsLeft: 2, responseTime: '24h', privateLessons: true, yearRound: false },
     name: "Római Tennis Academy",
     country: "Hungary",
     countryFlag: "🇭🇺",
@@ -1503,6 +1605,7 @@ const ACADEMIES = [
   },
   {
     id: "szepvolgyi",
+    availability: { status: 'open', nextIntake: '2025-08-01', spotsLeft: 11, responseTime: '3-5 days', privateLessons: true, yearRound: true },
     name: "Szépvölgyi Tennis Academy",
     country: "Hungary",
     countryFlag: "🇭🇺",
@@ -1560,6 +1663,7 @@ const ACADEMIES = [
   },
   {
     id: "breskvar",
+    availability: { status: 'open', nextIntake: '2025-06-15', spotsLeft: 15, responseTime: '48h', privateLessons: true, yearRound: true },
     name: "Tennis Academy Breskvar",
     country: "Slovenia",
     countryFlag: "🇸🇮",
@@ -1616,6 +1720,7 @@ const ACADEMIES = [
   },
   {
     id: "medvedev-academy",
+    availability: { status: 'open', nextIntake: '2025-09-01', spotsLeft: 12, responseTime: '24h', privateLessons: false, yearRound: true },
     name: "Medvedev Tennis Academy",
     country: "Ukraine",
     countryFlag: "🇺🇦",
@@ -1679,6 +1784,7 @@ const ACADEMIES = [
   },
   {
     id: "mta-kyiv",
+    availability: { status: 'open', nextIntake: '2025-05-15', spotsLeft: 7, responseTime: '24h', privateLessons: false, yearRound: true },
     name: "International Tennis Academy (MTA)",
     country: "Ukraine",
     countryFlag: "🇺🇦",
@@ -1735,6 +1841,7 @@ const ACADEMIES = [
   },
   {
     id: "vilnius-academy",
+    availability: { status: 'closed', nextIntake: '2025-12-01', spotsLeft: null, responseTime: '3-5 days', privateLessons: true, yearRound: false },
     name: "Vilnius Tennis Academy",
     country: "Lithuania",
     countryFlag: "🇱🇹",
@@ -1792,6 +1899,7 @@ const ACADEMIES = [
   },
   {
     id: "riga-academy",
+    availability: { status: 'open', nextIntake: '2025-08-01', spotsLeft: 5, responseTime: '3-5 days', privateLessons: true, yearRound: false },
     name: "Riga Tennis Academy",
     country: "Latvia",
     countryFlag: "🇱🇻",
@@ -1849,6 +1957,7 @@ const ACADEMIES = [
   },
   {
     id: "tenisa-akademija",
+    availability: { status: 'waitlist', nextIntake: '2025-11-01', spotsLeft: null, responseTime: '48h', privateLessons: true, yearRound: false },
     name: "Tenisa Akadēmija",
     country: "Latvia",
     countryFlag: "🇱🇻",
@@ -1906,6 +2015,7 @@ const ACADEMIES = [
   },
   {
     id: "us-tenniseakadeemia",
+    availability: { status: 'open', nextIntake: '2025-09-01', spotsLeft: 18, responseTime: '24h', privateLessons: false, yearRound: true },
     name: "US Tenniseakadeemia",
     country: "Estonia",
     countryFlag: "🇪🇪",
@@ -1963,6 +2073,7 @@ const ACADEMIES = [
   },
   {
     id: "robbyo",
+    availability: { status: 'open', nextIntake: '2025-07-01', spotsLeft: 18, responseTime: '48h', privateLessons: true, yearRound: true },
     name: "Robbyo Tennis Academy",
     country: "Estonia",
     countryFlag: "🇪🇪",
@@ -2020,6 +2131,7 @@ const ACADEMIES = [
   },
   {
     id: "rafa-nadal",
+    availability: { status: 'open', nextIntake: '2025-07-01', spotsLeft: 12, responseTime: '48h', privateLessons: true, yearRound: true },
     name: "Rafa Nadal Academy by Movistar",
     country: "Spain",
     countryFlag: "🇪🇸",
@@ -2087,10 +2199,24 @@ const ACADEMIES = [
       { name: "Easter High Performance Camp", startDate: "2025-04-14", endDate: "2025-04-25", price: "€2,200", level: "Advanced" },
       { name: "October Half-Term Camp", startDate: "2025-10-20", endDate: "2025-10-31", price: "€1,800", level: "Intermediate" }
     ],
+    accommodation: {
+      types: [
+        { type: 'private', label: 'Private Room', pricePerWeek: 440, maxOccupancy: 1, bathType: 'ensuite', mealsIncluded: true },
+        { type: 'twin', label: 'Twin Shared Room', pricePerWeek: 290, maxOccupancy: 2, bathType: 'ensuite', mealsIncluded: true },
+        { type: 'apartment', label: 'Self-Catering Apartment', pricePerWeek: 270, maxOccupancy: 2, bathType: 'ensuite', mealsIncluded: false },
+        { type: 'triple', label: 'Triple Room', pricePerWeek: 230, maxOccupancy: 3, bathType: 'ensuite', mealsIncluded: true }
+      ],
+      companionsAllowed: true,
+      childrenAllowed: true,
+      minStay: 2,
+      shuttleToTraining: true,
+      notes: 'On-site resort accommodation with pool access. Full-board dining at the Rafa Nadal Academy restaurant.'
+    },
     videoTour: null
   },
   {
     id: "mouratoglou",
+    availability: { status: 'open', nextIntake: '2025-08-01', spotsLeft: 13, responseTime: '3-5 days', privateLessons: true, yearRound: false },
     name: "Mouratoglou Tennis Academy",
     country: "France",
     countryFlag: "🇫🇷",
@@ -2159,10 +2285,25 @@ const ACADEMIES = [
       { name: "Summer Discovery Camp", startDate: "2025-08-04", endDate: "2025-08-15", price: "€1,900", level: "Beginner" },
       { name: "Pre-Season Training Block", startDate: "2025-03-10", endDate: "2025-03-21", price: "€2,100", level: "Intermediate" }
     ],
+    accommodation: {
+      types: [
+        { type: 'private', label: 'Private Room', pricePerWeek: 480, maxOccupancy: 1, bathType: 'ensuite', mealsIncluded: true },
+        { type: 'twin', label: 'Twin Shared Room', pricePerWeek: 320, maxOccupancy: 2, bathType: 'ensuite', mealsIncluded: true },
+        { type: 'apartment', label: 'Self-Catering Apartment', pricePerWeek: 290, maxOccupancy: 2, bathType: 'ensuite', mealsIncluded: false },
+        { type: 'triple', label: 'Triple Room', pricePerWeek: 240, maxOccupancy: 3, bathType: 'ensuite', mealsIncluded: true },
+        { type: 'quad', label: 'Quad Room', pricePerWeek: 190, maxOccupancy: 4, bathType: 'shared', mealsIncluded: true }
+      ],
+      companionsAllowed: true,
+      childrenAllowed: true,
+      minStay: 2,
+      shuttleToTraining: true,
+      notes: 'Luxury campus residence on the French Riviera. Full-board with sport-nutrition meals and recovery facilities.'
+    },
     videoTour: null
   },
   {
     id: "sanchez-casal",
+    availability: { status: 'limited', nextIntake: '2025-10-01', spotsLeft: 3, responseTime: '48h', privateLessons: true, yearRound: true },
     name: "Sanchez-Casal Academy",
     country: "Spain",
     countryFlag: "🇪🇸",
@@ -2230,10 +2371,24 @@ const ACADEMIES = [
       { name: "Championship Preparation Camp", startDate: "2025-05-12", endDate: "2025-05-23", price: "€1,800", level: "Advanced" },
       { name: "Summer Tennis & Language Camp", startDate: "2025-07-21", endDate: "2025-08-01", price: "€2,400", level: "All Levels" }
     ],
+    accommodation: {
+      types: [
+        { type: 'private', label: 'Private Room', pricePerWeek: 400, maxOccupancy: 1, bathType: 'ensuite', mealsIncluded: true },
+        { type: 'twin', label: 'Twin Shared Room', pricePerWeek: 260, maxOccupancy: 2, bathType: 'ensuite', mealsIncluded: true },
+        { type: 'apartment', label: 'Self-Catering Apartment', pricePerWeek: 240, maxOccupancy: 2, bathType: 'ensuite', mealsIncluded: false },
+        { type: 'triple', label: 'Triple Room', pricePerWeek: 210, maxOccupancy: 3, bathType: 'shared', mealsIncluded: true }
+      ],
+      companionsAllowed: true,
+      childrenAllowed: false,
+      minStay: 1,
+      shuttleToTraining: true,
+      notes: 'Campus boarding with supervised residences for players 14+. Adults welcome in private and apartment options.'
+    },
     videoTour: null
   },
   {
     id: "jc-ferrero",
+    availability: { status: 'closed', nextIntake: '2025-12-01', spotsLeft: null, responseTime: '3-5 days', privateLessons: true, yearRound: false },
     name: "JC Ferrero Equelite Sport Academy",
     country: "Spain",
     countryFlag: "🇪🇸",
@@ -2304,6 +2459,7 @@ const ACADEMIES = [
   },
   {
     id: "jaden-beck",
+    availability: { status: 'open', nextIntake: '2025-06-15', spotsLeft: 19, responseTime: '48h', privateLessons: true, yearRound: true },
     name: "Jaden Beck Tennis Academy",
     country: "Germany",
     countryFlag: "🇩🇪",
@@ -2368,6 +2524,7 @@ const ACADEMIES = [
   },
   {
     id: "good-to-great",
+    availability: { status: 'open', nextIntake: '2025-06-01', spotsLeft: 10, responseTime: '24h', privateLessons: true, yearRound: true },
     name: "Good to Great Tennis Academy",
     country: "Sweden",
     countryFlag: "🇸🇪",
@@ -2434,6 +2591,7 @@ const ACADEMIES = [
   },
   {
     id: "swiss-tennis",
+    availability: { status: 'closed', nextIntake: '2025-12-01', spotsLeft: null, responseTime: '3-5 days', privateLessons: true, yearRound: false },
     name: "Swiss Tennis Academy Lugano",
     country: "Switzerland",
     countryFlag: "🇨🇭",
@@ -2498,6 +2656,7 @@ const ACADEMIES = [
   },
   {
     id: "piatti",
+    availability: { status: 'open', nextIntake: '2025-09-01', spotsLeft: 20, responseTime: '24h', privateLessons: false, yearRound: true },
     name: "Piatti Tennis Center",
     country: "Italy",
     countryFlag: "🇮🇹",
@@ -2566,10 +2725,24 @@ const ACADEMIES = [
       { name: "Winter Intensive Training", startDate: "2025-12-01", endDate: "2025-12-12", price: "€1,700", level: "Advanced" },
       { name: "Spring Beginner Camp", startDate: "2025-03-24", endDate: "2025-04-04", price: "€1,200", level: "Beginner" }
     ],
+    accommodation: {
+      types: [
+        { type: 'private', label: 'Private Room', pricePerWeek: 390, maxOccupancy: 1, bathType: 'ensuite', mealsIncluded: true },
+        { type: 'twin', label: 'Twin Shared Room', pricePerWeek: 250, maxOccupancy: 2, bathType: 'ensuite', mealsIncluded: true },
+        { type: 'apartment', label: 'Self-Catering Apartment', pricePerWeek: 230, maxOccupancy: 2, bathType: 'ensuite', mealsIncluded: false },
+        { type: 'triple', label: 'Triple Room', pricePerWeek: 195, maxOccupancy: 3, bathType: 'shared', mealsIncluded: true }
+      ],
+      companionsAllowed: true,
+      childrenAllowed: true,
+      minStay: 1,
+      shuttleToTraining: false,
+      notes: 'Boutique residence in Bordighera, steps from the Ligurian Sea. Mediterranean cuisine included with full-board.'
+    },
     videoTour: null
   },
   {
     id: "lta-roehampton",
+    availability: { status: 'open', nextIntake: '2025-07-01', spotsLeft: 18, responseTime: '48h', privateLessons: true, yearRound: true },
     name: "LTA National Tennis Centre",
     country: "United Kingdom",
     countryFlag: "🇬🇧",
@@ -2637,6 +2810,7 @@ const ACADEMIES = [
   },
   {
     id: "estoril",
+    availability: { status: 'open', nextIntake: '2025-06-15', spotsLeft: 9, responseTime: '48h', privateLessons: true, yearRound: false },
     name: "Estoril Tennis Academy",
     country: "Portugal",
     countryFlag: "🇵🇹",
@@ -2701,6 +2875,7 @@ const ACADEMIES = [
   },
   {
     id: "lotto-antwerp",
+    availability: { status: 'limited', nextIntake: '2025-09-15', spotsLeft: 4, responseTime: '24h', privateLessons: true, yearRound: true },
     name: "Lotto Tennis Academy Antwerp",
     country: "Belgium",
     countryFlag: "🇧🇪",
@@ -2765,6 +2940,7 @@ const ACADEMIES = [
   },
   {
     id: "knltb",
+    availability: { status: 'closed', nextIntake: '2025-12-01', spotsLeft: null, responseTime: '3-5 days', privateLessons: true, yearRound: false },
     name: "KNLTB Tennis Academy",
     country: "Netherlands",
     countryFlag: "🇳🇱",
@@ -2829,6 +3005,7 @@ const ACADEMIES = [
   },
   {
     id: "lundin-copenhagen",
+    availability: { status: 'open', nextIntake: '2025-09-01', spotsLeft: 8, responseTime: '24h', privateLessons: false, yearRound: true },
     name: "Lundin Tennis Academy",
     country: "Denmark",
     countryFlag: "🇩🇰",
@@ -2893,6 +3070,7 @@ const ACADEMIES = [
   },
   {
     id: "asc-helsinki",
+    availability: { status: 'closed', nextIntake: '2025-12-01', spotsLeft: null, responseTime: '3-5 days', privateLessons: true, yearRound: false },
     name: "ASC Tennis Academy Helsinki",
     country: "Finland",
     countryFlag: "🇫🇮",
@@ -2957,6 +3135,7 @@ const ACADEMIES = [
   },
   {
     id: "oslo-tennis",
+    availability: { status: 'closed', nextIntake: '2025-12-01', spotsLeft: null, responseTime: '3-5 days', privateLessons: true, yearRound: false },
     name: "Oslo Tennis Academy",
     country: "Norway",
     countryFlag: "🇳🇴",
@@ -3021,6 +3200,7 @@ const ACADEMIES = [
   },
   {
     id: "aristotle-athens",
+    availability: { status: 'open', nextIntake: '2025-09-01', spotsLeft: 10, responseTime: '24h', privateLessons: false, yearRound: true },
     name: "Aristotle Tennis Academy",
     country: "Greece",
     countryFlag: "🇬🇷",
@@ -3085,6 +3265,7 @@ const ACADEMIES = [
   },
   {
     id: "mallorca-academy",
+    availability: { status: 'open', nextIntake: '2025-05-15', spotsLeft: 9, responseTime: '24h', privateLessons: false, yearRound: false },
     name: "Mallorca Tennis Academy",
     country: "Spain",
     countryFlag: "🇪🇸",
@@ -3151,6 +3332,7 @@ const ACADEMIES = [
   },
   {
     id: "mouratoglou-riviera",
+    availability: { status: 'open', nextIntake: '2025-07-01', spotsLeft: 10, responseTime: '48h', privateLessons: true, yearRound: true },
     name: "Mouratoglou Riviera Academy",
     country: "France",
     countryFlag: "🇫🇷",

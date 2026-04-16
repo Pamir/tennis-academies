@@ -2,6 +2,7 @@
 const ACADEMIES = [
   {
     id: "st-andrews",
+    availability: { status: 'open', nextIntake: '2025-06-15', spotsLeft: 11, responseTime: '48h', privateLessons: true, yearRound: true },
     name: "St Andrews Links Golf Academy",
     country: "Scotland",
     countryFlag: "",
@@ -75,9 +76,22 @@ const ACADEMIES = [
       { name: "Summer Golf Intensive", startDate: "2025-07-21", endDate: "2025-07-25", price: "€1,500", level: "Intermediate" },
       { name: "Autumn Short Game Clinic", startDate: "2025-09-22", endDate: "2025-09-26", price: "€1,200", level: "All Levels" }
     ],
+    accommodation: {
+      types: [
+        { type: 'private', label: 'Private Room', pricePerWeek: 520, maxOccupancy: 1, bathType: 'ensuite', mealsIncluded: true },
+        { type: 'twin', label: 'Twin Room', pricePerWeek: 340, maxOccupancy: 2, bathType: 'ensuite', mealsIncluded: true },
+        { type: 'apartment', label: 'Self-Catering Apartment', pricePerWeek: 380, maxOccupancy: 3, bathType: 'private', mealsIncluded: false }
+      ],
+      companionsAllowed: true,
+      childrenAllowed: true,
+      minStay: 2,
+      shuttleToTraining: true,
+      notes: 'Golf course views from premium rooms'
+    },
     videoTour: null
   },  {
     id: "valderrama",
+    availability: { status: 'open', nextIntake: '2025-07-01', spotsLeft: 18, responseTime: '48h', privateLessons: true, yearRound: true },
     name: "Valderrama Golf Academy",
     country: "Spain",
     countryFlag: "",
@@ -151,10 +165,24 @@ const ACADEMIES = [
       { name: "Mediterranean Golf Week", startDate: "2025-05-05", endDate: "2025-05-09", price: "€2,200", level: "Advanced" },
       { name: "Winter Escape Camp", startDate: "2025-11-10", endDate: "2025-11-14", price: "€1,600", level: "Intermediate" }
     ],
+    accommodation: {
+      types: [
+        { type: 'private', label: 'Private Room', pricePerWeek: 480, maxOccupancy: 1, bathType: 'ensuite', mealsIncluded: true },
+        { type: 'twin', label: 'Twin Room', pricePerWeek: 300, maxOccupancy: 2, bathType: 'ensuite', mealsIncluded: true },
+        { type: 'triple', label: 'Triple Room', pricePerWeek: 240, maxOccupancy: 3, bathType: 'shared', mealsIncluded: true },
+        { type: 'apartment', label: 'Golf Villa Apartment', pricePerWeek: 320, maxOccupancy: 4, bathType: 'private', mealsIncluded: false }
+      ],
+      companionsAllowed: true,
+      childrenAllowed: true,
+      minStay: 1,
+      shuttleToTraining: true,
+      notes: 'Mediterranean terrace with course views available in all room types'
+    },
     videoTour: null
   },
   {
     id: "penha-longa",
+    availability: { status: 'open', nextIntake: '2025-06-15', spotsLeft: 11, responseTime: '48h', privateLessons: true, yearRound: true },
     name: "Penha Longa Golf Academy",
     country: "Portugal",
     countryFlag: "",
@@ -225,10 +253,24 @@ const ACADEMIES = [
       { name: "Algarve Spring Camp", startDate: "2025-03-17", endDate: "2025-03-21", price: "€1,600", level: "All Levels" },
       { name: "Summer Junior Golf Camp", startDate: "2025-08-18", endDate: "2025-08-22", price: "€1,100", level: "Beginner" }
     ],
+    accommodation: {
+      types: [
+        { type: 'private', label: 'Private Room', pricePerWeek: 400, maxOccupancy: 1, bathType: 'ensuite', mealsIncluded: true },
+        { type: 'twin', label: 'Twin Room', pricePerWeek: 260, maxOccupancy: 2, bathType: 'ensuite', mealsIncluded: true },
+        { type: 'triple', label: 'Triple Room', pricePerWeek: 200, maxOccupancy: 3, bathType: 'shared', mealsIncluded: false },
+        { type: 'apartment', label: 'Resort Apartment', pricePerWeek: 280, maxOccupancy: 3, bathType: 'private', mealsIncluded: false }
+      ],
+      companionsAllowed: true,
+      childrenAllowed: true,
+      minStay: 1,
+      shuttleToTraining: true,
+      notes: 'Spa access with all room types'
+    },
     videoTour: null
   },
   {
     id: "wentworth",
+    availability: { status: 'open', nextIntake: '2025-08-01', spotsLeft: 15, responseTime: '3-5 days', privateLessons: true, yearRound: true },
     name: "Wentworth Golf Academy",
     country: "England",
     countryFlag: "",
@@ -301,10 +343,23 @@ const ACADEMIES = [
       { name: "Wentworth Summer School", startDate: "2025-08-11", endDate: "2025-08-15", price: "€2,400", level: "All Levels" },
       { name: "Spring Swing Camp", startDate: "2025-04-14", endDate: "2025-04-18", price: "€1,900", level: "Beginner" }
     ],
+    accommodation: {
+      types: [
+        { type: 'private', label: 'Private Room', pricePerWeek: 580, maxOccupancy: 1, bathType: 'ensuite', mealsIncluded: true },
+        { type: 'twin', label: 'Twin Room', pricePerWeek: 380, maxOccupancy: 2, bathType: 'ensuite', mealsIncluded: true },
+        { type: 'apartment', label: 'Estate Apartment', pricePerWeek: 430, maxOccupancy: 3, bathType: 'private', mealsIncluded: false }
+      ],
+      companionsAllowed: true,
+      childrenAllowed: false,
+      minStay: 2,
+      shuttleToTraining: true,
+      notes: 'Clubhouse dining included with private and twin rooms'
+    },
     videoTour: null
   },
   {
     id: "k-club",
+    availability: { status: 'open', nextIntake: '2025-06-15', spotsLeft: 13, responseTime: '48h', privateLessons: true, yearRound: false },
     name: "The K Club Golf Academy",
     country: "Ireland",
     countryFlag: "",
@@ -371,10 +426,23 @@ const ACADEMIES = [
       { name: "Irish Open", level: "European Tour", surface: "Parkland", month: "July", venue: "Various Irish venues" },
       { name: "Irish Amateur Open", level: "Amateur", surface: "Parkland", month: "May", venue: "Royal Dublin" }
     ],
+    accommodation: {
+      types: [
+        { type: 'private', label: 'Private Room', pricePerWeek: 460, maxOccupancy: 1, bathType: 'ensuite', mealsIncluded: true },
+        { type: 'twin', label: 'Twin Room', pricePerWeek: 300, maxOccupancy: 2, bathType: 'ensuite', mealsIncluded: true },
+        { type: 'triple', label: 'Triple Room', pricePerWeek: 230, maxOccupancy: 3, bathType: 'shared', mealsIncluded: true }
+      ],
+      companionsAllowed: true,
+      childrenAllowed: true,
+      minStay: 1,
+      shuttleToTraining: true,
+      notes: 'Full Irish breakfast included with all meal plans'
+    },
     videoTour: null
   },
   {
     id: "evian-resort",
+    availability: { status: 'open', nextIntake: '2025-06-01', spotsLeft: 12, responseTime: '24h', privateLessons: true, yearRound: true },
     name: "Evian Resort Golf Academy",
     country: "France",
     countryFlag: "",
@@ -440,10 +508,24 @@ const ACADEMIES = [
       { name: "Evian Ladies Golf Camp", startDate: "2025-05-19", endDate: "2025-05-23", price: "€2,500", level: "Intermediate" },
       { name: "Summer Alpine Golf Retreat", startDate: "2025-07-07", endDate: "2025-07-11", price: "€2,800", level: "All Levels" }
     ],
+    accommodation: {
+      types: [
+        { type: 'private', label: 'Private Room', pricePerWeek: 530, maxOccupancy: 1, bathType: 'ensuite', mealsIncluded: true },
+        { type: 'twin', label: 'Twin Room', pricePerWeek: 340, maxOccupancy: 2, bathType: 'ensuite', mealsIncluded: true },
+        { type: 'triple', label: 'Triple Room', pricePerWeek: 260, maxOccupancy: 3, bathType: 'shared', mealsIncluded: true },
+        { type: 'apartment', label: 'Lakeside Apartment', pricePerWeek: 360, maxOccupancy: 4, bathType: 'private', mealsIncluded: false }
+      ],
+      companionsAllowed: true,
+      childrenAllowed: true,
+      minStay: 2,
+      shuttleToTraining: true,
+      notes: 'Lake Geneva views from premium rooms'
+    },
     videoTour: null
   },
   {
     id: "gut-larchenhof",
+    availability: { status: 'closed', nextIntake: '2025-12-01', spotsLeft: null, responseTime: '3-5 days', privateLessons: true, yearRound: false },
     name: "Gut Larchenhof Golf Academy",
     country: "Germany",
     countryFlag: "",
@@ -505,10 +587,23 @@ const ACADEMIES = [
       { name: "German Masters", level: "European Challenge Tour", surface: "Parkland", month: "September", venue: "Gut Larchenhof" },
       { name: "German Amateur Championship", level: "Amateur", surface: "Various", month: "July", venue: "Various venues" }
     ],
+    accommodation: {
+      types: [
+        { type: 'private', label: 'Private Room', pricePerWeek: 420, maxOccupancy: 1, bathType: 'ensuite', mealsIncluded: true },
+        { type: 'twin', label: 'Twin Room', pricePerWeek: 280, maxOccupancy: 2, bathType: 'ensuite', mealsIncluded: true },
+        { type: 'triple', label: 'Triple Room', pricePerWeek: 220, maxOccupancy: 3, bathType: 'shared', mealsIncluded: false }
+      ],
+      companionsAllowed: true,
+      childrenAllowed: false,
+      minStay: 1,
+      shuttleToTraining: true,
+      notes: 'On-site restaurant with half-board option available'
+    },
     videoTour: null
   },
   {
     id: "bro-hof-slott",
+    availability: { status: 'open', nextIntake: '2025-08-01', spotsLeft: 11, responseTime: '3-5 days', privateLessons: true, yearRound: true },
     name: "Bro Hof Slott Golf Academy",
     country: "Sweden",
     countryFlag: "",
@@ -570,10 +665,24 @@ const ACADEMIES = [
       { name: "Nordea Masters", level: "European Tour", surface: "Parkland", month: "June", venue: "Bro Hof Slott" },
       { name: "Swedish Amateur Championship", level: "Amateur", surface: "Various", month: "July", venue: "Various venues" }
     ],
+    accommodation: {
+      types: [
+        { type: 'private', label: 'Private Room', pricePerWeek: 480, maxOccupancy: 1, bathType: 'ensuite', mealsIncluded: true },
+        { type: 'twin', label: 'Twin Room', pricePerWeek: 320, maxOccupancy: 2, bathType: 'ensuite', mealsIncluded: true },
+        { type: 'triple', label: 'Triple Room', pricePerWeek: 240, maxOccupancy: 3, bathType: 'shared', mealsIncluded: false },
+        { type: 'apartment', label: 'Waterfront Apartment', pricePerWeek: 440, maxOccupancy: 3, bathType: 'private', mealsIncluded: false }
+      ],
+      companionsAllowed: true,
+      childrenAllowed: true,
+      minStay: 1,
+      shuttleToTraining: false,
+      notes: 'Archipelago setting with direct course access from all rooms'
+    },
     videoTour: null
   },
   {
     id: "royal-copenhagen",
+    availability: { status: 'waitlist', nextIntake: '2025-11-01', spotsLeft: null, responseTime: '48h', privateLessons: true, yearRound: false },
     name: "Royal Copenhagen Golf Academy",
     country: "Denmark",
     countryFlag: "",
@@ -639,6 +748,7 @@ const ACADEMIES = [
   },
   {
     id: "kennemer",
+    availability: { status: 'open', nextIntake: '2025-06-01', spotsLeft: 20, responseTime: '24h', privateLessons: true, yearRound: true },
     name: "Kennemer Golf Academy",
     country: "Netherlands",
     countryFlag: "",
@@ -704,6 +814,7 @@ const ACADEMIES = [
   },
   {
     id: "royal-zoute",
+    availability: { status: 'open', nextIntake: '2025-07-01', spotsLeft: 16, responseTime: '48h', privateLessons: true, yearRound: true },
     name: "Royal Zoute Golf Academy",
     country: "Belgium",
     countryFlag: "",
@@ -769,6 +880,7 @@ const ACADEMIES = [
   },
   {
     id: "faldo-series",
+    availability: { status: 'open', nextIntake: '2025-05-15', spotsLeft: 13, responseTime: '24h', privateLessons: false, yearRound: false },
     name: "Faldo Series Academy",
     country: "England",
     countryFlag: "\ud83c\uddec\ud83c\udde7",
@@ -835,6 +947,7 @@ const ACADEMIES = [
   },
   {
     id: "monte-rei",
+    availability: { status: 'waitlist', nextIntake: '2025-11-01', spotsLeft: null, responseTime: '48h', privateLessons: true, yearRound: true },
     name: "Monte Rei Golf Academy",
     country: "Portugal",
     countryFlag: "\ud83c\uddf5\ud83c\uddf9",
@@ -897,10 +1010,23 @@ const ACADEMIES = [
       { name: "Portugal Masters", level: "European Tour", surface: "Parkland", month: "October", venue: "Dom Pedro Victoria Golf Course" },
       { name: "Algarve Open", level: "Challenge Tour", surface: "Parkland", month: "May", venue: "Various Algarve courses" }
     ],
+    accommodation: {
+      types: [
+        { type: 'private', label: 'Private Room', pricePerWeek: 380, maxOccupancy: 1, bathType: 'ensuite', mealsIncluded: true },
+        { type: 'twin', label: 'Twin Room', pricePerWeek: 250, maxOccupancy: 2, bathType: 'ensuite', mealsIncluded: true },
+        { type: 'apartment', label: 'Algarve Villa Suite', pricePerWeek: 290, maxOccupancy: 4, bathType: 'private', mealsIncluded: false }
+      ],
+      companionsAllowed: true,
+      childrenAllowed: true,
+      minStay: 1,
+      shuttleToTraining: true,
+      notes: 'Heated pool and garden terrace included with all stays'
+    },
     videoTour: null
   },
   {
     id: "terre-blanche",
+    availability: { status: 'open', nextIntake: '2025-08-01', spotsLeft: 5, responseTime: '3-5 days', privateLessons: true, yearRound: false },
     name: "Terre Blanche Golf Academy",
     country: "France",
     countryFlag: "\ud83c\uddeb\ud83c\uddf7",
@@ -967,6 +1093,7 @@ const ACADEMIES = [
   },
   {
     id: "golf-du-medoc",
+    availability: { status: 'open', nextIntake: '2025-09-01', spotsLeft: 6, responseTime: '24h', privateLessons: false, yearRound: true },
     name: "Golf du M\u00e9doc Resort Academy",
     country: "France",
     countryFlag: "\ud83c\uddeb\ud83c\uddf7",
@@ -1033,6 +1160,7 @@ const ACADEMIES = [
   },
   {
     id: "vidauban",
+    availability: { status: 'open', nextIntake: '2025-08-01', spotsLeft: 15, responseTime: '3-5 days', privateLessons: true, yearRound: true },
     name: "Royal Mougins Golf Academy",
     country: "France",
     countryFlag: "\ud83c\uddeb\ud83c\uddf7",
@@ -1099,6 +1227,7 @@ const ACADEMIES = [
   },
   {
     id: "pga-catalunya",
+    availability: { status: 'closed', nextIntake: '2025-12-01', spotsLeft: null, responseTime: '3-5 days', privateLessons: true, yearRound: false },
     name: "PGA Catalunya Resort Academy",
     country: "Spain",
     countryFlag: "\ud83c\uddea\ud83c\uddf8",
@@ -1166,10 +1295,24 @@ const ACADEMIES = [
       { name: "Beginner Golf Discovery", startDate: "2025-09-08", endDate: "2025-09-12", price: "€900", level: "Beginner" },
       { name: "Winter Training Retreat", startDate: "2025-12-08", endDate: "2025-12-12", price: "€1,400", level: "Intermediate" }
     ],
+    accommodation: {
+      types: [
+        { type: 'private', label: 'Private Room', pricePerWeek: 440, maxOccupancy: 1, bathType: 'ensuite', mealsIncluded: true },
+        { type: 'twin', label: 'Twin Room', pricePerWeek: 290, maxOccupancy: 2, bathType: 'ensuite', mealsIncluded: true },
+        { type: 'triple', label: 'Triple Room', pricePerWeek: 230, maxOccupancy: 3, bathType: 'shared', mealsIncluded: true },
+        { type: 'apartment', label: 'Catalunya Resort Apartment', pricePerWeek: 310, maxOccupancy: 4, bathType: 'private', mealsIncluded: false }
+      ],
+      companionsAllowed: true,
+      childrenAllowed: true,
+      minStay: 1,
+      shuttleToTraining: true,
+      notes: 'Clubhouse dining included with private and twin bookings'
+    },
     videoTour: null
   },
   {
     id: "ballybunion",
+    availability: { status: 'open', nextIntake: '2025-07-01', spotsLeft: 14, responseTime: '48h', privateLessons: true, yearRound: true },
     name: "Ballybunion Golf Academy",
     country: "Ireland",
     countryFlag: "\ud83c\uddee\ud83c\uddea",
@@ -1237,6 +1380,7 @@ const ACADEMIES = [
   },
   {
     id: "hamburger-gc",
+    availability: { status: 'open', nextIntake: '2025-05-15', spotsLeft: 5, responseTime: '24h', privateLessons: false, yearRound: false },
     name: "Hamburger Golf Club Academy",
     country: "Germany",
     countryFlag: "\ud83c\udde9\ud83c\uddea",
@@ -1303,6 +1447,7 @@ const ACADEMIES = [
   },
   {
     id: "halmstad",
+    availability: { status: 'limited', nextIntake: '2025-09-15', spotsLeft: 4, responseTime: '24h', privateLessons: true, yearRound: true },
     name: "Halmstad Golf Academy",
     country: "Sweden",
     countryFlag: "\ud83c\uddf8\ud83c\uddea",
@@ -1369,6 +1514,7 @@ const ACADEMIES = [
   },
   {
     id: "golf-de-seignosse",
+    availability: { status: 'closed', nextIntake: '2025-12-01', spotsLeft: null, responseTime: '3-5 days', privateLessons: true, yearRound: false },
     name: "Golf de Seignosse Academy",
     country: "France",
     countryFlag: "\ud83c\uddeb\ud83c\uddf7",
@@ -1435,6 +1581,7 @@ const ACADEMIES = [
   },
   {
     id: "troia-golf",
+    availability: { status: 'open', nextIntake: '2025-05-15', spotsLeft: 11, responseTime: '24h', privateLessons: false, yearRound: true },
     name: "Troia Golf Academy",
     country: "Portugal",
     countryFlag: "\ud83c\uddf5\ud83c\uddf9",
@@ -1501,6 +1648,7 @@ const ACADEMIES = [
   },
   {
     id: "carnoustie",
+    availability: { status: 'open', nextIntake: '2025-09-01', spotsLeft: 18, responseTime: '24h', privateLessons: false, yearRound: true },
     name: "Carnoustie Golf Links Academy",
     country: "Scotland",
     countryFlag: "\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc73\udb40\udc63\udb40\udc74\udb40\udc7f",

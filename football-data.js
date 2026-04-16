@@ -3,6 +3,7 @@ const SPORT_TYPE = 'football';
 const ACADEMIES = [
     {
         id: 'fc-barcelona-la-masia',
+    availability: { status: 'open', nextIntake: '2025-07-01', spotsLeft: 20, responseTime: '48h', privateLessons: true, yearRound: true },
         name: 'FC Barcelona La Masia',
         country: 'Spain',
         countryFlag: '🇪🇸',
@@ -183,10 +184,25 @@ const ACADEMIES = [
             { name: "Easter Football Camp", startDate: "2025-04-14", endDate: "2025-04-18", price: "€1,200", level: "All Levels" },
             { name: "Autumn Skills Clinic", startDate: "2025-10-27", endDate: "2025-10-31", price: "€900", level: "Intermediate" }
         ],
+        accommodation: {
+            types: [
+                { type: 'private', label: 'Private Room', pricePerWeek: 430, maxOccupancy: 1, bathType: 'ensuite', mealsIncluded: true },
+                { type: 'twin', label: 'Twin Room', pricePerWeek: 280, maxOccupancy: 2, bathType: 'ensuite', mealsIncluded: true },
+                { type: 'triple', label: 'Triple Room', pricePerWeek: 220, maxOccupancy: 3, bathType: 'shared', mealsIncluded: true },
+                { type: 'quad', label: 'Quad Room', pricePerWeek: 185, maxOccupancy: 4, bathType: 'shared', mealsIncluded: true },
+                { type: 'dorm', label: 'Youth Dormitory', pricePerWeek: 140, maxOccupancy: 6, bathType: 'shared', mealsIncluded: true }
+            ],
+            companionsAllowed: true,
+            childrenAllowed: true,
+            minStay: 1,
+            shuttleToTraining: false,
+            notes: 'Training pitch adjacent to accommodation at La Masia residence'
+        },
         videoTour: null
     },
     {
         id: 'real-madrid-fabrica',
+    availability: { status: 'closed', nextIntake: '2025-12-01', spotsLeft: null, responseTime: '3-5 days', privateLessons: true, yearRound: false },
         name: 'Real Madrid Fabrica',
         country: 'Spain',
         countryFlag: '🇪🇸',
@@ -364,6 +380,7 @@ const ACADEMIES = [
     },
     {
         id: 'atletico-madrid-academy',
+    availability: { status: 'waitlist', nextIntake: '2025-11-01', spotsLeft: null, responseTime: '48h', privateLessons: true, yearRound: false },
         name: 'Atletico Madrid Academy',
         country: 'Spain',
         countryFlag: '🇪🇸',
@@ -540,6 +557,7 @@ const ACADEMIES = [
     },
     {
         id: 'ajax-youth-academy',
+    availability: { status: 'open', nextIntake: '2025-06-01', spotsLeft: 10, responseTime: '24h', privateLessons: true, yearRound: true },
         name: 'Ajax Youth Academy',
         country: 'Netherlands',
         countryFlag: '🇳🇱',
@@ -718,10 +736,24 @@ const ACADEMIES = [
             { name: "Ajax Summer Camp", startDate: "2025-07-14", endDate: "2025-07-25", price: "€1,800", level: "Intermediate" },
             { name: "Total Football Masterclass", startDate: "2025-08-18", endDate: "2025-08-22", price: "€1,200", level: "Advanced" }
         ],
+        accommodation: {
+            types: [
+                { type: 'private', label: 'Private Room', pricePerWeek: 460, maxOccupancy: 1, bathType: 'ensuite', mealsIncluded: true },
+                { type: 'twin', label: 'Twin Room', pricePerWeek: 300, maxOccupancy: 2, bathType: 'ensuite', mealsIncluded: true },
+                { type: 'triple', label: 'Triple Room', pricePerWeek: 230, maxOccupancy: 3, bathType: 'shared', mealsIncluded: true },
+                { type: 'dorm', label: 'Youth Dormitory', pricePerWeek: 160, maxOccupancy: 6, bathType: 'shared', mealsIncluded: true }
+            ],
+            companionsAllowed: true,
+            childrenAllowed: true,
+            minStay: 1,
+            shuttleToTraining: true,
+            notes: 'Located within the De Toekomst complex with full board and 24/7 supervision'
+        },
         videoTour: null
     },
     {
         id: 'clairefontaine',
+    availability: { status: 'open', nextIntake: '2025-06-15', spotsLeft: 7, responseTime: '48h', privateLessons: true, yearRound: true },
         name: 'INF Clairefontaine',
         country: 'France',
         countryFlag: '🇫🇷',
@@ -896,10 +928,24 @@ const ACADEMIES = [
                 { name: 'Tournoi International de Montaigu', level: 'International Youth', surface: 'Natural Grass', month: 'April', venue: 'Montaigu' },
                 { name: 'Coupe Gambardella', level: 'National Youth', surface: 'Natural Grass', month: 'May', venue: 'Various' }
             ],
+        accommodation: {
+            types: [
+                { type: 'private', label: 'Private Room', pricePerWeek: 480, maxOccupancy: 1, bathType: 'ensuite', mealsIncluded: true },
+                { type: 'twin', label: 'Twin Room', pricePerWeek: 320, maxOccupancy: 2, bathType: 'ensuite', mealsIncluded: true },
+                { type: 'triple', label: 'Triple Room', pricePerWeek: 245, maxOccupancy: 3, bathType: 'shared', mealsIncluded: true },
+                { type: 'dorm', label: 'Youth Dormitory', pricePerWeek: 170, maxOccupancy: 8, bathType: 'shared', mealsIncluded: true }
+            ],
+            companionsAllowed: true,
+            childrenAllowed: true,
+            minStay: 2,
+            shuttleToTraining: true,
+            notes: 'Nutritionist-planned meals included with dedicated sports science support'
+        },
         videoTour: null
     },
     {
         id: 'bayern-munich-academy',
+    availability: { status: 'open', nextIntake: '2025-09-01', spotsLeft: 18, responseTime: '24h', privateLessons: false, yearRound: true },
         name: 'Bayern Munich Academy',
         country: 'Germany',
         countryFlag: '🇩🇪',
@@ -1072,10 +1118,24 @@ const ACADEMIES = [
             { name: "Winter Goalkeeper Camp", startDate: "2025-12-15", endDate: "2025-12-19", price: "€800", level: "Intermediate" },
             { name: "Spring Development Camp", startDate: "2025-03-24", endDate: "2025-04-04", price: "€1,500", level: "Beginner" }
         ],
+        accommodation: {
+            types: [
+                { type: 'private', label: 'Private Room', pricePerWeek: 420, maxOccupancy: 1, bathType: 'ensuite', mealsIncluded: true },
+                { type: 'twin', label: 'Twin Room', pricePerWeek: 275, maxOccupancy: 2, bathType: 'ensuite', mealsIncluded: true },
+                { type: 'triple', label: 'Triple Room', pricePerWeek: 220, maxOccupancy: 3, bathType: 'shared', mealsIncluded: true },
+                { type: 'quad', label: 'Quad Room', pricePerWeek: 185, maxOccupancy: 4, bathType: 'shared', mealsIncluded: true }
+            ],
+            companionsAllowed: true,
+            childrenAllowed: true,
+            minStay: 1,
+            shuttleToTraining: true,
+            notes: 'On-site at FC Bayern Campus with access to recovery and physio facilities'
+        },
         videoTour: null
     },
     {
         id: 'borussia-dortmund-academy',
+    availability: { status: 'open', nextIntake: '2025-06-01', spotsLeft: 20, responseTime: '24h', privateLessons: true, yearRound: true },
         name: 'Borussia Dortmund Academy',
         country: 'Germany',
         countryFlag: '🇩🇪',
@@ -1247,6 +1307,7 @@ const ACADEMIES = [
     },
     {
         id: 'chelsea-cobham-academy',
+    availability: { status: 'closed', nextIntake: '2025-12-01', spotsLeft: null, responseTime: '3-5 days', privateLessons: true, yearRound: false },
         name: 'Chelsea FC Academy',
         country: 'United Kingdom',
         countryFlag: '🇬🇧',
@@ -1419,10 +1480,24 @@ const ACADEMIES = [
             { name: "Chelsea Foundation Camp", startDate: "2025-08-04", endDate: "2025-08-15", price: "€1,600", level: "Beginner" },
             { name: "Half-Term Technical Camp", startDate: "2025-05-26", endDate: "2025-05-30", price: "€700", level: "All Levels" }
         ],
+        accommodation: {
+            types: [
+                { type: 'apartment', label: 'Private Apartment', pricePerWeek: 580, maxOccupancy: 2, bathType: 'ensuite', mealsIncluded: false },
+                { type: 'private', label: 'Private Room', pricePerWeek: 520, maxOccupancy: 1, bathType: 'ensuite', mealsIncluded: true },
+                { type: 'twin', label: 'Twin Room', pricePerWeek: 370, maxOccupancy: 2, bathType: 'ensuite', mealsIncluded: true },
+                { type: 'triple', label: 'Triple Room', pricePerWeek: 280, maxOccupancy: 3, bathType: 'shared', mealsIncluded: true }
+            ],
+            companionsAllowed: true,
+            childrenAllowed: true,
+            minStay: 1,
+            shuttleToTraining: true,
+            notes: '24/7 security and supervision at Cobham Training Centre residence'
+        },
         videoTour: null
     },
     {
         id: 'manchester-city-academy',
+    availability: { status: 'open', nextIntake: '2025-07-01', spotsLeft: 18, responseTime: '48h', privateLessons: true, yearRound: true },
         name: 'Manchester City Academy',
         country: 'United Kingdom',
         countryFlag: '🇬🇧',
@@ -1594,6 +1669,7 @@ const ACADEMIES = [
     },
     {
         id: 'juventus-academy',
+    availability: { status: 'closed', nextIntake: '2025-12-01', spotsLeft: null, responseTime: '3-5 days', privateLessons: true, yearRound: false },
         name: 'Juventus Academy',
         country: 'Italy',
         countryFlag: '🇮🇹',
@@ -1765,10 +1841,24 @@ const ACADEMIES = [
             { name: "Juventus Summer Academy", startDate: "2025-06-30", endDate: "2025-07-11", price: "€2,200", level: "Advanced" },
             { name: "Winter Technical Camp", startDate: "2025-11-03", endDate: "2025-11-14", price: "€1,400", level: "Intermediate" }
         ],
+        accommodation: {
+            types: [
+                { type: 'apartment', label: 'Private Apartment', pricePerWeek: 430, maxOccupancy: 2, bathType: 'ensuite', mealsIncluded: false },
+                { type: 'private', label: 'Private Room', pricePerWeek: 390, maxOccupancy: 1, bathType: 'ensuite', mealsIncluded: true },
+                { type: 'twin', label: 'Twin Room', pricePerWeek: 260, maxOccupancy: 2, bathType: 'ensuite', mealsIncluded: true },
+                { type: 'triple', label: 'Triple Room', pricePerWeek: 210, maxOccupancy: 3, bathType: 'shared', mealsIncluded: true }
+            ],
+            companionsAllowed: true,
+            childrenAllowed: true,
+            minStay: 1,
+            shuttleToTraining: true,
+            notes: 'Located near Vinovo training grounds with Italian chef-prepared meals'
+        },
         videoTour: null
     },
     {
         id: 'ac-milan-academy',
+    availability: { status: 'open', nextIntake: '2025-06-01', spotsLeft: 20, responseTime: '24h', privateLessons: true, yearRound: true },
         name: 'AC Milan Academy',
         country: 'Italy',
         countryFlag: '🇮🇹',
@@ -1941,6 +2031,7 @@ const ACADEMIES = [
     },
     {
         id: 'benfica-academy',
+    availability: { status: 'open', nextIntake: '2025-09-01', spotsLeft: 10, responseTime: '24h', privateLessons: false, yearRound: true },
         name: 'Benfica Academy (Caixa Futebol Campus)',
         country: 'Portugal',
         countryFlag: '🇵🇹',
@@ -2113,10 +2204,23 @@ const ACADEMIES = [
             { name: "Spring Striker Camp", startDate: "2025-04-07", endDate: "2025-04-11", price: "€650", level: "Intermediate" },
             { name: "Autumn Elite Camp", startDate: "2025-09-15", endDate: "2025-09-26", price: "€1,500", level: "Advanced" }
         ],
+        accommodation: {
+            types: [
+                { type: 'private', label: 'Private Room', pricePerWeek: 340, maxOccupancy: 1, bathType: 'ensuite', mealsIncluded: true },
+                { type: 'twin', label: 'Twin Room', pricePerWeek: 220, maxOccupancy: 2, bathType: 'ensuite', mealsIncluded: true },
+                { type: 'triple', label: 'Triple Room', pricePerWeek: 175, maxOccupancy: 3, bathType: 'shared', mealsIncluded: true }
+            ],
+            companionsAllowed: true,
+            childrenAllowed: true,
+            minStay: 1,
+            shuttleToTraining: true,
+            notes: 'Seixal training complex with ocean views and recovery pool access'
+        },
         videoTour: null
     },
     {
         id: 'sporting-cp-academy',
+    availability: { status: 'limited', nextIntake: '2025-10-01', spotsLeft: 5, responseTime: '48h', privateLessons: true, yearRound: true },
         name: 'Sporting CP Academy',
         country: 'Portugal',
         countryFlag: '🇵🇹',
@@ -2288,6 +2392,7 @@ const ACADEMIES = [
     },
     {
         id: 'red-bull-salzburg-academy',
+    availability: { status: 'closed', nextIntake: '2025-12-01', spotsLeft: null, responseTime: '3-5 days', privateLessons: true, yearRound: false },
         name: 'Red Bull Salzburg Academy',
         country: 'Austria',
         countryFlag: '🇦🇹',
@@ -2455,10 +2560,23 @@ const ACADEMIES = [
                 { name: 'Red Bull Salzburg Youth Cup', level: 'International Youth', surface: 'Natural Grass', month: 'July', venue: 'Red Bull Academy' },
                 { name: 'OFB Jugend Cup', level: 'National Youth', surface: 'Natural Grass', month: 'May', venue: 'Various' }
             ],
+        accommodation: {
+            types: [
+                { type: 'private', label: 'Private Room', pricePerWeek: 400, maxOccupancy: 1, bathType: 'ensuite', mealsIncluded: true },
+                { type: 'twin', label: 'Twin Room', pricePerWeek: 260, maxOccupancy: 2, bathType: 'ensuite', mealsIncluded: true },
+                { type: 'triple', label: 'Triple Room', pricePerWeek: 200, maxOccupancy: 3, bathType: 'shared', mealsIncluded: true }
+            ],
+            companionsAllowed: true,
+            childrenAllowed: true,
+            minStay: 1,
+            shuttleToTraining: true,
+            notes: 'Modern Alpine-style accommodation with sports nutrition program'
+        },
         videoTour: null
     },
     {
         id: 'anderlecht-academy',
+    availability: { status: 'open', nextIntake: '2025-06-01', spotsLeft: 20, responseTime: '24h', privateLessons: true, yearRound: true },
         name: 'RSC Anderlecht Academy',
         country: 'Belgium',
         countryFlag: '🇧🇪',
@@ -2630,6 +2748,7 @@ const ACADEMIES = [
     },
     {
         id: 'dinamo-zagreb-academy',
+    availability: { status: 'limited', nextIntake: '2025-10-01', spotsLeft: 3, responseTime: '48h', privateLessons: true, yearRound: true },
         name: 'Dinamo Zagreb Academy',
         country: 'Croatia',
         countryFlag: '🇭🇷',
@@ -2797,10 +2916,23 @@ const ACADEMIES = [
                 { name: 'Croatian Youth League', level: 'National Youth', surface: 'Natural Grass', month: 'August-May', venue: 'Various' },
                 { name: 'Zagreb Youth Cup', level: 'International Youth', surface: 'Natural Grass', month: 'June', venue: 'Zagreb' }
             ],
+        accommodation: {
+            types: [
+                { type: 'private', label: 'Private Room', pricePerWeek: 280, maxOccupancy: 1, bathType: 'ensuite', mealsIncluded: true },
+                { type: 'twin', label: 'Twin Room', pricePerWeek: 185, maxOccupancy: 2, bathType: 'shared', mealsIncluded: true },
+                { type: 'triple', label: 'Triple Room', pricePerWeek: 145, maxOccupancy: 3, bathType: 'shared', mealsIncluded: true }
+            ],
+            companionsAllowed: true,
+            childrenAllowed: true,
+            minStay: 2,
+            shuttleToTraining: true,
+            notes: 'Maksimir area accommodation with easy access to training grounds and city centre'
+        },
         videoTour: null
     },
     {
         id: 'red-star-belgrade-academy',
+    availability: { status: 'limited', nextIntake: '2025-09-15', spotsLeft: 2, responseTime: '24h', privateLessons: true, yearRound: false },
         name: 'Red Star Belgrade Academy',
         country: 'Serbia',
         countryFlag: '🇷🇸',
@@ -2968,10 +3100,24 @@ const ACADEMIES = [
                 { name: 'Serbian Super Liga Youth', level: 'National Youth', surface: 'Natural Grass', month: 'August-May', venue: 'Various' },
                 { name: 'Belgrade Youth Cup', level: 'Regional', surface: 'Artificial Turf', month: 'July', venue: 'Belgrade' }
             ],
+        accommodation: {
+            types: [
+                { type: 'private', label: 'Private Room', pricePerWeek: 200, maxOccupancy: 1, bathType: 'ensuite', mealsIncluded: true },
+                { type: 'twin', label: 'Twin Room', pricePerWeek: 135, maxOccupancy: 2, bathType: 'shared', mealsIncluded: true },
+                { type: 'triple', label: 'Triple Room', pricePerWeek: 105, maxOccupancy: 3, bathType: 'shared', mealsIncluded: true },
+                { type: 'dorm', label: 'Youth Dormitory', pricePerWeek: 80, maxOccupancy: 6, bathType: 'shared', mealsIncluded: true }
+            ],
+            companionsAllowed: true,
+            childrenAllowed: true,
+            minStay: 1,
+            shuttleToTraining: true,
+            notes: 'On-site at Marakana stadium complex with traditional Serbian cuisine included'
+        },
         videoTour: null
     },
     {
         id: 'olympiacos-academy',
+    availability: { status: 'open', nextIntake: '2025-06-01', spotsLeft: 6, responseTime: '24h', privateLessons: true, yearRound: true },
         name: 'Olympiacos Academy',
         country: 'Greece',
         countryFlag: '🇬🇷',
@@ -3143,6 +3289,7 @@ const ACADEMIES = [
     },
     {
         id: 'galatasaray-academy',
+    availability: { status: 'open', nextIntake: '2025-09-01', spotsLeft: 20, responseTime: '24h', privateLessons: false, yearRound: true },
         name: 'Galatasaray Academy',
         country: 'Turkey',
         countryFlag: '🇹🇷',
@@ -3314,6 +3461,7 @@ const ACADEMIES = [
     },
     {
         id: 'sparta-prague-academy',
+    availability: { status: 'open', nextIntake: '2025-07-01', spotsLeft: 14, responseTime: '48h', privateLessons: true, yearRound: true },
         name: 'Sparta Prague Academy',
         country: 'Czech Republic',
         countryFlag: '🇨🇿',
@@ -3485,6 +3633,7 @@ const ACADEMIES = [
     },
     {
         id: 'legia-warsaw-academy',
+    availability: { status: 'open', nextIntake: '2025-07-01', spotsLeft: 12, responseTime: '48h', privateLessons: true, yearRound: true },
         name: 'Legia Warsaw Academy',
         country: 'Poland',
         countryFlag: '🇵🇱',
@@ -3656,6 +3805,7 @@ const ACADEMIES = [
     },
     {
         id: 'molde-fk-academy',
+    availability: { status: 'open', nextIntake: '2025-06-15', spotsLeft: 15, responseTime: '48h', privateLessons: true, yearRound: true },
         name: 'Molde FK Academy',
         country: 'Norway',
         countryFlag: '🇳🇴',
@@ -3827,6 +3977,7 @@ const ACADEMIES = [
     },
     {
         id: 'feyenoord-academy',
+    availability: { status: 'open', nextIntake: '2025-06-15', spotsLeft: 17, responseTime: '48h', privateLessons: true, yearRound: false },
         name: 'Feyenoord Academy',
         country: 'Netherlands',
         countryFlag: '🇳🇱',
@@ -3998,6 +4149,7 @@ const ACADEMIES = [
     },
     {
         id: 'malmo-ff-academy',
+    availability: { status: 'waitlist', nextIntake: '2025-11-01', spotsLeft: null, responseTime: '48h', privateLessons: true, yearRound: true },
         name: 'Malmo FF Academy',
         country: 'Sweden',
         countryFlag: '🇸🇪',

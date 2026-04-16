@@ -3,6 +3,7 @@ const SPORT_TYPE = 'swimming';
 const ACADEMIES = [
   {
     id: 'club-natacio-barcelona',
+    availability: { status: 'open', nextIntake: '2025-08-01', spotsLeft: 5, responseTime: '3-5 days', privateLessons: true, yearRound: false },
     name: 'Club Natació Barcelona',
     country: 'Spain',
     countryFlag: '🇪🇸',
@@ -61,10 +62,23 @@ const ACADEMIES = [
     upcomingCamps: [
       { name: 'Summer Swimming Intensive', startDate: '2025-07-01', endDate: '2025-07-14', price: '€1,500', level: 'Advanced' }
     ],
+    accommodation: {
+      types: [
+        { type: 'private', label: 'Private Room', pricePerWeek: 380, maxOccupancy: 1, bathType: 'ensuite', mealsIncluded: true },
+        { type: 'twin', label: 'Twin Shared Room', pricePerWeek: 250, maxOccupancy: 2, bathType: 'ensuite', mealsIncluded: true },
+        { type: 'triple', label: 'Triple Room', pricePerWeek: 190, maxOccupancy: 3, bathType: 'shared', mealsIncluded: true }
+      ],
+      companionsAllowed: true,
+      childrenAllowed: true,
+      minStay: 1,
+      shuttleToTraining: true,
+      notes: 'Pool access with all rooms, beachfront location on Barceloneta'
+    },
     videoTour: null
   },
   {
     id: 'duna-arena-academy',
+    availability: { status: 'open', nextIntake: '2025-06-01', spotsLeft: 18, responseTime: '24h', privateLessons: true, yearRound: true },
     name: 'Duna Arena Swimming Academy',
     country: 'Hungary',
     countryFlag: '🇭🇺',
@@ -122,10 +136,24 @@ const ACADEMIES = [
     upcomingCamps: [
       { name: 'Summer Swim Camp Budapest', startDate: '2025-06-15', endDate: '2025-06-28', price: '€1,100', level: 'Intermediate' }
     ],
+    accommodation: {
+      types: [
+        { type: 'private', label: 'Private Room', pricePerWeek: 250, maxOccupancy: 1, bathType: 'ensuite', mealsIncluded: true },
+        { type: 'twin', label: 'Twin Shared Room', pricePerWeek: 160, maxOccupancy: 2, bathType: 'ensuite', mealsIncluded: true },
+        { type: 'triple', label: 'Triple Room', pricePerWeek: 120, maxOccupancy: 3, bathType: 'shared', mealsIncluded: true },
+        { type: 'apartment', label: 'Studio Apartment', pricePerWeek: 310, maxOccupancy: 2, bathType: 'ensuite', mealsIncluded: false }
+      ],
+      companionsAllowed: true,
+      childrenAllowed: true,
+      minStay: 1,
+      shuttleToTraining: false,
+      notes: 'Danube-side residence with thermal spa access and recovery facilities'
+    },
     videoTour: null
   },
   {
     id: 'london-aquatics-centre',
+    availability: { status: 'open', nextIntake: '2025-05-15', spotsLeft: 19, responseTime: '24h', privateLessons: false, yearRound: true },
     name: 'London Aquatics Centre Academy',
     country: 'United Kingdom',
     countryFlag: '🇬🇧',
@@ -182,10 +210,23 @@ const ACADEMIES = [
     upcomingCamps: [
       { name: 'Olympic Legacy Camp', startDate: '2025-08-04', endDate: '2025-08-15', price: '£1,800', level: 'Advanced' }
     ],
+    accommodation: {
+      types: [
+        { type: 'private', label: 'Private Room', pricePerWeek: 540, maxOccupancy: 1, bathType: 'ensuite', mealsIncluded: true },
+        { type: 'twin', label: 'Twin Shared Room', pricePerWeek: 360, maxOccupancy: 2, bathType: 'ensuite', mealsIncluded: true },
+        { type: 'triple', label: 'Triple Room', pricePerWeek: 270, maxOccupancy: 3, bathType: 'shared', mealsIncluded: true }
+      ],
+      companionsAllowed: true,
+      childrenAllowed: true,
+      minStay: 2,
+      shuttleToTraining: true,
+      notes: 'Olympic Park residence with gym and recovery centre included'
+    },
     videoTour: null
   },
   {
     id: 'insep-swimming',
+    availability: { status: 'limited', nextIntake: '2025-10-01', spotsLeft: 3, responseTime: '48h', privateLessons: true, yearRound: true },
     name: 'INSEP Swimming Centre',
     country: 'France',
     countryFlag: '🇫🇷',
@@ -238,10 +279,23 @@ const ACADEMIES = [
       { name: 'French Swimming Championships', level: 'National', surface: '50m Pool', month: 'June', venue: 'Various' }
     ],
     upcomingCamps: [],
+    accommodation: {
+      types: [
+        { type: 'private', label: 'Private Room', pricePerWeek: 450, maxOccupancy: 1, bathType: 'ensuite', mealsIncluded: true },
+        { type: 'twin', label: 'Twin Shared Room', pricePerWeek: 290, maxOccupancy: 2, bathType: 'ensuite', mealsIncluded: true },
+        { type: 'triple', label: 'Triple Room', pricePerWeek: 220, maxOccupancy: 3, bathType: 'shared', mealsIncluded: true }
+      ],
+      companionsAllowed: false,
+      childrenAllowed: false,
+      minStay: 4,
+      shuttleToTraining: false,
+      notes: 'Elite athlete campus housing with sports science lab access'
+    },
     videoTour: null
   },
   {
     id: 'eindhoven-swim',
+    availability: { status: 'open', nextIntake: '2025-06-01', spotsLeft: 12, responseTime: '24h', privateLessons: true, yearRound: true },
     name: 'Eindhoven Pieter van den Hoogenband Swim Academy',
     country: 'Netherlands',
     countryFlag: '🇳🇱',
@@ -292,10 +346,24 @@ const ACADEMIES = [
     ],
     nearbyTournaments: [],
     upcomingCamps: [],
+    accommodation: {
+      types: [
+        { type: 'private', label: 'Private Room', pricePerWeek: 420, maxOccupancy: 1, bathType: 'ensuite', mealsIncluded: true },
+        { type: 'twin', label: 'Twin Shared Room', pricePerWeek: 280, maxOccupancy: 2, bathType: 'ensuite', mealsIncluded: true },
+        { type: 'triple', label: 'Triple Room', pricePerWeek: 210, maxOccupancy: 3, bathType: 'shared', mealsIncluded: true },
+        { type: 'apartment', label: 'Studio Apartment', pricePerWeek: 500, maxOccupancy: 2, bathType: 'ensuite', mealsIncluded: false }
+      ],
+      companionsAllowed: true,
+      childrenAllowed: true,
+      minStay: 1,
+      shuttleToTraining: true,
+      notes: 'Pool access with all rooms, cycling distance to city centre'
+    },
     videoTour: null
   },
   {
     id: 'berlin-swimming-federation',
+    availability: { status: 'waitlist', nextIntake: '2025-11-01', spotsLeft: null, responseTime: '48h', privateLessons: true, yearRound: false },
     name: 'Berlin Swimming Performance Centre',
     country: 'Germany',
     countryFlag: '🇩🇪',
@@ -348,10 +416,23 @@ const ACADEMIES = [
       { name: 'German Swimming Championships', level: 'National', surface: '50m Pool', month: 'May', venue: 'Berlin' }
     ],
     upcomingCamps: [],
+    accommodation: {
+      types: [
+        { type: 'private', label: 'Private Room', pricePerWeek: 400, maxOccupancy: 1, bathType: 'ensuite', mealsIncluded: true },
+        { type: 'twin', label: 'Twin Shared Room', pricePerWeek: 260, maxOccupancy: 2, bathType: 'ensuite', mealsIncluded: true },
+        { type: 'triple', label: 'Triple Room', pricePerWeek: 200, maxOccupancy: 3, bathType: 'shared', mealsIncluded: true }
+      ],
+      companionsAllowed: true,
+      childrenAllowed: true,
+      minStay: 1,
+      shuttleToTraining: true,
+      notes: 'Team dining hall for all residents with tailored nutrition plans'
+    },
     videoTour: null
   },
   {
     id: 'stockholm-swim-centre',
+    availability: { status: 'open', nextIntake: '2025-07-01', spotsLeft: 20, responseTime: '48h', privateLessons: true, yearRound: true },
     name: 'Eriksdalsbadet Swimming Academy',
     country: 'Sweden',
     countryFlag: '🇸🇪',
@@ -401,10 +482,23 @@ const ACADEMIES = [
     ],
     nearbyTournaments: [],
     upcomingCamps: [],
+    accommodation: {
+      types: [
+        { type: 'private', label: 'Private Room', pricePerWeek: 440, maxOccupancy: 1, bathType: 'ensuite', mealsIncluded: true },
+        { type: 'twin', label: 'Twin Shared Room', pricePerWeek: 290, maxOccupancy: 2, bathType: 'ensuite', mealsIncluded: true },
+        { type: 'triple', label: 'Triple Room', pricePerWeek: 220, maxOccupancy: 3, bathType: 'shared', mealsIncluded: true }
+      ],
+      companionsAllowed: true,
+      childrenAllowed: true,
+      minStay: 2,
+      shuttleToTraining: false,
+      notes: 'Waterfront residence near Eriksdalsbadet with sauna and cold plunge'
+    },
     videoTour: null
   },
   {
     id: 'rome-swimming-academy',
+    availability: { status: 'open', nextIntake: '2025-08-01', spotsLeft: 17, responseTime: '3-5 days', privateLessons: true, yearRound: false },
     name: 'Circolo Canottieri Aniene Swim Academy',
     country: 'Italy',
     countryFlag: '🇮🇹',
@@ -457,10 +551,24 @@ const ACADEMIES = [
       { name: 'Sette Colli Trophy', level: 'International', surface: '50m Pool', month: 'June', venue: 'Foro Italico' }
     ],
     upcomingCamps: [],
+    accommodation: {
+      types: [
+        { type: 'private', label: 'Private Room', pricePerWeek: 370, maxOccupancy: 1, bathType: 'ensuite', mealsIncluded: true },
+        { type: 'twin', label: 'Twin Shared Room', pricePerWeek: 250, maxOccupancy: 2, bathType: 'ensuite', mealsIncluded: true },
+        { type: 'triple', label: 'Triple Room', pricePerWeek: 190, maxOccupancy: 3, bathType: 'shared', mealsIncluded: true },
+        { type: 'apartment', label: 'Studio Apartment', pricePerWeek: 460, maxOccupancy: 2, bathType: 'ensuite', mealsIncluded: false }
+      ],
+      companionsAllowed: true,
+      childrenAllowed: true,
+      minStay: 1,
+      shuttleToTraining: true,
+      notes: 'Mediterranean-style residence with Italian full-board cuisine and pool access'
+    },
     videoTour: null
   },
   {
     id: 'athens-swim-academy',
+    availability: { status: 'limited', nextIntake: '2025-10-01', spotsLeft: 3, responseTime: '48h', privateLessons: true, yearRound: true },
     name: 'Athens Olympic Swimming Academy',
     country: 'Greece',
     countryFlag: '🇬🇷',
@@ -517,6 +625,7 @@ const ACADEMIES = [
   },
   {
     id: 'vienna-swim-academy',
+    availability: { status: 'open', nextIntake: '2025-07-01', spotsLeft: 10, responseTime: '48h', privateLessons: true, yearRound: true },
     name: 'Wiener Stadthalle Swimming Academy',
     country: 'Austria',
     countryFlag: '🇦🇹',
@@ -567,10 +676,23 @@ const ACADEMIES = [
     ],
     nearbyTournaments: [],
     upcomingCamps: [],
+    accommodation: {
+      types: [
+        { type: 'private', label: 'Private Room', pricePerWeek: 380, maxOccupancy: 1, bathType: 'ensuite', mealsIncluded: true },
+        { type: 'twin', label: 'Twin Shared Room', pricePerWeek: 250, maxOccupancy: 2, bathType: 'ensuite', mealsIncluded: true },
+        { type: 'triple', label: 'Triple Room', pricePerWeek: 190, maxOccupancy: 3, bathType: 'shared', mealsIncluded: true }
+      ],
+      companionsAllowed: true,
+      childrenAllowed: false,
+      minStay: 1,
+      shuttleToTraining: true,
+      notes: 'Central Vienna location with excellent public transport to training venue'
+    },
     videoTour: null
   },
   {
     id: 'copenhagen-swim',
+    availability: { status: 'open', nextIntake: '2025-09-01', spotsLeft: 10, responseTime: '24h', privateLessons: false, yearRound: true },
     name: 'Danish Swimming Federation Centre',
     country: 'Denmark',
     countryFlag: '🇩🇰',
@@ -624,6 +746,7 @@ const ACADEMIES = [
   },
   {
     id: 'zurich-swim-academy',
+    availability: { status: 'limited', nextIntake: '2025-10-01', spotsLeft: 5, responseTime: '48h', privateLessons: true, yearRound: true },
     name: 'Zürich Swimming Academy',
     country: 'Switzerland',
     countryFlag: '🇨🇭',
@@ -678,6 +801,7 @@ const ACADEMIES = [
   },
   {
     id: 'lisbon-swim-academy',
+    availability: { status: 'open', nextIntake: '2025-07-01', spotsLeft: 12, responseTime: '48h', privateLessons: true, yearRound: true },
     name: 'Lisbon Swimming Academy',
     country: 'Portugal',
     countryFlag: '🇵🇹',
@@ -730,10 +854,23 @@ const ACADEMIES = [
     upcomingCamps: [
       { name: 'Atlantic Swim Camp', startDate: '2025-06-01', endDate: '2025-06-14', price: '€800', level: 'All Levels' }
     ],
+    accommodation: {
+      types: [
+        { type: 'private', label: 'Private Room', pricePerWeek: 310, maxOccupancy: 1, bathType: 'ensuite', mealsIncluded: true },
+        { type: 'twin', label: 'Twin Shared Room', pricePerWeek: 200, maxOccupancy: 2, bathType: 'ensuite', mealsIncluded: true },
+        { type: 'triple', label: 'Triple Room', pricePerWeek: 160, maxOccupancy: 3, bathType: 'shared', mealsIncluded: true }
+      ],
+      companionsAllowed: true,
+      childrenAllowed: true,
+      minStay: 1,
+      shuttleToTraining: true,
+      notes: 'Riverside residence with ocean views and outdoor recovery terrace'
+    },
     videoTour: null
   },
   {
     id: 'dubrovnik-swim',
+    availability: { status: 'open', nextIntake: '2025-09-01', spotsLeft: 8, responseTime: '24h', privateLessons: false, yearRound: true },
     name: 'Dubrovnik Aquatic Centre',
     country: 'Croatia',
     countryFlag: '🇭🇷',

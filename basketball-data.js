@@ -3,6 +3,7 @@ const SPORT_TYPE = 'basketball';
 const ACADEMIES = [
   {
     id: 'real-madrid-basketball',
+    availability: { status: 'open', nextIntake: '2025-08-01', spotsLeft: 15, responseTime: '3-5 days', privateLessons: true, yearRound: true },
     name: 'Real Madrid Baloncesto Academy',
     country: 'Spain',
     countryFlag: '\uD83C\uDDEA\uD83C\uDDF8',
@@ -74,11 +75,25 @@ const ACADEMIES = [
       { name: "Easter Basketball Clinic", startDate: "2025-04-14", endDate: "2025-04-18", price: "€800", level: "All Levels" },
       { name: "Autumn Shooting Camp", startDate: "2025-10-13", endDate: "2025-10-24", price: "€1,200", level: "Intermediate" }
     ],
+    accommodation: {
+      types: [
+        { type: 'private', label: 'Private Room', pricePerWeek: 390, maxOccupancy: 1, bathType: 'ensuite', mealsIncluded: true },
+        { type: 'twin', label: 'Twin Shared Room', pricePerWeek: 260, maxOccupancy: 2, bathType: 'ensuite', mealsIncluded: true },
+        { type: 'triple', label: 'Triple Room', pricePerWeek: 200, maxOccupancy: 3, bathType: 'shared', mealsIncluded: true },
+        { type: 'apartment', label: 'Studio Apartment', pricePerWeek: 480, maxOccupancy: 2, bathType: 'ensuite', mealsIncluded: false }
+      ],
+      companionsAllowed: true,
+      childrenAllowed: true,
+      minStay: 1,
+      shuttleToTraining: true,
+      notes: 'Modern sports residence near WiZink Center with full-board dining'
+    },
     videoTour: null
   }
 ,
   {
     id: 'fc-barcelona-basketball',
+    availability: { status: 'open', nextIntake: '2025-07-01', spotsLeft: 14, responseTime: '48h', privateLessons: true, yearRound: true },
     name: 'FC Barcelona Basquet Academy',
     country: 'Spain',
     countryFlag: '\uD83C\uDDEA\uD83C\uDDF8',
@@ -146,11 +161,24 @@ const ACADEMIES = [
         { name: 'Junior ACB Catalonia', level: 'National Junior', surface: 'Indoor Hardwood', month: 'April', venue: 'Various Catalonia Venues' },
         { name: 'Torneo Costa Brava Basketball', level: 'International Youth', surface: 'Indoor Hardwood', month: 'July', venue: 'Girona Sports Complex' },
       ],
+    accommodation: {
+      types: [
+        { type: 'private', label: 'Private Room', pricePerWeek: 410, maxOccupancy: 1, bathType: 'ensuite', mealsIncluded: true },
+        { type: 'twin', label: 'Twin Shared Room', pricePerWeek: 270, maxOccupancy: 2, bathType: 'ensuite', mealsIncluded: true },
+        { type: 'triple', label: 'Triple Room', pricePerWeek: 210, maxOccupancy: 3, bathType: 'shared', mealsIncluded: true }
+      ],
+      companionsAllowed: true,
+      childrenAllowed: true,
+      minStay: 2,
+      shuttleToTraining: true,
+      notes: 'On-campus residence at Ciutat Esportiva with team dining hall'
+    },
     videoTour: null
   }
 ,
   {
     id: 'olympiacos-academy',
+    availability: { status: 'open', nextIntake: '2025-06-01', spotsLeft: 6, responseTime: '24h', privateLessons: true, yearRound: true },
     name: 'Olympiacos Basketball Academy',
     country: 'Greece',
     countryFlag: '\uD83C\uDDEC\uD83C\uDDF7',
@@ -215,11 +243,24 @@ const ACADEMIES = [
         { name: 'Greek Basket League Playoffs', level: 'A1 League', surface: 'Indoor Hardwood', month: 'May-June', venue: 'Peace and Friendship Stadium' },
         { name: 'EuroLeague Athens Games', level: 'EuroLeague', surface: 'Indoor Hardwood', month: 'October-April', venue: 'Peace and Friendship Stadium' },
       ],
+    accommodation: {
+      types: [
+        { type: 'private', label: 'Private Room', pricePerWeek: 320, maxOccupancy: 1, bathType: 'ensuite', mealsIncluded: true },
+        { type: 'twin', label: 'Twin Shared Room', pricePerWeek: 200, maxOccupancy: 2, bathType: 'ensuite', mealsIncluded: true },
+        { type: 'triple', label: 'Triple Room', pricePerWeek: 160, maxOccupancy: 3, bathType: 'shared', mealsIncluded: true }
+      ],
+      companionsAllowed: true,
+      childrenAllowed: false,
+      minStay: 1,
+      shuttleToTraining: true,
+      notes: 'Seaside accommodation in Piraeus, short walk to Peace and Friendship Stadium'
+    },
     videoTour: null
   }
 ,
   {
     id: 'panathinaikos-academy',
+    availability: { status: 'limited', nextIntake: '2025-10-01', spotsLeft: 5, responseTime: '48h', privateLessons: true, yearRound: true },
     name: 'Panathinaikos Basketball Academy',
     country: 'Greece',
     countryFlag: '\uD83C\uDDEC\uD83C\uDDF7',
@@ -294,6 +335,7 @@ const ACADEMIES = [
 ,
   {
     id: 'fenerbahce-basketball',
+    availability: { status: 'open', nextIntake: '2025-09-01', spotsLeft: 8, responseTime: '24h', privateLessons: false, yearRound: true },
     name: 'Fenerbahce Basketball Academy',
     country: 'Turkey',
     countryFlag: '\uD83C\uDDF9\uD83C\uDDF7',
@@ -363,11 +405,25 @@ const ACADEMIES = [
       { name: "Istanbul Basketball Camp", startDate: "2025-07-14", endDate: "2025-07-25", price: "€1,100", level: "Beginner" },
       { name: "Winter Skills Intensive", startDate: "2025-12-01", endDate: "2025-12-12", price: "€900", level: "Advanced" }
     ],
+    accommodation: {
+      types: [
+        { type: 'private', label: 'Private Room', pricePerWeek: 280, maxOccupancy: 1, bathType: 'ensuite', mealsIncluded: true },
+        { type: 'twin', label: 'Twin Shared Room', pricePerWeek: 180, maxOccupancy: 2, bathType: 'ensuite', mealsIncluded: true },
+        { type: 'triple', label: 'Triple Room', pricePerWeek: 140, maxOccupancy: 3, bathType: 'shared', mealsIncluded: true },
+        { type: 'dorm', label: 'Dormitory', pricePerWeek: 90, maxOccupancy: 6, bathType: 'shared', mealsIncluded: true }
+      ],
+      companionsAllowed: true,
+      childrenAllowed: true,
+      minStay: 1,
+      shuttleToTraining: false,
+      notes: 'Gym and recovery centre included with all accommodation packages'
+    },
     videoTour: null
   }
 ,
   {
     id: 'anadolu-efes-academy',
+    availability: { status: 'limited', nextIntake: '2025-10-01', spotsLeft: 5, responseTime: '48h', privateLessons: true, yearRound: true },
     name: 'Anadolu Efes Basketball Academy',
     country: 'Turkey',
     countryFlag: '\uD83C\uDDF9\uD83C\uDDF7',
@@ -432,6 +488,7 @@ const ACADEMIES = [
 ,
   {
     id: 'partizan-basketball',
+    availability: { status: 'open', nextIntake: '2025-06-01', spotsLeft: 6, responseTime: '24h', privateLessons: true, yearRound: true },
     name: 'KK Partizan Basketball Academy',
     country: 'Serbia',
     countryFlag: '\uD83C\uDDF7\uD83C\uDDF8',
@@ -496,11 +553,25 @@ const ACADEMIES = [
       { name: "Autumn Guard Skills Camp", startDate: "2025-09-22", endDate: "2025-10-03", price: "€700", level: "Advanced" },
       { name: "Spring Youth Development", startDate: "2025-03-17", endDate: "2025-03-28", price: "€650", level: "Beginner" }
     ],
+    accommodation: {
+      types: [
+        { type: 'private', label: 'Private Room', pricePerWeek: 190, maxOccupancy: 1, bathType: 'ensuite', mealsIncluded: true },
+        { type: 'twin', label: 'Twin Shared Room', pricePerWeek: 130, maxOccupancy: 2, bathType: 'shared', mealsIncluded: true },
+        { type: 'triple', label: 'Triple Room', pricePerWeek: 100, maxOccupancy: 3, bathType: 'shared', mealsIncluded: true },
+        { type: 'dorm', label: 'Dormitory', pricePerWeek: 70, maxOccupancy: 6, bathType: 'shared', mealsIncluded: true }
+      ],
+      companionsAllowed: true,
+      childrenAllowed: true,
+      minStay: 1,
+      shuttleToTraining: true,
+      notes: 'City centre location in Belgrade, walking distance to training venue'
+    },
     videoTour: null
   }
 ,
   {
     id: 'kk-crvena-zvezda',
+    availability: { status: 'open', nextIntake: '2025-09-01', spotsLeft: 18, responseTime: '24h', privateLessons: false, yearRound: true },
     name: 'KK Crvena Zvezda Basketball Academy',
     country: 'Serbia',
     countryFlag: '\uD83C\uDDF7\uD83C\uDDF8',
@@ -565,6 +636,7 @@ const ACADEMIES = [
 ,
   {
     id: 'zalgiris-academy',
+    availability: { status: 'open', nextIntake: '2025-05-15', spotsLeft: 9, responseTime: '24h', privateLessons: false, yearRound: false },
     name: 'BC Zalgiris Basketball Academy',
     country: 'Lithuania',
     countryFlag: '\uD83C\uDDF1\uD83C\uDDF9',
@@ -629,11 +701,25 @@ const ACADEMIES = [
       { name: "Zalgiris Elite Camp", startDate: "2025-07-28", endDate: "2025-08-08", price: "€1,000", level: "Advanced" },
       { name: "Summer Fun Basketball", startDate: "2025-06-16", endDate: "2025-06-27", price: "€750", level: "Beginner" }
     ],
+    accommodation: {
+      types: [
+        { type: 'private', label: 'Private Room', pricePerWeek: 230, maxOccupancy: 1, bathType: 'ensuite', mealsIncluded: true },
+        { type: 'twin', label: 'Twin Shared Room', pricePerWeek: 150, maxOccupancy: 2, bathType: 'ensuite', mealsIncluded: true },
+        { type: 'triple', label: 'Triple Room', pricePerWeek: 120, maxOccupancy: 3, bathType: 'shared', mealsIncluded: true },
+        { type: 'dorm', label: 'Dormitory', pricePerWeek: 75, maxOccupancy: 4, bathType: 'shared', mealsIncluded: true }
+      ],
+      companionsAllowed: true,
+      childrenAllowed: true,
+      minStay: 2,
+      shuttleToTraining: true,
+      notes: 'Team dining hall for all residents near Zalgirio Arena'
+    },
     videoTour: null
   }
 ,
   {
     id: 'bayern-munich-basketball',
+    availability: { status: 'open', nextIntake: '2025-06-15', spotsLeft: 17, responseTime: '48h', privateLessons: true, yearRound: false },
     name: 'FC Bayern Munich Basketball Academy',
     country: 'Germany',
     countryFlag: '\uD83C\uDDE9\uD83C\uDDEA',
@@ -694,11 +780,24 @@ const ACADEMIES = [
         { name: 'EuroLeague Munich Games', level: 'EuroLeague', surface: 'Indoor Hardwood', month: 'October-April', venue: 'Audi Dome' },
         { name: 'Munich Youth Basketball Cup', level: 'National Junior', surface: 'Indoor Hardwood', month: 'April', venue: 'Munich Sports Center' },
       ],
+    accommodation: {
+      types: [
+        { type: 'private', label: 'Private Room', pricePerWeek: 400, maxOccupancy: 1, bathType: 'ensuite', mealsIncluded: true },
+        { type: 'twin', label: 'Twin Shared Room', pricePerWeek: 260, maxOccupancy: 2, bathType: 'ensuite', mealsIncluded: true },
+        { type: 'triple', label: 'Triple Room', pricePerWeek: 200, maxOccupancy: 3, bathType: 'shared', mealsIncluded: true }
+      ],
+      companionsAllowed: true,
+      childrenAllowed: true,
+      minStay: 1,
+      shuttleToTraining: true,
+      notes: 'Premium sports campus accommodation with strength and conditioning access'
+    },
     videoTour: null
   }
 ,
   {
     id: 'alba-berlin-academy',
+    availability: { status: 'open', nextIntake: '2025-06-15', spotsLeft: 17, responseTime: '48h', privateLessons: true, yearRound: false },
     name: 'ALBA Berlin Basketball Academy',
     country: 'Germany',
     countryFlag: '\uD83C\uDDE9\uD83C\uDDEA',
@@ -768,6 +867,7 @@ const ACADEMIES = [
 ,
   {
     id: 'asvel-basketball',
+    availability: { status: 'limited', nextIntake: '2025-10-01', spotsLeft: 3, responseTime: '48h', privateLessons: true, yearRound: true },
     name: 'LDLC ASVEL Basketball Academy',
     country: 'France',
     countryFlag: '\uD83C\uDDEB\uD83C\uDDF7',
@@ -828,11 +928,25 @@ const ACADEMIES = [
         { name: 'EuroLeague Lyon Games', level: 'EuroLeague', surface: 'Indoor Hardwood', month: 'October-April', venue: 'LDLC Arena' },
         { name: 'Tournoi du Rhone Junior', level: 'Regional Junior', surface: 'Indoor Hardwood', month: 'May', venue: 'Lyon Sports Complex' },
       ],
+    accommodation: {
+      types: [
+        { type: 'private', label: 'Private Room', pricePerWeek: 430, maxOccupancy: 1, bathType: 'ensuite', mealsIncluded: true },
+        { type: 'twin', label: 'Twin Shared Room', pricePerWeek: 280, maxOccupancy: 2, bathType: 'ensuite', mealsIncluded: true },
+        { type: 'triple', label: 'Triple Room', pricePerWeek: 220, maxOccupancy: 3, bathType: 'shared', mealsIncluded: true },
+        { type: 'apartment', label: 'Studio Apartment', pricePerWeek: 520, maxOccupancy: 2, bathType: 'ensuite', mealsIncluded: false }
+      ],
+      companionsAllowed: true,
+      childrenAllowed: false,
+      minStay: 1,
+      shuttleToTraining: true,
+      notes: 'Modern residence in Villeurbanne with recovery spa and nutrition planning'
+    },
     videoTour: null
   }
 ,
   {
     id: 'csp-limoges-academy',
+    availability: { status: 'open', nextIntake: '2025-06-15', spotsLeft: 13, responseTime: '48h', privateLessons: true, yearRound: false },
     name: 'CSP Limoges Basketball Academy',
     country: 'France',
     countryFlag: '\uD83C\uDDEB\uD83C\uDDF7',
@@ -897,6 +1011,7 @@ const ACADEMIES = [
 ,
   {
     id: 'virtus-bologna-academy',
+    availability: { status: 'open', nextIntake: '2025-09-01', spotsLeft: 6, responseTime: '24h', privateLessons: false, yearRound: true },
     name: 'Virtus Bologna Basketball Academy',
     country: 'Italy',
     countryFlag: '\uD83C\uDDEE\uD83C\uDDF9',
@@ -957,11 +1072,24 @@ const ACADEMIES = [
         { name: 'EuroLeague Bologna Games', level: 'EuroLeague', surface: 'Indoor Hardwood', month: 'October-April', venue: 'Segafredo Arena' },
         { name: 'Torneo Giovanile Emilia-Romagna', level: 'Regional Junior', surface: 'Indoor Hardwood', month: 'May', venue: 'PalaDozza Bologna' },
       ],
+    accommodation: {
+      types: [
+        { type: 'private', label: 'Private Room', pricePerWeek: 370, maxOccupancy: 1, bathType: 'ensuite', mealsIncluded: true },
+        { type: 'twin', label: 'Twin Shared Room', pricePerWeek: 250, maxOccupancy: 2, bathType: 'ensuite', mealsIncluded: true },
+        { type: 'triple', label: 'Triple Room', pricePerWeek: 190, maxOccupancy: 3, bathType: 'shared', mealsIncluded: true }
+      ],
+      companionsAllowed: true,
+      childrenAllowed: true,
+      minStay: 1,
+      shuttleToTraining: false,
+      notes: 'Historic city centre residence with Italian full-board cuisine'
+    },
     videoTour: null
   }
 ,
   {
     id: 'olimpia-milano-academy',
+    availability: { status: 'closed', nextIntake: '2025-12-01', spotsLeft: null, responseTime: '3-5 days', privateLessons: true, yearRound: false },
     name: 'EA7 Olimpia Milano Basketball Academy',
     country: 'Italy',
     countryFlag: '\uD83C\uDDEE\uD83C\uDDF9',
@@ -1026,6 +1154,7 @@ const ACADEMIES = [
 ,
   {
     id: 'cedevita-olimpija',
+    availability: { status: 'open', nextIntake: '2025-06-01', spotsLeft: 10, responseTime: '24h', privateLessons: true, yearRound: true },
     name: 'Cedevita Olimpija Basketball Academy',
     country: 'Slovenia',
     countryFlag: '\uD83C\uDDF8\uD83C\uDDEE',
@@ -1085,11 +1214,25 @@ const ACADEMIES = [
         { name: 'ABA League', level: 'Regional League', surface: 'Indoor Hardwood', month: 'October-April', venue: 'Stozice Arena' },
         { name: 'Slovenian Basketball League', level: 'National League', surface: 'Indoor Hardwood', month: 'October-May', venue: 'Stozice Arena' },
       ],
+    accommodation: {
+      types: [
+        { type: 'private', label: 'Private Room', pricePerWeek: 300, maxOccupancy: 1, bathType: 'ensuite', mealsIncluded: true },
+        { type: 'twin', label: 'Twin Shared Room', pricePerWeek: 190, maxOccupancy: 2, bathType: 'ensuite', mealsIncluded: true },
+        { type: 'triple', label: 'Triple Room', pricePerWeek: 150, maxOccupancy: 3, bathType: 'shared', mealsIncluded: true },
+        { type: 'dorm', label: 'Dormitory', pricePerWeek: 80, maxOccupancy: 4, bathType: 'shared', mealsIncluded: true }
+      ],
+      companionsAllowed: true,
+      childrenAllowed: true,
+      minStay: 1,
+      shuttleToTraining: true,
+      notes: 'Green surroundings in Ljubljana with lake views and outdoor training areas'
+    },
     videoTour: null
   }
 ,
   {
     id: 'kk-split-academy',
+    availability: { status: 'limited', nextIntake: '2025-09-15', spotsLeft: 2, responseTime: '24h', privateLessons: true, yearRound: false },
     name: 'KK Split Basketball Academy',
     country: 'Croatia',
     countryFlag: '\uD83C\uDDED\uD83C\uDDF7',
@@ -1155,6 +1298,7 @@ const ACADEMIES = [
 ,
   {
     id: 'joventut-badalona',
+    availability: { status: 'open', nextIntake: '2025-05-15', spotsLeft: 11, responseTime: '24h', privateLessons: false, yearRound: true },
     name: 'Joventut Badalona Basketball Academy',
     country: 'Spain',
     countryFlag: '\uD83C\uDDEA\uD83C\uDDF8',
@@ -1219,6 +1363,7 @@ const ACADEMIES = [
 ,
   {
     id: 'valencia-basket-academy',
+    availability: { status: 'open', nextIntake: '2025-06-01', spotsLeft: 20, responseTime: '24h', privateLessons: true, yearRound: true },
     name: 'Valencia Basket Academy',
     country: 'Spain',
     countryFlag: '\uD83C\uDDEA\uD83C\uDDF8',
@@ -1284,6 +1429,7 @@ const ACADEMIES = [
 ,
   {
     id: 'lietuvos-rytas',
+    availability: { status: 'open', nextIntake: '2025-09-01', spotsLeft: 18, responseTime: '24h', privateLessons: false, yearRound: true },
     name: 'BC Lietuvos Rytas Basketball Academy',
     country: 'Lithuania',
     countryFlag: '\uD83C\uDDF1\uD83C\uDDF9',
@@ -1348,6 +1494,7 @@ const ACADEMIES = [
 ,
   {
     id: 'ttt-riga-academy',
+    availability: { status: 'open', nextIntake: '2025-07-01', spotsLeft: 14, responseTime: '48h', privateLessons: true, yearRound: true },
     name: 'TTT Riga Basketball Academy',
     country: 'Latvia',
     countryFlag: '\uD83C\uDDF1\uD83C\uDDFB',
@@ -1412,6 +1559,7 @@ const ACADEMIES = [
 ,
   {
     id: 'cska-moscow-basketball',
+    availability: { status: 'open', nextIntake: '2025-06-01', spotsLeft: 6, responseTime: '24h', privateLessons: true, yearRound: true },
     name: 'CSKA Moscow Basketball Academy',
     country: 'Russia',
     countryFlag: '\uD83C\uDDF7\uD83C\uDDFA',
@@ -1476,6 +1624,7 @@ const ACADEMIES = [
 ,
   {
     id: 'unicaja-basketball',
+    availability: { status: 'open', nextIntake: '2025-06-01', spotsLeft: 18, responseTime: '24h', privateLessons: true, yearRound: true },
     name: 'Unicaja Basketball Academy',
     country: 'Spain',
     countryFlag: '\uD83C\uDDEA\uD83C\uDDF8',
@@ -1541,6 +1690,7 @@ const ACADEMIES = [
 ,
   {
     id: 'maccabi-tel-aviv-academy',
+    availability: { status: 'open', nextIntake: '2025-08-01', spotsLeft: 9, responseTime: '3-5 days', privateLessons: true, yearRound: false },
     name: 'Maccabi Tel Aviv Basketball Academy',
     country: 'Israel',
     countryFlag: '\uD83C\uDDEE\uD83C\uDDF1',
