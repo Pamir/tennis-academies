@@ -76,6 +76,11 @@ const ACADEMIES = [
         { name: "Serbia Open Junior", level: "ITF Junior", surface: "Clay", month: "June", venue: "TC Novak" },
         { name: "Serbian National Championships", level: "National", surface: "Clay", month: "September", venue: "TC Belgrade" }
       ],
+    upcomingCamps: [
+      { name: "Summer Intensive Camp", startDate: "2025-07-14", endDate: "2025-07-25", price: "€1,200", level: "Advanced" },
+      { name: "Spring Junior Development", startDate: "2025-04-07", endDate: "2025-04-18", price: "€950", level: "Intermediate" },
+      { name: "Autumn All-Levels Clinic", startDate: "2025-10-06", endDate: "2025-10-17", price: "€800", level: "All Levels" }
+    ],
     videoTour: null
   },
   {
@@ -2077,6 +2082,11 @@ const ACADEMIES = [
         { name: "Mallorca Championships", level: "ATP 250", surface: "Grass", month: "June", venue: "Santa Ponsa" },
         { name: "Barcelona Open Banc Sabadell", level: "ATP 500", surface: "Clay", month: "April", venue: "Barcelona" }
       ],
+    upcomingCamps: [
+      { name: "Rafa Nadal Summer Experience", startDate: "2025-07-07", endDate: "2025-07-18", price: "€2,800", level: "All Levels" },
+      { name: "Easter High Performance Camp", startDate: "2025-04-14", endDate: "2025-04-25", price: "€2,200", level: "Advanced" },
+      { name: "October Half-Term Camp", startDate: "2025-10-20", endDate: "2025-10-31", price: "€1,800", level: "Intermediate" }
+    ],
     videoTour: null
   },
   {
@@ -2144,6 +2154,11 @@ const ACADEMIES = [
         { name: "Open de Nice Côte d'Azur", level: "ATP 250", surface: "Clay", month: "May", venue: "Nice" },
         { name: "French Open", level: "Grand Slam", surface: "Clay", month: "May-June", venue: "Paris" }
       ],
+    upcomingCamps: [
+      { name: "Elite Performance Camp", startDate: "2025-06-16", endDate: "2025-06-27", price: "€2,500", level: "Advanced" },
+      { name: "Summer Discovery Camp", startDate: "2025-08-04", endDate: "2025-08-15", price: "€1,900", level: "Beginner" },
+      { name: "Pre-Season Training Block", startDate: "2025-03-10", endDate: "2025-03-21", price: "€2,100", level: "Intermediate" }
+    ],
     videoTour: null
   },
   {
@@ -2211,6 +2226,10 @@ const ACADEMIES = [
         { name: "Mutua Madrid Open", level: "ATP 1000", surface: "Clay", month: "May", venue: "Madrid" },
         { name: "French Open", level: "Grand Slam", surface: "Clay", month: "May-June", venue: "Paris" }
       ],
+    upcomingCamps: [
+      { name: "Championship Preparation Camp", startDate: "2025-05-12", endDate: "2025-05-23", price: "€1,800", level: "Advanced" },
+      { name: "Summer Tennis & Language Camp", startDate: "2025-07-21", endDate: "2025-08-01", price: "€2,400", level: "All Levels" }
+    ],
     videoTour: null
   },
   {
@@ -2277,6 +2296,10 @@ const ACADEMIES = [
         { name: "Mutua Madrid Open", level: "ATP 1000", surface: "Clay", month: "May", venue: "Madrid" },
         { name: "Barcelona Open Banc Sabadell", level: "ATP 500", surface: "Clay", month: "April", venue: "Barcelona" }
       ],
+    upcomingCamps: [
+      { name: "Ferrero Summer Academy", startDate: "2025-07-28", endDate: "2025-08-08", price: "€2,600", level: "Advanced" },
+      { name: "Junior Development Week", startDate: "2025-09-15", endDate: "2025-09-26", price: "€1,400", level: "Beginner" }
+    ],
     videoTour: null
   },
   {
@@ -2538,6 +2561,11 @@ const ACADEMIES = [
         { name: "Italian Open", level: "ATP 1000", surface: "Clay", month: "May", venue: "Rome" },
         { name: "Internazionali di Tennis Città di Sanremo", level: "ATP Challenger", surface: "Clay", month: "Various", venue: "Sanremo" }
       ],
+    upcomingCamps: [
+      { name: "Italian Riviera Tennis Camp", startDate: "2025-06-02", endDate: "2025-06-13", price: "€2,000", level: "Intermediate" },
+      { name: "Winter Intensive Training", startDate: "2025-12-01", endDate: "2025-12-12", price: "€1,700", level: "Advanced" },
+      { name: "Spring Beginner Camp", startDate: "2025-03-24", endDate: "2025-04-04", price: "€1,200", level: "Beginner" }
+    ],
     videoTour: null
   },
   {

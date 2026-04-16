@@ -178,6 +178,11 @@ const ACADEMIES = [
                 { name: 'Copa Catalunya', level: 'Regional', surface: 'Natural Grass', month: 'May', venue: 'Various Catalonia venues' },
                 { name: 'LaLiga Promises', level: 'National Youth', surface: 'Artificial Turf', month: 'March', venue: 'Villarreal' }
             ],
+        upcomingCamps: [
+            { name: "La Masia Summer Experience", startDate: "2025-07-07", endDate: "2025-07-18", price: "€2,500", level: "Advanced" },
+            { name: "Easter Football Camp", startDate: "2025-04-14", endDate: "2025-04-18", price: "€1,200", level: "All Levels" },
+            { name: "Autumn Skills Clinic", startDate: "2025-10-27", endDate: "2025-10-31", price: "€900", level: "Intermediate" }
+        ],
         videoTour: null
     },
     {
@@ -709,6 +714,10 @@ const ACADEMIES = [
                 { name: 'KNVB Cup Youth', level: 'National Youth', surface: 'Natural Grass', month: 'May', venue: 'Various' },
                 { name: 'Marveld Tournament', level: 'International Youth', surface: 'Natural Grass', month: 'August', venue: 'Groenlo' }
             ],
+        upcomingCamps: [
+            { name: "Ajax Summer Camp", startDate: "2025-07-14", endDate: "2025-07-25", price: "€1,800", level: "Intermediate" },
+            { name: "Total Football Masterclass", startDate: "2025-08-18", endDate: "2025-08-22", price: "€1,200", level: "Advanced" }
+        ],
         videoTour: null
     },
     {
@@ -1058,6 +1067,11 @@ const ACADEMIES = [
                 { name: 'DFB Pokal Junioren', level: 'National Youth', surface: 'Natural Grass', month: 'May', venue: 'Various' },
                 { name: 'Uli Hoeness Cup', level: 'International Youth', surface: 'Natural Grass', month: 'August', venue: 'FC Bayern Campus' }
             ],
+        upcomingCamps: [
+            { name: "FC Bayern Youth Camp", startDate: "2025-06-16", endDate: "2025-06-27", price: "€2,000", level: "All Levels" },
+            { name: "Winter Goalkeeper Camp", startDate: "2025-12-15", endDate: "2025-12-19", price: "€800", level: "Intermediate" },
+            { name: "Spring Development Camp", startDate: "2025-03-24", endDate: "2025-04-04", price: "€1,500", level: "Beginner" }
+        ],
         videoTour: null
     },
     {
@@ -1401,6 +1415,10 @@ const ACADEMIES = [
                 { name: 'Premier League 2', level: 'National Youth', surface: 'Natural Grass', month: 'August-May', venue: 'Various' },
                 { name: 'UEFA Youth League', level: 'International Youth', surface: 'Natural Grass', month: 'September-May', venue: 'Various' }
             ],
+        upcomingCamps: [
+            { name: "Chelsea Foundation Camp", startDate: "2025-08-04", endDate: "2025-08-15", price: "€1,600", level: "Beginner" },
+            { name: "Half-Term Technical Camp", startDate: "2025-05-26", endDate: "2025-05-30", price: "€700", level: "All Levels" }
+        ],
         videoTour: null
     },
     {
@@ -1743,6 +1761,10 @@ const ACADEMIES = [
                 { name: 'Torneo di Viareggio', level: 'International Youth', surface: 'Natural Grass', month: 'March', venue: 'Viareggio' },
                 { name: 'Campionato Primavera', level: 'National Youth', surface: 'Natural Grass', month: 'August-May', venue: 'Various' }
             ],
+        upcomingCamps: [
+            { name: "Juventus Summer Academy", startDate: "2025-06-30", endDate: "2025-07-11", price: "€2,200", level: "Advanced" },
+            { name: "Winter Technical Camp", startDate: "2025-11-03", endDate: "2025-11-14", price: "€1,400", level: "Intermediate" }
+        ],
         videoTour: null
     },
     {
@@ -2086,6 +2108,11 @@ const ACADEMIES = [
                 { name: 'Torneio Internacional de Lisboa', level: 'International Youth', surface: 'Natural Grass', month: 'June', venue: 'Lisbon' },
                 { name: 'Campeonato Nacional de Juniores', level: 'National Youth', surface: 'Natural Grass', month: 'August-May', venue: 'Various' }
             ],
+        upcomingCamps: [
+            { name: "Benfica Summer School", startDate: "2025-07-21", endDate: "2025-08-01", price: "€1,800", level: "All Levels" },
+            { name: "Spring Striker Camp", startDate: "2025-04-07", endDate: "2025-04-11", price: "€650", level: "Intermediate" },
+            { name: "Autumn Elite Camp", startDate: "2025-09-15", endDate: "2025-09-26", price: "€1,500", level: "Advanced" }
+        ],
         videoTour: null
     },
     {

@@ -70,6 +70,11 @@ const ACADEMIES = [
       { name: "The Open Championship", level: "Major", surface: "Links", month: "July", venue: "St Andrews Old Course" },
       { name: "Alfred Dunhill Links Championship", level: "European Tour", surface: "Links", month: "October", venue: "St Andrews Old Course" }
     ],
+    upcomingCamps: [
+      { name: "Links Mastery Camp", startDate: "2025-06-09", endDate: "2025-06-13", price: "€1,800", level: "Advanced" },
+      { name: "Summer Golf Intensive", startDate: "2025-07-21", endDate: "2025-07-25", price: "€1,500", level: "Intermediate" },
+      { name: "Autumn Short Game Clinic", startDate: "2025-09-22", endDate: "2025-09-26", price: "€1,200", level: "All Levels" }
+    ],
     videoTour: null
   },  {
     id: "valderrama",
@@ -142,6 +147,10 @@ const ACADEMIES = [
       { name: "Andalucia Masters", level: "European Tour", surface: "Parkland", month: "October", venue: "Real Club Valderrama" },
       { name: "Costa del Sol Amateur Championship", level: "Amateur", surface: "Parkland", month: "June", venue: "Valderrama" }
     ],
+    upcomingCamps: [
+      { name: "Mediterranean Golf Week", startDate: "2025-05-05", endDate: "2025-05-09", price: "€2,200", level: "Advanced" },
+      { name: "Winter Escape Camp", startDate: "2025-11-10", endDate: "2025-11-14", price: "€1,600", level: "Intermediate" }
+    ],
     videoTour: null
   },
   {
@@ -211,6 +220,10 @@ const ACADEMIES = [
     nearbyTournaments: [
       { name: "Portugal Masters", level: "European Tour", surface: "Parkland", month: "September", venue: "Dom Pedro Victoria Golf Course" },
       { name: "Portuguese Amateur Championship", level: "Amateur", surface: "Parkland", month: "July", venue: "Various venues" }
+    ],
+    upcomingCamps: [
+      { name: "Algarve Spring Camp", startDate: "2025-03-17", endDate: "2025-03-21", price: "€1,600", level: "All Levels" },
+      { name: "Summer Junior Golf Camp", startDate: "2025-08-18", endDate: "2025-08-22", price: "€1,100", level: "Beginner" }
     ],
     videoTour: null
   },
@@ -283,6 +296,10 @@ const ACADEMIES = [
     nearbyTournaments: [
       { name: "BMW PGA Championship", level: "European Tour", surface: "Parkland", month: "May", venue: "Wentworth West Course" },
       { name: "English Amateur Championship", level: "Amateur", surface: "Heathland", month: "June", venue: "Various venues" }
+    ],
+    upcomingCamps: [
+      { name: "Wentworth Summer School", startDate: "2025-08-11", endDate: "2025-08-15", price: "€2,400", level: "All Levels" },
+      { name: "Spring Swing Camp", startDate: "2025-04-14", endDate: "2025-04-18", price: "€1,900", level: "Beginner" }
     ],
     videoTour: null
   },
@@ -418,6 +435,10 @@ const ACADEMIES = [
     nearbyTournaments: [
       { name: "Evian Championship", level: "LPGA Major", surface: "Parkland", month: "July", venue: "Evian Resort GC" },
       { name: "French Amateur Championship", level: "Amateur", surface: "Various", month: "June", venue: "Various venues" }
+    ],
+    upcomingCamps: [
+      { name: "Evian Ladies Golf Camp", startDate: "2025-05-19", endDate: "2025-05-23", price: "€2,500", level: "Intermediate" },
+      { name: "Summer Alpine Golf Retreat", startDate: "2025-07-07", endDate: "2025-07-11", price: "€2,800", level: "All Levels" }
     ],
     videoTour: null
   },
@@ -1139,6 +1160,11 @@ const ACADEMIES = [
     nearbyTournaments: [
       { name: "Spanish Open", level: "European Tour", surface: "Parkland", month: "October", venue: "Various Spanish courses" },
       { name: "Catalunya Championship", level: "Challenge Tour", surface: "Parkland", month: "April", venue: "PGA Catalunya" }
+    ],
+    upcomingCamps: [
+      { name: "PGA Catalunya Performance Camp", startDate: "2025-06-23", endDate: "2025-06-27", price: "€2,000", level: "Advanced" },
+      { name: "Beginner Golf Discovery", startDate: "2025-09-08", endDate: "2025-09-12", price: "€900", level: "Beginner" },
+      { name: "Winter Training Retreat", startDate: "2025-12-08", endDate: "2025-12-12", price: "€1,400", level: "Intermediate" }
     ],
     videoTour: null
   },

@@ -69,6 +69,11 @@ const ACADEMIES = [
         { name: 'EuroLeague Final Four', level: 'EuroLeague', surface: 'Indoor Hardwood', month: 'May', venue: 'Various European Venues' },
         { name: 'Torneo Junior Madrid', level: 'National Junior', surface: 'Indoor Hardwood', month: 'March', venue: 'Polideportivo Madrid' },
       ],
+    upcomingCamps: [
+      { name: "Real Madrid Summer Basketball Camp", startDate: "2025-07-07", endDate: "2025-07-18", price: "€2,000", level: "Advanced" },
+      { name: "Easter Basketball Clinic", startDate: "2025-04-14", endDate: "2025-04-18", price: "€800", level: "All Levels" },
+      { name: "Autumn Shooting Camp", startDate: "2025-10-13", endDate: "2025-10-24", price: "€1,200", level: "Intermediate" }
+    ],
     videoTour: null
   }
 ,
@@ -280,6 +285,10 @@ const ACADEMIES = [
         { name: 'Greek A1 League', level: 'A1 League', surface: 'Indoor Hardwood', month: 'October-May', venue: 'OAKA Olympic Indoor Hall' },
         { name: 'Acropolis Basketball Tournament', level: 'International Friendly', surface: 'Indoor Hardwood', month: 'August', venue: 'OAKA Athens' },
       ],
+    upcomingCamps: [
+      { name: "Olympiacos Summer Camp", startDate: "2025-06-23", endDate: "2025-07-04", price: "€1,500", level: "All Levels" },
+      { name: "Mediterranean Basketball Week", startDate: "2025-08-11", endDate: "2025-08-22", price: "€1,300", level: "Intermediate" }
+    ],
     videoTour: null
   }
 ,
@@ -350,6 +359,10 @@ const ACADEMIES = [
         { name: 'EuroLeague Istanbul Rounds', level: 'EuroLeague', surface: 'Indoor Hardwood', month: 'October-April', venue: 'Ulker Sports Arena' },
         { name: 'Istanbul Youth Basketball Cup', level: 'National Junior', surface: 'Indoor Hardwood', month: 'June', venue: 'Various Istanbul Venues' },
       ],
+    upcomingCamps: [
+      { name: "Istanbul Basketball Camp", startDate: "2025-07-14", endDate: "2025-07-25", price: "€1,100", level: "Beginner" },
+      { name: "Winter Skills Intensive", startDate: "2025-12-01", endDate: "2025-12-12", price: "€900", level: "Advanced" }
+    ],
     videoTour: null
   }
 ,
@@ -478,6 +491,11 @@ const ACADEMIES = [
         { name: 'ABA League', level: 'Regional League', surface: 'Indoor Hardwood', month: 'October-April', venue: 'Aleksandar Nikolic Hall' },
         { name: 'Serbian Basketball League', level: 'National League', surface: 'Indoor Hardwood', month: 'October-May', venue: 'Aleksandar Nikolic Hall' },
       ],
+    upcomingCamps: [
+      { name: "Belgrade Basketball Summer Camp", startDate: "2025-06-09", endDate: "2025-06-20", price: "€800", level: "All Levels" },
+      { name: "Autumn Guard Skills Camp", startDate: "2025-09-22", endDate: "2025-10-03", price: "€700", level: "Advanced" },
+      { name: "Spring Youth Development", startDate: "2025-03-17", endDate: "2025-03-28", price: "€650", level: "Beginner" }
+    ],
     videoTour: null
   }
 ,
@@ -607,6 +625,10 @@ const ACADEMIES = [
         { name: 'EuroLeague Kaunas Games', level: 'EuroLeague', surface: 'Indoor Hardwood', month: 'October-April', venue: 'Zalgiris Arena' },
         { name: 'Baltic Junior Championship', level: 'International Junior', surface: 'Indoor Hardwood', month: 'June', venue: 'Kaunas Sports Hall' },
       ],
+    upcomingCamps: [
+      { name: "Zalgiris Elite Camp", startDate: "2025-07-28", endDate: "2025-08-08", price: "€1,000", level: "Advanced" },
+      { name: "Summer Fun Basketball", startDate: "2025-06-16", endDate: "2025-06-27", price: "€750", level: "Beginner" }
+    ],
     videoTour: null
   }
 ,
@@ -736,6 +758,11 @@ const ACADEMIES = [
         { name: 'German Basketball Bundesliga', level: 'BBL', surface: 'Indoor Hardwood', month: 'October-May', venue: 'Mercedes-Benz Arena' },
         { name: 'ALBA Berlin Junior Cup', level: 'International Junior', surface: 'Indoor Hardwood', month: 'January', venue: 'ALBA Youth Center' },
       ],
+    upcomingCamps: [
+      { name: "ALBA Berlin Youth Camp", startDate: "2025-08-04", endDate: "2025-08-15", price: "€1,400", level: "Intermediate" },
+      { name: "Winter Fundamentals Clinic", startDate: "2025-11-17", endDate: "2025-11-28", price: "€1,100", level: "Beginner" },
+      { name: "Spring 3-on-3 Camp", startDate: "2025-05-12", endDate: "2025-05-23", price: "€900", level: "All Levels" }
+    ],
     videoTour: null
   }
 ,
