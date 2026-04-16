@@ -53,6 +53,46 @@ const SPORT_CONFIG = {
   }
 };
 
+const SPORT_PAGES = {
+  tennis: 'tennis.html',
+  golf: 'golf.html',
+  football: 'football.html',
+  basketball: 'basketball.html'
+};
+
+const SPORT_DATA_FILES = {
+  tennis: './data.js',
+  golf: './golf-data.js',
+  football: './football-data.js',
+  basketball: './basketball-data.js'
+};
+
+let _crossSportCache = null;
+
+function loadCrossSportData() {
+  if (_crossSportCache) return _crossSportCache;
+  const currentSport = getSportType();
+  const otherSports = Object.keys(SPORT_DATA_FILES).filter(s => s !== currentSport);
+  _crossSportCache = Promise.all(otherSports.map(sport => {
+    return fetch(SPORT_DATA_FILES[sport])
+      .then(r => { if (!r.ok) throw new Error(r.status); return r.text(); })
+      .then(text => {
+        const extracted = {};
+        const fn = new Function('extracted', text + '\nextracted.academies = typeof ACADEMIES !== "undefined" ? ACADEMIES : [];');
+        fn(extracted);
+        return {
+          sport,
+          icon: SPORT_CONFIG[sport].icon,
+          name: SPORT_CONFIG[sport].name,
+          page: SPORT_PAGES[sport],
+          academies: extracted.academies
+        };
+      })
+      .catch(() => null);
+  })).then(results => results.filter(Boolean));
+  return _crossSportCache;
+}
+
 function getSportType() {
   return (typeof SPORT_TYPE !== 'undefined') ? SPORT_TYPE : 'tennis';
 }
@@ -685,8 +725,50 @@ function buildDetails(a) {
   if (a.website) {
     html += `<div class="detail-section"><h4>Website</h4><a href="${escapeHTML(a.website)}" target="_blank" rel="noopener">${escapeHTML(a.website)}</a></div>`;
   }
+  // Nearby cross-sport section
+  const nearbyId = `nearby-${a.id}`;
+  html += `<div class="detail-section nearby-section" id="${nearbyId}"><h4>🏟️ Nearby Academies in Other Sports</h4><p><em>Loading...</em></p></div>`;
+
   // Action buttons
   html += buildDetailActions(a);
+
+  // Load cross-sport data after render
+  setTimeout(() => {
+    const container = document.getElementById(nearbyId);
+    if (!container) return;
+    loadCrossSportData().then(sportData => {
+      const nearby = [];
+      sportData.forEach(sd => {
+        sd.academies.forEach(other => {
+          if (typeof other.lat !== 'number' || typeof other.lng !== 'number') return;
+          const dist = haversineDistance(a.lat, a.lng, other.lat, other.lng);
+          if (dist <= 50) {
+            nearby.push({ sport: sd.sport, icon: sd.icon, sportName: sd.name, page: sd.page, name: other.name, id: other.id, distance: dist });
+          }
+        });
+      });
+      nearby.sort((x, y) => x.distance - y.distance);
+      const top = nearby.slice(0, 3);
+      if (top.length === 0) {
+        container.innerHTML = '<h4>🏟️ Nearby Academies in Other Sports</h4><p class="nearby-empty">No other sport academies within 50 km</p>';
+      } else {
+        let nh = '<h4>🏟️ Nearby Academies in Other Sports</h4>';
+        top.forEach(n => {
+          const km = n.distance < 1 ? '< 1 km' : Math.round(n.distance) + ' km';
+          nh += `<a href="${n.page}?highlight=${encodeURIComponent(n.id)}" class="nearby-item nearby-link">`;
+          nh += `<span class="nearby-icon">${n.icon}</span>`;
+          nh += `<span class="nearby-name">${escapeHTML(n.name)}</span>`;
+          nh += `<span class="nearby-distance">${km}</span>`;
+          nh += `</a>`;
+        });
+        container.innerHTML = nh;
+      }
+    }).catch(() => {
+      const container2 = document.getElementById(nearbyId);
+      if (container2) container2.innerHTML = '<h4>🏟️ Nearby Academies in Other Sports</h4><p class="nearby-empty">Could not load nearby academies</p>';
+    });
+  }, 0);
+
   return html;
 }
 
