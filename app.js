@@ -169,16 +169,19 @@ function initLanguageSelector() {
 
 /* ===== Init ===== */
 document.addEventListener('DOMContentLoaded', () => {
-  populateCountryDropdown();
-  populateSurfaceDropdown();
-  loadStateFromHash();
-  bindEvents();
-  updateFavButton();
-  applyAndRender();
-  animateStats();
-  renderNews();
-  initLanguageSelector();
-  updateSportLabels();
+  const initSteps = [
+    populateCountryDropdown,
+    populateSurfaceDropdown,
+    loadStateFromHash,
+    bindEvents,
+    updateFavButton,
+    applyAndRender,
+    animateStats,
+    renderNews,
+    initLanguageSelector,
+    updateSportLabels
+  ];
+  initSteps.forEach(fn => { try { fn(); } catch(e) { console.error('Init error in ' + fn.name + ':', e); } });
 });
 
 /* ===== Stats Dashboard ===== */
@@ -196,6 +199,7 @@ function animateStats() {
     const key = el.getAttribute('data-stat');
     const target = stats[key] || 0;
     el.setAttribute('data-target', target);
+    el.textContent = target; // Show immediately as fallback
   });
 
   const statsBar = document.getElementById('statsBar');
