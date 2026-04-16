@@ -780,6 +780,7 @@ function buildDetailActions(a) {
   if (a.website) {
     html += `<a href="${escapeHTML(a.website)}" target="_blank" rel="noopener" class="btn-visit">🌐 Visit Website</a>`;
   }
+  html += `<button class="btn-qr" onclick="showQRCode('${a.id}')" aria-label="Share QR Code for ${escapeHTML(a.name)}">📱 Share QR Code</button>`;
   html += `<button class="btn-calculator" onclick="showTripCalculator('${a.id}')" aria-label="Estimate trip cost">🧮 Trip Cost</button>`;
   const partners = getPartnerRequests();
   const partnerActive = partners[a.id];
@@ -799,6 +800,41 @@ function shareAcademy(id) {
   } else {
     navigator.clipboard.writeText(url).then(() => showToast('Link copied!')).catch(() => showToast('Could not copy'));
   }
+}
+
+function showQRCode(id) {
+  const a = ACADEMIES.find(ac => ac.id === id);
+  if (!a) return;
+  const shareUrl = window.location.origin + window.location.pathname + '#academy=' + id;
+  const qrApiUrl = 'https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=' + encodeURIComponent(shareUrl);
+
+  // Remove existing modal if any
+  const existing = document.getElementById('qrModal');
+  if (existing) existing.remove();
+
+  const modal = document.createElement('div');
+  modal.id = 'qrModal';
+  modal.className = 'qr-modal';
+  modal.innerHTML = `
+    <div class="qr-modal-content">
+      <button class="qr-modal-close" aria-label="Close QR code">&times;</button>
+      <h3>${escapeHTML(a.name)}</h3>
+      <p>Scan to share this academy</p>
+      <img class="qr-code-img" src="${qrApiUrl}" alt="QR Code for ${escapeHTML(a.name)}" width="200" height="200">
+      <button class="btn-copy-link" aria-label="Copy academy link">📋 Copy Link</button>
+    </div>
+  `;
+  document.body.appendChild(modal);
+
+  modal.querySelector('.qr-modal-close').addEventListener('click', () => modal.remove());
+  modal.addEventListener('click', (e) => { if (e.target === modal) modal.remove(); });
+  modal.querySelector('.btn-copy-link').addEventListener('click', () => {
+    navigator.clipboard.writeText(shareUrl).then(() => {
+      showToast('Link copied!');
+    }).catch(() => {
+      showToast('Could not copy link');
+    });
+  });
 }
 
 function shareComparison() {
