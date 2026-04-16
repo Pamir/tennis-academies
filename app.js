@@ -583,6 +583,7 @@ function buildDetails(a) {
   if (Array.isArray(a.upcomingCamps) && a.upcomingCamps.length) {
     html += renderUpcomingCamps(a.upcomingCamps);
   }
+  html += renderCostCalculator(a);
   if (a.coaches.length) {
     html += '<div class="detail-section"><h4>Coaches</h4><ul>';
     a.coaches.forEach(c => {
@@ -1543,6 +1544,76 @@ function saveUserRating(id, rating) {
   ratings[id] = rating;
   localStorage.setItem(getSportConfig().storagePrefix + '-ratings', JSON.stringify(ratings));
 }
+/* ===== Trip Cost Calculator ===== */
+function getTravelEstimate(country) {
+  const eastern = ['Serbia','Croatia','Bulgaria','Romania','Hungary','Czech Republic','Poland','Montenegro','Bosnia','North Macedonia','Slovakia','Slovenia'];
+  if (eastern.some(c => country && country.includes(c))) return 200;
+  return 350;
+}
+
+function renderCostCalculator(a) {
+  if (a.priceRange.from === null) {
+    return '<div class="detail-section cost-calculator"><h4>💰 Trip Cost Calculator</h4><p>Contact academy for pricing</p></div>';
+  }
+  const calcId = 'calc-' + a.id;
+  let html = '<div class="detail-section cost-calculator" id="' + calcId + '">';
+  html += '<h4>💰 Trip Cost Calculator</h4>';
+  html += '<div class="cost-calc-controls">';
+  html += '<div class="cost-calc-row"><label>Duration: <strong class="calc-weeks-label">4 weeks</strong></label>';
+  html += '<input type="range" class="cost-slider" min="1" max="12" value="4" data-calc-field="weeks"></div>';
+  html += '<div class="cost-calc-row"><label>Accommodation:</label>';
+  html += '<select data-calc-field="accom"><option value="academy">Academy housing</option><option value="external">External</option></select></div>';
+  html += '<div class="cost-calc-row"><label><input type="checkbox" data-calc-field="travel" checked> Include travel estimate</label></div>';
+  html += '</div>';
+  html += '<div class="cost-breakdown"></div>';
+  html += '</div>';
+
+  const monthlyFrom = a.priceRange.from;
+  const accomBase = 600;
+  const accomExternal = 400;
+  const travelBase = getTravelEstimate(a.country);
+  const travelMax = travelBase + 150;
+  const country = a.country || '';
+
+  // Attach behavior after render via setTimeout
+  setTimeout(() => {
+    const container = document.getElementById(calcId);
+    if (!container) return;
+    const slider = container.querySelector('[data-calc-field="weeks"]');
+    const accomSel = container.querySelector('[data-calc-field="accom"]');
+    const travelChk = container.querySelector('[data-calc-field="travel"]');
+    const weekLabel = container.querySelector('.calc-weeks-label');
+    const breakdown = container.querySelector('.cost-breakdown');
+
+    function update() {
+      const weeks = parseInt(slider.value, 10);
+      weekLabel.textContent = weeks + ' week' + (weeks !== 1 ? 's' : '');
+      const trainingFee = Math.round(monthlyFrom * weeks / 4.33);
+      const accomWeekly = accomSel.value === 'academy' ? Math.round(accomBase / 4.33) : Math.round(accomExternal / 4.33);
+      const accomTotal = accomWeekly * weeks;
+      const includeTravel = travelChk.checked;
+      const travelMid = Math.round((travelBase + travelMax) / 2);
+      let total = trainingFee + accomTotal;
+      let rows = '';
+      rows += '<div class="cost-row"><span>Training fees (' + weeks + ' wk' + (weeks !== 1 ? 's' : '') + ')</span><span>' + convertPrice(trainingFee) + '</span></div>';
+      rows += '<div class="cost-row"><span>Accommodation (' + (accomSel.value === 'academy' ? 'Academy' : 'External') + ')</span><span>' + convertPrice(accomTotal) + '</span></div>';
+      if (includeTravel) {
+        total += travelMid;
+        rows += '<div class="cost-row"><span>Travel estimate</span><span>' + convertPrice(travelBase) + ' – ' + convertPrice(travelMax) + '</span></div>';
+      }
+      rows += '<div class="cost-total"><span>Total estimated cost</span><span>' + convertPrice(total) + '</span></div>';
+      breakdown.innerHTML = rows;
+    }
+
+    slider.addEventListener('input', update);
+    accomSel.addEventListener('change', update);
+    travelChk.addEventListener('change', update);
+    update();
+  }, 0);
+
+  return html;
+}
+
 /* ===== Upcoming Camps Renderer ===== */
 function renderUpcomingCamps(camps) {
   const sorted = camps.slice().sort((a, b) => a.startDate.localeCompare(b.startDate));

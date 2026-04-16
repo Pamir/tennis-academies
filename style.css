@@ -1529,3 +1529,75 @@ body {
   background: var(--accent-dark);
   color: #111;
 }
+
+/* ===== Trip Cost Calculator ===== */
+.cost-calculator {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1rem;
+  background: var(--card-bg);
+}
+.cost-calc-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin-bottom: 0.8rem;
+}
+.cost-calc-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+.cost-calc-row label {
+  font-size: 0.88rem;
+  color: var(--text);
+}
+.cost-calc-row select {
+  padding: 0.25rem 0.5rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--bg);
+  color: var(--text);
+  font-size: 0.85rem;
+}
+.cost-slider {
+  width: 100%;
+  max-width: 260px;
+  accent-color: var(--accent-dark);
+  cursor: pointer;
+}
+.cost-breakdown {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+.cost-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.3rem 0;
+  font-size: 0.88rem;
+  color: var(--text);
+  border-bottom: 1px dashed var(--border);
+}
+.cost-total {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 0 0.2rem;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--primary);
+  border-top: 2px solid var(--accent-dark);
+  margin-top: 0.2rem;
+}
+[data-theme="dark"] .cost-total {
+  color: var(--accent);
+}
+[data-theme="dark"] .cost-calculator {
+  border-color: var(--border);
+  background: var(--card-bg);
+}
+@media (max-width: 600px) {
+  .cost-slider { max-width: 100%; }
+  .cost-calc-row { flex-direction: column; align-items: flex-start; }
+}
