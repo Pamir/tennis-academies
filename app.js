@@ -146,9 +146,9 @@ let mapMarkers = [];
 function updateStaticText() {
   const config = getSportConfig();
   const h1 = document.querySelector('.site-header h1');
-  if (h1) h1.textContent = config.icon + ' ' + t('title');
+  if (h1) h1.textContent = config.icon + ' ' + t('title').replace('{sport}', config.name);
   const sub = document.querySelector('.site-header .subtitle');
-  if (sub) sub.textContent = t('subtitle');
+  if (sub) sub.textContent = t('subtitle').replace('{sport}', config.name.toLowerCase());
 }
 
 function initLanguageSelector() {
@@ -687,7 +687,7 @@ function shareAcademy(id) {
   const a = ACADEMIES.find(ac => ac.id === id);
   if (!a) return;
   const url = window.location.origin + window.location.pathname + '#academy=' + id;
-  const title = a.name + ' — East European Tennis Academies';
+  const title = a.name + ' — European ' + getSportConfig().name + ' Academies';
   if (navigator.share) {
     navigator.share({ title, text: `Check out ${a.name} in ${a.city}, ${a.country}`, url }).catch(() => {});
   } else {
@@ -983,7 +983,7 @@ function bindEvents() {
     const duration = document.getElementById('inquiryDuration').value;
     const msg = document.getElementById('inquiryMessage').value;
     const subject = encodeURIComponent(`Inquiry about ${a.name}`);
-    const body = encodeURIComponent(`Hi,\n\nI found ${a.name} on East European Tennis Academies and I'm interested in learning more.\n\nName: ${name}\nEmail: ${email}\nLevel: ${level}\nDuration: ${duration}\n\n${msg}\n\nBest regards,\n${name}`);
+    const body = encodeURIComponent(`Hi,\n\nI found ${a.name} on European ${getSportConfig().name} Academies and I'm interested in learning more.\n\nName: ${name}\nEmail: ${email}\nLevel: ${level}\nDuration: ${duration}\n\n${msg}\n\nBest regards,\n${name}`);
     window.location.href = `mailto:${a.contact || ''}?subject=${subject}&body=${body}`;
     closeInquiry();
     showToast('Opening email client...');
@@ -1473,12 +1473,9 @@ function togglePartnerRequest(id) {
 /* ===== News Feed ===== */
 if (typeof NEWS_ITEMS === 'undefined') {
   var NEWS_ITEMS = [
-    { date: "2026-04-15", text: "Tipsarević Tennis Academy announces new summer camp dates", academy: "tipsarevic" },
-    { date: "2026-04-10", text: "Belgrade Open 2026 draws announced — several academy players competing", academy: null },
-    { date: "2026-04-05", text: "Love4Tennis Academy opens new indoor courts in Bratislava", academy: "love4tennis" },
-    { date: "2026-03-28", text: "Ilirija Tennis Academy launches Tennis + Nature program for 2026 season", academy: "ilirija" },
-    { date: "2026-03-20", text: "Czech Republic academies report record junior enrollment", academy: null },
-    { date: "2026-03-15", text: "New partnership: PZTA and local Belgrade schools for junior development", academy: "pzta" }
+    { date: "2026-04-15", text: "European sports academies see record enrollment for 2026 season", academy: null },
+    { date: "2026-04-10", text: "New training methodologies adopted across European academies", academy: null },
+    { date: "2026-04-05", text: "Summer camp registrations now open at top academies", academy: null }
   ];
 }
 

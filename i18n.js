@@ -1,7 +1,7 @@
 const I18N = {
   en: {
-    title: "East European Tennis Academies",
-    subtitle: "Find the perfect academy for your tennis journey",
+    title: "European {sport} Academies",
+    subtitle: "Find the perfect {sport} academy across Europe",
     countries: "Countries",
     academies: "Academies",
     coaches: "Coaches",
@@ -45,8 +45,8 @@ const I18N = {
     lastUpdated: "Last updated"
   },
   tr: {
-    title: "Doğu Avrupa Tenis Akademileri",
-    subtitle: "Tenis yolculuğunuz için mükemmel akademiyi bulun",
+    title: "Avrupa {sport} Akademileri",
+    subtitle: "Avrupa genelinde mükemmel {sport} akademisini bulun",
     countries: "Ülke",
     academies: "Akademi",
     coaches: "Koçlar",
@@ -90,8 +90,8 @@ const I18N = {
     lastUpdated: "Son güncelleme"
   },
   de: {
-    title: "Osteuropäische Tennisakademien",
-    subtitle: "Finden Sie die perfekte Akademie für Ihre Tennisreise",
+    title: "Europäische {sport}-Akademien",
+    subtitle: "Finden Sie die perfekte {sport}-Akademie in Europa",
     countries: "Länder",
     academies: "Akademien",
     coaches: "Trainer",
@@ -135,8 +135,8 @@ const I18N = {
     lastUpdated: "Zuletzt aktualisiert"
   },
   sr: {
-    title: "Источноевропске тениске академије",
-    subtitle: "Пронађите савршену академију за ваше тениско путовање",
+    title: "Европске {sport} академије",
+    subtitle: "Пронађите савршену {sport} академију широм Европе",
     countries: "Земље",
     academies: "Академије",
     coaches: "Тренери",
