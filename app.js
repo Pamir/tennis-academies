@@ -820,7 +820,7 @@ function showQRCode(id) {
       <button class="qr-modal-close" aria-label="Close QR code">&times;</button>
       <h3>${escapeHTML(a.name)}</h3>
       <p>Scan to share this academy</p>
-      <img class="qr-code-img" src="${qrApiUrl}" alt="QR Code for ${escapeHTML(a.name)}" width="200" height="200">
+      <img class="qr-code-img" src="${qrApiUrl}" alt="QR Code for ${escapeHTML(a.name)}" width="200" height="200" loading="lazy">
       <button class="btn-copy-link" aria-label="Copy academy link">📋 Copy Link</button>
     </div>
   `;
@@ -1794,7 +1794,7 @@ function scrollToAcademy(id) {
       overlay.innerHTML = `
         <button class="gallery-close" aria-label="Close gallery">&times;</button>
         <button class="gallery-prev" aria-label="Previous photo">&#10094;</button>
-        <img class="gallery-img" alt="Academy photo">
+        <img class="gallery-img" alt="Academy photo" loading="lazy">
         <button class="gallery-next" aria-label="Next photo">&#10095;</button>
         <div class="gallery-counter"></div>
       `;

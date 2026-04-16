@@ -1,4 +1,4 @@
-const CACHE_NAME = 'sports-academies-v15';
+const CACHE_NAME = 'sports-academies-v16';
 const URLS_TO_CACHE = [
   './',
   './index.html',
