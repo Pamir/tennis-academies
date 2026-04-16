@@ -1927,3 +1927,12 @@ const CLIMATE_DATA = {
     ]
   }
 };
+
+const NEWS_ITEMS = [
+  { date: "2026-04-13", text: "Real Madrid Basketball Academy graduate selected in NBA Draft lottery mock projections", academy: "real-madrid-basketball" },
+  { date: "2026-04-06", text: "Žalgiris Academy opens new training facility in Kaunas with EuroLeague-standard courts", academy: "zalgiris-academy" },
+  { date: "2026-03-29", text: "FC Barcelona Basketball launches joint development program with NBA Global Academy", academy: "fc-barcelona-basketball" },
+  { date: "2026-03-23", text: "Partizan Basketball Academy celebrates 50th anniversary with alumni exhibition game", academy: "partizan-basketball" },
+  { date: "2026-03-16", text: "Olimpia Milano Academy introduces sports science partnership with Politecnico di Milano", academy: "olimpia-milano-academy" },
+  { date: "2026-03-09", text: "EuroLeague announces expanded Next Generation Tournament with 24 youth academy teams", academy: null }
+];

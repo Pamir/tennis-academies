@@ -4455,3 +4455,12 @@ const CLIMATE_DATA = {
     ]
   }
 };
+
+const NEWS_ITEMS = [
+  { date: "2026-04-12", text: "La Masia graduates three players to FC Barcelona first team for Champions League campaign", academy: "fc-barcelona-la-masia" },
+  { date: "2026-04-07", text: "Ajax Youth Academy unveils new scouting partnership with five African football federations", academy: "ajax-youth-academy" },
+  { date: "2026-03-30", text: "Clairefontaine announces expansion of its elite youth development program to 120 places", academy: "clairefontaine" },
+  { date: "2026-03-24", text: "Benfica Academy prospect earns call-up to Portugal U-21 squad ahead of European Championship qualifiers", academy: "benfica-academy" },
+  { date: "2026-03-17", text: "Red Bull Salzburg Academy launches data-driven performance analysis program for youth players", academy: "red-bull-salzburg-academy" },
+  { date: "2026-03-10", text: "UEFA announces record investment in grassroots youth football development across Europe", academy: null }
+];

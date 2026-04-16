@@ -3744,4 +3744,13 @@ const CLIMATE_DATA = {
 
 };
 
+const NEWS_ITEMS = [
+  { date: "2026-04-15", text: "Tipšarević Academy announces new summer intensive program for junior players aged 12-16", academy: "tipsarevic" },
+  { date: "2026-04-10", text: "Love4Tennis Crete expands facilities with three new clay courts and a fitness center", academy: "love4tennis" },
+  { date: "2026-04-05", text: "Ilirija Tennis Club Ljubljana hosts ITF Junior Circuit event in May", academy: "ilirija" },
+  { date: "2026-03-28", text: "Polish Tennis Association Academy partners with ATP for coaching excellence program", academy: "pzta" },
+  { date: "2026-03-22", text: "Mouratoglou Academy unveils state-of-the-art analytics lab for player development", academy: "mouratoglou" },
+  { date: "2026-03-15", text: "European Tennis Federation announces record participation in junior development across Eastern Europe", academy: null }
+];
+
 const COUNTRIES = [...new Set(ACADEMIES.map(a => a.country))];

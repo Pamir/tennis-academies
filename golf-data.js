@@ -1908,3 +1908,12 @@ const CLIMATE_DATA = {
     ]
   }
 };
+
+const NEWS_ITEMS = [
+  { date: "2026-04-14", text: "St Andrews Golf Academy launches elite scholarship program for European juniors", academy: "st-andrews" },
+  { date: "2026-04-08", text: "Valderrama hosts DP World Tour qualifying event with record international entries", academy: "valderrama" },
+  { date: "2026-04-02", text: "PGA Catalunya Resort named official European Tour training venue for 2026 season", academy: "pga-catalunya" },
+  { date: "2026-03-25", text: "Terre Blanche Golf Academy opens new indoor swing analysis studio with TrackMan technology", academy: "terre-blanche" },
+  { date: "2026-03-18", text: "Ryder Cup 2027 preparations begin at The K Club with major course renovations", academy: "k-club" },
+  { date: "2026-03-12", text: "European Golf Federation reports 15% increase in youth participation across the continent", academy: null }
+];
