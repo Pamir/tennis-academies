@@ -1422,3 +1422,49 @@ body {
   .gallery-next { right: 8px; }
   .gallery-close { top: 8px; right: 12px; font-size: 2rem; }
 }
+
+/* ===== Upcoming Camps ===== */
+.camps-section { margin-bottom: 0.8rem; }
+.camps-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.78rem;
+  margin-top: 0.4rem;
+}
+.camps-table th {
+  text-align: left;
+  padding: 0.35rem 0.5rem;
+  background: var(--primary);
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+.camps-table th:first-child { border-radius: var(--radius-sm) 0 0 0; }
+.camps-table th:last-child { border-radius: 0 var(--radius-sm) 0 0; }
+.camps-table td {
+  padding: 0.35rem 0.5rem;
+  border-bottom: 1px solid var(--border);
+  vertical-align: middle;
+}
+.camp-item:last-child td { border-bottom: none; }
+.camp-item.camp-soon {
+  background: rgba(200, 230, 50, 0.12);
+}
+[data-theme="dark"] .camp-item.camp-soon {
+  background: rgba(200, 230, 50, 0.08);
+}
+.camp-badge-soon {
+  display: inline-block;
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: #fff;
+  background: var(--accent-dark);
+  padding: 0.1rem 0.4rem;
+  border-radius: 3px;
+  margin-left: 0.3rem;
+  vertical-align: middle;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}

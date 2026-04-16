@@ -540,6 +540,9 @@ function buildDetails(a) {
     html += `<div class="detail-section"><button class="btn-gallery" onclick="gallery_open('${a.id}')">📷 View Photos (${a.photos.length})</button></div>`;
   }
   html += renderStarRating(a.id);
+  if (Array.isArray(a.upcomingCamps) && a.upcomingCamps.length) {
+    html += renderUpcomingCamps(a.upcomingCamps);
+  }
   if (a.coaches.length) {
     html += '<div class="detail-section"><h4>Coaches</h4><ul>';
     a.coaches.forEach(c => {
@@ -1458,6 +1461,34 @@ function saveUserRating(id, rating) {
   ratings[id] = rating;
   localStorage.setItem(getSportConfig().storagePrefix + '-ratings', JSON.stringify(ratings));
 }
+/* ===== Upcoming Camps Renderer ===== */
+function renderUpcomingCamps(camps) {
+  const sorted = camps.slice().sort((a, b) => a.startDate.localeCompare(b.startDate));
+  const now = new Date();
+  const soon = new Date(now.getTime() + 30 * 24 * 60 * 60 * 1000);
+
+  function fmtDate(dateStr) {
+    const d = new Date(dateStr + 'T00:00:00');
+    return d.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' });
+  }
+
+  let html = '<div class="detail-section camps-section">';
+  html += '<h4>📅 Upcoming Camps</h4>';
+  html += '<table class="camps-table"><thead><tr><th>Camp</th><th>Dates</th><th>Price</th><th>Level</th></tr></thead><tbody>';
+  sorted.forEach(c => {
+    const start = new Date(c.startDate + 'T00:00:00');
+    const isSoon = start >= now && start <= soon;
+    html += '<tr class="camp-item' + (isSoon ? ' camp-soon' : '') + '">';
+    html += '<td>' + escapeHTML(c.name) + (isSoon ? ' <span class="camp-badge-soon">Starting soon!</span>' : '') + '</td>';
+    html += '<td>' + fmtDate(c.startDate) + ' – ' + fmtDate(c.endDate) + '</td>';
+    html += '<td>' + escapeHTML(c.price) + '</td>';
+    html += '<td>' + escapeHTML(c.level) + '</td>';
+    html += '</tr>';
+  });
+  html += '</tbody></table></div>';
+  return html;
+}
+
 function renderStarRating(academyId) {
   const ratings = getUserRatings();
   const current = ratings[academyId] || 0;
