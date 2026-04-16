@@ -75,6 +75,12 @@
         <p><strong class="hub-count" data-file="volleyball-data.js">—</strong> Academies across Europe</p>
         <span class="hub-arrow">→</span>
       </a>
+      <a href="rugby.html" class="hub-card hub-rugby">
+        <span class="hub-icon" aria-hidden="true">🏉</span>
+        <h2>Rugby</h2>
+        <p><strong class="hub-count" data-file="rugby-data.js">—</strong> Academies across Europe</p>
+        <span class="hub-arrow">→</span>
+      </a>
     </div>
 
     <section class="hub-trip-plan" id="hubTripPlan" style="display:none;">
@@ -157,7 +163,8 @@
         { page: 'football.html', name: 'Football' },
         { page: 'basketball.html', name: 'Basketball' },
         { page: 'swimming.html', name: 'Swimming' },
-        { page: 'volleyball.html', name: 'Volleyball' }
+        { page: 'volleyball.html', name: 'Volleyball' },
+        { page: 'rugby.html', name: 'Rugby' }
       ];
       const form = document.getElementById('hubSearchForm');
       if (form) {
@@ -188,8 +195,8 @@
       try {
         var plan = JSON.parse(localStorage.getItem('sports-trip-plan') || '[]');
         if (!plan.length) return;
-        var sportPageMap = { tennis: 'tennis.html', golf: 'golf.html', football: 'football.html', basketball: 'basketball.html', swimming: 'swimming.html', volleyball: 'volleyball.html' };
-        var sportIconMap = { tennis: '🎾', golf: '⛳', football: '⚽', basketball: '🏀', swimming: '🏊', volleyball: '🏐' };
+        var sportPageMap = { tennis: 'tennis.html', golf: 'golf.html', football: 'football.html', basketball: 'basketball.html', swimming: 'swimming.html', volleyball: 'volleyball.html', rugby: 'rugby.html' };
+        var sportIconMap = { tennis: '🎾', golf: '⛳', football: '⚽', basketball: '🏀', swimming: '🏊', volleyball: '🏐', rugby: '🏉' };
         // Group by sport
         var groups = {};
         var totalCost = 0;
@@ -238,8 +245,8 @@
         const items = JSON.parse(localStorage.getItem('recently-viewed') || '[]');
         if (!items.length) return;
         const recent = items.slice(0, 5);
-        const sportPageMap = { tennis: 'tennis.html', golf: 'golf.html', football: 'football.html', basketball: 'basketball.html', swimming: 'swimming.html', volleyball: 'volleyball.html' };
-        const sportIconMap = { tennis: '🎾', golf: '⛳', football: '⚽', basketball: '🏀', swimming: '🏊', volleyball: '🏐' };
+        const sportPageMap = { tennis: 'tennis.html', golf: 'golf.html', football: 'football.html', basketball: 'basketball.html', swimming: 'swimming.html', volleyball: 'volleyball.html', rugby: 'rugby.html' };
+        const sportIconMap = { tennis: '🎾', golf: '⛳', football: '⚽', basketball: '🏀', swimming: '🏊', volleyball: '🏐', rugby: '🏉' };
         recent.forEach(function(item) {
           const a = document.createElement('a');
           a.className = 'hub-recent-item';

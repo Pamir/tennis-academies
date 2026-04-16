@@ -68,6 +68,14 @@ const SPORT_CONFIG = {
     coachFilterLabel: '🏐 National Team Coach',
     surfaceLabel: 'Court Types',
     storagePrefix: 'volleyball',
+  },
+  rugby: {
+    icon: '🏉',
+    name: 'Rugby',
+    coachLabel: 'International Coaches',
+    coachFilterLabel: '🏉 International Coach',
+    surfaceLabel: 'Pitch Types',
+    storagePrefix: 'rugby',
   }
 };
 
@@ -77,7 +85,8 @@ const SPORT_PAGES = {
   football: 'football.html',
   basketball: 'basketball.html',
   swimming: 'swimming.html',
-  volleyball: 'volleyball.html'
+  volleyball: 'volleyball.html',
+  rugby: 'rugby.html'
 };
 
 const SPORT_DATA_FILES = {
@@ -86,7 +95,8 @@ const SPORT_DATA_FILES = {
   football: './football-data.js',
   basketball: './basketball-data.js',
   swimming: './swimming-data.js',
-  volleyball: './volleyball-data.js'
+  volleyball: './volleyball-data.js',
+  rugby: './rugby-data.js'
 };
 
 let _crossSportCache = null;
@@ -251,8 +261,8 @@ function animateStats() {
   const stats = {
     countries: new Set(ACADEMIES.map(a => a.country)).size,
     academies: ACADEMIES.length,
-    atpWta: ACADEMIES.filter(a => a.coaches && a.coaches.some(c => c.atpWta)).length,
-    boarding: ACADEMIES.filter(a => a.boarding).length,
+    atpWta: ACADEMIES.filter(a => a.coaches && a.coaches.some(c => c.atpWta || c.credential)).length,
+    boarding: ACADEMIES.filter(a => a.boarding === true || (a.boarding && a.boarding.available === true)).length,
     beach: ACADEMIES.filter(a => typeof a.beach?.distance === 'number').length
   };
 
@@ -367,7 +377,7 @@ function filterByIndividualLessons(academies) {
 }
 
 function filterByBoarding(academies) {
-  return academies.filter(a => a.boarding === true);
+  return academies.filter(a => a.boarding === true || (a.boarding && a.boarding.available === true));
 }
 
 function filterByBeach(academies) {
