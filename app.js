@@ -361,6 +361,13 @@ function sortAcademies(academies, sortKey) {
         const rb = getPlayingRank(b);
         return ra - rb || a.name.localeCompare(b.name);
       });
+    case 'rating':
+      return copy.sort((a, b) => {
+        const ratings = getUserRatings();
+        const ra = ratings[a.id] || 0;
+        const rb = ratings[b.id] || 0;
+        return rb - ra || a.name.localeCompare(b.name);
+      });
     case 'price':
       return copy.sort((a, b) => {
         const pa = a.priceRange.from ?? Infinity;
