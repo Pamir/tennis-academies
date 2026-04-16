@@ -77,6 +77,12 @@
       </a>
     </div>
 
+    <section class="hub-trip-plan" id="hubTripPlan" style="display:none;">
+      <h3>🧳 Your Trip Plan</h3>
+      <div id="hubTripList"></div>
+      <div class="hub-trip-total" id="hubTripTotal"></div>
+    </section>
+
     <section class="hub-recently-viewed" id="recentlyViewed" style="display:none;">
       <h3>🕐 Recently Viewed</h3>
       <div class="hub-recent-list" id="recentList"></div>
@@ -171,6 +177,56 @@
           }
         });
       }
+    })();
+
+    // Hub Trip Plan
+    (function() {
+      var section = document.getElementById('hubTripPlan');
+      var listEl = document.getElementById('hubTripList');
+      var totalEl = document.getElementById('hubTripTotal');
+      if (!section || !listEl) return;
+      try {
+        var plan = JSON.parse(localStorage.getItem('sports-trip-plan') || '[]');
+        if (!plan.length) return;
+        var sportPageMap = { tennis: 'tennis.html', golf: 'golf.html', football: 'football.html', basketball: 'basketball.html', swimming: 'swimming.html', volleyball: 'volleyball.html' };
+        var sportIconMap = { tennis: '🎾', golf: '⛳', football: '⚽', basketball: '🏀', swimming: '🏊', volleyball: '🏐' };
+        // Group by sport
+        var groups = {};
+        var totalCost = 0;
+        var totalWeeks = 0;
+        plan.forEach(function(item) {
+          var sport = item.sport || 'unknown';
+          if (!groups[sport]) groups[sport] = [];
+          groups[sport].push(item);
+          var weeks = item.weeks || 4;
+          totalWeeks += weeks;
+          if (item.priceFrom !== null && item.priceFrom !== undefined) {
+            totalCost += Math.round(item.priceFrom * weeks / 4.33) * (item.trainees || 1);
+          }
+        });
+        var html = '';
+        Object.keys(groups).forEach(function(sport) {
+          var icon = sportIconMap[sport] || '🏅';
+          var sportName = sport.charAt(0).toUpperCase() + sport.slice(1);
+          var page = sportPageMap[sport] || '#';
+          html += '<div class="hub-trip-sport-group">';
+          html += '<h4>' + icon + ' ' + escTxt(sportName) + '</h4>';
+          groups[sport].forEach(function(item) {
+            html += '<div class="hub-trip-item">';
+            html += '<span>' + escTxt(item.name) + '</span>';
+            html += '<span style="color:var(--text-light);font-size:0.85rem;margin-left:auto;">' + (item.weeks || 4) + 'wk</span>';
+            html += ' <a href="' + page + '" style="font-size:0.85rem;">Configure →</a>';
+            html += '</div>';
+          });
+          html += '</div>';
+        });
+        listEl.innerHTML = html;
+        if (totalEl) {
+          totalEl.textContent = 'Total: ' + totalWeeks + ' weeks · Est. €' + totalCost.toLocaleString();
+        }
+        section.style.display = '';
+      } catch(e) { /* ignore */ }
+      function escTxt(s) { var d = document.createElement('div'); d.textContent = s || ''; return d.innerHTML; }
     })();
 
     // Recently Viewed

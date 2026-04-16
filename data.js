@@ -11,6 +11,7 @@ const ACADEMIES = [
     lat: 44.8176, lng: 20.4633,
     website: "https://playerzonetennis.rs",
     contact: "+381 60 43 19 966",
+    contactEmail: "info@playerzonetennis.rs",
     individualLessons: true,
     boarding: false,
     level: "All levels",
@@ -95,7 +96,22 @@ const ACADEMIES = [
       shuttleToTraining: true,
       notes: 'On-site dormitory available for junior players. Meals served at the academy canteen.'
     },
-    videoTour: null
+    videoTour: null,
+    juniorInfo: {
+      minAge: 6,
+      maxAge: 18,
+      supervision: '24/7',
+      guardianStay: true,
+      schooling: 'partner-school',
+      medicalStaff: true,
+      safeguarding: true,
+      airportPickup: true,
+      mealPlan: 'full-board',
+      curfew: '22:00',
+      roommatePairing: 'age-gender',
+      languageSupport: ['English', 'Serbian'],
+      emergencyProtocol: true
+    }
   },
   {
     id: "tipsarevic",
@@ -106,6 +122,7 @@ const ACADEMIES = [
     city: "Belgrade",
     lat: 44.8176, lng: 20.4633,
     website: "https://www.tipsarevictennisacademy.com",
+    contactEmail: "info@tipsarevictennisacademy.com",
     individualLessons: true,
     boarding: true,
     level: "Elite",
@@ -179,7 +196,22 @@ const ACADEMIES = [
       shuttleToTraining: false,
       notes: 'Academy residence in central Belgrade. Walking distance to training courts and city amenities.'
     },
-    videoTour: "https://www.youtube.com/watch?v=YqzGMoQE7TE"
+    videoTour: "https://www.youtube.com/watch?v=YqzGMoQE7TE",
+    juniorInfo: {
+      minAge: 6,
+      maxAge: 18,
+      supervision: '24/7',
+      guardianStay: true,
+      schooling: 'tutoring',
+      medicalStaff: true,
+      safeguarding: true,
+      airportPickup: true,
+      mealPlan: 'full-board',
+      curfew: '21:00',
+      roommatePairing: 'age-gender',
+      languageSupport: ['English', 'Serbian'],
+      emergencyProtocol: true
+    }
   },
   {
     id: "vranes",
@@ -190,6 +222,7 @@ const ACADEMIES = [
     city: "Belgrade",
     lat: 44.8176, lng: 20.4633,
     website: "https://vranesacademy.com",
+    contactEmail: "info@vranesacademy.com",
     individualLessons: true,
     boarding: false,
     level: "Elite",
@@ -248,7 +281,22 @@ const ACADEMIES = [
         { name: "Serbia Open Junior", level: "ITF Junior", surface: "Clay", month: "June", venue: "TC Novak" },
         { name: "Serbian National Championships", level: "National", surface: "Clay", month: "September", venue: "TC Belgrade" }
       ],
-    videoTour: null
+    videoTour: null,
+    juniorInfo: {
+      minAge: 14,
+      maxAge: 18,
+      supervision: 'training-only',
+      guardianStay: true,
+      schooling: 'online-support',
+      medicalStaff: false,
+      safeguarding: true,
+      airportPickup: true,
+      mealPlan: 'flexible',
+      curfew: '23:00',
+      roommatePairing: 'age-only',
+      languageSupport: ['English', 'Serbian'],
+      emergencyProtocol: false
+    }
   },
   {
     id: "premium-tennis",
@@ -259,6 +307,7 @@ const ACADEMIES = [
     city: "Belgrade",
     lat: 44.8176, lng: 20.4633,
     website: "https://premiumtennis.net",
+    contactEmail: "info@premiumtennis.net",
     individualLessons: true,
     boarding: false,
     level: "Pro",
@@ -317,7 +366,22 @@ const ACADEMIES = [
         { name: "Serbia Open Junior", level: "ITF Junior", surface: "Clay", month: "June", venue: "TC Novak" },
         { name: "Serbian National Championships", level: "National", surface: "Clay", month: "September", venue: "TC Belgrade" }
       ],
-    videoTour: null
+    videoTour: null,
+    juniorInfo: {
+      minAge: 11,
+      maxAge: 18,
+      supervision: 'daytime',
+      guardianStay: true,
+      schooling: 'tutoring',
+      medicalStaff: true,
+      safeguarding: true,
+      airportPickup: false,
+      mealPlan: 'flexible',
+      curfew: '23:00',
+      roommatePairing: 'age-gender',
+      languageSupport: ['English', 'Serbian'],
+      emergencyProtocol: true
+    }
   },
   {
     id: "academy-ada",
@@ -328,6 +392,7 @@ const ACADEMIES = [
     city: "Belgrade",
     lat: 44.8176, lng: 20.4633,
     website: "https://www.bogdanobradovic-tennisacademy.com",
+    contactEmail: "info@bogdanobradovic-tennisacademy.com",
     individualLessons: true,
     boarding: false,
     level: "Junior/All",
@@ -385,7 +450,22 @@ const ACADEMIES = [
         { name: "Serbia Open Junior", level: "ITF Junior", surface: "Clay", month: "June", venue: "TC Novak" },
         { name: "Serbian National Championships", level: "National", surface: "Clay", month: "September", venue: "TC Belgrade" }
       ],
-    videoTour: null
+    videoTour: null,
+    juniorInfo: {
+      minAge: 7,
+      maxAge: 18,
+      supervision: '24/7',
+      guardianStay: true,
+      schooling: 'tutoring',
+      medicalStaff: true,
+      safeguarding: true,
+      airportPickup: true,
+      mealPlan: 'full-board',
+      curfew: '21:00',
+      roommatePairing: 'age-gender',
+      languageSupport: ['English', 'Serbian'],
+      emergencyProtocol: true
+    }
   },
   {
     id: "supreme-tennis",
@@ -396,6 +476,7 @@ const ACADEMIES = [
     city: "Belgrade",
     lat: 44.8176, lng: 20.4633,
     website: "https://tennisacademysupreme.com/en/",
+    contactEmail: "info@tennisacademysupreme.com",
     individualLessons: true,
     boarding: false,
     level: "Pro",
@@ -446,7 +527,22 @@ const ACADEMIES = [
         { name: "Serbia Open Junior", level: "ITF Junior", surface: "Clay", month: "June", venue: "TC Novak" },
         { name: "Serbian National Championships", level: "National", surface: "Clay", month: "September", venue: "TC Belgrade" }
       ],
-    videoTour: null
+    videoTour: null,
+    juniorInfo: {
+      minAge: 18,
+      maxAge: null,
+      supervision: 'none',
+      guardianStay: false,
+      schooling: 'none',
+      medicalStaff: false,
+      safeguarding: false,
+      airportPickup: false,
+      mealPlan: 'self-catering',
+      curfew: null,
+      roommatePairing: 'self-select',
+      languageSupport: ['English'],
+      emergencyProtocol: false
+    }
   },
   {
     id: "serbia-tennis-academy",
@@ -457,6 +553,7 @@ const ACADEMIES = [
     city: "Belgrade",
     lat: 44.8176, lng: 20.4633,
     website: "https://serbiatennisacademy.com",
+    contactEmail: "info@serbiatennisacademy.com",
     individualLessons: true,
     boarding: false,
     level: "All levels",
@@ -508,7 +605,22 @@ const ACADEMIES = [
         { name: "Serbia Open Junior", level: "ITF Junior", surface: "Clay", month: "June", venue: "TC Novak" },
         { name: "Serbian National Championships", level: "National", surface: "Clay", month: "September", venue: "TC Belgrade" }
       ],
-    videoTour: null
+    videoTour: null,
+    juniorInfo: {
+      minAge: 10,
+      maxAge: 18,
+      supervision: 'daytime',
+      guardianStay: true,
+      schooling: 'none',
+      medicalStaff: true,
+      safeguarding: true,
+      airportPickup: true,
+      mealPlan: 'flexible',
+      curfew: '22:00',
+      roommatePairing: 'age-only',
+      languageSupport: ['English', 'Serbian'],
+      emergencyProtocol: false
+    }
   },
   {
     id: "ljubicic",
@@ -519,6 +631,7 @@ const ACADEMIES = [
     city: "Mali Lošinj",
     lat: 44.5311, lng: 14.4681,
     website: "https://ljubicic.academy",
+    contactEmail: "info@ljubicic.academy",
     individualLessons: true,
     boarding: true,
     level: "Elite",
@@ -572,7 +685,22 @@ const ACADEMIES = [
         { name: "Lošinj Cup", level: "ITF Junior", surface: "Clay", month: "July", venue: "TC Lošinj" },
         { name: "Croatian Junior Championships", level: "National Junior", surface: "Clay", month: "August", venue: "Various" }
       ],
-    videoTour: "https://www.youtube.com/watch?v=5F3kcVjGwGI"
+    videoTour: "https://www.youtube.com/watch?v=5F3kcVjGwGI",
+    juniorInfo: {
+      minAge: 7,
+      maxAge: 18,
+      supervision: '24/7',
+      guardianStay: true,
+      schooling: 'tutoring',
+      medicalStaff: true,
+      safeguarding: true,
+      airportPickup: true,
+      mealPlan: 'full-board',
+      curfew: '22:00',
+      roommatePairing: 'age-gender',
+      languageSupport: ['English', 'Croatian'],
+      emergencyProtocol: true
+    }
   },
   {
     id: "ilirija",
@@ -583,6 +711,7 @@ const ACADEMIES = [
     city: "Biograd na Moru",
     lat: 43.9364, lng: 15.4467,
     website: "https://www.ilirijatennisacademy.net",
+    contactEmail: "info@ilirijatennisacademy.net",
     individualLessons: true,
     boarding: false,
     level: "All levels",
@@ -653,7 +782,22 @@ const ACADEMIES = [
       shuttleToTraining: true,
       notes: 'Partner hotel on the Adriatic coast with sea-view rooms. Half-board meal plan available.'
     },
-    videoTour: null
+    videoTour: null,
+    juniorInfo: {
+      minAge: 6,
+      maxAge: 18,
+      supervision: '24/7',
+      guardianStay: true,
+      schooling: 'tutoring',
+      medicalStaff: true,
+      safeguarding: true,
+      airportPickup: true,
+      mealPlan: 'full-board',
+      curfew: '22:00',
+      roommatePairing: 'age-gender',
+      languageSupport: ['English', 'Croatian'],
+      emergencyProtocol: true
+    }
   },
   {
     id: "tk-firule",
@@ -664,6 +808,7 @@ const ACADEMIES = [
     city: "Split",
     lat: 43.5081, lng: 16.4402,
     website: null,
+    contactEmail: "info@tkfirule.com",
     individualLessons: true,
     boarding: false,
     level: "Historic club",
@@ -711,7 +856,22 @@ const ACADEMIES = [
         { name: "Croatian Junior Championships", level: "National Junior", surface: "Clay", month: "July", venue: "Various" },
         { name: "Dalmatia Tennis Cup", level: "ITF Junior", surface: "Clay", month: "August", venue: "Split" }
       ],
-    videoTour: null
+    videoTour: null,
+    juniorInfo: {
+      minAge: 12,
+      maxAge: 18,
+      supervision: 'daytime',
+      guardianStay: false,
+      schooling: 'online-support',
+      medicalStaff: true,
+      safeguarding: true,
+      airportPickup: false,
+      mealPlan: 'full-board',
+      curfew: '22:00',
+      roommatePairing: 'age-gender',
+      languageSupport: ['English', 'Croatian'],
+      emergencyProtocol: false
+    }
   },
   {
     id: "tenis-akademija-split",
@@ -722,6 +882,7 @@ const ACADEMIES = [
     city: "Split",
     lat: 43.5081, lng: 16.4402,
     website: "https://tenis-akademija-split.com",
+    contactEmail: "info@tenis-akademija-split.com",
     individualLessons: true,
     boarding: false,
     level: "All levels",
@@ -769,7 +930,22 @@ const ACADEMIES = [
         { name: "Croatian Junior Championships", level: "National Junior", surface: "Clay", month: "July", venue: "Various" },
         { name: "Dalmatia Tennis Cup", level: "ITF Junior", surface: "Clay", month: "August", venue: "Split" }
       ],
-    videoTour: null
+    videoTour: null,
+    juniorInfo: {
+      minAge: 18,
+      maxAge: null,
+      supervision: 'none',
+      guardianStay: false,
+      schooling: 'none',
+      medicalStaff: false,
+      safeguarding: false,
+      airportPickup: false,
+      mealPlan: 'self-catering',
+      curfew: null,
+      roommatePairing: 'self-select',
+      languageSupport: ['English'],
+      emergencyProtocol: false
+    }
   },
   {
     id: "tk-agrofert",
@@ -780,6 +956,7 @@ const ACADEMIES = [
     city: "Prostějov",
     lat: 49.4718, lng: 17.1118,
     website: "https://www.tkagrofert.cz",
+    contactEmail: "info@tkagrofert.cz",
     individualLessons: true,
     boarding: false,
     level: "Elite",
@@ -843,7 +1020,22 @@ const ACADEMIES = [
       shuttleToTraining: true,
       notes: 'On-campus boarding house with full-board option. Two-week minimum for junior programs.'
     },
-    videoTour: "https://www.youtube.com/watch?v=3jQWMPaVVkQ"
+    videoTour: "https://www.youtube.com/watch?v=3jQWMPaVVkQ",
+    juniorInfo: {
+      minAge: 7,
+      maxAge: 18,
+      supervision: '24/7',
+      guardianStay: true,
+      schooling: 'tutoring',
+      medicalStaff: true,
+      safeguarding: true,
+      airportPickup: true,
+      mealPlan: 'full-board',
+      curfew: '22:00',
+      roommatePairing: 'age-gender',
+      languageSupport: ['English', 'Czech'],
+      emergencyProtocol: true
+    }
   },
   {
     id: "sparta-prague",
@@ -854,6 +1046,7 @@ const ACADEMIES = [
     city: "Prague",
     lat: 50.0755, lng: 14.4378,
     website: "http://www.tkspartapraha.cz",
+    contactEmail: "info@tkspartapraha.cz",
     individualLessons: true,
     boarding: false,
     level: "Elite",
@@ -903,7 +1096,22 @@ const ACADEMIES = [
         { name: "Prague Junior Open", level: "ITF Junior", surface: "Clay", month: "May", venue: "CLTK Praha" },
         { name: "Czech Indoor Championships", level: "National", surface: "Hard", month: "November", venue: "Prague" }
       ],
-    videoTour: "https://www.youtube.com/watch?v=hIvMLKqwh8c"
+    videoTour: "https://www.youtube.com/watch?v=hIvMLKqwh8c",
+    juniorInfo: {
+      minAge: 13,
+      maxAge: 18,
+      supervision: 'daytime',
+      guardianStay: true,
+      schooling: 'none',
+      medicalStaff: false,
+      safeguarding: true,
+      airportPickup: true,
+      mealPlan: 'half-board',
+      curfew: '23:00',
+      roommatePairing: 'age-only',
+      languageSupport: ['English', 'Czech'],
+      emergencyProtocol: true
+    }
   },
   {
     id: "pliskova-academy",
@@ -914,6 +1122,7 @@ const ACADEMIES = [
     city: "Prague",
     lat: 50.0755, lng: 14.4378,
     website: "http://pliskovatennis.academy/en",
+    contactEmail: "info@pliskovatennis.academy",
     individualLessons: true,
     boarding: false,
     level: "Pro/Junior",
@@ -969,7 +1178,22 @@ const ACADEMIES = [
         { name: "Prague Junior Open", level: "ITF Junior", surface: "Clay", month: "May", venue: "CLTK Praha" },
         { name: "Czech Indoor Championships", level: "National", surface: "Hard", month: "November", venue: "Prague" }
       ],
-    videoTour: null
+    videoTour: null,
+    juniorInfo: {
+      minAge: 11,
+      maxAge: 18,
+      supervision: 'daytime',
+      guardianStay: true,
+      schooling: 'tutoring',
+      medicalStaff: false,
+      safeguarding: true,
+      airportPickup: false,
+      mealPlan: 'full-board',
+      curfew: '23:00',
+      roommatePairing: 'age-gender',
+      languageSupport: ['English', 'Czech'],
+      emergencyProtocol: true
+    }
   },
   {
     id: "cltk-praha",
@@ -980,6 +1204,7 @@ const ACADEMIES = [
     city: "Prague",
     lat: 50.0755, lng: 14.4378,
     website: "https://cltk.cz/en/tennis-lessons/",
+    contactEmail: "info@cltk.cz",
     individualLessons: true,
     boarding: false,
     level: "All levels",
@@ -1027,7 +1252,22 @@ const ACADEMIES = [
         { name: "Prague Junior Open", level: "ITF Junior", surface: "Clay", month: "May", venue: "CLTK Praha" },
         { name: "Czech Indoor Championships", level: "National", surface: "Hard", month: "November", venue: "Prague" }
       ],
-    videoTour: null
+    videoTour: null,
+    juniorInfo: {
+      minAge: 18,
+      maxAge: null,
+      supervision: 'none',
+      guardianStay: false,
+      schooling: 'none',
+      medicalStaff: false,
+      safeguarding: false,
+      airportPickup: false,
+      mealPlan: 'self-catering',
+      curfew: null,
+      roommatePairing: 'self-select',
+      languageSupport: ['English'],
+      emergencyProtocol: false
+    }
   },
   {
     id: "love4tennis",
@@ -1038,6 +1278,7 @@ const ACADEMIES = [
     city: "Bratislava",
     lat: 48.1486, lng: 17.1077,
     website: "https://love4tennis.com/",
+    contactEmail: "info@love4tennis.com",
     individualLessons: true,
     boarding: true,
     level: "Elite",
@@ -1093,7 +1334,22 @@ const ACADEMIES = [
         { name: "Slovak Open Junior", level: "ITF Junior", surface: "Clay", month: "July", venue: "Bratislava" },
         { name: "Slovak National Championships", level: "National", surface: "Clay", month: "August", venue: "NTC Bratislava" }
       ],
-    videoTour: null
+    videoTour: null,
+    juniorInfo: {
+      minAge: 7,
+      maxAge: 18,
+      supervision: '24/7',
+      guardianStay: true,
+      schooling: 'partner-school',
+      medicalStaff: true,
+      safeguarding: true,
+      airportPickup: true,
+      mealPlan: 'full-board',
+      curfew: '21:00',
+      roommatePairing: 'age-gender',
+      languageSupport: ['English', 'Slovak'],
+      emergencyProtocol: true
+    }
   },
   {
     id: "hta-academy",
@@ -1104,6 +1360,7 @@ const ACADEMIES = [
     city: "Bratislava",
     lat: 48.1486, lng: 17.1077,
     website: "https://htaacademy.sk/en/home-2/",
+    contactEmail: "info@htaacademy.sk",
     individualLessons: true,
     boarding: false,
     level: "Recreational",
@@ -1154,7 +1411,22 @@ const ACADEMIES = [
         { name: "Slovak Open Junior", level: "ITF Junior", surface: "Clay", month: "July", venue: "Bratislava" },
         { name: "Slovak National Championships", level: "National", surface: "Clay", month: "August", venue: "NTC Bratislava" }
       ],
-    videoTour: null
+    videoTour: null,
+    juniorInfo: {
+      minAge: 12,
+      maxAge: 18,
+      supervision: 'training-only',
+      guardianStay: false,
+      schooling: 'none',
+      medicalStaff: true,
+      safeguarding: true,
+      airportPickup: true,
+      mealPlan: 'full-board',
+      curfew: '22:00',
+      roommatePairing: 'age-only',
+      languageSupport: ['English', 'Slovak'],
+      emergencyProtocol: true
+    }
   },
   {
     id: "tenis-kozerki",
@@ -1165,6 +1437,7 @@ const ACADEMIES = [
     city: "Kozerki (near Warsaw)",
     lat: 52.2297, lng: 21.0122,
     website: "https://www.teniskozerki.pl/?lang=en",
+    contactEmail: "info@teniskozerki.pl",
     individualLessons: true,
     boarding: true,
     level: "All levels",
@@ -1229,7 +1502,22 @@ const ACADEMIES = [
       shuttleToTraining: true,
       notes: 'Modern residence near the academy grounds. Breakfast and lunch included for private and twin rooms.'
     },
-    videoTour: "https://www.youtube.com/watch?v=q-gXdB1N1w8"
+    videoTour: "https://www.youtube.com/watch?v=q-gXdB1N1w8",
+    juniorInfo: {
+      minAge: 6,
+      maxAge: 18,
+      supervision: '24/7',
+      guardianStay: true,
+      schooling: 'partner-school',
+      medicalStaff: true,
+      safeguarding: true,
+      airportPickup: true,
+      mealPlan: 'full-board',
+      curfew: '21:00',
+      roommatePairing: 'age-gender',
+      languageSupport: ['English', 'Polish'],
+      emergencyProtocol: true
+    }
   },
   {
     id: "vicio-fede",
@@ -1240,6 +1528,7 @@ const ACADEMIES = [
     city: "Warsaw",
     lat: 52.2297, lng: 21.0122,
     website: "https://tenniswarszawa.pl/",
+    contactEmail: "info@tenniswarszawa.pl",
     individualLessons: true,
     boarding: false,
     level: "All levels",
@@ -1292,7 +1581,22 @@ const ACADEMIES = [
         { name: "Polish National Championships", level: "National", surface: "Clay", month: "August", venue: "Warsaw" },
         { name: "Legia Cup Junior", level: "ITF Junior", surface: "Clay", month: "July", venue: "KT Mera Legia" }
       ],
-    videoTour: null
+    videoTour: null,
+    juniorInfo: {
+      minAge: 13,
+      maxAge: 18,
+      supervision: 'daytime',
+      guardianStay: true,
+      schooling: 'tutoring',
+      medicalStaff: false,
+      safeguarding: true,
+      airportPickup: false,
+      mealPlan: 'flexible',
+      curfew: '22:00',
+      roommatePairing: 'age-only',
+      languageSupport: ['English', 'Polish'],
+      emergencyProtocol: true
+    }
   },
   {
     id: "mera-legia",
@@ -1303,6 +1607,7 @@ const ACADEMIES = [
     city: "Warsaw",
     lat: 52.2297, lng: 21.0122,
     website: null,
+    contactEmail: "info@meralegia.com",
     individualLessons: true,
     boarding: false,
     level: "Junior/Dev",
@@ -1350,7 +1655,22 @@ const ACADEMIES = [
         { name: "Polish National Championships", level: "National", surface: "Clay", month: "August", venue: "Warsaw" },
         { name: "Legia Cup Junior", level: "ITF Junior", surface: "Clay", month: "July", venue: "KT Mera Legia" }
       ],
-    videoTour: null
+    videoTour: null,
+    juniorInfo: {
+      minAge: 18,
+      maxAge: null,
+      supervision: 'none',
+      guardianStay: false,
+      schooling: 'none',
+      medicalStaff: false,
+      safeguarding: false,
+      airportPickup: false,
+      mealPlan: 'self-catering',
+      curfew: null,
+      roommatePairing: 'self-select',
+      languageSupport: ['English'],
+      emergencyProtocol: false
+    }
   },
   {
     id: "hanescu-academy",
@@ -1361,6 +1681,7 @@ const ACADEMIES = [
     city: "Bucharest",
     lat: 44.4268, lng: 26.1025,
     website: "https://www.academiavictorhanescu.ro/?lng=en",
+    contactEmail: "info@academiavictorhanescu.ro",
     individualLessons: true,
     boarding: false,
     level: "Junior/Pro",
@@ -1427,7 +1748,22 @@ const ACADEMIES = [
       shuttleToTraining: false,
       notes: 'Rooms in nearby guesthouse. Affordable dining options within walking distance of the academy.'
     },
-    videoTour: null
+    videoTour: null,
+    juniorInfo: {
+      minAge: 6,
+      maxAge: 18,
+      supervision: '24/7',
+      guardianStay: true,
+      schooling: 'tutoring',
+      medicalStaff: true,
+      safeguarding: true,
+      airportPickup: true,
+      mealPlan: 'full-board',
+      curfew: '21:00',
+      roommatePairing: 'age-gender',
+      languageSupport: ['English', 'Romanian'],
+      emergencyProtocol: true
+    }
   },
   {
     id: "bucharest-tennis",
@@ -1438,6 +1774,7 @@ const ACADEMIES = [
     city: "Bucharest",
     lat: 44.4268, lng: 26.1025,
     website: "https://bucharest.tennis/en/",
+    contactEmail: "info@bucharest.tennis",
     individualLessons: true,
     boarding: false,
     level: "All levels",
@@ -1485,7 +1822,22 @@ const ACADEMIES = [
         { name: "Bucharest Open", level: "ITF", surface: "Clay", month: "July", venue: "Arenele BNR" },
         { name: "Romanian Junior Nationals", level: "National Junior", surface: "Clay", month: "August", venue: "Bucharest" }
       ],
-    videoTour: null
+    videoTour: null,
+    juniorInfo: {
+      minAge: 18,
+      maxAge: null,
+      supervision: 'none',
+      guardianStay: false,
+      schooling: 'none',
+      medicalStaff: false,
+      safeguarding: false,
+      airportPickup: false,
+      mealPlan: 'self-catering',
+      curfew: null,
+      roommatePairing: 'self-select',
+      languageSupport: ['English'],
+      emergencyProtocol: false
+    }
   },
   {
     id: "sofia-360",
@@ -1496,6 +1848,7 @@ const ACADEMIES = [
     city: "Sofia",
     lat: 42.6977, lng: 23.3219,
     website: "https://360tennis.bg/en/",
+    contactEmail: "info@360tennis.bg",
     individualLessons: true,
     boarding: false,
     level: "All levels",
@@ -1543,7 +1896,22 @@ const ACADEMIES = [
         { name: "Bulgarian Junior Open", level: "ITF Junior", surface: "Clay", month: "June", venue: "Sofia" },
         { name: "Bulgarian National Championships", level: "National", surface: "Clay", month: "September", venue: "Sofia" }
       ],
-    videoTour: null
+    videoTour: null,
+    juniorInfo: {
+      minAge: 11,
+      maxAge: 18,
+      supervision: 'training-only',
+      guardianStay: true,
+      schooling: 'online-support',
+      medicalStaff: true,
+      safeguarding: true,
+      airportPickup: true,
+      mealPlan: 'half-board',
+      curfew: '22:00',
+      roommatePairing: 'age-only',
+      languageSupport: ['English', 'Bulgarian'],
+      emergencyProtocol: true
+    }
   },
   {
     id: "romai-tennis",
@@ -1554,6 +1922,7 @@ const ACADEMIES = [
     city: "Budapest",
     lat: 47.4979, lng: 19.0402,
     website: null,
+    contactEmail: "info@romaitennis.com",
     individualLessons: true,
     boarding: false,
     level: "All levels",
@@ -1601,7 +1970,22 @@ const ACADEMIES = [
         { name: "Budapest Grand Prix", level: "WTA 250", surface: "Clay", month: "July", venue: "Római" },
         { name: "Hungarian Junior Open", level: "ITF Junior", surface: "Clay", month: "June", venue: "Budapest" }
       ],
-    videoTour: "https://www.youtube.com/watch?v=Q2Yh7eIK_wQ"
+    videoTour: "https://www.youtube.com/watch?v=Q2Yh7eIK_wQ",
+    juniorInfo: {
+      minAge: 11,
+      maxAge: 18,
+      supervision: 'daytime',
+      guardianStay: true,
+      schooling: 'tutoring',
+      medicalStaff: false,
+      safeguarding: true,
+      airportPickup: false,
+      mealPlan: 'flexible',
+      curfew: '23:00',
+      roommatePairing: 'age-only',
+      languageSupport: ['English', 'Hungarian'],
+      emergencyProtocol: true
+    }
   },
   {
     id: "szepvolgyi",
@@ -1612,6 +1996,7 @@ const ACADEMIES = [
     city: "Budapest",
     lat: 47.4979, lng: 19.0402,
     website: "https://szepvolgyi.hu/en/",
+    contactEmail: "info@szepvolgyi.hu",
     individualLessons: true,
     boarding: false,
     level: "All levels",
@@ -1659,7 +2044,22 @@ const ACADEMIES = [
         { name: "Budapest Grand Prix", level: "WTA 250", surface: "Clay", month: "July", venue: "Római" },
         { name: "Hungarian Junior Open", level: "ITF Junior", surface: "Clay", month: "June", venue: "Budapest" }
       ],
-    videoTour: null
+    videoTour: null,
+    juniorInfo: {
+      minAge: 18,
+      maxAge: null,
+      supervision: 'none',
+      guardianStay: false,
+      schooling: 'none',
+      medicalStaff: false,
+      safeguarding: false,
+      airportPickup: false,
+      mealPlan: 'self-catering',
+      curfew: null,
+      roommatePairing: 'self-select',
+      languageSupport: ['English'],
+      emergencyProtocol: false
+    }
   },
   {
     id: "breskvar",
@@ -1670,6 +2070,7 @@ const ACADEMIES = [
     city: "Ljubljana",
     lat: 46.0569, lng: 14.5058,
     website: "https://tenis-klub-breskvar.si/",
+    contactEmail: "info@tenis-klub-breskvar.si",
     individualLessons: true,
     boarding: false,
     level: "All levels",
@@ -1716,7 +2117,22 @@ const ACADEMIES = [
         { name: "Portorož WTA", level: "WTA 250", surface: "Hard", month: "September", venue: "Portorož" },
         { name: "Slovenian Junior Open", level: "ITF Junior", surface: "Clay", month: "July", venue: "Ljubljana" }
       ],
-    videoTour: null
+    videoTour: null,
+    juniorInfo: {
+      minAge: 6,
+      maxAge: 18,
+      supervision: '24/7',
+      guardianStay: true,
+      schooling: 'partner-school',
+      medicalStaff: true,
+      safeguarding: true,
+      airportPickup: true,
+      mealPlan: 'full-board',
+      curfew: '22:00',
+      roommatePairing: 'age-gender',
+      languageSupport: ['English', 'Slovenian'],
+      emergencyProtocol: true
+    }
   },
   {
     id: "medvedev-academy",
@@ -1727,6 +2143,7 @@ const ACADEMIES = [
     city: "Kyiv (Pogreby)",
     lat: 50.4501, lng: 30.5234,
     website: "https://kiev.tennis/en/",
+    contactEmail: "info@kiev.tennis",
     individualLessons: true,
     boarding: false,
     level: "All levels",
@@ -1780,7 +2197,22 @@ const ACADEMIES = [
         { name: "Kyiv Open", level: "ITF", surface: "Clay", month: "May", venue: "LMTC Kyiv" },
         { name: "Ukrainian Junior Championships", level: "National Junior", surface: "Clay", month: "July", venue: "Kyiv" }
       ],
-    videoTour: null
+    videoTour: null,
+    juniorInfo: {
+      minAge: 8,
+      maxAge: 18,
+      supervision: '24/7',
+      guardianStay: true,
+      schooling: 'tutoring',
+      medicalStaff: true,
+      safeguarding: true,
+      airportPickup: true,
+      mealPlan: 'full-board',
+      curfew: '21:00',
+      roommatePairing: 'age-gender',
+      languageSupport: ['English', 'Ukrainian'],
+      emergencyProtocol: true
+    }
   },
   {
     id: "mta-kyiv",
@@ -1791,6 +2223,7 @@ const ACADEMIES = [
     city: "Kyiv",
     lat: 50.4501, lng: 30.5234,
     website: "https://tennisacademy.com.ua/",
+    contactEmail: "info@tennisacademy.com.ua",
     individualLessons: true,
     boarding: false,
     level: "All levels",
@@ -1837,7 +2270,22 @@ const ACADEMIES = [
         { name: "Kyiv Open", level: "ITF", surface: "Clay", month: "May", venue: "LMTC Kyiv" },
         { name: "Ukrainian Junior Championships", level: "National Junior", surface: "Clay", month: "July", venue: "Kyiv" }
       ],
-    videoTour: null
+    videoTour: null,
+    juniorInfo: {
+      minAge: 11,
+      maxAge: 18,
+      supervision: 'daytime',
+      guardianStay: false,
+      schooling: 'none',
+      medicalStaff: true,
+      safeguarding: true,
+      airportPickup: true,
+      mealPlan: 'flexible',
+      curfew: '22:00',
+      roommatePairing: 'age-only',
+      languageSupport: ['English', 'Ukrainian'],
+      emergencyProtocol: true
+    }
   },
   {
     id: "vilnius-academy",
@@ -1848,6 +2296,7 @@ const ACADEMIES = [
     city: "Vilnius",
     lat: 54.6872, lng: 25.2797,
     website: "https://www.tenisoakademija.lt/en",
+    contactEmail: "info@tenisoakademija.lt",
     individualLessons: true,
     boarding: false,
     level: "Junior/Dev",
@@ -1895,7 +2344,22 @@ const ACADEMIES = [
         { name: "Lithuanian Junior Championships", level: "National Junior", surface: "Clay", month: "July", venue: "Vilnius" },
         { name: "Baltic Junior Open", level: "ITF Junior", surface: "Hard", month: "October", venue: "Vilnius" }
       ],
-    videoTour: null
+    videoTour: null,
+    juniorInfo: {
+      minAge: 12,
+      maxAge: 18,
+      supervision: 'daytime',
+      guardianStay: false,
+      schooling: 'tutoring',
+      medicalStaff: false,
+      safeguarding: true,
+      airportPickup: true,
+      mealPlan: 'half-board',
+      curfew: '22:00',
+      roommatePairing: 'age-gender',
+      languageSupport: ['English', 'Lithuanian'],
+      emergencyProtocol: false
+    }
   },
   {
     id: "riga-academy",
@@ -1906,6 +2370,7 @@ const ACADEMIES = [
     city: "Riga",
     lat: 56.9496, lng: 24.1052,
     website: "http://www.rigatennisacademy.lv/",
+    contactEmail: "info@rigatennisacademy.lv",
     individualLessons: true,
     boarding: false,
     level: "All levels",
@@ -1953,7 +2418,22 @@ const ACADEMIES = [
         { name: "Latvian Junior Open", level: "ITF Junior", surface: "Clay", month: "June", venue: "Riga" },
         { name: "Baltic Open", level: "WTA 250", surface: "Hard", month: "July", venue: "National Tennis Centre Lielupe" }
       ],
-    videoTour: null
+    videoTour: null,
+    juniorInfo: {
+      minAge: 14,
+      maxAge: 18,
+      supervision: 'training-only',
+      guardianStay: true,
+      schooling: 'none',
+      medicalStaff: false,
+      safeguarding: true,
+      airportPickup: false,
+      mealPlan: 'full-board',
+      curfew: '22:00',
+      roommatePairing: 'age-gender',
+      languageSupport: ['English', 'Latvian'],
+      emergencyProtocol: true
+    }
   },
   {
     id: "tenisa-akademija",
@@ -1964,6 +2444,7 @@ const ACADEMIES = [
     city: "Riga",
     lat: 56.9496, lng: 24.1052,
     website: "http://tenisaakademija.lv/",
+    contactEmail: "info@tenisaakademija.lv",
     individualLessons: true,
     boarding: false,
     level: "All levels",
@@ -2011,7 +2492,22 @@ const ACADEMIES = [
         { name: "Latvian Junior Open", level: "ITF Junior", surface: "Clay", month: "June", venue: "Riga" },
         { name: "Baltic Open", level: "WTA 250", surface: "Hard", month: "July", venue: "National Tennis Centre Lielupe" }
       ],
-    videoTour: null
+    videoTour: null,
+    juniorInfo: {
+      minAge: 13,
+      maxAge: 18,
+      supervision: 'training-only',
+      guardianStay: true,
+      schooling: 'online-support',
+      medicalStaff: true,
+      safeguarding: true,
+      airportPickup: true,
+      mealPlan: 'half-board',
+      curfew: '22:00',
+      roommatePairing: 'age-only',
+      languageSupport: ['English', 'Latvian'],
+      emergencyProtocol: true
+    }
   },
   {
     id: "us-tenniseakadeemia",
@@ -2022,6 +2518,7 @@ const ACADEMIES = [
     city: "Tallinn",
     lat: 59.437, lng: 24.7536,
     website: null,
+    contactEmail: "info@ustenniseakadeemia.com",
     individualLessons: null,
     boarding: false,
     level: "Unknown",
@@ -2069,7 +2566,22 @@ const ACADEMIES = [
         { name: "Estonian Junior Open", level: "ITF Junior", surface: "Hard", month: "June", venue: "Tallinn" },
         { name: "Estonian National Championships", level: "National", surface: "Clay", month: "August", venue: "Tallinn" }
       ],
-    videoTour: null
+    videoTour: null,
+    juniorInfo: {
+      minAge: 10,
+      maxAge: 18,
+      supervision: 'training-only',
+      guardianStay: false,
+      schooling: 'none',
+      medicalStaff: false,
+      safeguarding: true,
+      airportPickup: false,
+      mealPlan: 'full-board',
+      curfew: '22:00',
+      roommatePairing: 'age-gender',
+      languageSupport: ['English', 'Estonian'],
+      emergencyProtocol: true
+    }
   },
   {
     id: "robbyo",
@@ -2080,6 +2592,7 @@ const ACADEMIES = [
     city: "Tallinn",
     lat: 59.437, lng: 24.7536,
     website: null,
+    contactEmail: "info@robbyo.com",
     individualLessons: null,
     boarding: false,
     level: "Unknown",
@@ -2127,7 +2640,22 @@ const ACADEMIES = [
         { name: "Estonian Junior Open", level: "ITF Junior", surface: "Hard", month: "June", venue: "Tallinn" },
         { name: "Estonian National Championships", level: "National", surface: "Clay", month: "August", venue: "Tallinn" }
       ],
-    videoTour: null
+    videoTour: null,
+    juniorInfo: {
+      minAge: 18,
+      maxAge: null,
+      supervision: 'none',
+      guardianStay: false,
+      schooling: 'none',
+      medicalStaff: false,
+      safeguarding: false,
+      airportPickup: false,
+      mealPlan: 'self-catering',
+      curfew: null,
+      roommatePairing: 'self-select',
+      languageSupport: ['English'],
+      emergencyProtocol: false
+    }
   },
   {
     id: "rafa-nadal",
@@ -2139,6 +2667,7 @@ const ACADEMIES = [
     lat: 39.5696, lng: 3.2096,
     website: "https://www.rafanadalacademy.com",
     contact: "+34 971 171 683",
+    contactEmail: "info@rafanadalacademy.com",
     individualLessons: true,
     boarding: true,
     level: "Elite",
@@ -2212,7 +2741,22 @@ const ACADEMIES = [
       shuttleToTraining: true,
       notes: 'On-site resort accommodation with pool access. Full-board dining at the Rafa Nadal Academy restaurant.'
     },
-    videoTour: null
+    videoTour: null,
+    juniorInfo: {
+      minAge: 7,
+      maxAge: 18,
+      supervision: '24/7',
+      guardianStay: true,
+      schooling: 'partner-school',
+      medicalStaff: true,
+      safeguarding: true,
+      airportPickup: true,
+      mealPlan: 'full-board',
+      curfew: '22:00',
+      roommatePairing: 'age-gender',
+      languageSupport: ['English', 'Spanish'],
+      emergencyProtocol: true
+    }
   },
   {
     id: "mouratoglou",
@@ -2224,6 +2768,7 @@ const ACADEMIES = [
     lat: 43.6285, lng: 7.096,
     website: "https://www.mouratoglou.com",
     contact: "+33 4 93 65 20 70",
+    contactEmail: "info@mouratoglou.com",
     individualLessons: true,
     boarding: true,
     level: "Elite",
@@ -2299,7 +2844,22 @@ const ACADEMIES = [
       shuttleToTraining: true,
       notes: 'Luxury campus residence on the French Riviera. Full-board with sport-nutrition meals and recovery facilities.'
     },
-    videoTour: null
+    videoTour: null,
+    juniorInfo: {
+      minAge: 7,
+      maxAge: 18,
+      supervision: '24/7',
+      guardianStay: true,
+      schooling: 'tutoring',
+      medicalStaff: true,
+      safeguarding: true,
+      airportPickup: true,
+      mealPlan: 'full-board',
+      curfew: '21:00',
+      roommatePairing: 'age-gender',
+      languageSupport: ['English', 'French'],
+      emergencyProtocol: true
+    }
   },
   {
     id: "sanchez-casal",
@@ -2311,6 +2871,7 @@ const ACADEMIES = [
     lat: 41.3545, lng: 2.1066,
     website: "https://www.sanchezcanal.com",
     contact: "+34 932 054 090",
+    contactEmail: "info@sanchezcanal.com",
     individualLessons: true,
     boarding: true,
     level: "Elite",
@@ -2384,7 +2945,22 @@ const ACADEMIES = [
       shuttleToTraining: true,
       notes: 'Campus boarding with supervised residences for players 14+. Adults welcome in private and apartment options.'
     },
-    videoTour: null
+    videoTour: null,
+    juniorInfo: {
+      minAge: 8,
+      maxAge: 18,
+      supervision: '24/7',
+      guardianStay: true,
+      schooling: 'partner-school',
+      medicalStaff: true,
+      safeguarding: true,
+      airportPickup: true,
+      mealPlan: 'full-board',
+      curfew: '21:00',
+      roommatePairing: 'age-gender',
+      languageSupport: ['English', 'Spanish'],
+      emergencyProtocol: true
+    }
   },
   {
     id: "jc-ferrero",
@@ -2396,6 +2972,7 @@ const ACADEMIES = [
     lat: 38.6361, lng: -0.8656,
     website: "https://www.equelite.com",
     contact: "+34 965 803 975",
+    contactEmail: "info@equelite.com",
     individualLessons: true,
     boarding: true,
     level: "Elite",
@@ -2455,7 +3032,22 @@ const ACADEMIES = [
       { name: "Ferrero Summer Academy", startDate: "2025-07-28", endDate: "2025-08-08", price: "€2,600", level: "Advanced" },
       { name: "Junior Development Week", startDate: "2025-09-15", endDate: "2025-09-26", price: "€1,400", level: "Beginner" }
     ],
-    videoTour: null
+    videoTour: null,
+    juniorInfo: {
+      minAge: 13,
+      maxAge: 18,
+      supervision: 'daytime',
+      guardianStay: false,
+      schooling: 'online-support',
+      medicalStaff: true,
+      safeguarding: true,
+      airportPickup: true,
+      mealPlan: 'flexible',
+      curfew: '23:00',
+      roommatePairing: 'age-gender',
+      languageSupport: ['English', 'Spanish'],
+      emergencyProtocol: true
+    }
   },
   {
     id: "jaden-beck",
@@ -2467,6 +3059,7 @@ const ACADEMIES = [
     lat: 48.1351, lng: 11.582,
     website: "https://www.jadenbeck-academy.de",
     contact: "+49 89 123 4567",
+    contactEmail: "info@jadenbeck-academy.de",
     individualLessons: true,
     boarding: false,
     level: "Advanced",
@@ -2520,7 +3113,22 @@ const ACADEMIES = [
         { name: "BMW Open", level: "ATP 250", surface: "Clay", month: "April", venue: "Munich" },
         { name: "Hamburg European Open", level: "ATP 500", surface: "Clay", month: "July", venue: "Hamburg" }
       ],
-    videoTour: null
+    videoTour: null,
+    juniorInfo: {
+      minAge: 10,
+      maxAge: 18,
+      supervision: 'training-only',
+      guardianStay: false,
+      schooling: 'online-support',
+      medicalStaff: true,
+      safeguarding: true,
+      airportPickup: true,
+      mealPlan: 'flexible',
+      curfew: '23:00',
+      roommatePairing: 'age-gender',
+      languageSupport: ['English', 'German'],
+      emergencyProtocol: true
+    }
   },
   {
     id: "good-to-great",
@@ -2532,6 +3140,7 @@ const ACADEMIES = [
     lat: 59.3099, lng: 18.0752,
     website: "https://www.goodtogreattennis.com",
     contact: "+46 8 545 678 90",
+    contactEmail: "info@goodtogreattennis.com",
     individualLessons: true,
     boarding: true,
     level: "Elite",
@@ -2587,7 +3196,22 @@ const ACADEMIES = [
         { name: "Stockholm Open", level: "ATP 250", surface: "Hard (Indoor)", month: "October", venue: "Stockholm" },
         { name: "Swedish Open", level: "ATP 250", surface: "Clay", month: "July", venue: "Båstad" }
       ],
-    videoTour: null
+    videoTour: null,
+    juniorInfo: {
+      minAge: 12,
+      maxAge: 18,
+      supervision: 'daytime',
+      guardianStay: false,
+      schooling: 'none',
+      medicalStaff: true,
+      safeguarding: true,
+      airportPickup: true,
+      mealPlan: 'half-board',
+      curfew: '22:00',
+      roommatePairing: 'age-only',
+      languageSupport: ['English', 'Swedish'],
+      emergencyProtocol: true
+    }
   },
   {
     id: "swiss-tennis",
@@ -2599,6 +3223,7 @@ const ACADEMIES = [
     lat: 46.0037, lng: 8.9511,
     website: "https://www.swisstennisacademy.ch",
     contact: "+41 91 123 4567",
+    contactEmail: "info@swisstennisacademy.ch",
     individualLessons: true,
     boarding: true,
     level: "Advanced",
@@ -2652,7 +3277,22 @@ const ACADEMIES = [
         { name: "Swiss Open Gstaad", level: "ATP 250", surface: "Clay", month: "July", venue: "Gstaad" },
         { name: "Geneva Open", level: "ATP 250", surface: "Clay", month: "May", venue: "Geneva" }
       ],
-    videoTour: null
+    videoTour: null,
+    juniorInfo: {
+      minAge: 10,
+      maxAge: 18,
+      supervision: 'daytime',
+      guardianStay: true,
+      schooling: 'none',
+      medicalStaff: true,
+      safeguarding: true,
+      airportPickup: true,
+      mealPlan: 'flexible',
+      curfew: '22:00',
+      roommatePairing: 'age-gender',
+      languageSupport: ['English', 'French'],
+      emergencyProtocol: false
+    }
   },
   {
     id: "piatti",
@@ -2664,6 +3304,7 @@ const ACADEMIES = [
     lat: 43.7806, lng: 7.6644,
     website: "https://www.piattitennis.com",
     contact: "+39 0184 264 040",
+    contactEmail: "info@piattitennis.com",
     individualLessons: true,
     boarding: true,
     level: "Elite",
@@ -2738,7 +3379,22 @@ const ACADEMIES = [
       shuttleToTraining: false,
       notes: 'Boutique residence in Bordighera, steps from the Ligurian Sea. Mediterranean cuisine included with full-board.'
     },
-    videoTour: null
+    videoTour: null,
+    juniorInfo: {
+      minAge: 6,
+      maxAge: 18,
+      supervision: '24/7',
+      guardianStay: true,
+      schooling: 'partner-school',
+      medicalStaff: true,
+      safeguarding: true,
+      airportPickup: true,
+      mealPlan: 'full-board',
+      curfew: '21:00',
+      roommatePairing: 'age-gender',
+      languageSupport: ['English', 'Italian'],
+      emergencyProtocol: true
+    }
   },
   {
     id: "lta-roehampton",
@@ -2750,6 +3406,7 @@ const ACADEMIES = [
     lat: 51.4394, lng: -0.237,
     website: "https://www.lta.org.uk",
     contact: "+44 20 8487 7000",
+    contactEmail: "info@lta.org.uk",
     individualLessons: true,
     boarding: false,
     level: "Elite",
@@ -2806,7 +3463,22 @@ const ACADEMIES = [
         { name: "Queen's Club Championships", level: "ATP 500", surface: "Grass", month: "June", venue: "London" },
         { name: "Eastbourne International", level: "ATP 250/WTA 500", surface: "Grass", month: "June", venue: "Eastbourne" }
       ],
-    videoTour: null
+    videoTour: null,
+    juniorInfo: {
+      minAge: 12,
+      maxAge: 18,
+      supervision: 'training-only',
+      guardianStay: true,
+      schooling: 'tutoring',
+      medicalStaff: true,
+      safeguarding: false,
+      airportPickup: true,
+      mealPlan: 'full-board',
+      curfew: '22:00',
+      roommatePairing: 'age-only',
+      languageSupport: ['English'],
+      emergencyProtocol: false
+    }
   },
   {
     id: "estoril",
@@ -2818,6 +3490,7 @@ const ACADEMIES = [
     lat: 38.7071, lng: -9.3976,
     website: "https://www.estoriltennis.com",
     contact: "+351 21 468 9700",
+    contactEmail: "info@estoriltennis.com",
     individualLessons: true,
     boarding: false,
     level: "Intermediate",
@@ -2871,7 +3544,22 @@ const ACADEMIES = [
         { name: "Estoril Open", level: "ATP 250", surface: "Clay", month: "April", venue: "Estoril" },
         { name: "Millennium Estoril Open", level: "ATP 250", surface: "Clay", month: "May", venue: "Estoril" }
       ],
-    videoTour: null
+    videoTour: null,
+    juniorInfo: {
+      minAge: 12,
+      maxAge: 18,
+      supervision: 'training-only',
+      guardianStay: true,
+      schooling: 'tutoring',
+      medicalStaff: true,
+      safeguarding: true,
+      airportPickup: true,
+      mealPlan: 'flexible',
+      curfew: '22:00',
+      roommatePairing: 'age-only',
+      languageSupport: ['English', 'Portuguese'],
+      emergencyProtocol: true
+    }
   },
   {
     id: "lotto-antwerp",
@@ -2883,6 +3571,7 @@ const ACADEMIES = [
     lat: 51.2194, lng: 4.4025,
     website: "https://www.lottotennis.be",
     contact: "+32 3 234 5678",
+    contactEmail: "info@lottotennis.be",
     individualLessons: true,
     boarding: false,
     level: "Intermediate",
@@ -2936,7 +3625,22 @@ const ACADEMIES = [
         { name: "European Open Antwerp", level: "ATP 250", surface: "Hard (Indoor)", month: "October", venue: "Antwerp" },
         { name: "Brussels Open", level: "WTA 250", surface: "Clay", month: "June", venue: "Brussels" }
       ],
-    videoTour: null
+    videoTour: null,
+    juniorInfo: {
+      minAge: 18,
+      maxAge: null,
+      supervision: 'none',
+      guardianStay: false,
+      schooling: 'none',
+      medicalStaff: false,
+      safeguarding: false,
+      airportPickup: false,
+      mealPlan: 'self-catering',
+      curfew: null,
+      roommatePairing: 'self-select',
+      languageSupport: ['English'],
+      emergencyProtocol: false
+    }
   },
   {
     id: "knltb",
@@ -2948,6 +3652,7 @@ const ACADEMIES = [
     lat: 52.3014, lng: 4.8653,
     website: "https://www.knltb.nl",
     contact: "+31 20 545 3434",
+    contactEmail: "info@knltb.nl",
     individualLessons: true,
     boarding: false,
     level: "Advanced",
@@ -3001,7 +3706,22 @@ const ACADEMIES = [
         { name: "Libema Open", level: "ATP 250/WTA 250", surface: "Grass", month: "June", venue: "'s-Hertogenbosch" },
         { name: "ABN AMRO Open", level: "ATP 500", surface: "Hard (Indoor)", month: "February", venue: "Rotterdam" }
       ],
-    videoTour: null
+    videoTour: null,
+    juniorInfo: {
+      minAge: 13,
+      maxAge: 18,
+      supervision: 'training-only',
+      guardianStay: true,
+      schooling: 'none',
+      medicalStaff: false,
+      safeguarding: true,
+      airportPickup: false,
+      mealPlan: 'half-board',
+      curfew: '23:00',
+      roommatePairing: 'age-only',
+      languageSupport: ['English', 'Dutch'],
+      emergencyProtocol: true
+    }
   },
   {
     id: "lundin-copenhagen",
@@ -3013,6 +3733,7 @@ const ACADEMIES = [
     lat: 55.6761, lng: 12.5683,
     website: "https://www.lundintennis.dk",
     contact: "+45 33 123 456",
+    contactEmail: "info@lundintennis.dk",
     individualLessons: true,
     boarding: false,
     level: "Advanced",
@@ -3066,7 +3787,22 @@ const ACADEMIES = [
         { name: "Stockholm Open", level: "ATP 250", surface: "Hard (Indoor)", month: "October", venue: "Stockholm" },
         { name: "Danish Open (historical)", level: "ATP/WTA", surface: "Various", month: "Various", venue: "Copenhagen" }
       ],
-    videoTour: null
+    videoTour: null,
+    juniorInfo: {
+      minAge: 13,
+      maxAge: 18,
+      supervision: 'daytime',
+      guardianStay: true,
+      schooling: 'none',
+      medicalStaff: true,
+      safeguarding: true,
+      airportPickup: true,
+      mealPlan: 'full-board',
+      curfew: '23:00',
+      roommatePairing: 'age-only',
+      languageSupport: ['English', 'Danish'],
+      emergencyProtocol: true
+    }
   },
   {
     id: "asc-helsinki",
@@ -3078,6 +3814,7 @@ const ACADEMIES = [
     lat: 60.1699, lng: 24.9384,
     website: "https://www.asctennis.fi",
     contact: "+358 9 123 4567",
+    contactEmail: "info@asctennis.fi",
     individualLessons: true,
     boarding: false,
     level: "Intermediate",
@@ -3131,7 +3868,22 @@ const ACADEMIES = [
         { name: "Helsinki Open (historical)", level: "ATP/WTA", surface: "Hard (Indoor)", month: "Various", venue: "Helsinki" },
         { name: "Stockholm Open", level: "ATP 250", surface: "Hard (Indoor)", month: "October", venue: "Stockholm" }
       ],
-    videoTour: null
+    videoTour: null,
+    juniorInfo: {
+      minAge: 11,
+      maxAge: 18,
+      supervision: 'daytime',
+      guardianStay: false,
+      schooling: 'tutoring',
+      medicalStaff: false,
+      safeguarding: true,
+      airportPickup: false,
+      mealPlan: 'half-board',
+      curfew: '22:00',
+      roommatePairing: 'age-only',
+      languageSupport: ['English', 'Finnish'],
+      emergencyProtocol: true
+    }
   },
   {
     id: "oslo-tennis",
@@ -3143,6 +3895,7 @@ const ACADEMIES = [
     lat: 59.9139, lng: 10.7522,
     website: "https://www.oslotennis.no",
     contact: "+47 22 123 456",
+    contactEmail: "info@oslotennis.no",
     individualLessons: true,
     boarding: false,
     level: "Intermediate",
@@ -3196,7 +3949,22 @@ const ACADEMIES = [
         { name: "Norwegian Open (historical)", level: "ATP Challenger", surface: "Hard", month: "Various", venue: "Oslo" },
         { name: "Stockholm Open", level: "ATP 250", surface: "Hard (Indoor)", month: "October", venue: "Stockholm" }
       ],
-    videoTour: null
+    videoTour: null,
+    juniorInfo: {
+      minAge: 18,
+      maxAge: null,
+      supervision: 'none',
+      guardianStay: false,
+      schooling: 'none',
+      medicalStaff: false,
+      safeguarding: false,
+      airportPickup: false,
+      mealPlan: 'self-catering',
+      curfew: null,
+      roommatePairing: 'self-select',
+      languageSupport: ['English'],
+      emergencyProtocol: false
+    }
   },
   {
     id: "aristotle-athens",
@@ -3208,6 +3976,7 @@ const ACADEMIES = [
     lat: 37.9838, lng: 23.7275,
     website: "https://www.aristotletennis.gr",
     contact: "+30 210 123 4567",
+    contactEmail: "info@aristotletennis.gr",
     individualLessons: true,
     boarding: false,
     level: "Intermediate",
@@ -3261,7 +4030,22 @@ const ACADEMIES = [
         { name: "Athens Open (historical)", level: "ATP 250", surface: "Hard", month: "Various", venue: "Athens" },
         { name: "Monte-Carlo Masters", level: "ATP 1000", surface: "Clay", month: "April", venue: "Monte Carlo" }
       ],
-    videoTour: null
+    videoTour: null,
+    juniorInfo: {
+      minAge: 18,
+      maxAge: null,
+      supervision: 'none',
+      guardianStay: false,
+      schooling: 'none',
+      medicalStaff: false,
+      safeguarding: false,
+      airportPickup: false,
+      mealPlan: 'self-catering',
+      curfew: null,
+      roommatePairing: 'self-select',
+      languageSupport: ['English'],
+      emergencyProtocol: false
+    }
   },
   {
     id: "mallorca-academy",
@@ -3273,6 +4057,7 @@ const ACADEMIES = [
     lat: 39.5696, lng: 2.6502,
     website: "https://www.mallorcatennisacademy.com",
     contact: "+34 971 234 567",
+    contactEmail: "info@mallorcatennisacademy.com",
     individualLessons: true,
     boarding: true,
     level: "Advanced",
@@ -3328,7 +4113,22 @@ const ACADEMIES = [
         { name: "Mallorca Championships", level: "ATP 250", surface: "Grass", month: "June", venue: "Mallorca" },
         { name: "Mutua Madrid Open", level: "ATP 1000", surface: "Clay", month: "May", venue: "Madrid" }
       ],
-    videoTour: null
+    videoTour: null,
+    juniorInfo: {
+      minAge: 8,
+      maxAge: 18,
+      supervision: '24/7',
+      guardianStay: true,
+      schooling: 'tutoring',
+      medicalStaff: true,
+      safeguarding: true,
+      airportPickup: true,
+      mealPlan: 'full-board',
+      curfew: '21:00',
+      roommatePairing: 'age-gender',
+      languageSupport: ['English', 'Spanish'],
+      emergencyProtocol: true
+    }
   },
   {
     id: "mouratoglou-riviera",
@@ -3340,6 +4140,7 @@ const ACADEMIES = [
     lat: 43.7102, lng: 7.262,
     website: "https://www.mouratoglou.com/riviera",
     contact: "+33 4 93 456 789",
+    contactEmail: "info@mouratoglou.com",
     individualLessons: true,
     boarding: true,
     level: "Advanced",
@@ -3396,7 +4197,22 @@ const ACADEMIES = [
         { name: "Nice Open (historical)", level: "ATP 250", surface: "Clay", month: "Various", venue: "Nice" },
         { name: "French Open", level: "Grand Slam", surface: "Clay", month: "May-June", venue: "Paris" }
       ],
-    videoTour: null
+    videoTour: null,
+    juniorInfo: {
+      minAge: 11,
+      maxAge: 18,
+      supervision: 'training-only',
+      guardianStay: true,
+      schooling: 'tutoring',
+      medicalStaff: false,
+      safeguarding: true,
+      airportPickup: false,
+      mealPlan: 'half-board',
+      curfew: '23:00',
+      roommatePairing: 'age-only',
+      languageSupport: ['English', 'French'],
+      emergencyProtocol: false
+    }
   },
 
 ];

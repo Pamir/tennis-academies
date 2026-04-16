@@ -10,6 +10,7 @@ const ACADEMIES = [
     city: 'Barcelona',
     lat: 41.3784, lng: 2.1925,
     website: 'https://www.cnab.cat',
+    contactEmail: 'info@cnab.cat',
     individualLessons: true,
     boarding: false,
     level: 'Elite',
@@ -74,7 +75,22 @@ const ACADEMIES = [
       shuttleToTraining: true,
       notes: 'Pool access with all rooms, beachfront location on Barceloneta'
     },
-    videoTour: null
+    videoTour: null,
+    juniorInfo: {
+      minAge: 7,
+      maxAge: 18,
+      supervision: '24/7',
+      guardianStay: true,
+      schooling: 'tutoring',
+      medicalStaff: true,
+      safeguarding: true,
+      airportPickup: true,
+      mealPlan: 'full-board',
+      curfew: '21:30',
+      roommatePairing: 'age-gender',
+      languageSupport: ['English', 'Spanish', 'Catalan'],
+      emergencyProtocol: true
+    }
   },
   {
     id: 'duna-arena-academy',
@@ -85,6 +101,7 @@ const ACADEMIES = [
     city: 'Budapest',
     lat: 47.5030, lng: 19.0510,
     website: 'https://www.dunaarena.hu',
+    contactEmail: 'info@dunaarena.hu',
     individualLessons: true,
     boarding: true,
     level: 'Elite',
@@ -149,7 +166,22 @@ const ACADEMIES = [
       shuttleToTraining: false,
       notes: 'Danube-side residence with thermal spa access and recovery facilities'
     },
-    videoTour: null
+    videoTour: null,
+    juniorInfo: {
+      minAge: 6,
+      maxAge: 18,
+      supervision: '24/7',
+      guardianStay: true,
+      schooling: 'partner-school',
+      medicalStaff: true,
+      safeguarding: true,
+      airportPickup: true,
+      mealPlan: 'full-board',
+      curfew: '21:00',
+      roommatePairing: 'age-gender',
+      languageSupport: ['English', 'Hungarian'],
+      emergencyProtocol: true
+    }
   },
   {
     id: 'london-aquatics-centre',
@@ -160,6 +192,7 @@ const ACADEMIES = [
     city: 'London',
     lat: 51.5387, lng: -0.0106,
     website: 'https://www.londonaquaticscentre.org',
+    contactEmail: 'info@londonaquaticscentre.org',
     individualLessons: true,
     boarding: false,
     level: 'Elite',
@@ -222,7 +255,22 @@ const ACADEMIES = [
       shuttleToTraining: true,
       notes: 'Olympic Park residence with gym and recovery centre included'
     },
-    videoTour: null
+    videoTour: null,
+    juniorInfo: {
+      minAge: 10,
+      maxAge: 18,
+      supervision: 'daytime',
+      guardianStay: true,
+      schooling: 'online-support',
+      medicalStaff: true,
+      safeguarding: true,
+      airportPickup: true,
+      mealPlan: 'half-board',
+      curfew: '22:00',
+      roommatePairing: 'age-gender',
+      languageSupport: ['English'],
+      emergencyProtocol: true
+    }
   },
   {
     id: 'insep-swimming',
@@ -233,6 +281,7 @@ const ACADEMIES = [
     city: 'Paris',
     lat: 48.8484, lng: 2.4491,
     website: 'https://www.insep.fr',
+    contactEmail: 'info@insep.fr',
     individualLessons: true,
     boarding: true,
     level: 'Elite',
@@ -291,7 +340,22 @@ const ACADEMIES = [
       shuttleToTraining: false,
       notes: 'Elite athlete campus housing with sports science lab access'
     },
-    videoTour: null
+    videoTour: null,
+    juniorInfo: {
+      minAge: 8,
+      maxAge: 18,
+      supervision: '24/7',
+      guardianStay: true,
+      schooling: 'partner-school',
+      medicalStaff: true,
+      safeguarding: true,
+      airportPickup: true,
+      mealPlan: 'full-board',
+      curfew: '21:00',
+      roommatePairing: 'age-gender',
+      languageSupport: ['English', 'French'],
+      emergencyProtocol: true
+    }
   },
   {
     id: 'eindhoven-swim',
@@ -302,6 +366,7 @@ const ACADEMIES = [
     city: 'Eindhoven',
     lat: 51.4381, lng: 5.4752,
     website: 'https://www.pvdhswimacademy.nl',
+    contactEmail: 'info@pvdhswimacademy.nl',
     individualLessons: true,
     boarding: true,
     level: 'All levels',
@@ -359,7 +424,22 @@ const ACADEMIES = [
       shuttleToTraining: true,
       notes: 'Pool access with all rooms, cycling distance to city centre'
     },
-    videoTour: null
+    videoTour: null,
+    juniorInfo: {
+      minAge: 10,
+      maxAge: 18,
+      supervision: 'daytime',
+      guardianStay: true,
+      schooling: 'tutoring',
+      medicalStaff: true,
+      safeguarding: true,
+      airportPickup: true,
+      mealPlan: 'half-board',
+      curfew: '22:00',
+      roommatePairing: 'age-only',
+      languageSupport: ['English', 'Dutch'],
+      emergencyProtocol: true
+    }
   },
   {
     id: 'berlin-swimming-federation',
@@ -370,6 +450,7 @@ const ACADEMIES = [
     city: 'Berlin',
     lat: 52.5145, lng: 13.3501,
     website: 'https://www.berlinerschwimmverband.de',
+    contactEmail: 'info@berlinerschwimmverband.de',
     individualLessons: true,
     boarding: true,
     level: 'Elite',
@@ -428,7 +509,22 @@ const ACADEMIES = [
       shuttleToTraining: true,
       notes: 'Team dining hall for all residents with tailored nutrition plans'
     },
-    videoTour: null
+    videoTour: null,
+    juniorInfo: {
+      minAge: 7,
+      maxAge: 18,
+      supervision: '24/7',
+      guardianStay: true,
+      schooling: 'tutoring',
+      medicalStaff: true,
+      safeguarding: true,
+      airportPickup: true,
+      mealPlan: 'full-board',
+      curfew: '21:30',
+      roommatePairing: 'age-gender',
+      languageSupport: ['English', 'German'],
+      emergencyProtocol: true
+    }
   },
   {
     id: 'stockholm-swim-centre',
@@ -439,6 +535,7 @@ const ACADEMIES = [
     city: 'Stockholm',
     lat: 59.3078, lng: 18.0653,
     website: 'https://www.eriksdalsbadet.se',
+    contactEmail: 'info@eriksdalsbadet.se',
     individualLessons: true,
     boarding: false,
     level: 'All levels',
@@ -494,7 +591,22 @@ const ACADEMIES = [
       shuttleToTraining: false,
       notes: 'Waterfront residence near Eriksdalsbadet with sauna and cold plunge'
     },
-    videoTour: null
+    videoTour: null,
+    juniorInfo: {
+      minAge: 10,
+      maxAge: 18,
+      supervision: 'daytime',
+      guardianStay: false,
+      schooling: 'online-support',
+      medicalStaff: true,
+      safeguarding: true,
+      airportPickup: true,
+      mealPlan: 'flexible',
+      curfew: '22:00',
+      roommatePairing: 'age-only',
+      languageSupport: ['English', 'Swedish'],
+      emergencyProtocol: true
+    }
   },
   {
     id: 'rome-swimming-academy',
@@ -505,6 +617,7 @@ const ACADEMIES = [
     city: 'Rome',
     lat: 41.9331, lng: 12.4767,
     website: 'https://www.canottierianiene.it',
+    contactEmail: 'info@canottierianiene.it',
     individualLessons: true,
     boarding: false,
     level: 'Elite',
@@ -564,7 +677,22 @@ const ACADEMIES = [
       shuttleToTraining: true,
       notes: 'Mediterranean-style residence with Italian full-board cuisine and pool access'
     },
-    videoTour: null
+    videoTour: null,
+    juniorInfo: {
+      minAge: 8,
+      maxAge: 18,
+      supervision: '24/7',
+      guardianStay: true,
+      schooling: 'tutoring',
+      medicalStaff: true,
+      safeguarding: true,
+      airportPickup: true,
+      mealPlan: 'full-board',
+      curfew: '21:30',
+      roommatePairing: 'age-gender',
+      languageSupport: ['English', 'Italian'],
+      emergencyProtocol: true
+    }
   },
   {
     id: 'athens-swim-academy',
@@ -575,6 +703,7 @@ const ACADEMIES = [
     city: 'Athens',
     lat: 37.9253, lng: 23.7546,
     website: 'https://www.oaka.com.gr',
+    contactEmail: 'info@oaka.com.gr',
     individualLessons: true,
     boarding: false,
     level: 'All levels',
@@ -621,7 +750,22 @@ const ACADEMIES = [
     upcomingCamps: [
       { name: 'Mediterranean Swim Camp', startDate: '2025-07-07', endDate: '2025-07-18', price: '€900', level: 'All Levels' }
     ],
-    videoTour: null
+    videoTour: null,
+    juniorInfo: {
+      minAge: 16,
+      maxAge: 18,
+      supervision: 'training-only',
+      guardianStay: false,
+      schooling: 'none',
+      medicalStaff: true,
+      safeguarding: true,
+      airportPickup: false,
+      mealPlan: 'self-catering',
+      curfew: null,
+      roommatePairing: 'self-select',
+      languageSupport: ['English', 'Greek'],
+      emergencyProtocol: true
+    }
   },
   {
     id: 'vienna-swim-academy',
@@ -632,6 +776,7 @@ const ACADEMIES = [
     city: 'Vienna',
     lat: 48.2019, lng: 16.3330,
     website: 'https://www.oesv.at',
+    contactEmail: 'info@oesv.at',
     individualLessons: true,
     boarding: true,
     level: 'All levels',
@@ -688,7 +833,22 @@ const ACADEMIES = [
       shuttleToTraining: true,
       notes: 'Central Vienna location with excellent public transport to training venue'
     },
-    videoTour: null
+    videoTour: null,
+    juniorInfo: {
+      minAge: 6,
+      maxAge: 18,
+      supervision: '24/7',
+      guardianStay: true,
+      schooling: 'partner-school',
+      medicalStaff: true,
+      safeguarding: true,
+      airportPickup: true,
+      mealPlan: 'full-board',
+      curfew: '21:00',
+      roommatePairing: 'age-gender',
+      languageSupport: ['English', 'German'],
+      emergencyProtocol: true
+    }
   },
   {
     id: 'copenhagen-swim',
@@ -699,6 +859,7 @@ const ACADEMIES = [
     city: 'Copenhagen',
     lat: 55.6567, lng: 12.5765,
     website: 'https://www.markup.dk',
+    contactEmail: 'info@markup.dk',
     individualLessons: true,
     boarding: false,
     level: 'All levels',
@@ -742,7 +903,22 @@ const ACADEMIES = [
     ],
     nearbyTournaments: [],
     upcomingCamps: [],
-    videoTour: null
+    videoTour: null,
+    juniorInfo: {
+      minAge: 12,
+      maxAge: 18,
+      supervision: 'daytime',
+      guardianStay: true,
+      schooling: 'online-support',
+      medicalStaff: true,
+      safeguarding: true,
+      airportPickup: true,
+      mealPlan: 'half-board',
+      curfew: '22:00',
+      roommatePairing: 'age-only',
+      languageSupport: ['English', 'Danish'],
+      emergencyProtocol: true
+    }
   },
   {
     id: 'zurich-swim-academy',
@@ -753,6 +929,7 @@ const ACADEMIES = [
     city: 'Zürich',
     lat: 47.3769, lng: 8.5417,
     website: 'https://www.scz.ch',
+    contactEmail: 'info@scz.ch',
     individualLessons: true,
     boarding: false,
     level: 'All levels',
@@ -797,7 +974,22 @@ const ACADEMIES = [
     ],
     nearbyTournaments: [],
     upcomingCamps: [],
-    videoTour: null
+    videoTour: null,
+    juniorInfo: {
+      minAge: 18,
+      maxAge: 18,
+      supervision: 'none',
+      guardianStay: false,
+      schooling: 'none',
+      medicalStaff: true,
+      safeguarding: false,
+      airportPickup: false,
+      mealPlan: 'self-catering',
+      curfew: null,
+      roommatePairing: 'n/a',
+      languageSupport: ['English', 'German', 'French'],
+      emergencyProtocol: true
+    }
   },
   {
     id: 'lisbon-swim-academy',
@@ -808,6 +1000,7 @@ const ACADEMIES = [
     city: 'Lisbon',
     lat: 38.7569, lng: -9.1558,
     website: 'https://www.fpnatacao.pt',
+    contactEmail: 'info@fpnatacao.pt',
     individualLessons: true,
     boarding: false,
     level: 'All levels',
@@ -866,7 +1059,22 @@ const ACADEMIES = [
       shuttleToTraining: true,
       notes: 'Riverside residence with ocean views and outdoor recovery terrace'
     },
-    videoTour: null
+    videoTour: null,
+    juniorInfo: {
+      minAge: 7,
+      maxAge: 18,
+      supervision: '24/7',
+      guardianStay: true,
+      schooling: 'tutoring',
+      medicalStaff: true,
+      safeguarding: true,
+      airportPickup: true,
+      mealPlan: 'full-board',
+      curfew: '21:30',
+      roommatePairing: 'age-gender',
+      languageSupport: ['English', 'Portuguese'],
+      emergencyProtocol: true
+    }
   },
   {
     id: 'dubrovnik-swim',
@@ -877,6 +1085,7 @@ const ACADEMIES = [
     city: 'Dubrovnik',
     lat: 42.6507, lng: 18.0944,
     website: 'https://www.dpk-jug.hr',
+    contactEmail: 'info@dpk-jug.hr',
     individualLessons: true,
     boarding: false,
     level: 'All levels',
@@ -923,7 +1132,22 @@ const ACADEMIES = [
     upcomingCamps: [
       { name: 'Adriatic Open Water Camp', startDate: '2025-07-14', endDate: '2025-07-25', price: '€700', level: 'Intermediate' }
     ],
-    videoTour: null
+    videoTour: null,
+    juniorInfo: {
+      minAge: 10,
+      maxAge: 18,
+      supervision: 'daytime',
+      guardianStay: true,
+      schooling: 'online-support',
+      medicalStaff: true,
+      safeguarding: true,
+      airportPickup: true,
+      mealPlan: 'half-board',
+      curfew: '22:00',
+      roommatePairing: 'age-only',
+      languageSupport: ['English', 'Croatian'],
+      emergencyProtocol: true
+    }
   }
 ];
 

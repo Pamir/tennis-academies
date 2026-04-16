@@ -15,7 +15,8 @@ const state = {
   currency: 'EUR',
   surface: '',
   nearMe: false,
-  availableOnly: false
+  availableOnly: false,
+  juniorFriendly: false
 };
 
 /* ===== Sport Config ===== */
@@ -373,6 +374,10 @@ function filterByBeach(academies) {
   return academies.filter(a => typeof a.beach?.distance === 'number');
 }
 
+function filterByJuniorFriendly(academies) {
+  return academies.filter(a => isJuniorFriendly(a));
+}
+
 function filterByCoachATP(academies) {
   return academies.filter(a => a.coaches.some(c => c.atpWta === true));
 }
@@ -457,6 +462,7 @@ function getFilteredAcademies() {
   if (state.individual) result = filterByIndividualLessons(result);
   if (state.boarding) result = filterByBoarding(result);
   if (state.beach) result = filterByBeach(result);
+  if (state.juniorFriendly) result = filterByJuniorFriendly(result);
   if (state.atp) result = filterByCoachATP(result);
   if (state.top10) result = filterByCoachTop10(result);
   if (state.surface) result = result.filter(a => a.courtSurfaces && a.courtSurfaces.includes(state.surface));
@@ -586,9 +592,12 @@ function cardHTML(a) {
         ${topCoach}
         <div class="card-airport">${airportStr}</div>
         ${distanceStr}
+        ${getBestMonthsBadge(a)}
+        ${buildJuniorBadge(a)}
       </div>
       <div class="card-footer">
         <button class="btn-quote-small" onclick="event.stopPropagation();openQuoteModal('${a.id}')">📋 Request Quote</button>
+        ${buildTripButton(a)}
         <button class="btn-details" onclick="toggleDetails(this)" aria-label="View details for ${escapeHTML(a.name)}" aria-expanded="false">
           View Details <span class="arrow" aria-hidden="true">▼</span>
         </button>
@@ -633,6 +642,197 @@ function getTopCoachData(a) {
   return { name: best.name, ranking: best.rankingNote || (best.bestRanking ? '#' + best.bestRanking : 'N/A') };
 }
 
+/* ===== Best Time to Go ===== */
+const MONTH_NAMES = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+
+function calculateMonthScore(academy, monthIndex) {
+  const climateKey = academy.climate;
+  const climate = (typeof CLIMATE_DATA !== 'undefined' && climateKey) ? CLIMATE_DATA[climateKey] : null;
+  if (!climate || !climate.months || !climate.months[monthIndex]) return null;
+
+  const m = climate.months[monthIndex];
+  const isSwimming = getSportType() === 'swimming';
+
+  // Temperature score (0-3) — swimming pools are indoor so less weight
+  let tempScore;
+  const t = m.temp;
+  if (t >= 18 && t <= 25) tempScore = 3;
+  else if ((t >= 15 && t < 18) || (t > 25 && t <= 30)) tempScore = 2;
+  else if ((t >= 10 && t < 15) || (t > 30 && t <= 35)) tempScore = 1;
+  else tempScore = 0;
+  if (isSwimming) tempScore = Math.min(tempScore + 1, 3); // indoor pools reduce weather impact
+
+  // Rain score (0-3)
+  let rainScore;
+  if (m.rain < 30) rainScore = 3;
+  else if (m.rain <= 60) rainScore = 2;
+  else if (m.rain <= 100) rainScore = 1;
+  else rainScore = 0;
+
+  // Wind score (0-2)
+  let windScore;
+  if (m.wind < 12) windScore = 2;
+  else if (m.wind <= 20) windScore = 1;
+  else windScore = 0;
+
+  // Camp score (0-1)
+  let campScore = 0;
+  if (Array.isArray(academy.upcomingCamps)) {
+    campScore = academy.upcomingCamps.some(c => campRunsInMonth(c, monthIndex)) ? 1 : 0;
+  }
+
+  // Availability score (0-1)
+  let availScore = 0;
+  if (academy.availability && academy.availability.status) {
+    const s = academy.availability.status;
+    availScore = (s === 'open' || s === 'limited') ? 1 : 0;
+  }
+
+  return tempScore + rainScore + windScore + campScore + availScore;
+}
+
+function campRunsInMonth(camp, monthIndex) {
+  if (!camp.startDate || !camp.endDate) return false;
+  const start = new Date(camp.startDate + 'T00:00:00');
+  const end = new Date(camp.endDate + 'T00:00:00');
+  if (isNaN(start) || isNaN(end)) return false;
+  // Check if any part of the camp overlaps with the month
+  const year = start.getFullYear();
+  const monthStart = new Date(year, monthIndex, 1);
+  const monthEnd = new Date(year, monthIndex + 1, 0);
+  return start <= monthEnd && end >= monthStart;
+}
+
+function getCampsInMonth(academy, monthIndex) {
+  if (!Array.isArray(academy.upcomingCamps)) return [];
+  return academy.upcomingCamps.filter(c => campRunsInMonth(c, monthIndex));
+}
+
+function getMonthTip(score) {
+  if (score >= 7) return 'Best month for training!';
+  if (score >= 4) return 'Decent conditions for training.';
+  return 'Consider other months if possible.';
+}
+
+function scoreColorClass(score) {
+  if (score >= 7) return 'month-cell-ideal';
+  if (score >= 4) return 'month-cell-good';
+  return 'month-cell-avoid';
+}
+
+function buildBestTimeSection(academy) {
+  const climateKey = academy.climate;
+  const climate = (typeof CLIMATE_DATA !== 'undefined' && climateKey) ? CLIMATE_DATA[climateKey] : null;
+  if (!climate || !climate.months) {
+    return '<div class="detail-section best-time-section"><h4>📅 Best Time to Go</h4><p>Climate data unavailable</p></div>';
+  }
+
+  const scores = [];
+  for (let i = 0; i < 12; i++) {
+    scores.push(calculateMonthScore(academy, i));
+  }
+
+  let html = '<div class="detail-section best-time-section"><h4>📅 Best Time to Go</h4>';
+  html += '<div class="month-chart">';
+  for (let i = 0; i < 12; i++) {
+    const s = scores[i];
+    if (s === null) continue;
+    const cls = scoreColorClass(s);
+    const m = climate.months[i];
+    const camps = getCampsInMonth(academy, i);
+    const campText = camps.map(c => {
+      const sd = c.startDate ? c.startDate.slice(5) : '';
+      const ed = c.endDate ? c.endDate.slice(5) : '';
+      return `${c.name} (${sd} – ${ed})`;
+    }).join('; ') || 'None';
+
+    html += `<div class="month-cell ${cls}" data-score="${s}" onclick="this.querySelector('.month-tooltip').classList.toggle('visible')">`;
+    html += `<div class="month-cell-label">${MONTH_NAMES[i]}</div>`;
+    html += `<div class="month-cell-score">${s}</div>`;
+    html += `<div class="month-tooltip">`;
+    html += `<strong>${MONTH_NAMES[i]}</strong> — Score: ${s}/10<br>`;
+    html += `🌡️ Temperature: ${m.temp}°C avg<br>`;
+    html += `🌧️ Rain: ${m.rain}mm (${m.rainyDays} rainy days)<br>`;
+    html += `💨 Wind: ${m.wind} km/h<br>`;
+    html += `🏕️ Camps: ${escapeHTML(campText)}<br>`;
+    html += `💡 ${getMonthTip(s)}`;
+    html += `</div></div>`;
+  }
+  html += '</div>';
+  html += '<div class="best-time-legend">🟢 Ideal (7-10) &nbsp; 🟡 Good (4-6) &nbsp; 🔴 Avoid (1-3)</div>';
+  html += '</div>';
+  return html;
+}
+
+function getBestMonthsBadge(academy) {
+  const climateKey = academy.climate;
+  const climate = (typeof CLIMATE_DATA !== 'undefined' && climateKey) ? CLIMATE_DATA[climateKey] : null;
+  if (!climate || !climate.months) return '';
+
+  const bestMonths = [];
+  for (let i = 0; i < 12; i++) {
+    const s = calculateMonthScore(academy, i);
+    if (s !== null && s >= 7) bestMonths.push(i);
+  }
+  if (bestMonths.length === 0) return '';
+
+  // Collapse consecutive months into ranges
+  const ranges = [];
+  let start = bestMonths[0], end = bestMonths[0];
+  for (let i = 1; i < bestMonths.length; i++) {
+    if (bestMonths[i] === end + 1) {
+      end = bestMonths[i];
+    } else {
+      ranges.push(start === end ? MONTH_NAMES[start] : `${MONTH_NAMES[start]}-${MONTH_NAMES[end]}`);
+      start = end = bestMonths[i];
+    }
+  }
+  ranges.push(start === end ? MONTH_NAMES[start] : `${MONTH_NAMES[start]}-${MONTH_NAMES[end]}`);
+
+  return `<span class="best-months-badge">📅 Best: ${ranges.join(', ')}</span>`;
+}
+
+/* ===== Junior Info Helpers ===== */
+function isJuniorFriendly(a) {
+  return a.juniorInfo && a.juniorInfo.minAge < 16 && (a.juniorInfo.supervision === '24/7' || a.juniorInfo.supervision === 'daytime');
+}
+
+function buildJuniorBadge(a) {
+  if (!a.juniorInfo) return '';
+  if (isJuniorFriendly(a)) return '<span class="badge-junior">👨‍👩‍👧 Junior-Friendly</span>';
+  return '';
+}
+
+function buildJuniorInfoSection(a) {
+  if (!a.juniorInfo) return '';
+  const j = a.juniorInfo;
+  if (j.minAge >= 18) {
+    return '<div class="detail-section junior-info-section"><h4>👨‍👩‍👧 Parent &amp; Junior Info</h4><div class="badge-adults-only">🔞 Adults only (18+)</div></div>';
+  }
+  const supervisionLabels = { '24/7': '24/7', 'daytime': 'Daytime only', 'training-only': 'Training only', 'none': 'None' };
+  const schoolLabels = { 'tutoring': 'Tutoring available', 'partner-school': 'Partner school', 'online-support': 'Online support', 'none': 'None' };
+  const mealLabels = { 'full-board': 'Full board', 'half-board': 'Half board', 'self-catering': 'Self catering', 'flexible': 'Flexible' };
+  const pairingLabels = { 'age-gender': 'Age & gender matched', 'age-only': 'Age matched', 'self-select': 'Self select', 'n/a': 'N/A' };
+  let html = '<div class="detail-section junior-info-section"><h4>👨‍👩‍👧 Parent &amp; Junior Info</h4>';
+  html += '<div class="junior-info-grid">';
+  html += `<div class="junior-info-item"><span class="ji-icon">👶</span><span><span class="ji-label">Age range:</span> <span class="ji-value">${j.minAge}–${j.maxAge || '18'}</span></span></div>`;
+  html += `<div class="junior-info-item"><span class="ji-icon">🛡️</span><span><span class="ji-label">Supervision:</span> <span class="ji-value">${escapeHTML(supervisionLabels[j.supervision] || j.supervision)}</span></span></div>`;
+  html += `<div class="junior-info-item"><span class="ji-icon">👨‍👩‍👧</span><span><span class="ji-label">Guardian stay:</span> <span class="ji-value">${j.guardianStay ? 'Yes' : 'No'}</span></span></div>`;
+  html += `<div class="junior-info-item"><span class="ji-icon">📚</span><span><span class="ji-label">Schooling:</span> <span class="ji-value">${escapeHTML(schoolLabels[j.schooling] || j.schooling)}</span></span></div>`;
+  html += `<div class="junior-info-item"><span class="ji-icon">🏥</span><span><span class="ji-label">Medical:</span> <span class="ji-value">${j.medicalStaff ? 'On-site staff' : 'Not on-site'}</span></span></div>`;
+  html += `<div class="junior-info-item"><span class="ji-icon">✅</span><span><span class="ji-label">Safeguarding:</span> <span class="ji-value">${j.safeguarding ? 'Certified' : 'Not certified'}</span></span></div>`;
+  html += `<div class="junior-info-item"><span class="ji-icon">✈️</span><span><span class="ji-label">Airport pickup:</span> <span class="ji-value">${j.airportPickup ? 'Available' : 'Not available'}</span></span></div>`;
+  html += `<div class="junior-info-item"><span class="ji-icon">🍽️</span><span><span class="ji-label">Meals:</span> <span class="ji-value">${escapeHTML(mealLabels[j.mealPlan] || j.mealPlan)}</span></span></div>`;
+  html += `<div class="junior-info-item"><span class="ji-icon">🕙</span><span><span class="ji-label">Curfew:</span> <span class="ji-value">${j.curfew || 'None'}</span></span></div>`;
+  html += `<div class="junior-info-item"><span class="ji-icon">🛏️</span><span><span class="ji-label">Roommate pairing:</span> <span class="ji-value">${escapeHTML(pairingLabels[j.roommatePairing] || j.roommatePairing)}</span></span></div>`;
+  if (j.languageSupport && j.languageSupport.length) {
+    html += `<div class="junior-info-item"><span class="ji-icon">🗣️</span><span><span class="ji-label">Languages:</span> <span class="ji-value">${j.languageSupport.map(escapeHTML).join(', ')}</span></span></div>`;
+  }
+  html += `<div class="junior-info-item"><span class="ji-icon">🚨</span><span><span class="ji-label">Emergency protocol:</span> <span class="ji-value">${j.emergencyProtocol ? 'Yes' : 'No'}</span></span></div>`;
+  html += '</div></div>';
+  return html;
+}
+
 /* ===== Card Details ===== */
 function buildDetails(a) {
   let html = '';
@@ -649,6 +849,7 @@ function buildDetails(a) {
   }
   html += renderCostCalculator(a);
   html += renderAccommodationSection(a);
+  html += buildJuniorInfoSection(a);
   if (a.coaches.length) {
     html += '<div class="detail-section"><h4>Coaches</h4><ul>';
     a.coaches.forEach(c => {
@@ -680,8 +881,9 @@ function buildDetails(a) {
   if (a.notableAlumni && a.notableAlumni.length) {
     html += `<div class="detail-section"><h4>Notable Alumni</h4><p>${a.notableAlumni.map(escapeHTML).join(', ')}</p></div>`;
   }
+  html += buildBestTimeSection(a);
   const climateKey = a.climate;
-  if (climateKey && CLIMATE_DATA[climateKey]) {
+  if (climateKey && typeof CLIMATE_DATA !== 'undefined' && CLIMATE_DATA[climateKey]) {
     html += `<div class="detail-section"><h4>Climate — ${escapeHTML(CLIMATE_DATA[climateKey].city)}</h4>`;
     html += buildClimateChart(CLIMATE_DATA[climateKey].months);
     html += '</div>';
@@ -848,6 +1050,7 @@ function buildDetailActions(a) {
   }
   html += `<button class="btn-qr" onclick="showQRCode('${a.id}')" aria-label="Share QR Code for ${escapeHTML(a.name)}">📱 Share QR Code</button>`;
   html += `<button class="btn-calculator" onclick="showTripCalculator('${a.id}')" aria-label="Estimate trip cost">🧮 Trip Cost</button>`;
+  html += buildTripButton(a);
   const partners = getPartnerRequests();
   const partnerActive = partners[a.id];
   html += `<button class="btn-partner ${partnerActive ? 'active' : ''}" onclick="togglePartnerRequest('${a.id}')">🤝 ${partnerActive ? 'Looking for Partners ✓' : 'Find Partners'}</button>`;
@@ -1050,6 +1253,24 @@ function toggleDetails(btn) {
   if (isOpen) {
     details.setAttribute('tabindex', '-1');
     details.focus();
+
+    // Load weather for this academy
+    const card = btn.closest('.academy-card');
+    if (card) {
+      const academyId = card.getAttribute('data-id');
+      const a = ACADEMIES.find(ac => ac.id === academyId);
+      if (a) {
+        const weatherElId = 'weather-' + a.id;
+        loadWeather(a.city, weatherElId);
+        // Timeout fallback if weather doesn't load within 5 seconds
+        setTimeout(() => {
+          const el = document.getElementById(weatherElId);
+          if (el && el.innerHTML.includes('Loading')) {
+            el.innerHTML = '<em>Weather data unavailable</em>';
+          }
+        }, 5000);
+      }
+    }
   }
 
   // Store recently viewed academy
@@ -1090,7 +1311,7 @@ function saveStateToHash() {
   if (state.search) params.set('q', state.search);
   if (state.currency !== 'EUR') params.set('currency', state.currency);
   if (state.surface) params.set('surface', state.surface);
-  ['price', 'individual', 'boarding', 'beach', 'atp', 'top10', 'nearMe'].forEach(k => {
+  ['price', 'individual', 'boarding', 'beach', 'atp', 'top10', 'nearMe', 'juniorFriendly'].forEach(k => {
     if (state[k]) params.set(k, '1');
   });
   if (state.showFavorites) params.set('fav', '1');
@@ -1108,7 +1329,7 @@ function loadStateFromHash() {
   state.search = params.get('q') || '';
   state.currency = params.get('currency') || 'EUR';
   state.surface = params.get('surface') || '';
-  ['price', 'individual', 'boarding', 'beach', 'atp', 'top10', 'nearMe'].forEach(k => {
+  ['price', 'individual', 'boarding', 'beach', 'atp', 'top10', 'nearMe', 'juniorFriendly'].forEach(k => {
     state[k] = params.get(k) === '1';
   });
   state.showFavorites = params.get('fav') === '1';
@@ -1119,7 +1340,7 @@ function loadStateFromHash() {
   document.getElementById('filterSearch').value = state.search;
   document.getElementById('filterCurrency').value = state.currency;
   document.getElementById('filterSurface').value = state.surface;
-  const idMap = { price: 'togglePrice', individual: 'toggleIndividual', boarding: 'toggleBoarding', beach: 'toggleBeach', atp: 'toggleATP', top10: 'toggleTop10', nearMe: 'toggleNearMe' };
+  const idMap = { price: 'togglePrice', individual: 'toggleIndividual', boarding: 'toggleBoarding', beach: 'toggleBeach', atp: 'toggleATP', top10: 'toggleTop10', nearMe: 'toggleNearMe', juniorFriendly: 'toggleJunior' };
   Object.entries(idMap).forEach(([k, id]) => {
     const btn = document.getElementById(id);
     if (btn) btn.classList.toggle('active', state[k]);
@@ -1264,7 +1485,7 @@ function bindEvents() {
     const msg = document.getElementById('inquiryMessage').value;
     const subject = encodeURIComponent(`Inquiry about ${a.name}`);
     const body = encodeURIComponent(`Hi,\n\nI found ${a.name} on European ${getSportConfig().name} Academies and I'm interested in learning more.\n\nName: ${name}\nEmail: ${email}\nLevel: ${level}\nDuration: ${duration}\n\n${msg}\n\nBest regards,\n${name}`);
-    window.location.href = `mailto:${a.contact || ''}?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:${a.contactEmail || 'info@academy.com'}?subject=${subject}&body=${body}`;
     closeInquiry();
     showToast('Opening email client...');
   });
@@ -2079,7 +2300,7 @@ function getQuoteFormData() {
   var a = ACADEMIES.find(function(ac) { return ac.id === id; });
   return {
     academyName: a ? a.name : '',
-    academyContact: a ? (a.contact || '') : '',
+    academyContact: a ? (a.contactEmail || 'info@academy.com') : '',
     sport: getSportConfig().name,
     name: document.getElementById('quoteName').value.trim(),
     age: document.getElementById('quoteAge').value,
@@ -2248,7 +2469,7 @@ function scrollToAcademy(id) {
 (function initDarkMode() {
   const btn = document.getElementById('btnDarkMode');
   const html = document.documentElement;
-  const saved = localStorage.getItem('theme');
+  const saved = localStorage.getItem('sports-theme');
   if (saved === 'dark') {
     html.setAttribute('data-theme', 'dark');
     btn.textContent = '☀️';
@@ -2257,11 +2478,11 @@ function scrollToAcademy(id) {
     const isDark = html.getAttribute('data-theme') === 'dark';
     if (isDark) {
       html.removeAttribute('data-theme');
-      localStorage.setItem('theme', 'light');
+      localStorage.setItem('sports-theme', 'light');
       btn.textContent = '🌙';
     } else {
       html.setAttribute('data-theme', 'dark');
-      localStorage.setItem('theme', 'dark');
+      localStorage.setItem('sports-theme', 'dark');
       btn.textContent = '☀️';
     }
   });
@@ -2358,3 +2579,400 @@ function scrollToAcademy(id) {
     if (e.key === 'ArrowRight') gallery_navigate(1);
   });
 })();
+
+/* ===== Trip Planner ===== */
+const TRIP_STORAGE_KEY = 'sports-trip-plan';
+
+function getTripPlan() {
+  try { return JSON.parse(localStorage.getItem(TRIP_STORAGE_KEY)) || []; }
+  catch { return []; }
+}
+
+function saveTripPlan(plan) {
+  localStorage.setItem(TRIP_STORAGE_KEY, JSON.stringify(plan));
+  updateTripFab();
+  updateTripButtons();
+}
+
+function isInTrip(id) {
+  return getTripPlan().some(function(item) { return item.id === id; });
+}
+
+function toggleTripItem(id) {
+  var plan = getTripPlan();
+  var idx = plan.findIndex(function(item) { return item.id === id; });
+  if (idx >= 0) {
+    plan.splice(idx, 1);
+    saveTripPlan(plan);
+    showToast('Removed from trip plan');
+  } else {
+    var academy = (typeof ACADEMIES !== 'undefined') ? ACADEMIES.find(function(a) { return a.id === id; }) : null;
+    var sportType = (typeof SPORT_TYPE !== 'undefined') ? SPORT_TYPE : 'unknown';
+    var sportIcon = (typeof SPORT_CONFIG !== 'undefined' && SPORT_CONFIG[sportType]) ? SPORT_CONFIG[sportType].icon : '🏅';
+    var entry = {
+      id: id,
+      name: academy ? academy.name : id,
+      sport: sportType,
+      sportIcon: sportIcon,
+      country: academy ? (academy.countryFlag + ' ' + academy.country) : '',
+      startDate: '',
+      weeks: 4,
+      accommodation: '',
+      trainees: 1,
+      guests: 1,
+      priceFrom: academy && academy.priceRange ? academy.priceRange.from : null,
+      hasAccommodation: !!(academy && academy.accommodation && Array.isArray(academy.accommodation.types) && academy.accommodation.types.length)
+    };
+    plan.push(entry);
+    saveTripPlan(plan);
+    showToast('Added to trip plan!');
+  }
+  refreshTripPanel();
+}
+
+function buildTripButton(a) {
+  var inTrip = isInTrip(a.id);
+  var label = inTrip ? '✅ In Trip Plan' : '🧳 Add to Trip';
+  var cls = 'btn-trip' + (inTrip ? ' in-trip' : '');
+  return '<button class="' + cls + '" data-trip-id="' + a.id + '" onclick="event.stopPropagation();toggleTripItem(\'' + a.id + '\')">' + label + '</button>';
+}
+
+function updateTripButtons() {
+  document.querySelectorAll('.btn-trip').forEach(function(btn) {
+    var id = btn.getAttribute('data-trip-id');
+    var inTrip = isInTrip(id);
+    btn.className = 'btn-trip' + (inTrip ? ' in-trip' : '');
+    btn.textContent = inTrip ? '✅ In Trip Plan' : '🧳 Add to Trip';
+  });
+}
+
+/* ===== Trip FAB ===== */
+function createTripFab() {
+  if (document.querySelector('.trip-fab')) return;
+  var fab = document.createElement('button');
+  fab.className = 'trip-fab';
+  fab.setAttribute('aria-label', 'Open trip planner');
+  fab.onclick = openTripPanel;
+  document.body.appendChild(fab);
+  updateTripFab();
+}
+
+function updateTripFab() {
+  var fab = document.querySelector('.trip-fab');
+  if (!fab) return;
+  var count = getTripPlan().length;
+  fab.innerHTML = '🧳 Trip Planner' + (count > 0 ? ' <span class="trip-fab-count">' + count + '</span>' : '');
+}
+
+/* ===== Trip Panel ===== */
+function createTripPanel() {
+  if (document.getElementById('tripPanelOverlay')) return;
+
+  var overlay = document.createElement('div');
+  overlay.id = 'tripPanelOverlay';
+  overlay.className = 'trip-panel-overlay';
+  overlay.onclick = function(e) { if (e.target === overlay) closeTripPanel(); };
+
+  var panel = document.createElement('div');
+  panel.id = 'tripPanel';
+  panel.className = 'trip-panel';
+  panel.innerHTML =
+    '<div class="trip-panel-header"><h3>🧳 Trip Planner</h3><button class="trip-panel-close" onclick="closeTripPanel()" aria-label="Close trip planner">&times;</button></div>' +
+    '<div class="trip-panel-body" id="tripPanelBody"></div>' +
+    '<div class="trip-summary" id="tripSummary"></div>' +
+    '<div class="trip-actions" id="tripActions"></div>';
+
+  overlay.appendChild(panel);
+  document.body.appendChild(overlay);
+}
+
+function openTripPanel() {
+  createTripPanel();
+  var overlay = document.getElementById('tripPanelOverlay');
+  var panel = document.getElementById('tripPanel');
+  if (overlay) overlay.classList.add('trip-panel-open');
+  if (panel) panel.classList.add('trip-panel-open');
+  document.body.style.overflow = 'hidden';
+  refreshTripPanel();
+}
+
+function closeTripPanel() {
+  var overlay = document.getElementById('tripPanelOverlay');
+  var panel = document.getElementById('tripPanel');
+  if (overlay) overlay.classList.remove('trip-panel-open');
+  if (panel) panel.classList.remove('trip-panel-open');
+  document.body.style.overflow = '';
+}
+
+function refreshTripPanel() {
+  var body = document.getElementById('tripPanelBody');
+  var summary = document.getElementById('tripSummary');
+  var actions = document.getElementById('tripActions');
+  if (!body) return;
+
+  var plan = getTripPlan();
+  if (plan.length === 0) {
+    body.innerHTML = '<div class="trip-panel-empty"><span>🧳</span><p>Your trip plan is empty.<br>Add academies from any sport page!</p></div>';
+    if (summary) summary.innerHTML = '';
+    if (actions) actions.innerHTML = '';
+    return;
+  }
+
+  var html = '';
+  plan.forEach(function(item, idx) {
+    var expanded = item._expanded ? ' trip-item-expanded' : '';
+    html += '<div class="trip-item' + expanded + '" data-trip-idx="' + idx + '">';
+    html += '<div class="trip-item-header" onclick="toggleTripExpand(' + idx + ')">';
+    html += '<span class="trip-item-icon">' + (item.sportIcon || '🏅') + '</span>';
+    html += '<div class="trip-item-info">';
+    html += '<span class="trip-item-name">' + escapeHTML(item.name) + '</span>';
+    html += '<span class="trip-item-country">' + escapeHTML(item.country || item.sport) + '</span>';
+    html += '</div>';
+    html += '<div class="trip-item-reorder">';
+    if (idx > 0) html += '<button onclick="event.stopPropagation();reorderTrip(' + idx + ',-1)" title="Move up">▲</button>';
+    if (idx < plan.length - 1) html += '<button onclick="event.stopPropagation();reorderTrip(' + idx + ',1)" title="Move down">▼</button>';
+    html += '</div>';
+    html += '<button class="trip-item-remove" onclick="event.stopPropagation();toggleTripItem(\'' + item.id + '\')" title="Remove">&times;</button>';
+    html += '</div>';
+
+    // Config section
+    html += '<div class="trip-config">';
+    html += '<div class="trip-config-row"><label>Start date</label><input type="date" value="' + (item.startDate || '') + '" onchange="updateTripConfig(' + idx + ',\'startDate\',this.value)"></div>';
+    html += '<div class="trip-config-row"><label>Duration</label><select onchange="updateTripConfig(' + idx + ',\'weeks\',this.value)">';
+    for (var w = 1; w <= 12; w++) {
+      html += '<option value="' + w + '"' + (item.weeks === w ? ' selected' : '') + '>' + w + ' week' + (w !== 1 ? 's' : '') + '</option>';
+    }
+    html += '</select></div>';
+    html += '<div class="trip-config-row"><label>Trainees</label><select onchange="updateTripConfig(' + idx + ',\'trainees\',this.value)">';
+    for (var t = 1; t <= 6; t++) {
+      html += '<option value="' + t + '"' + (item.trainees === t ? ' selected' : '') + '>' + t + '</option>';
+    }
+    html += '</select></div>';
+    html += '<div class="trip-config-row"><label>Guests</label><select onchange="updateTripConfig(' + idx + ',\'guests\',this.value)">';
+    for (var g = 1; g <= 6; g++) {
+      html += '<option value="' + g + '"' + (item.guests === g ? ' selected' : '') + '>' + g + '</option>';
+    }
+    html += '</select></div>';
+    if (item.hasAccommodation) {
+      html += '<div class="trip-config-row"><label>Accommodation</label><select onchange="updateTripConfig(' + idx + ',\'accommodation\',this.value)">';
+      html += '<option value="">Select…</option>';
+      var academy = (typeof ACADEMIES !== 'undefined') ? ACADEMIES.find(function(a) { return a.id === item.id; }) : null;
+      if (academy && academy.accommodation && Array.isArray(academy.accommodation.types)) {
+        academy.accommodation.types.forEach(function(at) {
+          html += '<option value="' + escapeHTML(at.type) + '"' + (item.accommodation === at.type ? ' selected' : '') + '>' + escapeHTML(at.label) + '</option>';
+        });
+      }
+      html += '</select></div>';
+    }
+    html += '</div>';
+    html += '</div>';
+  });
+
+  body.innerHTML = html;
+
+  // Build summary
+  var totalWeeks = 0;
+  var totalCost = 0;
+  var earliestStart = null;
+  var latestEnd = null;
+
+  plan.forEach(function(item) {
+    var weeks = item.weeks || 4;
+    totalWeeks += weeks;
+    if (item.priceFrom !== null && item.priceFrom !== undefined) {
+      var trainingCost = Math.round(item.priceFrom * weeks / 4.33) * (item.trainees || 1);
+      totalCost += trainingCost;
+      // Add accommodation cost if selected
+      if (item.accommodation && typeof ACADEMIES !== 'undefined') {
+        var acad = ACADEMIES.find(function(a) { return a.id === item.id; });
+        if (acad && acad.accommodation && Array.isArray(acad.accommodation.types)) {
+          var acType = acad.accommodation.types.find(function(at) { return at.type === item.accommodation; });
+          if (acType) {
+            totalCost += acType.pricePerWeek * Math.ceil((item.guests || 1) / acType.maxOccupancy) * weeks;
+          }
+        }
+      }
+    }
+    if (item.startDate) {
+      var start = new Date(item.startDate + 'T00:00:00');
+      if (!isNaN(start)) {
+        if (!earliestStart || start < earliestStart) earliestStart = start;
+        var end = new Date(start);
+        end.setDate(end.getDate() + weeks * 7);
+        if (!latestEnd || end > latestEnd) latestEnd = end;
+      }
+    }
+  });
+
+  if (summary) {
+    var shtml = '';
+    shtml += '<div class="trip-summary-row"><span>Academies</span><span>' + plan.length + '</span></div>';
+    shtml += '<div class="trip-summary-row"><span>Total duration</span><span>' + totalWeeks + ' week' + (totalWeeks !== 1 ? 's' : '') + '</span></div>';
+    if (earliestStart && latestEnd) {
+      shtml += '<div class="trip-summary-row"><span>Date range</span><span>' + formatTripDate(earliestStart) + ' – ' + formatTripDate(latestEnd) + '</span></div>';
+    }
+    shtml += '<div class="trip-summary-row trip-summary-total"><span>Est. total</span><span>€' + totalCost.toLocaleString() + '</span></div>';
+    summary.innerHTML = shtml;
+  }
+
+  // Actions
+  if (actions) {
+    actions.innerHTML =
+      '<button onclick="copyTripSummary()">📋 Copy Summary</button>' +
+      '<button onclick="printTripPlan()">🖨️ Print</button>' +
+      '<button onclick="shareTripPlan()">🔗 Share Trip</button>' +
+      '<button class="trip-btn-clear" onclick="clearTripPlan()">🗑️ Clear Trip</button>';
+  }
+}
+
+function formatTripDate(date) {
+  if (!date || isNaN(date)) return '';
+  var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  return date.getDate() + ' ' + months[date.getMonth()] + ' ' + date.getFullYear();
+}
+
+function toggleTripExpand(idx) {
+  var plan = getTripPlan();
+  if (!plan[idx]) return;
+  plan[idx]._expanded = !plan[idx]._expanded;
+  saveTripPlan(plan);
+  refreshTripPanel();
+}
+
+function updateTripConfig(idx, field, value) {
+  var plan = getTripPlan();
+  if (!plan[idx]) return;
+  if (field === 'weeks' || field === 'trainees' || field === 'guests') {
+    value = parseInt(value, 10) || 1;
+  }
+  plan[idx][field] = value;
+  // Ensure guests >= trainees
+  if (field === 'trainees' && plan[idx].guests < plan[idx].trainees) {
+    plan[idx].guests = plan[idx].trainees;
+  }
+  saveTripPlan(plan);
+  refreshTripPanel();
+}
+
+function reorderTrip(idx, direction) {
+  var plan = getTripPlan();
+  var newIdx = idx + direction;
+  if (newIdx < 0 || newIdx >= plan.length) return;
+  var temp = plan[idx];
+  plan[idx] = plan[newIdx];
+  plan[newIdx] = temp;
+  saveTripPlan(plan);
+  refreshTripPanel();
+}
+
+function clearTripPlan() {
+  if (!confirm('Clear all academies from your trip plan?')) return;
+  saveTripPlan([]);
+  refreshTripPanel();
+  showToast('Trip plan cleared');
+}
+
+function buildTripSummaryText() {
+  var plan = getTripPlan();
+  if (plan.length === 0) return 'Trip plan is empty.';
+  var lines = ['🧳 My Training Trip Plan', ''];
+  var totalWeeks = 0;
+  var totalCost = 0;
+  plan.forEach(function(item, idx) {
+    var weeks = item.weeks || 4;
+    totalWeeks += weeks;
+    var cost = 0;
+    if (item.priceFrom !== null && item.priceFrom !== undefined) {
+      cost = Math.round(item.priceFrom * weeks / 4.33) * (item.trainees || 1);
+      totalCost += cost;
+    }
+    lines.push((idx + 1) + '. ' + (item.sportIcon || '') + ' ' + item.name + ' — ' + (item.country || item.sport));
+    lines.push('   ' + weeks + ' week' + (weeks !== 1 ? 's' : '') + (item.startDate ? ', starting ' + item.startDate : '') + (cost ? ', ~€' + cost.toLocaleString() : ''));
+  });
+  lines.push('');
+  lines.push('Total: ' + totalWeeks + ' weeks, ~€' + totalCost.toLocaleString());
+  return lines.join('\n');
+}
+
+function copyTripSummary() {
+  var text = buildTripSummaryText();
+  navigator.clipboard.writeText(text).then(function() {
+    showToast('Trip summary copied!');
+  }).catch(function() {
+    showToast('Could not copy to clipboard');
+  });
+}
+
+function printTripPlan() {
+  var text = buildTripSummaryText();
+  var printWin = window.open('', '_blank', 'width=700,height=600');
+  if (!printWin) { showToast('Pop-up blocked'); return; }
+  printWin.document.write('<html><head><title>Trip Plan</title><style>body{font-family:sans-serif;padding:2rem;white-space:pre-wrap;line-height:1.6;}</style></head><body>' + escapeHTML(text) + '</body></html>');
+  printWin.document.close();
+  printWin.focus();
+  printWin.print();
+}
+
+function shareTripPlan() {
+  var plan = getTripPlan().map(function(item) {
+    return { id: item.id, sport: item.sport, weeks: item.weeks, startDate: item.startDate, trainees: item.trainees, guests: item.guests, accommodation: item.accommodation };
+  });
+  var encoded = btoa(unescape(encodeURIComponent(JSON.stringify(plan))));
+  var url = location.origin + location.pathname + '?trip=' + encoded;
+  if (navigator.share) {
+    navigator.share({ title: 'My Training Trip Plan', text: 'Check out my training trip plan!', url: url }).catch(function() {});
+  } else {
+    navigator.clipboard.writeText(url).then(function() {
+      showToast('Trip link copied!');
+    }).catch(function() {
+      showToast('Could not copy link');
+    });
+  }
+}
+
+function loadSharedTrip() {
+  try {
+    var params = new URLSearchParams(location.search);
+    var tripParam = params.get('trip');
+    if (!tripParam) return;
+    var decoded = JSON.parse(decodeURIComponent(escape(atob(tripParam))));
+    if (!Array.isArray(decoded) || decoded.length === 0) return;
+    var existing = getTripPlan();
+    if (existing.length > 0) {
+      if (!confirm('Replace your current trip plan with the shared one?')) return;
+    }
+    // Rebuild full entries from the shared data
+    var newPlan = decoded.map(function(item) {
+      var sportIcon = (typeof SPORT_CONFIG !== 'undefined' && SPORT_CONFIG[item.sport]) ? SPORT_CONFIG[item.sport].icon : '🏅';
+      var academy = null;
+      if (typeof ACADEMIES !== 'undefined' && item.sport === (typeof SPORT_TYPE !== 'undefined' ? SPORT_TYPE : '')) {
+        academy = ACADEMIES.find(function(a) { return a.id === item.id; });
+      }
+      return {
+        id: item.id,
+        name: academy ? academy.name : item.id,
+        sport: item.sport,
+        sportIcon: sportIcon,
+        country: academy ? (academy.countryFlag + ' ' + academy.country) : '',
+        startDate: item.startDate || '',
+        weeks: item.weeks || 4,
+        accommodation: item.accommodation || '',
+        trainees: item.trainees || 1,
+        guests: item.guests || 1,
+        priceFrom: academy && academy.priceRange ? academy.priceRange.from : null,
+        hasAccommodation: !!(academy && academy.accommodation && Array.isArray(academy.accommodation.types) && academy.accommodation.types.length)
+      };
+    });
+    saveTripPlan(newPlan);
+    // Clean URL
+    var cleanUrl = location.pathname + location.hash;
+    history.replaceState(null, '', cleanUrl);
+    showToast('Shared trip plan loaded!');
+  } catch (e) { /* ignore corrupt trip data */ }
+}
+
+/* ===== Trip Planner Init ===== */
+document.addEventListener('DOMContentLoaded', function() {
+  createTripFab();
+  loadSharedTrip();
+});

@@ -12,6 +12,7 @@ const ACADEMIES = [
         lng: 2.1228,
         website: 'https://www.fcbarcelona.com/en/club/la-masia',
         contact: '+34 934 963 600',
+        contactEmail: 'info@fcbarcelona.com',
         individualLessons: true,
         boarding: true,
         level: 'Elite',
@@ -198,7 +199,22 @@ const ACADEMIES = [
             shuttleToTraining: false,
             notes: 'Training pitch adjacent to accommodation at La Masia residence'
         },
-        videoTour: null
+        videoTour: null,
+        juniorInfo: {
+            minAge: 6,
+            maxAge: 18,
+            supervision: '24/7',
+            guardianStay: true,
+            schooling: 'partner-school',
+            medicalStaff: true,
+            safeguarding: true,
+            airportPickup: true,
+            mealPlan: 'full-board',
+            curfew: '21:30',
+            roommatePairing: 'age-gender',
+            languageSupport: ['Spanish', 'Catalan', 'English'],
+            emergencyProtocol: true
+        }
     },
     {
         id: 'real-madrid-fabrica',
@@ -211,6 +227,7 @@ const ACADEMIES = [
         lng: -3.6883,
         website: 'https://www.realmadrid.com/en/football/academy',
         contact: '+34 913 984 300',
+        contactEmail: 'info@realmadrid.com',
         individualLessons: true,
         boarding: true,
         level: 'Elite',
@@ -376,7 +393,22 @@ const ACADEMIES = [
                 { name: 'LaLiga Promises', level: 'National Youth', surface: 'Artificial Turf', month: 'March', venue: 'Villarreal' },
                 { name: 'Copa del Rey Juvenil', level: 'National Youth', surface: 'Natural Grass', month: 'April', venue: 'Various' }
             ],
-        videoTour: null
+        videoTour: null,
+        juniorInfo: {
+            minAge: 10,
+            maxAge: 18,
+            supervision: 'daytime',
+            guardianStay: true,
+            schooling: 'tutoring',
+            medicalStaff: true,
+            safeguarding: true,
+            airportPickup: true,
+            mealPlan: 'half-board',
+            curfew: '22:00',
+            roommatePairing: 'age-gender',
+            languageSupport: ['Spanish', 'English'],
+            emergencyProtocol: true
+        }
     },
     {
         id: 'atletico-madrid-academy',
@@ -389,6 +421,7 @@ const ACADEMIES = [
         lng: -3.5995,
         website: 'https://en.atleticodemadrid.com/academy',
         contact: '+34 913 660 707',
+        contactEmail: 'info@en.atleticodemadrid.com',
         individualLessons: true,
         boarding: true,
         level: 'Advanced',
@@ -553,7 +586,22 @@ const ACADEMIES = [
                 { name: 'LaLiga Promises', level: 'National Youth', surface: 'Artificial Turf', month: 'March', venue: 'Villarreal' },
                 { name: 'Copa de Campeones Juvenil', level: 'National Youth', surface: 'Natural Grass', month: 'June', venue: 'Various' }
             ],
-        videoTour: null
+        videoTour: null,
+        juniorInfo: {
+            minAge: 10,
+            maxAge: 18,
+            supervision: 'daytime',
+            guardianStay: false,
+            schooling: 'tutoring',
+            medicalStaff: true,
+            safeguarding: true,
+            airportPickup: true,
+            mealPlan: 'half-board',
+            curfew: '22:00',
+            roommatePairing: 'age-only',
+            languageSupport: ['Spanish', 'English'],
+            emergencyProtocol: true
+        }
     },
     {
         id: 'ajax-youth-academy',
@@ -566,6 +614,7 @@ const ACADEMIES = [
         lng: 4.9419,
         website: 'https://www.ajax.nl/en/youth-academy/',
         contact: '+31 20 311 1444',
+        contactEmail: 'info@ajax.nl',
         individualLessons: true,
         boarding: true,
         level: 'Elite',
@@ -749,7 +798,22 @@ const ACADEMIES = [
             shuttleToTraining: true,
             notes: 'Located within the De Toekomst complex with full board and 24/7 supervision'
         },
-        videoTour: null
+        videoTour: null,
+        juniorInfo: {
+            minAge: 6,
+            maxAge: 18,
+            supervision: '24/7',
+            guardianStay: true,
+            schooling: 'partner-school',
+            medicalStaff: true,
+            safeguarding: true,
+            airportPickup: true,
+            mealPlan: 'full-board',
+            curfew: '21:00',
+            roommatePairing: 'age-gender',
+            languageSupport: ['Dutch', 'English'],
+            emergencyProtocol: true
+        }
     },
     {
         id: 'clairefontaine',
@@ -762,6 +826,7 @@ const ACADEMIES = [
         lng: 1.9383,
         website: 'https://www.fff.fr/la-fff/clairefontaine',
         contact: '+33 1 34 83 63 00',
+        contactEmail: 'info@fff.fr',
         individualLessons: true,
         boarding: true,
         level: 'Elite',
@@ -941,7 +1006,22 @@ const ACADEMIES = [
             shuttleToTraining: true,
             notes: 'Nutritionist-planned meals included with dedicated sports science support'
         },
-        videoTour: null
+        videoTour: null,
+        juniorInfo: {
+            minAge: 7,
+            maxAge: 18,
+            supervision: '24/7',
+            guardianStay: true,
+            schooling: 'partner-school',
+            medicalStaff: true,
+            safeguarding: true,
+            airportPickup: true,
+            mealPlan: 'full-board',
+            curfew: '21:30',
+            roommatePairing: 'age-gender',
+            languageSupport: ['French', 'English'],
+            emergencyProtocol: true
+        }
     },
     {
         id: 'bayern-munich-academy',
@@ -954,6 +1034,7 @@ const ACADEMIES = [
         lng: 11.6247,
         website: 'https://fcbayern.com/en/club/youth-development',
         contact: '+49 89 699 310',
+        contactEmail: 'info@fcbayern.com',
         individualLessons: true,
         boarding: true,
         level: 'Elite',
@@ -1131,7 +1212,22 @@ const ACADEMIES = [
             shuttleToTraining: true,
             notes: 'On-site at FC Bayern Campus with access to recovery and physio facilities'
         },
-        videoTour: null
+        videoTour: null,
+        juniorInfo: {
+            minAge: 7,
+            maxAge: 18,
+            supervision: '24/7',
+            guardianStay: true,
+            schooling: 'partner-school',
+            medicalStaff: true,
+            safeguarding: true,
+            airportPickup: true,
+            mealPlan: 'full-board',
+            curfew: '21:00',
+            roommatePairing: 'age-gender',
+            languageSupport: ['German', 'English'],
+            emergencyProtocol: true
+        }
     },
     {
         id: 'borussia-dortmund-academy',
@@ -1144,6 +1240,7 @@ const ACADEMIES = [
         lng: 7.4519,
         website: 'https://www.bvb.de/eng/BVB/Youth',
         contact: '+49 231 902 00',
+        contactEmail: 'info@bvb.de',
         individualLessons: true,
         boarding: true,
         level: 'Elite',
@@ -1303,7 +1400,22 @@ const ACADEMIES = [
                 { name: 'DFB Pokal Junioren', level: 'National Youth', surface: 'Natural Grass', month: 'May', venue: 'Various' },
                 { name: 'Ruhr Youth Cup', level: 'Regional', surface: 'Natural Grass', month: 'July', venue: 'Various Ruhr venues' }
             ],
-        videoTour: null
+        videoTour: null,
+        juniorInfo: {
+            minAge: 11,
+            maxAge: 18,
+            supervision: 'daytime',
+            guardianStay: false,
+            schooling: 'online-support',
+            medicalStaff: true,
+            safeguarding: true,
+            airportPickup: false,
+            mealPlan: 'half-board',
+            curfew: '22:30',
+            roommatePairing: 'age-only',
+            languageSupport: ['German', 'English'],
+            emergencyProtocol: true
+        }
     },
     {
         id: 'chelsea-cobham-academy',
@@ -1316,6 +1428,7 @@ const ACADEMIES = [
         lng: -0.41,
         website: 'https://www.chelseafc.com/en/academy',
         contact: '+44 20 7957 8000',
+        contactEmail: 'info@chelseafc.com',
         individualLessons: true,
         boarding: true,
         level: 'Elite',
@@ -1493,7 +1606,22 @@ const ACADEMIES = [
             shuttleToTraining: true,
             notes: '24/7 security and supervision at Cobham Training Centre residence'
         },
-        videoTour: null
+        videoTour: null,
+        juniorInfo: {
+            minAge: 6,
+            maxAge: 18,
+            supervision: '24/7',
+            guardianStay: true,
+            schooling: 'partner-school',
+            medicalStaff: true,
+            safeguarding: true,
+            airportPickup: true,
+            mealPlan: 'full-board',
+            curfew: '21:30',
+            roommatePairing: 'age-gender',
+            languageSupport: ['English'],
+            emergencyProtocol: true
+        }
     },
     {
         id: 'manchester-city-academy',
@@ -1506,6 +1634,7 @@ const ACADEMIES = [
         lng: -2.2004,
         website: 'https://www.mancity.com/academy',
         contact: '+44 161 444 1894',
+        contactEmail: 'info@mancity.com',
         individualLessons: true,
         boarding: true,
         level: 'Elite',
@@ -1665,7 +1794,22 @@ const ACADEMIES = [
                 { name: 'FA Youth Cup', level: 'National Youth', surface: 'Natural Grass', month: 'January-April', venue: 'Various' },
                 { name: 'Premier League 2', level: 'National Youth', surface: 'Natural Grass', month: 'August-May', venue: 'Various' }
             ],
-        videoTour: null
+        videoTour: null,
+        juniorInfo: {
+            minAge: 10,
+            maxAge: 18,
+            supervision: 'daytime',
+            guardianStay: true,
+            schooling: 'tutoring',
+            medicalStaff: true,
+            safeguarding: true,
+            airportPickup: true,
+            mealPlan: 'flexible',
+            curfew: '22:00',
+            roommatePairing: 'age-only',
+            languageSupport: ['English'],
+            emergencyProtocol: true
+        }
     },
     {
         id: 'juventus-academy',
@@ -1678,6 +1822,7 @@ const ACADEMIES = [
         lng: 7.6412,
         website: 'https://www.juventus.com/en/youth',
         contact: '+39 011 656 3111',
+        contactEmail: 'info@juventus.com',
         individualLessons: true,
         boarding: true,
         level: 'Elite',
@@ -1854,7 +1999,22 @@ const ACADEMIES = [
             shuttleToTraining: true,
             notes: 'Located near Vinovo training grounds with Italian chef-prepared meals'
         },
-        videoTour: null
+        videoTour: null,
+        juniorInfo: {
+            minAge: 10,
+            maxAge: 18,
+            supervision: 'daytime',
+            guardianStay: true,
+            schooling: 'tutoring',
+            medicalStaff: true,
+            safeguarding: true,
+            airportPickup: true,
+            mealPlan: 'half-board',
+            curfew: '22:00',
+            roommatePairing: 'age-gender',
+            languageSupport: ['Italian', 'English'],
+            emergencyProtocol: true
+        }
     },
     {
         id: 'ac-milan-academy',
@@ -1867,6 +2027,7 @@ const ACADEMIES = [
         lng: 9.123,
         website: 'https://www.acmilan.com/en/youth-sector',
         contact: '+39 02 62281',
+        contactEmail: 'info@acmilan.com',
         individualLessons: true,
         boarding: true,
         level: 'Elite',
@@ -2027,7 +2188,22 @@ const ACADEMIES = [
                 { name: 'Campionato Primavera', level: 'National Youth', surface: 'Natural Grass', month: 'August-May', venue: 'Various' },
                 { name: 'Milano Cup', level: 'International Youth', surface: 'Artificial Turf', month: 'June', venue: 'Milan' }
             ],
-        videoTour: null
+        videoTour: null,
+        juniorInfo: {
+            minAge: 12,
+            maxAge: 18,
+            supervision: 'daytime',
+            guardianStay: false,
+            schooling: 'online-support',
+            medicalStaff: true,
+            safeguarding: true,
+            airportPickup: false,
+            mealPlan: 'half-board',
+            curfew: '22:30',
+            roommatePairing: 'age-only',
+            languageSupport: ['Italian', 'English'],
+            emergencyProtocol: true
+        }
     },
     {
         id: 'benfica-academy',
@@ -2040,6 +2216,7 @@ const ACADEMIES = [
         lng: -9.185,
         website: 'https://www.slbenfica.pt/en-us/caixafutebolcampus',
         contact: '+351 21 721 9500',
+        contactEmail: 'info@slbenfica.pt',
         individualLessons: true,
         boarding: true,
         level: 'Elite',
@@ -2216,7 +2393,22 @@ const ACADEMIES = [
             shuttleToTraining: true,
             notes: 'Seixal training complex with ocean views and recovery pool access'
         },
-        videoTour: null
+        videoTour: null,
+        juniorInfo: {
+            minAge: 6,
+            maxAge: 18,
+            supervision: '24/7',
+            guardianStay: true,
+            schooling: 'partner-school',
+            medicalStaff: true,
+            safeguarding: true,
+            airportPickup: true,
+            mealPlan: 'full-board',
+            curfew: '21:00',
+            roommatePairing: 'age-gender',
+            languageSupport: ['Portuguese', 'English'],
+            emergencyProtocol: true
+        }
     },
     {
         id: 'sporting-cp-academy',
@@ -2229,6 +2421,7 @@ const ACADEMIES = [
         lng: -9.1609,
         website: 'https://www.sporting.pt/en/academy',
         contact: '+351 21 751 6000',
+        contactEmail: 'info@sporting.pt',
         individualLessons: true,
         boarding: true,
         level: 'Elite',
@@ -2388,7 +2581,22 @@ const ACADEMIES = [
                 { name: 'Torneio Internacional de Lisboa', level: 'International Youth', surface: 'Natural Grass', month: 'June', venue: 'Lisbon' },
                 { name: 'Campeonato Nacional de Juniores', level: 'National Youth', surface: 'Natural Grass', month: 'August-May', venue: 'Various' }
             ],
-        videoTour: null
+        videoTour: null,
+        juniorInfo: {
+            minAge: 8,
+            maxAge: 18,
+            supervision: '24/7',
+            guardianStay: true,
+            schooling: 'partner-school',
+            medicalStaff: true,
+            safeguarding: true,
+            airportPickup: true,
+            mealPlan: 'full-board',
+            curfew: '21:30',
+            roommatePairing: 'age-gender',
+            languageSupport: ['Portuguese', 'English'],
+            emergencyProtocol: true
+        }
     },
     {
         id: 'red-bull-salzburg-academy',
@@ -2401,6 +2609,7 @@ const ACADEMIES = [
         lng: 13.0458,
         website: 'https://www.redbullsalzburg.at/en/academy.html',
         contact: '+43 662 433 332',
+        contactEmail: 'info@redbullsalzburg.at',
         individualLessons: true,
         boarding: true,
         level: 'Advanced',
@@ -2572,7 +2781,22 @@ const ACADEMIES = [
             shuttleToTraining: true,
             notes: 'Modern Alpine-style accommodation with sports nutrition program'
         },
-        videoTour: null
+        videoTour: null,
+        juniorInfo: {
+            minAge: 10,
+            maxAge: 18,
+            supervision: 'daytime',
+            guardianStay: true,
+            schooling: 'tutoring',
+            medicalStaff: true,
+            safeguarding: true,
+            airportPickup: true,
+            mealPlan: 'flexible',
+            curfew: '22:00',
+            roommatePairing: 'self-select',
+            languageSupport: ['German', 'English'],
+            emergencyProtocol: true
+        }
     },
     {
         id: 'anderlecht-academy',
@@ -2585,6 +2809,7 @@ const ACADEMIES = [
         lng: 4.298,
         website: 'https://www.rsca.be/en/youth-academy',
         contact: '+32 2 522 1539',
+        contactEmail: 'info@rsca.be',
         individualLessons: true,
         boarding: true,
         level: 'Advanced',
@@ -2744,7 +2969,22 @@ const ACADEMIES = [
                 { name: 'Belgian Youth Cup', level: 'National Youth', surface: 'Natural Grass', month: 'May', venue: 'Various' },
                 { name: 'Brussels Youth Tournament', level: 'Regional', surface: 'Artificial Turf', month: 'June', venue: 'Brussels' }
             ],
-        videoTour: null
+        videoTour: null,
+        juniorInfo: {
+            minAge: 7,
+            maxAge: 18,
+            supervision: '24/7',
+            guardianStay: true,
+            schooling: 'partner-school',
+            medicalStaff: true,
+            safeguarding: true,
+            airportPickup: true,
+            mealPlan: 'full-board',
+            curfew: '21:00',
+            roommatePairing: 'age-gender',
+            languageSupport: ['French', 'Dutch', 'English'],
+            emergencyProtocol: true
+        }
     },
     {
         id: 'dinamo-zagreb-academy',
@@ -2757,6 +2997,7 @@ const ACADEMIES = [
         lng: 16.0182,
         website: 'https://gnkdinamo.hr/en/Academy',
         contact: '+385 1 2386 111',
+        contactEmail: 'info@gnkdinamo.hr',
         individualLessons: true,
         boarding: true,
         level: 'Advanced',
@@ -2928,7 +3169,22 @@ const ACADEMIES = [
             shuttleToTraining: true,
             notes: 'Maksimir area accommodation with easy access to training grounds and city centre'
         },
-        videoTour: null
+        videoTour: null,
+        juniorInfo: {
+            minAge: 8,
+            maxAge: 18,
+            supervision: '24/7',
+            guardianStay: true,
+            schooling: 'partner-school',
+            medicalStaff: true,
+            safeguarding: true,
+            airportPickup: true,
+            mealPlan: 'full-board',
+            curfew: '21:00',
+            roommatePairing: 'age-gender',
+            languageSupport: ['Croatian', 'English'],
+            emergencyProtocol: true
+        }
     },
     {
         id: 'red-star-belgrade-academy',
@@ -2941,6 +3197,7 @@ const ACADEMIES = [
         lng: 20.4597,
         website: 'https://www.crvenazvezdafk.com/en/academy',
         contact: '+381 11 206 9900',
+        contactEmail: 'info@crvenazvezdafk.com',
         individualLessons: true,
         boarding: true,
         level: 'Intermediate',
@@ -3113,7 +3370,22 @@ const ACADEMIES = [
             shuttleToTraining: true,
             notes: 'On-site at Marakana stadium complex with traditional Serbian cuisine included'
         },
-        videoTour: null
+        videoTour: null,
+        juniorInfo: {
+            minAge: 6,
+            maxAge: 18,
+            supervision: '24/7',
+            guardianStay: true,
+            schooling: 'partner-school',
+            medicalStaff: true,
+            safeguarding: true,
+            airportPickup: true,
+            mealPlan: 'full-board',
+            curfew: '21:00',
+            roommatePairing: 'age-gender',
+            languageSupport: ['Serbian', 'English'],
+            emergencyProtocol: true
+        }
     },
     {
         id: 'olympiacos-academy',
@@ -3126,6 +3398,7 @@ const ACADEMIES = [
         lng: 23.6362,
         website: 'https://www.olympiacos.org/en/academy',
         contact: '+30 210 414 3000',
+        contactEmail: 'info@olympiacos.org',
         individualLessons: true,
         boarding: true,
         level: 'Intermediate',
@@ -3285,7 +3558,22 @@ const ACADEMIES = [
                 { name: 'Super League Youth', level: 'National Youth', surface: 'Natural Grass', month: 'August-May', venue: 'Various' },
                 { name: 'Piraeus Youth Tournament', level: 'Regional', surface: 'Natural Grass', month: 'June', venue: 'Piraeus' }
             ],
-        videoTour: null
+        videoTour: null,
+        juniorInfo: {
+            minAge: 11,
+            maxAge: 18,
+            supervision: 'daytime',
+            guardianStay: false,
+            schooling: 'online-support',
+            medicalStaff: true,
+            safeguarding: true,
+            airportPickup: false,
+            mealPlan: 'half-board',
+            curfew: '22:00',
+            roommatePairing: 'age-only',
+            languageSupport: ['Greek', 'English'],
+            emergencyProtocol: true
+        }
     },
     {
         id: 'galatasaray-academy',
@@ -3298,6 +3586,7 @@ const ACADEMIES = [
         lng: 28.994,
         website: 'https://www.galatasaray.org/en/academy',
         contact: '+90 212 305 1905',
+        contactEmail: 'info@galatasaray.org',
         individualLessons: true,
         boarding: true,
         level: 'Advanced',
@@ -3457,7 +3746,22 @@ const ACADEMIES = [
                 { name: 'Turkish Super League Youth', level: 'National Youth', surface: 'Natural Grass', month: 'August-May', venue: 'Various' },
                 { name: 'Istanbul Cup Youth', level: 'International Youth', surface: 'Artificial Turf', month: 'July', venue: 'Istanbul' }
             ],
-        videoTour: null
+        videoTour: null,
+        juniorInfo: {
+            minAge: 16,
+            maxAge: 35,
+            supervision: 'none',
+            guardianStay: false,
+            schooling: 'none',
+            medicalStaff: true,
+            safeguarding: false,
+            airportPickup: true,
+            mealPlan: 'flexible',
+            curfew: null,
+            roommatePairing: 'n/a',
+            languageSupport: ['Turkish', 'English'],
+            emergencyProtocol: true
+        }
     },
     {
         id: 'sparta-prague-academy',
@@ -3470,6 +3774,7 @@ const ACADEMIES = [
         lng: 14.416,
         website: 'https://www.sparta.cz/en/academy',
         contact: '+420 296 111 400',
+        contactEmail: 'info@sparta.cz',
         individualLessons: true,
         boarding: true,
         level: 'Advanced',
@@ -3629,7 +3934,22 @@ const ACADEMIES = [
                 { name: 'Czech Youth League', level: 'National Youth', surface: 'Natural Grass', month: 'August-May', venue: 'Various' },
                 { name: 'Prague Youth Cup', level: 'International Youth', surface: 'Artificial Turf', month: 'June', venue: 'Prague' }
             ],
-        videoTour: null
+        videoTour: null,
+        juniorInfo: {
+            minAge: 10,
+            maxAge: 18,
+            supervision: 'daytime',
+            guardianStay: true,
+            schooling: 'tutoring',
+            medicalStaff: true,
+            safeguarding: true,
+            airportPickup: true,
+            mealPlan: 'half-board',
+            curfew: '22:00',
+            roommatePairing: 'age-gender',
+            languageSupport: ['Czech', 'English'],
+            emergencyProtocol: true
+        }
     },
     {
         id: 'legia-warsaw-academy',
@@ -3642,6 +3962,7 @@ const ACADEMIES = [
         lng: 21.0395,
         website: 'https://legia.com/en/academy',
         contact: '+48 22 628 2000',
+        contactEmail: 'info@legia.com',
         individualLessons: true,
         boarding: true,
         level: 'Intermediate',
@@ -3801,7 +4122,22 @@ const ACADEMIES = [
                 { name: 'Polish Youth League', level: 'National Youth', surface: 'Natural Grass', month: 'August-May', venue: 'Various' },
                 { name: 'Warsaw Cup', level: 'International Youth', surface: 'Artificial Turf', month: 'June', venue: 'Warsaw' }
             ],
-        videoTour: null
+        videoTour: null,
+        juniorInfo: {
+            minAge: 11,
+            maxAge: 18,
+            supervision: 'daytime',
+            guardianStay: false,
+            schooling: 'online-support',
+            medicalStaff: true,
+            safeguarding: true,
+            airportPickup: false,
+            mealPlan: 'half-board',
+            curfew: '22:30',
+            roommatePairing: 'age-only',
+            languageSupport: ['Polish', 'English'],
+            emergencyProtocol: true
+        }
     },
     {
         id: 'molde-fk-academy',
@@ -3814,6 +4150,7 @@ const ACADEMIES = [
         lng: 7.1598,
         website: 'https://www.moldefk.no/academy',
         contact: '+47 71 19 87 00',
+        contactEmail: 'info@moldefk.no',
         individualLessons: true,
         boarding: false,
         level: 'Intermediate',
@@ -3973,7 +4310,22 @@ const ACADEMIES = [
                 { name: 'NFF Youth Cup', level: 'National Youth', surface: 'Artificial Turf', month: 'October', venue: 'Various' },
                 { name: 'Norway Cup', level: 'International Youth', surface: 'Artificial Turf', month: 'July', venue: 'Oslo' }
             ],
-        videoTour: null
+        videoTour: null,
+        juniorInfo: {
+            minAge: 16,
+            maxAge: 30,
+            supervision: 'none',
+            guardianStay: false,
+            schooling: 'none',
+            medicalStaff: true,
+            safeguarding: false,
+            airportPickup: true,
+            mealPlan: 'self-catering',
+            curfew: null,
+            roommatePairing: 'n/a',
+            languageSupport: ['Norwegian', 'English'],
+            emergencyProtocol: true
+        }
     },
     {
         id: 'feyenoord-academy',
@@ -3986,6 +4338,7 @@ const ACADEMIES = [
         lng: 4.5231,
         website: 'https://www.feyenoord.com/en/academy',
         contact: '+31 10 292 3900',
+        contactEmail: 'info@feyenoord.com',
         individualLessons: true,
         boarding: true,
         level: 'Advanced',
@@ -4145,7 +4498,22 @@ const ACADEMIES = [
                 { name: 'KNVB Cup Youth', level: 'National Youth', surface: 'Natural Grass', month: 'May', venue: 'Various' },
                 { name: 'Rotterdam Youth Tournament', level: 'International Youth', surface: 'Artificial Turf', month: 'June', venue: 'Rotterdam' }
             ],
-        videoTour: null
+        videoTour: null,
+        juniorInfo: {
+            minAge: 6,
+            maxAge: 18,
+            supervision: '24/7',
+            guardianStay: true,
+            schooling: 'partner-school',
+            medicalStaff: true,
+            safeguarding: true,
+            airportPickup: true,
+            mealPlan: 'full-board',
+            curfew: '21:00',
+            roommatePairing: 'age-gender',
+            languageSupport: ['Dutch', 'English'],
+            emergencyProtocol: true
+        }
     },
     {
         id: 'malmo-ff-academy',
@@ -4158,6 +4526,7 @@ const ACADEMIES = [
         lng: 13.0,
         website: 'https://www.mff.se/en/academy',
         contact: '+46 40 655 0700',
+        contactEmail: 'info@mff.se',
         individualLessons: true,
         boarding: true,
         level: 'Advanced',
@@ -4317,7 +4686,22 @@ const ACADEMIES = [
                 { name: 'Allsvenskan Youth League', level: 'National Youth', surface: 'Artificial Turf', month: 'April-October', venue: 'Various' },
                 { name: 'Gothia Cup', level: 'International Youth', surface: 'Artificial Turf', month: 'July', venue: 'Gothenburg' }
             ],
-        videoTour: null
+        videoTour: null,
+        juniorInfo: {
+            minAge: 8,
+            maxAge: 18,
+            supervision: '24/7',
+            guardianStay: true,
+            schooling: 'partner-school',
+            medicalStaff: true,
+            safeguarding: true,
+            airportPickup: true,
+            mealPlan: 'full-board',
+            curfew: '21:00',
+            roommatePairing: 'age-gender',
+            languageSupport: ['Swedish', 'English'],
+            emergencyProtocol: true
+        }
     },
 ];
 

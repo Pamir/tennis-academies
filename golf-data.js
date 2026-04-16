@@ -11,6 +11,7 @@ const ACADEMIES = [
     lng: -2.7967,
     website: "https://www.standrews.com/golf-academy",
     contact: "+44 1334 466666",
+    contactEmail: "info@standrews.com",
     individualLessons: true,
     boarding: true,
     level: "Elite",
@@ -88,7 +89,22 @@ const ACADEMIES = [
       shuttleToTraining: true,
       notes: 'Golf course views from premium rooms'
     },
-    videoTour: null
+    videoTour: null,
+    juniorInfo: {
+      minAge: 8,
+      maxAge: 18,
+      supervision: '24/7',
+      guardianStay: true,
+      schooling: 'partner-school',
+      medicalStaff: true,
+      safeguarding: true,
+      airportPickup: true,
+      mealPlan: 'full-board',
+      curfew: '22:00',
+      roommatePairing: 'age-gender',
+      languageSupport: ['English'],
+      emergencyProtocol: true
+    }
   },  {
     id: "valderrama",
     availability: { status: 'open', nextIntake: '2025-07-01', spotsLeft: 18, responseTime: '48h', privateLessons: true, yearRound: true },
@@ -100,6 +116,7 @@ const ACADEMIES = [
     lng: -5.3167,
     website: "https://www.valderrama.com",
     contact: "+34 956 791 200",
+    contactEmail: "info@valderrama.com",
     individualLessons: true,
     boarding: false,
     level: "Elite",
@@ -178,7 +195,22 @@ const ACADEMIES = [
       shuttleToTraining: true,
       notes: 'Mediterranean terrace with course views available in all room types'
     },
-    videoTour: null
+    videoTour: null,
+    juniorInfo: {
+      minAge: 18,
+      maxAge: null,
+      supervision: 'none',
+      guardianStay: false,
+      schooling: 'none',
+      medicalStaff: true,
+      safeguarding: false,
+      airportPickup: false,
+      mealPlan: 'self-catering',
+      curfew: null,
+      roommatePairing: 'self-select',
+      languageSupport: ['English', 'Spanish'],
+      emergencyProtocol: false
+    }
   },
   {
     id: "penha-longa",
@@ -191,6 +223,7 @@ const ACADEMIES = [
     lng: -9.4014,
     website: "https://www.penhalonga.com",
     contact: "+351 21 924 9011",
+    contactEmail: "info@penhalonga.com",
     individualLessons: true,
     boarding: false,
     level: "Pro",
@@ -266,7 +299,22 @@ const ACADEMIES = [
       shuttleToTraining: true,
       notes: 'Spa access with all room types'
     },
-    videoTour: null
+    videoTour: null,
+    juniorInfo: {
+      minAge: 12,
+      maxAge: 18,
+      supervision: 'daytime',
+      guardianStay: true,
+      schooling: 'online-support',
+      medicalStaff: true,
+      safeguarding: true,
+      airportPickup: true,
+      mealPlan: 'half-board',
+      curfew: '22:00',
+      roommatePairing: 'age-gender',
+      languageSupport: ['English', 'Portuguese'],
+      emergencyProtocol: true
+    }
   },
   {
     id: "wentworth",
@@ -279,6 +327,7 @@ const ACADEMIES = [
     lng: -0.5897,
     website: "https://www.wentworthclub.com",
     contact: "+44 1344 842201",
+    contactEmail: "info@wentworthclub.com",
     individualLessons: true,
     boarding: true,
     level: "Elite",
@@ -355,7 +404,22 @@ const ACADEMIES = [
       shuttleToTraining: true,
       notes: 'Clubhouse dining included with private and twin rooms'
     },
-    videoTour: null
+    videoTour: null,
+    juniorInfo: {
+      minAge: 18,
+      maxAge: null,
+      supervision: 'none',
+      guardianStay: false,
+      schooling: 'none',
+      medicalStaff: true,
+      safeguarding: false,
+      airportPickup: false,
+      mealPlan: 'self-catering',
+      curfew: null,
+      roommatePairing: 'self-select',
+      languageSupport: ['English'],
+      emergencyProtocol: false
+    }
   },
   {
     id: "k-club",
@@ -368,6 +432,7 @@ const ACADEMIES = [
     lng: -6.6167,
     website: "https://www.kclub.ie",
     contact: "+353 1 601 7200",
+    contactEmail: "info@kclub.ie",
     individualLessons: true,
     boarding: true,
     level: "Pro",
@@ -438,7 +503,22 @@ const ACADEMIES = [
       shuttleToTraining: true,
       notes: 'Full Irish breakfast included with all meal plans'
     },
-    videoTour: null
+    videoTour: null,
+    juniorInfo: {
+      minAge: 14,
+      maxAge: 18,
+      supervision: 'training-only',
+      guardianStay: false,
+      schooling: 'none',
+      medicalStaff: true,
+      safeguarding: false,
+      airportPickup: true,
+      mealPlan: 'flexible',
+      curfew: '23:00',
+      roommatePairing: 'age-only',
+      languageSupport: ['English', 'Irish'],
+      emergencyProtocol: true
+    }
   },
   {
     id: "evian-resort",
@@ -451,6 +531,7 @@ const ACADEMIES = [
     lng: 6.5833,
     website: "https://www.evianresort.com",
     contact: "+33 4 50 26 85 00",
+    contactEmail: "info@evianresort.com",
     individualLessons: true,
     boarding: true,
     level: "Pro",
@@ -521,7 +602,22 @@ const ACADEMIES = [
       shuttleToTraining: true,
       notes: 'Lake Geneva views from premium rooms'
     },
-    videoTour: null
+    videoTour: null,
+    juniorInfo: {
+      minAge: 10,
+      maxAge: 18,
+      supervision: '24/7',
+      guardianStay: true,
+      schooling: 'tutoring',
+      medicalStaff: true,
+      safeguarding: true,
+      airportPickup: true,
+      mealPlan: 'full-board',
+      curfew: '21:00',
+      roommatePairing: 'age-gender',
+      languageSupport: ['English', 'French'],
+      emergencyProtocol: true
+    }
   },
   {
     id: "gut-larchenhof",
@@ -534,6 +630,7 @@ const ACADEMIES = [
     lng: 6.9603,
     website: "https://www.gut-larchenhof.de",
     contact: "+49 2203 9201 0",
+    contactEmail: "info@gut-larchenhof.de",
     individualLessons: true,
     boarding: true,
     level: "Pro",
@@ -599,7 +696,22 @@ const ACADEMIES = [
       shuttleToTraining: true,
       notes: 'On-site restaurant with half-board option available'
     },
-    videoTour: null
+    videoTour: null,
+    juniorInfo: {
+      minAge: 12,
+      maxAge: 18,
+      supervision: 'daytime',
+      guardianStay: true,
+      schooling: 'online-support',
+      medicalStaff: true,
+      safeguarding: true,
+      airportPickup: true,
+      mealPlan: 'half-board',
+      curfew: '22:00',
+      roommatePairing: 'age-gender',
+      languageSupport: ['English', 'German'],
+      emergencyProtocol: true
+    }
   },
   {
     id: "bro-hof-slott",
@@ -612,6 +724,7 @@ const ACADEMIES = [
     lng: 17.6414,
     website: "https://www.brohofslott.se",
     contact: "+46 8 584 500 20",
+    contactEmail: "info@brohofslott.se",
     individualLessons: true,
     boarding: true,
     level: "Elite",
@@ -678,7 +791,22 @@ const ACADEMIES = [
       shuttleToTraining: false,
       notes: 'Archipelago setting with direct course access from all rooms'
     },
-    videoTour: null
+    videoTour: null,
+    juniorInfo: {
+      minAge: 13,
+      maxAge: 18,
+      supervision: 'training-only',
+      guardianStay: true,
+      schooling: 'tutoring',
+      medicalStaff: true,
+      safeguarding: true,
+      airportPickup: true,
+      mealPlan: 'half-board',
+      curfew: '22:00',
+      roommatePairing: 'age-only',
+      languageSupport: ['English', 'Swedish'],
+      emergencyProtocol: true
+    }
   },
   {
     id: "royal-copenhagen",
@@ -691,6 +819,7 @@ const ACADEMIES = [
     lng: 12.5411,
     website: "https://www.royalcopenhagen.dk",
     contact: "+45 39 63 04 83",
+    contactEmail: "info@royalcopenhagen.dk",
     individualLessons: true,
     boarding: false,
     level: "All levels",
@@ -744,7 +873,22 @@ const ACADEMIES = [
       { name: "Made in Denmark", level: "European Tour", surface: "Parkland", month: "May", venue: "Himmerland Golf" },
       { name: "Danish Amateur Championship", level: "Amateur", surface: "Heathland", month: "June", venue: "Various venues" }
     ],
-    videoTour: null
+    videoTour: null,
+    juniorInfo: {
+      minAge: 18,
+      maxAge: null,
+      supervision: 'none',
+      guardianStay: false,
+      schooling: 'none',
+      medicalStaff: true,
+      safeguarding: false,
+      airportPickup: false,
+      mealPlan: 'self-catering',
+      curfew: null,
+      roommatePairing: 'self-select',
+      languageSupport: ['English', 'Danish'],
+      emergencyProtocol: false
+    }
   },
   {
     id: "kennemer",
@@ -757,6 +901,7 @@ const ACADEMIES = [
     lng: 4.5331,
     website: "https://www.kennemer.nl",
     contact: "+31 23 571 28 36",
+    contactEmail: "info@kennemer.nl",
     individualLessons: true,
     boarding: false,
     level: "All levels",
@@ -810,7 +955,22 @@ const ACADEMIES = [
       { name: "Dutch Open", level: "European Tour", surface: "Links", month: "September", venue: "Bernardus Golf" },
       { name: "Netherlands Amateur Championship", level: "Amateur", surface: "Links", month: "July", venue: "Various venues" }
     ],
-    videoTour: null
+    videoTour: null,
+    juniorInfo: {
+      minAge: 18,
+      maxAge: null,
+      supervision: 'none',
+      guardianStay: false,
+      schooling: 'none',
+      medicalStaff: true,
+      safeguarding: false,
+      airportPickup: false,
+      mealPlan: 'self-catering',
+      curfew: null,
+      roommatePairing: 'self-select',
+      languageSupport: ['English', 'Dutch'],
+      emergencyProtocol: false
+    }
   },
   {
     id: "royal-zoute",
@@ -823,6 +983,7 @@ const ACADEMIES = [
     lng: 3.3019,
     website: "https://www.golfzoute.be",
     contact: "+32 50 60 12 27",
+    contactEmail: "info@golfzoute.be",
     individualLessons: true,
     boarding: false,
     level: "Pro",
@@ -876,7 +1037,22 @@ const ACADEMIES = [
       { name: "Belgian Open", level: "European Challenge Tour", surface: "Links", month: "May", venue: "Various venues" },
       { name: "Belgian Amateur Championship", level: "Amateur", surface: "Links", month: "June", venue: "Various venues" }
     ],
-    videoTour: null
+    videoTour: null,
+    juniorInfo: {
+      minAge: 14,
+      maxAge: 18,
+      supervision: 'training-only',
+      guardianStay: false,
+      schooling: 'none',
+      medicalStaff: true,
+      safeguarding: false,
+      airportPickup: true,
+      mealPlan: 'flexible',
+      curfew: '23:00',
+      roommatePairing: 'age-only',
+      languageSupport: ['English', 'French', 'Dutch'],
+      emergencyProtocol: true
+    }
   },
   {
     id: "faldo-series",
@@ -889,6 +1065,7 @@ const ACADEMIES = [
     lng: -0.2247,
     website: "https://www.brocket-hall.co.uk",
     contact: "+44 1707 368700",
+    contactEmail: "info@brocket-hall.co.uk",
     individualLessons: true,
     boarding: false,
     level: "Elite",
@@ -943,7 +1120,22 @@ const ACADEMIES = [
       { name: "BMW PGA Championship", level: "European Tour", surface: "Parkland", month: "September", venue: "Wentworth" },
       { name: "Faldo Series Grand Final", level: "Junior", surface: "Parkland", month: "October", venue: "Various" }
     ],
-    videoTour: null
+    videoTour: null,
+    juniorInfo: {
+      minAge: 8,
+      maxAge: 18,
+      supervision: '24/7',
+      guardianStay: true,
+      schooling: 'online-support',
+      medicalStaff: true,
+      safeguarding: true,
+      airportPickup: true,
+      mealPlan: 'full-board',
+      curfew: '22:00',
+      roommatePairing: 'age-gender',
+      languageSupport: ['English'],
+      emergencyProtocol: true
+    }
   },
   {
     id: "monte-rei",
@@ -956,6 +1148,7 @@ const ACADEMIES = [
     lng: -7.5333,
     website: "https://www.monte-rei.com",
     contact: "+351 281 950 960",
+    contactEmail: "info@monte-rei.com",
     individualLessons: true,
     boarding: true,
     level: "Elite",
@@ -1022,7 +1215,22 @@ const ACADEMIES = [
       shuttleToTraining: true,
       notes: 'Heated pool and garden terrace included with all stays'
     },
-    videoTour: null
+    videoTour: null,
+    juniorInfo: {
+      minAge: 18,
+      maxAge: null,
+      supervision: 'none',
+      guardianStay: false,
+      schooling: 'none',
+      medicalStaff: true,
+      safeguarding: false,
+      airportPickup: false,
+      mealPlan: 'self-catering',
+      curfew: null,
+      roommatePairing: 'self-select',
+      languageSupport: ['English', 'Portuguese'],
+      emergencyProtocol: false
+    }
   },
   {
     id: "terre-blanche",
@@ -1035,6 +1243,7 @@ const ACADEMIES = [
     lng: 6.5500,
     website: "https://www.terre-blanche.com",
     contact: "+33 4 94 39 90 00",
+    contactEmail: "info@terre-blanche.com",
     individualLessons: true,
     boarding: true,
     level: "Elite",
@@ -1089,7 +1298,22 @@ const ACADEMIES = [
       { name: "Open de France", level: "European Tour", surface: "Parkland", month: "October", venue: "Le Golf National" },
       { name: "Terre Blanche Ladies Open", level: "LET Access", surface: "Parkland", month: "June", venue: "Terre Blanche" }
     ],
-    videoTour: null
+    videoTour: null,
+    juniorInfo: {
+      minAge: 12,
+      maxAge: 18,
+      supervision: 'daytime',
+      guardianStay: true,
+      schooling: 'online-support',
+      medicalStaff: true,
+      safeguarding: true,
+      airportPickup: true,
+      mealPlan: 'half-board',
+      curfew: '22:00',
+      roommatePairing: 'age-gender',
+      languageSupport: ['English', 'French'],
+      emergencyProtocol: true
+    }
   },
   {
     id: "golf-du-medoc",
@@ -1102,6 +1326,7 @@ const ACADEMIES = [
     lng: -0.7667,
     website: "https://www.golfdumedoc.com",
     contact: "+33 5 56 70 11 90",
+    contactEmail: "info@golfdumedoc.com",
     individualLessons: true,
     boarding: false,
     level: "Pro",
@@ -1156,7 +1381,22 @@ const ACADEMIES = [
       { name: "Lacoste Ladies Open de France", level: "LET", surface: "Parkland", month: "September", venue: "Golf du M\u00e9doc" },
       { name: "French Amateur Championship", level: "Amateur", surface: "Various", month: "June", venue: "Various French courses" }
     ],
-    videoTour: null
+    videoTour: null,
+    juniorInfo: {
+      minAge: 18,
+      maxAge: null,
+      supervision: 'none',
+      guardianStay: false,
+      schooling: 'none',
+      medicalStaff: true,
+      safeguarding: false,
+      airportPickup: false,
+      mealPlan: 'self-catering',
+      curfew: null,
+      roommatePairing: 'self-select',
+      languageSupport: ['English', 'French'],
+      emergencyProtocol: false
+    }
   },
   {
     id: "vidauban",
@@ -1169,6 +1409,7 @@ const ACADEMIES = [
     lng: 6.9833,
     website: "https://www.royalmougins.fr",
     contact: "+33 4 92 92 49 69",
+    contactEmail: "info@royalmougins.fr",
     individualLessons: true,
     boarding: false,
     level: "Pro",
@@ -1223,7 +1464,22 @@ const ACADEMIES = [
       { name: "Open de Cannes", level: "European Challenge Tour", surface: "Parkland", month: "April", venue: "Royal Mougins" },
       { name: "French Riviera Amateur", level: "Amateur", surface: "Parkland", month: "March", venue: "Various Riviera courses" }
     ],
-    videoTour: null
+    videoTour: null,
+    juniorInfo: {
+      minAge: 13,
+      maxAge: 18,
+      supervision: 'training-only',
+      guardianStay: true,
+      schooling: 'tutoring',
+      medicalStaff: true,
+      safeguarding: true,
+      airportPickup: true,
+      mealPlan: 'half-board',
+      curfew: '22:00',
+      roommatePairing: 'age-only',
+      languageSupport: ['English', 'French'],
+      emergencyProtocol: true
+    }
   },
   {
     id: "pga-catalunya",
@@ -1236,6 +1492,7 @@ const ACADEMIES = [
     lng: 2.7833,
     website: "https://www.pgacatalunya.com",
     contact: "+34 972 472 577",
+    contactEmail: "info@pgacatalunya.com",
     individualLessons: true,
     boarding: true,
     level: "Elite",
@@ -1308,7 +1565,22 @@ const ACADEMIES = [
       shuttleToTraining: true,
       notes: 'Clubhouse dining included with private and twin bookings'
     },
-    videoTour: null
+    videoTour: null,
+    juniorInfo: {
+      minAge: 9,
+      maxAge: 18,
+      supervision: '24/7',
+      guardianStay: true,
+      schooling: 'partner-school',
+      medicalStaff: true,
+      safeguarding: true,
+      airportPickup: true,
+      mealPlan: 'full-board',
+      curfew: '21:30',
+      roommatePairing: 'age-gender',
+      languageSupport: ['English', 'Spanish'],
+      emergencyProtocol: true
+    }
   },
   {
     id: "ballybunion",
@@ -1321,6 +1593,7 @@ const ACADEMIES = [
     lng: -9.6742,
     website: "https://www.ballybuniongolfclub.com",
     contact: "+353 68 27146",
+    contactEmail: "info@ballybuniongolfclub.com",
     individualLessons: true,
     boarding: false,
     level: "All levels",
@@ -1376,7 +1649,22 @@ const ACADEMIES = [
       { name: "North of Ireland Amateur", level: "Amateur", surface: "Links", month: "August", venue: "Royal Portrush" },
       { name: "South of Ireland Amateur", level: "Amateur", surface: "Links", month: "July", venue: "Lahinch" }
     ],
-    videoTour: null
+    videoTour: null,
+    juniorInfo: {
+      minAge: 18,
+      maxAge: null,
+      supervision: 'none',
+      guardianStay: false,
+      schooling: 'none',
+      medicalStaff: true,
+      safeguarding: false,
+      airportPickup: false,
+      mealPlan: 'self-catering',
+      curfew: null,
+      roommatePairing: 'self-select',
+      languageSupport: ['English', 'Irish'],
+      emergencyProtocol: false
+    }
   },
   {
     id: "hamburger-gc",
@@ -1389,6 +1677,7 @@ const ACADEMIES = [
     lng: 10.0667,
     website: "https://www.hamburger-golfclub.de",
     contact: "+49 40 812 177",
+    contactEmail: "info@hamburger-golfclub.de",
     individualLessons: true,
     boarding: false,
     level: "All levels",
@@ -1443,7 +1732,22 @@ const ACADEMIES = [
       { name: "Porsche European Open", level: "European Tour", surface: "Parkland", month: "June", venue: "Green Eagle Golf Courses" },
       { name: "German Amateur Championship", level: "Amateur", surface: "Various", month: "July", venue: "Various German courses" }
     ],
-    videoTour: null
+    videoTour: null,
+    juniorInfo: {
+      minAge: 14,
+      maxAge: 18,
+      supervision: 'training-only',
+      guardianStay: false,
+      schooling: 'none',
+      medicalStaff: true,
+      safeguarding: false,
+      airportPickup: true,
+      mealPlan: 'flexible',
+      curfew: '23:00',
+      roommatePairing: 'age-only',
+      languageSupport: ['English', 'German'],
+      emergencyProtocol: true
+    }
   },
   {
     id: "halmstad",
@@ -1456,6 +1760,7 @@ const ACADEMIES = [
     lng: 12.8567,
     website: "https://www.halmstadgk.se",
     contact: "+46 35 17 49 30",
+    contactEmail: "info@halmstadgk.se",
     individualLessons: true,
     boarding: false,
     level: "Pro",
@@ -1510,7 +1815,22 @@ const ACADEMIES = [
       { name: "Scandinavian Mixed", level: "European Tour", surface: "Links", month: "June", venue: "Various Scandinavian courses" },
       { name: "Swedish Amateur Championship", level: "Amateur", surface: "Various", month: "July", venue: "Various Swedish courses" }
     ],
-    videoTour: null
+    videoTour: null,
+    juniorInfo: {
+      minAge: 10,
+      maxAge: 18,
+      supervision: '24/7',
+      guardianStay: true,
+      schooling: 'tutoring',
+      medicalStaff: true,
+      safeguarding: true,
+      airportPickup: true,
+      mealPlan: 'full-board',
+      curfew: '21:00',
+      roommatePairing: 'age-gender',
+      languageSupport: ['English', 'Swedish'],
+      emergencyProtocol: true
+    }
   },
   {
     id: "golf-de-seignosse",
@@ -1523,6 +1843,7 @@ const ACADEMIES = [
     lng: -1.3833,
     website: "https://www.golfdeseignosse.com",
     contact: "+33 5 58 41 68 30",
+    contactEmail: "info@golfdeseignosse.com",
     individualLessons: true,
     boarding: false,
     level: "All levels",
@@ -1577,7 +1898,22 @@ const ACADEMIES = [
       { name: "Biarritz Cup", level: "Amateur", surface: "Parkland", month: "August", venue: "Golf de Biarritz Le Phare" },
       { name: "Open de France", level: "European Tour", surface: "Parkland", month: "October", venue: "Le Golf National" }
     ],
-    videoTour: null
+    videoTour: null,
+    juniorInfo: {
+      minAge: 12,
+      maxAge: 18,
+      supervision: 'daytime',
+      guardianStay: true,
+      schooling: 'online-support',
+      medicalStaff: true,
+      safeguarding: true,
+      airportPickup: true,
+      mealPlan: 'half-board',
+      curfew: '22:00',
+      roommatePairing: 'age-gender',
+      languageSupport: ['English', 'French'],
+      emergencyProtocol: true
+    }
   },
   {
     id: "troia-golf",
@@ -1590,6 +1926,7 @@ const ACADEMIES = [
     lng: -8.8833,
     website: "https://www.troiaresort.pt",
     contact: "+351 265 494 024",
+    contactEmail: "info@troiaresort.pt",
     individualLessons: true,
     boarding: true,
     level: "Pro",
@@ -1644,7 +1981,22 @@ const ACADEMIES = [
       { name: "Portugal Masters", level: "European Tour", surface: "Parkland", month: "October", venue: "Dom Pedro Victoria Golf Course" },
       { name: "Portuguese Amateur Championship", level: "Amateur", surface: "Various", month: "May", venue: "Various Portuguese courses" }
     ],
-    videoTour: null
+    videoTour: null,
+    juniorInfo: {
+      minAge: 13,
+      maxAge: 18,
+      supervision: 'training-only',
+      guardianStay: true,
+      schooling: 'tutoring',
+      medicalStaff: true,
+      safeguarding: true,
+      airportPickup: true,
+      mealPlan: 'half-board',
+      curfew: '22:00',
+      roommatePairing: 'age-only',
+      languageSupport: ['English', 'Portuguese'],
+      emergencyProtocol: true
+    }
   },
   {
     id: "carnoustie",
@@ -1657,6 +2009,7 @@ const ACADEMIES = [
     lng: -2.7147,
     website: "https://www.carnoustiegolflinks.com",
     contact: "+44 1241 802270",
+    contactEmail: "info@carnoustiegolflinks.com",
     individualLessons: true,
     boarding: false,
     level: "Elite",
@@ -1712,7 +2065,22 @@ const ACADEMIES = [
       { name: "Scottish Amateur Championship", level: "Amateur", surface: "Links", month: "June", venue: "Various Scottish courses" },
       { name: "Alfred Dunhill Links Championship", level: "European Tour", surface: "Links", month: "October", venue: "Carnoustie, St Andrews, Kingsbarns" }
     ],
-    videoTour: null
+    videoTour: null,
+    juniorInfo: {
+      minAge: 14,
+      maxAge: 18,
+      supervision: 'training-only',
+      guardianStay: false,
+      schooling: 'none',
+      medicalStaff: true,
+      safeguarding: false,
+      airportPickup: true,
+      mealPlan: 'flexible',
+      curfew: '23:00',
+      roommatePairing: 'age-only',
+      languageSupport: ['English'],
+      emergencyProtocol: true
+    }
   }
 ];
 

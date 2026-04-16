@@ -10,6 +10,7 @@ const ACADEMIES = [
     city: 'Madrid',
     lat: 40.453, lng: -3.6883,
     website: 'https://www.realmadridbaloncesto.es',
+    contactEmail: 'info@realmadridbaloncesto.es',
     individualLessons: true,
     boarding: true,
     level: 'Elite',
@@ -88,7 +89,22 @@ const ACADEMIES = [
       shuttleToTraining: true,
       notes: 'Modern sports residence near WiZink Center with full-board dining'
     },
-    videoTour: null
+    videoTour: null,
+    juniorInfo: {
+      minAge: 7,
+      maxAge: 18,
+      supervision: '24/7',
+      guardianStay: true,
+      schooling: 'partner-school',
+      medicalStaff: true,
+      safeguarding: true,
+      airportPickup: true,
+      mealPlan: 'full-board',
+      curfew: '22:00',
+      roommatePairing: 'age-gender',
+      languageSupport: ['English', 'Spanish'],
+      emergencyProtocol: true
+    }
   }
 ,
   {
@@ -100,6 +116,7 @@ const ACADEMIES = [
     city: 'Barcelona',
     lat: 41.3809, lng: 2.1228,
     website: 'https://www.fcbarcelona.com/en/basketball',
+    contactEmail: 'info@fcbarcelona.com',
     individualLessons: true,
     boarding: true,
     level: 'Elite',
@@ -173,7 +190,22 @@ const ACADEMIES = [
       shuttleToTraining: true,
       notes: 'On-campus residence at Ciutat Esportiva with team dining hall'
     },
-    videoTour: null
+    videoTour: null,
+    juniorInfo: {
+      minAge: 6,
+      maxAge: 18,
+      supervision: '24/7',
+      guardianStay: true,
+      schooling: 'tutoring',
+      medicalStaff: true,
+      safeguarding: true,
+      airportPickup: true,
+      mealPlan: 'full-board',
+      curfew: '21:30',
+      roommatePairing: 'age-gender',
+      languageSupport: ['English', 'Spanish', 'Catalan'],
+      emergencyProtocol: true
+    }
   }
 ,
   {
@@ -185,6 +217,7 @@ const ACADEMIES = [
     city: 'Piraeus',
     lat: 37.9417, lng: 23.6467,
     website: 'https://www.olympiacosbc.gr',
+    contactEmail: 'info@olympiacosbc.gr',
     individualLessons: true,
     boarding: false,
     level: 'Elite',
@@ -255,7 +288,22 @@ const ACADEMIES = [
       shuttleToTraining: true,
       notes: 'Seaside accommodation in Piraeus, short walk to Peace and Friendship Stadium'
     },
-    videoTour: null
+    videoTour: null,
+    juniorInfo: {
+      minAge: 12,
+      maxAge: 18,
+      supervision: 'daytime',
+      guardianStay: false,
+      schooling: 'online-support',
+      medicalStaff: true,
+      safeguarding: true,
+      airportPickup: true,
+      mealPlan: 'half-board',
+      curfew: '23:00',
+      roommatePairing: 'age-only',
+      languageSupport: ['English', 'Greek'],
+      emergencyProtocol: true
+    }
   }
 ,
   {
@@ -267,6 +315,7 @@ const ACADEMIES = [
     city: 'Athens',
     lat: 37.9715, lng: 23.7267,
     website: 'https://www.paobc.gr',
+    contactEmail: 'info@paobc.gr',
     individualLessons: true,
     boarding: false,
     level: 'Elite',
@@ -330,7 +379,22 @@ const ACADEMIES = [
       { name: "Olympiacos Summer Camp", startDate: "2025-06-23", endDate: "2025-07-04", price: "€1,500", level: "All Levels" },
       { name: "Mediterranean Basketball Week", startDate: "2025-08-11", endDate: "2025-08-22", price: "€1,300", level: "Intermediate" }
     ],
-    videoTour: null
+    videoTour: null,
+    juniorInfo: {
+      minAge: 10,
+      maxAge: 18,
+      supervision: 'training-only',
+      guardianStay: false,
+      schooling: 'none',
+      medicalStaff: false,
+      safeguarding: true,
+      airportPickup: false,
+      mealPlan: 'self-catering',
+      curfew: null,
+      roommatePairing: 'self-select',
+      languageSupport: ['English', 'Greek'],
+      emergencyProtocol: true
+    }
   }
 ,
   {
@@ -342,6 +406,7 @@ const ACADEMIES = [
     city: 'Istanbul',
     lat: 40.9878, lng: 29.0367,
     website: 'https://www.fenerbahce.org/basketbol',
+    contactEmail: 'info@fenerbahce.org',
     individualLessons: true,
     boarding: true,
     level: 'Elite',
@@ -418,7 +483,22 @@ const ACADEMIES = [
       shuttleToTraining: false,
       notes: 'Gym and recovery centre included with all accommodation packages'
     },
-    videoTour: null
+    videoTour: null,
+    juniorInfo: {
+      minAge: 8,
+      maxAge: 18,
+      supervision: '24/7',
+      guardianStay: true,
+      schooling: 'partner-school',
+      medicalStaff: true,
+      safeguarding: true,
+      airportPickup: true,
+      mealPlan: 'full-board',
+      curfew: '21:00',
+      roommatePairing: 'age-gender',
+      languageSupport: ['English', 'Turkish'],
+      emergencyProtocol: true
+    }
   }
 ,
   {
@@ -430,6 +510,7 @@ const ACADEMIES = [
     city: 'Istanbul',
     lat: 41.0082, lng: 28.9784,
     website: 'https://www.anadoluefes.org',
+    contactEmail: 'info@anadoluefes.org',
     individualLessons: true,
     boarding: false,
     level: 'Advanced',
@@ -483,7 +564,22 @@ const ACADEMIES = [
         { name: 'Turkish Basketball Super League', level: 'BSL', surface: 'Indoor Hardwood', month: 'October-May', venue: 'Sinan Erdem Dome' },
         { name: 'Bosphorus Cup Youth Basketball', level: 'International Youth', surface: 'Indoor Hardwood', month: 'July', venue: 'Various Istanbul Venues' },
       ],
-    videoTour: null
+    videoTour: null,
+    juniorInfo: {
+      minAge: 18,
+      maxAge: 35,
+      supervision: 'none',
+      guardianStay: false,
+      schooling: 'none',
+      medicalStaff: false,
+      safeguarding: false,
+      airportPickup: false,
+      mealPlan: 'self-catering',
+      curfew: null,
+      roommatePairing: 'n/a',
+      languageSupport: ['English', 'Turkish'],
+      emergencyProtocol: false
+    }
   }
 ,
   {
@@ -495,6 +591,7 @@ const ACADEMIES = [
     city: 'Belgrade',
     lat: 44.7886, lng: 20.4568,
     website: 'https://www.kkpartizan.rs',
+    contactEmail: 'info@kkpartizan.rs',
     individualLessons: true,
     boarding: false,
     level: 'Advanced',
@@ -566,7 +663,22 @@ const ACADEMIES = [
       shuttleToTraining: true,
       notes: 'City centre location in Belgrade, walking distance to training venue'
     },
-    videoTour: null
+    videoTour: null,
+    juniorInfo: {
+      minAge: 7,
+      maxAge: 18,
+      supervision: '24/7',
+      guardianStay: true,
+      schooling: 'tutoring',
+      medicalStaff: true,
+      safeguarding: true,
+      airportPickup: true,
+      mealPlan: 'full-board',
+      curfew: '22:00',
+      roommatePairing: 'age-gender',
+      languageSupport: ['English', 'Serbian'],
+      emergencyProtocol: true
+    }
   }
 ,
   {
@@ -578,6 +690,7 @@ const ACADEMIES = [
     city: 'Belgrade',
     lat: 44.8176, lng: 20.4633,
     website: 'https://www.kkcrvenazvezda.rs',
+    contactEmail: 'info@kkcrvenazvezda.rs',
     individualLessons: true,
     boarding: false,
     level: 'Advanced',
@@ -631,7 +744,22 @@ const ACADEMIES = [
         { name: 'ABA League', level: 'Regional League', surface: 'Indoor Hardwood', month: 'October-April', venue: 'Aleksandar Nikolic Hall' },
         { name: 'Serbian Basketball League Playoffs', level: 'National League', surface: 'Indoor Hardwood', month: 'May-June', venue: 'Stark Arena Belgrade' },
       ],
-    videoTour: null
+    videoTour: null,
+    juniorInfo: {
+      minAge: 12,
+      maxAge: 18,
+      supervision: 'daytime',
+      guardianStay: false,
+      schooling: 'online-support',
+      medicalStaff: true,
+      safeguarding: true,
+      airportPickup: true,
+      mealPlan: 'half-board',
+      curfew: '23:00',
+      roommatePairing: 'age-only',
+      languageSupport: ['English', 'Serbian'],
+      emergencyProtocol: true
+    }
   }
 ,
   {
@@ -643,6 +771,7 @@ const ACADEMIES = [
     city: 'Kaunas',
     lat: 54.8985, lng: 23.9036,
     website: 'https://www.zalgiris.lt',
+    contactEmail: 'info@zalgiris.lt',
     individualLessons: true,
     boarding: true,
     level: 'Elite',
@@ -714,7 +843,22 @@ const ACADEMIES = [
       shuttleToTraining: true,
       notes: 'Team dining hall for all residents near Zalgirio Arena'
     },
-    videoTour: null
+    videoTour: null,
+    juniorInfo: {
+      minAge: 6,
+      maxAge: 18,
+      supervision: '24/7',
+      guardianStay: true,
+      schooling: 'partner-school',
+      medicalStaff: true,
+      safeguarding: true,
+      airportPickup: true,
+      mealPlan: 'full-board',
+      curfew: '21:30',
+      roommatePairing: 'age-gender',
+      languageSupport: ['English', 'Lithuanian'],
+      emergencyProtocol: true
+    }
   }
 ,
   {
@@ -726,6 +870,7 @@ const ACADEMIES = [
     city: 'Munich',
     lat: 48.0911, lng: 11.5514,
     website: 'https://www.fcbayern.com/basketball',
+    contactEmail: 'info@fcbayern.com',
     individualLessons: true,
     boarding: true,
     level: 'Elite',
@@ -792,7 +937,22 @@ const ACADEMIES = [
       shuttleToTraining: true,
       notes: 'Premium sports campus accommodation with strength and conditioning access'
     },
-    videoTour: null
+    videoTour: null,
+    juniorInfo: {
+      minAge: 10,
+      maxAge: 18,
+      supervision: 'daytime',
+      guardianStay: true,
+      schooling: 'partner-school',
+      medicalStaff: true,
+      safeguarding: true,
+      airportPickup: true,
+      mealPlan: 'half-board',
+      curfew: '22:00',
+      roommatePairing: 'age-only',
+      languageSupport: ['English', 'German'],
+      emergencyProtocol: true
+    }
   }
 ,
   {
@@ -804,6 +964,7 @@ const ACADEMIES = [
     city: 'Berlin',
     lat: 52.4572, lng: 13.3317,
     website: 'https://www.albaberlin.de',
+    contactEmail: 'info@albaberlin.de',
     individualLessons: true,
     boarding: true,
     level: 'Advanced',
@@ -862,7 +1023,22 @@ const ACADEMIES = [
       { name: "Winter Fundamentals Clinic", startDate: "2025-11-17", endDate: "2025-11-28", price: "€1,100", level: "Beginner" },
       { name: "Spring 3-on-3 Camp", startDate: "2025-05-12", endDate: "2025-05-23", price: "€900", level: "All Levels" }
     ],
-    videoTour: null
+    videoTour: null,
+    juniorInfo: {
+      minAge: 8,
+      maxAge: 18,
+      supervision: '24/7',
+      guardianStay: true,
+      schooling: 'tutoring',
+      medicalStaff: true,
+      safeguarding: true,
+      airportPickup: true,
+      mealPlan: 'full-board',
+      curfew: '21:00',
+      roommatePairing: 'age-gender',
+      languageSupport: ['English', 'German'],
+      emergencyProtocol: true
+    }
   }
 ,
   {
@@ -874,6 +1050,7 @@ const ACADEMIES = [
     city: 'Villeurbanne',
     lat: 45.7676, lng: 4.8795,
     website: 'https://www.asvel.com',
+    contactEmail: 'info@asvel.com',
     individualLessons: true,
     boarding: true,
     level: 'Elite',
@@ -941,7 +1118,22 @@ const ACADEMIES = [
       shuttleToTraining: true,
       notes: 'Modern residence in Villeurbanne with recovery spa and nutrition planning'
     },
-    videoTour: null
+    videoTour: null,
+    juniorInfo: {
+      minAge: 12,
+      maxAge: 18,
+      supervision: 'training-only',
+      guardianStay: false,
+      schooling: 'online-support',
+      medicalStaff: true,
+      safeguarding: true,
+      airportPickup: false,
+      mealPlan: 'flexible',
+      curfew: '23:00',
+      roommatePairing: 'self-select',
+      languageSupport: ['English', 'French'],
+      emergencyProtocol: true
+    }
   }
 ,
   {
@@ -953,6 +1145,7 @@ const ACADEMIES = [
     city: 'Limoges',
     lat: 45.8315, lng: 1.2578,
     website: 'https://www.csp-limoges.com',
+    contactEmail: 'info@csp-limoges.com',
     individualLessons: true,
     boarding: false,
     level: 'Advanced',
@@ -1006,7 +1199,22 @@ const ACADEMIES = [
         { name: 'French LNB Pro A', level: 'Pro A', surface: 'Indoor Hardwood', month: 'October-May', venue: 'Palais des Sports de Beaublanc' },
         { name: 'Tournoi Espoirs Limoges', level: 'National Junior', surface: 'Indoor Hardwood', month: 'April', venue: 'Beaublanc Annex' },
       ],
-    videoTour: null
+    videoTour: null,
+    juniorInfo: {
+      minAge: 18,
+      maxAge: 40,
+      supervision: 'none',
+      guardianStay: false,
+      schooling: 'none',
+      medicalStaff: false,
+      safeguarding: false,
+      airportPickup: false,
+      mealPlan: 'self-catering',
+      curfew: null,
+      roommatePairing: 'n/a',
+      languageSupport: ['English', 'French'],
+      emergencyProtocol: false
+    }
   }
 ,
   {
@@ -1018,6 +1226,7 @@ const ACADEMIES = [
     city: 'Bologna',
     lat: 44.4949, lng: 11.3426,
     website: 'https://www.virtus.it',
+    contactEmail: 'info@virtus.it',
     individualLessons: true,
     boarding: false,
     level: 'Elite',
@@ -1084,7 +1293,22 @@ const ACADEMIES = [
       shuttleToTraining: false,
       notes: 'Historic city centre residence with Italian full-board cuisine'
     },
-    videoTour: null
+    videoTour: null,
+    juniorInfo: {
+      minAge: 7,
+      maxAge: 18,
+      supervision: '24/7',
+      guardianStay: true,
+      schooling: 'tutoring',
+      medicalStaff: true,
+      safeguarding: true,
+      airportPickup: true,
+      mealPlan: 'full-board',
+      curfew: '21:30',
+      roommatePairing: 'age-gender',
+      languageSupport: ['English', 'Italian'],
+      emergencyProtocol: true
+    }
   }
 ,
   {
@@ -1096,6 +1320,7 @@ const ACADEMIES = [
     city: 'Milan',
     lat: 45.4783, lng: 9.124,
     website: 'https://www.olimpiamilano.com',
+    contactEmail: 'info@olimpiamilano.com',
     individualLessons: true,
     boarding: true,
     level: 'Elite',
@@ -1149,7 +1374,22 @@ const ACADEMIES = [
         { name: 'Italian Lega Basket Serie A', level: 'Serie A', surface: 'Indoor Hardwood', month: 'October-May', venue: 'Mediolanum Forum' },
         { name: 'EuroLeague Milano Games', level: 'EuroLeague', surface: 'Indoor Hardwood', month: 'October-April', venue: 'Mediolanum Forum' },
       ],
-    videoTour: null
+    videoTour: null,
+    juniorInfo: {
+      minAge: 14,
+      maxAge: 18,
+      supervision: 'training-only',
+      guardianStay: false,
+      schooling: 'none',
+      medicalStaff: true,
+      safeguarding: true,
+      airportPickup: true,
+      mealPlan: 'half-board',
+      curfew: null,
+      roommatePairing: 'self-select',
+      languageSupport: ['English', 'Italian'],
+      emergencyProtocol: true
+    }
   }
 ,
   {
@@ -1161,6 +1401,7 @@ const ACADEMIES = [
     city: 'Ljubljana',
     lat: 46.0569, lng: 14.5058,
     website: 'https://www.cedevita-olimpija.si',
+    contactEmail: 'info@cedevita-olimpija.si',
     individualLessons: true,
     boarding: false,
     level: 'Advanced',
@@ -1227,7 +1468,22 @@ const ACADEMIES = [
       shuttleToTraining: true,
       notes: 'Green surroundings in Ljubljana with lake views and outdoor training areas'
     },
-    videoTour: null
+    videoTour: null,
+    juniorInfo: {
+      minAge: 8,
+      maxAge: 18,
+      supervision: '24/7',
+      guardianStay: true,
+      schooling: 'partner-school',
+      medicalStaff: true,
+      safeguarding: true,
+      airportPickup: true,
+      mealPlan: 'full-board',
+      curfew: '21:00',
+      roommatePairing: 'age-gender',
+      languageSupport: ['English', 'Slovenian', 'Croatian'],
+      emergencyProtocol: true
+    }
   }
 ,
   {
@@ -1239,6 +1495,7 @@ const ACADEMIES = [
     city: 'Split',
     lat: 43.5081, lng: 16.4402,
     website: 'https://www.kksplit.hr',
+    contactEmail: 'info@kksplit.hr',
     individualLessons: true,
     boarding: false,
     level: 'All levels',
@@ -1293,7 +1550,22 @@ const ACADEMIES = [
         { name: 'ABA League 2', level: 'Regional League', surface: 'Indoor Hardwood', month: 'October-April', venue: 'Spaladium Arena' },
         { name: 'Split Summer Youth Tournament', level: 'International Youth', surface: 'Outdoor Asphalt', month: 'July', venue: 'Split Outdoor Courts' },
       ],
-    videoTour: null
+    videoTour: null,
+    juniorInfo: {
+      minAge: 10,
+      maxAge: 18,
+      supervision: 'daytime',
+      guardianStay: true,
+      schooling: 'online-support',
+      medicalStaff: false,
+      safeguarding: true,
+      airportPickup: true,
+      mealPlan: 'half-board',
+      curfew: '22:30',
+      roommatePairing: 'age-only',
+      languageSupport: ['English', 'Croatian'],
+      emergencyProtocol: true
+    }
   }
 ,
   {
@@ -1305,6 +1577,7 @@ const ACADEMIES = [
     city: 'Badalona',
     lat: 41.45, lng: 2.2474,
     website: 'https://www.penya.com',
+    contactEmail: 'info@penya.com',
     individualLessons: true,
     boarding: false,
     level: 'Advanced',
@@ -1358,7 +1631,22 @@ const ACADEMIES = [
         { name: 'ACB Liga Endesa', level: 'ACB', surface: 'Indoor Hardwood', month: 'October-May', venue: 'Palau Olimpic de Badalona' },
         { name: 'Torneo Junior ACB Catalunya', level: 'National Junior', surface: 'Indoor Hardwood', month: 'April', venue: 'Various Catalonia Venues' },
       ],
-    videoTour: null
+    videoTour: null,
+    juniorInfo: {
+      minAge: 6,
+      maxAge: 18,
+      supervision: '24/7',
+      guardianStay: true,
+      schooling: 'tutoring',
+      medicalStaff: true,
+      safeguarding: true,
+      airportPickup: true,
+      mealPlan: 'full-board',
+      curfew: '21:30',
+      roommatePairing: 'age-gender',
+      languageSupport: ['English', 'Spanish', 'Catalan'],
+      emergencyProtocol: true
+    }
   }
 ,
   {
@@ -1370,6 +1658,7 @@ const ACADEMIES = [
     city: 'Valencia',
     lat: 39.4783, lng: -0.359,
     website: 'https://www.valenciabasket.com',
+    contactEmail: 'info@valenciabasket.com',
     individualLessons: true,
     boarding: true,
     level: 'Elite',
@@ -1424,7 +1713,22 @@ const ACADEMIES = [
         { name: 'EuroCup Valencia Games', level: 'EuroCup', surface: 'Indoor Hardwood', month: 'October-April', venue: 'La Fonteta' },
         { name: 'Valencia Youth Basketball Cup', level: 'International Youth', surface: 'Indoor Hardwood', month: 'June', venue: 'L Alqueria del Basket' },
       ],
-    videoTour: null
+    videoTour: null,
+    juniorInfo: {
+      minAge: 10,
+      maxAge: 18,
+      supervision: 'daytime',
+      guardianStay: true,
+      schooling: 'partner-school',
+      medicalStaff: true,
+      safeguarding: true,
+      airportPickup: true,
+      mealPlan: 'flexible',
+      curfew: '22:00',
+      roommatePairing: 'age-only',
+      languageSupport: ['English', 'Spanish'],
+      emergencyProtocol: true
+    }
   }
 ,
   {
@@ -1436,6 +1740,7 @@ const ACADEMIES = [
     city: 'Vilnius',
     lat: 54.6872, lng: 25.2797,
     website: 'https://www.bcrytas.lt',
+    contactEmail: 'info@bcrytas.lt',
     individualLessons: true,
     boarding: false,
     level: 'Advanced',
@@ -1489,7 +1794,22 @@ const ACADEMIES = [
         { name: 'Lithuanian Basketball League', level: 'LKL', surface: 'Indoor Hardwood', month: 'October-May', venue: 'Sarunas Marciulionis Arena' },
         { name: 'Vilnius Junior Basketball Cup', level: 'National Junior', surface: 'Indoor Hardwood', month: 'March', venue: 'Vilnius Sports Palace' },
       ],
-    videoTour: null
+    videoTour: null,
+    juniorInfo: {
+      minAge: 18,
+      maxAge: 35,
+      supervision: 'none',
+      guardianStay: false,
+      schooling: 'none',
+      medicalStaff: false,
+      safeguarding: false,
+      airportPickup: false,
+      mealPlan: 'self-catering',
+      curfew: null,
+      roommatePairing: 'n/a',
+      languageSupport: ['English', 'Lithuanian'],
+      emergencyProtocol: false
+    }
   }
 ,
   {
@@ -1501,6 +1821,7 @@ const ACADEMIES = [
     city: 'Riga',
     lat: 56.9496, lng: 24.1052,
     website: 'https://www.tttriga.lv',
+    contactEmail: 'info@tttriga.lv',
     individualLessons: true,
     boarding: false,
     level: 'All levels',
@@ -1554,7 +1875,22 @@ const ACADEMIES = [
         { name: 'Latvian Basketball League', level: 'LBL', surface: 'Indoor Hardwood', month: 'October-May', venue: 'Olympic Sports Center' },
         { name: 'Riga Junior Basketball Open', level: 'International Junior', surface: 'Indoor Hardwood', month: 'May', venue: 'Riga Sports Hall' },
       ],
-    videoTour: null
+    videoTour: null,
+    juniorInfo: {
+      minAge: 7,
+      maxAge: 18,
+      supervision: '24/7',
+      guardianStay: true,
+      schooling: 'tutoring',
+      medicalStaff: true,
+      safeguarding: true,
+      airportPickup: true,
+      mealPlan: 'full-board',
+      curfew: '21:00',
+      roommatePairing: 'age-gender',
+      languageSupport: ['English', 'Latvian', 'Russian'],
+      emergencyProtocol: true
+    }
   }
 ,
   {
@@ -1566,6 +1902,7 @@ const ACADEMIES = [
     city: 'Moscow',
     lat: 55.7558, lng: 37.6173,
     website: 'https://www.cskabasket.com',
+    contactEmail: 'info@cskabasket.com',
     individualLessons: true,
     boarding: true,
     level: 'Elite',
@@ -1619,7 +1956,22 @@ const ACADEMIES = [
         { name: 'VTB United League', level: 'VTB', surface: 'Indoor Hardwood', month: 'October-May', venue: 'CSKA USH' },
         { name: 'EuroLeague Moscow Games', level: 'EuroLeague', surface: 'Indoor Hardwood', month: 'October-April', venue: 'Megasport Arena' },
       ],
-    videoTour: null
+    videoTour: null,
+    juniorInfo: {
+      minAge: 12,
+      maxAge: 18,
+      supervision: 'daytime',
+      guardianStay: false,
+      schooling: 'online-support',
+      medicalStaff: true,
+      safeguarding: true,
+      airportPickup: true,
+      mealPlan: 'half-board',
+      curfew: '22:00',
+      roommatePairing: 'age-only',
+      languageSupport: ['English', 'Russian'],
+      emergencyProtocol: true
+    }
   }
 ,
   {
@@ -1631,6 +1983,7 @@ const ACADEMIES = [
     city: 'Malaga',
     lat: 36.7213, lng: -4.4214,
     website: 'https://www.unicajabaloncesto.com',
+    contactEmail: 'info@unicajabaloncesto.com',
     individualLessons: true,
     boarding: false,
     level: 'Advanced',
@@ -1685,7 +2038,22 @@ const ACADEMIES = [
         { name: 'Costa del Sol Basketball Cup', level: 'International Youth', surface: 'Indoor Hardwood', month: 'June', venue: 'Malaga Sports Center' },
         { name: 'Torneo Andaluz de Baloncesto', level: 'Regional', surface: 'Indoor Hardwood', month: 'April', venue: 'Various Andalusia Venues' },
       ],
-    videoTour: null
+    videoTour: null,
+    juniorInfo: {
+      minAge: 18,
+      maxAge: 40,
+      supervision: 'none',
+      guardianStay: false,
+      schooling: 'none',
+      medicalStaff: false,
+      safeguarding: false,
+      airportPickup: true,
+      mealPlan: 'self-catering',
+      curfew: null,
+      roommatePairing: 'n/a',
+      languageSupport: ['English', 'Spanish'],
+      emergencyProtocol: false
+    }
   }
 ,
   {
@@ -1697,6 +2065,7 @@ const ACADEMIES = [
     city: 'Tel Aviv',
     lat: 32.0853, lng: 34.7818,
     website: 'https://www.maccabi.co.il',
+    contactEmail: 'info@maccabi.co.il',
     individualLessons: true,
     boarding: true,
     level: 'Elite',
@@ -1751,7 +2120,22 @@ const ACADEMIES = [
         { name: 'EuroLeague Tel Aviv Games', level: 'EuroLeague', surface: 'Indoor Hardwood', month: 'October-April', venue: 'Menora Mivtachim Arena' },
         { name: 'Maccabiah Youth Basketball', level: 'International Youth', surface: 'Indoor Hardwood', month: 'July', venue: 'Various Tel Aviv Venues' },
       ],
-    videoTour: null
+    videoTour: null,
+    juniorInfo: {
+      minAge: 10,
+      maxAge: 18,
+      supervision: 'daytime',
+      guardianStay: true,
+      schooling: 'partner-school',
+      medicalStaff: true,
+      safeguarding: true,
+      airportPickup: true,
+      mealPlan: 'half-board',
+      curfew: '22:00',
+      roommatePairing: 'age-only',
+      languageSupport: ['English', 'Hebrew', 'Arabic'],
+      emergencyProtocol: true
+    }
   }
 ];
 

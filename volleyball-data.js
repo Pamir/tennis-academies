@@ -10,6 +10,7 @@ const ACADEMIES = [
     city: 'Trento',
     lat: 46.0748, lng: 11.1217,
     website: 'https://www.trfrentinovolley.it',
+    contactEmail: 'info@trfrentinovolley.it',
     individualLessons: true,
     boarding: true,
     level: 'Elite',
@@ -73,7 +74,22 @@ const ACADEMIES = [
       shuttleToTraining: true,
       notes: 'Alpine sports residence with mountain views and wellness facilities'
     },
-    videoTour: null
+    videoTour: null,
+    juniorInfo: {
+      minAge: 7,
+      maxAge: 18,
+      supervision: '24/7',
+      guardianStay: true,
+      schooling: 'partner-school',
+      medicalStaff: true,
+      safeguarding: true,
+      airportPickup: true,
+      mealPlan: 'full-board',
+      curfew: '21:30',
+      roommatePairing: 'age-gender',
+      languageSupport: ['English', 'Italian'],
+      emergencyProtocol: true
+    }
   },
   {
     id: 'warsaw-volley-academy',
@@ -84,6 +100,7 @@ const ACADEMIES = [
     city: 'Bełchatów',
     lat: 51.3618, lng: 19.3579,
     website: 'https://www.skra.pl',
+    contactEmail: 'info@skra.pl',
     individualLessons: true,
     boarding: true,
     level: 'Elite',
@@ -147,7 +164,22 @@ const ACADEMIES = [
       shuttleToTraining: true,
       notes: 'City centre location in Warsaw, walking distance to training venue'
     },
-    videoTour: null
+    videoTour: null,
+    juniorInfo: {
+      minAge: 10,
+      maxAge: 17,
+      supervision: 'daytime',
+      guardianStay: true,
+      schooling: 'online-support',
+      medicalStaff: true,
+      safeguarding: true,
+      airportPickup: true,
+      mealPlan: 'half-board',
+      curfew: '22:00',
+      roommatePairing: 'age-only',
+      languageSupport: ['English', 'Polish'],
+      emergencyProtocol: true
+    }
   },
   {
     id: 'istanbul-volley-academy',
@@ -158,6 +190,7 @@ const ACADEMIES = [
     city: 'Istanbul',
     lat: 41.0522, lng: 29.0031,
     website: 'https://www.vakifbanksporkulubu.com',
+    contactEmail: 'info@vakifbanksporkulubu.com',
     individualLessons: true,
     boarding: true,
     level: 'Elite',
@@ -222,7 +255,22 @@ const ACADEMIES = [
       shuttleToTraining: false,
       notes: 'Bosphorus-view residence with gym and recovery centre included'
     },
-    videoTour: null
+    videoTour: null,
+    juniorInfo: {
+      minAge: 6,
+      maxAge: 18,
+      supervision: '24/7',
+      guardianStay: true,
+      schooling: 'tutoring',
+      medicalStaff: true,
+      safeguarding: true,
+      airportPickup: true,
+      mealPlan: 'full-board',
+      curfew: '21:00',
+      roommatePairing: 'age-gender',
+      languageSupport: ['English', 'Turkish'],
+      emergencyProtocol: true
+    }
   },
   {
     id: 'modena-volley-academy',
@@ -233,6 +281,7 @@ const ACADEMIES = [
     city: 'Modena',
     lat: 44.6471, lng: 10.9252,
     website: 'https://www.modenavolley.it',
+    contactEmail: 'info@modenavolley.it',
     individualLessons: true,
     boarding: true,
     level: 'Elite',
@@ -291,7 +340,22 @@ const ACADEMIES = [
       shuttleToTraining: true,
       notes: 'Historic Emilia-Romagna residence with Italian full-board cuisine'
     },
-    videoTour: null
+    videoTour: null,
+    juniorInfo: {
+      minAge: 12,
+      maxAge: 17,
+      supervision: 'training-only',
+      guardianStay: false,
+      schooling: 'none',
+      medicalStaff: true,
+      safeguarding: true,
+      airportPickup: false,
+      mealPlan: 'half-board',
+      curfew: '23:00',
+      roommatePairing: 'self-select',
+      languageSupport: ['English', 'Italian'],
+      emergencyProtocol: true
+    }
   },
   {
     id: 'zenit-kazan-academy',
@@ -302,6 +366,7 @@ const ACADEMIES = [
     city: 'Kazan',
     lat: 55.8304, lng: 49.0661,
     website: 'https://www.zenit-kazan.com',
+    contactEmail: 'info@zenit-kazan.com',
     individualLessons: true,
     boarding: true,
     level: 'Elite',
@@ -348,7 +413,22 @@ const ACADEMIES = [
       { name: 'Russian Superliga', level: 'Professional', surface: 'Indoor', month: 'Oct–May', venue: 'Kazan Volleyball Center' }
     ],
     upcomingCamps: [],
-    videoTour: null
+    videoTour: null,
+    juniorInfo: {
+      minAge: 10,
+      maxAge: 18,
+      supervision: 'daytime',
+      guardianStay: true,
+      schooling: 'online-support',
+      medicalStaff: true,
+      safeguarding: true,
+      airportPickup: true,
+      mealPlan: 'full-board',
+      curfew: '22:00',
+      roommatePairing: 'age-only',
+      languageSupport: ['English', 'Russian'],
+      emergencyProtocol: true
+    }
   },
   {
     id: 'berlin-recycling-volleys',
@@ -359,6 +439,7 @@ const ACADEMIES = [
     city: 'Berlin',
     lat: 52.4573, lng: 13.3878,
     website: 'https://www.berlin-recycling-volleys.de',
+    contactEmail: 'info@berlin-recycling-volleys.de',
     individualLessons: true,
     boarding: false,
     level: 'All levels',
@@ -417,7 +498,22 @@ const ACADEMIES = [
       shuttleToTraining: true,
       notes: 'Modern sports campus with strength and conditioning facility access'
     },
-    videoTour: null
+    videoTour: null,
+    juniorInfo: {
+      minAge: 8,
+      maxAge: 18,
+      supervision: '24/7',
+      guardianStay: true,
+      schooling: 'partner-school',
+      medicalStaff: true,
+      safeguarding: true,
+      airportPickup: true,
+      mealPlan: 'full-board',
+      curfew: '21:30',
+      roommatePairing: 'age-gender',
+      languageSupport: ['English', 'German'],
+      emergencyProtocol: true
+    }
   },
   {
     id: 'paris-volley-academy',
@@ -428,6 +524,7 @@ const ACADEMIES = [
     city: 'Paris',
     lat: 48.8380, lng: 2.3780,
     website: 'https://www.parisvolley.com',
+    contactEmail: 'info@parisvolley.com',
     individualLessons: true,
     boarding: false,
     level: 'All levels',
@@ -485,7 +582,22 @@ const ACADEMIES = [
       shuttleToTraining: true,
       notes: 'Parisian residence with team dining hall and metro access'
     },
-    videoTour: null
+    videoTour: null,
+    juniorInfo: {
+      minAge: 11,
+      maxAge: 17,
+      supervision: 'daytime',
+      guardianStay: true,
+      schooling: 'tutoring',
+      medicalStaff: true,
+      safeguarding: true,
+      airportPickup: true,
+      mealPlan: 'half-board',
+      curfew: '22:00',
+      roommatePairing: 'age-gender',
+      languageSupport: ['English', 'French'],
+      emergencyProtocol: true
+    }
   },
   {
     id: 'ankara-volley-academy',
@@ -496,6 +608,7 @@ const ACADEMIES = [
     city: 'Ankara',
     lat: 39.9208, lng: 32.8541,
     website: 'https://www.halkbankspor.org.tr',
+    contactEmail: 'info@halkbankspor.org.tr',
     individualLessons: true,
     boarding: true,
     level: 'Elite',
@@ -542,7 +655,22 @@ const ACADEMIES = [
       { name: 'Efeler Ligi', level: 'Professional', surface: 'Indoor', month: 'Oct–Apr', venue: 'Ankara Sports Hall' }
     ],
     upcomingCamps: [],
-    videoTour: null
+    videoTour: null,
+    juniorInfo: {
+      minAge: 18,
+      maxAge: 35,
+      supervision: 'none',
+      guardianStay: false,
+      schooling: 'none',
+      medicalStaff: false,
+      safeguarding: false,
+      airportPickup: false,
+      mealPlan: 'self-catering',
+      curfew: null,
+      roommatePairing: 'n/a',
+      languageSupport: ['English', 'Turkish'],
+      emergencyProtocol: false
+    }
   },
   {
     id: 'belgrade-volley-academy',
@@ -553,6 +681,7 @@ const ACADEMIES = [
     city: 'Novi Sad',
     lat: 45.2671, lng: 19.8335,
     website: 'https://www.okvojvodina.rs',
+    contactEmail: 'info@okvojvodina.rs',
     individualLessons: true,
     boarding: true,
     level: 'All levels',
@@ -614,7 +743,22 @@ const ACADEMIES = [
       shuttleToTraining: true,
       notes: 'Affordable riverside accommodation with traditional Serbian cuisine'
     },
-    videoTour: null
+    videoTour: null,
+    juniorInfo: {
+      minAge: 7,
+      maxAge: 18,
+      supervision: '24/7',
+      guardianStay: true,
+      schooling: 'tutoring',
+      medicalStaff: true,
+      safeguarding: true,
+      airportPickup: true,
+      mealPlan: 'full-board',
+      curfew: '21:00',
+      roommatePairing: 'age-gender',
+      languageSupport: ['English', 'Serbian'],
+      emergencyProtocol: true
+    }
   },
   {
     id: 'athens-volley-academy',
@@ -625,6 +769,7 @@ const ACADEMIES = [
     city: 'Piraeus',
     lat: 37.9429, lng: 23.6468,
     website: 'https://www.olympiacossfp.gr',
+    contactEmail: 'info@olympiacossfp.gr',
     individualLessons: true,
     boarding: false,
     level: 'All levels',
@@ -681,7 +826,22 @@ const ACADEMIES = [
       shuttleToTraining: false,
       notes: 'Mediterranean-style residence near Olympic Athletic Center'
     },
-    videoTour: null
+    videoTour: null,
+    juniorInfo: {
+      minAge: 13,
+      maxAge: 17,
+      supervision: 'training-only',
+      guardianStay: false,
+      schooling: 'online-support',
+      medicalStaff: true,
+      safeguarding: true,
+      airportPickup: true,
+      mealPlan: 'flexible',
+      curfew: '23:00',
+      roommatePairing: 'self-select',
+      languageSupport: ['English', 'Greek'],
+      emergencyProtocol: true
+    }
   },
   {
     id: 'perugia-volley-academy',
@@ -692,6 +852,7 @@ const ACADEMIES = [
     city: 'Perugia',
     lat: 43.1107, lng: 12.3908,
     website: 'https://www.sirsafetyperugia.it',
+    contactEmail: 'info@sirsafetyperugia.it',
     individualLessons: true,
     boarding: true,
     level: 'Elite',
@@ -753,7 +914,22 @@ const ACADEMIES = [
       shuttleToTraining: true,
       notes: 'Umbrian hillside residence with panoramic views and recovery pool'
     },
-    videoTour: null
+    videoTour: null,
+    juniorInfo: {
+      minAge: 18,
+      maxAge: 40,
+      supervision: 'none',
+      guardianStay: false,
+      schooling: 'none',
+      medicalStaff: true,
+      safeguarding: false,
+      airportPickup: true,
+      mealPlan: 'flexible',
+      curfew: null,
+      roommatePairing: 'n/a',
+      languageSupport: ['English', 'Italian'],
+      emergencyProtocol: true
+    }
   },
   {
     id: 'jastrzebski-wegiel-academy',
@@ -764,6 +940,7 @@ const ACADEMIES = [
     city: 'Jastrzębie-Zdrój',
     lat: 49.9550, lng: 18.5793,
     website: 'https://www.jw-siatkowka.pl',
+    contactEmail: 'info@jw-siatkowka.pl',
     individualLessons: true,
     boarding: true,
     level: 'All levels',
@@ -810,7 +987,22 @@ const ACADEMIES = [
       { name: 'PlusLiga', level: 'Professional', surface: 'Indoor', month: 'Oct–Apr', venue: 'Hala Jastrzębie' }
     ],
     upcomingCamps: [],
-    videoTour: null
+    videoTour: null,
+    juniorInfo: {
+      minAge: 10,
+      maxAge: 17,
+      supervision: 'daytime',
+      guardianStay: true,
+      schooling: 'partner-school',
+      medicalStaff: true,
+      safeguarding: true,
+      airportPickup: true,
+      mealPlan: 'half-board',
+      curfew: '22:00',
+      roommatePairing: 'age-only',
+      languageSupport: ['English', 'Polish'],
+      emergencyProtocol: true
+    }
   },
   {
     id: 'fenerbahce-volley',
@@ -821,6 +1013,7 @@ const ACADEMIES = [
     city: 'Istanbul',
     lat: 40.9882, lng: 29.0362,
     website: 'https://www.fenerbahce.org',
+    contactEmail: 'info@fenerbahce.org',
     individualLessons: true,
     boarding: false,
     level: 'Elite',
@@ -867,7 +1060,22 @@ const ACADEMIES = [
       { name: 'Sultanlar Ligi', level: 'Professional', surface: 'Indoor', month: 'Oct–Apr', venue: 'Various Istanbul venues' }
     ],
     upcomingCamps: [],
-    videoTour: null
+    videoTour: null,
+    juniorInfo: {
+      minAge: 6,
+      maxAge: 18,
+      supervision: '24/7',
+      guardianStay: true,
+      schooling: 'tutoring',
+      medicalStaff: true,
+      safeguarding: true,
+      airportPickup: true,
+      mealPlan: 'full-board',
+      curfew: '21:00',
+      roommatePairing: 'age-gender',
+      languageSupport: ['English', 'Turkish'],
+      emergencyProtocol: true
+    }
   },
   {
     id: 'benfica-volley-academy',
@@ -878,6 +1086,7 @@ const ACADEMIES = [
     city: 'Lisbon',
     lat: 38.7527, lng: -9.1847,
     website: 'https://www.slbenfica.pt',
+    contactEmail: 'info@slbenfica.pt',
     individualLessons: true,
     boarding: false,
     level: 'All levels',
@@ -936,7 +1145,22 @@ const ACADEMIES = [
       shuttleToTraining: true,
       notes: 'Benfica campus residence with multi-sport facilities and team dining'
     },
-    videoTour: null
+    videoTour: null,
+    juniorInfo: {
+      minAge: 12,
+      maxAge: 17,
+      supervision: 'training-only',
+      guardianStay: true,
+      schooling: 'online-support',
+      medicalStaff: true,
+      safeguarding: true,
+      airportPickup: true,
+      mealPlan: 'half-board',
+      curfew: '22:30',
+      roommatePairing: 'age-only',
+      languageSupport: ['English', 'Portuguese'],
+      emergencyProtocol: true
+    }
   }
 ];
 
