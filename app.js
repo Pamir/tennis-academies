@@ -466,6 +466,7 @@ function updateResultCount(shown, total) {
 /* ===== Render Cards ===== */
 function renderCards(academies) {
   const grid = document.getElementById('cardGrid');
+  grid.setAttribute('aria-live', 'polite');
   if (state.showFavorites && academies.length === 0) {
     grid.className = 'card-grid no-results';
     grid.innerHTML = '<div class="no-favorites-msg"><span>💛</span>No favorites yet! Click the ♡ on any academy to add it to your shortlist.</div>';
@@ -509,11 +510,11 @@ function cardHTML(a) {
   return `
     <div class="academy-card" data-id="${a.id}" id="card-${a.id}" role="listitem">
       <div class="card-header">
-        <div class="compare-check ${isCompared ? 'active' : ''}" data-id="${a.id}" onclick="toggleCompare('${a.id}')" title="Add to compare">✓</div>
+        <div class="compare-check ${isCompared ? 'active' : ''}" data-id="${a.id}" onclick="toggleCompare('${a.id}')" tabindex="0" role="checkbox" aria-checked="${isCompared}" aria-label="Add ${escapeHTML(a.name)} to compare" title="Add to compare">✓</div>
         <div class="card-title">
-          <span class="fav-heart ${isFav ? 'active' : ''}" data-id="${a.id}" onclick="toggleFavorite('${a.id}')">${isFav ? '♥' : '♡'}</span>
+          <span class="fav-heart ${isFav ? 'active' : ''}" data-id="${a.id}" onclick="toggleFavorite('${a.id}')" tabindex="0" role="checkbox" aria-checked="${isFav}" aria-label="${isFav ? 'Remove' : 'Add'} ${escapeHTML(a.name)} ${isFav ? 'from' : 'to'} shortlist">${isFav ? '♥' : '♡'}</span>
           <button class="btn-share" onclick="shareAcademy('${a.id}')" title="Share" aria-label="Share ${escapeHTML(a.name)}">📤</button>
-          <span class="flag">${a.countryFlag}</span>
+          <span class="flag" aria-hidden="true">${a.countryFlag}</span>
           <span>${escapeHTML(a.name)}${star}</span>
         </div>
         <div class="card-location">${escapeHTML(a.city)}, ${escapeHTML(a.country)}</div>
@@ -526,10 +527,10 @@ function cardHTML(a) {
         ${distanceStr}
       </div>
       <div class="card-footer">
-        <button class="btn-details" onclick="toggleDetails(this)" aria-label="View details for ${escapeHTML(a.name)}">
-          View Details <span class="arrow">▼</span>
+        <button class="btn-details" onclick="toggleDetails(this)" aria-label="View details for ${escapeHTML(a.name)}" aria-expanded="false">
+          View Details <span class="arrow" aria-hidden="true">▼</span>
         </button>
-        <div class="card-details">
+        <div class="card-details" role="region" aria-label="Details for ${escapeHTML(a.name)}">
           ${buildDetails(a)}
         </div>
       </div>
@@ -808,6 +809,9 @@ function showQRCode(id) {
   const shareUrl = window.location.origin + window.location.pathname + '#academy=' + id;
   const qrApiUrl = 'https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=' + encodeURIComponent(shareUrl);
 
+  // Save previously focused element for focus restoration
+  const previousFocus = document.activeElement;
+
   // Remove existing modal if any
   const existing = document.getElementById('qrModal');
   if (existing) existing.remove();
@@ -815,6 +819,9 @@ function showQRCode(id) {
   const modal = document.createElement('div');
   modal.id = 'qrModal';
   modal.className = 'qr-modal';
+  modal.setAttribute('role', 'dialog');
+  modal.setAttribute('aria-modal', 'true');
+  modal.setAttribute('aria-label', 'QR code for ' + a.name);
   modal.innerHTML = `
     <div class="qr-modal-content">
       <button class="qr-modal-close" aria-label="Close QR code">&times;</button>
@@ -826,8 +833,26 @@ function showQRCode(id) {
   `;
   document.body.appendChild(modal);
 
-  modal.querySelector('.qr-modal-close').addEventListener('click', () => modal.remove());
-  modal.addEventListener('click', (e) => { if (e.target === modal) modal.remove(); });
+  function closeQR() {
+    modal.remove();
+    if (previousFocus) previousFocus.focus();
+  }
+
+  // Focus trap within QR modal
+  modal.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') { closeQR(); return; }
+    if (e.key === 'Tab') {
+      const focusable = modal.querySelectorAll('button, [tabindex]:not([tabindex="-1"])');
+      if (focusable.length === 0) return;
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+      if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+      else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+    }
+  });
+
+  modal.querySelector('.qr-modal-close').addEventListener('click', closeQR);
+  modal.addEventListener('click', (e) => { if (e.target === modal) closeQR(); });
   modal.querySelector('.btn-copy-link').addEventListener('click', () => {
     navigator.clipboard.writeText(shareUrl).then(() => {
       showToast('Link copied!');
@@ -835,6 +860,9 @@ function showQRCode(id) {
       showToast('Could not copy link');
     });
   });
+
+  // Focus the close button
+  modal.querySelector('.qr-modal-close').focus();
 }
 
 function shareComparison() {
@@ -951,6 +979,13 @@ function toggleDetails(btn) {
   const details = btn.nextElementSibling;
   const isOpen = details.classList.toggle('open');
   btn.classList.toggle('open', isOpen);
+  btn.setAttribute('aria-expanded', String(isOpen));
+
+  // Move focus to details panel when expanding
+  if (isOpen) {
+    details.setAttribute('tabindex', '-1');
+    details.focus();
+  }
 
   // Store recently viewed academy
   if (isOpen) {
@@ -1150,6 +1185,63 @@ function bindEvents() {
     closeInquiry();
     showToast('Opening email client...');
   });
+
+  // Keyboard support for star ratings (arrow keys to navigate, Enter/Space to select)
+  document.addEventListener('keydown', function(e) {
+    const el = e.target;
+    if (el.classList.contains('rate-star')) {
+      const academyId = el.getAttribute('data-academy');
+      const currentRating = parseInt(el.getAttribute('data-rating'), 10);
+      if (e.key === 'ArrowRight' || e.key === 'ArrowUp') {
+        e.preventDefault();
+        const next = currentRating < 5 ? currentRating + 1 : 1;
+        rateAcademy(academyId, next);
+        setTimeout(function() {
+          const star = document.querySelector('.rate-star[data-academy="' + academyId + '"][data-rating="' + next + '"]');
+          if (star) star.focus();
+        }, 50);
+      } else if (e.key === 'ArrowLeft' || e.key === 'ArrowDown') {
+        e.preventDefault();
+        const prev = currentRating > 1 ? currentRating - 1 : 5;
+        rateAcademy(academyId, prev);
+        setTimeout(function() {
+          const star = document.querySelector('.rate-star[data-academy="' + academyId + '"][data-rating="' + prev + '"]');
+          if (star) star.focus();
+        }, 50);
+      } else if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        rateAcademy(academyId, currentRating);
+      }
+    }
+    // Keyboard support for favorite hearts and compare checkboxes
+    if ((e.key === 'Enter' || e.key === ' ') && el.classList.contains('fav-heart')) {
+      e.preventDefault();
+      const id = el.getAttribute('data-id');
+      if (id) toggleFavorite(id);
+    }
+    if ((e.key === 'Enter' || e.key === ' ') && el.classList.contains('compare-check')) {
+      e.preventDefault();
+      const id = el.getAttribute('data-id');
+      if (id) toggleCompare(id);
+    }
+  });
+
+  // Escape key to close modals
+  document.addEventListener('keydown', function(e) {
+    if (e.key !== 'Escape') return;
+    if (document.getElementById('compareModal').style.display === 'flex') closeCompareModal();
+    else if (document.getElementById('wizardModal').style.display === 'flex') closeWizard();
+    else if (document.getElementById('inquiryModal').style.display === 'flex') closeInquiry();
+  });
+
+  // Add ARIA attributes to static modals
+  ['compareModal', 'wizardModal', 'inquiryModal'].forEach(function(id) {
+    var modal = document.getElementById(id);
+    if (modal) {
+      modal.setAttribute('role', 'dialog');
+      modal.setAttribute('aria-modal', 'true');
+    }
+  });
 }
 
 /* ===== View Toggle (List / Map) ===== */
@@ -1262,6 +1354,7 @@ function updateCompareUI() {
 }
 
 function openCompareModal() {
+  _compareModalPreviousFocus = document.activeElement;
   const ids = [...compareSet];
   const academies = ids.map(id => ACADEMIES.find(a => a.id === id)).filter(Boolean);
   if (academies.length < 2) return;
@@ -1302,6 +1395,7 @@ function openCompareModal() {
   html += '</tbody></table>';
   wrap.innerHTML = html;
   document.getElementById('compareModal').style.display = 'flex';
+  document.getElementById('compareModal').querySelector('.modal-close').focus();
 }
 
 function removeFromCompare(id) {
@@ -1314,8 +1408,10 @@ function removeFromCompare(id) {
   }
 }
 
+var _compareModalPreviousFocus = null;
 function closeCompareModal() {
   document.getElementById('compareModal').style.display = 'none';
+  if (_compareModalPreviousFocus) { _compareModalPreviousFocus.focus(); _compareModalPreviousFocus = null; }
 }
 
 /* ===== Help Me Choose Wizard ===== */
@@ -1370,15 +1466,19 @@ const wizardSteps = [
 let wizardAnswers = {};
 let wizardCurrentStep = 0;
 
+var _wizardPreviousFocus = null;
 function openWizard() {
+  _wizardPreviousFocus = document.activeElement;
   wizardAnswers = {};
   wizardCurrentStep = 0;
   document.getElementById('wizardModal').style.display = 'flex';
   renderWizardStep();
+  document.getElementById('wizardModal').querySelector('.modal-close').focus();
 }
 
 function closeWizard() {
   document.getElementById('wizardModal').style.display = 'none';
+  if (_wizardPreviousFocus) { _wizardPreviousFocus.focus(); _wizardPreviousFocus = null; }
 }
 
 function renderWizardStep() {
@@ -1681,10 +1781,11 @@ function renderUpcomingCamps(camps) {
 function renderStarRating(academyId) {
   const ratings = getUserRatings();
   const current = ratings[academyId] || 0;
-  let html = '<div class="user-rating">';
+  let html = '<div class="user-rating" role="radiogroup" aria-label="Rate this academy">';
   for (let i = 1; i <= 5; i++) {
     const cls = i <= current ? 'star-filled' : 'star-empty';
-    html += `<span class="rate-star ${cls}" onclick="rateAcademy('${academyId}', ${i})" title="Rate ${i} stars">${i <= current ? '★' : '☆'}</span>`;
+    const checked = i === current ? 'true' : 'false';
+    html += `<span class="rate-star ${cls}" onclick="rateAcademy('${academyId}', ${i})" tabindex="0" role="radio" aria-checked="${checked}" aria-label="Rate ${i} of 5 stars" title="Rate ${i} stars" data-academy="${academyId}" data-rating="${i}">${i <= current ? '★' : '☆'}</span>`;
   }
   if (current > 0) html += `<span class="rating-text">(Your rating: ${current}/5)</span>`;
   html += '</div>';
@@ -1708,14 +1809,20 @@ function loadWeather(city, elementId) {
 }
 
 /* ===== Inquiry Modal ===== */
+var _inquiryPreviousFocus = null;
 function openInquiry(id) {
   const a = ACADEMIES.find(ac => ac.id === id);
   if (!a) return;
+  _inquiryPreviousFocus = document.activeElement;
   document.getElementById('inquiryAcademyId').value = id;
   document.getElementById('inquiryModal').style.display = 'flex';
   document.getElementById('inquiryModal').querySelector('h2').textContent = `📩 Inquiry — ${a.name}`;
+  document.getElementById('inquiryModal').querySelector('.modal-close').focus();
 }
-function closeInquiry() { document.getElementById('inquiryModal').style.display = 'none'; }
+function closeInquiry() {
+  document.getElementById('inquiryModal').style.display = 'none';
+  if (_inquiryPreviousFocus) { _inquiryPreviousFocus.focus(); _inquiryPreviousFocus = null; }
+}
 
 /* ===== Training Partners ===== */
 function getPartnerRequests() {
@@ -1784,6 +1891,7 @@ function scrollToAcademy(id) {
 (function() {
   let gallery_currentPhotos = [];
   let gallery_currentIndex = 0;
+  let gallery_previousFocus = null;
 
   function gallery_getOverlay() {
     let overlay = document.getElementById('galleryOverlay');
@@ -1791,12 +1899,15 @@ function scrollToAcademy(id) {
       overlay = document.createElement('div');
       overlay.id = 'galleryOverlay';
       overlay.className = 'gallery-overlay';
+      overlay.setAttribute('role', 'dialog');
+      overlay.setAttribute('aria-modal', 'true');
+      overlay.setAttribute('aria-label', 'Photo gallery');
       overlay.innerHTML = `
         <button class="gallery-close" aria-label="Close gallery">&times;</button>
         <button class="gallery-prev" aria-label="Previous photo">&#10094;</button>
         <img class="gallery-img" alt="Academy photo" loading="lazy">
         <button class="gallery-next" aria-label="Next photo">&#10095;</button>
-        <div class="gallery-counter"></div>
+        <div class="gallery-counter" aria-live="polite"></div>
       `;
       overlay.addEventListener('click', function(e) {
         if (e.target === overlay) gallery_close();
@@ -1804,6 +1915,19 @@ function scrollToAcademy(id) {
       overlay.querySelector('.gallery-close').addEventListener('click', gallery_close);
       overlay.querySelector('.gallery-prev').addEventListener('click', function() { gallery_navigate(-1); });
       overlay.querySelector('.gallery-next').addEventListener('click', function() { gallery_navigate(1); });
+
+      // Focus trap within gallery
+      overlay.addEventListener('keydown', function(e) {
+        if (e.key === 'Tab') {
+          var focusable = overlay.querySelectorAll('button:not([style*="display: none"]):not([style*="display:none"])');
+          if (focusable.length === 0) return;
+          var first = focusable[0];
+          var last = focusable[focusable.length - 1];
+          if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+          else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+        }
+      });
+
       document.body.appendChild(overlay);
     }
     return overlay;
@@ -1814,6 +1938,7 @@ function scrollToAcademy(id) {
     const img = overlay.querySelector('.gallery-img');
     const counter = overlay.querySelector('.gallery-counter');
     img.src = gallery_currentPhotos[gallery_currentIndex];
+    img.alt = 'Academy photo ' + (gallery_currentIndex + 1) + ' of ' + gallery_currentPhotos.length;
     counter.textContent = (gallery_currentIndex + 1) + ' / ' + gallery_currentPhotos.length;
     overlay.querySelector('.gallery-prev').style.display = gallery_currentPhotos.length > 1 ? '' : 'none';
     overlay.querySelector('.gallery-next').style.display = gallery_currentPhotos.length > 1 ? '' : 'none';
@@ -1827,11 +1952,14 @@ function scrollToAcademy(id) {
   window.gallery_open = function(academyId) {
     const a = ACADEMIES.find(function(ac) { return ac.id === academyId; });
     if (!a || !Array.isArray(a.photos) || !a.photos.length) return;
+    gallery_previousFocus = document.activeElement;
     gallery_currentPhotos = a.photos;
     gallery_currentIndex = 0;
     gallery_show();
-    gallery_getOverlay().style.display = 'flex';
+    var overlay = gallery_getOverlay();
+    overlay.style.display = 'flex';
     document.body.style.overflow = 'hidden';
+    overlay.querySelector('.gallery-close').focus();
   };
 
   window.gallery_close = gallery_close;
@@ -1839,6 +1967,7 @@ function scrollToAcademy(id) {
     const overlay = document.getElementById('galleryOverlay');
     if (overlay) overlay.style.display = 'none';
     document.body.style.overflow = '';
+    if (gallery_previousFocus) { gallery_previousFocus.focus(); gallery_previousFocus = null; }
   }
 
   document.addEventListener('keydown', function(e) {

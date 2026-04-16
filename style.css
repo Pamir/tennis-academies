@@ -1068,16 +1068,51 @@ body {
 /* ===== Skip to content ===== */
 .skip-link {
   position: absolute;
-  top: -40px;
+  top: -60px;
   left: 0;
   background: var(--primary);
   color: #fff;
-  padding: 0.5rem 1rem;
-  z-index: 100;
+  padding: 0.75rem 1.5rem;
+  z-index: 10000;
   transition: top 0.3s;
   text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  border-radius: 0 0 4px 0;
 }
-.skip-link:focus { top: 0; }
+.skip-link:focus,
+.skip-link:focus-visible {
+  top: 0;
+  outline: 3px solid #ffcc00;
+  outline-offset: 0;
+}
+
+/* ===== Focus visible styles ===== */
+:focus-visible {
+  outline: 3px solid #1a73e8;
+  outline-offset: 2px;
+}
+[data-theme="dark"] :focus-visible {
+  outline-color: #8ab4f8;
+}
+button:focus-visible,
+a:focus-visible,
+select:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+[tabindex]:focus-visible {
+  outline: 3px solid #1a73e8;
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+[data-theme="dark"] button:focus-visible,
+[data-theme="dark"] a:focus-visible,
+[data-theme="dark"] select:focus-visible,
+[data-theme="dark"] input:focus-visible,
+[data-theme="dark"] textarea:focus-visible,
+[data-theme="dark"] [tabindex]:focus-visible {
+  outline-color: #8ab4f8;
+}
 
 /* ===== Distance display ===== */
 .card-distance {

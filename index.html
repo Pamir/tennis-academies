@@ -24,40 +24,41 @@
   </script>
 </head>
 <body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
   <header class="site-header hub-header" role="banner">
-    <h1>🏅 European Sports Academies</h1>
+    <h1><span aria-hidden="true">🏅</span> European Sports Academies</h1>
     <p class="subtitle">Find the perfect academy for your sports journey</p>
     <form class="hub-search-form" id="hubSearchForm" role="search">
       <input type="text" id="hubSearch" class="hub-search-input" placeholder="Search academies across all sports…" aria-label="Search academies">
-      <button type="submit" class="hub-search-btn" aria-label="Search">🔍</button>
+      <button type="submit" class="hub-search-btn" aria-label="Search"><span aria-hidden="true">🔍</span></button>
     </form>
-    <button class="btn-darkmode" id="btnDarkMode" title="Toggle dark mode">🌙</button>
+    <button class="btn-darkmode" id="btnDarkMode" title="Toggle dark mode" aria-label="Toggle dark mode">🌙</button>
   </header>
 
   <div class="hub-search-results" id="hubSearchResults" style="display:none;"></div>
 
-  <main class="hub-main">
+  <main class="hub-main" id="main-content" role="main">
     <div class="hub-grid">
       <a href="tennis.html" class="hub-card hub-tennis">
-        <span class="hub-icon">🎾</span>
+        <span class="hub-icon" aria-hidden="true">🎾</span>
         <h2>Tennis</h2>
         <p><strong class="hub-count" data-file="data.js">—</strong> Academies across Europe</p>
         <span class="hub-arrow">→</span>
       </a>
       <a href="golf.html" class="hub-card hub-golf">
-        <span class="hub-icon">⛳</span>
+        <span class="hub-icon" aria-hidden="true">⛳</span>
         <h2>Golf</h2>
         <p><strong class="hub-count" data-file="golf-data.js">—</strong> Academies across Europe</p>
         <span class="hub-arrow">→</span>
       </a>
       <a href="football.html" class="hub-card hub-football">
-        <span class="hub-icon">⚽</span>
+        <span class="hub-icon" aria-hidden="true">⚽</span>
         <h2>Football</h2>
         <p><strong class="hub-count" data-file="football-data.js">—</strong> Academies across Europe</p>
         <span class="hub-arrow">→</span>
       </a>
       <a href="basketball.html" class="hub-card hub-basketball">
-        <span class="hub-icon">🏀</span>
+        <span class="hub-icon" aria-hidden="true">🏀</span>
         <h2>Basketball</h2>
         <p><strong class="hub-count" data-file="basketball-data.js">—</strong> Academies across Europe</p>
         <span class="hub-arrow">→</span>
