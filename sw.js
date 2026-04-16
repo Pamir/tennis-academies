@@ -1,4 +1,4 @@
-const CACHE_NAME = 'sports-academies-v26';
+const CACHE_NAME = 'sports-academies-v27';
 const URLS_TO_CACHE = [
   './',
   './index.html',
@@ -19,6 +19,8 @@ const URLS_TO_CACHE = [
   './volleyball-data.js',
   './rugby.html',
   './rugby-data.js',
+  './ski.html',
+  './ski-data.js',
   'https://unpkg.com/leaflet@1.9.4/dist/leaflet.css',
   'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js'
 ];

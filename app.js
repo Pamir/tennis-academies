@@ -76,6 +76,13 @@ const SPORT_CONFIG = {
     coachFilterLabel: '🏉 International Coach',
     surfaceLabel: 'Pitch Types',
     storagePrefix: 'rugby',
+  },
+  ski: {
+    icon: '⛷️',
+    name: 'Ski Camps',
+    statsLabel: 'Certified Instructors',
+    storagePrefix: 'ski',
+    surfaceLabel: 'Terrain Types',
   }
 };
 
@@ -86,7 +93,8 @@ const SPORT_PAGES = {
   basketball: 'basketball.html',
   swimming: 'swimming.html',
   volleyball: 'volleyball.html',
-  rugby: 'rugby.html'
+  rugby: 'rugby.html',
+  ski: 'ski.html'
 };
 
 const SPORT_DATA_FILES = {
@@ -96,7 +104,8 @@ const SPORT_DATA_FILES = {
   basketball: './basketball-data.js',
   swimming: './swimming-data.js',
   volleyball: './volleyball-data.js',
-  rugby: './rugby-data.js'
+  rugby: './rugby-data.js',
+  ski: './ski-data.js'
 };
 
 let _crossSportCache = null;
@@ -571,7 +580,7 @@ function cardHTML(a) {
     if (a.priceRange.to !== null && a.priceRange.to !== a.priceRange.from) {
       priceDisplay += ' – ' + convertPrice(a.priceRange.to);
     }
-    priceDisplay += '/mo';
+    priceDisplay += (a.priceRange.unit === 'week' ? '/wk' : '/mo');
   } else {
     priceDisplay = '💰 ' + escapeHTML(a.priceRange.display);
   }
@@ -662,6 +671,29 @@ function calculateMonthScore(academy, monthIndex) {
 
   const m = climate.months[monthIndex];
   const isSwimming = getSportType() === 'swimming';
+  const isWinterSport = getSportType() === 'ski';
+
+  // Camp score (0-1)
+  let campScore = 0;
+  if (Array.isArray(academy.upcomingCamps)) {
+    campScore = academy.upcomingCamps.some(c => campRunsInMonth(c, monthIndex)) ? 1 : 0;
+  }
+
+  // Availability score (0-1)
+  let availScore = 0;
+  if (academy.availability && academy.availability.status) {
+    const s = academy.availability.status;
+    availScore = (s === 'open' || s === 'limited') ? 1 : 0;
+  }
+
+  if (isWinterSport) {
+    // For ski: cold temps are good, precipitation at cold temps means snow
+    const avgTemp = m.temp;
+    const coldScore = avgTemp < 0 ? 3 : avgTemp < 5 ? 2.5 : avgTemp < 10 ? 1.5 : 0;
+    const snowScore = (m.rain > 30 && avgTemp < 5) ? 3 : (m.rain > 20 && avgTemp < 5) ? 2 : 0;
+    const sunScore = Math.min(m.wind < 20 ? 1 : 0, 1);
+    return Math.round(coldScore + snowScore + sunScore + campScore + availScore);
+  }
 
   // Temperature score (0-3) — swimming pools are indoor so less weight
   let tempScore;
@@ -684,19 +716,6 @@ function calculateMonthScore(academy, monthIndex) {
   if (m.wind < 12) windScore = 2;
   else if (m.wind <= 20) windScore = 1;
   else windScore = 0;
-
-  // Camp score (0-1)
-  let campScore = 0;
-  if (Array.isArray(academy.upcomingCamps)) {
-    campScore = academy.upcomingCamps.some(c => campRunsInMonth(c, monthIndex)) ? 1 : 0;
-  }
-
-  // Availability score (0-1)
-  let availScore = 0;
-  if (academy.availability && academy.availability.status) {
-    const s = academy.availability.status;
-    availScore = (s === 'open' || s === 'limited') ? 1 : 0;
-  }
 
   return tempScore + rainScore + windScore + campScore + availScore;
 }
@@ -1969,9 +1988,17 @@ function scoreAcademy(a, answers) {
   if (answers.climate && answers.climate !== 'none') {
     const julTemp = getJulTemp(a);
     if (julTemp !== null) {
-      if (answers.climate === 'warm' && julTemp >= 22) score += 2;
-      else if (answers.climate === 'mild' && julTemp >= 18 && julTemp <= 24) score += 2;
-      else if (answers.climate === 'cold') score += 1;
+      const isWinterSport = getSportType() === 'ski';
+      if (isWinterSport) {
+        // For ski, cold climate is best
+        if (answers.climate === 'cold' && julTemp < 15) score += 2;
+        else if (answers.climate === 'mild' && julTemp >= 10 && julTemp <= 20) score += 2;
+        else if (answers.climate === 'warm') score += 1;
+      } else {
+        if (answers.climate === 'warm' && julTemp >= 22) score += 2;
+        else if (answers.climate === 'mild' && julTemp >= 18 && julTemp <= 24) score += 2;
+        else if (answers.climate === 'cold') score += 1;
+      }
     }
   }
 
@@ -2092,7 +2119,10 @@ function renderCostCalculator(a) {
       if (guests < trainees) { guests = trainees; guestsSel.value = String(guests); }
       weekLabel.textContent = weeks + ' week' + (weeks !== 1 ? 's' : '');
 
-      var trainingFee = Math.round(monthlyFrom * weeks / 4.33) * trainees;
+      var isWeeklyPricing = a.priceRange.unit === 'week';
+      var trainingFee = isWeeklyPricing
+        ? Math.round(monthlyFrom * weeks) * trainees
+        : Math.round(monthlyFrom * weeks / 4.33) * trainees;
       var includeTravel = travelChk.checked;
       var travelMid = Math.round((travelBase + travelMax) / 2) * guests;
       var rows = '';

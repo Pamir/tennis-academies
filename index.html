@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>European Sports Academies — Tennis, Golf, Football, Basketball, Swimming & Volleyball</title>
+  <title>European Sports Academies — Tennis, Golf, Football, Basketball, Swimming, Volleyball, Rugby & Ski</title>
   <link rel="stylesheet" href="style.css">
   <link rel="manifest" href="manifest.json">
   <meta name="theme-color" content="#1a472a">
-  <meta property="og:title" content="European Sports Academies — Tennis, Golf, Football, Basketball, Swimming & Volleyball">
-  <meta property="og:description" content="Find the perfect sports academy across Europe. Browse tennis, golf, football, basketball, swimming and volleyball academies with detailed info on coaches, facilities and pricing.">
+  <meta property="og:title" content="European Sports Academies — Tennis, Golf, Football, Basketball, Swimming, Volleyball, Rugby & Ski">
+  <meta property="og:description" content="Find the perfect sports academy across Europe. Browse tennis, golf, football, basketball, swimming, volleyball, rugby and ski academies with detailed info on coaches, facilities and pricing.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://pamir.github.io/tennis-academies/index.html">
   <meta property="og:image" content="https://picsum.photos/seed/sports-academies/1200/630">
@@ -19,7 +19,7 @@
     "@type": "WebSite",
     "name": "European Sports Academies",
     "url": "https://pamir.github.io/tennis-academies/",
-    "description": "Discover top tennis, golf, football, basketball, swimming and volleyball academies across Europe"
+    "description": "Discover top tennis, golf, football, basketball, swimming, volleyball, rugby and ski academies across Europe"
   }
   </script>
 </head>
@@ -79,6 +79,12 @@
         <span class="hub-icon" aria-hidden="true">🏉</span>
         <h2>Rugby</h2>
         <p><strong class="hub-count" data-file="rugby-data.js">—</strong> Academies across Europe</p>
+        <span class="hub-arrow">→</span>
+      </a>
+      <a href="ski.html" class="hub-card hub-ski">
+        <span class="hub-icon" aria-hidden="true">⛷️</span>
+        <h2>Ski Camps</h2>
+        <p><strong class="hub-count" data-file="ski-data.js">—</strong> Academies across Europe</p>
         <span class="hub-arrow">→</span>
       </a>
     </div>
@@ -164,7 +170,8 @@
         { page: 'basketball.html', name: 'Basketball' },
         { page: 'swimming.html', name: 'Swimming' },
         { page: 'volleyball.html', name: 'Volleyball' },
-        { page: 'rugby.html', name: 'Rugby' }
+        { page: 'rugby.html', name: 'Rugby' },
+        { page: 'ski.html', name: 'Ski Camps' }
       ];
       const form = document.getElementById('hubSearchForm');
       if (form) {
@@ -195,8 +202,8 @@
       try {
         var plan = JSON.parse(localStorage.getItem('sports-trip-plan') || '[]');
         if (!plan.length) return;
-        var sportPageMap = { tennis: 'tennis.html', golf: 'golf.html', football: 'football.html', basketball: 'basketball.html', swimming: 'swimming.html', volleyball: 'volleyball.html', rugby: 'rugby.html' };
-        var sportIconMap = { tennis: '🎾', golf: '⛳', football: '⚽', basketball: '🏀', swimming: '🏊', volleyball: '🏐', rugby: '🏉' };
+        var sportPageMap = { tennis: 'tennis.html', golf: 'golf.html', football: 'football.html', basketball: 'basketball.html', swimming: 'swimming.html', volleyball: 'volleyball.html', rugby: 'rugby.html', ski: 'ski.html' };
+        var sportIconMap = { tennis: '🎾', golf: '⛳', football: '⚽', basketball: '🏀', swimming: '🏊', volleyball: '🏐', rugby: '🏉', ski: '⛷️' };
         // Group by sport
         var groups = {};
         var totalCost = 0;
@@ -245,8 +252,8 @@
         const items = JSON.parse(localStorage.getItem('recently-viewed') || '[]');
         if (!items.length) return;
         const recent = items.slice(0, 5);
-        const sportPageMap = { tennis: 'tennis.html', golf: 'golf.html', football: 'football.html', basketball: 'basketball.html', swimming: 'swimming.html', volleyball: 'volleyball.html', rugby: 'rugby.html' };
-        const sportIconMap = { tennis: '🎾', golf: '⛳', football: '⚽', basketball: '🏀', swimming: '🏊', volleyball: '🏐', rugby: '🏉' };
+        const sportPageMap = { tennis: 'tennis.html', golf: 'golf.html', football: 'football.html', basketball: 'basketball.html', swimming: 'swimming.html', volleyball: 'volleyball.html', rugby: 'rugby.html', ski: 'ski.html' };
+        const sportIconMap = { tennis: '🎾', golf: '⛳', football: '⚽', basketball: '🏀', swimming: '🏊', volleyball: '🏐', rugby: '🏉', ski: '⛷️' };
         recent.forEach(function(item) {
           const a = document.createElement('a');
           a.className = 'hub-recent-item';
