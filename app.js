@@ -836,7 +836,8 @@ function buildJuniorInfoSection(a) {
   html += `<div class="junior-info-item"><span class="ji-icon">🕙</span><span><span class="ji-label">Curfew:</span> <span class="ji-value">${j.curfew || 'None'}</span></span></div>`;
   html += `<div class="junior-info-item"><span class="ji-icon">🛏️</span><span><span class="ji-label">Roommate pairing:</span> <span class="ji-value">${escapeHTML(pairingLabels[j.roommatePairing] || j.roommatePairing)}</span></span></div>`;
   if (j.languageSupport && j.languageSupport.length) {
-    html += `<div class="junior-info-item"><span class="ji-icon">🗣️</span><span><span class="ji-label">Languages:</span> <span class="ji-value">${j.languageSupport.map(escapeHTML).join(', ')}</span></span></div>`;
+    const langs = Array.isArray(j.languageSupport) ? j.languageSupport : j.languageSupport.split(/,\s*/);
+    html += `<div class="junior-info-item"><span class="ji-icon">🗣️</span><span><span class="ji-label">Languages:</span> <span class="ji-value">${langs.map(escapeHTML).join(', ')}</span></span></div>`;
   }
   html += `<div class="junior-info-item"><span class="ji-icon">🚨</span><span><span class="ji-label">Emergency protocol:</span> <span class="ji-value">${j.emergencyProtocol ? 'Yes' : 'No'}</span></span></div>`;
   html += '</div></div>';
@@ -910,15 +911,18 @@ function buildDetails(a) {
     html += '<div class="detail-section"><h4>🏨 Nearby Hotels</h4>';
     html += '<table class="hotel-table"><thead><tr><th>Hotel</th><th>Stars</th><th>Distance</th><th>Pool</th><th>WiFi</th><th>Price/Night</th><th>Features</th></tr></thead><tbody>';
     a.nearbyHotels.forEach(h => {
-      const stars = '⭐'.repeat(h.stars);
+      const stars = h.stars ? '⭐'.repeat(h.stars) : '—';
+      const dist = h.distanceKm != null ? h.distanceKm + ' km' : (h.distance ? escapeHTML(h.distance) : '—');
+      const price = h.pricePerNight ? escapeHTML(h.pricePerNight) : (h.priceRange ? escapeHTML(h.priceRange) : '—');
+      const feats = Array.isArray(h.features) ? h.features.map(escapeHTML).join(', ') : '—';
       html += `<tr>
         <td><strong>${escapeHTML(h.name)}</strong></td>
         <td>${stars}</td>
-        <td>${h.distanceKm} km</td>
+        <td>${dist}</td>
         <td>${h.pool ? '🏊 Yes' : '—'}</td>
         <td>${h.wifi ? '📶 Yes' : '—'}</td>
-        <td>${escapeHTML(h.pricePerNight)}</td>
-        <td>${h.features.map(escapeHTML).join(', ')}</td>
+        <td>${price}</td>
+        <td>${feats}</td>
       </tr>`;
     });
     html += '</tbody></table></div>';
@@ -927,12 +931,13 @@ function buildDetails(a) {
     html += '<div class="detail-section"><h4>🍽️ Nearby Restaurants</h4>';
     html += '<table class="hotel-table"><thead><tr><th>Restaurant</th><th>Cuisine</th><th>Distance</th><th>Price</th><th>Rating</th><th>Vegetarian</th><th>Outdoor</th></tr></thead><tbody>';
     a.nearbyRestaurants.forEach(r => {
-      const ratingStars = '⭐'.repeat(Math.round(r.rating));
+      const ratingStars = r.rating ? '⭐'.repeat(Math.round(r.rating)) : '—';
+      const dist = r.distanceKm != null ? r.distanceKm + ' km' : (r.distance ? escapeHTML(r.distance) : '—');
       html += `<tr>
         <td><strong>${escapeHTML(r.name)}</strong></td>
-        <td>${escapeHTML(r.cuisine)}</td>
-        <td>${r.distanceKm} km</td>
-        <td>${escapeHTML(r.priceRange)}</td>
+        <td>${escapeHTML(r.cuisine || '—')}</td>
+        <td>${dist}</td>
+        <td>${escapeHTML(r.priceRange || '—')}</td>
         <td>${ratingStars}</td>
         <td>${r.vegetarian ? '🥬 Yes' : '—'}</td>
         <td>${r.outdoor ? '☀️ Yes' : '—'}</td>
@@ -944,7 +949,8 @@ function buildDetails(a) {
     html += '<div class="detail-section"><h4>🏥 Nearby Medical</h4>';
     html += '<table class="hotel-table"><thead><tr><th>Facility</th><th>Type</th><th>Distance</th><th>Phone</th><th>Emergency</th></tr></thead><tbody>';
     a.nearbyMedical.forEach(m => {
-      html += `<tr><td><strong>${escapeHTML(m.name)}</strong></td><td>${escapeHTML(m.type)}</td><td>${m.distanceKm} km</td><td>${m.phone ? escapeHTML(m.phone) : '—'}</td><td>${m.emergency ? '🚨 Yes' : '—'}</td></tr>`;
+      const dist = m.distanceKm != null ? m.distanceKm + ' km' : (m.distance ? escapeHTML(m.distance) : '—');
+      html += `<tr><td><strong>${escapeHTML(m.name)}</strong></td><td>${escapeHTML(m.type)}</td><td>${dist}</td><td>${m.phone ? escapeHTML(m.phone) : '—'}</td><td>${m.emergency ? '🚨 Yes' : '—'}</td></tr>`;
     });
     html += '</tbody></table></div>';
   }
@@ -952,10 +958,10 @@ function buildDetails(a) {
     const col = a.costOfLiving;
     html += `<div class="detail-section"><h4>💰 Cost of Living</h4>`;
     html += `<div class="cost-grid">`;
-    html += `<div class="cost-item"><span class="cost-label">🏠 1-Bed Rent</span><span class="cost-value">${escapeHTML(col.rent1Bed)}/mo</span></div>`;
-    html += `<div class="cost-item"><span class="cost-label">🍽️ Avg Meal</span><span class="cost-value">${escapeHTML(col.meal)}</span></div>`;
-    html += `<div class="cost-item"><span class="cost-label">🛒 Monthly Food</span><span class="cost-value">${escapeHTML(col.monthlyFood)}/mo</span></div>`;
-    html += `<div class="cost-item"><span class="cost-label">🚌 Transport</span><span class="cost-value">${escapeHTML(col.transport)}/mo</span></div>`;
+    html += `<div class="cost-item"><span class="cost-label">🏠 1-Bed Rent</span><span class="cost-value">${escapeHTML(String(col.rent1Bed))}/mo</span></div>`;
+    html += `<div class="cost-item"><span class="cost-label">🍽️ Avg Meal</span><span class="cost-value">${escapeHTML(String(col.meal))}</span></div>`;
+    html += `<div class="cost-item"><span class="cost-label">🛒 Monthly Food</span><span class="cost-value">${escapeHTML(String(col.monthlyFood))}/mo</span></div>`;
+    html += `<div class="cost-item"><span class="cost-label">🚌 Transport</span><span class="cost-value">${escapeHTML(String(col.transport))}/mo</span></div>`;
     html += `</div>`;
     if (col.summary) html += `<p class="cost-summary">${escapeHTML(col.summary)}</p>`;
     html += `</div>`;
