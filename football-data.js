@@ -16,7 +16,7 @@ const ACADEMIES = [
         level: 'Elite',
         starred: true,
         airport: { name: 'Barcelona-El Prat Airport', code: 'BCN', distance: '18 km', driveTime: '25 min' },
-        beach: { distance: '5 km', description: 'Barceloneta Beach, iconic Mediterranean coast' },
+        beach: { distance: 5, description: 'Barceloneta Beach, iconic Mediterranean coast' },
         climate: 'barcelona',
         priceRange: { from: 3000, to: 10000, unit: 'month', display: '€3,000–10,000/mo' },
         programs: [
@@ -530,7 +530,7 @@ const ACADEMIES = [
         level: 'Elite',
         starred: true,
         airport: { name: 'Amsterdam Schiphol Airport', code: 'AMS', distance: '15 km', driveTime: '20 min' },
-        beach: { distance: '25 km', description: 'Zandvoort Beach, popular North Sea resort' },
+        beach: { distance: 25, description: 'Zandvoort Beach, popular North Sea resort' },
         climate: 'amsterdam',
         priceRange: { from: 2500, to: 9000, unit: 'month', display: '€2,500–9,000/mo' },
         programs: [
@@ -1901,7 +1901,7 @@ const ACADEMIES = [
         level: 'Elite',
         starred: true,
         airport: { name: 'Lisbon Humberto Delgado Airport', code: 'LIS', distance: '15 km', driveTime: '20 min' },
-        beach: { distance: '15 km', description: 'Cascais and Estoril beaches on the Atlantic coast' },
+        beach: { distance: 15, description: 'Cascais and Estoril beaches on the Atlantic coast' },
         climate: 'lisbon',
         priceRange: { from: 1500, to: 6000, unit: 'month', display: '€1,500–6,000/mo' },
         programs: [
@@ -2072,7 +2072,7 @@ const ACADEMIES = [
         level: 'Elite',
         starred: true,
         airport: { name: 'Lisbon Humberto Delgado Airport', code: 'LIS', distance: '8 km', driveTime: '15 min' },
-        beach: { distance: '15 km', description: 'Cascais and Costa da Caparica beaches nearby' },
+        beach: { distance: 15, description: 'Cascais and Costa da Caparica beaches nearby' },
         climate: 'lisbon',
         priceRange: { from: 1500, to: 5500, unit: 'month', display: '€1,500–5,500/mo' },
         programs: [
@@ -2927,7 +2927,7 @@ const ACADEMIES = [
         level: 'Intermediate',
         starred: true,
         airport: { name: 'Athens International Airport', code: 'ATH', distance: '40 km', driveTime: '45 min' },
-        beach: { distance: '2 km', description: 'Piraeus coastline with several small beaches' },
+        beach: { distance: 2, description: 'Piraeus coastline with several small beaches' },
         climate: 'athens',
         priceRange: { from: 1000, to: 4500, unit: 'month', display: '€1,000–4,500/mo' },
         programs: [
@@ -3098,7 +3098,7 @@ const ACADEMIES = [
         level: 'Advanced',
         starred: true,
         airport: { name: 'Istanbul Airport', code: 'IST', distance: '35 km', driveTime: '40 min' },
-        beach: { distance: '5 km', description: 'Bosphorus coastline and Marmara Sea beaches' },
+        beach: { distance: 5, description: 'Bosphorus coastline and Marmara Sea beaches' },
         climate: 'istanbul',
         priceRange: { from: 1000, to: 4000, unit: 'month', display: '€1,000–4,000/mo' },
         programs: [
@@ -3611,7 +3611,7 @@ const ACADEMIES = [
         level: 'Intermediate',
         starred: false,
         airport: { name: 'Molde Airport Aro', code: 'MOL', distance: '5 km', driveTime: '10 min' },
-        beach: { distance: '0.5 km', description: 'Molde sits on the Romsdal Fjord with mountain panoramas' },
+        beach: { distance: 0.5, description: 'Molde sits on the Romsdal Fjord with mountain panoramas' },
         climate: 'molde',
         priceRange: { from: 1500, to: 5000, unit: 'month', display: '€1,500–5,000/mo' },
         programs: [
@@ -3782,7 +3782,7 @@ const ACADEMIES = [
         level: 'Advanced',
         starred: true,
         airport: { name: 'Rotterdam The Hague Airport', code: 'RTM', distance: '8 km', driveTime: '15 min' },
-        beach: { distance: '30 km', description: 'Hoek van Holland beach on the North Sea coast' },
+        beach: { distance: 30, description: 'Hoek van Holland beach on the North Sea coast' },
         climate: 'amsterdam',
         priceRange: { from: 2000, to: 7000, unit: 'month', display: '€2,000–7,000/mo' },
         programs: [
@@ -3953,7 +3953,7 @@ const ACADEMIES = [
         level: 'Advanced',
         starred: true,
         airport: { name: 'Copenhagen Kastrup Airport', code: 'CPH', distance: '30 km', driveTime: '30 min' },
-        beach: { distance: '3 km', description: 'Ribersborg Beach on the Oresund strait' },
+        beach: { distance: 3, description: 'Ribersborg Beach on the Oresund strait' },
         climate: 'malmo',
         priceRange: { from: 1500, to: 5000, unit: 'month', display: '€1,500–5,000/mo' },
         programs: [
@@ -4111,24 +4111,347 @@ const ACADEMIES = [
     },
 ];
 
-const COUNTRIES = [
-    { name: 'Austria', flag: '🇦🇹' },
-    { name: 'Belgium', flag: '🇧🇪' },
-    { name: 'Croatia', flag: '🇭🇷' },
-    { name: 'Czech Republic', flag: '🇨🇿' },
-    { name: 'France', flag: '🇫🇷' },
-    { name: 'Germany', flag: '🇩🇪' },
-    { name: 'Greece', flag: '🇬🇷' },
-    { name: 'Italy', flag: '🇮🇹' },
-    { name: 'Netherlands', flag: '🇳🇱' },
-    { name: 'Norway', flag: '🇳🇴' },
-    { name: 'Poland', flag: '🇵🇱' },
-    { name: 'Portugal', flag: '🇵🇹' },
-    { name: 'Serbia', flag: '🇷🇸' },
-    { name: 'Spain', flag: '🇪🇸' },
-    { name: 'Sweden', flag: '🇸🇪' },
-    { name: 'Turkey', flag: '🇹🇷' },
-    { name: 'United Kingdom', flag: '🇬🇧' },
-];
+const COUNTRIES = [...new Set(ACADEMIES.map(a => a.country))];
 
-const CLIMATE_DATA = {};
+const CLIMATE_DATA = {
+  'amsterdam': {
+    city: "Amsterdam", country: "Netherlands",
+    months: [
+      { month: "Jan", temp: 3, rain: 68, rainyDays: 12, wind: 19 },
+      { month: "Feb", temp: 3, rain: 47, rainyDays: 10, wind: 18 },
+      { month: "Mar", temp: 6, rain: 55, rainyDays: 11, wind: 17 },
+      { month: "Apr", temp: 9, rain: 42, rainyDays: 9, wind: 15 },
+      { month: "May", temp: 13, rain: 55, rainyDays: 10, wind: 14 },
+      { month: "Jun", temp: 16, rain: 60, rainyDays: 10, wind: 13 },
+      { month: "Jul", temp: 18, rain: 74, rainyDays: 10, wind: 13 },
+      { month: "Aug", temp: 18, rain: 81, rainyDays: 11, wind: 13 },
+      { month: "Sep", temp: 15, rain: 78, rainyDays: 11, wind: 14 },
+      { month: "Oct", temp: 11, rain: 83, rainyDays: 13, wind: 16 },
+      { month: "Nov", temp: 7, rain: 79, rainyDays: 13, wind: 17 },
+      { month: "Dec", temp: 4, rain: 75, rainyDays: 13, wind: 18 }
+    ]
+  },
+  'athens': {
+    city: "Athens", country: "Greece",
+    months: [
+      { month: "Jan", temp: 10, rain: 48, rainyDays: 9, wind: 10 },
+      { month: "Feb", temp: 10, rain: 41, rainyDays: 8, wind: 11 },
+      { month: "Mar", temp: 12, rain: 40, rainyDays: 7, wind: 11 },
+      { month: "Apr", temp: 16, rain: 26, rainyDays: 6, wind: 10 },
+      { month: "May", temp: 21, rain: 15, rainyDays: 4, wind: 9 },
+      { month: "Jun", temp: 26, rain: 6, rainyDays: 2, wind: 9 },
+      { month: "Jul", temp: 29, rain: 5, rainyDays: 1, wind: 10 },
+      { month: "Aug", temp: 28, rain: 7, rainyDays: 1, wind: 10 },
+      { month: "Sep", temp: 24, rain: 14, rainyDays: 3, wind: 9 },
+      { month: "Oct", temp: 19, rain: 48, rainyDays: 6, wind: 9 },
+      { month: "Nov", temp: 15, rain: 56, rainyDays: 8, wind: 10 },
+      { month: "Dec", temp: 11, rain: 63, rainyDays: 10, wind: 10 }
+    ]
+  },
+  'barcelona': {
+    city: "Barcelona", country: "Spain",
+    months: [
+      { month: "Jan", temp: 10, rain: 41, rainyDays: 5, wind: 12 },
+      { month: "Feb", temp: 11, rain: 29, rainyDays: 5, wind: 12 },
+      { month: "Mar", temp: 13, rain: 32, rainyDays: 5, wind: 12 },
+      { month: "Apr", temp: 15, rain: 47, rainyDays: 7, wind: 11 },
+      { month: "May", temp: 18, rain: 54, rainyDays: 7, wind: 10 },
+      { month: "Jun", temp: 22, rain: 33, rainyDays: 4, wind: 10 },
+      { month: "Jul", temp: 25, rain: 19, rainyDays: 3, wind: 10 },
+      { month: "Aug", temp: 25, rain: 51, rainyDays: 5, wind: 10 },
+      { month: "Sep", temp: 22, rain: 87, rainyDays: 7, wind: 10 },
+      { month: "Oct", temp: 18, rain: 97, rainyDays: 8, wind: 11 },
+      { month: "Nov", temp: 13, rain: 52, rainyDays: 6, wind: 11 },
+      { month: "Dec", temp: 10, rain: 45, rainyDays: 5, wind: 12 }
+    ]
+  },
+  'belgrade': {
+    city: "Belgrade", country: "Serbia",
+    months: [
+      { month: "Jan", temp: 1, rain: 46, rainyDays: 10, wind: 13 },
+      { month: "Feb", temp: 3, rain: 40, rainyDays: 9, wind: 13 },
+      { month: "Mar", temp: 8, rain: 44, rainyDays: 9, wind: 12 },
+      { month: "Apr", temp: 13, rain: 53, rainyDays: 10, wind: 11 },
+      { month: "May", temp: 18, rain: 72, rainyDays: 12, wind: 10 },
+      { month: "Jun", temp: 22, rain: 86, rainyDays: 11, wind: 9 },
+      { month: "Jul", temp: 24, rain: 57, rainyDays: 9, wind: 9 },
+      { month: "Aug", temp: 24, rain: 48, rainyDays: 7, wind: 9 },
+      { month: "Sep", temp: 19, rain: 50, rainyDays: 8, wind: 9 },
+      { month: "Oct", temp: 13, rain: 49, rainyDays: 8, wind: 10 },
+      { month: "Nov", temp: 7, rain: 51, rainyDays: 10, wind: 12 },
+      { month: "Dec", temp: 2, rain: 52, rainyDays: 11, wind: 13 }
+    ]
+  },
+  'brussels': {
+    city: "Brussels", country: "Belgium",
+    months: [
+      { month: "Jan", temp: 3, rain: 68, rainyDays: 12, wind: 16 },
+      { month: "Feb", temp: 4, rain: 54, rainyDays: 10, wind: 16 },
+      { month: "Mar", temp: 7, rain: 55, rainyDays: 11, wind: 15 },
+      { month: "Apr", temp: 10, rain: 45, rainyDays: 9, wind: 14 },
+      { month: "May", temp: 14, rain: 62, rainyDays: 11, wind: 13 },
+      { month: "Jun", temp: 17, rain: 65, rainyDays: 10, wind: 12 },
+      { month: "Jul", temp: 19, rain: 73, rainyDays: 10, wind: 12 },
+      { month: "Aug", temp: 19, rain: 70, rainyDays: 10, wind: 12 },
+      { month: "Sep", temp: 16, rain: 62, rainyDays: 10, wind: 13 },
+      { month: "Oct", temp: 12, rain: 68, rainyDays: 11, wind: 14 },
+      { month: "Nov", temp: 7, rain: 70, rainyDays: 12, wind: 15 },
+      { month: "Dec", temp: 4, rain: 72, rainyDays: 13, wind: 16 }
+    ]
+  },
+  'dortmund': {
+    city: "Dortmund", country: "Germany",
+    months: [
+      { month: "Jan", temp: 2, rain: 65, rainyDays: 12, wind: 15 },
+      { month: "Feb", temp: 3, rain: 52, rainyDays: 10, wind: 15 },
+      { month: "Mar", temp: 6, rain: 58, rainyDays: 11, wind: 14 },
+      { month: "Apr", temp: 10, rain: 50, rainyDays: 9, wind: 13 },
+      { month: "May", temp: 14, rain: 65, rainyDays: 11, wind: 12 },
+      { month: "Jun", temp: 17, rain: 72, rainyDays: 11, wind: 11 },
+      { month: "Jul", temp: 19, rain: 78, rainyDays: 11, wind: 11 },
+      { month: "Aug", temp: 19, rain: 70, rainyDays: 10, wind: 11 },
+      { month: "Sep", temp: 15, rain: 60, rainyDays: 9, wind: 12 },
+      { month: "Oct", temp: 11, rain: 58, rainyDays: 10, wind: 13 },
+      { month: "Nov", temp: 6, rain: 64, rainyDays: 11, wind: 14 },
+      { month: "Dec", temp: 3, rain: 68, rainyDays: 12, wind: 15 }
+    ]
+  },
+  'istanbul': {
+    city: "Istanbul", country: "Turkey",
+    months: [
+      { month: "Jan", temp: 6, rain: 99, rainyDays: 13, wind: 14 },
+      { month: "Feb", temp: 6, rain: 72, rainyDays: 11, wind: 15 },
+      { month: "Mar", temp: 8, rain: 62, rainyDays: 10, wind: 13 },
+      { month: "Apr", temp: 13, rain: 43, rainyDays: 8, wind: 11 },
+      { month: "May", temp: 17, rain: 31, rainyDays: 6, wind: 10 },
+      { month: "Jun", temp: 22, rain: 24, rainyDays: 5, wind: 10 },
+      { month: "Jul", temp: 25, rain: 14, rainyDays: 3, wind: 11 },
+      { month: "Aug", temp: 25, rain: 19, rainyDays: 3, wind: 11 },
+      { month: "Sep", temp: 21, rain: 40, rainyDays: 5, wind: 10 },
+      { month: "Oct", temp: 16, rain: 73, rainyDays: 9, wind: 12 },
+      { month: "Nov", temp: 12, rain: 90, rainyDays: 11, wind: 13 },
+      { month: "Dec", temp: 8, rain: 108, rainyDays: 14, wind: 14 }
+    ]
+  },
+  'lisbon': {
+    city: "Lisbon", country: "Portugal",
+    months: [
+      { month: "Jan", temp: 12, rain: 96, rainyDays: 11, wind: 13 },
+      { month: "Feb", temp: 13, rain: 84, rainyDays: 10, wind: 14 },
+      { month: "Mar", temp: 15, rain: 52, rainyDays: 8, wind: 13 },
+      { month: "Apr", temp: 16, rain: 64, rainyDays: 9, wind: 13 },
+      { month: "May", temp: 18, rain: 39, rainyDays: 6, wind: 12 },
+      { month: "Jun", temp: 22, rain: 11, rainyDays: 2, wind: 12 },
+      { month: "Jul", temp: 24, rain: 3, rainyDays: 1, wind: 13 },
+      { month: "Aug", temp: 24, rain: 5, rainyDays: 1, wind: 12 },
+      { month: "Sep", temp: 22, rain: 26, rainyDays: 4, wind: 11 },
+      { month: "Oct", temp: 18, rain: 80, rainyDays: 9, wind: 11 },
+      { month: "Nov", temp: 15, rain: 106, rainyDays: 11, wind: 12 },
+      { month: "Dec", temp: 12, rain: 103, rainyDays: 11, wind: 13 }
+    ]
+  },
+  'london': {
+    city: "London", country: "England",
+    months: [
+      { month: "Jan", temp: 5, rain: 55, rainyDays: 11, wind: 15 },
+      { month: "Feb", temp: 5, rain: 41, rainyDays: 9, wind: 14 },
+      { month: "Mar", temp: 7, rain: 42, rainyDays: 9, wind: 13 },
+      { month: "Apr", temp: 10, rain: 43, rainyDays: 9, wind: 12 },
+      { month: "May", temp: 13, rain: 49, rainyDays: 9, wind: 11 },
+      { month: "Jun", temp: 16, rain: 45, rainyDays: 8, wind: 10 },
+      { month: "Jul", temp: 19, rain: 45, rainyDays: 8, wind: 10 },
+      { month: "Aug", temp: 18, rain: 50, rainyDays: 8, wind: 10 },
+      { month: "Sep", temp: 16, rain: 49, rainyDays: 8, wind: 11 },
+      { month: "Oct", temp: 12, rain: 69, rainyDays: 10, wind: 13 },
+      { month: "Nov", temp: 8, rain: 59, rainyDays: 10, wind: 14 },
+      { month: "Dec", temp: 5, rain: 55, rainyDays: 10, wind: 14 }
+    ]
+  },
+  'madrid': {
+    city: "Madrid", country: "Spain",
+    months: [
+      { month: "Jan", temp: 6, rain: 33, rainyDays: 6, wind: 10 },
+      { month: "Feb", temp: 8, rain: 34, rainyDays: 5, wind: 11 },
+      { month: "Mar", temp: 11, rain: 25, rainyDays: 5, wind: 12 },
+      { month: "Apr", temp: 13, rain: 45, rainyDays: 7, wind: 12 },
+      { month: "May", temp: 17, rain: 44, rainyDays: 7, wind: 11 },
+      { month: "Jun", temp: 23, rain: 21, rainyDays: 3, wind: 11 },
+      { month: "Jul", temp: 27, rain: 11, rainyDays: 2, wind: 11 },
+      { month: "Aug", temp: 26, rain: 12, rainyDays: 2, wind: 10 },
+      { month: "Sep", temp: 22, rain: 28, rainyDays: 4, wind: 10 },
+      { month: "Oct", temp: 15, rain: 50, rainyDays: 7, wind: 10 },
+      { month: "Nov", temp: 10, rain: 56, rainyDays: 7, wind: 10 },
+      { month: "Dec", temp: 7, rain: 42, rainyDays: 7, wind: 10 }
+    ]
+  },
+  'malmo': {
+    city: "Malmö", country: "Sweden",
+    months: [
+      { month: "Jan", temp: 0, rain: 49, rainyDays: 12, wind: 18 },
+      { month: "Feb", temp: 0, rain: 30, rainyDays: 9, wind: 17 },
+      { month: "Mar", temp: 3, rain: 38, rainyDays: 9, wind: 16 },
+      { month: "Apr", temp: 7, rain: 33, rainyDays: 8, wind: 15 },
+      { month: "May", temp: 12, rain: 39, rainyDays: 8, wind: 13 },
+      { month: "Jun", temp: 16, rain: 48, rainyDays: 9, wind: 13 },
+      { month: "Jul", temp: 18, rain: 62, rainyDays: 10, wind: 13 },
+      { month: "Aug", temp: 18, rain: 60, rainyDays: 10, wind: 13 },
+      { month: "Sep", temp: 14, rain: 55, rainyDays: 10, wind: 14 },
+      { month: "Oct", temp: 10, rain: 54, rainyDays: 11, wind: 16 },
+      { month: "Nov", temp: 5, rain: 56, rainyDays: 12, wind: 17 },
+      { month: "Dec", temp: 2, rain: 52, rainyDays: 12, wind: 18 }
+    ]
+  },
+  'milan': {
+    city: "Milan", country: "Italy",
+    months: [
+      { month: "Jan", temp: 3, rain: 58, rainyDays: 7, wind: 8 },
+      { month: "Feb", temp: 5, rain: 49, rainyDays: 6, wind: 9 },
+      { month: "Mar", temp: 10, rain: 65, rainyDays: 8, wind: 9 },
+      { month: "Apr", temp: 14, rain: 75, rainyDays: 10, wind: 9 },
+      { month: "May", temp: 18, rain: 96, rainyDays: 11, wind: 8 },
+      { month: "Jun", temp: 23, rain: 65, rainyDays: 8, wind: 8 },
+      { month: "Jul", temp: 25, rain: 67, rainyDays: 6, wind: 7 },
+      { month: "Aug", temp: 25, rain: 86, rainyDays: 8, wind: 7 },
+      { month: "Sep", temp: 20, rain: 69, rainyDays: 7, wind: 7 },
+      { month: "Oct", temp: 14, rain: 99, rainyDays: 9, wind: 8 },
+      { month: "Nov", temp: 8, rain: 86, rainyDays: 9, wind: 8 },
+      { month: "Dec", temp: 4, rain: 61, rainyDays: 7, wind: 8 }
+    ]
+  },
+  'molde': {
+    city: "Molde", country: "Norway",
+    months: [
+      { month: "Jan", temp: 1, rain: 130, rainyDays: 17, wind: 14 },
+      { month: "Feb", temp: 1, rain: 95, rainyDays: 14, wind: 14 },
+      { month: "Mar", temp: 3, rain: 90, rainyDays: 14, wind: 13 },
+      { month: "Apr", temp: 5, rain: 70, rainyDays: 12, wind: 12 },
+      { month: "May", temp: 9, rain: 60, rainyDays: 11, wind: 11 },
+      { month: "Jun", temp: 12, rain: 65, rainyDays: 11, wind: 10 },
+      { month: "Jul", temp: 14, rain: 80, rainyDays: 13, wind: 9 },
+      { month: "Aug", temp: 14, rain: 95, rainyDays: 14, wind: 10 },
+      { month: "Sep", temp: 11, rain: 130, rainyDays: 16, wind: 12 },
+      { month: "Oct", temp: 8, rain: 140, rainyDays: 17, wind: 13 },
+      { month: "Nov", temp: 4, rain: 120, rainyDays: 16, wind: 14 },
+      { month: "Dec", temp: 2, rain: 125, rainyDays: 17, wind: 14 }
+    ]
+  },
+  'munich': {
+    city: "Munich", country: "Germany",
+    months: [
+      { month: "Jan", temp: -1, rain: 46, rainyDays: 10, wind: 12 },
+      { month: "Feb", temp: 1, rain: 45, rainyDays: 9, wind: 12 },
+      { month: "Mar", temp: 5, rain: 57, rainyDays: 10, wind: 13 },
+      { month: "Apr", temp: 9, rain: 63, rainyDays: 11, wind: 12 },
+      { month: "May", temp: 14, rain: 90, rainyDays: 13, wind: 11 },
+      { month: "Jun", temp: 17, rain: 115, rainyDays: 14, wind: 10 },
+      { month: "Jul", temp: 19, rain: 120, rainyDays: 13, wind: 10 },
+      { month: "Aug", temp: 19, rain: 105, rainyDays: 12, wind: 10 },
+      { month: "Sep", temp: 15, rain: 72, rainyDays: 10, wind: 10 },
+      { month: "Oct", temp: 9, rain: 55, rainyDays: 9, wind: 11 },
+      { month: "Nov", temp: 4, rain: 58, rainyDays: 10, wind: 12 },
+      { month: "Dec", temp: 1, rain: 55, rainyDays: 11, wind: 12 }
+    ]
+  },
+  'paris': {
+    city: "Paris", country: "France",
+    months: [
+      { month: "Jan", temp: 5, rain: 51, rainyDays: 10, wind: 15 },
+      { month: "Feb", temp: 5, rain: 41, rainyDays: 9, wind: 14 },
+      { month: "Mar", temp: 9, rain: 48, rainyDays: 9, wind: 14 },
+      { month: "Apr", temp: 12, rain: 45, rainyDays: 9, wind: 13 },
+      { month: "May", temp: 16, rain: 63, rainyDays: 10, wind: 12 },
+      { month: "Jun", temp: 19, rain: 50, rainyDays: 9, wind: 11 },
+      { month: "Jul", temp: 21, rain: 56, rainyDays: 8, wind: 11 },
+      { month: "Aug", temp: 21, rain: 43, rainyDays: 7, wind: 11 },
+      { month: "Sep", temp: 17, rain: 47, rainyDays: 8, wind: 11 },
+      { month: "Oct", temp: 13, rain: 55, rainyDays: 9, wind: 13 },
+      { month: "Nov", temp: 8, rain: 51, rainyDays: 10, wind: 14 },
+      { month: "Dec", temp: 5, rain: 57, rainyDays: 11, wind: 14 }
+    ]
+  },
+  'prague': {
+    city: "Prague", country: "Czech Republic",
+    months: [
+      { month: "Jan", temp: -1, rain: 23, rainyDays: 7, wind: 14 },
+      { month: "Feb", temp: 1, rain: 22, rainyDays: 6, wind: 14 },
+      { month: "Mar", temp: 5, rain: 28, rainyDays: 7, wind: 14 },
+      { month: "Apr", temp: 10, rain: 32, rainyDays: 7, wind: 13 },
+      { month: "May", temp: 15, rain: 62, rainyDays: 10, wind: 12 },
+      { month: "Jun", temp: 18, rain: 68, rainyDays: 10, wind: 11 },
+      { month: "Jul", temp: 20, rain: 72, rainyDays: 10, wind: 11 },
+      { month: "Aug", temp: 20, rain: 66, rainyDays: 9, wind: 10 },
+      { month: "Sep", temp: 15, rain: 40, rainyDays: 7, wind: 11 },
+      { month: "Oct", temp: 10, rain: 30, rainyDays: 6, wind: 12 },
+      { month: "Nov", temp: 4, rain: 29, rainyDays: 7, wind: 13 },
+      { month: "Dec", temp: 1, rain: 25, rainyDays: 7, wind: 14 }
+    ]
+  },
+  'salzburg': {
+    city: "Salzburg", country: "Austria",
+    months: [
+      { month: "Jan", temp: -1, rain: 56, rainyDays: 10, wind: 10 },
+      { month: "Feb", temp: 1, rain: 48, rainyDays: 9, wind: 11 },
+      { month: "Mar", temp: 5, rain: 62, rainyDays: 10, wind: 11 },
+      { month: "Apr", temp: 10, rain: 72, rainyDays: 11, wind: 10 },
+      { month: "May", temp: 14, rain: 102, rainyDays: 14, wind: 9 },
+      { month: "Jun", temp: 18, rain: 130, rainyDays: 15, wind: 9 },
+      { month: "Jul", temp: 20, rain: 140, rainyDays: 14, wind: 8 },
+      { month: "Aug", temp: 19, rain: 128, rainyDays: 13, wind: 8 },
+      { month: "Sep", temp: 15, rain: 82, rainyDays: 10, wind: 9 },
+      { month: "Oct", temp: 10, rain: 62, rainyDays: 9, wind: 10 },
+      { month: "Nov", temp: 4, rain: 62, rainyDays: 10, wind: 10 },
+      { month: "Dec", temp: 1, rain: 58, rainyDays: 10, wind: 10 }
+    ]
+  },
+  'turin': {
+    city: "Turin", country: "Italy",
+    months: [
+      { month: "Jan", temp: 2, rain: 37, rainyDays: 5, wind: 7 },
+      { month: "Feb", temp: 4, rain: 42, rainyDays: 5, wind: 8 },
+      { month: "Mar", temp: 9, rain: 55, rainyDays: 7, wind: 9 },
+      { month: "Apr", temp: 13, rain: 92, rainyDays: 10, wind: 8 },
+      { month: "May", temp: 17, rain: 108, rainyDays: 11, wind: 8 },
+      { month: "Jun", temp: 22, rain: 78, rainyDays: 8, wind: 7 },
+      { month: "Jul", temp: 24, rain: 46, rainyDays: 5, wind: 7 },
+      { month: "Aug", temp: 24, rain: 68, rainyDays: 7, wind: 7 },
+      { month: "Sep", temp: 19, rain: 65, rainyDays: 6, wind: 7 },
+      { month: "Oct", temp: 13, rain: 86, rainyDays: 8, wind: 7 },
+      { month: "Nov", temp: 7, rain: 72, rainyDays: 7, wind: 7 },
+      { month: "Dec", temp: 3, rain: 42, rainyDays: 5, wind: 7 }
+    ]
+  },
+  'warsaw': {
+    city: "Warsaw", country: "Poland",
+    months: [
+      { month: "Jan", temp: -2, rain: 27, rainyDays: 9, wind: 14 },
+      { month: "Feb", temp: -1, rain: 26, rainyDays: 8, wind: 14 },
+      { month: "Mar", temp: 3, rain: 28, rainyDays: 7, wind: 14 },
+      { month: "Apr", temp: 9, rain: 37, rainyDays: 8, wind: 13 },
+      { month: "May", temp: 15, rain: 52, rainyDays: 9, wind: 12 },
+      { month: "Jun", temp: 18, rain: 68, rainyDays: 10, wind: 11 },
+      { month: "Jul", temp: 20, rain: 73, rainyDays: 10, wind: 11 },
+      { month: "Aug", temp: 19, rain: 56, rainyDays: 9, wind: 10 },
+      { month: "Sep", temp: 14, rain: 43, rainyDays: 8, wind: 11 },
+      { month: "Oct", temp: 9, rain: 32, rainyDays: 7, wind: 12 },
+      { month: "Nov", temp: 4, rain: 36, rainyDays: 9, wind: 13 },
+      { month: "Dec", temp: 0, rain: 31, rainyDays: 9, wind: 14 }
+    ]
+  },
+  'zagreb': {
+    city: "Zagreb", country: "Croatia",
+    months: [
+      { month: "Jan", temp: 1, rain: 48, rainyDays: 9, wind: 11 },
+      { month: "Feb", temp: 3, rain: 40, rainyDays: 8, wind: 12 },
+      { month: "Mar", temp: 8, rain: 50, rainyDays: 9, wind: 12 },
+      { month: "Apr", temp: 12, rain: 60, rainyDays: 10, wind: 11 },
+      { month: "May", temp: 17, rain: 75, rainyDays: 12, wind: 10 },
+      { month: "Jun", temp: 21, rain: 90, rainyDays: 12, wind: 9 },
+      { month: "Jul", temp: 23, rain: 72, rainyDays: 9, wind: 9 },
+      { month: "Aug", temp: 22, rain: 80, rainyDays: 9, wind: 9 },
+      { month: "Sep", temp: 18, rain: 82, rainyDays: 9, wind: 9 },
+      { month: "Oct", temp: 12, rain: 72, rainyDays: 9, wind: 10 },
+      { month: "Nov", temp: 7, rain: 75, rainyDays: 11, wind: 11 },
+      { month: "Dec", temp: 2, rain: 60, rainyDays: 10, wind: 11 }
+    ]
+  }
+};

@@ -1552,26 +1552,378 @@ const ACADEMIES = [
 const COUNTRIES = [...new Set(ACADEMIES.map(a => a.country))];
 
 const CLIMATE_DATA = {
-  'madrid': [{ high: 10, low: 1, rain: 33 }, { high: 13, low: 2, rain: 34 }, { high: 16, low: 5, rain: 26 }, { high: 18, low: 7, rain: 45 }, { high: 23, low: 11, rain: 47 }, { high: 30, low: 16, rain: 21 }, { high: 34, low: 19, rain: 11 }, { high: 33, low: 19, rain: 12 }, { high: 28, low: 15, rain: 28 }, { high: 21, low: 10, rain: 46 }, { high: 14, low: 5, rain: 56 }, { high: 10, low: 2, rain: 51 }],
-  'barcelona': [{ high: 14, low: 5, rain: 41 }, { high: 15, low: 6, rain: 29 }, { high: 17, low: 8, rain: 32 }, { high: 19, low: 10, rain: 47 }, { high: 22, low: 14, rain: 54 }, { high: 26, low: 18, rain: 33 }, { high: 29, low: 21, rain: 19 }, { high: 29, low: 21, rain: 51 }, { high: 26, low: 18, rain: 87 }, { high: 22, low: 14, rain: 97 }, { high: 17, low: 9, rain: 52 }, { high: 14, low: 6, rain: 45 }],
-  'piraeus': [{ high: 13, low: 6, rain: 48 }, { high: 14, low: 6, rain: 41 }, { high: 16, low: 8, rain: 37 }, { high: 20, low: 11, rain: 26 }, { high: 25, low: 16, rain: 15 }, { high: 30, low: 20, rain: 6 }, { high: 33, low: 23, rain: 5 }, { high: 33, low: 23, rain: 6 }, { high: 29, low: 19, rain: 13 }, { high: 23, low: 15, rain: 48 }, { high: 18, low: 11, rain: 55 }, { high: 14, low: 7, rain: 64 }],
-  'athens': [{ high: 13, low: 6, rain: 57 }, { high: 14, low: 6, rain: 47 }, { high: 16, low: 8, rain: 41 }, { high: 20, low: 11, rain: 31 }, { high: 26, low: 16, rain: 18 }, { high: 31, low: 20, rain: 7 }, { high: 34, low: 23, rain: 6 }, { high: 34, low: 23, rain: 6 }, { high: 29, low: 19, rain: 15 }, { high: 24, low: 15, rain: 53 }, { high: 18, low: 11, rain: 58 }, { high: 14, low: 7, rain: 69 }],
-  'istanbul': [{ high: 9, low: 3, rain: 99 }, { high: 10, low: 3, rain: 80 }, { high: 12, low: 5, rain: 67 }, { high: 17, low: 9, rain: 51 }, { high: 22, low: 14, rain: 36 }, { high: 27, low: 18, rain: 34 }, { high: 29, low: 21, rain: 32 }, { high: 29, low: 21, rain: 37 }, { high: 26, low: 18, rain: 50 }, { high: 20, low: 13, rain: 81 }, { high: 15, low: 9, rain: 96 }, { high: 11, low: 5, rain: 113 }],
-  'belgrade': [{ high: 4, low: -2, rain: 47 }, { high: 7, low: 0, rain: 40 }, { high: 12, low: 4, rain: 44 }, { high: 18, low: 8, rain: 56 }, { high: 23, low: 13, rain: 67 }, { high: 27, low: 16, rain: 80 }, { high: 29, low: 18, rain: 56 }, { high: 29, low: 18, rain: 48 }, { high: 24, low: 13, rain: 52 }, { high: 18, low: 8, rain: 50 }, { high: 11, low: 4, rain: 52 }, { high: 5, low: 0, rain: 56 }],
-  'kaunas': [{ high: -1, low: -6, rain: 36 }, { high: 1, low: -5, rain: 26 }, { high: 5, low: -2, rain: 33 }, { high: 12, low: 3, rain: 38 }, { high: 18, low: 8, rain: 52 }, { high: 21, low: 11, rain: 65 }, { high: 23, low: 13, rain: 75 }, { high: 22, low: 13, rain: 72 }, { high: 17, low: 9, rain: 55 }, { high: 11, low: 4, rain: 44 }, { high: 4, low: 0, rain: 46 }, { high: 1, low: -4, rain: 42 }],
-  'munich': [{ high: 3, low: -4, rain: 46 }, { high: 5, low: -3, rain: 45 }, { high: 10, low: 0, rain: 57 }, { high: 14, low: 4, rain: 63 }, { high: 19, low: 8, rain: 93 }, { high: 22, low: 12, rain: 118 }, { high: 24, low: 13, rain: 110 }, { high: 24, low: 13, rain: 103 }, { high: 19, low: 9, rain: 70 }, { high: 14, low: 5, rain: 57 }, { high: 7, low: 0, rain: 60 }, { high: 4, low: -3, rain: 55 }],
-  'berlin': [{ high: 3, low: -2, rain: 43 }, { high: 4, low: -2, rain: 33 }, { high: 9, low: 1, rain: 40 }, { high: 14, low: 4, rain: 37 }, { high: 20, low: 9, rain: 54 }, { high: 23, low: 12, rain: 69 }, { high: 25, low: 14, rain: 56 }, { high: 25, low: 14, rain: 58 }, { high: 20, low: 10, rain: 45 }, { high: 14, low: 6, rain: 36 }, { high: 7, low: 2, rain: 44 }, { high: 4, low: -1, rain: 46 }],
-  'villeurbanne': [{ high: 6, low: 0, rain: 47 }, { high: 9, low: 1, rain: 40 }, { high: 14, low: 4, rain: 44 }, { high: 17, low: 7, rain: 69 }, { high: 22, low: 12, rain: 78 }, { high: 26, low: 15, rain: 63 }, { high: 29, low: 17, rain: 51 }, { high: 28, low: 17, rain: 55 }, { high: 23, low: 13, rain: 72 }, { high: 17, low: 9, rain: 81 }, { high: 10, low: 4, rain: 72 }, { high: 7, low: 1, rain: 48 }],
-  'limoges': [{ high: 8, low: 1, rain: 70 }, { high: 10, low: 1, rain: 56 }, { high: 14, low: 4, rain: 55 }, { high: 16, low: 6, rain: 72 }, { high: 20, low: 10, rain: 76 }, { high: 24, low: 13, rain: 60 }, { high: 26, low: 15, rain: 45 }, { high: 26, low: 14, rain: 52 }, { high: 23, low: 11, rain: 55 }, { high: 17, low: 8, rain: 73 }, { high: 11, low: 4, rain: 75 }, { high: 8, low: 2, rain: 78 }],
-  'bologna': [{ high: 6, low: 0, rain: 44 }, { high: 9, low: 1, rain: 44 }, { high: 14, low: 5, rain: 55 }, { high: 18, low: 9, rain: 73 }, { high: 23, low: 13, rain: 62 }, { high: 28, low: 17, rain: 50 }, { high: 31, low: 20, rain: 33 }, { high: 30, low: 19, rain: 50 }, { high: 25, low: 15, rain: 68 }, { high: 19, low: 10, rain: 78 }, { high: 12, low: 5, rain: 73 }, { high: 7, low: 1, rain: 54 }],
-  'milan': [{ high: 6, low: -1, rain: 64 }, { high: 9, low: 1, rain: 63 }, { high: 14, low: 5, rain: 82 }, { high: 18, low: 9, rain: 82 }, { high: 23, low: 13, rain: 96 }, { high: 27, low: 17, rain: 65 }, { high: 30, low: 19, rain: 68 }, { high: 29, low: 19, rain: 93 }, { high: 25, low: 15, rain: 69 }, { high: 18, low: 10, rain: 104 }, { high: 11, low: 4, rain: 100 }, { high: 7, low: 0, rain: 61 }],
-  'ljubljana': [{ high: 4, low: -2, rain: 60 }, { high: 7, low: 0, rain: 55 }, { high: 12, low: 3, rain: 67 }, { high: 17, low: 7, rain: 83 }, { high: 22, low: 11, rain: 89 }, { high: 25, low: 14, rain: 116 }, { high: 28, low: 16, rain: 87 }, { high: 27, low: 16, rain: 105 }, { high: 22, low: 12, rain: 115 }, { high: 16, low: 7, rain: 114 }, { high: 9, low: 3, rain: 103 }, { high: 5, low: -1, rain: 81 }],
-  'split': [{ high: 11, low: 5, rain: 73 }, { high: 12, low: 5, rain: 60 }, { high: 15, low: 8, rain: 59 }, { high: 18, low: 11, rain: 52 }, { high: 23, low: 15, rain: 45 }, { high: 27, low: 19, rain: 32 }, { high: 30, low: 22, rain: 18 }, { high: 30, low: 22, rain: 31 }, { high: 26, low: 18, rain: 60 }, { high: 21, low: 14, rain: 79 }, { high: 16, low: 10, rain: 99 }, { high: 12, low: 6, rain: 89 }],
-  'badalona': [{ high: 14, low: 5, rain: 41 }, { high: 15, low: 6, rain: 29 }, { high: 17, low: 8, rain: 32 }, { high: 19, low: 10, rain: 47 }, { high: 22, low: 14, rain: 54 }, { high: 26, low: 18, rain: 33 }, { high: 29, low: 21, rain: 19 }, { high: 29, low: 21, rain: 51 }, { high: 26, low: 18, rain: 87 }, { high: 22, low: 14, rain: 97 }, { high: 17, low: 9, rain: 52 }, { high: 14, low: 6, rain: 45 }],
-  'valencia': [{ high: 16, low: 5, rain: 34 }, { high: 17, low: 6, rain: 26 }, { high: 19, low: 8, rain: 27 }, { high: 21, low: 10, rain: 38 }, { high: 24, low: 14, rain: 33 }, { high: 28, low: 18, rain: 14 }, { high: 31, low: 21, rain: 6 }, { high: 31, low: 21, rain: 19 }, { high: 28, low: 18, rain: 51 }, { high: 24, low: 14, rain: 68 }, { high: 19, low: 9, rain: 47 }, { high: 16, low: 6, rain: 48 }],
-  'vilnius': [{ high: -2, low: -7, rain: 35 }, { high: 0, low: -6, rain: 27 }, { high: 5, low: -2, rain: 32 }, { high: 13, low: 3, rain: 39 }, { high: 18, low: 8, rain: 53 }, { high: 21, low: 11, rain: 69 }, { high: 23, low: 13, rain: 77 }, { high: 22, low: 13, rain: 69 }, { high: 17, low: 8, rain: 56 }, { high: 10, low: 4, rain: 41 }, { high: 4, low: 0, rain: 41 }, { high: 0, low: -5, rain: 39 }],
-  'riga': [{ high: -1, low: -6, rain: 34 }, { high: 0, low: -6, rain: 24 }, { high: 4, low: -3, rain: 28 }, { high: 11, low: 2, rain: 35 }, { high: 17, low: 7, rain: 44 }, { high: 20, low: 11, rain: 57 }, { high: 22, low: 13, rain: 71 }, { high: 21, low: 13, rain: 73 }, { high: 17, low: 9, rain: 60 }, { high: 11, low: 5, rain: 52 }, { high: 5, low: 1, rain: 50 }, { high: 1, low: -4, rain: 42 }],
-  'moscow': [{ high: -4, low: -9, rain: 42 }, { high: -3, low: -10, rain: 36 }, { high: 3, low: -4, rain: 34 }, { high: 12, low: 2, rain: 37 }, { high: 19, low: 8, rain: 52 }, { high: 22, low: 12, rain: 66 }, { high: 24, low: 14, rain: 82 }, { high: 22, low: 13, rain: 77 }, { high: 16, low: 8, rain: 58 }, { high: 9, low: 3, rain: 51 }, { high: 2, low: -2, rain: 47 }, { high: -2, low: -7, rain: 46 }],
-  'malaga': [{ high: 17, low: 7, rain: 55 }, { high: 18, low: 8, rain: 55 }, { high: 20, low: 10, rain: 46 }, { high: 22, low: 12, rain: 41 }, { high: 25, low: 15, rain: 20 }, { high: 29, low: 19, rain: 5 }, { high: 31, low: 22, rain: 1 }, { high: 32, low: 22, rain: 5 }, { high: 28, low: 20, rain: 16 }, { high: 24, low: 15, rain: 56 }, { high: 20, low: 11, rain: 66 }, { high: 17, low: 8, rain: 71 }],
-  'tel-aviv': [{ high: 18, low: 10, rain: 125 }, { high: 19, low: 10, rain: 86 }, { high: 21, low: 12, rain: 53 }, { high: 24, low: 14, rain: 14 }, { high: 27, low: 17, rain: 3 }, { high: 29, low: 21, rain: 0 }, { high: 31, low: 23, rain: 0 }, { high: 32, low: 24, rain: 0 }, { high: 31, low: 22, rain: 1 }, { high: 28, low: 19, rain: 20 }, { high: 24, low: 14, rain: 60 }, { high: 19, low: 11, rain: 110 }]
+  'madrid': {
+    city: "Madrid", country: "Spain",
+    months: [
+      { month: "Jan", temp: 6, rain: 33, rainyDays: 7, wind: 11 },
+      { month: "Feb", temp: 8, rain: 34, rainyDays: 7, wind: 11 },
+      { month: "Mar", temp: 11, rain: 26, rainyDays: 5, wind: 11 },
+      { month: "Apr", temp: 13, rain: 45, rainyDays: 7, wind: 11 },
+      { month: "May", temp: 17, rain: 47, rainyDays: 7, wind: 11 },
+      { month: "Jun", temp: 23, rain: 21, rainyDays: 5, wind: 11 },
+      { month: "Jul", temp: 27, rain: 11, rainyDays: 5, wind: 11 },
+      { month: "Aug", temp: 26, rain: 12, rainyDays: 5, wind: 11 },
+      { month: "Sep", temp: 22, rain: 28, rainyDays: 5, wind: 11 },
+      { month: "Oct", temp: 16, rain: 46, rainyDays: 7, wind: 11 },
+      { month: "Nov", temp: 10, rain: 56, rainyDays: 10, wind: 11 },
+      { month: "Dec", temp: 6, rain: 51, rainyDays: 10, wind: 11 }
+    ]
+  },
+  'barcelona': {
+    city: "Barcelona", country: "Spain",
+    months: [
+      { month: "Jan", temp: 10, rain: 41, rainyDays: 7, wind: 13 },
+      { month: "Feb", temp: 11, rain: 29, rainyDays: 5, wind: 13 },
+      { month: "Mar", temp: 13, rain: 32, rainyDays: 7, wind: 13 },
+      { month: "Apr", temp: 15, rain: 47, rainyDays: 7, wind: 13 },
+      { month: "May", temp: 18, rain: 54, rainyDays: 10, wind: 13 },
+      { month: "Jun", temp: 22, rain: 33, rainyDays: 7, wind: 13 },
+      { month: "Jul", temp: 25, rain: 19, rainyDays: 5, wind: 13 },
+      { month: "Aug", temp: 25, rain: 51, rainyDays: 10, wind: 13 },
+      { month: "Sep", temp: 22, rain: 87, rainyDays: 14, wind: 13 },
+      { month: "Oct", temp: 18, rain: 97, rainyDays: 14, wind: 13 },
+      { month: "Nov", temp: 13, rain: 52, rainyDays: 10, wind: 13 },
+      { month: "Dec", temp: 10, rain: 45, rainyDays: 7, wind: 13 }
+    ]
+  },
+  'piraeus': {
+    city: "Piraeus", country: "Greece",
+    months: [
+      { month: "Jan", temp: 10, rain: 48, rainyDays: 7, wind: 14 },
+      { month: "Feb", temp: 10, rain: 41, rainyDays: 7, wind: 14 },
+      { month: "Mar", temp: 12, rain: 37, rainyDays: 7, wind: 14 },
+      { month: "Apr", temp: 16, rain: 26, rainyDays: 5, wind: 14 },
+      { month: "May", temp: 21, rain: 15, rainyDays: 5, wind: 14 },
+      { month: "Jun", temp: 25, rain: 6, rainyDays: 5, wind: 14 },
+      { month: "Jul", temp: 28, rain: 5, rainyDays: 5, wind: 14 },
+      { month: "Aug", temp: 28, rain: 6, rainyDays: 5, wind: 14 },
+      { month: "Sep", temp: 24, rain: 13, rainyDays: 5, wind: 14 },
+      { month: "Oct", temp: 19, rain: 48, rainyDays: 7, wind: 14 },
+      { month: "Nov", temp: 15, rain: 55, rainyDays: 10, wind: 14 },
+      { month: "Dec", temp: 11, rain: 64, rainyDays: 10, wind: 14 }
+    ]
+  },
+  'athens': {
+    city: "Athens", country: "Greece",
+    months: [
+      { month: "Jan", temp: 10, rain: 57, rainyDays: 10, wind: 12 },
+      { month: "Feb", temp: 10, rain: 47, rainyDays: 7, wind: 12 },
+      { month: "Mar", temp: 12, rain: 41, rainyDays: 7, wind: 12 },
+      { month: "Apr", temp: 16, rain: 31, rainyDays: 7, wind: 12 },
+      { month: "May", temp: 21, rain: 18, rainyDays: 5, wind: 12 },
+      { month: "Jun", temp: 26, rain: 7, rainyDays: 5, wind: 12 },
+      { month: "Jul", temp: 29, rain: 6, rainyDays: 5, wind: 12 },
+      { month: "Aug", temp: 29, rain: 6, rainyDays: 5, wind: 12 },
+      { month: "Sep", temp: 24, rain: 15, rainyDays: 5, wind: 12 },
+      { month: "Oct", temp: 20, rain: 53, rainyDays: 10, wind: 12 },
+      { month: "Nov", temp: 15, rain: 58, rainyDays: 10, wind: 12 },
+      { month: "Dec", temp: 11, rain: 69, rainyDays: 10, wind: 12 }
+    ]
+  },
+  'istanbul': {
+    city: "Istanbul", country: "Turkey",
+    months: [
+      { month: "Jan", temp: 6, rain: 99, rainyDays: 14, wind: 14 },
+      { month: "Feb", temp: 7, rain: 80, rainyDays: 10, wind: 14 },
+      { month: "Mar", temp: 9, rain: 67, rainyDays: 10, wind: 14 },
+      { month: "Apr", temp: 13, rain: 51, rainyDays: 10, wind: 14 },
+      { month: "May", temp: 18, rain: 36, rainyDays: 7, wind: 14 },
+      { month: "Jun", temp: 23, rain: 34, rainyDays: 7, wind: 14 },
+      { month: "Jul", temp: 25, rain: 32, rainyDays: 7, wind: 14 },
+      { month: "Aug", temp: 25, rain: 37, rainyDays: 7, wind: 14 },
+      { month: "Sep", temp: 22, rain: 50, rainyDays: 7, wind: 14 },
+      { month: "Oct", temp: 17, rain: 81, rainyDays: 14, wind: 14 },
+      { month: "Nov", temp: 12, rain: 96, rainyDays: 14, wind: 14 },
+      { month: "Dec", temp: 8, rain: 113, rainyDays: 14, wind: 14 }
+    ]
+  },
+  'belgrade': {
+    city: "Belgrade", country: "Serbia",
+    months: [
+      { month: "Jan", temp: 1, rain: 47, rainyDays: 7, wind: 11 },
+      { month: "Feb", temp: 4, rain: 40, rainyDays: 7, wind: 11 },
+      { month: "Mar", temp: 8, rain: 44, rainyDays: 7, wind: 11 },
+      { month: "Apr", temp: 13, rain: 56, rainyDays: 10, wind: 11 },
+      { month: "May", temp: 18, rain: 67, rainyDays: 10, wind: 11 },
+      { month: "Jun", temp: 22, rain: 80, rainyDays: 10, wind: 11 },
+      { month: "Jul", temp: 24, rain: 56, rainyDays: 10, wind: 11 },
+      { month: "Aug", temp: 24, rain: 48, rainyDays: 7, wind: 11 },
+      { month: "Sep", temp: 19, rain: 52, rainyDays: 10, wind: 11 },
+      { month: "Oct", temp: 13, rain: 50, rainyDays: 7, wind: 11 },
+      { month: "Nov", temp: 8, rain: 52, rainyDays: 10, wind: 11 },
+      { month: "Dec", temp: 3, rain: 56, rainyDays: 10, wind: 11 }
+    ]
+  },
+  'kaunas': {
+    city: "Kaunas", country: "Lithuania",
+    months: [
+      { month: "Jan", temp: -3, rain: 36, rainyDays: 7, wind: 12 },
+      { month: "Feb", temp: -2, rain: 26, rainyDays: 5, wind: 12 },
+      { month: "Mar", temp: 2, rain: 33, rainyDays: 7, wind: 12 },
+      { month: "Apr", temp: 8, rain: 38, rainyDays: 7, wind: 12 },
+      { month: "May", temp: 13, rain: 52, rainyDays: 10, wind: 12 },
+      { month: "Jun", temp: 16, rain: 65, rainyDays: 10, wind: 12 },
+      { month: "Jul", temp: 18, rain: 75, rainyDays: 10, wind: 12 },
+      { month: "Aug", temp: 18, rain: 72, rainyDays: 10, wind: 12 },
+      { month: "Sep", temp: 13, rain: 55, rainyDays: 10, wind: 12 },
+      { month: "Oct", temp: 8, rain: 44, rainyDays: 7, wind: 12 },
+      { month: "Nov", temp: 2, rain: 46, rainyDays: 7, wind: 12 },
+      { month: "Dec", temp: -1, rain: 42, rainyDays: 7, wind: 12 }
+    ]
+  },
+  'munich': {
+    city: "Munich", country: "Germany",
+    months: [
+      { month: "Jan", temp: 0, rain: 46, rainyDays: 7, wind: 11 },
+      { month: "Feb", temp: 1, rain: 45, rainyDays: 7, wind: 11 },
+      { month: "Mar", temp: 5, rain: 57, rainyDays: 10, wind: 11 },
+      { month: "Apr", temp: 9, rain: 63, rainyDays: 10, wind: 11 },
+      { month: "May", temp: 14, rain: 93, rainyDays: 14, wind: 11 },
+      { month: "Jun", temp: 17, rain: 118, rainyDays: 14, wind: 11 },
+      { month: "Jul", temp: 19, rain: 110, rainyDays: 14, wind: 11 },
+      { month: "Aug", temp: 19, rain: 103, rainyDays: 14, wind: 11 },
+      { month: "Sep", temp: 14, rain: 70, rainyDays: 10, wind: 11 },
+      { month: "Oct", temp: 10, rain: 57, rainyDays: 10, wind: 11 },
+      { month: "Nov", temp: 4, rain: 60, rainyDays: 10, wind: 11 },
+      { month: "Dec", temp: 1, rain: 55, rainyDays: 10, wind: 11 }
+    ]
+  },
+  'berlin': {
+    city: "Berlin", country: "Germany",
+    months: [
+      { month: "Jan", temp: 1, rain: 43, rainyDays: 7, wind: 12 },
+      { month: "Feb", temp: 1, rain: 33, rainyDays: 7, wind: 12 },
+      { month: "Mar", temp: 5, rain: 40, rainyDays: 7, wind: 12 },
+      { month: "Apr", temp: 9, rain: 37, rainyDays: 7, wind: 12 },
+      { month: "May", temp: 15, rain: 54, rainyDays: 10, wind: 12 },
+      { month: "Jun", temp: 18, rain: 69, rainyDays: 10, wind: 12 },
+      { month: "Jul", temp: 20, rain: 56, rainyDays: 10, wind: 12 },
+      { month: "Aug", temp: 20, rain: 58, rainyDays: 10, wind: 12 },
+      { month: "Sep", temp: 15, rain: 45, rainyDays: 7, wind: 12 },
+      { month: "Oct", temp: 10, rain: 36, rainyDays: 7, wind: 12 },
+      { month: "Nov", temp: 5, rain: 44, rainyDays: 7, wind: 12 },
+      { month: "Dec", temp: 2, rain: 46, rainyDays: 7, wind: 12 }
+    ]
+  },
+  'villeurbanne': {
+    city: "Villeurbanne", country: "France",
+    months: [
+      { month: "Jan", temp: 3, rain: 47, rainyDays: 7, wind: 11 },
+      { month: "Feb", temp: 5, rain: 40, rainyDays: 7, wind: 11 },
+      { month: "Mar", temp: 9, rain: 44, rainyDays: 7, wind: 11 },
+      { month: "Apr", temp: 12, rain: 69, rainyDays: 10, wind: 11 },
+      { month: "May", temp: 17, rain: 78, rainyDays: 10, wind: 11 },
+      { month: "Jun", temp: 21, rain: 63, rainyDays: 10, wind: 11 },
+      { month: "Jul", temp: 23, rain: 51, rainyDays: 10, wind: 11 },
+      { month: "Aug", temp: 23, rain: 55, rainyDays: 10, wind: 11 },
+      { month: "Sep", temp: 18, rain: 72, rainyDays: 10, wind: 11 },
+      { month: "Oct", temp: 13, rain: 81, rainyDays: 14, wind: 11 },
+      { month: "Nov", temp: 7, rain: 72, rainyDays: 10, wind: 11 },
+      { month: "Dec", temp: 4, rain: 48, rainyDays: 7, wind: 11 }
+    ]
+  },
+  'limoges': {
+    city: "Limoges", country: "France",
+    months: [
+      { month: "Jan", temp: 5, rain: 70, rainyDays: 10, wind: 11 },
+      { month: "Feb", temp: 6, rain: 56, rainyDays: 10, wind: 11 },
+      { month: "Mar", temp: 9, rain: 55, rainyDays: 10, wind: 11 },
+      { month: "Apr", temp: 11, rain: 72, rainyDays: 10, wind: 11 },
+      { month: "May", temp: 15, rain: 76, rainyDays: 10, wind: 11 },
+      { month: "Jun", temp: 19, rain: 60, rainyDays: 10, wind: 11 },
+      { month: "Jul", temp: 21, rain: 45, rainyDays: 7, wind: 11 },
+      { month: "Aug", temp: 20, rain: 52, rainyDays: 10, wind: 11 },
+      { month: "Sep", temp: 17, rain: 55, rainyDays: 10, wind: 11 },
+      { month: "Oct", temp: 13, rain: 73, rainyDays: 10, wind: 11 },
+      { month: "Nov", temp: 8, rain: 75, rainyDays: 10, wind: 11 },
+      { month: "Dec", temp: 5, rain: 78, rainyDays: 10, wind: 11 }
+    ]
+  },
+  'bologna': {
+    city: "Bologna", country: "Italy",
+    months: [
+      { month: "Jan", temp: 3, rain: 44, rainyDays: 7, wind: 11 },
+      { month: "Feb", temp: 5, rain: 44, rainyDays: 7, wind: 11 },
+      { month: "Mar", temp: 10, rain: 55, rainyDays: 10, wind: 11 },
+      { month: "Apr", temp: 14, rain: 73, rainyDays: 10, wind: 11 },
+      { month: "May", temp: 18, rain: 62, rainyDays: 10, wind: 11 },
+      { month: "Jun", temp: 23, rain: 50, rainyDays: 7, wind: 11 },
+      { month: "Jul", temp: 26, rain: 33, rainyDays: 7, wind: 11 },
+      { month: "Aug", temp: 25, rain: 50, rainyDays: 7, wind: 11 },
+      { month: "Sep", temp: 20, rain: 68, rainyDays: 10, wind: 11 },
+      { month: "Oct", temp: 15, rain: 78, rainyDays: 10, wind: 11 },
+      { month: "Nov", temp: 9, rain: 73, rainyDays: 10, wind: 11 },
+      { month: "Dec", temp: 4, rain: 54, rainyDays: 10, wind: 11 }
+    ]
+  },
+  'milan': {
+    city: "Milan", country: "Italy",
+    months: [
+      { month: "Jan", temp: 3, rain: 64, rainyDays: 10, wind: 10 },
+      { month: "Feb", temp: 5, rain: 63, rainyDays: 10, wind: 10 },
+      { month: "Mar", temp: 10, rain: 82, rainyDays: 14, wind: 10 },
+      { month: "Apr", temp: 14, rain: 82, rainyDays: 14, wind: 10 },
+      { month: "May", temp: 18, rain: 96, rainyDays: 14, wind: 10 },
+      { month: "Jun", temp: 22, rain: 65, rainyDays: 10, wind: 10 },
+      { month: "Jul", temp: 25, rain: 68, rainyDays: 10, wind: 10 },
+      { month: "Aug", temp: 24, rain: 93, rainyDays: 14, wind: 10 },
+      { month: "Sep", temp: 20, rain: 69, rainyDays: 10, wind: 10 },
+      { month: "Oct", temp: 14, rain: 104, rainyDays: 14, wind: 10 },
+      { month: "Nov", temp: 8, rain: 100, rainyDays: 14, wind: 10 },
+      { month: "Dec", temp: 4, rain: 61, rainyDays: 10, wind: 10 }
+    ]
+  },
+  'ljubljana': {
+    city: "Ljubljana", country: "Slovenia",
+    months: [
+      { month: "Jan", temp: 1, rain: 60, rainyDays: 10, wind: 10 },
+      { month: "Feb", temp: 4, rain: 55, rainyDays: 10, wind: 10 },
+      { month: "Mar", temp: 8, rain: 67, rainyDays: 10, wind: 10 },
+      { month: "Apr", temp: 12, rain: 83, rainyDays: 14, wind: 10 },
+      { month: "May", temp: 17, rain: 89, rainyDays: 14, wind: 10 },
+      { month: "Jun", temp: 20, rain: 116, rainyDays: 14, wind: 10 },
+      { month: "Jul", temp: 22, rain: 87, rainyDays: 14, wind: 10 },
+      { month: "Aug", temp: 22, rain: 105, rainyDays: 14, wind: 10 },
+      { month: "Sep", temp: 17, rain: 115, rainyDays: 14, wind: 10 },
+      { month: "Oct", temp: 12, rain: 114, rainyDays: 14, wind: 10 },
+      { month: "Nov", temp: 6, rain: 103, rainyDays: 14, wind: 10 },
+      { month: "Dec", temp: 2, rain: 81, rainyDays: 14, wind: 10 }
+    ]
+  },
+  'split': {
+    city: "Split", country: "Croatia",
+    months: [
+      { month: "Jan", temp: 8, rain: 73, rainyDays: 10, wind: 14 },
+      { month: "Feb", temp: 9, rain: 60, rainyDays: 10, wind: 14 },
+      { month: "Mar", temp: 12, rain: 59, rainyDays: 10, wind: 14 },
+      { month: "Apr", temp: 15, rain: 52, rainyDays: 10, wind: 14 },
+      { month: "May", temp: 19, rain: 45, rainyDays: 7, wind: 14 },
+      { month: "Jun", temp: 23, rain: 32, rainyDays: 7, wind: 14 },
+      { month: "Jul", temp: 26, rain: 18, rainyDays: 5, wind: 14 },
+      { month: "Aug", temp: 26, rain: 31, rainyDays: 7, wind: 14 },
+      { month: "Sep", temp: 22, rain: 60, rainyDays: 10, wind: 14 },
+      { month: "Oct", temp: 18, rain: 79, rainyDays: 10, wind: 14 },
+      { month: "Nov", temp: 13, rain: 99, rainyDays: 14, wind: 14 },
+      { month: "Dec", temp: 9, rain: 89, rainyDays: 14, wind: 14 }
+    ]
+  },
+  'badalona': {
+    city: "Badalona", country: "Spain",
+    months: [
+      { month: "Jan", temp: 10, rain: 41, rainyDays: 7, wind: 13 },
+      { month: "Feb", temp: 11, rain: 29, rainyDays: 5, wind: 13 },
+      { month: "Mar", temp: 13, rain: 32, rainyDays: 7, wind: 13 },
+      { month: "Apr", temp: 15, rain: 47, rainyDays: 7, wind: 13 },
+      { month: "May", temp: 18, rain: 54, rainyDays: 10, wind: 13 },
+      { month: "Jun", temp: 22, rain: 33, rainyDays: 7, wind: 13 },
+      { month: "Jul", temp: 25, rain: 19, rainyDays: 5, wind: 13 },
+      { month: "Aug", temp: 25, rain: 51, rainyDays: 10, wind: 13 },
+      { month: "Sep", temp: 22, rain: 87, rainyDays: 14, wind: 13 },
+      { month: "Oct", temp: 18, rain: 97, rainyDays: 14, wind: 13 },
+      { month: "Nov", temp: 13, rain: 52, rainyDays: 10, wind: 13 },
+      { month: "Dec", temp: 10, rain: 45, rainyDays: 7, wind: 13 }
+    ]
+  },
+  'valencia': {
+    city: "Valencia", country: "Spain",
+    months: [
+      { month: "Jan", temp: 11, rain: 34, rainyDays: 7, wind: 13 },
+      { month: "Feb", temp: 12, rain: 26, rainyDays: 5, wind: 13 },
+      { month: "Mar", temp: 14, rain: 27, rainyDays: 5, wind: 13 },
+      { month: "Apr", temp: 16, rain: 38, rainyDays: 7, wind: 13 },
+      { month: "May", temp: 19, rain: 33, rainyDays: 7, wind: 13 },
+      { month: "Jun", temp: 23, rain: 14, rainyDays: 5, wind: 13 },
+      { month: "Jul", temp: 26, rain: 6, rainyDays: 5, wind: 13 },
+      { month: "Aug", temp: 26, rain: 19, rainyDays: 5, wind: 13 },
+      { month: "Sep", temp: 23, rain: 51, rainyDays: 10, wind: 13 },
+      { month: "Oct", temp: 19, rain: 68, rainyDays: 10, wind: 13 },
+      { month: "Nov", temp: 14, rain: 47, rainyDays: 7, wind: 13 },
+      { month: "Dec", temp: 11, rain: 48, rainyDays: 7, wind: 13 }
+    ]
+  },
+  'vilnius': {
+    city: "Vilnius", country: "Lithuania",
+    months: [
+      { month: "Jan", temp: -4, rain: 35, rainyDays: 7, wind: 12 },
+      { month: "Feb", temp: -3, rain: 27, rainyDays: 5, wind: 12 },
+      { month: "Mar", temp: 2, rain: 32, rainyDays: 7, wind: 12 },
+      { month: "Apr", temp: 8, rain: 39, rainyDays: 7, wind: 12 },
+      { month: "May", temp: 13, rain: 53, rainyDays: 10, wind: 12 },
+      { month: "Jun", temp: 16, rain: 69, rainyDays: 10, wind: 12 },
+      { month: "Jul", temp: 18, rain: 77, rainyDays: 10, wind: 12 },
+      { month: "Aug", temp: 18, rain: 69, rainyDays: 10, wind: 12 },
+      { month: "Sep", temp: 13, rain: 56, rainyDays: 10, wind: 12 },
+      { month: "Oct", temp: 7, rain: 41, rainyDays: 7, wind: 12 },
+      { month: "Nov", temp: 2, rain: 41, rainyDays: 7, wind: 12 },
+      { month: "Dec", temp: -2, rain: 39, rainyDays: 7, wind: 12 }
+    ]
+  },
+  'riga': {
+    city: "Riga", country: "Latvia",
+    months: [
+      { month: "Jan", temp: -3, rain: 34, rainyDays: 7, wind: 14 },
+      { month: "Feb", temp: -3, rain: 24, rainyDays: 5, wind: 14 },
+      { month: "Mar", temp: 1, rain: 28, rainyDays: 5, wind: 14 },
+      { month: "Apr", temp: 7, rain: 35, rainyDays: 7, wind: 14 },
+      { month: "May", temp: 12, rain: 44, rainyDays: 7, wind: 14 },
+      { month: "Jun", temp: 16, rain: 57, rainyDays: 10, wind: 14 },
+      { month: "Jul", temp: 18, rain: 71, rainyDays: 10, wind: 14 },
+      { month: "Aug", temp: 17, rain: 73, rainyDays: 10, wind: 14 },
+      { month: "Sep", temp: 13, rain: 60, rainyDays: 10, wind: 14 },
+      { month: "Oct", temp: 8, rain: 52, rainyDays: 10, wind: 14 },
+      { month: "Nov", temp: 3, rain: 50, rainyDays: 7, wind: 14 },
+      { month: "Dec", temp: -1, rain: 42, rainyDays: 7, wind: 14 }
+    ]
+  },
+  'moscow': {
+    city: "Moscow", country: "Russia",
+    months: [
+      { month: "Jan", temp: -6, rain: 42, rainyDays: 7, wind: 11 },
+      { month: "Feb", temp: -6, rain: 36, rainyDays: 7, wind: 11 },
+      { month: "Mar", temp: 0, rain: 34, rainyDays: 7, wind: 11 },
+      { month: "Apr", temp: 7, rain: 37, rainyDays: 7, wind: 11 },
+      { month: "May", temp: 14, rain: 52, rainyDays: 10, wind: 11 },
+      { month: "Jun", temp: 17, rain: 66, rainyDays: 10, wind: 11 },
+      { month: "Jul", temp: 19, rain: 82, rainyDays: 14, wind: 11 },
+      { month: "Aug", temp: 18, rain: 77, rainyDays: 10, wind: 11 },
+      { month: "Sep", temp: 12, rain: 58, rainyDays: 10, wind: 11 },
+      { month: "Oct", temp: 6, rain: 51, rainyDays: 10, wind: 11 },
+      { month: "Nov", temp: 0, rain: 47, rainyDays: 7, wind: 11 },
+      { month: "Dec", temp: -4, rain: 46, rainyDays: 7, wind: 11 }
+    ]
+  },
+  'malaga': {
+    city: "Malaga", country: "Spain",
+    months: [
+      { month: "Jan", temp: 12, rain: 55, rainyDays: 10, wind: 14 },
+      { month: "Feb", temp: 13, rain: 55, rainyDays: 10, wind: 14 },
+      { month: "Mar", temp: 15, rain: 46, rainyDays: 7, wind: 14 },
+      { month: "Apr", temp: 17, rain: 41, rainyDays: 7, wind: 14 },
+      { month: "May", temp: 20, rain: 20, rainyDays: 5, wind: 14 },
+      { month: "Jun", temp: 24, rain: 5, rainyDays: 5, wind: 14 },
+      { month: "Jul", temp: 27, rain: 1, rainyDays: 5, wind: 14 },
+      { month: "Aug", temp: 27, rain: 5, rainyDays: 5, wind: 14 },
+      { month: "Sep", temp: 24, rain: 16, rainyDays: 5, wind: 14 },
+      { month: "Oct", temp: 20, rain: 56, rainyDays: 10, wind: 14 },
+      { month: "Nov", temp: 16, rain: 66, rainyDays: 10, wind: 14 },
+      { month: "Dec", temp: 13, rain: 71, rainyDays: 10, wind: 14 }
+    ]
+  },
+  'tel-aviv': {
+    city: "Tel Aviv", country: "Israel",
+    months: [
+      { month: "Jan", temp: 14, rain: 125, rainyDays: 14, wind: 15 },
+      { month: "Feb", temp: 15, rain: 86, rainyDays: 14, wind: 15 },
+      { month: "Mar", temp: 17, rain: 53, rainyDays: 10, wind: 15 },
+      { month: "Apr", temp: 19, rain: 14, rainyDays: 5, wind: 15 },
+      { month: "May", temp: 22, rain: 3, rainyDays: 5, wind: 15 },
+      { month: "Jun", temp: 25, rain: 0, rainyDays: 5, wind: 15 },
+      { month: "Jul", temp: 27, rain: 0, rainyDays: 5, wind: 15 },
+      { month: "Aug", temp: 28, rain: 0, rainyDays: 5, wind: 15 },
+      { month: "Sep", temp: 27, rain: 1, rainyDays: 5, wind: 15 },
+      { month: "Oct", temp: 24, rain: 20, rainyDays: 5, wind: 15 },
+      { month: "Nov", temp: 19, rain: 60, rainyDays: 10, wind: 15 },
+      { month: "Dec", temp: 15, rain: 110, rainyDays: 14, wind: 15 }
+    ]
+  }
 };
