@@ -1481,23 +1481,22 @@ function togglePartnerRequest(id) {
 }
 
 /* ===== News Feed ===== */
-if (typeof NEWS_ITEMS === 'undefined') {
-  var NEWS_ITEMS = [
-    { date: "2026-04-15", text: "European sports academies see record enrollment for 2026 season", academy: null },
-    { date: "2026-04-10", text: "New training methodologies adopted across European academies", academy: null },
-    { date: "2026-04-05", text: "Summer camp registrations now open at top academies", academy: null }
-  ];
-}
+const DEFAULT_NEWS_ITEMS = [
+  { date: "2026-04-15", text: "European sports academies see record enrollment for 2026 season", academy: null },
+  { date: "2026-04-10", text: "New training methodologies adopted across European academies", academy: null },
+  { date: "2026-04-05", text: "Summer camp registrations now open at top academies", academy: null }
+];
 
 function renderNews() {
-  if (typeof NEWS_ITEMS === 'undefined' || !NEWS_ITEMS.length) {
+  const newsItems = typeof NEWS_ITEMS !== 'undefined' ? NEWS_ITEMS : DEFAULT_NEWS_ITEMS;
+  if (!newsItems || !newsItems.length) {
     const ticker = document.getElementById('newsTicker');
     if (ticker) ticker.style.display = 'none';
     return;
   }
   const scroll = document.getElementById('newsScroll');
   if (!scroll) return;
-  scroll.innerHTML = NEWS_ITEMS.map(n => {
+  scroll.innerHTML = newsItems.map(n => {
     const link = n.academy ? ` <a href="#academy=${n.academy}" onclick="scrollToAcademy('${n.academy}')">[View]</a>` : '';
     return `<span class="news-item"><strong>${n.date}:</strong> ${escapeHTML(n.text)}${link}</span>`;
   }).join('<span class="news-sep">•</span>');
