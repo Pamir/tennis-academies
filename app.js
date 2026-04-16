@@ -819,6 +819,26 @@ function toggleDetails(btn) {
   const details = btn.nextElementSibling;
   const isOpen = details.classList.toggle('open');
   btn.classList.toggle('open', isOpen);
+
+  // Store recently viewed academy
+  if (isOpen) {
+    try {
+      const card = btn.closest('.academy-card');
+      if (card) {
+        const nameEl = card.querySelector('.card-title span');
+        const academyName = nameEl ? nameEl.textContent.replace(/[★☆]\s*$/, '').trim() : '';
+        if (academyName) {
+          const sport = getSportType();
+          const items = JSON.parse(localStorage.getItem('recently-viewed') || '[]');
+          // Remove duplicate
+          const filtered = items.filter(function(x) { return x.name !== academyName || x.sport !== sport; });
+          filtered.unshift({ name: academyName, sport: sport, timestamp: Date.now() });
+          // Keep max 20
+          localStorage.setItem('recently-viewed', JSON.stringify(filtered.slice(0, 20)));
+        }
+      }
+    } catch (e) { /* ignore */ }
+  }
 }
 
 /* ===== Utility ===== */
