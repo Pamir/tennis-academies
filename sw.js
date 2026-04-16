@@ -1,10 +1,22 @@
-const CACHE_NAME = 'sports-academies-v17';
+const CACHE_NAME = 'sports-academies-v18';
 const URLS_TO_CACHE = [
   './',
   './index.html',
   './style.css',
   './app.js',
   './i18n.js',
+  './tennis.html',
+  './data.js',
+  './golf.html',
+  './golf-data.js',
+  './football.html',
+  './football-data.js',
+  './basketball.html',
+  './basketball-data.js',
+  './swimming.html',
+  './swimming-data.js',
+  './volleyball.html',
+  './volleyball-data.js',
   'https://unpkg.com/leaflet@1.9.4/dist/leaflet.css',
   'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js'
 ];

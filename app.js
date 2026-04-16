@@ -50,6 +50,22 @@ const SPORT_CONFIG = {
     coachFilterLabel: '🏀 Pro Experience',
     surfaceLabel: 'Court Types',
     storagePrefix: 'basketball',
+  },
+  swimming: {
+    icon: '🏊',
+    name: 'Swimming',
+    coachLabel: 'Olympic Coaches',
+    coachFilterLabel: '🏊 Olympic Coach',
+    surfaceLabel: 'Pool Types',
+    storagePrefix: 'swimming',
+  },
+  volleyball: {
+    icon: '🏐',
+    name: 'Volleyball',
+    coachLabel: 'National Team Coaches',
+    coachFilterLabel: '🏐 National Team Coach',
+    surfaceLabel: 'Court Types',
+    storagePrefix: 'volleyball',
   }
 };
 
@@ -57,14 +73,18 @@ const SPORT_PAGES = {
   tennis: 'tennis.html',
   golf: 'golf.html',
   football: 'football.html',
-  basketball: 'basketball.html'
+  basketball: 'basketball.html',
+  swimming: 'swimming.html',
+  volleyball: 'volleyball.html'
 };
 
 const SPORT_DATA_FILES = {
   tennis: './data.js',
   golf: './golf-data.js',
   football: './football-data.js',
-  basketball: './basketball-data.js'
+  basketball: './basketball-data.js',
+  swimming: './swimming-data.js',
+  volleyball: './volleyball-data.js'
 };
 
 let _crossSportCache = null;
