@@ -199,16 +199,19 @@ function animateStats() {
   });
 
   const statsBar = document.getElementById('statsBar');
-  if (!statsBar) return;
+  if (!statsBar) return runCountAnimation();
+
+  if (!('IntersectionObserver' in window)) return runCountAnimation();
+
+  const rect = statsBar.getBoundingClientRect();
+  if (rect.top < window.innerHeight && rect.bottom > 0) return runCountAnimation();
 
   const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        runCountAnimation();
-        observer.disconnect();
-      }
-    });
-  }, { threshold: 0.3 });
+    if (entries.some(e => e.isIntersecting)) {
+      runCountAnimation();
+      observer.disconnect();
+    }
+  }, { threshold: 0 });
   observer.observe(statsBar);
 }
 
@@ -236,8 +239,11 @@ function runCountAnimation() {
 /* ===== Populate Country Dropdown ===== */
 function populateCountryDropdown() {
   const sel = document.getElementById('filterCountry');
-  if (typeof COUNTRIES === 'undefined') { var COUNTRIES = [...new Set(ACADEMIES.map(a => a.country))]; }
-  COUNTRIES.sort().forEach(c => {
+  if (!sel) return;
+  const countries = typeof COUNTRIES !== 'undefined'
+    ? [...COUNTRIES]
+    : [...new Set(ACADEMIES.map(a => a.country))];
+  countries.sort().forEach(c => {
     const flag = ACADEMIES.find(a => a.country === c)?.countryFlag || '';
     const opt = document.createElement('option');
     opt.value = c;
