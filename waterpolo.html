@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>European Water Polo Academies — Aquatic Training Programs</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#1a472a">
+  <meta property="og:title" content="European Water Polo Academies — Aquatic Training Programs">
+  <meta property="og:description" content="Discover top water polo academies across Europe with international coaches, training programs, pricing and facility details.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://pamir.github.io/tennis-academies/waterpolo.html">
+  <meta property="og:image" content="https://picsum.photos/seed/sports-academies/1200/630">
+  <meta name="twitter:card" content="summary_large_image">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "European Water Polo Academies",
+    "url": "https://pamir.github.io/tennis-academies/waterpolo.html",
+    "description": "Discover top water polo academies across Europe with international coaches, training programs, pricing and facility details.",
+    "about": {
+      "@type": "SportsOrganization",
+      "sport": "Water Polo"
+    }
+  }
+  </script>
+  <meta name="apple-mobile-web-app-capable"content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Water Polo Academies">
+  <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤽</text></svg>">
+</head>
+<body>
+  <a class="skip-link" href="#mainContent">Skip to main content</a>
+
+  <!-- Header -->
+  <header class="site-header" role="banner">
+    <a href="index.html" class="back-link">← All Sports</a>
+    <h1>🤽 European Water Polo Academies</h1>
+    <p class="subtitle">Find the perfect water polo academy across Europe</p>
+    <select class="lang-select" id="langSelect" aria-label="Select language">
+      <option value="en">🇬🇧 EN</option>
+      <option value="tr">🇹🇷 TR</option>
+      <option value="de">🇩🇪 DE</option>
+      <option value="sr">🇷🇸 SR</option>
+    </select>
+    <button class="btn-darkmode" id="btnDarkMode" title="Toggle dark mode" aria-label="Toggle dark mode">🌙</button>
+    <button class="btn-wizard" id="btnWizard" aria-label="Help me choose an academy">🧙 Help Me Choose</button>
+  </header>
+
+  <!-- Stats Dashboard -->
+  <div class="stats-bar" id="statsBar">
+    <div class="stat-item">
+      <span class="stat-number" data-stat="countries">0</span>
+      <span class="stat-label">Countries</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-number" data-stat="academies">0</span>
+      <span class="stat-label">Academies</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-number" data-stat="atpWta">0</span>
+      <span class="stat-label">Certified Coaches</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-number" data-stat="boarding">0</span>
+      <span class="stat-label">Boarding Options</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-number" data-stat="beach">0</span>
+      <span class="stat-label">Near Beach</span>
+    </div>
+  </div>
+
+  <!-- News Ticker -->
+  <div class="news-ticker" id="newsTicker">
+    <span class="news-label">📰 Latest:</span>
+    <div class="news-scroll" id="newsScroll"></div>
+  </div>
+
+  <!-- Filter Bar -->
+  <div class="filter-bar" role="navigation" aria-label="Filter and search academies">
+    <div class="filter-bar-inner">
+      <button class="filter-toggle-mobile" id="filterToggle" aria-label="Toggle filters">☰ Filters &amp; Search</button>
+      <div class="filter-rows-wrap" id="filterRows">
+
+        <!-- Row 1: Dropdowns + Search -->
+        <div class="filter-row">
+          <div class="filter-group">
+            <label for="filterCountry">Country</label>
+            <select id="filterCountry"><option value="">All Countries</option></select>
+          </div>
+          <div class="filter-group">
+            <label for="filterLevel">Level</label>
+            <select id="filterLevel">
+              <option value="">All Levels</option>
+              <option value="Elite">Elite</option>
+              <option value="Pro">Pro</option>
+              <option value="All levels">All levels</option>
+              <option value="Junior">Junior / Dev</option>
+              <option value="Recreational">Recreational</option>
+            </select>
+          </div>
+          <div class="filter-group">
+            <label for="filterSurface">Surface</label>
+            <select id="filterSurface">
+              <option value="">All Surfaces</option>
+            </select>
+          </div>
+          <div class="filter-group">
+            <label for="filterSort">Sort</label>
+            <select id="filterSort">
+              <option value="name">Name</option>
+              <option value="country">Country</option>
+              <option value="ranking">Best Coach Ranking</option>
+              <option value="price">Price (low→high)</option>
+              <option value="rating">Your Rating</option>
+              <option value="distance">Distance (nearest)</option>
+            </select>
+          </div>
+          <div class="filter-group">
+            <label for="filterCurrency">Currency</label>
+            <select id="filterCurrency">
+              <option value="EUR">€ EUR</option>
+              <option value="USD">$ USD</option>
+              <option value="GBP">£ GBP</option>
+              <option value="TRY">₺ TRY</option>
+              <option value="RSD">RSD</option>
+              <option value="CZK">CZK</option>
+              <option value="PLN">PLN</option>
+              <option value="RON">RON</option>
+              <option value="HUF">HUF</option>
+            </select>
+          </div>
+          <div class="filter-group" role="search">
+            <label for="filterSearch">🔍</label>
+            <input type="text" id="filterSearch" placeholder="Search academies…" aria-label="Search academies">
+          </div>
+        </div>
+
+        <!-- Row 2: Toggles -->
+        <div class="filter-row">
+          <div class="view-toggle">
+            <button class="toggle-btn active" id="btnListView" data-view="list" aria-label="List view">📋 List</button>
+            <button class="toggle-btn" id="btnMapView" data-view="map" aria-label="Map view">🗺️ Map</button>
+          </div>
+          <button class="toggle-btn" id="toggleFavorites" aria-label="Show my shortlist">❤️ My Shortlist</button>
+          <button class="toggle-btn" id="togglePrice" data-filter="price" aria-label="Filter has pricing">💰 Has Pricing</button>
+          <button class="toggle-btn" id="toggleIndividual" data-filter="individual" aria-label="Filter individual lessons">✅ Individual Lessons</button>
+          <button class="toggle-btn" id="toggleBoarding" data-filter="boarding" aria-label="Filter boarding">🏠 Boarding</button>
+          <button class="toggle-btn" id="toggleBeach" data-filter="beach" aria-label="Filter near beach">🏖️ Near Beach</button>
+          <button class="toggle-btn" id="toggleATP" data-filter="atp" aria-label="Filter ATP WTA coaches">🎾 Coach Played ATP/WTA</button>
+          <button class="toggle-btn" id="toggleTop10" data-filter="top10" aria-label="Filter top 10 connection">🏆 Top-10 Connection</button>
+          <button class="toggle-btn" id="toggleNearMe" data-filter="nearMe" aria-label="Sort by distance from me">📍 Near Me</button>
+          <button class="toggle-btn" id="toggleAvailable" aria-label="Show available only"> Available Only</button>
+          <button class="toggle-btn" id="toggleJunior" data-filter="juniorFriendly" aria-label="Filter junior friendly">👨‍👩‍👧 Junior Friendly</button>
+          <button class="btn-reset" id="btnReset" aria-label="Reset all filters">✕ Reset Filters</button>
+          <button class="btn-print" id="btnPrint" title="Print shortlist" aria-label="Print shortlist">🖨️ Print</button>
+          <button class="btn-export" id="btnExport" title="Export data" aria-label="Export data as CSV">📥 Export</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Results Count -->
+  <div class="results-bar" id="resultsBar" aria-live="polite">Showing 0 of 0 academies</div>
+
+  <!-- Card Grid -->
+  <main id="mainContent" role="main">
+    <div class="card-grid" id="cardGrid" role="list" aria-label="Water Polo academies"></div>
+  </main>
+
+  <!-- Map View -->
+  <div class="map-container" id="mapContainer" style="display:none;">
+    <div id="leafletMap" style="width:100%;height:100%;"></div>
+  </div>
+
+  <!-- Compare Floating Button -->
+  <button class="compare-fab" id="compareFab" style="display:none;">Compare (<span id="compareCount">0</span>)</button>
+
+  <!-- Compare Modal -->
+  <div class="modal-overlay" id="compareModal" style="display:none;">
+    <div class="modal-content modal-compare">
+      <div class="modal-header">
+        <h2>Compare Academies</h2>
+        <button class="btn-share" id="btnShareCompare" onclick="shareComparison()" title="Share Comparison">📤</button>
+        <button class="modal-close" id="compareClose">&times;</button>
+      </div>
+      <div class="compare-table-wrap" id="compareTableWrap"></div>
+    </div>
+  </div>
+
+  <!-- Wizard Modal -->
+  <div class="modal-overlay" id="wizardModal" style="display:none;">
+    <div class="modal-content modal-wizard">
+      <button class="modal-close" id="wizardClose">&times;</button>
+      <div class="wizard-container" id="wizardContainer"></div>
+    </div>
+  </div>
+
+  <!-- Inquiry Modal -->
+  <div class="modal-overlay" id="inquiryModal" style="display:none;">
+    <div class="modal-content modal-inquiry">
+      <div class="modal-header">
+        <h2>📩 Send Inquiry</h2>
+        <button class="modal-close" id="inquiryClose">&times;</button>
+      </div>
+      <form id="inquiryForm" class="inquiry-form">
+        <input type="hidden" id="inquiryAcademyId">
+        <div class="form-group"><label>Your Name</label><input type="text" id="inquiryName" required></div>
+        <div class="form-group"><label>Your Email</label><input type="email" id="inquiryEmail" required></div>
+        <div class="form-group"><label>Level</label><select id="inquiryLevel"><option>Beginner</option><option>Intermediate</option><option>Advanced</option><option>Professional</option></select></div>
+        <div class="form-group"><label>Duration</label><select id="inquiryDuration"><option>1 week</option><option>2 weeks</option><option>1 month</option><option>3 months</option><option>6 months</option><option>1 year</option></select></div>
+        <div class="form-group"><label>Message</label><textarea id="inquiryMessage" rows="4" placeholder="Tell us about your goals..."></textarea></div>
+        <button type="submit" class="wizard-btn wizard-btn-primary">Send via Email</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Quote Request Modal -->
+  <div class="modal-overlay" id="quoteModal" style="display:none;">
+    <div class="modal-content quote-modal">
+      <div class="modal-header">
+        <h2>📋 Request Quote</h2>
+        <button class="modal-close" id="quoteClose">&times;</button>
+      </div>
+      <form id="quoteForm" class="quote-form" novalidate>
+        <input type="hidden" id="quoteAcademyId">
+        <div class="quote-section"><h3>🏅 Athlete Details</h3></div>
+        <div class="quote-grid">
+          <div class="form-group"><label for="quoteName">Name <span class="required">*</span></label><input type="text" id="quoteName" class="quote-input" required></div>
+          <div class="form-group"><label for="quoteAge">Age <span class="required">*</span></label><input type="number" id="quoteAge" class="quote-input" min="4" max="99" required></div>
+          <div class="form-group"><label for="quoteLevel">Current Level</label><select id="quoteLevel" class="quote-select"><option value="Beginner">Beginner</option><option value="Intermediate">Intermediate</option><option value="Advanced">Advanced</option><option value="Professional">Professional</option></select></div>
+          <div class="form-group full-width"><label for="quoteGoals">Sport Goals</label><textarea id="quoteGoals" class="quote-textarea" rows="2" placeholder="e.g., Improve backhand, prepare for tournament"></textarea></div>
+        </div>
+        <div class="quote-section"><h3>📅 Trip Details</h3></div>
+        <div class="quote-grid">
+          <div class="form-group"><label for="quoteStartDate">Preferred Start Date</label><input type="date" id="quoteStartDate" class="quote-input"></div>
+          <div class="form-group"><label for="quoteDuration">Duration</label><select id="quoteDuration" class="quote-select"><option value="1">1 week</option><option value="2">2 weeks</option><option value="3">3 weeks</option><option value="4" selected>4 weeks</option><option value="5">5 weeks</option><option value="6">6 weeks</option><option value="7">7 weeks</option><option value="8">8 weeks</option><option value="9">9 weeks</option><option value="10">10 weeks</option><option value="11">11 weeks</option><option value="12">12 weeks</option></select></div>
+          <div class="form-group"><label class="quote-checkbox-label"><input type="checkbox" id="quoteFlexDates"> Flexible dates?</label></div>
+        </div>
+        <div class="quote-section"><h3>🏠 Group &amp; Accommodation</h3></div>
+        <div class="quote-grid">
+          <div class="form-group"><label for="quoteTrainees">Number of Trainees</label><select id="quoteTrainees" class="quote-select"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option></select></div>
+          <div class="form-group"><label for="quoteTravelers">Total Travelers</label><select id="quoteTravelers" class="quote-select"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option></select></div>
+          <div class="form-group"><label for="quoteAccom">Accommodation Preference</label><select id="quoteAccom" class="quote-select"><option value="Private Room">Private Room</option><option value="Shared Room">Shared Room</option><option value="Apartment">Apartment</option><option value="Host Family">Host Family</option><option value="No accommodation needed">No accommodation needed</option></select></div>
+        </div>
+        <div class="quote-section"><h3>💰 Budget &amp; Preferences</h3></div>
+        <div class="quote-grid">
+          <div class="form-group"><label for="quoteBudget">Budget Range</label><select id="quoteBudget" class="quote-select"><option value="< €1000">&lt; €1000</option><option value="€1000-2000">€1000–2000</option><option value="€2000-3000">€2000–3000</option><option value="€3000-5000">€3000–5000</option><option value="€5000+">€5000+</option><option value="Flexible" selected>Flexible</option></select></div>
+          <div class="form-group"><label class="quote-checkbox-label"><input type="checkbox" id="quoteMeals"> Meals needed?</label></div>
+          <div class="form-group"><label class="quote-checkbox-label"><input type="checkbox" id="quoteTransfer"> Airport transfer needed?</label></div>
+          <div class="form-group"><label for="quoteLang">Language Preference</label><input type="text" id="quoteLang" class="quote-input" placeholder="e.g., English, Spanish"></div>
+        </div>
+        <div class="quote-section"><h3>📧 Contact</h3></div>
+        <div class="quote-grid">
+          <div class="form-group"><label for="quoteEmail">Email <span class="required">*</span></label><input type="email" id="quoteEmail" class="quote-input" required></div>
+          <div class="form-group"><label for="quotePhone">Phone / WhatsApp</label><input type="tel" id="quotePhone" class="quote-input" placeholder="+1 555 123 4567"></div>
+          <div class="form-group"><label for="quoteContactMethod">Preferred Contact Method</label><select id="quoteContactMethod" class="quote-select"><option value="Email">Email</option><option value="WhatsApp">WhatsApp</option><option value="Phone Call">Phone Call</option></select></div>
+          <div class="form-group full-width"><label for="quoteNotes">Additional Notes</label><textarea id="quoteNotes" class="quote-textarea" rows="3" placeholder="Any other requirements or questions..."></textarea></div>
+        </div>
+        <div class="quote-actions">
+          <button type="submit" class="btn-quote">📧 Send Quote Request</button>
+          <button type="button" class="btn-quote-copy" onclick="copyQuoteToClipboard()">📋 Copy to Clipboard</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <p>Data compiled for informational purposes. Verify details directly with each academy.</p>
+    <p><strong>Last updated:</strong> April 2026</p>
+  </footer>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="i18n.js"></script>
+  <script src="waterpolo-data.js"></script>
+  <script src="app.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('sw.js').catch(() => {});
+    }
+  </script>
+</body>
+</html>

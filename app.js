@@ -16,7 +16,8 @@ const state = {
   surface: '',
   nearMe: false,
   availableOnly: false,
-  juniorFriendly: false
+  juniorFriendly: false,
+  showFamilyOnly: false
 };
 
 /* ===== Sport Config ===== */
@@ -83,7 +84,22 @@ const SPORT_CONFIG = {
     statsLabel: 'Certified Instructors',
     storagePrefix: 'ski',
     surfaceLabel: 'Terrain Types',
-  }
+  },
+  cycling: { icon: '🚴', name: 'Cycling Camps', statsLabel: 'Certified Coaches', storagePrefix: 'cycling', surfaceLabel: 'Disciplines' },
+  athletics: { icon: '🏃', name: 'Athletics Camps', statsLabel: 'Certified Coaches', storagePrefix: 'athletics', surfaceLabel: 'Disciplines' },
+  sailing: { icon: '⛵', name: 'Sailing Schools', statsLabel: 'Certified Instructors', storagePrefix: 'sailing', surfaceLabel: 'Boat Types' },
+  rowing: { icon: '🚣', name: 'Rowing Camps', statsLabel: 'Certified Coaches', storagePrefix: 'rowing', surfaceLabel: 'Disciplines' },
+  hockey: { icon: '🏑', name: 'Hockey Academies', statsLabel: 'Certified Coaches', storagePrefix: 'hockey', surfaceLabel: 'Surface Types' },
+  'ice-hockey': { icon: '🏒', name: 'Ice Hockey Academies', statsLabel: 'Certified Coaches', storagePrefix: 'icehockey', surfaceLabel: 'Rink Types' },
+  handball: { icon: '🤾', name: 'Handball Academies', statsLabel: 'Certified Coaches', storagePrefix: 'handball', surfaceLabel: 'Court Types' },
+  fencing: { icon: '🤺', name: 'Fencing Academies', statsLabel: 'Certified Maîtres', storagePrefix: 'fencing', surfaceLabel: 'Weapons' },
+  gymnastics: { icon: '🤸', name: 'Gymnastics Academies', statsLabel: 'Certified Coaches', storagePrefix: 'gymnastics', surfaceLabel: 'Disciplines' },
+  waterpolo: { icon: '🤽', name: 'Water Polo Academies', statsLabel: 'Certified Coaches', storagePrefix: 'waterpolo', surfaceLabel: 'Pool Types' },
+  boxing: { icon: '🥊', name: 'Boxing Academies', statsLabel: 'Certified Trainers', storagePrefix: 'boxing', surfaceLabel: 'Training Areas' },
+  padel: { icon: '🎾', name: 'Padel Academies', statsLabel: 'Certified Coaches', storagePrefix: 'padel', surfaceLabel: 'Court Types' },
+  triathlon: { icon: '🏊', name: 'Triathlon Camps', statsLabel: 'Certified Coaches', storagePrefix: 'triathlon', surfaceLabel: 'Disciplines' },
+  equestrian: { icon: '🏇', name: 'Equestrian Centres', statsLabel: 'Certified Instructors', storagePrefix: 'equestrian', surfaceLabel: 'Disciplines' },
+  surfing: { icon: '🏄', name: 'Surf Schools', statsLabel: 'Certified Instructors', storagePrefix: 'surfing', surfaceLabel: 'Break Types' }
 };
 
 const SPORT_PAGES = {
@@ -94,7 +110,22 @@ const SPORT_PAGES = {
   swimming: 'swimming.html',
   volleyball: 'volleyball.html',
   rugby: 'rugby.html',
-  ski: 'ski.html'
+  ski: 'ski.html',
+  cycling: 'cycling.html',
+  athletics: 'athletics.html',
+  sailing: 'sailing.html',
+  rowing: 'rowing.html',
+  hockey: 'hockey.html',
+  'ice-hockey': 'ice-hockey.html',
+  handball: 'handball.html',
+  fencing: 'fencing.html',
+  gymnastics: 'gymnastics.html',
+  waterpolo: 'waterpolo.html',
+  boxing: 'boxing.html',
+  padel: 'padel.html',
+  triathlon: 'triathlon.html',
+  equestrian: 'equestrian.html',
+  surfing: 'surfing.html'
 };
 
 const SPORT_DATA_FILES = {
@@ -105,7 +136,145 @@ const SPORT_DATA_FILES = {
   swimming: './swimming-data.js',
   volleyball: './volleyball-data.js',
   rugby: './rugby-data.js',
-  ski: './ski-data.js'
+  ski: './ski-data.js',
+  cycling: './cycling-data.js',
+  athletics: './athletics-data.js',
+  sailing: './sailing-data.js',
+  rowing: './rowing-data.js',
+  hockey: './hockey-data.js',
+  'ice-hockey': './ice-hockey-data.js',
+  handball: './handball-data.js',
+  fencing: './fencing-data.js',
+  gymnastics: './gymnastics-data.js',
+  waterpolo: './waterpolo-data.js',
+  boxing: './boxing-data.js',
+  padel: './padel-data.js',
+  triathlon: './triathlon-data.js',
+  equestrian: './equestrian-data.js',
+  surfing: './surfing-data.js'
+};
+
+const SPORT_NUTRITION = {
+  // Default plan used when sport-specific plan not found
+  default: {
+    title: 'Athlete Nutrition Plan',
+    intro: 'Optimized weekly meal plan for intensive training. Adjust portions based on body weight and training load.',
+    days: [
+      {
+        day: 'Monday',
+        meals: [
+          { time: '07:00', name: 'Pre-Training Breakfast', items: '2 scrambled eggs, 1 slice wholegrain toast with avocado, 1 banana, green tea or water. Eat 2 hours before training.', restaurant: 'Hotel breakfast buffet or local café' },
+          { time: '09:00-11:30', name: 'Training Session', items: 'Sip 500ml water with electrolytes during training. Take small sips every 15 minutes.', restaurant: null },
+          { time: '12:00', name: 'Post-Training Recovery', items: 'Within 30 min: protein shake (whey + banana + oats) or chocolate milk 500ml. Then 1L water over next hour.', restaurant: 'Academy canteen or smoothie bar' },
+          { time: '13:00', name: 'Lunch', items: 'Grilled chicken breast 200g, brown rice 150g, steamed broccoli & carrots, mixed salad with olive oil. Fresh orange juice.', restaurant: 'Academy restaurant or local bistro' },
+          { time: '15:30', name: 'Afternoon Snack', items: 'Greek yogurt 200g with honey and mixed nuts 30g, 1 apple', restaurant: 'Grab from hotel or nearby market' },
+          { time: '16:00-18:00', name: 'Afternoon Training', items: 'Water bottle 750ml with BCAA or electrolytes. Small energy bar if needed at break.', restaurant: null },
+          { time: '19:00', name: 'Dinner', items: 'Salmon fillet 200g, sweet potato 200g, grilled vegetables (zucchini, peppers, onion), mixed green salad. Water or fresh juice.', restaurant: 'Local restaurant with fish menu' },
+          { time: '21:00', name: 'Evening Snack', items: 'Casein protein or cottage cheese 150g with berries. Chamomile tea. No screens 30 min before sleep.', restaurant: 'Hotel room / accommodation' }
+        ]
+      },
+      {
+        day: 'Tuesday',
+        meals: [
+          { time: '07:00', name: 'Pre-Training Breakfast', items: 'Overnight oats: 80g oats, 200ml milk, chia seeds, blueberries, honey. 2 boiled eggs. Coffee or green tea.', restaurant: 'Hotel breakfast or prepare night before' },
+          { time: '09:00-11:30', name: 'Training Session', items: '750ml water with electrolyte tabs. Energy gel at halfway point if high intensity.', restaurant: null },
+          { time: '12:00', name: 'Post-Training Recovery', items: 'Recovery smoothie: banana, peanut butter, protein powder, milk, oats. 500ml water.', restaurant: 'Juice bar or academy kitchen' },
+          { time: '13:00', name: 'Lunch', items: 'Turkey wrap: wholegrain tortilla, 150g turkey, lettuce, tomato, hummus. Side of quinoa salad. Fruit bowl.', restaurant: 'Healthy café or deli nearby' },
+          { time: '15:30', name: 'Afternoon Snack', items: 'Rice cakes with almond butter, 1 banana, handful of trail mix', restaurant: 'Pack from market or hotel' },
+          { time: '16:00-18:00', name: 'Afternoon Training', items: '750ml water. Coconut water at break. Small handful of dried fruit if fatigued.', restaurant: null },
+          { time: '19:00', name: 'Dinner', items: 'Lean beef stir-fry 200g with peppers, mushrooms, snap peas over jasmine rice 150g. Miso soup starter.', restaurant: 'Asian restaurant or hotel restaurant' },
+          { time: '21:00', name: 'Evening Snack', items: 'Small bowl of muesli with warm milk. Magnesium supplement. Herbal tea.', restaurant: 'Hotel room' }
+        ]
+      },
+      {
+        day: 'Wednesday',
+        meals: [
+          { time: '07:00', name: 'Pre-Training Breakfast', items: 'Pancakes (2) with maple syrup and banana slices. 2 eggs any style. Fresh OJ. Hydrate with 500ml water.', restaurant: 'Breakfast café or hotel' },
+          { time: '09:00-11:30', name: 'Training Session', items: 'Isotonic sports drink 750ml. Small energy bar at break if double session.', restaurant: null },
+          { time: '12:00', name: 'Post-Training Recovery', items: 'Chocolate milk 500ml + banana. Then 1L water within an hour. Ice bath if available.', restaurant: 'Academy café' },
+          { time: '13:00', name: 'Lunch', items: 'Pasta (penne 200g) with tomato-basil sauce, grilled chicken 150g, Parmesan. Side salad. Water.', restaurant: 'Italian restaurant or trattoria' },
+          { time: '15:30', name: 'Afternoon Snack', items: 'Smoothie bowl: açaí, banana, granola, coconut flakes, honey', restaurant: 'Smoothie bar or prepare at accommodation' },
+          { time: '16:00-18:00', name: 'Afternoon Training', items: 'Water 750ml. Electrolyte tabs. Half an energy bar at mid-session.', restaurant: null },
+          { time: '19:00', name: 'Dinner', items: 'Grilled sea bass 200g, roasted potatoes 200g, ratatouille, crusty bread. Glass of sparkling water with lemon.', restaurant: 'Seafood restaurant' },
+          { time: '21:00', name: 'Evening Snack', items: 'Cottage cheese 150g with pineapple chunks. Camomile or valerian tea for sleep.', restaurant: 'Hotel room' }
+        ]
+      },
+      {
+        day: 'Thursday',
+        meals: [
+          { time: '07:00', name: 'Pre-Training Breakfast', items: 'Porridge with cinnamon, raisins and walnuts. 2 poached eggs on toast. Green smoothie (spinach, banana, ginger). Water.', restaurant: 'Hotel or health food café' },
+          { time: '09:00-11:30', name: 'Training Session', items: '750ml electrolyte water. Jelly babies or gummy bears (fast carbs) if high-intensity intervals.', restaurant: null },
+          { time: '12:00', name: 'Post-Training Recovery', items: 'Protein bar + 500ml tart cherry juice (anti-inflammatory). 1L water over next hour.', restaurant: 'Academy shop or sports nutrition store' },
+          { time: '13:00', name: 'Lunch', items: 'Tuna Niçoise salad: tuna 200g, boiled eggs, potatoes, green beans, olives, tomatoes. Wholegrain bread roll.', restaurant: 'French bistro or hotel restaurant' },
+          { time: '15:30', name: 'Afternoon Snack', items: 'Hummus with carrot/celery sticks and wholegrain crackers. Small handful of almonds.', restaurant: 'Market or deli' },
+          { time: '16:00-18:00', name: 'Afternoon Training', items: 'Water 750ml with pinch of salt and lemon. Recovery drink post-session.', restaurant: null },
+          { time: '19:00', name: 'Dinner', items: 'Chicken tikka 200g with basmati rice 150g, naan bread, cucumber raita, dal lentils. Mango lassi.', restaurant: 'Indian restaurant' },
+          { time: '21:00', name: 'Evening Snack', items: 'Greek yogurt 200g with granola. Omega-3 supplement. Peppermint tea.', restaurant: 'Hotel room' }
+        ]
+      },
+      {
+        day: 'Friday',
+        meals: [
+          { time: '07:00', name: 'Pre-Training Breakfast', items: 'Smoked salmon bagel with cream cheese, capers, red onion. Fresh fruit salad. Coffee or matcha latte.', restaurant: 'Bakery or brunch café' },
+          { time: '09:00-11:30', name: 'Training Session', items: '750ml water with BCAAs. Half banana at mid-session break.', restaurant: null },
+          { time: '12:00', name: 'Post-Training Recovery', items: 'Smoothie: whey protein, frozen berries, spinach, oats, almond milk. 500ml water.', restaurant: 'Smoothie bar' },
+          { time: '13:00', name: 'Lunch', items: 'Burrito bowl: chicken 200g, black beans, rice, avocado, salsa, sour cream, lettuce. Lime water.', restaurant: 'Mexican restaurant or healthy fast-casual' },
+          { time: '15:30', name: 'Afternoon Snack', items: 'Banana-oat energy balls (homemade or bought), 1 pear, water', restaurant: 'Bakery or health store' },
+          { time: '16:00-18:00', name: 'Afternoon Training', items: 'Isotonic drink 750ml. Light stretching post-session. Cold plunge if available.', restaurant: null },
+          { time: '19:00', name: 'Dinner', items: 'Pizza night (recovery treat): Margherita or veggie pizza, side Caesar salad. Sparkling water. (Moderate portion)', restaurant: 'Local pizzeria' },
+          { time: '21:00', name: 'Evening Snack', items: 'Warm milk with honey and turmeric (golden milk). Small handful of walnuts.', restaurant: 'Hotel room' }
+        ]
+      },
+      {
+        day: 'Saturday',
+        meals: [
+          { time: '08:00', name: 'Pre-Training Breakfast', items: 'Full cooked breakfast: 2 eggs, turkey bacon, baked beans, grilled tomato, mushrooms, wholegrain toast. Fresh juice.', restaurant: 'Hotel full breakfast or local café' },
+          { time: '10:00-12:00', name: 'Training / Match / Competition', items: '1L water with electrolytes. Energy gels x2 during competition. Banana at half-time.', restaurant: null },
+          { time: '12:30', name: 'Post-Training Recovery', items: 'Recovery shake: protein + fast carbs (dextrose/maltodextrin). 750ml water. Ice bath 10 min.', restaurant: 'Academy recovery station' },
+          { time: '13:30', name: 'Lunch', items: 'Sushi platter: salmon, tuna, avocado rolls. Edamame. Miso soup. Green tea. (Omega-3 rich recovery meal)', restaurant: 'Japanese restaurant' },
+          { time: '16:00', name: 'Afternoon Snack', items: 'Protein muffin or flapjack. Fresh fruit smoothie. Rest and foam rolling.', restaurant: 'Café or bakery' },
+          { time: '19:00', name: 'Dinner', items: 'Lamb chops or grilled steak 200g (iron-rich), mashed sweet potato, steamed greens, gravy. Dark chocolate square for dessert.', restaurant: 'Steakhouse or local grill restaurant' },
+          { time: '21:00', name: 'Evening Snack', items: 'Warm porridge with honey. Tart cherry juice 250ml (reduces muscle soreness). Early bedtime!', restaurant: 'Hotel room' }
+        ]
+      },
+      {
+        day: 'Sunday (Active Recovery)',
+        meals: [
+          { time: '08:30', name: 'Late Breakfast / Brunch', items: 'Avocado toast on sourdough with poached eggs and chilli flakes. Fresh fruit platter. Freshly squeezed OJ. Water with lemon.', restaurant: 'Brunch spot or hotel terrace' },
+          { time: '10:30-11:30', name: 'Light Recovery Session', items: 'Water 500ml. Light stretching, yoga, or easy swim. Foam rolling. No high intensity.', restaurant: null },
+          { time: '12:30', name: 'Post-Recovery Snack', items: 'Coconut water 500ml + protein bar. Light walk.', restaurant: 'Beach bar or park café' },
+          { time: '13:30', name: 'Lunch', items: 'Mediterranean platter: grilled halloumi, hummus, falafel, tabbouleh, pita bread, grilled vegetables. Fresh mint lemonade.', restaurant: 'Mediterranean restaurant' },
+          { time: '16:00', name: 'Afternoon Snack', items: 'Frozen yogurt or gelato (small portion — reward!). Fresh berries on top.', restaurant: 'Gelato shop or frozen yogurt bar' },
+          { time: '19:00', name: 'Dinner (Meal Prep for Monday)', items: 'Roast chicken 200g, roasted root vegetables, green beans, gravy. Prepare overnight oats for Monday breakfast.', restaurant: 'Home-style restaurant or cook at accommodation' },
+          { time: '21:00', name: 'Evening Wind-Down', items: 'Chamomile tea, banana, small handful of cashews. Journal training log. 9-10 hours sleep target.', restaurant: 'Hotel room — lights out by 21:30' }
+        ]
+      }
+    ]
+  },
+  // Sport-specific overrides — just change the intro and a few key meals
+  tennis: { title: 'Tennis Athlete Nutrition', intro: 'Fuel for explosive rallies and endurance. High carb for court sprints, extra potassium (bananas) to prevent cramps.' },
+  golf: { title: 'Golfer Nutrition Plan', intro: 'Steady energy for 4-5 hour rounds. Focus on sustained-release carbs, brain foods (omega-3, nuts), and hydration without blood sugar spikes.' },
+  football: { title: 'Football Player Nutrition', intro: 'High-carb loading for 90-min matches. Extra iron for endurance, creatine-friendly meals, and rapid recovery protein post-match.' },
+  basketball: { title: 'Basketball Player Nutrition', intro: 'Explosive power and recovery. High protein for muscle repair, fast carbs around games, extra calcium for bone strength.' },
+  swimming: { title: 'Swimmer Nutrition Plan', intro: 'High calorie plan for water training (burns 500-700 cal/hr). Extra carbs, iron-rich foods, and frequent small meals to fuel pool sessions.' },
+  volleyball: { title: 'Volleyball Player Nutrition', intro: 'Jump power and agility fuel. Emphasis on lean protein, vitamin D for bone health, and anti-inflammatory foods for joint protection.' },
+  rugby: { title: 'Rugby Player Nutrition', intro: 'Mass and power nutrition. Higher protein (2g/kg), extra calories for contact sport recovery, iron-rich red meat, and anti-inflammatory foods.' },
+  ski: { title: 'Ski Athlete Nutrition', intro: 'Cold-weather high-energy plan. Extra 500-800 calories vs summer sports. Warm meals, hot drinks, high-fat snacks for altitude and cold exposure.' },
+  cycling: { title: 'Cyclist Nutrition Plan', intro: 'Endurance fuel for 3-6 hour rides. Carb-loading before long rides, on-bike nutrition (gels/bars every 45 min), and rapid glycogen replenishment.' },
+  athletics: { title: 'Track & Field Nutrition', intro: 'Discipline-specific: sprinters need more protein/creatine, distance runners need carb-loading, throwers need higher calories. Adjust to your event.' },
+  sailing: { title: 'Sailor Nutrition Plan', intro: 'Sea-ready nutrition. Easily digestible meals (avoid seasickness triggers), high energy density for long days on water, extra zinc and salt for ocean exposure.' },
+  rowing: { title: 'Rower Nutrition Plan', intro: 'Extreme calorie needs (3,500-5,000 cal/day). High carb for 2K and endurance pieces, extra protein for upper body development, iron monitoring essential.' },
+  hockey: { title: 'Hockey Player Nutrition', intro: 'Sprint-interval sport fuel. Fast-acting carbs around matches, protein for recovery, extra hydration on artificial turf (heat retention).' },
+  'ice-hockey': { title: 'Ice Hockey Player Nutrition', intro: 'High-intensity shift fuel. Quick-digesting pre-game meals, electrolytes to replace sweat under equipment, protein for contact recovery.' },
+  handball: { title: 'Handball Player Nutrition', intro: 'Explosive power and endurance. Mix of strength and cardio demands — balanced macros with emphasis on fast recovery between training sessions.' },
+  fencing: { title: 'Fencer Nutrition Plan', intro: 'Precision sport fuel. Focus on brain foods (omega-3, berries), sustained energy for tournament days (5-8 bouts), light easily digestible meals.' },
+  gymnastics: { title: 'Gymnast Nutrition Plan', intro: 'Power-to-weight optimization. High protein for muscle, adequate calcium for bones, careful calorie balance. No meal skipping — fuel every training session.' },
+  waterpolo: { title: 'Water Polo Nutrition', intro: 'Swimming + contact sport. Very high calorie needs (4,000+/day), extra protein for treading water, anti-inflammatory foods for shoulder health.' },
+  boxing: { title: 'Boxer Nutrition Plan', intro: 'Weight management with performance. Precise calorie control, high protein to preserve muscle, complex carbs for sustained energy in rounds.' },
+  padel: { title: 'Padel Player Nutrition', intro: 'Similar to tennis but with more explosive movements. Anti-inflammatory foods for joints, potassium for cramp prevention, quick energy between sets.' },
+  triathlon: { title: 'Triathlete Nutrition Plan', intro: 'The ultimate endurance diet. Periodized nutrition across swim/bike/run, race-day fueling strategy, 4,000-6,000 cal/day during peak training.' },
+  equestrian: { title: 'Equestrian Nutrition Plan', intro: 'Core strength and mental focus. Sustained energy for long competition days, anti-inflammatory for back health, brain foods for horse-rider connection.' },
+  surfing: { title: 'Surfer Nutrition Plan', intro: 'Ocean athlete fuel. Anti-inflammatory for paddle endurance, sun exposure recovery (vitamin D, antioxidants), light meals before water sessions.' }
 };
 
 let _crossSportCache = null;
@@ -482,6 +651,7 @@ function getFilteredAcademies() {
   if (state.boarding) result = filterByBoarding(result);
   if (state.beach) result = filterByBeach(result);
   if (state.juniorFriendly) result = filterByJuniorFriendly(result);
+  if (state.showFamilyOnly) result = filterByFamily(result);
   if (state.atp) result = filterByCoachATP(result);
   if (state.top10) result = filterByCoachTop10(result);
   if (state.surface) result = result.filter(a => a.courtSurfaces && a.courtSurfaces.includes(state.surface));
@@ -613,6 +783,7 @@ function cardHTML(a) {
         ${distanceStr}
         ${getBestMonthsBadge(a)}
         ${buildJuniorBadge(a)}
+        ${buildFamilyBadge(a)}
       </div>
       <div class="card-footer">
         <button class="btn-quote-small" onclick="event.stopPropagation();openQuoteModal('${a.id}')">📋 Request Quote</button>
@@ -671,7 +842,7 @@ function calculateMonthScore(academy, monthIndex) {
 
   const m = climate.months[monthIndex];
   const isSwimming = getSportType() === 'swimming';
-  const isWinterSport = getSportType() === 'ski';
+  const isWinterSport = typeof SPORT_TYPE !== 'undefined' && (SPORT_TYPE === 'ski' || SPORT_TYPE === 'ice-hockey');
 
   // Camp score (0-1)
   let campScore = 0;
@@ -832,6 +1003,132 @@ function buildJuniorBadge(a) {
   return '';
 }
 
+function buildFamilyBadge(a) {
+  return (a.accommodation && a.accommodation.companionsAllowed && a.accommodation.childrenAllowed)
+    ? '<span class="badge badge-family">👨‍👩‍👧 Family Friendly</span>' : '';
+}
+
+function filterByFamily(academies) {
+  if (!state.showFamilyOnly) return academies;
+  return academies.filter(a =>
+    a.accommodation &&
+    a.accommodation.companionsAllowed &&
+    a.accommodation.childrenAllowed
+  );
+}
+
+/* ===== Parent Pre-Booking Checklist ===== */
+const PARENT_CHECKLIST = {
+  'Documents': [
+    { id: 'passport', label: 'Valid passport (6+ months remaining)' },
+    { id: 'visa', label: 'Visa requirements checked for destination country' },
+    { id: 'consent', label: 'Notarized parental consent letter (if child traveling alone)' },
+    { id: 'birth-cert', label: 'Birth certificate copy' },
+    { id: 'insurance-docs', label: 'Travel insurance documents printed & digital' },
+    { id: 'medical-records', label: 'Medical records & vaccination certificate' },
+    { id: 'emergency-contacts', label: 'Emergency contact card (in child\'s wallet & luggage)' }
+  ],
+  'Health & Safety': [
+    { id: 'travel-insurance', label: 'Travel & medical insurance purchased' },
+    { id: 'ehic', label: 'EHIC/GHIC card obtained (for EU travel)' },
+    { id: 'medications', label: 'Medications packed with doctor\'s letter' },
+    { id: 'allergies', label: 'Allergy information shared with academy' },
+    { id: 'dietary', label: 'Dietary requirements communicated' },
+    { id: 'gp-letter', label: 'Fitness-to-train letter from GP/doctor' }
+  ],
+  'Academy Communication': [
+    { id: 'emergency-number', label: 'Academy emergency phone number saved' },
+    { id: 'coach-contact', label: 'Head coach/supervisor contact details' },
+    { id: 'update-schedule', label: 'Agreed communication schedule (daily/weekly updates)' },
+    { id: 'video-calls', label: 'Video call times arranged' },
+    { id: 'progress-reports', label: 'Progress reporting format confirmed' }
+  ],
+  'Travel & Logistics': [
+    { id: 'flights', label: 'Flights booked (check unaccompanied minor policies)' },
+    { id: 'airport-pickup', label: 'Airport pickup confirmed with academy' },
+    { id: 'arrival-time', label: 'Arrival time & meeting point confirmed' },
+    { id: 'return-travel', label: 'Return travel arranged' },
+    { id: 'local-transport', label: 'Local transport options researched' },
+    { id: 'money', label: 'Spending money arranged (card/cash/both)' }
+  ],
+  'Packing & Equipment': [
+    { id: 'equipment', label: 'Sport-specific equipment packed' },
+    { id: 'clothing', label: 'Training clothing & casual wear packed' },
+    { id: 'toiletries', label: 'Toiletries & personal items' },
+    { id: 'phone-charger', label: 'Phone, charger, adapter for destination' },
+    { id: 'comfort-item', label: 'Comfort item from home (for younger children)' },
+    { id: 'labels', label: 'All items labeled with name' }
+  ]
+};
+
+function openParentChecklist(academyId) {
+  const academy = ACADEMIES.find(a => a.id === academyId);
+  if (!academy) return;
+  const storageKey = 'parent-checklist-' + academyId;
+  let checked = {};
+  try { checked = JSON.parse(localStorage.getItem(storageKey)) || {}; } catch(e) { checked = {}; }
+
+  const allItems = Object.values(PARENT_CHECKLIST).flat();
+  const totalItems = allItems.length;
+
+  function getCheckedCount() {
+    return allItems.filter(item => checked[item.id]).length;
+  }
+
+  const overlay = document.createElement('div');
+  overlay.className = 'checklist-overlay';
+  overlay.addEventListener('click', function(e) { if (e.target === overlay) overlay.remove(); });
+
+  function renderModal() {
+    const checkedCount = getCheckedCount();
+    const pct = totalItems ? Math.round((checkedCount / totalItems) * 100) : 0;
+
+    let html = '<div class="checklist-modal">';
+    html += '<div class="checklist-header"><h3>📋 Parent Pre-Booking Checklist</h3>';
+    html += '<button class="checklist-close" aria-label="Close checklist">&times;</button></div>';
+    html += '<p style="margin:0 0 1rem;color:var(--text-secondary,#666);font-size:0.9rem;">' + escapeHTML(academy.name) + '</p>';
+    html += '<div class="checklist-progress"><div class="checklist-progress-bar" style="width:' + pct + '%"></div></div>';
+    html += '<div class="checklist-progress-text">' + checkedCount + ' / ' + totalItems + ' items completed (' + pct + '%)</div>';
+
+    Object.entries(PARENT_CHECKLIST).forEach(function(entry) {
+      const category = entry[0];
+      const items = entry[1];
+      const catChecked = items.filter(function(item) { return checked[item.id]; }).length;
+      html += '<div class="checklist-category">';
+      html += '<div class="checklist-category-header" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display===\'none\'?\'block\':\'none\'">';
+      html += '<span>' + escapeHTML(category) + ' (' + catChecked + '/' + items.length + ')</span><span>▼</span></div>';
+      html += '<div class="checklist-items">';
+      items.forEach(function(item) {
+        const isChecked = checked[item.id];
+        html += '<div class="checklist-item' + (isChecked ? ' checked' : '') + '">';
+        html += '<input type="checkbox" id="cl-' + item.id + '" ' + (isChecked ? 'checked' : '') + '>';
+        html += '<label for="cl-' + item.id + '">' + escapeHTML(item.label) + '</label></div>';
+      });
+      html += '</div></div>';
+    });
+
+    html += '<button class="btn-print-checklist" onclick="window.print()">🖨️ Print Checklist</button>';
+    html += '</div>';
+    return html;
+  }
+
+  overlay.innerHTML = renderModal();
+
+  overlay.querySelector('.checklist-close').addEventListener('click', function() { overlay.remove(); });
+
+  overlay.addEventListener('change', function(e) {
+    if (e.target.type === 'checkbox') {
+      const itemId = e.target.id.replace('cl-', '');
+      checked[itemId] = e.target.checked;
+      localStorage.setItem(storageKey, JSON.stringify(checked));
+      overlay.innerHTML = renderModal();
+      overlay.querySelector('.checklist-close').addEventListener('click', function() { overlay.remove(); });
+    }
+  });
+
+  document.body.appendChild(overlay);
+}
+
 function buildJuniorInfoSection(a) {
   if (!a.juniorInfo) return '';
   const j = a.juniorInfo;
@@ -863,6 +1160,236 @@ function buildJuniorInfoSection(a) {
   return html;
 }
 
+function showNutritionDay(btn, idx) {
+  const parent = btn.closest('.nutrition-plan');
+  parent.querySelectorAll('.nutrition-tab').forEach(t => t.classList.remove('active'));
+  btn.classList.add('active');
+  parent.querySelectorAll('.nutrition-day').forEach(d => d.style.display = 'none');
+  parent.querySelector('#nutritionDay' + idx).style.display = '';
+}
+
+/* ===== Family Budget Calculator ===== */
+function calculateFamilyCost(a, weeks, adults, siblings) {
+  const baseWeekly = a.priceRange.from;
+  const isWeekly = a.priceRange.unit === 'week';
+  const traineeCost = isWeekly ? baseWeekly * weeks : baseWeekly * weeks / 4.33;
+
+  let parentAccomCost = 0;
+  if (a.accommodation && a.accommodation.types && a.accommodation.types.length) {
+    const cheapest = Math.min(...a.accommodation.types.map(t => t.pricePerWeek));
+    parentAccomCost = cheapest * weeks * adults;
+  }
+
+  const siblingCost = siblings > 0 ? traineeCost * siblings * 0.85 : 0;
+  const mealCost = adults * 50 * weeks * 7;
+  const transportCost = adults * 15 * weeks * 7;
+
+  return {
+    trainee: Math.round(traineeCost),
+    parentAccom: Math.round(parentAccomCost),
+    siblings: Math.round(siblingCost),
+    meals: Math.round(mealCost),
+    transport: Math.round(transportCost),
+    total: Math.round(traineeCost + parentAccomCost + siblingCost + mealCost + transportCost),
+    savings: Math.round(siblings > 0 ? traineeCost * siblings * 0.15 : 0)
+  };
+}
+
+function updateFamilyCost(input, academyId) {
+  const allAcademies = typeof academies !== 'undefined' ? academies : [];
+  const a = allAcademies.find(function(ac) { return ac.id === academyId; });
+  if (!a || a.priceRange.from === null) return;
+
+  const section = input.closest('.family-calc-section');
+  if (!section) return;
+  const adults = parseInt(section.querySelector('.family-adults').value, 10) || 1;
+  const siblings = parseInt(section.querySelector('.family-siblings').value, 10) || 0;
+
+  const calcContainer = input.closest('.cost-calculator');
+  const slider = calcContainer ? calcContainer.querySelector('[data-calc-field="weeks"]') : null;
+  const weeks = slider ? parseInt(slider.value, 10) : 4;
+
+  const result = calculateFamilyCost(a, weeks, adults, siblings);
+  const el = document.getElementById('familyCost-' + academyId);
+  if (!el) return;
+
+  let html = '<table class="family-cost-table">';
+  html += '<tr><td>Primary trainee</td><td>' + convertPrice(result.trainee) + '</td></tr>';
+  if (result.siblings > 0) {
+    html += '<tr><td>Siblings training (' + siblings + ' × 15% off)</td><td>' + convertPrice(result.siblings) + '</td></tr>';
+  }
+  if (result.parentAccom > 0) {
+    html += '<tr><td>Parent accommodation (' + adults + ' adult' + (adults !== 1 ? 's' : '') + ')</td><td>' + convertPrice(result.parentAccom) + '</td></tr>';
+  }
+  html += '<tr><td>Parent meals (€50/day × ' + adults + ')</td><td>' + convertPrice(result.meals) + '</td></tr>';
+  html += '<tr><td>Local transport (€15/day × ' + adults + ')</td><td>' + convertPrice(result.transport) + '</td></tr>';
+  html += '<tr class="total-row"><td>Family total</td><td>' + convertPrice(result.total) + '</td></tr>';
+  html += '</table>';
+  if (result.savings > 0) {
+    html += '<div class="family-savings">💰 Sibling discount saves ' + convertPrice(result.savings) + '</div>';
+  }
+  el.innerHTML = html;
+}
+
+/* ===== Parent Review System ===== */
+function renderParentReview(academyId) {
+  const stored = JSON.parse(localStorage.getItem('parent-review-' + academyId) || '{}');
+  const categories = [
+    { key: 'communication', icon: '📱', label: 'Communication' },
+    { key: 'safety', icon: '🛡️', label: 'Safety & Supervision' },
+    { key: 'value', icon: '💰', label: 'Value for Money' },
+    { key: 'happiness', icon: '😊', label: 'Child Happiness' }
+  ];
+
+  let html = '<div class="detail-section parent-review-section">';
+  html += '<h4>👨‍👩‍👧 Parent Review</h4>';
+  html += '<p class="review-subtitle">Rate this academy from a parent\'s perspective</p>';
+
+  categories.forEach(cat => {
+    const rating = stored[cat.key] || 0;
+    html += '<div class="parent-review-row">';
+    html += '<span class="pr-icon">' + cat.icon + '</span>';
+    html += '<span class="pr-label">' + cat.label + '</span>';
+    html += '<span class="pr-stars" data-academy="' + academyId + '" data-category="' + cat.key + '">';
+    for (let i = 1; i <= 5; i++) {
+      html += '<span class="pr-star' + (i <= rating ? ' active' : '') + '" onclick="setParentReview(\'' + academyId + '\',\'' + cat.key + '\',' + i + ')" role="button" tabindex="0" aria-label="Rate ' + cat.label + ' ' + i + ' stars">★</span>';
+    }
+    html += '</span>';
+    html += '</div>';
+  });
+
+  const recommend = stored.recommend;
+  html += '<div class="parent-recommend">';
+  html += '<span>Would you send your child again?</span>';
+  html += '<button class="rec-btn' + (recommend === true ? ' active' : '') + '" onclick="setParentRecommend(\'' + academyId + '\', true)">👍 Yes</button>';
+  html += '<button class="rec-btn rec-no' + (recommend === false ? ' active' : '') + '" onclick="setParentRecommend(\'' + academyId + '\', false)">👎 No</button>';
+  html += '</div>';
+
+  html += '</div>';
+  return html;
+}
+
+function setParentReview(academyId, category, rating) {
+  const key = 'parent-review-' + academyId;
+  const stored = JSON.parse(localStorage.getItem(key) || '{}');
+  stored[category] = rating;
+  localStorage.setItem(key, JSON.stringify(stored));
+  const container = document.querySelector('.pr-stars[data-academy="' + academyId + '"][data-category="' + category + '"]');
+  if (container) {
+    container.querySelectorAll('.pr-star').forEach((star, i) => {
+      star.classList.toggle('active', i < rating);
+    });
+  }
+}
+
+function setParentRecommend(academyId, value) {
+  const key = 'parent-review-' + academyId;
+  const stored = JSON.parse(localStorage.getItem(key) || '{}');
+  stored.recommend = value;
+  localStorage.setItem(key, JSON.stringify(stored));
+  const section = document.querySelector('.parent-review-section');
+  if (section) {
+    section.querySelectorAll('.rec-btn').forEach(btn => btn.classList.remove('active'));
+    const activeBtn = value ? section.querySelector('.rec-btn:not(.rec-no)') : section.querySelector('.rec-no');
+    if (activeBtn) activeBtn.classList.add('active');
+  }
+}
+
+/* ===== Country Safety Guide ===== */
+const COUNTRY_SAFETY = {
+  'Spain': { emergency: '112', healthcare: '⭐⭐⭐⭐', hospitals: 'Excellent public & private healthcare', embassy: 'Check your country\'s embassy in Madrid', transport: 'Safe public transport, AVE high-speed rail', tips: 'Siesta hours (2-5pm) — shops close. Late dinner culture (9-10pm). Sun protection essential.', currency: 'EUR', language: 'Spanish (English widely spoken in tourist areas)' },
+  'France': { emergency: '15 (medical), 112 (general)', healthcare: '⭐⭐⭐⭐⭐', hospitals: 'World-class healthcare system', embassy: 'Check your country\'s embassy in Paris', transport: 'Excellent TGV rail network, safe metros', tips: 'Pharmacies (green cross) offer medical advice. Learn basic French phrases. Tipping not expected.', currency: 'EUR', language: 'French (English in tourist areas)' },
+  'Italy': { emergency: '112', healthcare: '⭐⭐⭐⭐', hospitals: 'Good public healthcare, excellent in north', embassy: 'Check your country\'s embassy in Rome', transport: 'Good rail network, be aware of pickpockets in cities', tips: 'Water fountains (nasoni) in Rome are safe. August is holiday month — some services close.', currency: 'EUR', language: 'Italian (English in tourist areas)' },
+  'Germany': { emergency: '112', healthcare: '⭐⭐⭐⭐⭐', hospitals: 'Excellent healthcare system', embassy: 'Check your country\'s embassy in Berlin', transport: 'Outstanding public transport, very safe', tips: 'Punctuality is valued. Cash still preferred in some places. Sundays most shops closed.', currency: 'EUR', language: 'German (English widely spoken)' },
+  'UK': { emergency: '999 or 112', healthcare: '⭐⭐⭐⭐', hospitals: 'NHS provides free emergency care', embassy: 'Check your country\'s embassy in London', transport: 'Excellent rail, drive on the left', tips: 'Weather is unpredictable — layer clothing. Free museums in London. Tap water safe everywhere.', currency: 'GBP', language: 'English' },
+  'Portugal': { emergency: '112', healthcare: '⭐⭐⭐⭐', hospitals: 'Good quality healthcare', embassy: 'Check your country\'s embassy in Lisbon', transport: 'Safe, affordable public transport', tips: 'One of Europe\'s safest countries. Excellent seafood. Strong UV — sunscreen essential.', currency: 'EUR', language: 'Portuguese (English widely spoken)' },
+  'Austria': { emergency: '112', healthcare: '⭐⭐⭐⭐⭐', hospitals: 'Excellent alpine rescue & healthcare', embassy: 'Check your country\'s embassy in Vienna', transport: 'Excellent rail, safe roads', tips: 'Mountain safety rules important. Altitude sickness possible above 2500m. Excellent tap water.', currency: 'EUR', language: 'German (English in tourist areas)' },
+  'Switzerland': { emergency: '112', healthcare: '⭐⭐⭐⭐⭐', hospitals: 'World-class but expensive — insurance essential', embassy: 'Check your country\'s embassy in Bern', transport: 'Best public transport in Europe', tips: 'Very expensive — budget 50% more than EU neighbors. Extremely safe. Swiss German/French/Italian spoken.', currency: 'CHF', language: 'German/French/Italian (English common)' },
+  'Netherlands': { emergency: '112', healthcare: '⭐⭐⭐⭐⭐', hospitals: 'Excellent healthcare', embassy: 'Check your country\'s embassy in The Hague', transport: 'Cycling is primary transport — watch for bikes!', tips: 'Very flat, windy. English widely spoken. Liberal culture. Cash less common — cards preferred.', currency: 'EUR', language: 'Dutch (English widely spoken)' },
+  'Sweden': { emergency: '112', healthcare: '⭐⭐⭐⭐⭐', hospitals: 'Excellent healthcare', embassy: 'Check your country\'s embassy in Stockholm', transport: 'Safe, efficient public transport', tips: 'Cashless society — cards/mobile pay everywhere. Cold winters. Midnight sun in summer up north.', currency: 'SEK', language: 'Swedish (English widely spoken)' },
+  'Greece': { emergency: '112', healthcare: '⭐⭐⭐', hospitals: 'Good in cities, limited on islands', embassy: 'Check your country\'s embassy in Athens', transport: 'Ferry system for islands, bus/metro in Athens', tips: 'Extreme heat in summer. Drink lots of water. Pharmacies well-stocked. Afternoon siesta culture.', currency: 'EUR', language: 'Greek (English in tourist areas)' },
+  'Croatia': { emergency: '112', healthcare: '⭐⭐⭐', hospitals: 'Adequate in cities', embassy: 'Check your country\'s embassy in Zagreb', transport: 'Good bus network, ferries along coast', tips: 'Stunning coastline. Sun protection essential. Croatian Kuna now replaced by EUR. Sea urchins — wear water shoes.', currency: 'EUR', language: 'Croatian (English common on coast)' },
+  'Ireland': { emergency: '999 or 112', healthcare: '⭐⭐⭐⭐', hospitals: 'Good healthcare, A&E can be busy', embassy: 'Check your country\'s embassy in Dublin', transport: 'Good bus network, drive on the left', tips: 'Rain gear essential year-round. Very friendly culture. Excellent for English-speaking families.', currency: 'EUR', language: 'English & Irish' },
+  'Hungary': { emergency: '112', healthcare: '⭐⭐⭐', hospitals: 'Good in Budapest, variable elsewhere', embassy: 'Check your country\'s embassy in Budapest', transport: 'Good metro/tram in Budapest', tips: 'Thermal baths are cultural experience. Affordable by EU standards. Forint currency — exchange wisely.', currency: 'HUF', language: 'Hungarian (English in tourist areas)' },
+  'Norway': { emergency: '113 (medical), 112 (police)', healthcare: '⭐⭐⭐⭐⭐', hospitals: 'Excellent but expensive', embassy: 'Check your country\'s embassy in Oslo', transport: 'Safe, excellent fjord ferries', tips: 'Very expensive — budget accordingly. Nature access rights (allemannsretten). Long winter nights.', currency: 'NOK', language: 'Norwegian (English widely spoken)' },
+  'Finland': { emergency: '112', healthcare: '⭐⭐⭐⭐⭐', hospitals: 'Excellent healthcare', embassy: 'Check your country\'s embassy in Helsinki', transport: 'Safe, efficient transport', tips: 'Sauna culture. Extreme cold in winter. Long daylight in summer. Very safe for children.', currency: 'EUR', language: 'Finnish/Swedish (English widely spoken)' },
+  'Belgium': { emergency: '112', healthcare: '⭐⭐⭐⭐', hospitals: 'Good healthcare system', embassy: 'Check your country\'s embassy in Brussels', transport: 'Dense rail network', tips: 'French/Dutch language divide. Excellent chocolate & waffles. Compact country — easy to explore.', currency: 'EUR', language: 'Dutch/French/German (English common)' },
+  'Czech Republic': { emergency: '112', healthcare: '⭐⭐⭐⭐', hospitals: 'Good quality healthcare', embassy: 'Check your country\'s embassy in Prague', transport: 'Good public transport, safe trams', tips: 'Prague is touristy — watch for scams. Excellent beer culture (for parents!). Very affordable.', currency: 'CZK', language: 'Czech (English in tourist areas)' },
+  'Denmark': { emergency: '112', healthcare: '⭐⭐⭐⭐⭐', hospitals: 'Excellent healthcare', embassy: 'Check your country\'s embassy in Copenhagen', transport: 'Cycling culture, great rail', tips: 'Hygge culture. Expensive but high quality. Very child-friendly society. Cashless.', currency: 'DKK', language: 'Danish (English widely spoken)' },
+  'Turkey': { emergency: '112', healthcare: '⭐⭐⭐', hospitals: 'Private hospitals excellent, public variable', embassy: 'Check your country\'s embassy in Ankara', transport: 'Good domestic flights, city metros', tips: 'Bargaining expected in bazaars. Conservative dress in rural areas. Excellent food.', currency: 'TRY', language: 'Turkish (English in resort areas)' },
+  'Romania': { emergency: '112', healthcare: '⭐⭐⭐', hospitals: 'Improving, private options good', embassy: 'Check your country\'s embassy in Bucharest', transport: 'Good rail network', tips: 'Very affordable. Beautiful countryside. Improving infrastructure. Friendly people.', currency: 'RON', language: 'Romanian (English in cities)' },
+  'Slovenia': { emergency: '112', healthcare: '⭐⭐⭐⭐', hospitals: 'Good healthcare', embassy: 'Check your country\'s embassy in Ljubljana', transport: 'Compact country, easy travel', tips: 'Alpine safety important. Beautiful nature. Very safe. Excellent tap water.', currency: 'EUR', language: 'Slovenian (English widely spoken)' },
+  'Andorra': { emergency: '112', healthcare: '⭐⭐⭐⭐', hospitals: 'Good healthcare, one hospital', embassy: 'Nearest embassies in Spain/France', transport: 'Car-dependent, one main road', tips: 'Tax-free shopping. Small country. Catalan-speaking. Ski season Dec-Apr.', currency: 'EUR', language: 'Catalan (Spanish/French/English)' },
+  'Serbia': { emergency: '112', healthcare: '⭐⭐⭐', hospitals: 'Adequate in Belgrade', embassy: 'Check your country\'s embassy in Belgrade', transport: 'Bus network, improving rail', tips: 'Very affordable. Warm hospitality. Excellent food. Growing sports infrastructure.', currency: 'RSD', language: 'Serbian (English in cities)' },
+  'Poland': { emergency: '112', healthcare: '⭐⭐⭐⭐', hospitals: 'Good private healthcare', embassy: 'Check your country\'s embassy in Warsaw', transport: 'Good rail and bus network', tips: 'Affordable. Rich history. Conservative values. Excellent food.', currency: 'PLN', language: 'Polish (English in cities)' },
+  'Slovakia': { emergency: '112', healthcare: '⭐⭐⭐', hospitals: 'Adequate healthcare', embassy: 'Check your country\'s embassy in Bratislava', transport: 'Good connections to Vienna', tips: 'Affordable. Beautiful mountains. Good skiing.', currency: 'EUR', language: 'Slovak (English in cities)' },
+  'Latvia': { emergency: '112', healthcare: '⭐⭐⭐', hospitals: 'Good in Riga', embassy: 'Check your country\'s embassy in Riga', transport: 'Good in Riga, limited elsewhere', tips: 'Cold winters. Art Nouveau architecture. Affordable. Baltic culture.', currency: 'EUR', language: 'Latvian (English/Russian in Riga)' },
+  'Montenegro': { emergency: '112', healthcare: '⭐⭐⭐', hospitals: 'Improving healthcare', embassy: 'Nearest embassies nearby', transport: 'Bus network, scenic roads', tips: 'Beautiful coast. Affordable. Growing tourism. Very safe.', currency: 'EUR', language: 'Montenegrin (English in tourist areas)' },
+  'Georgia': { emergency: '112', healthcare: '⭐⭐⭐', hospitals: 'Improving, private clinics good', embassy: 'Check your country\'s embassy in Tbilisi', transport: 'Metro in Tbilisi, marshrutkas elsewhere', tips: 'Incredible hospitality. Amazing food & wine. Very affordable. Safe for tourists.', currency: 'GEL', language: 'Georgian (English improving)' },
+  'Morocco': { emergency: '15 (ambulance), 19 (police)', healthcare: '⭐⭐⭐', hospitals: 'Private clinics recommended', embassy: 'Check your country\'s embassy in Rabat', transport: 'Trains, buses, taxis (agree price first)', tips: 'Muslim culture — dress modestly. Bargaining expected. Avoid tap water. Beautiful country.', currency: 'MAD', language: 'Arabic/French (English in tourist areas)' }
+};
+
+function renderCountrySafety(country) {
+  const info = COUNTRY_SAFETY[country];
+  if (!info) return '';
+  let html = '<div class="detail-section country-safety">';
+  html += '<h4>🌍 Country Safety Guide — ' + escapeHTML(country) + '</h4>';
+  html += '<div class="safety-grid">';
+  html += '<div class="safety-item"><span class="safety-icon">🚨</span><div><strong>Emergency</strong><br>' + escapeHTML(info.emergency) + '</div></div>';
+  html += '<div class="safety-item"><span class="safety-icon">🏥</span><div><strong>Healthcare</strong> ' + info.healthcare + '<br>' + escapeHTML(info.hospitals) + '</div></div>';
+  html += '<div class="safety-item"><span class="safety-icon">🏛️</span><div><strong>Embassy</strong><br>' + escapeHTML(info.embassy) + '</div></div>';
+  html += '<div class="safety-item"><span class="safety-icon">🚆</span><div><strong>Transport</strong><br>' + escapeHTML(info.transport) + '</div></div>';
+  html += '<div class="safety-item"><span class="safety-icon">💱</span><div><strong>Currency</strong><br>' + escapeHTML(info.currency) + '</div></div>';
+  html += '<div class="safety-item"><span class="safety-icon">🗣️</span><div><strong>Language</strong><br>' + escapeHTML(info.language) + '</div></div>';
+  html += '</div>';
+  html += '<div class="safety-tips"><strong>💡 Tips:</strong> ' + escapeHTML(info.tips) + '</div>';
+  html += '</div>';
+  return html;
+}
+
+function renderNutritionPlan() {
+  const sportType = typeof SPORT_TYPE !== 'undefined' ? SPORT_TYPE : 'tennis';
+  const sportPlan = SPORT_NUTRITION[sportType] || {};
+  const plan = {
+    title: sportPlan.title || SPORT_NUTRITION.default.title,
+    intro: sportPlan.intro || SPORT_NUTRITION.default.intro,
+    days: sportPlan.days || SPORT_NUTRITION.default.days
+  };
+
+  let html = '<div class="detail-section nutrition-plan">';
+  html += '<h4>🍽️ ' + escapeHTML(plan.title) + ' — Weekly Training Meal Plan</h4>';
+  html += '<p class="nutrition-intro">' + escapeHTML(plan.intro) + '</p>';
+  html += '<div class="nutrition-disclaimer">⚠️ General guide for young athletes in intensive training. Consult a sports dietitian for personalized plans. Adjust portions to your body weight (aim for 6-8g carbs/kg, 1.5-2g protein/kg daily).</div>';
+
+  html += '<div class="nutrition-tabs">';
+  plan.days.forEach((d, i) => {
+    html += '<button class="nutrition-tab' + (i === 0 ? ' active' : '') + '" onclick="showNutritionDay(this, ' + i + ')">' + escapeHTML(d.day.split(' ')[0].substring(0, 3)) + '</button>';
+  });
+  html += '</div>';
+
+  plan.days.forEach((d, i) => {
+    html += '<div class="nutrition-day" id="nutritionDay' + i + '" style="' + (i === 0 ? '' : 'display:none') + '">';
+    html += '<h5>' + escapeHTML(d.day) + '</h5>';
+    html += '<div class="meal-timeline">';
+    d.meals.forEach(m => {
+      const isTraining = m.name.includes('Training') || m.name.includes('Match') || m.name.includes('Competition') || m.name.includes('Recovery Session');
+      html += '<div class="meal-item' + (isTraining ? ' meal-training' : '') + '">';
+      html += '<div class="meal-time">' + escapeHTML(m.time) + '</div>';
+      html += '<div class="meal-content">';
+      html += '<div class="meal-name">' + escapeHTML(m.name) + '</div>';
+      html += '<div class="meal-items">' + escapeHTML(m.items) + '</div>';
+      if (m.restaurant) {
+        html += '<div class="meal-restaurant">📍 ' + escapeHTML(m.restaurant) + '</div>';
+      }
+      html += '</div></div>';
+    });
+    html += '</div></div>';
+  });
+
+  html += '</div>';
+  return html;
+}
+
 /* ===== Card Details ===== */
 function buildDetails(a) {
   let html = '';
@@ -874,12 +1401,15 @@ function buildDetails(a) {
     html += `<div class="detail-section"><button class="btn-gallery" onclick="gallery_open('${a.id}')">📷 View Photos (${a.photos.length})</button></div>`;
   }
   html += renderStarRating(a.id);
+  html += renderParentReview(a.id);
   if (Array.isArray(a.upcomingCamps) && a.upcomingCamps.length) {
     html += renderUpcomingCamps(a.upcomingCamps);
   }
   html += renderCostCalculator(a);
   html += renderAccommodationSection(a);
   html += buildJuniorInfoSection(a);
+  html += '<div class="detail-section"><button class="btn-parent-checklist" onclick="openParentChecklist(\'' + a.id + '\')">📋 Parent Pre-Booking Checklist</button></div>';
+  html += renderNutritionPlan();
   if (a.coaches.length) {
     html += '<div class="detail-section"><h4>Coaches</h4><ul>';
     a.coaches.forEach(c => {
@@ -912,6 +1442,7 @@ function buildDetails(a) {
     html += `<div class="detail-section"><h4>Notable Alumni</h4><p>${a.notableAlumni.map(escapeHTML).join(', ')}</p></div>`;
   }
   html += buildBestTimeSection(a);
+  html += renderCountrySafety(a.country);
   const climateKey = a.climate;
   if (climateKey && typeof CLIMATE_DATA !== 'undefined' && CLIMATE_DATA[climateKey]) {
     html += `<div class="detail-section"><h4>Climate — ${escapeHTML(CLIMATE_DATA[climateKey].city)}</h4>`;
@@ -1443,6 +1974,23 @@ function bindEvents() {
     document.getElementById('toggleFavorites').classList.toggle('active', state.showFavorites);
     applyAndRender();
   });
+
+  // Family Friendly toggle (dynamically created)
+  const juniorToggle = document.getElementById('toggleJunior');
+  if (juniorToggle) {
+    const familyToggle = document.createElement('button');
+    familyToggle.className = 'toggle-btn';
+    familyToggle.id = 'toggleFamily';
+    familyToggle.textContent = '👨‍👩‍👧 Family Friendly';
+    familyToggle.setAttribute('aria-pressed', 'false');
+    familyToggle.addEventListener('click', function() {
+      state.showFamilyOnly = !state.showFamilyOnly;
+      this.classList.toggle('active', state.showFamilyOnly);
+      this.setAttribute('aria-pressed', state.showFamilyOnly);
+      applyAndRender();
+    });
+    juniorToggle.parentNode.insertBefore(familyToggle, juniorToggle.nextSibling);
+  }
 
   // Availability filter toggle
   const availBtn = document.getElementById('toggleAvailable');
@@ -1988,7 +2536,7 @@ function scoreAcademy(a, answers) {
   if (answers.climate && answers.climate !== 'none') {
     const julTemp = getJulTemp(a);
     if (julTemp !== null) {
-      const isWinterSport = getSportType() === 'ski';
+      const isWinterSport = typeof SPORT_TYPE !== 'undefined' && (SPORT_TYPE === 'ski' || SPORT_TYPE === 'ice-hockey');
       if (isWinterSport) {
         // For ski, cold climate is best
         if (answers.climate === 'cold' && julTemp < 15) score += 2;
@@ -2080,6 +2628,17 @@ function renderCostCalculator(a) {
   html += '<div class="cost-calc-row"><label><input type="checkbox" data-calc-field="travel" checked> Include travel estimate</label></div>';
   html += '</div>';
   html += '<div class="cost-breakdown"></div>';
+
+  // Family Cost Estimator
+  html += '<div class="family-calc-section">';
+  html += '<h5>👨‍👩‍👧 Family Cost Estimator</h5>';
+  html += '<div class="family-inputs">';
+  html += '<label>Accompanying adults: <input type="number" class="family-adults" min="0" max="4" value="1" onchange="updateFamilyCost(this, \'' + a.id + '\')"></label>';
+  html += '<label>Siblings training: <input type="number" class="family-siblings" min="0" max="3" value="0" onchange="updateFamilyCost(this, \'' + a.id + '\')"></label>';
+  html += '</div>';
+  html += '<div class="family-cost-result" id="familyCost-' + a.id + '"></div>';
+  html += '</div>';
+
   html += '</div>';
 
   const monthlyFrom = a.priceRange.from;
@@ -2288,9 +2847,18 @@ function loadWeather(city, elementId) {
   const el = document.getElementById(elementId);
   if (!el) return;
   el.innerHTML = '<em>Loading weather...</em>';
-  fetch(`https://wttr.in/${encodeURIComponent(city)}?format=%C+%t+%w&lang=en`)
+  fetch(`https://wttr.in/${encodeURIComponent(city)}?format=%C+%t+%w&lang=en`, {
+    headers: { 'Accept': 'text/plain' }
+  })
     .then(r => r.text())
-    .then(text => { el.innerHTML = `🌤️ <strong>Now:</strong> ${escapeHTML(text.trim())}`; })
+    .then(text => {
+      const trimmed = text.trim();
+      if (trimmed.startsWith('<!') || trimmed.startsWith('<html') || trimmed.includes('<!DOCTYPE')) {
+        el.innerHTML = '<em>Weather unavailable</em>';
+      } else {
+        el.innerHTML = `🌤️ <strong>Now:</strong> ${escapeHTML(trimmed)}`;
+      }
+    })
     .catch(() => { el.innerHTML = '<em>Weather unavailable</em>'; });
 }
 

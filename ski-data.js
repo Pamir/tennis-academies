@@ -1273,6 +1273,766 @@ const ACADEMIES = [
       languageSupport: ['English', 'German'],
       emergencyProtocol: 'Mountain rescue and Davos hospital emergency protocol'
     }
+  },
+  {
+    id: 'bansko-ski-academy',
+    name: 'Bansko Ski Academy',
+    country: 'Bulgaria',
+    countryFlag: '🇧🇬',
+    city: 'Bansko',
+    lat: 41.8381,
+    lng: 23.4886,
+    website: 'https://www.bansko-ski-academy.bg',
+    contact: '+359 749 88 123',
+    contactEmail: 'info@bansko-ski-academy.bg',
+    description: 'Located at Bulgaria\'s largest and most modern ski resort, Bansko Ski Academy offers world-class alpine training on FIS World Cup-certified slopes in the Pirin Mountains. Excellent value with top-tier facilities.',
+    ageGroups: ['Junior', 'Adult'],
+    level: 'All levels',
+    individualLessons: true,
+    boarding: true,
+    beach: { distance: null, description: 'Alpine resort, no beach access' },
+    priceRange: { from: 400, to: 750, unit: 'week', display: '€400 - €750/week' },
+    socialMedia: { instagram: '@bansko_ski_academy', facebook: 'https://facebook.com/banskoskiacademy', twitter: '@bansko_ski' },
+    climate: 'bansko',
+    facilities: 'Altitude: 990-2600m, 75km of pistes, 80% snowmaking coverage, FIS-homologated race courses, gondola lift, terrain park, full equipment rental, heated ski storage, video analysis room, fitness center',
+    courtSurfaces: ['Alpine skiing', 'Snowboarding', 'Cross-country', 'Freestyle'],
+    programs: [
+      { name: 'Alpine Race Training', price: '€600/week', desc: 'Intensive slalom and giant slalom training on World Cup slopes with electronic timing' },
+      { name: 'Junior Development Camp', price: '€450/week', desc: 'Progressive ski training for young athletes aged 7-16 with Bulgarian national-level coaches' },
+      { name: 'Freeride & Powder Camp', price: '€500/week', desc: 'Off-piste exploration in the Pirin Mountains with avalanche safety training' }
+    ],
+    coaches: [
+      {
+        name: 'Dimitar Petrov',
+        credential: 'Bulgarian National Ski Instructor, FIS coach',
+        background: 'Former Bulgarian national team skier with 12 years coaching at Bansko World Cup events',
+        atpWta: false,
+        bestRanking: null,
+        rankingNote: null,
+        languages: ['English', 'Bulgarian'],
+        instagram: null
+      },
+      {
+        name: 'Elena Ivanova',
+        credential: 'ISIA certified, Bulgarian Ski Association Level 3',
+        background: 'Specialized in junior development, former Europa Cup competitor and youth coach for 10 years',
+        atpWta: false,
+        bestRanking: null,
+        rankingNote: null,
+        languages: ['English', 'Bulgarian', 'Russian'],
+        instagram: null
+      }
+    ],
+    photos: [
+      'https://images.unsplash.com/photo-1520208422220-d12a3c588e6c?w=800',
+      'https://images.unsplash.com/photo-1551524559-8af4e6624178?w=800',
+      'https://images.unsplash.com/photo-1605540436563-5bca919ae766?w=800',
+      'https://images.unsplash.com/photo-1486625537100-1af6fea55f99?w=800'
+    ],
+    upcomingCamps: [
+      { name: 'Winter Race Camp', startDate: '2025-12-15', endDate: '2025-12-22', price: '€600', level: 'Advanced' },
+      { name: 'Christmas Junior Camp', startDate: '2025-12-22', endDate: '2025-12-29', price: '€450', level: 'All levels' },
+      { name: 'February Intensive', startDate: '2026-02-09', endDate: '2026-02-16', price: '€550', level: 'Intermediate' }
+    ],
+    accommodation: {
+      types: [
+        { type: 'hotel', label: 'Bansko Sport Hotel', pricePerWeek: 300, maxOccupancy: 2, bathType: 'ensuite', mealsIncluded: true },
+        { type: 'apartment', label: 'Mountain Apartment', pricePerWeek: 200, maxOccupancy: 4, bathType: 'ensuite', mealsIncluded: false }
+      ],
+      companionsAllowed: true,
+      childrenAllowed: true,
+      minStay: '1 week',
+      shuttleToTraining: true,
+      notes: 'Gondola lift station in town center, 10-minute ride to ski area'
+    },
+    availability: {
+      status: 'open',
+      nextIntake: '2025-12-01',
+      spotsLeft: 30,
+      responseTime: '24h',
+      privateLessons: true,
+      yearRound: false
+    },
+    juniorInfo: {
+      minAge: 6,
+      maxAge: 18,
+      supervision: '24/7',
+      guardianStay: true,
+      schooling: 'Available during season',
+      medicalStaff: true,
+      safeguarding: 'Bulgarian Ski Federation child protection standards',
+      airportPickup: true,
+      mealPlan: 'Full board with Bulgarian cuisine and sports nutrition',
+      curfew: '21:00 weekdays, 22:00 weekends',
+      roommatePairing: 'Age-based groups',
+      languageSupport: ['English', 'Bulgarian', 'Russian'],
+      emergencyProtocol: 'Mountain rescue team on call, Bansko hospital 5 min away'
+    }
+  },
+  {
+    id: 'borovets-ski-academy',
+    name: 'Borovets Alpine Academy',
+    country: 'Bulgaria',
+    countryFlag: '🇧🇬',
+    city: 'Borovets',
+    lat: 42.2667,
+    lng: 23.6000,
+    website: 'https://www.borovets-ski-academy.bg',
+    contact: '+359 750 32 456',
+    contactEmail: 'info@borovets-ski-academy.bg',
+    description: 'Bulgaria\'s oldest and most historic ski resort in the Rila Mountains, offering excellent race training facilities and an ideal environment for junior development with affordable pricing.',
+    ageGroups: ['Junior', 'Adult'],
+    level: 'All levels',
+    individualLessons: true,
+    boarding: true,
+    beach: { distance: null, description: 'Alpine resort, no beach access' },
+    priceRange: { from: 380, to: 700, unit: 'week', display: '€380 - €700/week' },
+    socialMedia: { instagram: '@borovets_academy', facebook: 'https://facebook.com/borovetsskiacademy', twitter: '@borovets_ski' },
+    climate: 'borovets',
+    facilities: 'Altitude: 1350-2560m, 58km of pistes, 70% snowmaking coverage, race training course, terrain park, equipment rental, ski storage, video analysis, fitness room, sauna',
+    courtSurfaces: ['Alpine skiing', 'Snowboarding', 'Cross-country'],
+    programs: [
+      { name: 'Race Training Week', price: '€550/week', desc: 'Slalom and GS training on dedicated race runs with timing equipment' },
+      { name: 'Junior Ski Camp', price: '€400/week', desc: 'Fun and progressive ski camps for children aged 6-14 with qualified instructors' },
+      { name: 'Adult Technique Course', price: '€380/week', desc: 'Focused technique improvement for intermediate adult skiers' }
+    ],
+    coaches: [
+      {
+        name: 'Georgi Todorov',
+        credential: 'Bulgarian National Ski Instructor, ISIA certified',
+        background: 'Former Borovets ski school director with 20 years of coaching experience in alpine skiing',
+        atpWta: false,
+        bestRanking: null,
+        rankingNote: null,
+        languages: ['English', 'Bulgarian'],
+        instagram: null
+      },
+      {
+        name: 'Maria Dimitrova',
+        credential: 'Bulgarian Ski Association Level 3, FIS coach',
+        background: 'Youth development specialist and former Bulgarian national junior team coach',
+        atpWta: false,
+        bestRanking: null,
+        rankingNote: null,
+        languages: ['English', 'Bulgarian', 'German'],
+        instagram: null
+      }
+    ],
+    photos: [
+      'https://images.unsplash.com/photo-1551698618-1dfe5d97d256?w=800',
+      'https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800',
+      'https://images.unsplash.com/photo-1519681393784-d120267933ba?w=800',
+      'https://images.unsplash.com/photo-1516467508483-a7212febe31a?w=800'
+    ],
+    upcomingCamps: [
+      { name: 'Early Season Camp', startDate: '2025-12-08', endDate: '2025-12-15', price: '€500', level: 'All levels' },
+      { name: 'Holiday Junior Camp', startDate: '2025-12-22', endDate: '2025-12-29', price: '€400', level: 'Beginner to Intermediate' },
+      { name: 'January Race Week', startDate: '2026-01-12', endDate: '2026-01-19', price: '€550', level: 'Advanced' }
+    ],
+    accommodation: {
+      types: [
+        { type: 'hotel', label: 'Rila Mountain Hotel', pricePerWeek: 280, maxOccupancy: 2, bathType: 'ensuite', mealsIncluded: true },
+        { type: 'chalet', label: 'Forest Chalet', pricePerWeek: 350, maxOccupancy: 4, bathType: 'ensuite', mealsIncluded: false }
+      ],
+      companionsAllowed: true,
+      childrenAllowed: true,
+      minStay: '1 week',
+      shuttleToTraining: true,
+      notes: 'Located in the heart of Borovets resort with ski-in/ski-out access'
+    },
+    availability: {
+      status: 'open',
+      nextIntake: '2025-12-01',
+      spotsLeft: 25,
+      responseTime: '24h',
+      privateLessons: true,
+      yearRound: false
+    },
+    juniorInfo: {
+      minAge: 6,
+      maxAge: 16,
+      supervision: '24/7',
+      guardianStay: true,
+      schooling: 'Available during season',
+      medicalStaff: true,
+      safeguarding: 'Bulgarian Ski Federation child protection standards',
+      airportPickup: true,
+      mealPlan: 'Full board with Bulgarian cuisine',
+      curfew: '21:00 weekdays, 22:00 weekends',
+      roommatePairing: 'Age-based groups',
+      languageSupport: ['English', 'Bulgarian'],
+      emergencyProtocol: 'Mountain rescue on call, Samokov hospital 15 min away'
+    }
+  },
+  {
+    id: 'poiana-brasov-ski-academy',
+    name: 'Poiana Brașov Ski Academy',
+    country: 'Romania',
+    countryFlag: '🇷🇴',
+    city: 'Poiana Brașov',
+    lat: 45.5936,
+    lng: 25.5553,
+    website: 'https://www.poiana-ski-academy.ro',
+    contact: '+40 268 407 123',
+    contactEmail: 'info@poiana-ski-academy.ro',
+    description: 'Romania\'s premier ski training academy set in the stunning Carpathian Mountains above Brașov. Offers excellent alpine training on well-groomed slopes surrounded by pristine forests at very affordable rates.',
+    ageGroups: ['Junior', 'Adult'],
+    level: 'All levels',
+    individualLessons: true,
+    boarding: true,
+    beach: { distance: null, description: 'Alpine resort, no beach access' },
+    priceRange: { from: 400, to: 750, unit: 'week', display: '€400 - €750/week' },
+    socialMedia: { instagram: '@poiana_ski_academy', facebook: 'https://facebook.com/poianaskiacademy', twitter: '@poiana_ski' },
+    climate: 'poiana-brasov',
+    facilities: 'Altitude: 1020-1800m, 24km of pistes, 80% snowmaking coverage, race training gates, terrain park, equipment rental, ski storage, video analysis room, gym, spa',
+    courtSurfaces: ['Alpine skiing', 'Snowboarding', 'Cross-country', 'Freestyle'],
+    programs: [
+      { name: 'Alpine Training Week', price: '€600/week', desc: 'Comprehensive alpine training with video analysis on Carpathian slopes' },
+      { name: 'Junior Ski Camp', price: '€420/week', desc: 'Fun-focused progressive training for juniors aged 6-15 in a safe mountain environment' },
+      { name: 'Weekend Intensive', price: '€250/weekend', desc: 'Concentrated two-day technique improvement for adult skiers' }
+    ],
+    coaches: [
+      {
+        name: 'Andrei Popescu',
+        credential: 'Romanian National Ski Instructor, FIS coach',
+        background: 'Former Romanian national team member and FIS technical delegate with 15 years coaching experience',
+        atpWta: false,
+        bestRanking: null,
+        rankingNote: null,
+        languages: ['English', 'Romanian', 'French'],
+        instagram: null
+      },
+      {
+        name: 'Ioana Marinescu',
+        credential: 'ISIA certified, Romanian Ski Federation Level 3',
+        background: 'Youth development expert and former competitive skier, specialized in junior race training',
+        atpWta: false,
+        bestRanking: null,
+        rankingNote: null,
+        languages: ['English', 'Romanian'],
+        instagram: null
+      }
+    ],
+    photos: [
+      'https://images.unsplash.com/photo-1483728642387-6c3bdd6c93e5?w=800',
+      'https://images.unsplash.com/photo-1520208422220-d12a3c588e6c?w=800',
+      'https://images.unsplash.com/photo-1517483000871-1dbf64a6e1c6?w=800',
+      'https://images.unsplash.com/photo-1486625537100-1af6fea55f99?w=800'
+    ],
+    upcomingCamps: [
+      { name: 'Winter Opening Camp', startDate: '2025-12-15', endDate: '2025-12-22', price: '€550', level: 'All levels' },
+      { name: 'Christmas Junior Camp', startDate: '2025-12-22', endDate: '2025-12-29', price: '€420', level: 'All levels' },
+      { name: 'February Race Camp', startDate: '2026-02-02', endDate: '2026-02-09', price: '€600', level: 'Advanced' }
+    ],
+    accommodation: {
+      types: [
+        { type: 'hotel', label: 'Carpathian Sport Hotel', pricePerWeek: 320, maxOccupancy: 2, bathType: 'ensuite', mealsIncluded: true },
+        { type: 'chalet', label: 'Mountain Chalet', pricePerWeek: 250, maxOccupancy: 4, bathType: 'shared', mealsIncluded: false }
+      ],
+      companionsAllowed: true,
+      childrenAllowed: true,
+      minStay: '1 week',
+      shuttleToTraining: true,
+      notes: 'Located in Poiana Brașov resort with shuttle to all lifts'
+    },
+    availability: {
+      status: 'open',
+      nextIntake: '2025-12-01',
+      spotsLeft: 20,
+      responseTime: '24h',
+      privateLessons: true,
+      yearRound: false
+    },
+    juniorInfo: {
+      minAge: 6,
+      maxAge: 17,
+      supervision: '24/7',
+      guardianStay: true,
+      schooling: 'Available during season',
+      medicalStaff: true,
+      safeguarding: 'Romanian Ski Federation child protection standards',
+      airportPickup: true,
+      mealPlan: 'Full board with Romanian cuisine and sports nutrition',
+      curfew: '21:00 weekdays, 22:00 weekends',
+      roommatePairing: 'Age-based groups',
+      languageSupport: ['English', 'Romanian', 'French'],
+      emergencyProtocol: 'Mountain rescue on call, Brașov County Hospital 20 min away'
+    }
+  },
+  {
+    id: 'jasna-ski-academy',
+    name: 'Jasná Low Tatras Ski Academy',
+    country: 'Slovakia',
+    countryFlag: '🇸🇰',
+    city: 'Jasná',
+    lat: 48.9500,
+    lng: 19.5833,
+    website: 'https://www.jasna-ski-academy.sk',
+    contact: '+421 44 559 1234',
+    contactEmail: 'info@jasna-ski-academy.sk',
+    description: 'Central Europe\'s biggest ski resort in the Low Tatras, Jasná offers extensive terrain and modern infrastructure. Known for excellent snow conditions, varied terrain, and hosting FIS World Cup events.',
+    ageGroups: ['Junior', 'Adult'],
+    level: 'All levels',
+    individualLessons: true,
+    boarding: true,
+    beach: { distance: null, description: 'Alpine resort, no beach access' },
+    priceRange: { from: 450, to: 800, unit: 'week', display: '€450 - €800/week' },
+    socialMedia: { instagram: '@jasna_ski_academy', facebook: 'https://facebook.com/jasnaskiacademy', twitter: '@jasna_ski' },
+    climate: 'jasna',
+    facilities: 'Altitude: 943-2024m, 49km of pistes, 70% snowmaking coverage, FIS-homologated race course, terrain park, halfpipe, equipment rental, ski storage, video analysis, gym, wellness center',
+    courtSurfaces: ['Alpine skiing', 'Snowboarding', 'Cross-country', 'Freestyle'],
+    programs: [
+      { name: 'Race Training Camp', price: '€650/week', desc: 'Intensive slalom and GS training on FIS-certified courses with electronic timing' },
+      { name: 'Junior Development Program', price: '€480/week', desc: 'Structured youth ski training for ages 7-16 with progression tracking' },
+      { name: 'Freeride Exploration', price: '€550/week', desc: 'Off-piste skiing in the Low Tatras with avalanche safety and backcountry skills' }
+    ],
+    coaches: [
+      {
+        name: 'Marek Kováč',
+        credential: 'Slovak National Ski Instructor, ISIA certified',
+        background: 'Former Slovak national team skier and FIS World Cup course setter with 18 years coaching',
+        atpWta: false,
+        bestRanking: null,
+        rankingNote: null,
+        languages: ['English', 'Slovak', 'Czech'],
+        instagram: null
+      },
+      {
+        name: 'Zuzana Horváthová',
+        credential: 'Slovak Ski Association Level 3, FIS coach',
+        background: 'Junior development specialist and former competitive alpine skier, 10 years coaching experience',
+        atpWta: false,
+        bestRanking: null,
+        rankingNote: null,
+        languages: ['English', 'Slovak', 'German'],
+        instagram: null
+      }
+    ],
+    photos: [
+      'https://images.unsplash.com/photo-1565992441121-4367c2967103?w=800',
+      'https://images.unsplash.com/photo-1551524559-8af4e6624178?w=800',
+      'https://images.unsplash.com/photo-1605540436563-5bca919ae766?w=800',
+      'https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800'
+    ],
+    upcomingCamps: [
+      { name: 'Season Opening Camp', startDate: '2025-12-08', endDate: '2025-12-15', price: '€600', level: 'All levels' },
+      { name: 'Holiday Junior Camp', startDate: '2025-12-22', endDate: '2025-12-29', price: '€480', level: 'All levels' },
+      { name: 'January Intensive', startDate: '2026-01-19', endDate: '2026-01-26', price: '€650', level: 'Advanced' }
+    ],
+    accommodation: {
+      types: [
+        { type: 'hotel', label: 'Tatras Sport Hotel', pricePerWeek: 350, maxOccupancy: 2, bathType: 'ensuite', mealsIncluded: true },
+        { type: 'apartment', label: 'Mountain Apartment', pricePerWeek: 250, maxOccupancy: 4, bathType: 'ensuite', mealsIncluded: false }
+      ],
+      companionsAllowed: true,
+      childrenAllowed: true,
+      minStay: '1 week',
+      shuttleToTraining: true,
+      notes: 'Demänovská Valley location with gondola access to the ski area'
+    },
+    availability: {
+      status: 'open',
+      nextIntake: '2025-12-01',
+      spotsLeft: 22,
+      responseTime: '48h',
+      privateLessons: true,
+      yearRound: false
+    },
+    juniorInfo: {
+      minAge: 7,
+      maxAge: 18,
+      supervision: '24/7',
+      guardianStay: true,
+      schooling: 'Available during season',
+      medicalStaff: true,
+      safeguarding: 'Slovak Ski Association child protection standards',
+      airportPickup: true,
+      mealPlan: 'Full board with Slovak cuisine and sports nutrition',
+      curfew: '21:00 weekdays, 22:00 weekends',
+      roommatePairing: 'Age-based groups',
+      languageSupport: ['English', 'Slovak', 'Czech'],
+      emergencyProtocol: 'Mountain rescue on call, Liptovský Mikuláš hospital 20 min away'
+    }
+  },
+  {
+    id: 'spindleruv-mlyn-ski-academy',
+    name: 'Špindlerův Mlýn Ski Academy',
+    country: 'Czech Republic',
+    countryFlag: '🇨🇿',
+    city: 'Špindlerův Mlýn',
+    lat: 50.7263,
+    lng: 15.6093,
+    website: 'https://www.spindl-ski-academy.cz',
+    contact: '+420 499 433 123',
+    contactEmail: 'info@spindl-ski-academy.cz',
+    description: 'The top Czech ski resort in the Krkonoše (Giant Mountains) national park. Offers excellent training on well-maintained slopes with modern snowmaking, ideal for developing race skills in a stunning natural setting.',
+    ageGroups: ['Junior', 'Adult'],
+    level: 'All levels',
+    individualLessons: true,
+    boarding: true,
+    beach: { distance: null, description: 'Alpine resort, no beach access' },
+    priceRange: { from: 420, to: 780, unit: 'week', display: '€420 - €780/week' },
+    socialMedia: { instagram: '@spindl_ski_academy', facebook: 'https://facebook.com/spindlskiacademy', twitter: '@spindl_ski' },
+    climate: 'spindleruv-mlyn',
+    facilities: 'Altitude: 702-1310m, 25km of pistes, 85% snowmaking coverage, race training course with timing, terrain park, equipment rental, ski storage, video analysis room, gym, indoor pool',
+    courtSurfaces: ['Alpine skiing', 'Snowboarding', 'Cross-country'],
+    programs: [
+      { name: 'Alpine Race Training', price: '€620/week', desc: 'Technical race training on dedicated slalom and GS courses with electronic timing' },
+      { name: 'Junior Ski School', price: '€440/week', desc: 'Progressive ski development for children aged 6-15 with Czech national-level coaches' },
+      { name: 'Cross-Country Week', price: '€400/week', desc: 'Nordic skiing training on groomed trails through the Krkonoše national park' }
+    ],
+    coaches: [
+      {
+        name: 'Tomáš Novák',
+        credential: 'Czech National Ski Instructor, ISIA certified',
+        background: 'Former Czech national team coach with 20 years experience, specialized in giant slalom technique',
+        atpWta: false,
+        bestRanking: null,
+        rankingNote: null,
+        languages: ['English', 'Czech', 'German'],
+        instagram: null
+      },
+      {
+        name: 'Petra Králová',
+        credential: 'Czech Ski Association Level 3, FIS coach',
+        background: 'Youth development coach and former competitive skier, 12 years coaching at Špindlerův Mlýn',
+        atpWta: false,
+        bestRanking: null,
+        rankingNote: null,
+        languages: ['English', 'Czech', 'Polish'],
+        instagram: null
+      }
+    ],
+    photos: [
+      'https://images.unsplash.com/photo-1519681393784-d120267933ba?w=800',
+      'https://images.unsplash.com/photo-1486625537100-1af6fea55f99?w=800',
+      'https://images.unsplash.com/photo-1548133464-29abc661eb5c?w=800',
+      'https://images.unsplash.com/photo-1517483000871-1dbf64a6e1c6?w=800'
+    ],
+    upcomingCamps: [
+      { name: 'Winter Opening Camp', startDate: '2025-12-15', endDate: '2025-12-22', price: '€580', level: 'All levels' },
+      { name: 'Christmas Junior Camp', startDate: '2025-12-22', endDate: '2025-12-29', price: '€440', level: 'All levels' },
+      { name: 'February Race Week', startDate: '2026-02-09', endDate: '2026-02-16', price: '€620', level: 'Advanced' }
+    ],
+    accommodation: {
+      types: [
+        { type: 'hotel', label: 'Krkonoše Sport Hotel', pricePerWeek: 300, maxOccupancy: 2, bathType: 'ensuite', mealsIncluded: true },
+        { type: 'apartment', label: 'Mountain Apartment', pricePerWeek: 220, maxOccupancy: 4, bathType: 'ensuite', mealsIncluded: false }
+      ],
+      companionsAllowed: true,
+      childrenAllowed: true,
+      minStay: '1 week',
+      shuttleToTraining: true,
+      notes: 'Central Špindlerův Mlýn location with ski bus to all lifts'
+    },
+    availability: {
+      status: 'open',
+      nextIntake: '2025-12-01',
+      spotsLeft: 20,
+      responseTime: '24h',
+      privateLessons: true,
+      yearRound: false
+    },
+    juniorInfo: {
+      minAge: 6,
+      maxAge: 17,
+      supervision: '24/7',
+      guardianStay: true,
+      schooling: 'Available during season',
+      medicalStaff: true,
+      safeguarding: 'Czech Ski Association child protection standards',
+      airportPickup: true,
+      mealPlan: 'Full board with Czech cuisine and sports nutrition',
+      curfew: '21:00 weekdays, 22:00 weekends',
+      roommatePairing: 'Age-based groups',
+      languageSupport: ['English', 'Czech', 'German'],
+      emergencyProtocol: 'Mountain rescue on call, Trutnov hospital 25 min away'
+    }
+  },
+  {
+    id: 'zakopane-ski-academy',
+    name: 'Zakopane Tatra Ski Academy',
+    country: 'Poland',
+    countryFlag: '🇵🇱',
+    city: 'Zakopane',
+    lat: 49.2992,
+    lng: 19.9496,
+    website: 'https://www.zakopane-ski-academy.pl',
+    contact: '+48 18 201 1234',
+    contactEmail: 'info@zakopane-ski-academy.pl',
+    description: 'Located in the winter capital of Poland at the foot of the Tatra Mountains, Zakopane has hosted numerous FIS competitions including Ski Jumping World Cup. Excellent training facilities with rich ski tradition and affordable pricing.',
+    ageGroups: ['Junior', 'Adult'],
+    level: 'All levels',
+    individualLessons: true,
+    boarding: true,
+    beach: { distance: null, description: 'Alpine resort, no beach access' },
+    priceRange: { from: 400, to: 750, unit: 'week', display: '€400 - €750/week' },
+    socialMedia: { instagram: '@zakopane_ski_academy', facebook: 'https://facebook.com/zakopanetatra', twitter: '@zakopane_ski' },
+    climate: 'zakopane',
+    facilities: 'Altitude: 840-1987m, 40km of pistes across multiple areas, 75% snowmaking, FIS-certified race course, ski jumping hills, cross-country trails, equipment rental, ski storage, video analysis, gym, wellness spa',
+    courtSurfaces: ['Alpine skiing', 'Snowboarding', 'Cross-country', 'Freestyle'],
+    programs: [
+      { name: 'Alpine Race Training', price: '€600/week', desc: 'Race-focused training on Kasprowy Wierch and Gubałówka slopes with timing systems' },
+      { name: 'Junior Tatra Camp', price: '€430/week', desc: 'Progressive ski development for young athletes aged 6-16 in the Tatra Mountains' },
+      { name: 'Cross-Country & Biathlon', price: '€450/week', desc: 'Nordic skiing and biathlon introduction on Zakopane\'s world-class cross-country trails' }
+    ],
+    coaches: [
+      {
+        name: 'Krzysztof Wiśniewski',
+        credential: 'Polish National Ski Instructor, ISIA certified',
+        background: 'Former Polish national team coach with FIS World Cup experience, 16 years at elite level',
+        atpWta: false,
+        bestRanking: null,
+        rankingNote: null,
+        languages: ['English', 'Polish'],
+        instagram: null
+      },
+      {
+        name: 'Agnieszka Kowalska',
+        credential: 'Polish Ski Association Level 3, FIS coach',
+        background: 'Junior development specialist, former competitive skier and Polish junior national team coach',
+        atpWta: false,
+        bestRanking: null,
+        rankingNote: null,
+        languages: ['English', 'Polish', 'Slovak'],
+        instagram: null
+      }
+    ],
+    photos: [
+      'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800',
+      'https://images.unsplash.com/photo-1551524559-8af4e6624178?w=800',
+      'https://images.unsplash.com/photo-1483728642387-6c3bdd6c93e5?w=800',
+      'https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800'
+    ],
+    upcomingCamps: [
+      { name: 'Winter Opening Camp', startDate: '2025-12-15', endDate: '2025-12-22', price: '€550', level: 'All levels' },
+      { name: 'Christmas Junior Camp', startDate: '2025-12-22', endDate: '2025-12-29', price: '€430', level: 'All levels' },
+      { name: 'January Race Week', startDate: '2026-01-12', endDate: '2026-01-19', price: '€600', level: 'Advanced' }
+    ],
+    accommodation: {
+      types: [
+        { type: 'hotel', label: 'Tatra Sport Hotel', pricePerWeek: 300, maxOccupancy: 2, bathType: 'ensuite', mealsIncluded: true },
+        { type: 'guesthouse', label: 'Highland Guesthouse', pricePerWeek: 200, maxOccupancy: 4, bathType: 'shared', mealsIncluded: true }
+      ],
+      companionsAllowed: true,
+      childrenAllowed: true,
+      minStay: '1 week',
+      shuttleToTraining: true,
+      notes: 'Central Zakopane location with shuttle to Kasprowy Wierch and Gubałówka'
+    },
+    availability: {
+      status: 'open',
+      nextIntake: '2025-12-01',
+      spotsLeft: 28,
+      responseTime: '24h',
+      privateLessons: true,
+      yearRound: false
+    },
+    juniorInfo: {
+      minAge: 6,
+      maxAge: 18,
+      supervision: '24/7',
+      guardianStay: true,
+      schooling: 'Available during season',
+      medicalStaff: true,
+      safeguarding: 'Polish Ski Association child protection standards',
+      airportPickup: true,
+      mealPlan: 'Full board with Polish highland cuisine and sports nutrition',
+      curfew: '21:00 weekdays, 22:00 weekends',
+      roommatePairing: 'Age-based groups',
+      languageSupport: ['English', 'Polish'],
+      emergencyProtocol: 'Tatra Mountain Rescue (TOPR) on call, Zakopane hospital 10 min away'
+    }
+  },
+  {
+    id: 'gudauri-ski-academy',
+    name: 'Gudauri Caucasus Ski Academy',
+    country: 'Georgia',
+    countryFlag: '🇬🇪',
+    city: 'Gudauri',
+    lat: 42.4614,
+    lng: 44.4706,
+    website: 'https://www.gudauri-ski-academy.ge',
+    contact: '+995 322 44 5678',
+    contactEmail: 'info@gudauri-ski-academy.ge',
+    description: 'Georgia\'s premier ski destination in the Greater Caucasus Mountains, Gudauri is an emerging world-class resort with modern lifts, exceptional powder snow, and breathtaking mountain scenery. Outstanding value for money.',
+    ageGroups: ['Junior', 'Adult'],
+    level: 'All levels',
+    individualLessons: true,
+    boarding: true,
+    beach: { distance: null, description: 'Alpine resort, no beach access' },
+    priceRange: { from: 350, to: 650, unit: 'week', display: '€350 - €650/week' },
+    socialMedia: { instagram: '@gudauri_ski_academy', facebook: 'https://facebook.com/gudauriskiacademy', twitter: '@gudauri_ski' },
+    climate: 'gudauri',
+    facilities: 'Altitude: 1990-3307m, 57km of pistes, modern gondola and chairlifts, extensive off-piste terrain, terrain park, equipment rental, ski storage, video analysis, gym, sauna',
+    courtSurfaces: ['Alpine skiing', 'Snowboarding', 'Freestyle'],
+    programs: [
+      { name: 'Freeride & Powder Camp', price: '€500/week', desc: 'Off-piste powder skiing in the vast Caucasus backcountry with certified guides' },
+      { name: 'Alpine Training Week', price: '€450/week', desc: 'All-mountain alpine training with technique focus on Gudauri\'s varied terrain' },
+      { name: 'Junior Mountain Camp', price: '€350/week', desc: 'Fun and progressive ski training for young skiers aged 7-16 in a safe environment' }
+    ],
+    coaches: [
+      {
+        name: 'Giorgi Kvaratskhelia',
+        credential: 'Georgian National Ski Instructor, ISIA certified',
+        background: 'Former Georgian national team member and Caucasus freeride specialist with 14 years coaching',
+        atpWta: false,
+        bestRanking: null,
+        rankingNote: null,
+        languages: ['English', 'Georgian', 'Russian'],
+        instagram: null
+      },
+      {
+        name: 'Nino Beridze',
+        credential: 'Georgian Ski Federation Level 3, FIS coach',
+        background: 'Youth development expert and former competitive skier, specialized in alpine and freestyle coaching',
+        atpWta: false,
+        bestRanking: null,
+        rankingNote: null,
+        languages: ['English', 'Georgian', 'Russian'],
+        instagram: null
+      }
+    ],
+    photos: [
+      'https://images.unsplash.com/photo-1605540436563-5bca919ae766?w=800',
+      'https://images.unsplash.com/photo-1520208422220-d12a3c588e6c?w=800',
+      'https://images.unsplash.com/photo-1519681393784-d120267933ba?w=800',
+      'https://images.unsplash.com/photo-1551698618-1dfe5d97d256?w=800'
+    ],
+    upcomingCamps: [
+      { name: 'Season Opening Camp', startDate: '2025-12-15', endDate: '2025-12-22', price: '€450', level: 'All levels' },
+      { name: 'New Year Freeride Week', startDate: '2026-01-05', endDate: '2026-01-12', price: '€500', level: 'Intermediate to Advanced' },
+      { name: 'February Powder Camp', startDate: '2026-02-16', endDate: '2026-02-23', price: '€500', level: 'Advanced' }
+    ],
+    accommodation: {
+      types: [
+        { type: 'hotel', label: 'Gudauri Mountain Hotel', pricePerWeek: 250, maxOccupancy: 2, bathType: 'ensuite', mealsIncluded: true },
+        { type: 'apartment', label: 'Slope-side Apartment', pricePerWeek: 180, maxOccupancy: 4, bathType: 'ensuite', mealsIncluded: false }
+      ],
+      companionsAllowed: true,
+      childrenAllowed: true,
+      minStay: '1 week',
+      shuttleToTraining: true,
+      notes: 'Ski-in/ski-out resort village with all amenities within walking distance'
+    },
+    availability: {
+      status: 'open',
+      nextIntake: '2025-12-01',
+      spotsLeft: 30,
+      responseTime: '24h',
+      privateLessons: true,
+      yearRound: false
+    },
+    juniorInfo: {
+      minAge: 7,
+      maxAge: 17,
+      supervision: '24/7',
+      guardianStay: true,
+      schooling: 'Available during season',
+      medicalStaff: true,
+      safeguarding: 'Georgian Ski Federation child protection standards',
+      airportPickup: true,
+      mealPlan: 'Full board with Georgian cuisine and sports nutrition',
+      curfew: '21:00 weekdays, 22:00 weekends',
+      roommatePairing: 'Age-based groups',
+      languageSupport: ['English', 'Georgian', 'Russian'],
+      emergencyProtocol: 'Mountain rescue on call, Gudauri medical center on-site, Tbilisi hospital 2 hours away'
+    }
+  },
+  {
+    id: 'sierra-nevada-ski-academy',
+    name: 'Sierra Nevada Ski Academy',
+    country: 'Spain',
+    countryFlag: '🇪🇸',
+    city: 'Sierra Nevada',
+    lat: 37.0956,
+    lng: -3.3953,
+    website: 'https://www.sierranevada-ski-academy.es',
+    contact: '+34 958 708 123',
+    contactEmail: 'info@sierranevada-ski-academy.es',
+    description: 'Europe\'s southernmost major ski resort, located in Andalusia near Granada. Sierra Nevada offers sunny skiing at high altitude with stunning views of the Mediterranean. Hosted the 1996 FIS Alpine World Ski Championships.',
+    ageGroups: ['Junior', 'Adult'],
+    level: 'All levels',
+    individualLessons: true,
+    boarding: true,
+    beach: { distance: null, description: 'Alpine resort, no beach access' },
+    priceRange: { from: 600, to: 1100, unit: 'week', display: '€600 - €1,100/week' },
+    socialMedia: { instagram: '@sierranevada_ski', facebook: 'https://facebook.com/sierranevadaskiacademy', twitter: '@sn_ski_academy' },
+    climate: 'sierra-nevada',
+    facilities: 'Altitude: 2100-3300m, 110km of pistes, 80% snowmaking coverage, FIS-homologated race courses, terrain park with halfpipe, equipment rental, ski storage, video analysis room, fitness center, spa',
+    courtSurfaces: ['Alpine skiing', 'Snowboarding', 'Cross-country', 'Freestyle'],
+    programs: [
+      { name: 'Alpine Race Training', price: '€900/week', desc: 'Intensive race training on World Championship slopes with electronic timing and video analysis' },
+      { name: 'Junior Ski Camp', price: '€650/week', desc: 'Progressive alpine and freestyle training for young skiers aged 6-16 in sunny conditions' },
+      { name: 'Spring Skiing Intensive', price: '€600/week', desc: 'Late-season training at Europe\'s highest resort with morning skiing and afternoon technique sessions' }
+    ],
+    coaches: [
+      {
+        name: 'Carlos Fernández',
+        credential: 'Spanish National Ski Instructor (TD3), FIS coach',
+        background: 'Former Spanish national team coach with experience at World Championships and World Cup events',
+        atpWta: false,
+        bestRanking: null,
+        rankingNote: null,
+        languages: ['English', 'Spanish', 'French'],
+        instagram: null
+      },
+      {
+        name: 'María García',
+        credential: 'RFEDI Level 3, ISIA certified',
+        background: 'Youth development specialist and former competitive alpine skier, 15 years coaching experience',
+        atpWta: false,
+        bestRanking: null,
+        rankingNote: null,
+        languages: ['English', 'Spanish'],
+        instagram: null
+      }
+    ],
+    photos: [
+      'https://images.unsplash.com/photo-1516467508483-a7212febe31a?w=800',
+      'https://images.unsplash.com/photo-1565992441121-4367c2967103?w=800',
+      'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800',
+      'https://images.unsplash.com/photo-1548133464-29abc661eb5c?w=800'
+    ],
+    upcomingCamps: [
+      { name: 'Winter Opening Camp', startDate: '2025-12-01', endDate: '2025-12-08', price: '€850', level: 'All levels' },
+      { name: 'Christmas Junior Camp', startDate: '2025-12-22', endDate: '2025-12-29', price: '€650', level: 'All levels' },
+      { name: 'Spring Race Camp', startDate: '2026-03-23', endDate: '2026-03-30', price: '€900', level: 'Advanced' }
+    ],
+    accommodation: {
+      types: [
+        { type: 'hotel', label: 'Pradollano Sport Hotel', pricePerWeek: 500, maxOccupancy: 2, bathType: 'ensuite', mealsIncluded: true },
+        { type: 'apartment', label: 'Mountain Apartment', pricePerWeek: 380, maxOccupancy: 4, bathType: 'ensuite', mealsIncluded: false }
+      ],
+      companionsAllowed: true,
+      childrenAllowed: true,
+      minStay: '1 week',
+      shuttleToTraining: true,
+      notes: 'Pradollano village at 2100m with direct access to lifts and slopes'
+    },
+    availability: {
+      status: 'open',
+      nextIntake: '2025-12-01',
+      spotsLeft: 18,
+      responseTime: '48h',
+      privateLessons: true,
+      yearRound: false
+    },
+    juniorInfo: {
+      minAge: 6,
+      maxAge: 18,
+      supervision: '24/7',
+      guardianStay: true,
+      schooling: 'Available during season',
+      medicalStaff: true,
+      safeguarding: 'Spanish Ski Federation (RFEDI) child protection standards',
+      airportPickup: true,
+      mealPlan: 'Full board with Spanish Mediterranean cuisine and sports nutrition',
+      curfew: '21:00 weekdays, 22:00 weekends',
+      roommatePairing: 'Age-based groups',
+      languageSupport: ['English', 'Spanish', 'French'],
+      emergencyProtocol: 'Mountain rescue on call, Sierra Nevada medical center on-site, Granada hospital 45 min away'
+    }
   }
 ];
 
@@ -1546,6 +2306,150 @@ const CLIMATE_DATA = {
       { month: 'Nov', tempHigh: 1, tempLow: -6, rain: 52, sun: 3 },
       { month: 'Dec', tempHigh: -3, tempLow: -12, rain: 45, sun: 3 }
     ]
+  },
+  'bansko': {
+    city: 'Bansko',
+    country: 'Bulgaria',
+    months: [
+      { month: 'Jan', tempHigh: -2, tempLow: -10, rain: 40, sun: 3 },
+      { month: 'Feb', tempHigh: 0, tempLow: -8, rain: 35, sun: 4 },
+      { month: 'Mar', tempHigh: 5, tempLow: -4, rain: 42, sun: 5 },
+      { month: 'Apr', tempHigh: 10, tempLow: 1, rain: 55, sun: 5 },
+      { month: 'May', tempHigh: 16, tempLow: 6, rain: 72, sun: 7 },
+      { month: 'Jun', tempHigh: 20, tempLow: 9, rain: 65, sun: 8 },
+      { month: 'Jul', tempHigh: 23, tempLow: 12, rain: 50, sun: 9 },
+      { month: 'Aug', tempHigh: 23, tempLow: 12, rain: 45, sun: 9 },
+      { month: 'Sep', tempHigh: 18, tempLow: 7, rain: 40, sun: 7 },
+      { month: 'Oct', tempHigh: 12, tempLow: 3, rain: 48, sun: 5 },
+      { month: 'Nov', tempHigh: 5, tempLow: -3, rain: 50, sun: 3 },
+      { month: 'Dec', tempHigh: 0, tempLow: -8, rain: 45, sun: 3 }
+    ]
+  },
+  'borovets': {
+    city: 'Borovets',
+    country: 'Bulgaria',
+    months: [
+      { month: 'Jan', tempHigh: -3, tempLow: -11, rain: 42, sun: 3 },
+      { month: 'Feb', tempHigh: -1, tempLow: -9, rain: 38, sun: 4 },
+      { month: 'Mar', tempHigh: 4, tempLow: -5, rain: 45, sun: 5 },
+      { month: 'Apr', tempHigh: 9, tempLow: 0, rain: 58, sun: 5 },
+      { month: 'May', tempHigh: 14, tempLow: 4, rain: 75, sun: 6 },
+      { month: 'Jun', tempHigh: 18, tempLow: 8, rain: 70, sun: 8 },
+      { month: 'Jul', tempHigh: 21, tempLow: 10, rain: 55, sun: 9 },
+      { month: 'Aug', tempHigh: 21, tempLow: 10, rain: 48, sun: 8 },
+      { month: 'Sep', tempHigh: 16, tempLow: 6, rain: 42, sun: 7 },
+      { month: 'Oct', tempHigh: 10, tempLow: 2, rain: 50, sun: 5 },
+      { month: 'Nov', tempHigh: 4, tempLow: -4, rain: 52, sun: 3 },
+      { month: 'Dec', tempHigh: -1, tempLow: -9, rain: 48, sun: 3 }
+    ]
+  },
+  'poiana-brasov': {
+    city: 'Poiana Brașov',
+    country: 'Romania',
+    months: [
+      { month: 'Jan', tempHigh: -3, tempLow: -12, rain: 35, sun: 3 },
+      { month: 'Feb', tempHigh: -1, tempLow: -10, rain: 30, sun: 4 },
+      { month: 'Mar', tempHigh: 4, tempLow: -5, rain: 38, sun: 5 },
+      { month: 'Apr', tempHigh: 9, tempLow: 0, rain: 52, sun: 5 },
+      { month: 'May', tempHigh: 15, tempLow: 5, rain: 78, sun: 6 },
+      { month: 'Jun', tempHigh: 19, tempLow: 9, rain: 90, sun: 7 },
+      { month: 'Jul', tempHigh: 21, tempLow: 11, rain: 85, sun: 8 },
+      { month: 'Aug', tempHigh: 21, tempLow: 11, rain: 72, sun: 8 },
+      { month: 'Sep', tempHigh: 16, tempLow: 6, rain: 50, sun: 6 },
+      { month: 'Oct', tempHigh: 10, tempLow: 2, rain: 42, sun: 5 },
+      { month: 'Nov', tempHigh: 3, tempLow: -4, rain: 40, sun: 3 },
+      { month: 'Dec', tempHigh: -1, tempLow: -9, rain: 38, sun: 3 }
+    ]
+  },
+  'jasna': {
+    city: 'Jasná',
+    country: 'Slovakia',
+    months: [
+      { month: 'Jan', tempHigh: -4, tempLow: -12, rain: 50, sun: 3 },
+      { month: 'Feb', tempHigh: -2, tempLow: -10, rain: 42, sun: 4 },
+      { month: 'Mar', tempHigh: 3, tempLow: -6, rain: 48, sun: 5 },
+      { month: 'Apr', tempHigh: 8, tempLow: -1, rain: 60, sun: 5 },
+      { month: 'May', tempHigh: 14, tempLow: 4, rain: 80, sun: 6 },
+      { month: 'Jun', tempHigh: 18, tempLow: 8, rain: 95, sun: 7 },
+      { month: 'Jul', tempHigh: 20, tempLow: 10, rain: 100, sun: 7 },
+      { month: 'Aug', tempHigh: 19, tempLow: 10, rain: 90, sun: 7 },
+      { month: 'Sep', tempHigh: 15, tempLow: 6, rain: 65, sun: 6 },
+      { month: 'Oct', tempHigh: 9, tempLow: 1, rain: 55, sun: 4 },
+      { month: 'Nov', tempHigh: 2, tempLow: -5, rain: 58, sun: 3 },
+      { month: 'Dec', tempHigh: -3, tempLow: -11, rain: 52, sun: 3 }
+    ]
+  },
+  'spindleruv-mlyn': {
+    city: 'Špindlerův Mlýn',
+    country: 'Czech Republic',
+    months: [
+      { month: 'Jan', tempHigh: -3, tempLow: -10, rain: 55, sun: 2 },
+      { month: 'Feb', tempHigh: -2, tempLow: -9, rain: 45, sun: 3 },
+      { month: 'Mar', tempHigh: 2, tempLow: -5, rain: 50, sun: 4 },
+      { month: 'Apr', tempHigh: 7, tempLow: 0, rain: 55, sun: 5 },
+      { month: 'May', tempHigh: 13, tempLow: 4, rain: 72, sun: 6 },
+      { month: 'Jun', tempHigh: 16, tempLow: 7, rain: 85, sun: 6 },
+      { month: 'Jul', tempHigh: 18, tempLow: 9, rain: 95, sun: 6 },
+      { month: 'Aug', tempHigh: 18, tempLow: 9, rain: 88, sun: 6 },
+      { month: 'Sep', tempHigh: 14, tempLow: 5, rain: 60, sun: 5 },
+      { month: 'Oct', tempHigh: 8, tempLow: 1, rain: 48, sun: 4 },
+      { month: 'Nov', tempHigh: 2, tempLow: -4, rain: 55, sun: 2 },
+      { month: 'Dec', tempHigh: -2, tempLow: -9, rain: 55, sun: 2 }
+    ]
+  },
+  'zakopane': {
+    city: 'Zakopane',
+    country: 'Poland',
+    months: [
+      { month: 'Jan', tempHigh: -3, tempLow: -11, rain: 48, sun: 3 },
+      { month: 'Feb', tempHigh: -1, tempLow: -9, rain: 40, sun: 3 },
+      { month: 'Mar', tempHigh: 4, tempLow: -5, rain: 45, sun: 4 },
+      { month: 'Apr', tempHigh: 9, tempLow: 0, rain: 60, sun: 5 },
+      { month: 'May', tempHigh: 14, tempLow: 5, rain: 90, sun: 6 },
+      { month: 'Jun', tempHigh: 18, tempLow: 8, rain: 110, sun: 6 },
+      { month: 'Jul', tempHigh: 20, tempLow: 10, rain: 120, sun: 7 },
+      { month: 'Aug', tempHigh: 19, tempLow: 10, rain: 105, sun: 7 },
+      { month: 'Sep', tempHigh: 15, tempLow: 6, rain: 70, sun: 5 },
+      { month: 'Oct', tempHigh: 9, tempLow: 1, rain: 52, sun: 4 },
+      { month: 'Nov', tempHigh: 3, tempLow: -4, rain: 50, sun: 3 },
+      { month: 'Dec', tempHigh: -2, tempLow: -9, rain: 48, sun: 2 }
+    ]
+  },
+  'gudauri': {
+    city: 'Gudauri',
+    country: 'Georgia',
+    months: [
+      { month: 'Jan', tempHigh: -5, tempLow: -14, rain: 35, sun: 4 },
+      { month: 'Feb', tempHigh: -4, tempLow: -13, rain: 38, sun: 4 },
+      { month: 'Mar', tempHigh: 0, tempLow: -8, rain: 45, sun: 5 },
+      { month: 'Apr', tempHigh: 5, tempLow: -3, rain: 55, sun: 5 },
+      { month: 'May', tempHigh: 10, tempLow: 2, rain: 75, sun: 6 },
+      { month: 'Jun', tempHigh: 14, tempLow: 5, rain: 80, sun: 7 },
+      { month: 'Jul', tempHigh: 17, tempLow: 8, rain: 65, sun: 8 },
+      { month: 'Aug', tempHigh: 17, tempLow: 8, rain: 55, sun: 8 },
+      { month: 'Sep', tempHigh: 13, tempLow: 4, rain: 45, sun: 7 },
+      { month: 'Oct', tempHigh: 7, tempLow: -1, rain: 42, sun: 5 },
+      { month: 'Nov', tempHigh: 1, tempLow: -7, rain: 38, sun: 4 },
+      { month: 'Dec', tempHigh: -4, tempLow: -12, rain: 35, sun: 3 }
+    ]
+  },
+  'sierra-nevada': {
+    city: 'Sierra Nevada',
+    country: 'Spain',
+    months: [
+      { month: 'Jan', tempHigh: -1, tempLow: -8, rain: 45, sun: 5 },
+      { month: 'Feb', tempHigh: 0, tempLow: -7, rain: 42, sun: 6 },
+      { month: 'Mar', tempHigh: 3, tempLow: -4, rain: 40, sun: 6 },
+      { month: 'Apr', tempHigh: 6, tempLow: -1, rain: 38, sun: 7 },
+      { month: 'May', tempHigh: 11, tempLow: 3, rain: 30, sun: 8 },
+      { month: 'Jun', tempHigh: 17, tempLow: 8, rain: 15, sun: 10 },
+      { month: 'Jul', tempHigh: 22, tempLow: 12, rain: 5, sun: 11 },
+      { month: 'Aug', tempHigh: 22, tempLow: 12, rain: 8, sun: 11 },
+      { month: 'Sep', tempHigh: 16, tempLow: 7, rain: 20, sun: 8 },
+      { month: 'Oct', tempHigh: 10, tempLow: 2, rain: 38, sun: 6 },
+      { month: 'Nov', tempHigh: 4, tempLow: -3, rain: 48, sun: 5 },
+      { month: 'Dec', tempHigh: 0, tempLow: -7, rain: 50, sun: 5 }
+    ]
   }
 };
 
@@ -1557,4 +2461,4 @@ const NEWS_ITEMS = [
   { title: 'Nordic Countries Launch Cross-Border Ski Pass Initiative', summary: 'Norway, Sweden, and Finland announce a joint multi-resort ski pass covering Lillehammer, Åre, and Levi, making it easier for visitors to experience Scandinavian skiing across borders.', date: '2025-01-20', url: '#' }
 ];
 
-const COUNTRIES = ['Austria', 'Switzerland', 'France', 'Italy', 'Norway', 'Sweden', 'Finland', 'Andorra', 'Slovenia'];
+const COUNTRIES = ['Austria', 'Switzerland', 'France', 'Italy', 'Norway', 'Sweden', 'Finland', 'Andorra', 'Slovenia', 'Bulgaria', 'Romania', 'Slovakia', 'Czech Republic', 'Poland', 'Georgia', 'Spain'];

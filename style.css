@@ -2401,6 +2401,33 @@ textarea:focus-visible,
   align-items: center;
   gap: 0.5rem;
   padding: 0.4rem 0;
+}
+
+/* ===== Nutrition Plan ===== */
+.nutrition-plan { margin-top: 1rem; }
+.nutrition-intro { color: var(--text-secondary, #555); font-style: italic; margin-bottom: 0.5rem; }
+.nutrition-disclaimer { background: #fff3cd; border: 1px solid #ffc107; border-radius: 8px; padding: 0.6rem 1rem; font-size: 0.82rem; margin-bottom: 1rem; color: #856404; }
+[data-theme="dark"] .nutrition-disclaimer { background: #3d3200; border-color: #665200; color: #ffe066; }
+.nutrition-tabs { display: flex; gap: 0.25rem; margin-bottom: 1rem; flex-wrap: wrap; }
+.nutrition-tab { padding: 0.4rem 0.8rem; border: 1px solid var(--border, #ddd); border-radius: 20px; background: var(--card-bg, #fff); cursor: pointer; font-size: 0.85rem; font-weight: 500; transition: all 0.2s; }
+.nutrition-tab:hover { background: var(--primary-light, #245c38); color: #fff; }
+.nutrition-tab.active { background: var(--primary, #1a472a); color: #fff; border-color: var(--primary); }
+.meal-timeline { display: flex; flex-direction: column; gap: 0.5rem; }
+.meal-item { display: flex; gap: 0.75rem; padding: 0.6rem 0.8rem; border-radius: 8px; background: var(--card-bg, #f8f9fa); border-left: 3px solid var(--primary, #1a472a); }
+.meal-item.meal-training { background: #e8f5e9; border-left-color: #4caf50; opacity: 0.85; }
+[data-theme="dark"] .meal-item { background: var(--card-bg, #1e1e1e); }
+[data-theme="dark"] .meal-item.meal-training { background: #1b3a1b; }
+.meal-time { min-width: 70px; font-weight: 600; font-size: 0.82rem; color: var(--primary, #1a472a); white-space: nowrap; padding-top: 0.15rem; }
+.meal-content { flex: 1; }
+.meal-name { font-weight: 600; font-size: 0.9rem; margin-bottom: 0.2rem; }
+.meal-items { font-size: 0.85rem; color: var(--text-secondary, #555); line-height: 1.4; }
+.meal-restaurant { font-size: 0.8rem; color: var(--accent-dark, #8fad1f); margin-top: 0.3rem; font-style: italic; }
+@media (max-width: 600px) {
+  .meal-item { flex-direction: column; gap: 0.2rem; }
+  .meal-time { min-width: auto; }
+  .nutrition-tabs { gap: 0.15rem; }
+  .nutrition-tab { padding: 0.3rem 0.5rem; font-size: 0.78rem; }
+}
   font-size: 0.9rem;
   border-bottom: 1px solid var(--border);
 }
@@ -2518,3 +2545,60 @@ textarea:focus-visible,
   }
 }
 
+
+/* Parent Checklist Modal */
+.checklist-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.6); z-index: 10000; display: flex; align-items: center; justify-content: center; padding: 1rem; }
+.checklist-modal { background: var(--card-bg, #fff); border-radius: 12px; max-width: 600px; width: 100%; max-height: 85vh; overflow-y: auto; padding: 1.5rem; box-shadow: 0 8px 32px rgba(0,0,0,0.3); }
+.checklist-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; }
+.checklist-header h3 { margin: 0; font-size: 1.2rem; }
+.checklist-close { background: none; border: none; font-size: 1.5rem; cursor: pointer; padding: 0.25rem; }
+.checklist-progress { background: #e0e0e0; border-radius: 10px; height: 8px; margin-bottom: 1rem; overflow: hidden; }
+.checklist-progress-bar { height: 100%; background: linear-gradient(90deg, var(--primary), var(--accent)); border-radius: 10px; transition: width 0.3s; }
+.checklist-progress-text { font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 1rem; text-align: center; }
+.checklist-category { margin-bottom: 0.75rem; }
+.checklist-category-header { font-weight: 600; font-size: 0.95rem; padding: 0.5rem; background: var(--bg-secondary, #f5f5f5); border-radius: 6px; cursor: pointer; display: flex; justify-content: space-between; }
+.checklist-items { padding: 0.5rem 0 0 0.5rem; }
+.checklist-item { display: flex; align-items: center; gap: 0.5rem; padding: 0.35rem 0; font-size: 0.9rem; }
+.checklist-item input[type="checkbox"] { width: 18px; height: 18px; accent-color: var(--primary); }
+.checklist-item.checked label { text-decoration: line-through; opacity: 0.6; }
+.btn-parent-checklist { background: linear-gradient(135deg, #1565c0, #0d47a1); color: #fff; border: none; padding: 0.6rem 1.2rem; border-radius: 8px; cursor: pointer; font-size: 0.9rem; display: flex; align-items: center; gap: 0.4rem; }
+.btn-parent-checklist:hover { opacity: 0.9; }
+.btn-print-checklist { background: var(--primary); color: #fff; border: none; padding: 0.5rem 1rem; border-radius: 6px; cursor: pointer; margin-top: 1rem; width: 100%; }
+
+/* Family Friendly Badge */
+.badge-family { background: #e8f5e9; color: #2e7d32; padding: 0.15rem 0.5rem; border-radius: 12px; font-size: 0.75rem; font-weight: 500; }
+[data-theme="dark"] .badge-family { background: #1b3a1b; color: #81c784; }
+
+/* Family Budget Calculator */
+.family-calc-section { margin-top: 1rem; padding: 1rem; background: var(--bg-secondary, #f5f9f0); border-radius: 8px; border: 1px solid var(--border, #ddd); }
+.family-calc-section h5 { margin: 0 0 0.75rem 0; }
+.family-inputs { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 0.75rem; }
+.family-inputs label { display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem; }
+.family-inputs input { width: 60px; padding: 0.3rem; border: 1px solid var(--border); border-radius: 4px; text-align: center; }
+.family-cost-result { font-size: 0.9rem; }
+.family-cost-table { width: 100%; border-collapse: collapse; margin-top: 0.5rem; }
+.family-cost-table td { padding: 0.3rem 0.5rem; border-bottom: 1px solid var(--border, #eee); }
+.family-cost-table .total-row { font-weight: 700; border-top: 2px solid var(--primary); }
+.family-savings { color: #2e7d32; font-weight: 600; margin-top: 0.5rem; }
+
+/* Parent Review */
+.parent-review-section { margin-top: 0.5rem; }
+.review-subtitle { color: var(--text-secondary); font-size: 0.85rem; margin-bottom: 0.5rem; }
+.parent-review-row { display: flex; align-items: center; gap: 0.5rem; padding: 0.3rem 0; }
+.pr-icon { font-size: 1.1rem; width: 1.5rem; }
+.pr-label { font-size: 0.9rem; min-width: 140px; }
+.pr-stars { display: flex; gap: 0.1rem; }
+.pr-star { cursor: pointer; font-size: 1.2rem; color: #ddd; transition: color 0.15s; }
+.pr-star:hover, .pr-star.active { color: #ffc107; }
+.parent-recommend { display: flex; align-items: center; gap: 0.5rem; margin-top: 0.75rem; padding-top: 0.5rem; border-top: 1px solid var(--border, #eee); font-size: 0.9rem; }
+.rec-btn { padding: 0.3rem 0.8rem; border: 1px solid var(--border); border-radius: 16px; background: var(--card-bg, #fff); cursor: pointer; font-size: 0.85rem; }
+.rec-btn.active { background: #e8f5e9; border-color: #4caf50; }
+.rec-btn.rec-no.active { background: #ffebee; border-color: #ef5350; }
+
+/* Country Safety Guide */
+.country-safety { background: var(--bg-secondary, #f8f9fa); border-radius: 8px; padding: 1rem; }
+.safety-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0.75rem; margin-bottom: 0.75rem; }
+.safety-item { display: flex; gap: 0.5rem; font-size: 0.85rem; line-height: 1.4; }
+.safety-icon { font-size: 1.3rem; }
+.safety-tips { font-size: 0.85rem; background: #fff3e0; padding: 0.6rem 0.8rem; border-radius: 6px; line-height: 1.4; }
+[data-theme="dark"] .safety-tips { background: #3d2800; }
