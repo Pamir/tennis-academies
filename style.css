@@ -2602,3 +2602,119 @@ textarea:focus-visible,
 .safety-icon { font-size: 1.3rem; }
 .safety-tips { font-size: 0.85rem; background: #fff3e0; padding: 0.6rem 0.8rem; border-radius: 6px; line-height: 1.4; }
 [data-theme="dark"] .safety-tips { background: #3d2800; }
+
+/* ===== Advanced Filter Row (Budget + Date Range) ===== */
+.filter-row-advanced {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  padding-top: 0.5rem;
+  border-top: 1px solid #e2e8f0;
+}
+
+.filter-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.filter-label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #475569;
+  letter-spacing: 0.02em;
+}
+
+.range-inputs {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.range-sep {
+  color: #94a3b8;
+  font-size: 0.85rem;
+  padding: 0 0.15rem;
+}
+
+.range-inputs input[type="number"],
+.range-inputs input[type="date"] {
+  width: 130px;
+  padding: 0.45rem 0.6rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  background: #fff;
+  color: #1e293b;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.range-inputs input[type="number"]:focus,
+.range-inputs input[type="date"]:focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+.range-inputs input[type="number"]::placeholder {
+  color: #94a3b8;
+}
+
+/* Dark mode */
+[data-theme="dark"] .filter-row-advanced {
+  border-top-color: #334155;
+}
+
+[data-theme="dark"] .filter-label {
+  color: #94a3b8;
+}
+
+[data-theme="dark"] .range-sep {
+  color: #64748b;
+}
+
+[data-theme="dark"] .range-inputs input[type="number"],
+[data-theme="dark"] .range-inputs input[type="date"] {
+  background: #1e293b;
+  border-color: #475569;
+  color: #e2e8f0;
+}
+
+[data-theme="dark"] .range-inputs input[type="number"]:focus,
+[data-theme="dark"] .range-inputs input[type="date"]:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+}
+
+[data-theme="dark"] .range-inputs input[type="number"]::placeholder {
+  color: #64748b;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .filter-row-advanced {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .filter-group {
+    width: 100%;
+  }
+  .range-inputs {
+    width: 100%;
+  }
+  .range-inputs input[type="number"],
+  .range-inputs input[type="date"] {
+    flex: 1;
+    width: auto;
+    min-width: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .range-inputs input[type="number"],
+  .range-inputs input[type="date"] {
+    font-size: 0.8rem;
+    padding: 0.4rem 0.5rem;
+  }
+}

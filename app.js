@@ -17,7 +17,11 @@ const state = {
   nearMe: false,
   availableOnly: false,
   juniorFriendly: false,
-  showFamilyOnly: false
+  showFamilyOnly: false,
+  budgetMin: null,
+  budgetMax: null,
+  dateFrom: '',
+  dateTo: ''
 };
 
 /* ===== Sport Config ===== */
@@ -582,6 +586,42 @@ function filterByPrice(academies) {
   return academies.filter(a => a.priceRange.from !== null);
 }
 
+function filterByBudgetRange(academies, minBudget, maxBudget) {
+  return academies.filter(a => {
+    const pr = a.priceRange;
+    if (!pr || pr.from == null) return false;
+    const monthlyFrom = pr.unit === 'week' ? pr.from * 4.33 : pr.from;
+    const monthlyTo = pr.to != null ? (pr.unit === 'week' ? pr.to * 4.33 : pr.to) : monthlyFrom;
+    if (minBudget !== null && monthlyTo < minBudget) return false;
+    if (maxBudget !== null && monthlyFrom > maxBudget) return false;
+    return true;
+  });
+}
+
+function filterByDateRange(academies, fromStr, toStr) {
+  const from = fromStr ? new Date(fromStr + 'T00:00:00') : null;
+  const to = toStr ? new Date(toStr + 'T23:59:59') : null;
+  return academies.filter(a => {
+    if (a.availability && a.availability.yearRound) return true;
+    if (Array.isArray(a.upcomingCamps) && a.upcomingCamps.length) {
+      return a.upcomingCamps.some(c => {
+        const campStart = new Date(c.startDate + 'T00:00:00');
+        const campEnd = new Date(c.endDate + 'T23:59:59');
+        if (from && campEnd < from) return false;
+        if (to && campStart > to) return false;
+        return true;
+      });
+    }
+    if (a.availability && a.availability.nextIntake) {
+      const intake = new Date(a.availability.nextIntake + 'T00:00:00');
+      if (from && intake < from) return false;
+      if (to && intake > to) return false;
+      return true;
+    }
+    return false;
+  });
+}
+
 function filterBySearch(academies, query) {
   if (!query) return academies;
   const q = query.toLowerCase();
@@ -598,6 +638,12 @@ function filterBySearch(academies, query) {
 }
 
 /* ===== Sort Functions ===== */
+function getNormalizedMonthlyPrice(academy) {
+  const pr = academy.priceRange;
+  if (!pr || pr.from == null) return Infinity;
+  return pr.unit === 'week' ? pr.from * 4.33 : pr.from;
+}
+
 function sortAcademies(academies, sortKey) {
   const copy = [...academies];
   switch (sortKey) {
@@ -624,9 +670,15 @@ function sortAcademies(academies, sortKey) {
       });
     case 'price':
       return copy.sort((a, b) => {
-        const pa = a.priceRange.from ?? Infinity;
-        const pb = b.priceRange.from ?? Infinity;
+        const pa = getNormalizedMonthlyPrice(a);
+        const pb = getNormalizedMonthlyPrice(b);
         return pa - pb || a.name.localeCompare(b.name);
+      });
+    case 'price-desc':
+      return copy.sort((a, b) => {
+        const pa = getNormalizedMonthlyPrice(a);
+        const pb = getNormalizedMonthlyPrice(b);
+        return pb - pa || a.name.localeCompare(b.name);
       });
     case 'distance':
       if (!userLocation) return copy;
@@ -656,6 +708,8 @@ function getFilteredAcademies() {
   if (state.top10) result = filterByCoachTop10(result);
   if (state.surface) result = result.filter(a => a.courtSurfaces && a.courtSurfaces.includes(state.surface));
   if (state.availableOnly) result = result.filter(a => a.availability && a.availability.status !== 'closed' && a.availability.status !== 'waitlist');
+  if (state.budgetMin !== null || state.budgetMax !== null) result = filterByBudgetRange(result, state.budgetMin, state.budgetMax);
+  if (state.dateFrom || state.dateTo) result = filterByDateRange(result, state.dateFrom, state.dateTo);
   if (state.showFavorites) {
     const favs = getFavorites();
     result = result.filter(a => favs.includes(a.id));
@@ -1445,8 +1499,14 @@ function buildDetails(a) {
   html += renderCountrySafety(a.country);
   const climateKey = a.climate;
   if (climateKey && typeof CLIMATE_DATA !== 'undefined' && CLIMATE_DATA[climateKey]) {
-    html += `<div class="detail-section"><h4>Climate — ${escapeHTML(CLIMATE_DATA[climateKey].city)}</h4>`;
-    html += buildClimateChart(CLIMATE_DATA[climateKey].months);
+    const climateEntry = CLIMATE_DATA[climateKey];
+    const cityName = climateEntry.city || climateKey;
+    html += `<div class="detail-section"><h4>Climate — ${escapeHTML(cityName)}</h4>`;
+    if (Array.isArray(climateEntry.months) && climateEntry.months.length) {
+      html += buildClimateChart(climateEntry.months);
+    } else if (climateEntry.description) {
+      html += `<p>${escapeHTML(climateEntry.description)}</p>`;
+    }
     html += '</div>';
   }
   if (a.beach && a.beach.description) {
@@ -1882,6 +1942,10 @@ function saveStateToHash() {
   });
   if (state.showFavorites) params.set('fav', '1');
   if (state.availableOnly) params.set('avail', '1');
+  if (state.budgetMin !== null) params.set('bmin', state.budgetMin);
+  if (state.budgetMax !== null) params.set('bmax', state.budgetMax);
+  if (state.dateFrom) params.set('dfrom', state.dateFrom);
+  if (state.dateTo) params.set('dto', state.dateTo);
   const hash = params.toString();
   history.replaceState(null, '', hash ? '#' + hash : location.pathname);
 }
@@ -1918,6 +1982,18 @@ function loadStateFromHash() {
     const ab = document.getElementById('toggleAvailable');
     if (ab) ab.classList.add('active');
   }
+  state.budgetMin = params.get('bmin') ? Number(params.get('bmin')) : null;
+  state.budgetMax = params.get('bmax') ? Number(params.get('bmax')) : null;
+  state.dateFrom = params.get('dfrom') || '';
+  state.dateTo = params.get('dto') || '';
+  const bminEl = document.getElementById('budgetMin');
+  const bmaxEl = document.getElementById('budgetMax');
+  const dfromEl = document.getElementById('dateFrom');
+  const dtoEl = document.getElementById('dateTo');
+  if (bminEl) bminEl.value = state.budgetMin ?? '';
+  if (bmaxEl) bmaxEl.value = state.budgetMax ?? '';
+  if (dfromEl) dfromEl.value = state.dateFrom;
+  if (dtoEl) dtoEl.value = state.dateTo;
 }
 
 /* ===== Event Binding ===== */
@@ -1992,6 +2068,82 @@ function bindEvents() {
     juniorToggle.parentNode.insertBefore(familyToggle, juniorToggle.nextSibling);
   }
 
+  // Add Price (high→low) sort option
+  const sortSelect = document.getElementById('filterSort');
+  if (sortSelect && !sortSelect.querySelector('[value="price-desc"]')) {
+    const opt = document.createElement('option');
+    opt.value = 'price-desc';
+    opt.textContent = 'Price (high→low)';
+    const priceOpt = sortSelect.querySelector('[value="price"]');
+    if (priceOpt) priceOpt.parentNode.insertBefore(opt, priceOpt.nextSibling);
+  }
+
+  // Create advanced filter row (budget + date)
+  const filterRows = document.getElementById('filterRows');
+  if (filterRows) {
+    const advRow = document.createElement('div');
+    advRow.className = 'filter-row filter-row-advanced';
+    advRow.innerHTML = `
+      <div class="filter-group budget-filter-group">
+        <label class="filter-label">💰 Budget (€/month)</label>
+        <div class="range-inputs">
+          <input type="number" id="budgetMin" class="filter-input" placeholder="Min" min="0" step="100" aria-label="Minimum monthly budget in EUR">
+          <span class="range-sep">–</span>
+          <input type="number" id="budgetMax" class="filter-input" placeholder="Max" min="0" step="100" aria-label="Maximum monthly budget in EUR">
+        </div>
+      </div>
+      <div class="filter-group date-filter-group">
+        <label class="filter-label">📅 Travel Dates</label>
+        <div class="range-inputs">
+          <input type="date" id="dateFrom" class="filter-input" aria-label="Earliest travel date">
+          <span class="range-sep">to</span>
+          <input type="date" id="dateTo" class="filter-input" aria-label="Latest travel date">
+        </div>
+      </div>
+    `;
+    filterRows.appendChild(advRow);
+
+    // Budget input events (debounced)
+    let budgetTimer;
+    const budgetHandler = () => {
+      clearTimeout(budgetTimer);
+      budgetTimer = setTimeout(() => {
+        const minVal = document.getElementById('budgetMin').value;
+        const maxVal = document.getElementById('budgetMax').value;
+        state.budgetMin = minVal !== '' ? Number(minVal) : null;
+        state.budgetMax = maxVal !== '' ? Number(maxVal) : null;
+        if (state.budgetMin !== null && state.budgetMax !== null && state.budgetMin > state.budgetMax) {
+          [state.budgetMin, state.budgetMax] = [state.budgetMax, state.budgetMin];
+          document.getElementById('budgetMin').value = state.budgetMin;
+          document.getElementById('budgetMax').value = state.budgetMax;
+        }
+        applyAndRender();
+      }, 400);
+    };
+    document.getElementById('budgetMin').addEventListener('input', budgetHandler);
+    document.getElementById('budgetMax').addEventListener('input', budgetHandler);
+
+    // Date input events
+    document.getElementById('dateFrom').addEventListener('change', () => {
+      state.dateFrom = document.getElementById('dateFrom').value;
+      if (state.dateFrom && state.dateTo && state.dateFrom > state.dateTo) {
+        [state.dateFrom, state.dateTo] = [state.dateTo, state.dateFrom];
+        document.getElementById('dateFrom').value = state.dateFrom;
+        document.getElementById('dateTo').value = state.dateTo;
+      }
+      applyAndRender();
+    });
+    document.getElementById('dateTo').addEventListener('change', () => {
+      state.dateTo = document.getElementById('dateTo').value;
+      if (state.dateFrom && state.dateTo && state.dateFrom > state.dateTo) {
+        [state.dateFrom, state.dateTo] = [state.dateTo, state.dateFrom];
+        document.getElementById('dateFrom').value = state.dateFrom;
+        document.getElementById('dateTo').value = state.dateTo;
+      }
+      applyAndRender();
+    });
+  }
+
   // Availability filter toggle
   const availBtn = document.getElementById('toggleAvailable');
   if (availBtn) {
@@ -2025,10 +2177,24 @@ function bindEvents() {
     document.getElementById('filterSearch').value = '';
     document.getElementById('filterCurrency').value = 'EUR';
     document.getElementById('filterSurface').value = '';
+    state.budgetMin = null;
+    state.budgetMax = null;
+    state.dateFrom = '';
+    state.dateTo = '';
     document.querySelectorAll('.toggle-btn.active[data-filter]').forEach(b => b.classList.remove('active'));
     document.getElementById('toggleFavorites').classList.remove('active');
     const availResetBtn = document.getElementById('toggleAvailable');
     if (availResetBtn) availResetBtn.classList.remove('active');
+    const familyReset = document.getElementById('toggleFamily');
+    if (familyReset) familyReset.classList.remove('active');
+    const bminReset = document.getElementById('budgetMin');
+    const bmaxReset = document.getElementById('budgetMax');
+    const dfromReset = document.getElementById('dateFrom');
+    const dtoReset = document.getElementById('dateTo');
+    if (bminReset) bminReset.value = '';
+    if (bmaxReset) bmaxReset.value = '';
+    if (dfromReset) dfromReset.value = '';
+    if (dtoReset) dtoReset.value = '';
     applyAndRender();
   });
 
@@ -2269,9 +2435,12 @@ function openCompareModal() {
     { label: 'Beach Distance', fn: a => typeof a.beach?.distance === 'number' ? a.beach.distance + ' km' : 'N/A' },
     { label: 'Airport', fn: a => a.airport ? `${a.airport.code} (${a.airport.distance})` : 'N/A' },
     { label: 'Summer Temp (Jul)', fn: a => {
-      if (a.climate && CLIMATE_DATA[a.climate]) {
+      if (a.climate && CLIMATE_DATA[a.climate] && Array.isArray(CLIMATE_DATA[a.climate].months)) {
         const jul = CLIMATE_DATA[a.climate].months.find(m => m.month === 'Jul');
         return jul ? jul.temp + '°C' : 'N/A';
+      }
+      if (a.climate && CLIMATE_DATA[a.climate] && CLIMATE_DATA[a.climate].avgTemp != null) {
+        return CLIMATE_DATA[a.climate].avgTemp + '°C (avg)';
       }
       return 'N/A';
     }},
@@ -2554,9 +2723,12 @@ function scoreAcademy(a, answers) {
 }
 
 function getJulTemp(a) {
-  if (a.climate && CLIMATE_DATA[a.climate]) {
+  if (a.climate && CLIMATE_DATA[a.climate] && Array.isArray(CLIMATE_DATA[a.climate].months)) {
     const jul = CLIMATE_DATA[a.climate].months.find(m => m.month === 'Jul');
     return jul ? jul.temp : null;
+  }
+  if (a.climate && CLIMATE_DATA[a.climate] && CLIMATE_DATA[a.climate].avgTemp != null) {
+    return CLIMATE_DATA[a.climate].avgTemp;
   }
   return null;
 }
@@ -2797,8 +2969,10 @@ function renderAccommodationSection(a) {
 
 /* ===== Upcoming Camps Renderer ===== */
 function renderUpcomingCamps(camps) {
-  const sorted = camps.slice().sort((a, b) => a.startDate.localeCompare(b.startDate));
   const now = new Date();
+  const future = camps.filter(c => new Date(c.endDate + 'T23:59:59') >= now);
+  if (!future.length) return '';
+  const sorted = future.slice().sort((a, b) => a.startDate.localeCompare(b.startDate));
   const soon = new Date(now.getTime() + 30 * 24 * 60 * 60 * 1000);
 
   function fmtDate(dateStr) {
