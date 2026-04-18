@@ -848,6 +848,936 @@ const ACADEMIES = [
       languageSupport: ['English', 'Turkish', 'German'],
       emergencyProtocol: 'Turkish Coast Guard coordination, Bodrum State Hospital 10 min'
     }
+  },
+  {
+    id: 'ijsselmeer-sailing-academy',
+    name: 'IJsselmeer Sailing Academy',
+    country: 'Netherlands',
+    countryFlag: '🇳🇱',
+    city: 'Lelystad',
+    lat: 52.5185,
+    lng: 5.4714,
+    website: 'https://www.ijsselmeersailing.nl',
+    contact: '+31 320 234 567',
+    contactEmail: 'info@ijsselmeersailing.nl',
+    description: 'Premier inland sailing academy on the IJsselmeer, Europe\'s largest lake. Ideal flat-water conditions for beginners and challenging open-water sailing for advanced racers, with access to the Markermeer and historic Dutch harbors.',
+    ageGroups: ['Junior', 'Adult'],
+    level: 'All levels',
+    individualLessons: true,
+    boarding: true,
+    beach: { distance: 0, description: 'Directly on Batavia Haven marina with IJsselmeer waterfront access' },
+    priceRange: { from: 800, to: 1800, unit: 'week', display: '€800 - €1,800/week' },
+    socialMedia: { instagram: '@ijsselmeersailing', facebook: 'https://facebook.com/ijsselmeersailing', twitter: '@ijsselmeersail' },
+    climate: 'ijsselmeer',
+    facilities: 'Batavia Haven marina with 150 berths, fleet of 30+ boats (Valk, Randmeer, Laser, 420), sheltered training basin, sailing simulator, weather station, sail loft and rigging workshop',
+    courtSurfaces: ['Dinghy', 'Keelboat', 'Catamaran'],
+    programs: [
+      { name: 'Lake Sailing Fundamentals', price: '€900/week', desc: 'Learn to sail on the sheltered IJsselmeer with progressive skill building in Valk and Laser dinghies' },
+      { name: 'Keelboat Cruising Course', price: '€1,400/week', desc: 'Multi-day keelboat cruising across the IJsselmeer visiting historic Zuiderzee harbors' },
+      { name: 'Youth Racing Development', price: '€1,100/week', desc: 'Competitive dinghy racing program for juniors preparing for Dutch national championships' }
+    ],
+    coaches: [
+      { name: 'Jan van der Berg', credential: 'World Sailing Level 3 Coach', background: 'Former Dutch national team sailor with 15 years coaching experience on IJsselmeer and international regattas', atpWta: false, bestRanking: null, rankingNote: null, languages: ['Dutch', 'English', 'German'], instagram: null },
+      { name: 'Marieke de Vries', credential: 'KNWV Instructor A License', background: 'Youth sailing specialist with Dutch Sailing Federation, experienced in Optimist and 420 class development', atpWta: false, bestRanking: null, rankingNote: null, languages: ['Dutch', 'English'], instagram: null }
+    ],
+    photos: ['https://images.unsplash.com/photo-1540946485063-a40da27545f8?w=800', 'https://images.unsplash.com/photo-1534854638093-bada1813ca19?w=800'],
+    upcomingCamps: [
+      { name: 'Summer Lake Camp', startDate: '2026-07-06', endDate: '2026-07-13', price: '€900', level: 'All Levels' },
+      { name: 'Spring Keelboat Course', startDate: '2026-05-04', endDate: '2026-05-11', price: '€1,400', level: 'Intermediate' },
+      { name: 'Autumn Racing Prep', startDate: '2026-09-21', endDate: '2026-09-28', price: '€1,100', level: 'Advanced' }
+    ],
+    accommodation: {
+      types: [
+        { type: 'hotel', label: 'Batavia Marina Hotel', pricePerWeek: 500, maxOccupancy: 2, bathType: 'ensuite', mealsIncluded: true },
+        { type: 'apartment', label: 'Lelystad Waterfront Apartment', pricePerWeek: 380, maxOccupancy: 3, bathType: 'ensuite', mealsIncluded: false }
+      ],
+      companionsAllowed: true,
+      childrenAllowed: true,
+      minStay: '1 week',
+      shuttleToTraining: true,
+      notes: 'Marina-side accommodation in Batavia Haven with boat storage. Close to Batavia Stad shopping center.'
+    },
+    availability: {
+      status: 'open',
+      nextIntake: '2026-05-04',
+      spotsLeft: 16,
+      responseTime: '24h',
+      privateLessons: true,
+      yearRound: false
+    },
+    juniorInfo: {
+      minAge: 8,
+      maxAge: 18,
+      supervision: '24/7',
+      guardianStay: true,
+      schooling: 'Local Lelystad international school partnerships',
+      medicalStaff: true,
+      safeguarding: 'KNWV child protection standards, VOG-certified coaches',
+      airportPickup: true,
+      mealPlan: 'Full board with Dutch cuisine',
+      curfew: '21:00 weekdays, 22:00 weekends',
+      roommatePairing: 'Age-based groups',
+      languageSupport: ['English', 'Dutch', 'German'],
+      emergencyProtocol: 'KNRM lifeboat service coordination, Flevoziekenhuis Almere 20 min'
+    }
+  },
+  {
+    id: 'kiel-sailing-center',
+    name: 'Kiel Sailing Center',
+    country: 'Germany',
+    countryFlag: '🇩🇪',
+    city: 'Kiel',
+    lat: 54.3233,
+    lng: 10.1228,
+    website: 'https://www.kielsailing.de',
+    contact: '+49 431 901 2345',
+    contactEmail: 'info@kielsailing.de',
+    description: 'Train at Germany\'s sailing capital on the Baltic Sea. Home of the legendary Kieler Woche, the world\'s largest sailing event. World-class facilities at the Olympic Centre Schilksee with consistent Baltic winds.',
+    ageGroups: ['Junior', 'Adult', 'Masters'],
+    level: 'All levels',
+    individualLessons: true,
+    boarding: true,
+    beach: { distance: 0, description: 'Directly on Schilksee Olympic Harbour with Baltic Sea access' },
+    priceRange: { from: 900, to: 2100, unit: 'week', display: '€900 - €2,100/week' },
+    socialMedia: { instagram: '@kielsailing', facebook: 'https://facebook.com/kielsailing', twitter: '@kielsailing' },
+    climate: 'kiel',
+    facilities: 'Olympic Centre Schilksee with 600 berths, fleet of 50+ boats (Laser, 49er, 470, Finn, Nacra 17), Olympic race course in Kiel Fjord, full sailing simulator, sports science lab, weather station, professional sail loft',
+    courtSurfaces: ['Dinghy', 'Keelboat', 'Catamaran', 'Windsurf'],
+    programs: [
+      { name: 'Kieler Woche Preparation', price: '€1,800/week', desc: 'Intensive race training to prepare for the world-famous Kiel Week regatta on the Olympic course' },
+      { name: 'Baltic Dinghy Sailing', price: '€1,000/week', desc: 'Learn dinghy sailing on the Kiel Fjord with progressive skill development in Laser and 420 classes' },
+      { name: 'Olympic Class Development', price: '€2,000/week', desc: 'High-performance training in Olympic sailing classes with German national team coaches' }
+    ],
+    coaches: [
+      { name: 'Maximilian Richter', credential: 'DSV A-Trainer License', background: 'Former German Olympic team coach, Kiel Week champion, 25 years of elite sailing instruction on the Baltic', atpWta: false, bestRanking: null, rankingNote: null, languages: ['German', 'English', 'Danish'], instagram: null },
+      { name: 'Katrin Hoffmann', credential: 'World Sailing Level 3 Coach', background: 'Former 49erFX world championship competitor, specialist in women\'s Olympic sailing classes', atpWta: false, bestRanking: null, rankingNote: null, languages: ['German', 'English'], instagram: null }
+    ],
+    photos: ['https://images.unsplash.com/photo-1540946485063-a40da27545f8?w=800', 'https://images.unsplash.com/photo-1534854638093-bada1813ca19?w=800'],
+    upcomingCamps: [
+      { name: 'Kiel Week Prep Camp', startDate: '2026-06-08', endDate: '2026-06-15', price: '€1,800', level: 'Advanced' },
+      { name: 'Spring Baltic Camp', startDate: '2026-04-20', endDate: '2026-04-27', price: '€1,000', level: 'All Levels' },
+      { name: 'Autumn Olympic Class Camp', startDate: '2026-09-14', endDate: '2026-09-21', price: '€2,000', level: 'Advanced' }
+    ],
+    accommodation: {
+      types: [
+        { type: 'hotel', label: 'Schilksee Olympic Village Hotel', pricePerWeek: 580, maxOccupancy: 2, bathType: 'ensuite', mealsIncluded: true },
+        { type: 'apartment', label: 'Kiel Fjord Apartment', pricePerWeek: 420, maxOccupancy: 3, bathType: 'ensuite', mealsIncluded: false }
+      ],
+      companionsAllowed: true,
+      childrenAllowed: true,
+      minStay: '1 week',
+      shuttleToTraining: true,
+      notes: 'Accommodation at Schilksee Olympic Centre area with panoramic Baltic views and direct marina access.'
+    },
+    availability: {
+      status: 'open',
+      nextIntake: '2026-04-20',
+      spotsLeft: 20,
+      responseTime: '24h',
+      privateLessons: true,
+      yearRound: true
+    },
+    juniorInfo: {
+      minAge: 7,
+      maxAge: 18,
+      supervision: '24/7',
+      guardianStay: true,
+      schooling: 'Kiel international school partnerships',
+      medicalStaff: true,
+      safeguarding: 'DSV child protection standards, background-checked staff',
+      airportPickup: true,
+      mealPlan: 'Full board with German and international cuisine',
+      curfew: '21:00 weekdays, 22:00 weekends',
+      roommatePairing: 'Age-based groups',
+      languageSupport: ['English', 'German', 'Danish'],
+      emergencyProtocol: 'DGzRS sea rescue coordination, UKSH Kiel Hospital 15 min'
+    }
+  },
+  {
+    id: 'copenhagen-sailing-academy',
+    name: 'Copenhagen Sailing Academy',
+    country: 'Denmark',
+    countryFlag: '🇩🇰',
+    city: 'Copenhagen',
+    lat: 55.6761,
+    lng: 12.5683,
+    website: 'https://www.copenhagensailing.dk',
+    contact: '+45 33 12 34 56',
+    contactEmail: 'info@copenhagensailing.dk',
+    description: 'Sail the Øresund strait between Denmark and Sweden from Copenhagen\'s vibrant harbor. Experience world-class Scandinavian sailing with views of the Øresund Bridge and access to the Danish archipelago.',
+    ageGroups: ['Junior', 'Adult'],
+    level: 'All levels',
+    individualLessons: true,
+    boarding: true,
+    beach: { distance: 0, description: 'Based at Skovshoved Havn marina with direct Øresund access' },
+    priceRange: { from: 8000, to: 18000, unit: 'week', display: 'DKK 8,000 - 18,000/week' },
+    socialMedia: { instagram: '@cphsailing', facebook: 'https://facebook.com/copenhagensailing', twitter: '@cphsailing' },
+    climate: 'copenhagen-sailing',
+    facilities: 'Skovshoved Havn marina with 200 berths, fleet of 35+ boats (Laser, 29er, J/70, Dragon), Øresund race course, sailing simulator, modern clubhouse with weather station and classroom',
+    courtSurfaces: ['Dinghy', 'Keelboat', 'Catamaran'],
+    programs: [
+      { name: 'Øresund Sailing Course', price: 'DKK 12,000/week', desc: 'Comprehensive sailing course on the Øresund with views of Copenhagen skyline and Swedish coast' },
+      { name: 'Dragon Class Keelboat', price: 'DKK 15,000/week', desc: 'Classic Dragon class keelboat sailing in Copenhagen\'s rich maritime heritage' },
+      { name: 'Youth Dinghy Racing', price: 'DKK 9,000/week', desc: 'Competitive dinghy sailing for juniors preparing for Danish and Nordic championships' }
+    ],
+    coaches: [
+      { name: 'Lars Christensen', credential: 'Dansk Sejlunion A License', background: 'Former Danish Sailing Team member, multiple Danish championship titles, 18 years coaching experience', atpWta: false, bestRanking: null, rankingNote: null, languages: ['Danish', 'English', 'Swedish'], instagram: null }
+    ],
+    photos: ['https://images.unsplash.com/photo-1540946485063-a40da27545f8?w=800'],
+    upcomingCamps: [
+      { name: 'Summer Øresund Camp', startDate: '2026-07-06', endDate: '2026-07-13', price: 'DKK 12,000', level: 'All Levels' },
+      { name: 'Spring Dragon Class', startDate: '2026-05-11', endDate: '2026-05-18', price: 'DKK 15,000', level: 'Intermediate' },
+      { name: 'Autumn Youth Racing', startDate: '2026-09-07', endDate: '2026-09-14', price: 'DKK 9,000', level: 'Advanced' }
+    ],
+    accommodation: {
+      types: [
+        { type: 'hotel', label: 'Skovshoved Hotel', pricePerWeek: 5500, maxOccupancy: 2, bathType: 'ensuite', mealsIncluded: true },
+        { type: 'apartment', label: 'Copenhagen Harbor Apartment', pricePerWeek: 4200, maxOccupancy: 3, bathType: 'ensuite', mealsIncluded: false }
+      ],
+      companionsAllowed: true,
+      childrenAllowed: true,
+      minStay: '1 week',
+      shuttleToTraining: true,
+      notes: 'Charming Skovshoved fishing village setting. Easy metro access to central Copenhagen.'
+    },
+    availability: {
+      status: 'open',
+      nextIntake: '2026-05-11',
+      spotsLeft: 14,
+      responseTime: '24h',
+      privateLessons: true,
+      yearRound: false
+    },
+    juniorInfo: {
+      minAge: 8,
+      maxAge: 18,
+      supervision: '24/7',
+      guardianStay: true,
+      schooling: 'Copenhagen International School partnership',
+      medicalStaff: true,
+      safeguarding: 'Dansk Sejlunion child protection standards, police-checked coaches',
+      airportPickup: true,
+      mealPlan: 'Full board with Scandinavian cuisine',
+      curfew: '21:00 weekdays, 22:00 weekends',
+      roommatePairing: 'Age-based groups',
+      languageSupport: ['English', 'Danish'],
+      emergencyProtocol: 'Danish Maritime Authority coordination, Rigshospitalet 20 min'
+    }
+  },
+  {
+    id: 'gothenburg-sailing-center',
+    name: 'Gothenburg Sailing Center',
+    country: 'Sweden',
+    countryFlag: '🇸🇪',
+    city: 'Gothenburg',
+    lat: 57.7089,
+    lng: 11.9746,
+    website: 'https://www.gothenburgsailing.se',
+    contact: '+46 31 123 4567',
+    contactEmail: 'info@gothenburgsailing.se',
+    description: 'Explore Sweden\'s stunning west coast archipelago from Gothenburg. Sail among thousands of granite islands with sheltered channels and open Skagerrak waters, experiencing the best of Nordic sailing.',
+    ageGroups: ['Junior', 'Adult', 'Masters'],
+    level: 'All levels',
+    individualLessons: true,
+    boarding: true,
+    beach: { distance: 0, description: 'Based at Långedrag marina with direct archipelago access' },
+    priceRange: { from: 9000, to: 22000, unit: 'week', display: 'SEK 9,000 - 22,000/week' },
+    socialMedia: { instagram: '@gbgsailing', facebook: 'https://facebook.com/gothenburgsailing', twitter: '@gbgsailing' },
+    climate: 'gothenburg-sailing',
+    facilities: 'Långedrag marina with 300 berths, fleet of 40+ boats (Laser, 29er, J/70, Express, IF-boat), archipelago race course, sailing simulator, modern clubhouse with sauna and weather station',
+    courtSurfaces: ['Dinghy', 'Keelboat', 'Catamaran', 'Windsurf'],
+    programs: [
+      { name: 'Archipelago Cruising', price: 'SEK 16,000/week', desc: 'Multi-day keelboat cruising through the stunning Gothenburg archipelago with island stops' },
+      { name: 'Dinghy Sailing Course', price: 'SEK 10,000/week', desc: 'Learn to sail in sheltered archipelago waters with progression to open Skagerrak sailing' },
+      { name: 'Match Racing Intensive', price: 'SEK 20,000/week', desc: 'Advanced match racing techniques in J/70 keelboats, preparing for Swedish Match Racing Tour' }
+    ],
+    coaches: [
+      { name: 'Erik Lindqvist', credential: 'Svenska Seglarförbundet A License', background: 'Former Swedish match racing champion, Volvo Ocean Race crew member, 20 years of west coast sailing instruction', atpWta: false, bestRanking: null, rankingNote: null, languages: ['Swedish', 'English', 'Norwegian'], instagram: null },
+      { name: 'Anna Svensson', credential: 'World Sailing Level 2 Coach', background: 'Youth sailing development specialist with Swedish Sailing Federation, Optimist and 29er class expert', atpWta: false, bestRanking: null, rankingNote: null, languages: ['Swedish', 'English'], instagram: null }
+    ],
+    photos: ['https://images.unsplash.com/photo-1540946485063-a40da27545f8?w=800', 'https://images.unsplash.com/photo-1534854638093-bada1813ca19?w=800'],
+    upcomingCamps: [
+      { name: 'Summer Archipelago Camp', startDate: '2026-07-06', endDate: '2026-07-13', price: 'SEK 16,000', level: 'Intermediate' },
+      { name: 'Spring Dinghy Course', startDate: '2026-05-18', endDate: '2026-05-25', price: 'SEK 10,000', level: 'All Levels' },
+      { name: 'Autumn Match Racing', startDate: '2026-09-07', endDate: '2026-09-14', price: 'SEK 20,000', level: 'Advanced' }
+    ],
+    accommodation: {
+      types: [
+        { type: 'hotel', label: 'Långedrag Seaside Hotel', pricePerWeek: 6500, maxOccupancy: 2, bathType: 'ensuite', mealsIncluded: true },
+        { type: 'apartment', label: 'Archipelago Apartment', pricePerWeek: 5000, maxOccupancy: 3, bathType: 'ensuite', mealsIncluded: false }
+      ],
+      companionsAllowed: true,
+      childrenAllowed: true,
+      minStay: '1 week',
+      shuttleToTraining: true,
+      notes: 'Seaside accommodation at Långedrag with spectacular archipelago views. Tram connection to central Gothenburg.'
+    },
+    availability: {
+      status: 'open',
+      nextIntake: '2026-05-18',
+      spotsLeft: 16,
+      responseTime: '24h',
+      privateLessons: true,
+      yearRound: false
+    },
+    juniorInfo: {
+      minAge: 8,
+      maxAge: 18,
+      supervision: '24/7',
+      guardianStay: true,
+      schooling: 'International School of Gothenburg partnership',
+      medicalStaff: true,
+      safeguarding: 'SSF child protection standards, police-checked coaches',
+      airportPickup: true,
+      mealPlan: 'Full board with Swedish cuisine',
+      curfew: '21:00 weekdays, 22:00 weekends',
+      roommatePairing: 'Age-based groups',
+      languageSupport: ['English', 'Swedish'],
+      emergencyProtocol: 'Swedish Sea Rescue Society coordination, Sahlgrenska Hospital 20 min'
+    }
+  },
+  {
+    id: 'oslo-fjord-sailing',
+    name: 'Oslo Fjord Sailing Academy',
+    country: 'Norway',
+    countryFlag: '🇳🇴',
+    city: 'Oslo',
+    lat: 59.9139,
+    lng: 10.7522,
+    website: 'https://www.oslofjordsailing.no',
+    contact: '+47 22 12 34 56',
+    contactEmail: 'info@oslofjordsailing.no',
+    description: 'Sail the magnificent Oslo Fjord surrounded by forested islands and rocky skerries. Experience Norwegian maritime traditions with sheltered inner fjord sailing and challenging outer fjord passages.',
+    ageGroups: ['Junior', 'Adult'],
+    level: 'All levels',
+    individualLessons: true,
+    boarding: true,
+    beach: { distance: 0, description: 'Based at Bygdøy Royal Norwegian Yacht Club marina' },
+    priceRange: { from: 9000, to: 22000, unit: 'week', display: 'NOK 9,000 - 22,000/week' },
+    socialMedia: { instagram: '@oslofjordsailing', facebook: 'https://facebook.com/oslofjordsailing', twitter: '@oslofjordsail' },
+    climate: 'oslo-sailing',
+    facilities: 'Bygdøy marina with 180 berths, fleet of 30+ boats (Laser, 29er, J/70, Soling, Knarr), fjord race course, sailing simulator, weather station, heated clubhouse with maritime library',
+    courtSurfaces: ['Dinghy', 'Keelboat', 'Catamaran'],
+    programs: [
+      { name: 'Oslo Fjord Exploration', price: 'NOK 16,000/week', desc: 'Keelboat cruising through the Oslo Fjord visiting picturesque island harbors and historic coastal towns' },
+      { name: 'Dinghy Sailing Basics', price: 'NOK 10,000/week', desc: 'Learn to sail in the sheltered inner Oslo Fjord with steady thermal winds and island shelter' },
+      { name: 'Fjord Racing Camp', price: 'NOK 18,000/week', desc: 'Competitive racing program on the Oslo Fjord preparing for Norwegian championship regattas' }
+    ],
+    coaches: [
+      { name: 'Magnus Haugen', credential: 'Norges Seilforbund Level 3 Coach', background: 'Former Norwegian national team sailor, multiple Norwegian championship titles, specialist in fjord sailing tactics', atpWta: false, bestRanking: null, rankingNote: null, languages: ['Norwegian', 'English', 'Swedish'], instagram: null }
+    ],
+    photos: ['https://images.unsplash.com/photo-1540946485063-a40da27545f8?w=800'],
+    upcomingCamps: [
+      { name: 'Summer Fjord Camp', startDate: '2026-06-29', endDate: '2026-07-06', price: 'NOK 16,000', level: 'Intermediate' },
+      { name: 'Spring Dinghy Course', startDate: '2026-05-11', endDate: '2026-05-18', price: 'NOK 10,000', level: 'All Levels' },
+      { name: 'Autumn Racing Intensive', startDate: '2026-09-07', endDate: '2026-09-14', price: 'NOK 18,000', level: 'Advanced' }
+    ],
+    accommodation: {
+      types: [
+        { type: 'hotel', label: 'Bygdøy Marina Hotel', pricePerWeek: 7500, maxOccupancy: 2, bathType: 'ensuite', mealsIncluded: true },
+        { type: 'apartment', label: 'Oslo Fjord Apartment', pricePerWeek: 6000, maxOccupancy: 3, bathType: 'ensuite', mealsIncluded: false }
+      ],
+      companionsAllowed: true,
+      childrenAllowed: true,
+      minStay: '1 week',
+      shuttleToTraining: true,
+      notes: 'Bygdøy peninsula accommodation near Fram Museum and Viking Ship Museum. Ferry to central Oslo.'
+    },
+    availability: {
+      status: 'open',
+      nextIntake: '2026-05-11',
+      spotsLeft: 12,
+      responseTime: '24h',
+      privateLessons: true,
+      yearRound: false
+    },
+    juniorInfo: {
+      minAge: 8,
+      maxAge: 18,
+      supervision: '24/7',
+      guardianStay: true,
+      schooling: 'Oslo International School partnership',
+      medicalStaff: true,
+      safeguarding: 'NSF child protection standards, police-checked coaches',
+      airportPickup: true,
+      mealPlan: 'Full board with Norwegian cuisine',
+      curfew: '21:00 weekdays, 22:00 weekends',
+      roommatePairing: 'Age-based groups',
+      languageSupport: ['English', 'Norwegian'],
+      emergencyProtocol: 'RS Norwegian Sea Rescue coordination, Oslo University Hospital 15 min'
+    }
+  },
+  {
+    id: 'dun-laoghaire-sailing',
+    name: 'Dún Laoghaire Sailing Academy',
+    country: 'Ireland',
+    countryFlag: '🇮🇪',
+    city: 'Dún Laoghaire',
+    lat: 53.2946,
+    lng: -6.1343,
+    website: 'https://www.dlsailing.ie',
+    contact: '+353 1 280 1234',
+    contactEmail: 'info@dlsailing.ie',
+    description: 'Sail from Ireland\'s premier sailing harbor in Dún Laoghaire on Dublin Bay. Historic Victorian harbor with world-class racing, steady Irish Sea winds, and access to Ireland\'s stunning east coast.',
+    ageGroups: ['Junior', 'Adult', 'Masters'],
+    level: 'All levels',
+    individualLessons: true,
+    boarding: true,
+    beach: { distance: 200, description: 'Sandycove Beach 200m from harbor, Scotsman\'s Bay swimming area' },
+    priceRange: { from: 700, to: 1800, unit: 'week', display: '€700 - €1,800/week' },
+    socialMedia: { instagram: '@dlsailing', facebook: 'https://facebook.com/dlsailing', twitter: '@dlsailing' },
+    climate: 'dun-laoghaire',
+    facilities: 'Dún Laoghaire Harbour marina with 800 berths, fleet of 40+ boats (Laser, 420, SB20, J/24), Dublin Bay race course, sailing simulator, historic yacht club facilities, weather station and sail repair workshop',
+    courtSurfaces: ['Dinghy', 'Keelboat', 'Catamaran', 'Windsurf'],
+    programs: [
+      { name: 'Dublin Bay Sailing', price: '€1,200/week', desc: 'Keelboat sailing on Dublin Bay with views of Howth Head, Dalkey Island, and the Wicklow Mountains' },
+      { name: 'Dinghy Sailing Course', price: '€800/week', desc: 'Learn to sail in the sheltered waters of Dún Laoghaire harbour before progressing to Dublin Bay' },
+      { name: 'Coastal Racing Camp', price: '€1,500/week', desc: 'Advanced racing tactics for Dublin Bay regattas including the prestigious Volvo Dún Laoghaire Regatta' }
+    ],
+    coaches: [
+      { name: 'Séamus O\'Brien', credential: 'Irish Sailing Association Senior Instructor', background: 'Former Irish national sailing team member, Round Ireland Race veteran, 22 years of coastal sailing instruction', atpWta: false, bestRanking: null, rankingNote: null, languages: ['English', 'Irish'], instagram: null },
+      { name: 'Aoife Murphy', credential: 'World Sailing Level 2 Coach', background: 'Irish Laser Radial national champion, youth sailing development specialist with ISA', atpWta: false, bestRanking: null, rankingNote: null, languages: ['English', 'Irish', 'French'], instagram: null }
+    ],
+    photos: ['https://images.unsplash.com/photo-1540946485063-a40da27545f8?w=800', 'https://images.unsplash.com/photo-1534854638093-bada1813ca19?w=800'],
+    upcomingCamps: [
+      { name: 'Summer Dublin Bay Camp', startDate: '2026-07-13', endDate: '2026-07-20', price: '€1,200', level: 'Intermediate' },
+      { name: 'Spring Dinghy Course', startDate: '2026-04-27', endDate: '2026-05-04', price: '€800', level: 'All Levels' },
+      { name: 'Autumn Regatta Prep', startDate: '2026-09-14', endDate: '2026-09-21', price: '€1,500', level: 'Advanced' }
+    ],
+    accommodation: {
+      types: [
+        { type: 'hotel', label: 'Royal Marine Hotel', pricePerWeek: 600, maxOccupancy: 2, bathType: 'ensuite', mealsIncluded: true },
+        { type: 'apartment', label: 'Dún Laoghaire Seafront Apartment', pricePerWeek: 450, maxOccupancy: 3, bathType: 'ensuite', mealsIncluded: false }
+      ],
+      companionsAllowed: true,
+      childrenAllowed: true,
+      minStay: '1 week',
+      shuttleToTraining: true,
+      notes: 'Victorian seaside town with excellent restaurants and DART rail connection to Dublin city centre.'
+    },
+    availability: {
+      status: 'open',
+      nextIntake: '2026-04-27',
+      spotsLeft: 18,
+      responseTime: '24h',
+      privateLessons: true,
+      yearRound: true
+    },
+    juniorInfo: {
+      minAge: 8,
+      maxAge: 18,
+      supervision: '24/7',
+      guardianStay: true,
+      schooling: 'Local Dún Laoghaire school partnerships',
+      medicalStaff: true,
+      safeguarding: 'Irish Sailing child protection policy, Garda-vetted coaches',
+      airportPickup: true,
+      mealPlan: 'Full board with Irish cuisine',
+      curfew: '21:00 weekdays, 22:00 weekends',
+      roommatePairing: 'Age-based groups',
+      languageSupport: ['English', 'Irish'],
+      emergencyProtocol: 'RNLI Dún Laoghaire lifeboat coordination, St Vincent\'s Hospital 15 min'
+    }
+  },
+  {
+    id: 'kotor-sailing-academy',
+    name: 'Kotor Sailing Academy',
+    country: 'Montenegro',
+    countryFlag: '🇲🇪',
+    city: 'Kotor',
+    lat: 42.4247,
+    lng: 18.7712,
+    website: 'https://www.kotorsailing.me',
+    contact: '+382 32 325 678',
+    contactEmail: 'info@kotorsailing.me',
+    description: 'Sail the spectacular Bay of Kotor, a UNESCO World Heritage fjord-like bay surrounded by dramatic mountains. Experience Mediterranean sailing with unique wind patterns created by the bay\'s geography.',
+    ageGroups: ['Junior', 'Adult'],
+    level: 'All levels',
+    individualLessons: true,
+    boarding: true,
+    beach: { distance: 0, description: 'Marina at Kotor Bay with direct access to the Adriatic' },
+    priceRange: { from: 600, to: 1500, unit: 'week', display: '€600 - €1,500/week' },
+    socialMedia: { instagram: '@kotorsailing', facebook: 'https://facebook.com/kotorsailing', twitter: '@kotorsailing' },
+    climate: 'kotor',
+    facilities: 'Kotor Marina with 150 berths, fleet of 20+ boats (Laser, 420, Bavaria cruisers), bay race course, weather station, sail repair workshop, traditional stone clubhouse with panoramic bay views',
+    courtSurfaces: ['Dinghy', 'Keelboat', 'Catamaran'],
+    programs: [
+      { name: 'Bay of Kotor Discovery', price: '€1,000/week', desc: 'Keelboat cruising through the Bay of Kotor visiting Perast, Our Lady of the Rocks, and Herceg Novi' },
+      { name: 'Dinghy Sailing Basics', price: '€650/week', desc: 'Learn to sail in the sheltered inner bay with steady mountain thermal winds and calm waters' },
+      { name: 'Adriatic Coastal Passage', price: '€1,300/week', desc: 'Multi-day coastal sailing from Kotor to Budva, Sveti Stefan, and the Montenegrin riviera' }
+    ],
+    coaches: [
+      { name: 'Nikola Jovanović', credential: 'Montenegrin Sailing Federation A License', background: 'Former Montenegrin national team sailor, Bay of Kotor regatta champion, specialist in Adriatic coastal navigation', atpWta: false, bestRanking: null, rankingNote: null, languages: ['Montenegrin', 'English', 'Italian', 'Croatian'], instagram: null }
+    ],
+    photos: ['https://images.unsplash.com/photo-1540946485063-a40da27545f8?w=800'],
+    upcomingCamps: [
+      { name: 'Summer Bay Camp', startDate: '2026-07-06', endDate: '2026-07-13', price: '€1,000', level: 'All Levels' },
+      { name: 'Spring Dinghy Course', startDate: '2026-04-20', endDate: '2026-04-27', price: '€650', level: 'Beginner' },
+      { name: 'Autumn Adriatic Passage', startDate: '2026-09-28', endDate: '2026-10-05', price: '€1,300', level: 'Intermediate' }
+    ],
+    accommodation: {
+      types: [
+        { type: 'hotel', label: 'Kotor Old Town Hotel', pricePerWeek: 400, maxOccupancy: 2, bathType: 'ensuite', mealsIncluded: true },
+        { type: 'apartment', label: 'Bay View Apartment', pricePerWeek: 280, maxOccupancy: 3, bathType: 'ensuite', mealsIncluded: false }
+      ],
+      companionsAllowed: true,
+      childrenAllowed: true,
+      minStay: '1 week',
+      shuttleToTraining: true,
+      notes: 'UNESCO World Heritage Kotor Old Town with medieval walls and Venetian architecture. Excellent seafood restaurants.'
+    },
+    availability: {
+      status: 'open',
+      nextIntake: '2026-04-20',
+      spotsLeft: 14,
+      responseTime: '24h',
+      privateLessons: true,
+      yearRound: true
+    },
+    juniorInfo: {
+      minAge: 8,
+      maxAge: 18,
+      supervision: '24/7',
+      guardianStay: true,
+      schooling: 'Online schooling support during camps',
+      medicalStaff: true,
+      safeguarding: 'Montenegrin Sailing Federation child protection standards',
+      airportPickup: true,
+      mealPlan: 'Full board with Montenegrin Mediterranean cuisine',
+      curfew: '21:00 weekdays, 22:00 weekends',
+      roommatePairing: 'Age-based groups',
+      languageSupport: ['English', 'Montenegrin', 'Italian'],
+      emergencyProtocol: 'Montenegro Coast Guard coordination, Kotor General Hospital 5 min'
+    }
+  },
+  {
+    id: 'piran-sailing-center',
+    name: 'Piran Sailing Center',
+    country: 'Slovenia',
+    countryFlag: '🇸🇮',
+    city: 'Piran',
+    lat: 45.5283,
+    lng: 13.5681,
+    website: 'https://www.piransailing.si',
+    contact: '+386 5 673 4567',
+    contactEmail: 'info@piransailing.si',
+    description: 'Sail the northern Adriatic from Slovenia\'s beautiful Venetian-style coastal town of Piran. Enjoy warm Mediterranean waters with views of the Julian Alps and easy access to Italian and Croatian sailing waters.',
+    ageGroups: ['Junior', 'Adult'],
+    level: 'All levels',
+    individualLessons: true,
+    boarding: true,
+    beach: { distance: 100, description: 'Piran town beach 100m from marina, Fiesa Bay swimming cove nearby' },
+    priceRange: { from: 700, to: 1600, unit: 'week', display: '€700 - €1,600/week' },
+    socialMedia: { instagram: '@piransailing', facebook: 'https://facebook.com/piransailing', twitter: '@piransail' },
+    climate: 'piran',
+    facilities: 'Marina Portorož with 650 berths, fleet of 25+ boats (Laser, 420, First 25, Elan cruisers), Gulf of Trieste race course, sailing simulator, modern clubhouse with weather station',
+    courtSurfaces: ['Dinghy', 'Keelboat', 'Catamaran', 'Windsurf'],
+    programs: [
+      { name: 'Gulf of Trieste Sailing', price: '€1,100/week', desc: 'Keelboat sailing across the Gulf of Trieste with visits to Italian and Croatian coastal towns' },
+      { name: 'Adriatic Dinghy Course', price: '€750/week', desc: 'Learn to sail in the sheltered waters off Piran with Bora and Maestral wind training' },
+      { name: 'Three-Country Cruise', price: '€1,400/week', desc: 'Multi-day sailing adventure visiting Slovenia, Italy, and Croatia along the northern Adriatic coast' }
+    ],
+    coaches: [
+      { name: 'Matej Kovačič', credential: 'Slovenian Sailing Federation A License', background: 'Former Slovenian national sailing champion, Adriatic regatta specialist, 15 years of coastal instruction', atpWta: false, bestRanking: null, rankingNote: null, languages: ['Slovenian', 'English', 'Italian', 'Croatian'], instagram: null }
+    ],
+    photos: ['https://images.unsplash.com/photo-1540946485063-a40da27545f8?w=800'],
+    upcomingCamps: [
+      { name: 'Summer Adriatic Camp', startDate: '2026-07-13', endDate: '2026-07-20', price: '€1,100', level: 'All Levels' },
+      { name: 'Spring Dinghy Course', startDate: '2026-04-27', endDate: '2026-05-04', price: '€750', level: 'Beginner' },
+      { name: 'Autumn Three-Country Cruise', startDate: '2026-09-21', endDate: '2026-09-28', price: '€1,400', level: 'Intermediate' }
+    ],
+    accommodation: {
+      types: [
+        { type: 'hotel', label: 'Hotel Tartini Piran', pricePerWeek: 480, maxOccupancy: 2, bathType: 'ensuite', mealsIncluded: true },
+        { type: 'apartment', label: 'Portorož Marina Apartment', pricePerWeek: 350, maxOccupancy: 3, bathType: 'ensuite', mealsIncluded: false }
+      ],
+      companionsAllowed: true,
+      childrenAllowed: true,
+      minStay: '1 week',
+      shuttleToTraining: true,
+      notes: 'Charming medieval Piran town on Tartini Square. Portorož resort area nearby with spa facilities.'
+    },
+    availability: {
+      status: 'open',
+      nextIntake: '2026-04-27',
+      spotsLeft: 12,
+      responseTime: '24h',
+      privateLessons: true,
+      yearRound: true
+    },
+    juniorInfo: {
+      minAge: 8,
+      maxAge: 18,
+      supervision: '24/7',
+      guardianStay: true,
+      schooling: 'Local Piran school partnerships',
+      medicalStaff: true,
+      safeguarding: 'Slovenian Sailing Federation child protection, police-checked coaches',
+      airportPickup: true,
+      mealPlan: 'Full board with Istrian Mediterranean cuisine',
+      curfew: '21:00 weekdays, 22:00 weekends',
+      roommatePairing: 'Age-based groups',
+      languageSupport: ['English', 'Slovenian', 'Italian'],
+      emergencyProtocol: 'Slovenian Maritime Administration coordination, Izola General Hospital 10 min'
+    }
+  },
+  {
+    id: 'masuria-sailing-academy',
+    name: 'Masuria Sailing Academy',
+    country: 'Poland',
+    countryFlag: '🇵🇱',
+    city: 'Giżycko',
+    lat: 54.0382,
+    lng: 21.7647,
+    website: 'https://www.masuriasailing.pl',
+    contact: '+48 87 428 1234',
+    contactEmail: 'info@masuriasailing.pl',
+    description: 'Sail the Masurian Great Lakes, Poland\'s inland sailing paradise known as the "Land of a Thousand Lakes." Perfect flat-water conditions on interconnected lakes with lush forests and abundant wildlife.',
+    ageGroups: ['Junior', 'Adult'],
+    level: 'All levels',
+    individualLessons: true,
+    boarding: true,
+    beach: { distance: 0, description: 'Marina on Lake Niegocin with direct access to Masurian lake system' },
+    priceRange: { from: 600, to: 1400, unit: 'week', display: '€600 - €1,400/week' },
+    socialMedia: { instagram: '@masuriasailing', facebook: 'https://facebook.com/masuriasailing', twitter: '@masuriasail' },
+    climate: 'masuria',
+    facilities: 'Giżycko Ekomarina with 200 berths, fleet of 35+ boats (Laser, Omega, Tango, Phobos keelboats), lake race course, sailing simulator, modern clubhouse with weather station and lecture room',
+    courtSurfaces: ['Dinghy', 'Keelboat', 'Catamaran'],
+    programs: [
+      { name: 'Great Lakes Cruising', price: '€1,000/week', desc: 'Multi-day keelboat cruise across the interconnected Masurian lakes visiting lakeside villages and nature reserves' },
+      { name: 'Lake Sailing Fundamentals', price: '€650/week', desc: 'Learn to sail on calm lake waters with consistent thermal winds and sheltered bays' },
+      { name: 'Regatta Racing Camp', price: '€1,200/week', desc: 'Competitive sailing preparation for the legendary Giżycko regatta on Lake Niegocin' }
+    ],
+    coaches: [
+      { name: 'Tomasz Wiśniewski', credential: 'Polish Sailing Association Instructor Level III', background: 'Former Polish national dinghy champion, Masurian lakes specialist with 18 years of teaching experience', atpWta: false, bestRanking: null, rankingNote: null, languages: ['Polish', 'English', 'German'], instagram: null },
+      { name: 'Karolina Nowak', credential: 'World Sailing Level 2 Coach', background: 'Youth sailing development specialist, multiple national youth championship titles, Polish Sailing Association certified', atpWta: false, bestRanking: null, rankingNote: null, languages: ['Polish', 'English'], instagram: null }
+    ],
+    photos: ['https://images.unsplash.com/photo-1540946485063-a40da27545f8?w=800', 'https://images.unsplash.com/photo-1534854638093-bada1813ca19?w=800'],
+    upcomingCamps: [
+      { name: 'Summer Lakes Camp', startDate: '2026-07-06', endDate: '2026-07-13', price: '€1,000', level: 'All Levels' },
+      { name: 'Spring Dinghy Course', startDate: '2026-05-18', endDate: '2026-05-25', price: '€650', level: 'Beginner' },
+      { name: 'Autumn Regatta Prep', startDate: '2026-09-07', endDate: '2026-09-14', price: '€1,200', level: 'Advanced' }
+    ],
+    accommodation: {
+      types: [
+        { type: 'hotel', label: 'Giżycko Lakeside Hotel', pricePerWeek: 350, maxOccupancy: 2, bathType: 'ensuite', mealsIncluded: true },
+        { type: 'apartment', label: 'Masuria Lake Apartment', pricePerWeek: 220, maxOccupancy: 3, bathType: 'ensuite', mealsIncluded: false }
+      ],
+      companionsAllowed: true,
+      childrenAllowed: true,
+      minStay: '1 week',
+      shuttleToTraining: true,
+      notes: 'Charming Giżycko town on the isthmus between lakes. Excellent value with Polish hospitality and cuisine.'
+    },
+    availability: {
+      status: 'open',
+      nextIntake: '2026-05-18',
+      spotsLeft: 20,
+      responseTime: '24h',
+      privateLessons: true,
+      yearRound: false
+    },
+    juniorInfo: {
+      minAge: 8,
+      maxAge: 18,
+      supervision: '24/7',
+      guardianStay: true,
+      schooling: 'Online schooling support during camps',
+      medicalStaff: true,
+      safeguarding: 'PZŻ child protection standards, background-checked coaches',
+      airportPickup: true,
+      mealPlan: 'Full board with Polish cuisine',
+      curfew: '21:00 weekdays, 22:00 weekends',
+      roommatePairing: 'Age-based groups',
+      languageSupport: ['English', 'Polish', 'German'],
+      emergencyProtocol: 'WOPR water rescue coordination, Giżycko Hospital 5 min'
+    }
+  },
+  {
+    id: 'helsinki-sailing-center',
+    name: 'Helsinki Sailing Center',
+    country: 'Finland',
+    countryFlag: '🇫🇮',
+    city: 'Helsinki',
+    lat: 60.1699,
+    lng: 24.9384,
+    website: 'https://www.helsinkisailing.fi',
+    contact: '+358 9 123 4567',
+    contactEmail: 'info@helsinkisailing.fi',
+    description: 'Sail the Finnish Baltic archipelago from Helsinki, with hundreds of islands and skerries to explore. Experience midnight sun sailing in summer and the unique Finnish maritime culture.',
+    ageGroups: ['Junior', 'Adult', 'Masters'],
+    level: 'All levels',
+    individualLessons: true,
+    boarding: true,
+    beach: { distance: 0, description: 'NJK Helsinki marina with direct Baltic archipelago access' },
+    priceRange: { from: 900, to: 2200, unit: 'week', display: '€900 - €2,200/week' },
+    socialMedia: { instagram: '@helsinkisailing', facebook: 'https://facebook.com/helsinkisailing', twitter: '@helsinkisail' },
+    climate: 'helsinki-sailing',
+    facilities: 'NJK Helsinki marina with 250 berths, fleet of 35+ boats (Laser, 29er, H-boat, J/70, Swan cruisers), Baltic race course, sailing simulator with virtual regatta, heated clubhouse with sauna, weather station',
+    courtSurfaces: ['Dinghy', 'Keelboat', 'Catamaran', 'Windsurf'],
+    programs: [
+      { name: 'Archipelago Cruising', price: '€1,600/week', desc: 'Multi-day keelboat cruise through the stunning Helsinki archipelago with island harbor stops and sauna evenings' },
+      { name: 'Baltic Dinghy Course', price: '€1,000/week', desc: 'Learn to sail in the sheltered island waters with progression to open Baltic sailing' },
+      { name: 'Midnight Sun Sailing', price: '€2,000/week', desc: 'Extended summer sailing under the midnight sun with 20+ hours of daylight in the Finnish archipelago' }
+    ],
+    coaches: [
+      { name: 'Mikko Virtanen', credential: 'Finnish Sailing Federation A License', background: 'Former Finnish Olympic sailing team member, Baltic Sea specialist with 20 years of coaching experience', atpWta: false, bestRanking: null, rankingNote: null, languages: ['Finnish', 'English', 'Swedish'], instagram: null }
+    ],
+    photos: ['https://images.unsplash.com/photo-1540946485063-a40da27545f8?w=800'],
+    upcomingCamps: [
+      { name: 'Midnight Sun Camp', startDate: '2026-06-22', endDate: '2026-06-29', price: '€2,000', level: 'Intermediate' },
+      { name: 'Spring Baltic Course', startDate: '2026-05-18', endDate: '2026-05-25', price: '€1,000', level: 'All Levels' },
+      { name: 'Summer Archipelago Cruise', startDate: '2026-07-20', endDate: '2026-07-27', price: '€1,600', level: 'Intermediate' }
+    ],
+    accommodation: {
+      types: [
+        { type: 'hotel', label: 'Helsinki Marina Hotel', pricePerWeek: 650, maxOccupancy: 2, bathType: 'ensuite', mealsIncluded: true },
+        { type: 'apartment', label: 'Helsinki Waterfront Apartment', pricePerWeek: 500, maxOccupancy: 3, bathType: 'ensuite', mealsIncluded: false }
+      ],
+      companionsAllowed: true,
+      childrenAllowed: true,
+      minStay: '1 week',
+      shuttleToTraining: true,
+      notes: 'Helsinki waterfront location with easy access to Design District and Market Square. Sauna included.'
+    },
+    availability: {
+      status: 'open',
+      nextIntake: '2026-05-18',
+      spotsLeft: 14,
+      responseTime: '24h',
+      privateLessons: true,
+      yearRound: false
+    },
+    juniorInfo: {
+      minAge: 8,
+      maxAge: 18,
+      supervision: '24/7',
+      guardianStay: true,
+      schooling: 'Helsinki International School partnership',
+      medicalStaff: true,
+      safeguarding: 'Finnish Sailing Federation child protection, police-checked coaches',
+      airportPickup: true,
+      mealPlan: 'Full board with Finnish cuisine',
+      curfew: '21:00 weekdays, 22:00 weekends',
+      roommatePairing: 'Age-based groups',
+      languageSupport: ['English', 'Finnish', 'Swedish'],
+      emergencyProtocol: 'Finnish Border Guard sea rescue coordination, HUS Helsinki Hospital 15 min'
+    }
+  },
+  {
+    id: 'tallinn-sailing-academy',
+    name: 'Tallinn Sailing Academy',
+    country: 'Estonia',
+    countryFlag: '🇪🇪',
+    city: 'Tallinn',
+    lat: 59.4370,
+    lng: 24.7536,
+    website: 'https://www.tallinnsailing.ee',
+    contact: '+372 5 123 4567',
+    contactEmail: 'info@tallinnsailing.ee',
+    description: 'Train at the 2008 Beijing Olympic sailing venue qualification site in Tallinn Bay. World-class Baltic sailing with steady winds, modern facilities, and the stunning backdrop of Tallinn\'s medieval Old Town.',
+    ageGroups: ['Junior', 'Adult'],
+    level: 'All levels',
+    individualLessons: true,
+    boarding: true,
+    beach: { distance: 0, description: 'Pirita Olympic Sailing Centre with direct Tallinn Bay access' },
+    priceRange: { from: 700, to: 1600, unit: 'week', display: '€700 - €1,600/week' },
+    socialMedia: { instagram: '@tallinnsailing', facebook: 'https://facebook.com/tallinnsailing', twitter: '@tallinnsail' },
+    climate: 'tallinn',
+    facilities: 'Pirita Olympic Sailing Centre with 400 berths, fleet of 40+ boats (Laser, 470, 49er, Finn), Olympic-standard race course in Tallinn Bay, sailing simulator, weather station, modern clubhouse',
+    courtSurfaces: ['Dinghy', 'Keelboat', 'Catamaran'],
+    programs: [
+      { name: 'Olympic Venue Training', price: '€1,200/week', desc: 'Train on the Olympic sailing course at Pirita with world-class facilities and Baltic conditions' },
+      { name: 'Baltic Dinghy Sailing', price: '€750/week', desc: 'Learn to sail in Tallinn Bay with views of the medieval Old Town and consistent sea breezes' },
+      { name: 'Estonian Archipelago Cruise', price: '€1,400/week', desc: 'Multi-day keelboat cruise to Estonian islands including Naissaar and the western archipelago' }
+    ],
+    coaches: [
+      { name: 'Andres Kask', credential: 'Estonian Sailing Federation A License', background: 'Former Estonian national team sailor, Tallinn Bay regatta champion, 16 years of Baltic sailing instruction', atpWta: false, bestRanking: null, rankingNote: null, languages: ['Estonian', 'English', 'Finnish', 'Russian'], instagram: null }
+    ],
+    photos: ['https://images.unsplash.com/photo-1540946485063-a40da27545f8?w=800'],
+    upcomingCamps: [
+      { name: 'Summer Baltic Camp', startDate: '2026-07-06', endDate: '2026-07-13', price: '€1,200', level: 'All Levels' },
+      { name: 'Spring Dinghy Course', startDate: '2026-05-11', endDate: '2026-05-18', price: '€750', level: 'Beginner' },
+      { name: 'Autumn Archipelago Cruise', startDate: '2026-09-07', endDate: '2026-09-14', price: '€1,400', level: 'Intermediate' }
+    ],
+    accommodation: {
+      types: [
+        { type: 'hotel', label: 'Pirita Marina Hotel', pricePerWeek: 420, maxOccupancy: 2, bathType: 'ensuite', mealsIncluded: true },
+        { type: 'apartment', label: 'Tallinn Seaside Apartment', pricePerWeek: 300, maxOccupancy: 3, bathType: 'ensuite', mealsIncluded: false }
+      ],
+      companionsAllowed: true,
+      childrenAllowed: true,
+      minStay: '1 week',
+      shuttleToTraining: true,
+      notes: 'Pirita district with beach promenade. Bus connection to Tallinn Old Town in 15 minutes.'
+    },
+    availability: {
+      status: 'open',
+      nextIntake: '2026-05-11',
+      spotsLeft: 16,
+      responseTime: '24h',
+      privateLessons: true,
+      yearRound: false
+    },
+    juniorInfo: {
+      minAge: 8,
+      maxAge: 18,
+      supervision: '24/7',
+      guardianStay: true,
+      schooling: 'Tallinn International School partnership',
+      medicalStaff: true,
+      safeguarding: 'Estonian Sailing Federation child protection, police-checked coaches',
+      airportPickup: true,
+      mealPlan: 'Full board with Estonian cuisine',
+      curfew: '21:00 weekdays, 22:00 weekends',
+      roommatePairing: 'Age-based groups',
+      languageSupport: ['English', 'Estonian', 'Russian'],
+      emergencyProtocol: 'Estonian Maritime Administration coordination, East Tallinn Central Hospital 10 min'
+    }
+  },
+  {
+    id: 'valletta-sailing-center',
+    name: 'Valletta Sailing Center',
+    country: 'Malta',
+    countryFlag: '🇲🇹',
+    city: 'Valletta',
+    lat: 35.8989,
+    lng: 14.5146,
+    website: 'https://www.vallettasailing.mt',
+    contact: '+356 2123 4567',
+    contactEmail: 'info@vallettasailing.mt',
+    description: 'Sail the crystal-clear Mediterranean waters around Malta from the historic Grand Harbour of Valletta. Year-round sailing with warm temperatures, steady winds, and access to Gozo, Comino, and the Blue Lagoon.',
+    ageGroups: ['Junior', 'Adult', 'Masters'],
+    level: 'All levels',
+    individualLessons: true,
+    boarding: true,
+    beach: { distance: 0, description: 'Grand Harbour Marina with direct Mediterranean access' },
+    priceRange: { from: 800, to: 1900, unit: 'week', display: '€800 - €1,900/week' },
+    socialMedia: { instagram: '@vallettasailing', facebook: 'https://facebook.com/vallettasailing', twitter: '@vallettasail' },
+    climate: 'valletta',
+    facilities: 'Grand Harbour Marina with 300 berths, fleet of 30+ boats (Laser, 420, J/70, Bavaria cruisers), Mediterranean race course, sailing simulator, historic waterfront clubhouse, weather station',
+    courtSurfaces: ['Dinghy', 'Keelboat', 'Catamaran', 'Windsurf'],
+    programs: [
+      { name: 'Maltese Islands Cruise', price: '€1,500/week', desc: 'Multi-day keelboat cruise around Malta, Gozo, and Comino including the famous Blue Lagoon anchorage' },
+      { name: 'Grand Harbour Dinghy Course', price: '€850/week', desc: 'Learn to sail in the sheltered Grand Harbour with progression to open Mediterranean waters' },
+      { name: 'Rolex Middle Sea Race Prep', price: '€1,800/week', desc: 'Advanced offshore racing preparation for the prestigious Rolex Middle Sea Race around Sicily' }
+    ],
+    coaches: [
+      { name: 'Joseph Camilleri', credential: 'Malta Sailing Federation Senior Instructor', background: 'Former Maltese national sailing team member, Rolex Middle Sea Race veteran, 20 years of Mediterranean instruction', atpWta: false, bestRanking: null, rankingNote: null, languages: ['Maltese', 'English', 'Italian'], instagram: null },
+      { name: 'Maria Borg', credential: 'World Sailing Level 2 Coach', background: 'Youth sailing development specialist, former Laser Radial national champion, ISA certified instructor', atpWta: false, bestRanking: null, rankingNote: null, languages: ['Maltese', 'English'], instagram: null }
+    ],
+    photos: ['https://images.unsplash.com/photo-1540946485063-a40da27545f8?w=800', 'https://images.unsplash.com/photo-1534854638093-bada1813ca19?w=800'],
+    upcomingCamps: [
+      { name: 'Summer Mediterranean Camp', startDate: '2026-07-06', endDate: '2026-07-13', price: '€1,500', level: 'Intermediate' },
+      { name: 'Spring Dinghy Course', startDate: '2026-04-13', endDate: '2026-04-20', price: '€850', level: 'All Levels' },
+      { name: 'Autumn Middle Sea Race Prep', startDate: '2026-09-21', endDate: '2026-09-28', price: '€1,800', level: 'Advanced' }
+    ],
+    accommodation: {
+      types: [
+        { type: 'hotel', label: 'Grand Harbour Hotel', pricePerWeek: 520, maxOccupancy: 2, bathType: 'ensuite', mealsIncluded: true },
+        { type: 'apartment', label: 'Valletta Waterfront Apartment', pricePerWeek: 380, maxOccupancy: 3, bathType: 'ensuite', mealsIncluded: false }
+      ],
+      companionsAllowed: true,
+      childrenAllowed: true,
+      minStay: '1 week',
+      shuttleToTraining: true,
+      notes: 'UNESCO World Heritage Valletta with stunning baroque architecture. Year-round mild climate for sailing.'
+    },
+    availability: {
+      status: 'open',
+      nextIntake: '2026-04-13',
+      spotsLeft: 18,
+      responseTime: '24h',
+      privateLessons: true,
+      yearRound: true
+    },
+    juniorInfo: {
+      minAge: 8,
+      maxAge: 18,
+      supervision: '24/7',
+      guardianStay: true,
+      schooling: 'Verdala International School partnership',
+      medicalStaff: true,
+      safeguarding: 'Malta Sailing Federation child protection, police-checked coaches',
+      airportPickup: true,
+      mealPlan: 'Full board with Maltese Mediterranean cuisine',
+      curfew: '21:00 weekdays, 22:00 weekends',
+      roommatePairing: 'Age-based groups',
+      languageSupport: ['English', 'Maltese', 'Italian'],
+      emergencyProtocol: 'Armed Forces of Malta Maritime Squadron coordination, Mater Dei Hospital 15 min'
+    }
+  },
+  {
+    id: 'royal-irish-yacht-club-academy',
+    name: 'Royal Irish Yacht Club Academy',
+    country: 'Ireland',
+    countryFlag: '🇮🇪',
+    city: 'Dún Laoghaire',
+    lat: 53.2945,
+    lng: -6.1344,
+    website: 'https://www.riyc.ie',
+    contact: '+353 1 280 1811',
+    contactEmail: 'academy@riyc.ie',
+    description: 'Historic yacht club academy in Dún Laoghaire Harbour, one of Ireland\'s premier sailing venues. Train on Dublin Bay with consistent Atlantic winds and access to world-class racing.',
+    ageGroups: ['Junior', 'Adult'],
+    level: 'All levels',
+    individualLessons: true,
+    boarding: true,
+    beach: { distance: 1, description: 'Sandycove and Seapoint beaches within walking distance' },
+    priceRange: { from: 800, to: 2000, unit: 'week', display: '€800 - €2,000/week' },
+    socialMedia: { instagram: '@riycsailing', facebook: 'https://facebook.com/riycsailing', twitter: '@riycsailing' },
+    climate: 'dun-laoghaire',
+    facilities: 'Full-service marina, fleet of 30+ boats (Laser, 420, SB20, J/80), race course on Dublin Bay, sailing simulator, weather station, sail loft and rigging workshop',
+    courtSurfaces: ['Dinghy', 'Keelboat', 'Catamaran', 'Windsurf'],
+    programs: [
+      { name: 'Dublin Bay Racing Programme', price: '€1,400/week', desc: 'Competitive racing on Dublin Bay with experienced race coaches and regatta preparation' },
+      { name: 'Youth Dinghy Academy', price: '€900/week', desc: 'Progressive dinghy sailing for juniors in Optimist, Laser, and 420 classes' },
+      { name: 'Coastal Cruising Course', price: '€1,600/week', desc: 'Offshore sailing skills with navigation, passage planning, and Irish Sea cruising' }
+    ],
+    coaches: [
+      { name: 'Conor O\'Brien', credential: 'World Sailing Level 3 Coach', background: 'Former Irish Olympic sailing team member with 18 years of competitive coaching experience', atpWta: false, bestRanking: null, rankingNote: null, languages: ['English', 'Irish'], instagram: null },
+      { name: 'Sinéad Murphy', credential: 'Irish Sailing Association Senior Instructor', background: 'National 420 champion and specialist in youth sailing development across Ireland', atpWta: false, bestRanking: null, rankingNote: null, languages: ['English', 'Irish'], instagram: null }
+    ],
+    photos: ['https://images.unsplash.com/photo-1540946485063-a40da27545f8?w=800', 'https://images.unsplash.com/photo-1534854638093-bada1813ca19?w=800'],
+    upcomingCamps: [
+      { name: 'Summer Dublin Bay Camp', startDate: '2026-07-06', endDate: '2026-07-13', price: '€1,400', level: 'Intermediate' },
+      { name: 'Spring Youth Dinghy Week', startDate: '2026-04-13', endDate: '2026-04-20', price: '€900', level: 'All Levels' },
+      { name: 'Autumn Coastal Sailing', startDate: '2026-10-05', endDate: '2026-10-12', price: '€1,600', level: 'Advanced' }
+    ],
+    accommodation: {
+      types: [
+        { type: 'hotel', label: 'Dún Laoghaire Harbour Hotel', pricePerWeek: 550, maxOccupancy: 2, bathType: 'ensuite', mealsIncluded: true },
+        { type: 'apartment', label: 'Waterfront Apartment', pricePerWeek: 420, maxOccupancy: 3, bathType: 'ensuite', mealsIncluded: false }
+      ],
+      companionsAllowed: true,
+      childrenAllowed: true,
+      minStay: '1 week',
+      shuttleToTraining: true,
+      notes: 'Harbour-side accommodation with direct marina access. Equipment storage included for all participants.'
+    },
+    availability: {
+      status: 'open',
+      nextIntake: '2026-04-13',
+      spotsLeft: 18,
+      responseTime: '24h',
+      privateLessons: true,
+      yearRound: true
+    },
+    juniorInfo: {
+      minAge: 8,
+      maxAge: 18,
+      supervision: '24/7',
+      guardianStay: true,
+      schooling: 'Local international school partnerships in Dublin',
+      medicalStaff: true,
+      safeguarding: 'Irish Sailing Association child protection, Garda-vetted coaches',
+      airportPickup: true,
+      mealPlan: 'Full board with Irish and international cuisine',
+      curfew: '21:00 weekdays, 22:00 weekends',
+      roommatePairing: 'Age-based groups',
+      languageSupport: ['English', 'Irish'],
+      emergencyProtocol: 'Irish Coast Guard coordination, St Vincent\'s Hospital 15 min'
+    }
   }
 ];
 
@@ -863,7 +1793,19 @@ const CLIMATE_DATA = {
   sardinia: { spring: { tempHigh: 19, tempLow: 10, rainDays: 5, sunshine: 8 }, summer: { tempHigh: 30, tempLow: 20, rainDays: 1, sunshine: 11 }, autumn: { tempHigh: 22, tempLow: 13, rainDays: 6, sunshine: 7 }, winter: { tempHigh: 14, tempLow: 6, rainDays: 7, sunshine: 4 } },
   cowes: { spring: { tempHigh: 13, tempLow: 6, rainDays: 9, sunshine: 6 }, summer: { tempHigh: 21, tempLow: 14, rainDays: 7, sunshine: 8 }, autumn: { tempHigh: 15, tempLow: 9, rainDays: 10, sunshine: 4 }, winter: { tempHigh: 9, tempLow: 3, rainDays: 12, sunshine: 2 } },
   cascais: { spring: { tempHigh: 19, tempLow: 12, rainDays: 7, sunshine: 8 }, summer: { tempHigh: 27, tempLow: 18, rainDays: 1, sunshine: 11 }, autumn: { tempHigh: 20, tempLow: 14, rainDays: 7, sunshine: 7 }, winter: { tempHigh: 15, tempLow: 9, rainDays: 9, sunshine: 5 } },
-  bodrum: { spring: { tempHigh: 22, tempLow: 12, rainDays: 4, sunshine: 9 }, summer: { tempHigh: 34, tempLow: 23, rainDays: 0, sunshine: 13 }, autumn: { tempHigh: 24, tempLow: 15, rainDays: 3, sunshine: 8 }, winter: { tempHigh: 15, tempLow: 7, rainDays: 9, sunshine: 5 } }
+  bodrum: { spring: { tempHigh: 22, tempLow: 12, rainDays: 4, sunshine: 9 }, summer: { tempHigh: 34, tempLow: 23, rainDays: 0, sunshine: 13 }, autumn: { tempHigh: 24, tempLow: 15, rainDays: 3, sunshine: 8 }, winter: { tempHigh: 15, tempLow: 7, rainDays: 9, sunshine: 5 } },
+  ijsselmeer: { spring: { tempHigh: 13, tempLow: 4, rainDays: 9, sunshine: 6 }, summer: { tempHigh: 22, tempLow: 13, rainDays: 8, sunshine: 7 }, autumn: { tempHigh: 14, tempLow: 7, rainDays: 11, sunshine: 4 }, winter: { tempHigh: 6, tempLow: 1, rainDays: 12, sunshine: 2 } },
+  kiel: { spring: { tempHigh: 11, tempLow: 3, rainDays: 8, sunshine: 6 }, summer: { tempHigh: 22, tempLow: 13, rainDays: 9, sunshine: 8 }, autumn: { tempHigh: 13, tempLow: 6, rainDays: 10, sunshine: 4 }, winter: { tempHigh: 4, tempLow: -1, rainDays: 11, sunshine: 1 } },
+  'copenhagen-sailing': { spring: { tempHigh: 12, tempLow: 3, rainDays: 7, sunshine: 7 }, summer: { tempHigh: 22, tempLow: 14, rainDays: 8, sunshine: 8 }, autumn: { tempHigh: 13, tempLow: 6, rainDays: 10, sunshine: 4 }, winter: { tempHigh: 4, tempLow: -1, rainDays: 10, sunshine: 1 } },
+  'gothenburg-sailing': { spring: { tempHigh: 12, tempLow: 3, rainDays: 8, sunshine: 6 }, summer: { tempHigh: 22, tempLow: 13, rainDays: 9, sunshine: 8 }, autumn: { tempHigh: 12, tempLow: 5, rainDays: 11, sunshine: 3 }, winter: { tempHigh: 4, tempLow: -1, rainDays: 13, sunshine: 1 } },
+  'oslo-sailing': { spring: { tempHigh: 11, tempLow: 2, rainDays: 7, sunshine: 6 }, summer: { tempHigh: 22, tempLow: 13, rainDays: 9, sunshine: 8 }, autumn: { tempHigh: 11, tempLow: 4, rainDays: 10, sunshine: 3 }, winter: { tempHigh: 1, tempLow: -5, rainDays: 9, sunshine: 1 } },
+  'dun-laoghaire': { spring: { tempHigh: 12, tempLow: 5, rainDays: 10, sunshine: 5 }, summer: { tempHigh: 19, tempLow: 12, rainDays: 9, sunshine: 6 }, autumn: { tempHigh: 14, tempLow: 8, rainDays: 11, sunshine: 3 }, winter: { tempHigh: 9, tempLow: 3, rainDays: 13, sunshine: 2 } },
+  kotor: { spring: { tempHigh: 19, tempLow: 10, rainDays: 9, sunshine: 7 }, summer: { tempHigh: 31, tempLow: 20, rainDays: 3, sunshine: 11 }, autumn: { tempHigh: 21, tempLow: 12, rainDays: 10, sunshine: 6 }, winter: { tempHigh: 12, tempLow: 4, rainDays: 12, sunshine: 3 } },
+  piran: { spring: { tempHigh: 17, tempLow: 9, rainDays: 7, sunshine: 7 }, summer: { tempHigh: 28, tempLow: 19, rainDays: 4, sunshine: 10 }, autumn: { tempHigh: 19, tempLow: 11, rainDays: 8, sunshine: 5 }, winter: { tempHigh: 9, tempLow: 2, rainDays: 7, sunshine: 3 } },
+  masuria: { spring: { tempHigh: 13, tempLow: 3, rainDays: 7, sunshine: 6 }, summer: { tempHigh: 23, tempLow: 13, rainDays: 9, sunshine: 8 }, autumn: { tempHigh: 12, tempLow: 4, rainDays: 8, sunshine: 4 }, winter: { tempHigh: 1, tempLow: -6, rainDays: 8, sunshine: 1 } },
+  'helsinki-sailing': { spring: { tempHigh: 10, tempLow: 1, rainDays: 7, sunshine: 7 }, summer: { tempHigh: 22, tempLow: 13, rainDays: 8, sunshine: 10 }, autumn: { tempHigh: 10, tempLow: 3, rainDays: 10, sunshine: 3 }, winter: { tempHigh: -1, tempLow: -7, rainDays: 9, sunshine: 1 } },
+  tallinn: { spring: { tempHigh: 10, tempLow: 1, rainDays: 7, sunshine: 7 }, summer: { tempHigh: 22, tempLow: 13, rainDays: 8, sunshine: 10 }, autumn: { tempHigh: 10, tempLow: 3, rainDays: 10, sunshine: 3 }, winter: { tempHigh: -1, tempLow: -5, rainDays: 10, sunshine: 1 } },
+  valletta: { spring: { tempHigh: 20, tempLow: 12, rainDays: 3, sunshine: 9 }, summer: { tempHigh: 32, tempLow: 22, rainDays: 0, sunshine: 12 }, autumn: { tempHigh: 24, tempLow: 16, rainDays: 5, sunshine: 7 }, winter: { tempHigh: 16, tempLow: 10, rainDays: 8, sunshine: 5 } }
 };
 
 const NEWS_ITEMS = [
@@ -874,4 +1816,4 @@ const NEWS_ITEMS = [
   { date: '2025-04-10', title: 'Cascais Windsurf Center Upgraded', summary: 'New windsurf equipment fleet added at Cascais including latest foil boards for advanced riders at Guincho beach.' }
 ];
 
-const COUNTRIES = ['Greece', 'Croatia', 'Spain', 'France', 'Italy', 'UK', 'Portugal', 'Turkey'];
+const COUNTRIES = ['Greece', 'Croatia', 'Spain', 'France', 'Italy', 'UK', 'Portugal', 'Turkey', 'Netherlands', 'Germany', 'Denmark', 'Sweden', 'Norway', 'Ireland', 'Montenegro', 'Slovenia', 'Poland', 'Finland', 'Estonia', 'Malta'];

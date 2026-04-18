@@ -4703,6 +4703,112 @@ const ACADEMIES = [
             emergencyProtocol: true
         }
     },
+    {
+        id: 'fai-national-training-centre',
+    availability: { status: 'open', nextIntake: '2026-08-01', spotsLeft: 15, responseTime: '3-5 days', privateLessons: true, yearRound: true },
+        name: 'FAI National Training Centre',
+        country: 'Ireland',
+        countryFlag: '🇮🇪',
+        city: 'Dublin',
+        lat: 53.3867,
+        lng: -6.3800,
+        website: 'https://www.fai.ie',
+        contact: '+353 1 899 9500',
+        contactEmail: 'academy@fai.ie',
+        individualLessons: true,
+        boarding: true,
+        level: 'Elite',
+        starred: false,
+        airport: { name: 'Dublin Airport', code: 'DUB', distance: '15 km', driveTime: '20 min' },
+        beach: { distance: '12 km', description: 'Dublin Bay coastline at Dollymount Strand' },
+        climate: 'dublin',
+        priceRange: { from: 1500, to: 4500, unit: 'month', display: '€1,500–€4,500/mo' },
+        programs: [
+            { name: 'Youth Development', price: '€1,500/mo', desc: 'Structured pathway for ages 12-16 following the FAI Player Development Plan with weekly matches' },
+            { name: 'Elite Performance', price: '€3,000/mo', desc: 'Advanced training program for aspiring professionals with video analysis and sport science support' },
+            { name: 'Summer Elite Camp', price: '€4,500/mo', desc: 'Intensive residential camp with top FAI coaches, match play and physical conditioning' },
+            { name: 'Goalkeeper Academy', price: '€2,000/mo', desc: 'Specialist goalkeeper development program with dedicated coaching staff' }
+        ],
+        coaches: [
+            { name: "Damien Duff", credential: 'UEFA Pro Licence', background: 'Former Ireland international with over 100 caps, Premier League winner with Chelsea, dedicated to youth development', atpWta: false, bestRanking: null, rankingNote: null, languages: ['English', 'Irish'], instagram: null },
+            { name: "Colin O'Brien", credential: 'UEFA A Licence', background: 'Former Ireland U-17 and U-15 head coach, specialist in youth player development pathways', atpWta: false, bestRanking: null, rankingNote: null, languages: ['English', 'Irish'], instagram: null }
+        ],
+        bestCoachRanking: null,
+        facilities: 'FAI National Training Centre at Abbotstown: 6 full-size grass pitches, 2 all-weather pitches, FIFA-standard indoor arena, strength and conditioning centre, video analysis suite, medical centre',
+        courtSurfaces: ['Natural Grass', 'Artificial Turf', 'Indoor'],
+        notableAlumni: ['Evan Ferguson', 'Adam Idah', 'Gavin Bazunu'],
+        photos: [
+            'https://picsum.photos/seed/fai-dublin-1/800/500',
+            'https://picsum.photos/seed/fai-dublin-2/800/500',
+            'https://picsum.photos/seed/fai-dublin-3/800/500',
+            'https://picsum.photos/seed/fai-dublin-4/800/500'
+        ],
+        description: 'The FAI National Training Centre at Abbotstown is Ireland\'s flagship football development facility. Home to all FAI national underage teams, the centre provides state-of-the-art training for the next generation of Irish footballers.',
+        nearbyHotels: [
+            { name: 'Castleknock Hotel', stars: 4, distanceKm: 2.0, features: ['Restaurant', 'Spa', 'Gym', 'Golf'], pool: true, wifi: true, pricePerNight: '€150' },
+            { name: 'Carlton Hotel Blanchardstown', stars: 4, distanceKm: 3.0, features: ['Restaurant', 'Bar', 'Parking'], pool: true, wifi: true, pricePerNight: '€120' },
+            { name: 'Premier Inn Dublin Airport', stars: 3, distanceKm: 8.0, features: ['Restaurant', 'Parking'], pool: false, wifi: true, pricePerNight: '€90' },
+            { name: 'The Ashling Hotel', stars: 4, distanceKm: 6.0, features: ['Restaurant', 'Bar'], pool: false, wifi: true, pricePerNight: '€130' },
+            { name: 'Abigail Hostel Dublin', stars: 2, distanceKm: 8.0, features: ['WiFi', 'Common Areas'], pool: false, wifi: true, pricePerNight: '€35' }
+        ],
+        nearbyRestaurants: [
+            { name: 'Myos Bar & Grill', cuisine: 'Modern Irish', distanceKm: 2.0, priceRange: '€€€', rating: 4.4, vegetarian: true, outdoor: true },
+            { name: 'The Barn at Castleknock', cuisine: 'Gastropub', distanceKm: 2.5, priceRange: '€€', rating: 4.3, vegetarian: true, outdoor: true },
+            { name: 'Juniors Deli & Café', cuisine: 'Café', distanceKm: 1.5, priceRange: '€', rating: 4.5, vegetarian: true, outdoor: false },
+            { name: 'Ananda Restaurant', cuisine: 'Indian', distanceKm: 3.0, priceRange: '€€€', rating: 4.6, vegetarian: true, outdoor: false }
+        ],
+        nearbyMedical: [
+            { name: 'Connolly Hospital Blanchardstown', type: 'Hospital', distanceKm: 2.0, phone: '+353 1 646 5000', emergency: true },
+            { name: 'Bon Secours Hospital Dublin', type: 'Hospital', distanceKm: 5.0, phone: '+353 1 806 5555', emergency: true },
+            { name: 'Sports Surgery Clinic Santry', type: 'Sports Medicine', distanceKm: 8.0, phone: '+353 1 526 2000', emergency: false }
+        ],
+        costOfLiving: { rent1Bed: '€1,800', meal: '€15', monthlyFood: '€400', transport: '€120', currency: 'EUR', summary: 'Dublin is expensive but the FAI centre offers excellent value for football development' },
+        scholarships: { available: true, details: 'FAI scholarship programme for elite young players. Full and partial scholarships based on talent identification.' },
+        visaInfo: { schengen: false, eu: true, visaFreeCountries: 'EU/EEA citizens, USA, Canada, Australia, UK — visa-free up to 90 days', notes: 'Ireland is in the EU but not Schengen. Non-EU citizens may need an Irish visa.' },
+        airportTransfers: [
+            { mode: 'Taxi', duration: '20 min', cost: '€25-35', notes: 'Taxi from Dublin Airport to Abbotstown' },
+            { mode: 'Bus', duration: '35 min', cost: '€3.80', notes: 'Dublin Bus route 38 to Blanchardstown' },
+            { mode: 'Private Transfer', duration: '20 min', cost: '€40-55', notes: 'Pre-book meet and greet transfer' }
+        ],
+        nearbyTournaments: [
+            { name: 'League of Ireland Underage', level: 'National Youth League', surface: 'Natural Grass', month: 'March-November', venue: 'Various Dublin venues' },
+            { name: 'FAI Cup', level: 'National Cup', surface: 'Natural Grass', month: 'Various', venue: 'Aviva Stadium, Dublin' },
+            { name: 'UEFA Youth League Qualifiers', level: 'UEFA Youth', surface: 'Natural Grass', month: 'September', venue: 'Abbotstown' }
+        ],
+        upcomingCamps: [
+            { name: 'FAI Summer Soccer Camp', startDate: '2026-07-06', endDate: '2026-07-17', price: '€4,500', level: 'Advanced' },
+            { name: 'Easter Development Camp', startDate: '2026-04-06', endDate: '2026-04-10', price: '€1,200', level: 'All Levels' },
+            { name: 'October Goalkeeper Clinic', startDate: '2026-10-26', endDate: '2026-10-30', price: '€1,500', level: 'Intermediate' }
+        ],
+        accommodation: {
+            types: [
+                { type: 'private', label: 'Private Room', pricePerWeek: 420, maxOccupancy: 1, bathType: 'ensuite', mealsIncluded: true },
+                { type: 'twin', label: 'Twin Shared Room', pricePerWeek: 280, maxOccupancy: 2, bathType: 'ensuite', mealsIncluded: true },
+                { type: 'dormitory', label: 'Academy Dormitory', pricePerWeek: 200, maxOccupancy: 4, bathType: 'shared', mealsIncluded: true }
+            ],
+            companionsAllowed: true,
+            childrenAllowed: true,
+            minStay: 1,
+            shuttleToTraining: true,
+            notes: 'On-site residential accommodation at Abbotstown campus with full-board dining'
+        },
+        videoTour: null,
+        juniorInfo: {
+            minAge: 10,
+            maxAge: 18,
+            supervision: '24/7',
+            guardianStay: true,
+            schooling: 'partner-school',
+            medicalStaff: true,
+            safeguarding: true,
+            airportPickup: true,
+            mealPlan: 'full-board',
+            curfew: '22:00',
+            roommatePairing: 'age-gender',
+            languageSupport: ['English', 'Irish'],
+            emergencyProtocol: true
+        }
+    },
 ];
 
 const COUNTRIES = [...new Set(ACADEMIES.map(a => a.country))];
@@ -5046,6 +5152,23 @@ const CLIMATE_DATA = {
       { month: "Oct", temp: 12, rain: 72, rainyDays: 9, wind: 10 },
       { month: "Nov", temp: 7, rain: 75, rainyDays: 11, wind: 11 },
       { month: "Dec", temp: 2, rain: 60, rainyDays: 10, wind: 11 }
+    ]
+  },
+  'dublin': {
+    city: "Dublin", country: "Ireland",
+    months: [
+      { month: "Jan", temp: 5, rain: 67, rainyDays: 13, wind: 18 },
+      { month: "Feb", temp: 5, rain: 50, rainyDays: 11, wind: 17 },
+      { month: "Mar", temp: 7, rain: 53, rainyDays: 11, wind: 16 },
+      { month: "Apr", temp: 9, rain: 51, rainyDays: 11, wind: 14 },
+      { month: "May", temp: 12, rain: 56, rainyDays: 11, wind: 13 },
+      { month: "Jun", temp: 14, rain: 56, rainyDays: 10, wind: 12 },
+      { month: "Jul", temp: 16, rain: 56, rainyDays: 11, wind: 12 },
+      { month: "Aug", temp: 16, rain: 73, rainyDays: 12, wind: 12 },
+      { month: "Sep", temp: 14, rain: 59, rainyDays: 10, wind: 13 },
+      { month: "Oct", temp: 11, rain: 70, rainyDays: 12, wind: 15 },
+      { month: "Nov", temp: 7, rain: 65, rainyDays: 12, wind: 16 },
+      { month: "Dec", temp: 5, rain: 73, rainyDays: 13, wind: 17 }
     ]
   }
 };

@@ -608,6 +608,745 @@ const ACADEMIES = [
       languageSupport: ['English', 'Swedish'],
       emergencyProtocol: 'On-site first aid, Västerås hospital 25 minutes, equine vet on call'
     }
+  },
+  {
+    id: 'gesves-equestrian-centre',
+    name: 'Gesves International Equestrian Centre',
+    country: 'Belgium', countryFlag: '🇧🇪',
+    city: 'Gesves', lat: 50.40, lng: 5.01,
+    website: 'https://www.gesvesequestrian.be', contact: '+32 83 123 456', contactEmail: 'info@gesvesequestrian.be',
+    description: 'Elite equestrian training centre in the Walloon countryside, renowned for show jumping excellence and home to international-level competition facilities amidst Belgium\'s rich equestrian heritage.',
+    ageGroups: ['Junior', 'Adult'],
+    level: 'All levels',
+    individualLessons: true,
+    boarding: true,
+    beach: null,
+    priceRange: { from: 900, to: 2800, unit: 'week', display: '€900 - €2,800/week' },
+    socialMedia: { instagram: '@gesvesequestrian', facebook: 'https://facebook.com/gesvesequestrian', twitter: '@gesvesequest' },
+    climate: 'gesves',
+    facilities: 'Indoor school (70x30m), outdoor arenas, cross-country course, stables for 80 horses, horse walker, lunging ring, tack room, farrier workshop, veterinary clinic',
+    courtSurfaces: ['Dressage arena', 'Show jumping course', 'Cross-country course', 'Indoor school'],
+    programs: [
+      { name: 'Show Jumping Excellence', price: '€2,200/week', desc: 'Intensive show jumping training with Belgian championship-level coaches' },
+      { name: 'Complete Equestrian Programme', price: '€1,800/week', desc: 'Comprehensive training across all three Olympic disciplines' },
+      { name: 'Young Rider Academy', price: '€950/week', desc: 'Structured development programme for aspiring competitive riders aged 10-18' }
+    ],
+    coaches: [
+      { name: 'Pieter Van Hoeck', credential: 'LEWB Level 4 Coach', background: 'Former Belgian show jumping team trainer with international Grand Prix experience', atpWta: false, bestRanking: null, rankingNote: null, languages: ['English', 'French', 'Dutch'], instagram: '@pietervanhoeck' },
+      { name: 'Isabelle Lemaire', credential: 'FEI Level 3 Dressage', background: 'Belgian dressage champion and FEI-certified trainer', atpWta: false, bestRanking: null, rankingNote: null, languages: ['French', 'English'], instagram: '@isabellelemaire' }
+    ],
+    photos: ['https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?w=800'],
+    upcomingCamps: [
+      { name: 'Summer Show Jumping Intensive', startDate: '2026-07-06', endDate: '2026-07-13', price: '€2,200', level: 'Intermediate-Advanced' },
+      { name: 'Autumn Eventing Camp', startDate: '2026-09-14', endDate: '2026-09-21', price: '€1,800', level: 'All levels' }
+    ],
+    accommodation: {
+      types: [
+        { type: 'farmhouse', label: 'Walloon Farmhouse', pricePerWeek: 480, maxOccupancy: 2, bathType: 'ensuite', mealsIncluded: true }
+      ],
+      companionsAllowed: true, childrenAllowed: true, minStay: '1 week', shuttleToTraining: false, notes: 'Charming farmhouse accommodation overlooking paddocks and training grounds'
+    },
+    availability: {
+      status: 'open',
+      nextIntake: '2026-06-01',
+      spotsLeft: 14, responseTime: '48h', privateLessons: true, yearRound: true
+    },
+    juniorInfo: {
+      minAge: 8, maxAge: 18, supervision: '24/7', guardianStay: true,
+      schooling: 'Coordination with local Belgian schools for term-time riders',
+      medicalStaff: true, safeguarding: 'Belgian federation safeguarding standards, all staff background-checked',
+      airportPickup: true, mealPlan: 'Full board with Belgian and French cuisine',
+      curfew: '21:00 weekdays, 22:00 weekends',
+      roommatePairing: 'Age-based groups',
+      languageSupport: ['English', 'French', 'Dutch'],
+      emergencyProtocol: 'On-site first aid, CHU Namur hospital 20 minutes, equine vet on call'
+    }
+  },
+  {
+    id: 'vienna-riding-academy',
+    name: 'Vienna Classical Riding Academy',
+    country: 'Austria', countryFlag: '🇦🇹',
+    city: 'Vienna', lat: 48.21, lng: 16.37,
+    website: 'https://www.viennaridingacademy.at', contact: '+43 1 234 5678', contactEmail: 'info@viennaridingacademy.at',
+    description: 'Prestigious riding academy in Vienna, inspired by the centuries-old traditions of the Spanish Riding School. Specialising in classical dressage and Lipizzaner horsemanship in the cultural heart of Europe.',
+    ageGroups: ['Junior', 'Adult'],
+    level: 'All levels',
+    individualLessons: true,
+    boarding: true,
+    beach: null,
+    priceRange: { from: 1200, to: 3500, unit: 'week', display: '€1,200 - €3,500/week' },
+    socialMedia: { instagram: '@viennaridingacademy', facebook: 'https://facebook.com/viennaridingacademy', twitter: '@viennariding' },
+    climate: 'vienna',
+    facilities: 'Indoor school (60x20m), classical dressage hall, outdoor arenas, stables for 50 horses, horse walker, lunging ring, tack room, farrier on-site, Lipizzaner heritage centre',
+    courtSurfaces: ['Dressage arena', 'Show jumping course', 'Cross-country course', 'Indoor school'],
+    programs: [
+      { name: 'Classical Dressage Mastery', price: '€3,000/week', desc: 'Intensive training in haute école and classical riding principles' },
+      { name: 'Complete Rider Programme', price: '€2,200/week', desc: 'All-round equestrian training with classical foundations' },
+      { name: 'Young Rider Classical Course', price: '€1,200/week', desc: 'Introduction to classical riding for younger equestrians' }
+    ],
+    coaches: [
+      { name: 'Maximilian Gruber', credential: 'OEPS Level 4 Bereiter', background: 'Classical dressage master trained in the tradition of the Spanish Riding School', atpWta: false, bestRanking: null, rankingNote: null, languages: ['English', 'German'], instagram: '@maxgruberequestrian' },
+      { name: 'Katharina Winkler', credential: 'FEI Level 3 Dressage', background: 'Austrian national dressage team coach with Grand Prix experience', atpWta: false, bestRanking: null, rankingNote: null, languages: ['German', 'English', 'French'], instagram: '@katharinawinkler' }
+    ],
+    photos: ['https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=800'],
+    upcomingCamps: [
+      { name: 'Classical Dressage Summer School', startDate: '2026-06-15', endDate: '2026-06-22', price: '€3,000', level: 'Intermediate-Advanced' },
+      { name: 'Lipizzaner Heritage Week', startDate: '2026-09-07', endDate: '2026-09-14', price: '€2,500', level: 'All levels' }
+    ],
+    accommodation: {
+      types: [
+        { type: 'farmhouse', label: 'Academy Guesthouse', pricePerWeek: 550, maxOccupancy: 2, bathType: 'ensuite', mealsIncluded: true }
+      ],
+      companionsAllowed: true, childrenAllowed: true, minStay: '1 week', shuttleToTraining: false, notes: 'Elegant guesthouse within walking distance of the academy and Vienna city centre'
+    },
+    availability: {
+      status: 'limited',
+      nextIntake: '2026-06-15',
+      spotsLeft: 6, responseTime: '48h', privateLessons: true, yearRound: true
+    },
+    juniorInfo: {
+      minAge: 10, maxAge: 18, supervision: '24/7', guardianStay: true,
+      schooling: 'Partnership with Viennese international schools during term time',
+      medicalStaff: true, safeguarding: 'Austrian federation safeguarding policy, all staff vetted',
+      airportPickup: true, mealPlan: 'Full board with Viennese and international cuisine',
+      curfew: '21:00 weekdays, 22:00 weekends',
+      roommatePairing: 'Age-based groups',
+      languageSupport: ['English', 'German'],
+      emergencyProtocol: 'On-site first aid, AKH Vienna hospital 15 minutes, equine vet on call'
+    }
+  },
+  {
+    id: 'vilhelmsborg-equestrian',
+    name: 'Vilhelmsborg Equestrian Centre',
+    country: 'Denmark', countryFlag: '🇩🇰',
+    city: 'Vilhelmsborg', lat: 56.12, lng: 10.13,
+    website: 'https://www.vilhelmsborg.dk', contact: '+45 86 123 456', contactEmail: 'info@vilhelmsborg.dk',
+    description: 'Denmark\'s premier equestrian training centre near Aarhus, offering world-class facilities for dressage, show jumping, and eventing in the heart of Danish equestrian country.',
+    ageGroups: ['Junior', 'Adult'],
+    level: 'All levels',
+    individualLessons: true,
+    boarding: true,
+    beach: null,
+    priceRange: { from: 1000, to: 3000, unit: 'week', display: '€1,000 - €3,000/week' },
+    socialMedia: { instagram: '@vilhelmsborgequestrian', facebook: 'https://facebook.com/vilhelmsborgequestrian', twitter: '@vilhelmsequest' },
+    climate: 'vilhelmsborg',
+    facilities: 'Indoor school (65x25m), outdoor arenas, cross-country course, stables for 70 horses, horse walker, lunging ring, tack room, farrier on-site, Danish warmblood breeding station',
+    courtSurfaces: ['Dressage arena', 'Show jumping course', 'Cross-country course', 'Indoor school'],
+    programs: [
+      { name: 'Danish Dressage Excellence', price: '€2,500/week', desc: 'Advanced dressage training following Danish national team methods' },
+      { name: 'All-Round Rider Programme', price: '€1,800/week', desc: 'Comprehensive training in dressage, jumping, and cross-country' },
+      { name: 'Youth Rider Development', price: '€1,000/week', desc: 'Structured programme for young riders aged 10-18' }
+    ],
+    coaches: [
+      { name: 'Lars Christiansen', credential: 'DRF Level 4 Coach', background: 'Danish national dressage team trainer with Olympic preparation experience', atpWta: false, bestRanking: null, rankingNote: null, languages: ['English', 'Danish'], instagram: '@larschristiansen' },
+      { name: 'Mette Andersen', credential: 'FEI Level 3 Eventing', background: 'Former Danish eventing champion and international course designer', atpWta: false, bestRanking: null, rankingNote: null, languages: ['Danish', 'English', 'German'], instagram: '@metteandersen' }
+    ],
+    photos: ['https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?w=800'],
+    upcomingCamps: [
+      { name: 'Scandinavian Dressage Camp', startDate: '2026-06-22', endDate: '2026-06-29', price: '€2,500', level: 'Intermediate-Advanced' },
+      { name: 'Summer Eventing Week', startDate: '2026-08-03', endDate: '2026-08-10', price: '€1,800', level: 'All levels' }
+    ],
+    accommodation: {
+      types: [
+        { type: 'farmhouse', label: 'Danish Farmhouse Lodge', pricePerWeek: 500, maxOccupancy: 2, bathType: 'ensuite', mealsIncluded: true }
+      ],
+      companionsAllowed: true, childrenAllowed: true, minStay: '1 week', shuttleToTraining: false, notes: 'Modern Scandinavian-style accommodation on the equestrian estate'
+    },
+    availability: {
+      status: 'open',
+      nextIntake: '2026-06-01',
+      spotsLeft: 10, responseTime: '48h', privateLessons: true, yearRound: true
+    },
+    juniorInfo: {
+      minAge: 9, maxAge: 18, supervision: '24/7', guardianStay: true,
+      schooling: 'Coordination with local Danish schools for term-time riders',
+      medicalStaff: true, safeguarding: 'DRF safeguarding standards, all staff background-checked',
+      airportPickup: true, mealPlan: 'Full board with Scandinavian cuisine',
+      curfew: '21:00 weekdays, 22:00 weekends',
+      roommatePairing: 'Age-based groups',
+      languageSupport: ['English', 'Danish'],
+      emergencyProtocol: 'On-site first aid, Aarhus University Hospital 20 minutes, equine vet on call'
+    }
+  },
+  {
+    id: 'wroclaw-riding-centre',
+    name: 'Wrocław International Riding Centre',
+    country: 'Poland', countryFlag: '🇵🇱',
+    city: 'Wrocław', lat: 51.11, lng: 17.04,
+    website: 'https://www.wroclawriding.pl', contact: '+48 71 234 5678', contactEmail: 'info@wroclawriding.pl',
+    description: 'Modern equestrian centre in Lower Silesia, combining Poland\'s rich cavalry traditions with contemporary training methods for dressage, show jumping, and eventing.',
+    ageGroups: ['Junior', 'Adult'],
+    level: 'All levels',
+    individualLessons: true,
+    boarding: true,
+    beach: null,
+    priceRange: { from: 600, to: 1800, unit: 'week', display: '€600 - €1,800/week' },
+    socialMedia: { instagram: '@wroclawriding', facebook: 'https://facebook.com/wroclawriding', twitter: '@wroclawriding' },
+    climate: 'wroclaw',
+    facilities: 'Indoor school (60x20m), outdoor arenas, cross-country course, stables for 55 horses, horse walker, lunging ring, tack room, farrier workshop, saddlery',
+    courtSurfaces: ['Dressage arena', 'Show jumping course', 'Cross-country course', 'Indoor school'],
+    programs: [
+      { name: 'Show Jumping Intensive', price: '€1,500/week', desc: 'Competition-focused show jumping training with experienced Polish coaches' },
+      { name: 'Complete Rider Programme', price: '€1,200/week', desc: 'All-round equestrian training across dressage, jumping, and eventing' },
+      { name: 'Junior Development Academy', price: '€650/week', desc: 'Affordable youth development programme for riders aged 8-18' }
+    ],
+    coaches: [
+      { name: 'Tomasz Kowalski', credential: 'PZJ Level 3 Coach', background: 'Polish national show jumping team trainer with international competition experience', atpWta: false, bestRanking: null, rankingNote: null, languages: ['English', 'Polish', 'German'], instagram: '@tomaszkowalski' },
+      { name: 'Agnieszka Nowak', credential: 'FEI Level 2 Dressage', background: 'Polish dressage champion and certified FEI instructor', atpWta: false, bestRanking: null, rankingNote: null, languages: ['Polish', 'English'], instagram: '@agnieszkanowak' }
+    ],
+    photos: ['https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=800'],
+    upcomingCamps: [
+      { name: 'Summer Jumping Camp', startDate: '2026-07-13', endDate: '2026-07-20', price: '€1,500', level: 'Intermediate' },
+      { name: 'Autumn Dressage Retreat', startDate: '2026-10-05', endDate: '2026-10-12', price: '€1,200', level: 'All levels' }
+    ],
+    accommodation: {
+      types: [
+        { type: 'farmhouse', label: 'Silesian Manor House', pricePerWeek: 350, maxOccupancy: 2, bathType: 'ensuite', mealsIncluded: true }
+      ],
+      companionsAllowed: true, childrenAllowed: true, minStay: '1 week', shuttleToTraining: false, notes: 'Historic manor house accommodation with views over the Silesian countryside'
+    },
+    availability: {
+      status: 'open',
+      nextIntake: '2026-05-15',
+      spotsLeft: 16, responseTime: '48h', privateLessons: true, yearRound: true
+    },
+    juniorInfo: {
+      minAge: 8, maxAge: 18, supervision: '24/7', guardianStay: true,
+      schooling: 'Partnership with local international schools in Wrocław',
+      medicalStaff: true, safeguarding: 'PZJ safeguarding policy, all staff vetted and certified',
+      airportPickup: true, mealPlan: 'Full board with Polish and international cuisine',
+      curfew: '21:00 weekdays, 22:00 weekends',
+      roommatePairing: 'Age-based groups',
+      languageSupport: ['English', 'Polish'],
+      emergencyProtocol: 'On-site first aid, University Hospital Wrocław 20 minutes, equine vet on call'
+    }
+  },
+  {
+    id: 'budapest-horsemanship',
+    name: 'Budapest Horsemanship Academy',
+    country: 'Hungary', countryFlag: '🇭🇺',
+    city: 'Budapest', lat: 47.50, lng: 19.04,
+    website: 'https://www.budapesthorsemanship.hu', contact: '+36 1 234 5678', contactEmail: 'info@budapesthorsemanship.hu',
+    description: 'Academy celebrating Hungary\'s legendary horsemanship traditions, offering training in classical dressage, show jumping, and traditional Hungarian mounted skills on the outskirts of Budapest.',
+    ageGroups: ['Junior', 'Adult'],
+    level: 'All levels',
+    individualLessons: true,
+    boarding: true,
+    beach: null,
+    priceRange: { from: 650, to: 2000, unit: 'week', display: '€650 - €2,000/week' },
+    socialMedia: { instagram: '@budapesthorsemanship', facebook: 'https://facebook.com/budapesthorsemanship', twitter: '@bphorseman' },
+    climate: 'budapest',
+    facilities: 'Indoor school (60x25m), outdoor arenas, cross-country course, stables for 65 horses, horse walker, lunging ring, tack room, farrier on-site, traditional horsemanship arena',
+    courtSurfaces: ['Dressage arena', 'Show jumping course', 'Cross-country course', 'Indoor school'],
+    programs: [
+      { name: 'Hungarian Horsemanship Heritage', price: '€1,800/week', desc: 'Unique programme combining classical dressage with traditional Hungarian mounted skills' },
+      { name: 'Competition Rider Programme', price: '€1,500/week', desc: 'Intensive training for competitive riders in dressage and show jumping' },
+      { name: 'Junior Rider Academy', price: '€700/week', desc: 'Comprehensive youth programme building riding skills from the ground up' }
+    ],
+    coaches: [
+      { name: 'István Nagy', credential: 'MLSZ Level 4 Coach', background: 'Hungarian national team coach specialising in classical dressage and traditional horsemanship', atpWta: false, bestRanking: null, rankingNote: null, languages: ['English', 'Hungarian', 'German'], instagram: '@istvannagyequestrian' },
+      { name: 'Zsuzsanna Horváth', credential: 'FEI Level 2 Jumping', background: 'Former Hungarian show jumping champion and youth development specialist', atpWta: false, bestRanking: null, rankingNote: null, languages: ['Hungarian', 'English'], instagram: '@zsuzsihorvath' }
+    ],
+    photos: ['https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?w=800'],
+    upcomingCamps: [
+      { name: 'Hungarian Horsemanship Summer Camp', startDate: '2026-06-29', endDate: '2026-07-06', price: '€1,800', level: 'All levels' },
+      { name: 'Autumn Dressage Intensive', startDate: '2026-10-12', endDate: '2026-10-19', price: '€1,500', level: 'Intermediate-Advanced' }
+    ],
+    accommodation: {
+      types: [
+        { type: 'farmhouse', label: 'Puszta Farmstead', pricePerWeek: 380, maxOccupancy: 2, bathType: 'ensuite', mealsIncluded: true }
+      ],
+      companionsAllowed: true, childrenAllowed: true, minStay: '1 week', shuttleToTraining: false, notes: 'Traditional Hungarian farmstead accommodation with views over the Puszta countryside'
+    },
+    availability: {
+      status: 'waitlist',
+      nextIntake: '2026-06-29',
+      spotsLeft: 3, responseTime: '48h', privateLessons: true, yearRound: true
+    },
+    juniorInfo: {
+      minAge: 8, maxAge: 18, supervision: '24/7', guardianStay: true,
+      schooling: 'Partnership with Budapest international schools during term time',
+      medicalStaff: true, safeguarding: 'Hungarian equestrian federation safeguarding policy, all staff vetted',
+      airportPickup: true, mealPlan: 'Full board with traditional Hungarian cuisine',
+      curfew: '21:00 weekdays, 22:00 weekends',
+      roommatePairing: 'Age-based groups',
+      languageSupport: ['English', 'Hungarian'],
+      emergencyProtocol: 'On-site first aid, Szent János Hospital Budapest 20 minutes, equine vet on call'
+    }
+  },
+  {
+    id: 'prague-equestrian-club',
+    name: 'Prague Equestrian Club',
+    country: 'Czech Republic', countryFlag: '🇨🇿',
+    city: 'Prague', lat: 50.08, lng: 14.44,
+    website: 'https://www.pragueequestrian.cz', contact: '+420 234 567 890', contactEmail: 'info@pragueequestrian.cz',
+    description: 'Modern equestrian club on the outskirts of Prague, offering top-class training in dressage and show jumping with a strong emphasis on rider development and horse welfare.',
+    ageGroups: ['Junior', 'Adult'],
+    level: 'All levels',
+    individualLessons: true,
+    boarding: true,
+    beach: null,
+    priceRange: { from: 700, to: 2200, unit: 'week', display: '€700 - €2,200/week' },
+    socialMedia: { instagram: '@pragueequestrian', facebook: 'https://facebook.com/pragueequestrian', twitter: '@pragueequest' },
+    climate: 'prague',
+    facilities: 'Indoor school (60x20m), outdoor arenas, cross-country course, stables for 50 horses, horse walker, lunging ring, tack room, farrier workshop, rider fitness centre',
+    courtSurfaces: ['Dressage arena', 'Show jumping course', 'Cross-country course', 'Indoor school'],
+    programs: [
+      { name: 'Dressage Mastery Programme', price: '€1,800/week', desc: 'Focused dressage training from novice to Grand Prix levels' },
+      { name: 'Show Jumping Development', price: '€1,500/week', desc: 'Progressive show jumping programme with competition preparation' },
+      { name: 'Young Rider Foundation', price: '€750/week', desc: 'Foundational riding programme for young equestrians aged 8-16' }
+    ],
+    coaches: [
+      { name: 'Jan Dvořák', credential: 'ČJF Level 3 Coach', background: 'Czech national show jumping trainer with European championship experience', atpWta: false, bestRanking: null, rankingNote: null, languages: ['English', 'Czech', 'German'], instagram: '@jandvorakequestrian' },
+      { name: 'Petra Svobodová', credential: 'FEI Level 2 Dressage', background: 'Czech dressage specialist and youth development coach', atpWta: false, bestRanking: null, rankingNote: null, languages: ['Czech', 'English'], instagram: '@petrasvobodova' }
+    ],
+    photos: ['https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=800'],
+    upcomingCamps: [
+      { name: 'Prague Summer Dressage Camp', startDate: '2026-07-06', endDate: '2026-07-13', price: '€1,800', level: 'Intermediate' },
+      { name: 'Winter Indoor Jumping Clinic', startDate: '2027-01-12', endDate: '2027-01-19', price: '€1,500', level: 'All levels' }
+    ],
+    accommodation: {
+      types: [
+        { type: 'farmhouse', label: 'Bohemian Country House', pricePerWeek: 400, maxOccupancy: 2, bathType: 'ensuite', mealsIncluded: true }
+      ],
+      companionsAllowed: true, childrenAllowed: true, minStay: '1 week', shuttleToTraining: false, notes: 'Restored Bohemian country house with easy access to Prague city centre'
+    },
+    availability: {
+      status: 'open',
+      nextIntake: '2026-05-01',
+      spotsLeft: 12, responseTime: '48h', privateLessons: true, yearRound: true
+    },
+    juniorInfo: {
+      minAge: 8, maxAge: 18, supervision: '24/7', guardianStay: true,
+      schooling: 'Partnership with Prague international schools during term time',
+      medicalStaff: true, safeguarding: 'Czech federation safeguarding policy, all staff vetted',
+      airportPickup: true, mealPlan: 'Full board with Czech and international cuisine',
+      curfew: '21:00 weekdays, 22:00 weekends',
+      roommatePairing: 'Age-based groups',
+      languageSupport: ['English', 'Czech'],
+      emergencyProtocol: 'On-site first aid, Motol University Hospital 20 minutes, equine vet on call'
+    }
+  },
+  {
+    id: 'rome-equestrian-academy',
+    name: 'Rome Equestrian Academy',
+    country: 'Italy', countryFlag: '🇮🇹',
+    city: 'Rome', lat: 41.90, lng: 12.50,
+    website: 'https://www.romeequestrianacademy.it', contact: '+39 06 1234 5678', contactEmail: 'info@romeequestrianacademy.it',
+    description: 'Prestigious equestrian academy near the iconic Piazza di Siena, offering elite training in show jumping and dressage surrounded by the beauty of Rome\'s parklands and equestrian heritage.',
+    ageGroups: ['Junior', 'Adult'],
+    level: 'All levels',
+    individualLessons: true,
+    boarding: true,
+    beach: null,
+    priceRange: { from: 1000, to: 3200, unit: 'week', display: '€1,000 - €3,200/week' },
+    socialMedia: { instagram: '@romeequestrianacademy', facebook: 'https://facebook.com/romeequestrianacademy', twitter: '@romeequest' },
+    climate: 'rome',
+    facilities: 'Indoor school (60x25m), outdoor arenas, cross-country course, stables for 45 horses, horse walker, lunging ring, tack room, farrier on-site, rider lounge with panoramic views',
+    courtSurfaces: ['Dressage arena', 'Show jumping course', 'Cross-country course', 'Indoor school'],
+    programs: [
+      { name: 'Piazza di Siena Show Jumping', price: '€2,800/week', desc: 'Elite show jumping training inspired by Italy\'s most prestigious equestrian event' },
+      { name: 'Italian Dressage Programme', price: '€2,200/week', desc: 'Classical and modern dressage training with Italian flair' },
+      { name: 'Young Rider Roma', price: '€1,000/week', desc: 'Youth development programme combining riding with Italian cultural experiences' }
+    ],
+    coaches: [
+      { name: 'Marco Bianchi', credential: 'FISE Level 4 Coach', background: 'Italian national show jumping team trainer with World Championship experience', atpWta: false, bestRanking: null, rankingNote: null, languages: ['English', 'Italian'], instagram: '@marcobianchiequestrian' },
+      { name: 'Giulia Rossi', credential: 'FEI Level 3 Dressage', background: 'Italian Grand Prix dressage rider and certified FEI instructor', atpWta: false, bestRanking: null, rankingNote: null, languages: ['Italian', 'English', 'French'], instagram: '@giuliarossidressage' }
+    ],
+    photos: ['https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?w=800'],
+    upcomingCamps: [
+      { name: 'Roman Spring Jumping Camp', startDate: '2026-04-20', endDate: '2026-04-27', price: '€2,800', level: 'Advanced' },
+      { name: 'Autumn Dressage Retreat', startDate: '2026-10-19', endDate: '2026-10-26', price: '€2,200', level: 'Intermediate-Advanced' }
+    ],
+    accommodation: {
+      types: [
+        { type: 'farmhouse', label: 'Roman Villa Guesthouse', pricePerWeek: 600, maxOccupancy: 2, bathType: 'ensuite', mealsIncluded: true }
+      ],
+      companionsAllowed: true, childrenAllowed: true, minStay: '1 week', shuttleToTraining: false, notes: 'Elegant villa accommodation in the Roman countryside with Mediterranean gardens'
+    },
+    availability: {
+      status: 'limited',
+      nextIntake: '2026-04-20',
+      spotsLeft: 5, responseTime: '48h', privateLessons: true, yearRound: true
+    },
+    juniorInfo: {
+      minAge: 10, maxAge: 18, supervision: '24/7', guardianStay: true,
+      schooling: 'Partnership with Rome international schools during term time',
+      medicalStaff: true, safeguarding: 'FISE safeguarding standards, all staff background-checked',
+      airportPickup: true, mealPlan: 'Full board with authentic Italian cuisine',
+      curfew: '21:00 weekdays, 22:00 weekends',
+      roommatePairing: 'Age-based groups',
+      languageSupport: ['English', 'Italian'],
+      emergencyProtocol: 'On-site first aid, Policlinico Gemelli hospital 20 minutes, equine vet on call'
+    }
+  },
+  {
+    id: 'golega-lusitano-centre',
+    name: 'Golegã Lusitano Centre',
+    country: 'Portugal', countryFlag: '🇵🇹',
+    city: 'Golegã', lat: 39.40, lng: -8.49,
+    website: 'https://www.golegalusitano.pt', contact: '+351 249 123 456', contactEmail: 'info@golegalusitano.pt',
+    description: 'Training centre in Portugal\'s horse capital, Golegã, specialising in Lusitano horsemanship, classical dressage, and working equitation amidst the traditions of the annual Feira Nacional do Cavalo.',
+    ageGroups: ['Junior', 'Adult'],
+    level: 'All levels',
+    individualLessons: true,
+    boarding: true,
+    beach: null,
+    priceRange: { from: 700, to: 2200, unit: 'week', display: '€700 - €2,200/week' },
+    socialMedia: { instagram: '@golegalusitano', facebook: 'https://facebook.com/golegalusitano', twitter: '@golegalusitano' },
+    climate: 'golega',
+    facilities: 'Indoor school (60x20m), outdoor arenas, working equitation course, stables for 40 horses, horse walker, lunging ring, tack room, farrier on-site, Lusitano breeding programme',
+    courtSurfaces: ['Dressage arena', 'Show jumping course', 'Cross-country course', 'Indoor school'],
+    programs: [
+      { name: 'Lusitano Classical Dressage', price: '€2,000/week', desc: 'Intensive classical dressage training on purebred Lusitano horses' },
+      { name: 'Working Equitation Programme', price: '€1,600/week', desc: 'Training in the traditional Portuguese discipline of working equitation' },
+      { name: 'Young Rider Lusitano Experience', price: '€750/week', desc: 'Youth programme introducing classical riding and Lusitano heritage' }
+    ],
+    coaches: [
+      { name: 'João Santos', credential: 'FEP Level 4 Mestre', background: 'Portuguese classical dressage master and Lusitano trainer with international experience', atpWta: false, bestRanking: null, rankingNote: null, languages: ['English', 'Portuguese', 'Spanish'], instagram: '@joaosantosequestrian' },
+      { name: 'Ana Ferreira', credential: 'FEI Level 2 Dressage', background: 'Portuguese working equitation champion and youth development coach', atpWta: false, bestRanking: null, rankingNote: null, languages: ['Portuguese', 'English'], instagram: '@anaferreiraequestrian' }
+    ],
+    photos: ['https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=800'],
+    upcomingCamps: [
+      { name: 'Lusitano Summer School', startDate: '2026-06-08', endDate: '2026-06-15', price: '€2,000', level: 'All levels' },
+      { name: 'Feira do Cavalo Training Week', startDate: '2026-11-02', endDate: '2026-11-09', price: '€1,600', level: 'Intermediate-Advanced' }
+    ],
+    accommodation: {
+      types: [
+        { type: 'farmhouse', label: 'Ribatejo Quinta', pricePerWeek: 400, maxOccupancy: 2, bathType: 'ensuite', mealsIncluded: true }
+      ],
+      companionsAllowed: true, childrenAllowed: true, minStay: '1 week', shuttleToTraining: false, notes: 'Traditional Portuguese quinta with views over the Tagus Valley horse country'
+    },
+    availability: {
+      status: 'open',
+      nextIntake: '2026-06-01',
+      spotsLeft: 10, responseTime: '48h', privateLessons: true, yearRound: true
+    },
+    juniorInfo: {
+      minAge: 9, maxAge: 18, supervision: '24/7', guardianStay: true,
+      schooling: 'Coordination with local Portuguese schools for term-time riders',
+      medicalStaff: true, safeguarding: 'FEP safeguarding standards, all staff background-checked',
+      airportPickup: true, mealPlan: 'Full board with traditional Portuguese cuisine',
+      curfew: '21:00 weekdays, 22:00 weekends',
+      roommatePairing: 'Age-based groups',
+      languageSupport: ['English', 'Portuguese'],
+      emergencyProtocol: 'On-site first aid, Santarém District Hospital 25 minutes, equine vet on call'
+    }
+  },
+  {
+    id: 'bern-riding-school',
+    name: 'Bern International Riding School',
+    country: 'Switzerland', countryFlag: '🇨🇭',
+    city: 'Bern', lat: 46.95, lng: 7.45,
+    website: 'https://www.bernridingschool.ch', contact: '+41 31 234 5678', contactEmail: 'info@bernridingschool.ch',
+    description: 'Swiss precision meets equestrian excellence at this premier riding school near Bern, offering world-class training in dressage and show jumping with stunning Alpine views.',
+    ageGroups: ['Junior', 'Adult'],
+    level: 'All levels',
+    individualLessons: true,
+    boarding: true,
+    beach: null,
+    priceRange: { from: 1300, to: 3800, unit: 'week', display: '€1,300 - €3,800/week' },
+    socialMedia: { instagram: '@bernridingschool', facebook: 'https://facebook.com/bernridingschool', twitter: '@bernriding' },
+    climate: 'bern',
+    facilities: 'Indoor school (65x25m), outdoor arenas, cross-country course, stables for 45 horses, horse walker, lunging ring, tack room, farrier on-site, rider wellness centre',
+    courtSurfaces: ['Dressage arena', 'Show jumping course', 'Cross-country course', 'Indoor school'],
+    programs: [
+      { name: 'Swiss Dressage Precision', price: '€3,200/week', desc: 'Elite dressage training with emphasis on precision and harmony' },
+      { name: 'Alpine Show Jumping Programme', price: '€2,500/week', desc: 'Show jumping training with access to Swiss competition circuits' },
+      { name: 'Junior Swiss Rider Programme', price: '€1,300/week', desc: 'Premium youth development programme in a multilingual environment' }
+    ],
+    coaches: [
+      { name: 'Stefan Müller', credential: 'SVPS Level 4 Coach', background: 'Swiss national dressage team trainer with Olympic preparation experience', atpWta: false, bestRanking: null, rankingNote: null, languages: ['English', 'German', 'French'], instagram: '@stefanmullerequestrian' },
+      { name: 'Chloé Duval', credential: 'FEI Level 3 Jumping', background: 'Swiss show jumping champion and international course designer', atpWta: false, bestRanking: null, rankingNote: null, languages: ['French', 'English', 'German'], instagram: '@chloeduvaljumping' }
+    ],
+    photos: ['https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?w=800'],
+    upcomingCamps: [
+      { name: 'Alpine Summer Dressage Camp', startDate: '2026-07-20', endDate: '2026-07-27', price: '€3,200', level: 'Intermediate-Advanced' },
+      { name: 'Swiss Jumping Clinic', startDate: '2026-09-21', endDate: '2026-09-28', price: '€2,500', level: 'Advanced' }
+    ],
+    accommodation: {
+      types: [
+        { type: 'farmhouse', label: 'Swiss Chalet Lodge', pricePerWeek: 650, maxOccupancy: 2, bathType: 'ensuite', mealsIncluded: true }
+      ],
+      companionsAllowed: true, childrenAllowed: true, minStay: '1 week', shuttleToTraining: false, notes: 'Traditional Swiss chalet with Alpine panoramic views and modern amenities'
+    },
+    availability: {
+      status: 'limited',
+      nextIntake: '2026-07-01',
+      spotsLeft: 4, responseTime: '48h', privateLessons: true, yearRound: true
+    },
+    juniorInfo: {
+      minAge: 10, maxAge: 18, supervision: '24/7', guardianStay: true,
+      schooling: 'Partnership with Bern international schools during term time',
+      medicalStaff: true, safeguarding: 'SVPS safeguarding standards, all staff vetted and certified',
+      airportPickup: true, mealPlan: 'Full board with Swiss and international cuisine',
+      curfew: '21:00 weekdays, 22:00 weekends',
+      roommatePairing: 'Age-based groups',
+      languageSupport: ['English', 'German', 'French'],
+      emergencyProtocol: 'On-site first aid, Inselspital Bern hospital 15 minutes, equine vet on call'
+    }
+  },
+  {
+    id: 'athens-equestrian-club',
+    name: 'Athens Equestrian Club',
+    country: 'Greece', countryFlag: '🇬🇷',
+    city: 'Athens', lat: 37.98, lng: 23.73,
+    website: 'https://www.athensequestrianclub.gr', contact: '+30 210 234 5678', contactEmail: 'info@athensequestrianclub.gr',
+    description: 'Modern equestrian club near the historic Athens Olympic Equestrian Centre, offering year-round training in show jumping and dressage under the Mediterranean sun.',
+    ageGroups: ['Junior', 'Adult'],
+    level: 'All levels',
+    individualLessons: true,
+    boarding: true,
+    beach: null,
+    priceRange: { from: 750, to: 2400, unit: 'week', display: '€750 - €2,400/week' },
+    socialMedia: { instagram: '@athensequestrianclub', facebook: 'https://facebook.com/athensequestrianclub', twitter: '@athensequest' },
+    climate: 'athens',
+    facilities: 'Indoor school (60x20m), outdoor arenas, cross-country course, stables for 40 horses, horse walker, lunging ring, tack room, farrier on-site, Olympic heritage training grounds',
+    courtSurfaces: ['Dressage arena', 'Show jumping course', 'Cross-country course', 'Indoor school'],
+    programs: [
+      { name: 'Mediterranean Show Jumping', price: '€2,000/week', desc: 'Show jumping training utilising Greece\'s year-round outdoor riding conditions' },
+      { name: 'Classical Greek Dressage', price: '€1,600/week', desc: 'Dressage programme inspired by the classical Greek tradition of horsemanship' },
+      { name: 'Junior Olympic Rider Programme', price: '€800/week', desc: 'Youth development on the grounds of Greece\'s Olympic equestrian legacy' }
+    ],
+    coaches: [
+      { name: 'Nikos Papadopoulos', credential: 'EIF Level 3 Coach', background: 'Greek national show jumping team trainer with Olympic Games experience', atpWta: false, bestRanking: null, rankingNote: null, languages: ['English', 'Greek'], instagram: '@nikospapadopoulosequestrian' },
+      { name: 'Eleni Konstantinou', credential: 'FEI Level 2 Dressage', background: 'Greek dressage champion and certified FEI instructor', atpWta: false, bestRanking: null, rankingNote: null, languages: ['Greek', 'English', 'French'], instagram: '@elenikonstantinou' }
+    ],
+    photos: ['https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=800'],
+    upcomingCamps: [
+      { name: 'Greek Spring Jumping Camp', startDate: '2026-04-06', endDate: '2026-04-13', price: '€2,000', level: 'Intermediate-Advanced' },
+      { name: 'Autumn Mediterranean Dressage', startDate: '2026-10-26', endDate: '2026-11-02', price: '€1,600', level: 'All levels' }
+    ],
+    accommodation: {
+      types: [
+        { type: 'farmhouse', label: 'Attic Country House', pricePerWeek: 420, maxOccupancy: 2, bathType: 'ensuite', mealsIncluded: true }
+      ],
+      companionsAllowed: true, childrenAllowed: true, minStay: '1 week', shuttleToTraining: false, notes: 'Mediterranean-style accommodation surrounded by olive groves and paddocks'
+    },
+    availability: {
+      status: 'open',
+      nextIntake: '2026-04-01',
+      spotsLeft: 14, responseTime: '48h', privateLessons: true, yearRound: true
+    },
+    juniorInfo: {
+      minAge: 8, maxAge: 18, supervision: '24/7', guardianStay: true,
+      schooling: 'Partnership with Athens international schools during term time',
+      medicalStaff: true, safeguarding: 'EIF safeguarding policy, all staff background-checked',
+      airportPickup: true, mealPlan: 'Full board with Mediterranean Greek cuisine',
+      curfew: '21:00 weekdays, 22:00 weekends',
+      roommatePairing: 'Age-based groups',
+      languageSupport: ['English', 'Greek'],
+      emergencyProtocol: 'On-site first aid, Attikon University Hospital 20 minutes, equine vet on call'
+    }
+  },
+  {
+    id: 'helsinki-riding-centre',
+    name: 'Helsinki International Riding Centre',
+    country: 'Finland', countryFlag: '🇫🇮',
+    city: 'Helsinki', lat: 60.17, lng: 24.94,
+    website: 'https://www.helsinkiriding.fi', contact: '+358 9 234 5678', contactEmail: 'info@helsinkiriding.fi',
+    description: 'Finland\'s leading equestrian training centre near Helsinki, offering year-round indoor and outdoor riding in a Nordic environment with emphasis on dressage and show jumping excellence.',
+    ageGroups: ['Junior', 'Adult'],
+    level: 'All levels',
+    individualLessons: true,
+    boarding: true,
+    beach: null,
+    priceRange: { from: 1000, to: 3000, unit: 'week', display: '€1,000 - €3,000/week' },
+    socialMedia: { instagram: '@helsinkiriding', facebook: 'https://facebook.com/helsinkiriding', twitter: '@helsinkiriding' },
+    climate: 'helsinki',
+    facilities: 'Indoor school (70x30m), outdoor arenas, cross-country course, stables for 55 horses, horse walker, lunging ring, tack room, farrier on-site, heated viewing gallery',
+    courtSurfaces: ['Dressage arena', 'Show jumping course', 'Cross-country course', 'Indoor school'],
+    programs: [
+      { name: 'Nordic Dressage Programme', price: '€2,500/week', desc: 'Intensive dressage training following Finnish national team methodology' },
+      { name: 'Show Jumping Development', price: '€2,000/week', desc: 'Progressive show jumping programme with competition preparation' },
+      { name: 'Junior Nordic Rider Academy', price: '€1,000/week', desc: 'Youth development programme in a supportive Nordic environment' }
+    ],
+    coaches: [
+      { name: 'Mikko Virtanen', credential: 'SRL Level 4 Coach', background: 'Finnish national dressage team trainer with European championship experience', atpWta: false, bestRanking: null, rankingNote: null, languages: ['English', 'Finnish', 'Swedish'], instagram: '@mikkovirtanenequestrian' },
+      { name: 'Hanna Korhonen', credential: 'FEI Level 2 Jumping', background: 'Finnish show jumping champion and youth development specialist', atpWta: false, bestRanking: null, rankingNote: null, languages: ['Finnish', 'English'], instagram: '@hannakorhonen' }
+    ],
+    photos: ['https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?w=800'],
+    upcomingCamps: [
+      { name: 'Finnish Summer Riding Camp', startDate: '2026-06-15', endDate: '2026-06-22', price: '€2,500', level: 'All levels' },
+      { name: 'Winter Indoor Dressage Intensive', startDate: '2027-01-19', endDate: '2027-01-26', price: '€2,000', level: 'Intermediate-Advanced' }
+    ],
+    accommodation: {
+      types: [
+        { type: 'farmhouse', label: 'Nordic Lodge', pricePerWeek: 520, maxOccupancy: 2, bathType: 'ensuite', mealsIncluded: true }
+      ],
+      companionsAllowed: true, childrenAllowed: true, minStay: '1 week', shuttleToTraining: false, notes: 'Modern Nordic lodge accommodation with sauna and forest views'
+    },
+    availability: {
+      status: 'waitlist',
+      nextIntake: '2026-06-15',
+      spotsLeft: 2, responseTime: '48h', privateLessons: true, yearRound: true
+    },
+    juniorInfo: {
+      minAge: 9, maxAge: 18, supervision: '24/7', guardianStay: true,
+      schooling: 'Partnership with Helsinki international schools during term time',
+      medicalStaff: true, safeguarding: 'SRL safeguarding standards, all staff background-checked',
+      airportPickup: true, mealPlan: 'Full board with Finnish and Nordic cuisine',
+      curfew: '21:00 weekdays, 22:00 weekends',
+      roommatePairing: 'Age-based groups',
+      languageSupport: ['English', 'Finnish'],
+      emergencyProtocol: 'On-site first aid, HUS Helsinki University Hospital 20 minutes, equine vet on call'
+    }
+  },
+  {
+    id: 'oslo-equestrian-academy',
+    name: 'Oslo Equestrian Academy',
+    country: 'Norway', countryFlag: '🇳🇴',
+    city: 'Oslo', lat: 59.91, lng: 10.75,
+    website: 'https://www.osloequestrian.no', contact: '+47 22 34 56 78', contactEmail: 'info@osloequestrian.no',
+    description: 'Norway\'s premier equestrian academy near Oslo, offering top-class training in dressage and show jumping with outstanding indoor facilities for year-round riding in the Nordic climate.',
+    ageGroups: ['Junior', 'Adult'],
+    level: 'All levels',
+    individualLessons: true,
+    boarding: true,
+    beach: null,
+    priceRange: { from: 1100, to: 3200, unit: 'week', display: '€1,100 - €3,200/week' },
+    socialMedia: { instagram: '@osloequestrian', facebook: 'https://facebook.com/osloequestrian', twitter: '@osloequest' },
+    climate: 'oslo',
+    facilities: 'Indoor school (70x25m), outdoor arenas, cross-country course, stables for 50 horses, horse walker, lunging ring, tack room, farrier on-site, heated spectator gallery',
+    courtSurfaces: ['Dressage arena', 'Show jumping course', 'Cross-country course', 'Indoor school'],
+    programs: [
+      { name: 'Norwegian Dressage Excellence', price: '€2,800/week', desc: 'Advanced dressage programme with Norwegian national team coaching methods' },
+      { name: 'Scandinavian Show Jumping', price: '€2,200/week', desc: 'Show jumping training with access to Norwegian and Scandinavian competition circuits' },
+      { name: 'Junior Viking Rider Programme', price: '€1,100/week', desc: 'Comprehensive youth equestrian programme in a supportive environment' }
+    ],
+    coaches: [
+      { name: 'Erik Johansen', credential: 'NRF Level 4 Coach', background: 'Norwegian national show jumping team trainer with World Cup experience', atpWta: false, bestRanking: null, rankingNote: null, languages: ['English', 'Norwegian'], instagram: '@erikjohansenequestrian' },
+      { name: 'Ingrid Larsen', credential: 'FEI Level 3 Dressage', background: 'Norwegian Grand Prix dressage rider and FEI-certified instructor', atpWta: false, bestRanking: null, rankingNote: null, languages: ['Norwegian', 'English', 'Swedish'], instagram: '@ingridlarsendressage' }
+    ],
+    photos: ['https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=800'],
+    upcomingCamps: [
+      { name: 'Norwegian Summer Riding Camp', startDate: '2026-06-22', endDate: '2026-06-29', price: '€2,800', level: 'All levels' },
+      { name: 'Winter Indoor Jumping Clinic', startDate: '2027-02-02', endDate: '2027-02-09', price: '€2,200', level: 'Intermediate-Advanced' }
+    ],
+    accommodation: {
+      types: [
+        { type: 'farmhouse', label: 'Norwegian Timber Lodge', pricePerWeek: 580, maxOccupancy: 2, bathType: 'ensuite', mealsIncluded: true }
+      ],
+      companionsAllowed: true, childrenAllowed: true, minStay: '1 week', shuttleToTraining: false, notes: 'Traditional Norwegian timber lodge surrounded by forests and paddocks'
+    },
+    availability: {
+      status: 'limited',
+      nextIntake: '2026-06-22',
+      spotsLeft: 6, responseTime: '48h', privateLessons: true, yearRound: true
+    },
+    juniorInfo: {
+      minAge: 9, maxAge: 18, supervision: '24/7', guardianStay: true,
+      schooling: 'Partnership with Oslo international schools during term time',
+      medicalStaff: true, safeguarding: 'NRF safeguarding standards, all staff background-checked',
+      airportPickup: true, mealPlan: 'Full board with Norwegian and Scandinavian cuisine',
+      curfew: '21:00 weekdays, 22:00 weekends',
+      roommatePairing: 'Age-based groups',
+      languageSupport: ['English', 'Norwegian'],
+      emergencyProtocol: 'On-site first aid, Oslo University Hospital 20 minutes, equine vet on call'
+    }
+  },
+  {
+    id: 'belgrade-equestrian-club',
+    name: 'Belgrade Equestrian Club',
+    country: 'Serbia', countryFlag: '🇷🇸',
+    city: 'Kovilovo', lat: 44.8750, lng: 20.5350,
+    website: 'https://www.belgradeequestrian.rs', contact: '+381 11 345 6789', contactEmail: 'info@belgradeequestrian.rs',
+    description: 'An established equestrian club in Kovilovo on the outskirts of Belgrade, offering riding lessons and training in the Serbian countryside with quality European-bred horses.',
+    ageGroups: ['Junior', 'Adult'],
+    level: 'All levels',
+    individualLessons: true,
+    boarding: true,
+    beach: null,
+    priceRange: { from: 500, to: 1500, unit: 'week', display: '€500 - €1,500/week' },
+    socialMedia: { instagram: '@belgradeequestrian', facebook: 'https://facebook.com/belgradeequestrian', twitter: '@belgradeequestrian' },
+    climate: 'kovilovo',
+    facilities: 'Indoor school (40x20m), outdoor arena, cross-country schooling field, stables for 30 horses, horse walker, tack room, clubhouse',
+    courtSurfaces: ['Dressage arena', 'Show jumping course', 'Cross-country course', 'Indoor school'],
+    programs: [
+      { name: 'Serbian Riding Programme', price: '€1,200/week', desc: 'Classical and modern riding instruction with European-bred horses' },
+      { name: 'Young Rider Development', price: '€600/week', desc: 'Youth riding programme building horsemanship skills from the ground up' }
+    ],
+    coaches: [
+      { name: 'Ana Milošević', credential: 'Serbian Equestrian Federation Level 3 Instructor', background: 'Former Serbian national dressage team rider and Balkan Championships medallist', atpWta: false, bestRanking: null, rankingNote: null, languages: ['English', 'Serbian'], instagram: null }
+    ],
+    photos: ['https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?w=800'],
+    upcomingCamps: [
+      { name: 'Belgrade Summer Riding Camp', startDate: '2026-07-06', endDate: '2026-07-13', price: '€1,200', level: 'All levels' }
+    ],
+    accommodation: {
+      types: [
+        { type: 'hotel', label: 'Kovilovo Country Hotel', pricePerWeek: 300, maxOccupancy: 2, bathType: 'ensuite', mealsIncluded: true }
+      ],
+      companionsAllowed: true, childrenAllowed: true, minStay: '1 week', shuttleToTraining: false, notes: 'Country hotel overlooking the riding grounds and Serbian countryside'
+    },
+    availability: {
+      status: 'open',
+      nextIntake: '2026-06-01',
+      spotsLeft: 12, responseTime: '48h', privateLessons: true, yearRound: true
+    },
+    juniorInfo: {
+      minAge: 8, maxAge: 18, supervision: '24/7', guardianStay: true,
+      schooling: 'Serbian school coordination available',
+      medicalStaff: true, safeguarding: 'Serbian Equestrian Federation safeguarding standards, all staff background-checked',
+      airportPickup: true, mealPlan: 'Full board with Serbian country cuisine',
+      curfew: '21:00 weekdays, 22:00 weekends',
+      roommatePairing: 'Age-based groups',
+      languageSupport: ['Serbian', 'English'],
+      emergencyProtocol: 'On-site first aid, Belgrade hospitals 30 minutes, equine vet on call'
+    }
+  },
+  {
+    id: 'cappadocia-equestrian-centre',
+    name: 'Cappadocia Equestrian Centre',
+    country: 'Turkey', countryFlag: '',
+    city: 'Göreme', lat: 38.6431, lng: 34.8283,
+    website: 'https://www.cappadociaequestrian.com.tr', contact: '+90 384 271 2345', contactEmail: 'info@cappadociaequestrian.com.tr',
+    description: 'Unique equestrian centre in the stunning Cappadocia landscape, combining classical riding training with unforgettable trail rides through fairy chimneys and volcanic valleys. A once-in-a-lifetime riding experience.',
+    ageGroups: ['Junior', 'Adult'],
+    level: 'All levels',
+    individualLessons: true,
+    boarding: true,
+    beach: null,
+    priceRange: { from: 700, to: 2200, unit: 'week', display: '700 - 2,200/week' },
+    socialMedia: { instagram: '@cappadociaequestrian', facebook: 'https://facebook.com/cappadociaequestrian', twitter: '@cappadociaride' },
+    climate: 'cappadocia',
+    facilities: 'Indoor school (60x20m), outdoor arena, cross-country course through fairy chimneys, stables for 30 horses, tack room, lunging ring, farrier on-site',
+    courtSurfaces: ['Dressage arena', 'Show jumping course', 'Cross-country trail', 'Indoor school'],
+    programs: [
+      { name: 'Cappadocia Trail Riding Experience', price: '1,500/week', desc: 'Multi-day trail rides through Cappadocia\'s fairy chimneys, valleys and ancient cave settlements' },
+      { name: 'Classical Dressage Programme', price: '2,200/week', desc: 'Advanced dressage training with Turkish and European instructors in a unique setting' },
+      { name: 'Junior Rider Programme', price: '700/week', desc: 'Youth equestrian programme combining arena work with scenic trail riding through volcanic landscapes' }
+    ],
+    coaches: [
+      { name: 'Mustafa Yılmaz', credential: 'TBF Level 4 Coach', background: 'Former Turkish national show jumping team member with 20 years of coaching experience in Cappadocia', atpWta: false, bestRanking: null, rankingNote: null, languages: ['Turkish', 'English', 'German'], instagram: '@mustafayilmazequestrian' },
+      { name: 'Zehra Arslan', credential: 'FEI Level 2 Dressage', background: 'Turkish Grand Prix dressage rider and FEI-certified instructor specialising in classical methods', atpWta: false, bestRanking: null, rankingNote: null, languages: ['Turkish', 'English'], instagram: '@zehraarslandressage' }
+    ],
+    photos: ['https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=800'],
+    upcomingCamps: [
+      { name: 'Spring Trail Riding Week', startDate: '2026-05-04', endDate: '2026-05-11', price: '1,500', level: 'All levels' },
+      { name: 'Autumn Dressage Clinic', startDate: '2026-09-28', endDate: '2026-10-05', price: '2,200', level: 'Intermediate-Advanced' }
+    ],
+    accommodation: {
+      types: [
+        { type: 'cave-hotel', label: 'Cappadocia Cave Hotel', pricePerWeek: 450, maxOccupancy: 2, bathType: 'ensuite', mealsIncluded: true }
+      ],
+      companionsAllowed: true, childrenAllowed: true, minStay: '1 week', shuttleToTraining: true, notes: 'Authentic Cappadocia cave hotel with hot air balloon views and Turkish breakfast included'
+    },
+    availability: {
+      status: 'open',
+      nextIntake: '2026-05-01',
+      spotsLeft: 10, responseTime: '48h', privateLessons: true, yearRound: true
+    },
+    juniorInfo: {
+      minAge: 8, maxAge: 18, supervision: '24/7', guardianStay: true,
+      schooling: 'Online schooling support available',
+      medicalStaff: true, safeguarding: 'Turkish Equestrian Federation safeguarding standards, all staff background-checked',
+      airportPickup: true, mealPlan: 'Full board with traditional Cappadocian cuisine',
+      curfew: '21:00 weekdays, 22:00 weekends',
+      roommatePairing: 'Age-based groups',
+      languageSupport: ['Turkish', 'English'],
+      emergencyProtocol: 'On-site first aid, Nevşehir State Hospital 20 minutes, equine vet on call'
+    }
   }
 ];
 
@@ -623,7 +1362,21 @@ const CLIMATE_DATA = {
   'saumur': { avgTemp: 12, sunshine: 1800, rainDays: 110, humidity: 75, windSpeed: 12, bestMonths: 'Apr-Oct', description: 'Loire Valley climate with warm summers and mild winters' },
   'chantilly': { avgTemp: 11, sunshine: 1600, rainDays: 115, humidity: 78, windSpeed: 14, bestMonths: 'May-Sep', description: 'Northern French climate near Paris' },
   'jerez': { avgTemp: 18, sunshine: 3000, rainDays: 50, humidity: 60, windSpeed: 12, bestMonths: 'Mar-Nov', description: 'Hot Andalusian climate with warm dry summers' },
-  'stromsholm': { avgTemp: 7, sunshine: 1800, rainDays: 110, humidity: 75, windSpeed: 12, bestMonths: 'May-Sep', description: 'Scandinavian climate with long summer days and cold winters' }
+  'stromsholm': { avgTemp: 7, sunshine: 1800, rainDays: 110, humidity: 75, windSpeed: 12, bestMonths: 'May-Sep', description: 'Scandinavian climate with long summer days and cold winters' },
+  'gesves': { avgTemp: 10, sunshine: 1550, rainDays: 125, humidity: 78, windSpeed: 14, bestMonths: 'May-Sep', description: 'Belgian Ardennes climate with mild summers and cool winters' },
+  'vienna': { avgTemp: 11, sunshine: 1900, rainDays: 100, humidity: 72, windSpeed: 12, bestMonths: 'May-Oct', description: 'Continental climate with warm summers and cold winters' },
+  'vilhelmsborg': { avgTemp: 8, sunshine: 1600, rainDays: 120, humidity: 80, windSpeed: 16, bestMonths: 'May-Sep', description: 'Danish maritime climate with mild conditions and moderate rainfall' },
+  'wroclaw': { avgTemp: 9, sunshine: 1600, rainDays: 110, humidity: 76, windSpeed: 12, bestMonths: 'May-Sep', description: 'Central European continental climate with warm summers' },
+  'budapest': { avgTemp: 12, sunshine: 2000, rainDays: 100, humidity: 70, windSpeed: 10, bestMonths: 'Apr-Oct', description: 'Continental climate with hot summers and cold winters on the Hungarian plain' },
+  'prague': { avgTemp: 10, sunshine: 1700, rainDays: 105, humidity: 74, windSpeed: 12, bestMonths: 'May-Sep', description: 'Central European climate with warm summers and snowy winters' },
+  'rome': { avgTemp: 16, sunshine: 2500, rainDays: 75, humidity: 72, windSpeed: 10, bestMonths: 'Mar-Nov', description: 'Mediterranean climate with hot dry summers and mild winters' },
+  'golega': { avgTemp: 16, sunshine: 2600, rainDays: 70, humidity: 68, windSpeed: 10, bestMonths: 'Mar-Nov', description: 'Portuguese Atlantic-Mediterranean climate with warm dry summers' },
+  'bern': { avgTemp: 9, sunshine: 1700, rainDays: 120, humidity: 76, windSpeed: 10, bestMonths: 'May-Sep', description: 'Swiss plateau climate with Alpine influence and moderate rainfall' },
+  'athens': { avgTemp: 18, sunshine: 2800, rainDays: 55, humidity: 62, windSpeed: 12, bestMonths: 'Mar-Nov', description: 'Hot Mediterranean climate with dry sunny summers' },
+  'helsinki': { avgTemp: 6, sunshine: 1780, rainDays: 115, humidity: 78, windSpeed: 14, bestMonths: 'May-Sep', description: 'Nordic maritime climate with long summer days and cold dark winters' },
+  'oslo': { avgTemp: 7, sunshine: 1670, rainDays: 120, humidity: 76, windSpeed: 12, bestMonths: 'May-Sep', description: 'Nordic climate with cool summers and cold snowy winters' },
+  'kovilovo': { avgTemp: 12, sunshine: 2100, rainDays: 95, humidity: 70, windSpeed: 12, bestMonths: 'May-Sep', description: 'Continental climate on the outskirts of Belgrade with warm summers and cold winters' },
+  'cappadocia': { avgTemp: 11, sunshine: 2600, rainDays: 70, humidity: 55, windSpeed: 12, bestMonths: 'Apr-Oct', description: 'Continental climate with hot dry summers and cold snowy winters. Stunning volcanic landscape for trail riding.' }
 };
 
 const NEWS_ITEMS = [
@@ -634,4 +1387,4 @@ const NEWS_ITEMS = [
   { date: '2024-12-15', title: 'Irish Sport Horse Breeding Programme Yields International Results', summary: 'Irish-bred sport horses continue to dominate at international level, boosting demand for training at Irish equestrian centres.' }
 ];
 
-const COUNTRIES = ['Ireland', 'UK', 'Germany', 'Netherlands', 'France', 'Spain', 'Sweden'];
+const COUNTRIES = ['Ireland', 'UK', 'Germany', 'Netherlands', 'France', 'Spain', 'Sweden', 'Belgium', 'Austria', 'Denmark', 'Poland', 'Hungary', 'Czech Republic', 'Italy', 'Portugal', 'Switzerland', 'Greece', 'Finland', 'Norway', 'Serbia', 'Turkey'];

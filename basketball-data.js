@@ -2136,6 +2136,108 @@ const ACADEMIES = [
       languageSupport: ['English', 'Hebrew', 'Arabic'],
       emergencyProtocol: true
     }
+  },
+  {
+    id: 'basketball-ireland-academy',
+    availability: { status: 'open', nextIntake: '2026-08-01', spotsLeft: 10, responseTime: '3-5 days', privateLessons: true, yearRound: true },
+    name: 'Basketball Ireland National Academy',
+    country: 'Ireland',
+    countryFlag: '🇮🇪',
+    city: 'Dublin',
+    lat: 53.3438, lng: -6.2672,
+    website: 'https://www.basketballireland.ie',
+    contactEmail: 'academy@basketballireland.ie',
+    individualLessons: true,
+    boarding: false,
+    level: 'All Levels',
+    starred: false,
+    airport: { name: 'Dublin Airport', code: 'DUB', distance: '12 km', driveTime: '25 min' },
+    beach: { distance: '8 km', description: 'Sandymount Strand along Dublin Bay' },
+    climate: 'dublin',
+    priceRange: { from: 800, to: 2500, unit: 'month', display: '€800-€2,500/mo' },
+    programs: [
+      { name: 'Junior Development', price: 800, desc: 'Fundamental skills, team play and physical conditioning for ages 10-16' },
+      { name: 'Senior Academy', price: 1500, desc: 'Advanced training, video analysis, competitive matches and strength program' },
+      { name: 'Summer Basketball Camp', price: 2500, desc: 'Two-week immersive camp with Basketball Ireland coaching methodology' },
+    ],
+    coaches: [
+      { name: 'Mark Keenan', credential: 'FIBA Licensed Coach', background: 'Ireland senior men\'s national team head coach, decades of top-level Irish basketball experience', atpWta: false, bestRanking: null, languages: ['English', 'Irish'], instagram: null },
+      { name: 'Claire Rockall', credential: 'Basketball Ireland Level 3', background: 'Former Ireland international, specialist in guard development and women\'s basketball', atpWta: false, bestRanking: null, languages: ['English', 'Irish'], instagram: null },
+    ],
+    bestCoachRanking: null,
+    facilities: 'National Basketball Arena: 2 full-size indoor courts, strength and conditioning centre, video analysis room, sports science lab',
+    courtSurfaces: ['Indoor Hardwood', 'Indoor Synthetic'],
+    notableAlumni: ['CJ Fulton', 'Jordan Blount', 'Edel Thornton'],
+    photos: [
+      "https://picsum.photos/seed/basketball-ireland-1/800/500",
+      "https://picsum.photos/seed/basketball-ireland-2/800/500",
+      "https://picsum.photos/seed/basketball-ireland-3/800/500"
+    ],
+    description: 'Basketball Ireland National Academy is the development hub for Irish basketball, producing players for the national teams and international leagues. Based in Dublin, it offers structured pathways from grassroots to elite level.',
+    nearbyHotels: [
+        { name: 'The Shelbourne Hotel', stars: 5, distanceKm: 1.5, features: ['Restaurant', 'Spa', 'Gym', 'Bar'], pool: true, wifi: true, pricePerNight: '€350' },
+        { name: 'Clayton Hotel Burlington Road', stars: 4, distanceKm: 1.0, features: ['Restaurant', 'Bar', 'Parking'], pool: false, wifi: true, pricePerNight: '€150' },
+        { name: 'Maldron Hotel Kevin Street', stars: 4, distanceKm: 0.8, features: ['Restaurant', 'Bar'], pool: false, wifi: true, pricePerNight: '€130' },
+        { name: 'Generator Dublin', stars: 2, distanceKm: 2.0, features: ['Bar', 'WiFi', 'Common Areas'], pool: false, wifi: true, pricePerNight: '€40' },
+        { name: 'Staycity Aparthotels', stars: 3, distanceKm: 1.5, features: ['Kitchen', 'WiFi', 'Parking'], pool: false, wifi: true, pricePerNight: '€100' },
+      ],
+    nearbyRestaurants: [
+        { name: 'The Winding Stair', cuisine: 'Modern Irish', distanceKm: 2.0, priceRange: '€€€', rating: 4.5, vegetarian: true, outdoor: false },
+        { name: 'Bunsen', cuisine: 'Burgers', distanceKm: 1.0, priceRange: '€€', rating: 4.6, vegetarian: false, outdoor: false },
+        { name: 'Cornucopia', cuisine: 'Vegetarian', distanceKm: 1.5, priceRange: '€€', rating: 4.4, vegetarian: true, outdoor: false },
+        { name: 'Fade Street Social', cuisine: 'Modern European', distanceKm: 1.5, priceRange: '€€€', rating: 4.3, vegetarian: true, outdoor: true },
+      ],
+    nearbyMedical: [
+        { name: 'St James\'s Hospital', type: 'Hospital', distanceKm: 1.5, phone: '+353 1 410 3000', emergency: true },
+        { name: 'St Vincent\'s University Hospital', type: 'Hospital', distanceKm: 4.0, phone: '+353 1 221 4000', emergency: true },
+        { name: 'PhysioFit Dublin', type: 'Sports Medicine', distanceKm: 2.0, phone: '+353 1 660 3456', emergency: false },
+      ],
+    costOfLiving: { rent1Bed: '€1,800', meal: '€15', monthlyFood: '€400', transport: '€120', currency: 'EUR', summary: 'Dublin is expensive but offers vibrant culture and excellent sports infrastructure' },
+    scholarships: { available: true, details: 'Basketball Ireland performance scholarships for elite junior players with national ranking.' },
+    visaInfo: { schengen: false, eu: true, visaFreeCountries: 'EU/EEA citizens, USA, Canada, Australia, UK - visa-free up to 90 days', notes: 'Ireland is in the EU but not Schengen. Non-EU citizens may need an Irish visa for longer stays.' },
+    airportTransfers: [
+        { mode: 'Taxi', duration: '25 min', cost: '€30-40', notes: 'Taxi from Dublin Airport to city centre' },
+        { mode: 'Aircoach', duration: '40 min', cost: '€8', notes: 'Direct coach to city centre' },
+        { mode: 'Dublin Bus', duration: '50 min', cost: '€3.80', notes: 'Route 16 or 41 to city centre' },
+      ],
+    nearbyTournaments: [
+        { name: 'Basketball Ireland Super League', level: 'National League', surface: 'Indoor Hardwood', month: 'October-April', venue: 'National Basketball Arena' },
+        { name: 'All-Ireland Schools Cup', level: 'National Schools', surface: 'Indoor Hardwood', month: 'January', venue: 'National Basketball Arena' },
+        { name: 'FIBA European Youth Qualifiers', level: 'FIBA Youth', surface: 'Indoor Hardwood', month: 'July', venue: 'Various' },
+      ],
+    upcomingCamps: [
+      { name: "Summer Basketball Camp", startDate: "2026-07-06", endDate: "2026-07-17", price: "€2,500", level: "Advanced" },
+      { name: "Easter Skills Clinic", startDate: "2026-04-06", endDate: "2026-04-10", price: "€600", level: "All Levels" },
+      { name: "Autumn Shooting Camp", startDate: "2026-10-19", endDate: "2026-10-30", price: "€1,200", level: "Intermediate" }
+    ],
+    accommodation: {
+      types: [
+        { type: 'private', label: 'Private Room', pricePerWeek: 400, maxOccupancy: 1, bathType: 'ensuite', mealsIncluded: true },
+        { type: 'twin', label: 'Twin Shared Room', pricePerWeek: 270, maxOccupancy: 2, bathType: 'ensuite', mealsIncluded: true },
+        { type: 'apartment', label: 'Self-Catering Apartment', pricePerWeek: 500, maxOccupancy: 3, bathType: 'ensuite', mealsIncluded: false }
+      ],
+      companionsAllowed: true,
+      childrenAllowed: true,
+      minStay: 1,
+      shuttleToTraining: true,
+      notes: 'Partner accommodation near the National Basketball Arena with shuttle service'
+    },
+    videoTour: null,
+    juniorInfo: {
+      minAge: 10,
+      maxAge: 18,
+      supervision: 'daytime',
+      guardianStay: true,
+      schooling: 'partner-school',
+      medicalStaff: true,
+      safeguarding: true,
+      airportPickup: true,
+      mealPlan: 'half-board',
+      curfew: '22:00',
+      roommatePairing: 'age-gender',
+      languageSupport: ['English', 'Irish'],
+      emergencyProtocol: true
+    }
   }
 ];
 
@@ -2514,6 +2616,23 @@ const CLIMATE_DATA = {
       { month: "Oct", temp: 24, rain: 20, rainyDays: 5, wind: 15 },
       { month: "Nov", temp: 19, rain: 60, rainyDays: 10, wind: 15 },
       { month: "Dec", temp: 15, rain: 110, rainyDays: 14, wind: 15 }
+    ]
+  },
+  'dublin': {
+    city: "Dublin", country: "Ireland",
+    months: [
+      { month: "Jan", temp: 5, rain: 67, rainyDays: 13, wind: 18 },
+      { month: "Feb", temp: 5, rain: 50, rainyDays: 11, wind: 17 },
+      { month: "Mar", temp: 7, rain: 53, rainyDays: 11, wind: 16 },
+      { month: "Apr", temp: 9, rain: 51, rainyDays: 11, wind: 14 },
+      { month: "May", temp: 12, rain: 56, rainyDays: 11, wind: 13 },
+      { month: "Jun", temp: 14, rain: 56, rainyDays: 10, wind: 12 },
+      { month: "Jul", temp: 16, rain: 56, rainyDays: 11, wind: 12 },
+      { month: "Aug", temp: 16, rain: 73, rainyDays: 12, wind: 12 },
+      { month: "Sep", temp: 14, rain: 59, rainyDays: 10, wind: 13 },
+      { month: "Oct", temp: 11, rain: 70, rainyDays: 12, wind: 15 },
+      { month: "Nov", temp: 7, rain: 65, rainyDays: 12, wind: 16 },
+      { month: "Dec", temp: 5, rain: 73, rainyDays: 13, wind: 17 }
     ]
   }
 };

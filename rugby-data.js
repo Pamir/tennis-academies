@@ -3388,6 +3388,77 @@ const ACADEMIES = [
       "privateLessons": true,
       "yearRound": true
     }
+  },
+  {
+    "id": "istanbul-rugby-academy",
+    "name": "Istanbul Rugby Academy",
+    "country": "Turkey",
+    "countryFlag": "🇹🇷",
+    "city": "Istanbul",
+    "lat": 41.0082,
+    "lng": 28.9784,
+    "website": "https://www.istanbulrugby.com.tr",
+    "contact": "+90 212 456 7890",
+    "contactEmail": "info@istanbulrugby.com.tr",
+    "individualLessons": true,
+    "boarding": true,
+    "level": "All levels",
+    "ageGroups": ["Junior", "Adult"],
+    "beach": { "distance": 10, "description": "Bosphorus shoreline and Black Sea beaches accessible" },
+    "priceRange": { "from": 500, "to": 1200, "unit": "week", "display": "€500 - €1,200/week" },
+    "socialMedia": { "instagram": "@istanbulrugby", "facebook": "https://facebook.com/istanbulrugbyacademy", "twitter": "@istanbulrugby" },
+    "climate": "istanbul",
+    "facilities": "Full-size rugby pitch, training pitch, gym, video analysis room, recovery pool, physiotherapy",
+    "courtSurfaces": ["Natural grass", "Artificial turf"],
+    "programs": [
+      { "name": "Development Programme", "price": "€700/week", "desc": "Structured rugby development for aspiring players with positional coaching and game understanding" },
+      { "name": "Youth Rugby Camp", "price": "€500/week", "desc": "Fun and skills-focused camps for juniors aged 8-16" },
+      { "name": "Performance Squad", "price": "€1,200/week", "desc": "Elite performance training with conditioning, analysis and match preparation" }
+    ],
+    "coaches": [
+      { "name": "Burak Özkan", "credential": "World Rugby Level 3 Coach", "background": "Former Turkish national team captain with international coaching experience across Europe", "atpWta": false, "bestRanking": null, "rankingNote": null, "languages": ["Turkish", "English"], "instagram": null }
+    ],
+    "photos": ["https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=800"],
+    "upcomingCamps": [
+      { "name": "Summer Rugby Camp", "startDate": "2026-07-06", "endDate": "2026-07-13", "price": "€700", "level": "All Levels" },
+      { "name": "Autumn Skills Clinic", "startDate": "2026-10-19", "endDate": "2026-10-23", "price": "€500", "level": "Beginner" },
+      { "name": "Winter Conditioning Camp", "startDate": "2027-01-11", "endDate": "2027-01-18", "price": "€900", "level": "Intermediate" }
+    ],
+    "accommodation": {
+      "types": [
+        { "type": "hotel", "label": "Partner Hotel Istanbul", "pricePerWeek": 400, "maxOccupancy": 2, "bathType": "ensuite", "mealsIncluded": true },
+        { "type": "shared", "label": "Shared Athlete Apartment", "pricePerWeek": 220, "maxOccupancy": 4, "bathType": "shared", "mealsIncluded": true }
+      ],
+      "companionsAllowed": true,
+      "childrenAllowed": true,
+      "minStay": "1 week",
+      "shuttleToTraining": true,
+      "notes": "Accommodation in Istanbul with easy access to training grounds and cultural attractions"
+    },
+    "availability": {
+      "status": "open",
+      "nextIntake": "2026-06-01",
+      "spotsLeft": 20,
+      "responseTime": "24h",
+      "privateLessons": true,
+      "yearRound": true
+    },
+    "description": "Turkey's leading rugby academy in Istanbul, developing the next generation of Turkish rugby players while hosting international camps on the Bosphorus.",
+    "juniorInfo": {
+      "minAge": 8,
+      "maxAge": 18,
+      "supervision": "24/7",
+      "guardianStay": true,
+      "schooling": "Partnership with Istanbul international schools",
+      "medicalStaff": true,
+      "safeguarding": "Turkish Rugby Federation safeguarding protocols",
+      "airportPickup": true,
+      "mealPlan": "Full board with Turkish and international cuisine",
+      "curfew": "21:00 weekdays, 22:00 weekends",
+      "roommatePairing": "Age-based groups",
+      "languageSupport": ["Turkish", "English"],
+      "emergencyProtocol": "On-site first aid, Istanbul University Hospital 15 minutes"
+    }
   }
 ]
 
@@ -3660,6 +3731,24 @@ const CLIMATE_DATA = {
       { month: "Oct", temp: 13, rain: 40, rainyDays: 7, wind: 13 },
       { month: "Nov", temp: 6, rain: 42, rainyDays: 8, wind: 14 },
       { month: "Dec", temp: 1, rain: 42, rainyDays: 9, wind: 15 }
+    ]
+  },
+  "istanbul": {
+    "city": "Istanbul",
+    "country": "Turkey",
+    "months": [
+      { "month": "Jan", "temp": 6, "rain": 99, "rainyDays": 12, "wind": 14 },
+      { "month": "Feb", "temp": 6, "rain": 72, "rainyDays": 10, "wind": 14 },
+      { "month": "Mar", "temp": 8, "rain": 66, "rainyDays": 10, "wind": 14 },
+      { "month": "Apr", "temp": 12, "rain": 46, "rainyDays": 8, "wind": 11 },
+      { "month": "May", "temp": 17, "rain": 33, "rainyDays": 6, "wind": 11 },
+      { "month": "Jun", "temp": 22, "rain": 23, "rainyDays": 4, "wind": 11 },
+      { "month": "Jul", "temp": 24, "rain": 14, "rainyDays": 2, "wind": 14 },
+      { "month": "Aug", "temp": 24, "rain": 15, "rainyDays": 3, "wind": 14 },
+      { "month": "Sep", "temp": 21, "rain": 28, "rainyDays": 4, "wind": 11 },
+      { "month": "Oct", "temp": 16, "rain": 64, "rainyDays": 8, "wind": 11 },
+      { "month": "Nov", "temp": 12, "rain": 93, "rainyDays": 10, "wind": 14 },
+      { "month": "Dec", "temp": 8, "rain": 109, "rainyDays": 12, "wind": 14 }
     ]
   }
 };

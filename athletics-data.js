@@ -848,6 +848,1003 @@ const ACADEMIES = [
       languageSupport: ['English', 'Swedish'],
       emergencyProtocol: 'On-site medical room, Sahlgrenska University Hospital 15 min'
     }
+  },
+  {
+    id: 'papendal-athletics-center',
+    name: 'Papendal Athletics Center',
+    country: 'Netherlands',
+    countryFlag: '🇳🇱',
+    city: 'Arnhem',
+    lat: 51.9851,
+    lng: 5.8468,
+    website: 'https://www.papendal.nl',
+    contact: '+31 26 483 7911',
+    contactEmail: 'athletics@papendal.nl',
+    description: 'The Dutch Olympic training center at Papendal, home to Netherlands national athletics teams. State-of-the-art facilities surrounded by Veluwe forest, offering elite sprint, endurance and field event programs with world-class sports science support.',
+    ageGroups: ['Junior', 'Adult'],
+    level: 'All levels',
+    individualLessons: true,
+    boarding: true,
+    beach: { distance: null, description: 'No beach nearby — inland city' },
+    priceRange: { from: 900, to: 2000, unit: 'week', display: '€900 - €2,000/week' },
+    socialMedia: { instagram: '@papendalathletics', facebook: 'https://facebook.com/papendalsport', twitter: '@papendal' },
+    climate: 'papendal',
+    facilities: 'IAAF-certified 400m outdoor track (8 lanes), 200m indoor track, throws cage, biomechanics lab, altitude simulation chamber, recovery center with cryotherapy',
+    courtSurfaces: ['Sprint track', 'Distance track', 'Field events', 'Cross country'],
+    programs: [
+      { name: 'Sprint & Hurdles Intensive', price: '€1,300/week', desc: 'Advanced sprint mechanics and hurdle technique with Dutch national-level coaches and video analysis' },
+      { name: 'Endurance Performance Camp', price: '€1,100/week', desc: 'Middle and long distance training utilizing Veluwe forest trails and altitude simulation' },
+      { name: 'Combined Events Development', price: '€1,500/week', desc: 'Multi-event training across all decathlon/heptathlon disciplines with periodization planning' }
+    ],
+    coaches: [
+      { name: 'Bart Bennema', credential: 'World Athletics Level 5 Lecturer', background: 'Former Dutch national sprint coach, developed multiple European championship finalists', atpWta: false, bestRanking: null, rankingNote: null, languages: ['Dutch', 'English', 'German'], instagram: null },
+      { name: 'Lisanne de Witte', credential: 'KNAU Level 4 Coach', background: 'Former international 400m runner, specialist in speed endurance development', atpWta: false, bestRanking: null, rankingNote: null, languages: ['Dutch', 'English'], instagram: null }
+    ],
+    photos: ['https://images.unsplash.com/photo-1461896836934-bd45ba0fcfca?w=800', 'https://images.unsplash.com/photo-1544717297-fa95b6ee9643?w=800'],
+    upcomingCamps: [
+      { name: 'Spring Sprint Development', startDate: '2026-04-13', endDate: '2026-04-20', price: '€1,300', level: 'Advanced' },
+      { name: 'Summer Endurance Camp', startDate: '2026-07-06', endDate: '2026-07-13', price: '€1,100', level: 'Intermediate' },
+      { name: 'Winter Indoor Training', startDate: '2027-01-11', endDate: '2027-01-18', price: '€1,200', level: 'All Levels' }
+    ],
+    accommodation: {
+      types: [
+        { type: 'hotel', label: 'Papendal Hotel', pricePerWeek: 650, maxOccupancy: 2, bathType: 'ensuite', mealsIncluded: true },
+        { type: 'shared', label: 'Athletes Lodge', pricePerWeek: 380, maxOccupancy: 4, bathType: 'shared', mealsIncluded: true }
+      ],
+      companionsAllowed: true,
+      childrenAllowed: true,
+      minStay: '1 week',
+      shuttleToTraining: true,
+      notes: 'On-site accommodation within the Papendal sports campus. Full board sports nutrition included.'
+    },
+    availability: {
+      status: 'open',
+      nextIntake: '2026-04-01',
+      spotsLeft: 18,
+      responseTime: '24h',
+      privateLessons: true,
+      yearRound: true
+    },
+    juniorInfo: {
+      minAge: 10,
+      maxAge: 18,
+      supervision: '24/7',
+      guardianStay: true,
+      schooling: 'Dutch sports school partnerships available',
+      medicalStaff: true,
+      safeguarding: 'KNAU child protection framework, VOG-certified coaches',
+      airportPickup: true,
+      mealPlan: 'Full board with Dutch sports nutrition program',
+      curfew: '21:00 weekdays, 22:00 weekends',
+      roommatePairing: 'Age-based groups',
+      languageSupport: ['English', 'Dutch'],
+      emergencyProtocol: 'On-site medical center, Rijnstate Hospital 10 min'
+    }
+  },
+  {
+    id: 'louvain-athletics-academy',
+    name: 'Louvain Athletics Academy',
+    country: 'Belgium',
+    countryFlag: '🇧🇪',
+    city: 'Louvain-la-Neuve',
+    lat: 50.6681,
+    lng: 4.6118,
+    website: 'https://www.louvainathletics.be',
+    contact: '+32 10 47 8900',
+    contactEmail: 'info@louvainathletics.be',
+    description: 'Belgian university athletics academy based at UCLouvain, combining academic excellence with elite athletic development. Home to some of Belgium\'s top sprinters and jumpers with access to cutting-edge sports science research.',
+    ageGroups: ['Junior', 'Adult'],
+    level: 'All levels',
+    individualLessons: true,
+    boarding: true,
+    beach: { distance: null, description: 'No beach nearby — inland city' },
+    priceRange: { from: 800, to: 1800, unit: 'week', display: '€800 - €1,800/week' },
+    socialMedia: { instagram: '@louvainathletics', facebook: 'https://facebook.com/louvainathletics', twitter: '@louvainathl' },
+    climate: 'louvain',
+    facilities: 'IAAF-certified 400m track, indoor 200m track, sports science lab at UCLouvain, throws area, jumps runway with sand pits, strength and conditioning gym',
+    courtSurfaces: ['Sprint track', 'Distance track', 'Field events', 'Indoor track'],
+    programs: [
+      { name: 'Sprint & Jumps Clinic', price: '€1,000/week', desc: 'Explosive speed and horizontal/vertical jumps training with university biomechanics support' },
+      { name: 'Middle Distance Camp', price: '€900/week', desc: 'Lactate threshold and race tactics for 800m-1500m specialists' },
+      { name: 'Throws Development', price: '€1,100/week', desc: 'Shot put, discus, javelin and hammer technique with strength programming' }
+    ],
+    coaches: [
+      { name: 'Philippe Dupont', credential: 'LBFA Level 4 Coach', background: 'Former Belgian national team coach, specialist in sprint and relay development', atpWta: false, bestRanking: null, rankingNote: null, languages: ['French', 'English', 'Dutch'], instagram: null }
+    ],
+    photos: ['https://images.unsplash.com/photo-1461896836934-bd45ba0fcfca?w=800', 'https://images.unsplash.com/photo-1544717297-fa95b6ee9643?w=800'],
+    upcomingCamps: [
+      { name: 'Easter Sprint Camp', startDate: '2026-04-06', endDate: '2026-04-13', price: '€1,000', level: 'Intermediate' },
+      { name: 'Summer Athletics Week', startDate: '2026-07-20', endDate: '2026-07-27', price: '€900', level: 'All Levels' },
+      { name: 'Autumn Throws Intensive', startDate: '2026-10-19', endDate: '2026-10-26', price: '€1,100', level: 'Advanced' }
+    ],
+    accommodation: {
+      types: [
+        { type: 'hotel', label: 'University Residence Hotel', pricePerWeek: 500, maxOccupancy: 2, bathType: 'ensuite', mealsIncluded: true },
+        { type: 'shared', label: 'Student Athletes Residence', pricePerWeek: 300, maxOccupancy: 3, bathType: 'shared', mealsIncluded: true }
+      ],
+      companionsAllowed: true,
+      childrenAllowed: true,
+      minStay: '1 week',
+      shuttleToTraining: true,
+      notes: 'University campus accommodation with access to all campus amenities. Sports nutrition meal plan included.'
+    },
+    availability: {
+      status: 'open',
+      nextIntake: '2026-04-01',
+      spotsLeft: 16,
+      responseTime: '48h',
+      privateLessons: true,
+      yearRound: true
+    },
+    juniorInfo: {
+      minAge: 12,
+      maxAge: 18,
+      supervision: '24/7',
+      guardianStay: true,
+      schooling: 'Belgian sports school integration available',
+      medicalStaff: true,
+      safeguarding: 'LBFA child protection policies, background-checked coaches',
+      airportPickup: true,
+      mealPlan: 'Full board with sports nutrition guidance',
+      curfew: '21:00 weekdays, 22:00 weekends',
+      roommatePairing: 'Age-based groups',
+      languageSupport: ['English', 'French', 'Dutch'],
+      emergencyProtocol: 'University medical center on campus, Cliniques UCL 10 min'
+    }
+  },
+  {
+    id: 'warsaw-athletics-center',
+    name: 'Warsaw Athletics Center',
+    country: 'Poland',
+    countryFlag: '🇵🇱',
+    city: 'Warsaw',
+    lat: 52.2297,
+    lng: 21.0122,
+    website: 'https://www.warsawathletics.pl',
+    contact: '+48 22 345 6789',
+    contactEmail: 'info@warsawathletics.pl',
+    description: 'Poland\'s premier athletics training center located near the National Stadium in Warsaw. Drawing on Poland\'s rich tradition in hammer throw, race walking and middle distance running, with modern facilities and experienced coaching staff.',
+    ageGroups: ['Junior', 'Adult'],
+    level: 'All levels',
+    individualLessons: true,
+    boarding: true,
+    beach: { distance: null, description: 'No beach nearby — inland city' },
+    priceRange: { from: 600, to: 1400, unit: 'week', display: '€600 - €1,400/week' },
+    socialMedia: { instagram: '@warsawathletics', facebook: 'https://facebook.com/warsawathletics', twitter: '@warsawathl' },
+    climate: 'warsaw',
+    facilities: 'IAAF-certified 400m track (8 lanes), indoor 200m facility, hammer throw cage, race walking course, sports medicine clinic, video analysis suite',
+    courtSurfaces: ['Sprint track', 'Distance track', 'Field events', 'Race walking course'],
+    programs: [
+      { name: 'Hammer & Throws Academy', price: '€800/week', desc: 'Specialized hammer throw and rotational throws training in the Polish tradition' },
+      { name: 'Sprint & Hurdles Camp', price: '€750/week', desc: 'Speed development and hurdle technique for 100m-400m hurdles with biomechanical analysis' },
+      { name: 'Race Walking Excellence', price: '€700/week', desc: 'Technical race walking program with video gait analysis and endurance development' }
+    ],
+    coaches: [
+      { name: 'Krzysztof Kaliszewski', credential: 'PZLA Level 4 Coach', background: 'Former Polish national team throws coach, developed multiple World Championship medalists in hammer throw', atpWta: false, bestRanking: null, rankingNote: null, languages: ['Polish', 'English'], instagram: null },
+      { name: 'Anna Wielgosz', credential: 'World Athletics Level 4 Coach', background: 'Former international middle distance runner, specialist in 800m-1500m development', atpWta: false, bestRanking: null, rankingNote: null, languages: ['Polish', 'English', 'German'], instagram: null }
+    ],
+    photos: ['https://images.unsplash.com/photo-1461896836934-bd45ba0fcfca?w=800', 'https://images.unsplash.com/photo-1544717297-fa95b6ee9643?w=800'],
+    upcomingCamps: [
+      { name: 'Spring Throws Camp', startDate: '2026-05-04', endDate: '2026-05-11', price: '€800', level: 'Intermediate' },
+      { name: 'Summer Sprint Intensive', startDate: '2026-07-13', endDate: '2026-07-20', price: '€750', level: 'Advanced' },
+      { name: 'Autumn Walking Clinic', startDate: '2026-09-21', endDate: '2026-09-28', price: '€700', level: 'All Levels' }
+    ],
+    accommodation: {
+      types: [
+        { type: 'hotel', label: 'Sport Hotel Warsaw', pricePerWeek: 450, maxOccupancy: 2, bathType: 'ensuite', mealsIncluded: true },
+        { type: 'shared', label: 'Athletes Dormitory', pricePerWeek: 250, maxOccupancy: 4, bathType: 'shared', mealsIncluded: true }
+      ],
+      companionsAllowed: true,
+      childrenAllowed: true,
+      minStay: '1 week',
+      shuttleToTraining: true,
+      notes: 'Accommodation near the National Stadium complex. Traditional Polish cuisine with sports nutrition options.'
+    },
+    availability: {
+      status: 'open',
+      nextIntake: '2026-05-01',
+      spotsLeft: 20,
+      responseTime: '48h',
+      privateLessons: true,
+      yearRound: true
+    },
+    juniorInfo: {
+      minAge: 10,
+      maxAge: 18,
+      supervision: '24/7',
+      guardianStay: true,
+      schooling: 'Polish sports school partnerships available',
+      medicalStaff: true,
+      safeguarding: 'PZLA child protection framework, police-checked coaches',
+      airportPickup: true,
+      mealPlan: 'Full board with sports nutrition program',
+      curfew: '21:00 weekdays, 22:00 weekends',
+      roommatePairing: 'Age-based groups',
+      languageSupport: ['English', 'Polish'],
+      emergencyProtocol: 'On-site medical room, Central Clinical Hospital 15 min'
+    }
+  },
+  {
+    id: 'prague-athletics-academy',
+    name: 'Prague Athletics Academy',
+    country: 'Czech Republic',
+    countryFlag: '🇨🇿',
+    city: 'Prague',
+    lat: 50.0755,
+    lng: 14.4378,
+    website: 'https://www.pragueathletics.cz',
+    contact: '+420 222 345 678',
+    contactEmail: 'info@pragueathletics.cz',
+    description: 'Czech athletics academy continuing the nation\'s proud tradition in javelin, decathlon and distance running. Located at the Strahov sports complex with modern facilities and connections to Czech sports science institutions.',
+    ageGroups: ['Junior', 'Adult'],
+    level: 'All levels',
+    individualLessons: true,
+    boarding: true,
+    beach: { distance: null, description: 'No beach nearby — inland city' },
+    priceRange: { from: 700, to: 1500, unit: 'week', display: '€700 - €1,500/week' },
+    socialMedia: { instagram: '@pragueathletics', facebook: 'https://facebook.com/pragueathletics', twitter: '@pragueathl' },
+    climate: 'prague',
+    facilities: 'IAAF-certified 400m track, indoor athletics hall, javelin runway, biomechanics lab at Charles University, strength training center, recovery facilities',
+    courtSurfaces: ['Sprint track', 'Distance track', 'Field events', 'Indoor track'],
+    programs: [
+      { name: 'Javelin & Throws Camp', price: '€900/week', desc: 'Czech javelin tradition training with world-class technique coaching and video analysis' },
+      { name: 'Decathlon Development', price: '€1,000/week', desc: 'Complete multi-event training program covering all ten disciplines with periodization' },
+      { name: 'Distance Running Camp', price: '€800/week', desc: 'Endurance development with Prague park trails and structured interval training' }
+    ],
+    coaches: [
+      { name: 'Jan Železný Jr.', credential: 'ČAS Level 4 Coach', background: 'Czech national javelin coach, continuing the family legacy of Czech javelin excellence', atpWta: false, bestRanking: null, rankingNote: null, languages: ['Czech', 'English', 'German'], instagram: null }
+    ],
+    photos: ['https://images.unsplash.com/photo-1461896836934-bd45ba0fcfca?w=800', 'https://images.unsplash.com/photo-1544717297-fa95b6ee9643?w=800'],
+    upcomingCamps: [
+      { name: 'Spring Javelin Clinic', startDate: '2026-04-20', endDate: '2026-04-27', price: '€900', level: 'Intermediate' },
+      { name: 'Summer Decathlon Week', startDate: '2026-07-06', endDate: '2026-07-13', price: '€1,000', level: 'Advanced' },
+      { name: 'Winter Indoor Training', startDate: '2027-01-12', endDate: '2027-01-19', price: '€850', level: 'All Levels' }
+    ],
+    accommodation: {
+      types: [
+        { type: 'hotel', label: 'Strahov Sport Hotel', pricePerWeek: 480, maxOccupancy: 2, bathType: 'ensuite', mealsIncluded: true },
+        { type: 'shared', label: 'Athletes Residence', pricePerWeek: 280, maxOccupancy: 3, bathType: 'shared', mealsIncluded: true }
+      ],
+      companionsAllowed: true,
+      childrenAllowed: true,
+      minStay: '1 week',
+      shuttleToTraining: true,
+      notes: 'Accommodation at the Strahov complex overlooking Prague. Czech cuisine with sports nutrition options.'
+    },
+    availability: {
+      status: 'open',
+      nextIntake: '2026-04-15',
+      spotsLeft: 15,
+      responseTime: '48h',
+      privateLessons: true,
+      yearRound: true
+    },
+    juniorInfo: {
+      minAge: 11,
+      maxAge: 18,
+      supervision: '24/7',
+      guardianStay: true,
+      schooling: 'Czech sports gymnasium partnerships',
+      medicalStaff: true,
+      safeguarding: 'ČAS child protection policies, background-checked coaches',
+      airportPickup: true,
+      mealPlan: 'Full board with sports nutrition program',
+      curfew: '21:00 weekdays, 22:00 weekends',
+      roommatePairing: 'Age-based groups',
+      languageSupport: ['English', 'Czech'],
+      emergencyProtocol: 'On-site medical room, Motol University Hospital 10 min'
+    }
+  },
+  {
+    id: 'budapest-athletics-center',
+    name: 'Budapest Athletics Center',
+    country: 'Hungary',
+    countryFlag: '🇭🇺',
+    city: 'Budapest',
+    lat: 47.4979,
+    lng: 19.0402,
+    website: 'https://www.budapestathletics.hu',
+    contact: '+36 1 234 5678',
+    contactEmail: 'info@budapestathletics.hu',
+    description: 'Hungarian athletics center at the state-of-the-art National Athletics Centre built for the 2023 World Athletics Championships. World-class facilities on the banks of the Danube with Hungary\'s finest coaching talent.',
+    ageGroups: ['Junior', 'Adult'],
+    level: 'All levels',
+    individualLessons: true,
+    boarding: true,
+    beach: { distance: null, description: 'No beach nearby — inland city, but Danube riverside recreation available' },
+    priceRange: { from: 700, to: 1600, unit: 'week', display: '€700 - €1,600/week' },
+    socialMedia: { instagram: '@budapestathletics', facebook: 'https://facebook.com/budapestathletics', twitter: '@bpathletics' },
+    climate: 'budapest',
+    facilities: 'World Championship-standard 400m track (9 lanes), warm-up track, indoor athletics hall, throws area, jumps complex, sports science center, hydrotherapy recovery using thermal springs',
+    courtSurfaces: ['Sprint track', 'Distance track', 'Field events', 'Warm-up track'],
+    programs: [
+      { name: 'Sprint Excellence Program', price: '€950/week', desc: 'World Championship venue sprint training with electronic timing and force plate analysis' },
+      { name: 'Field Events Masterclass', price: '€1,000/week', desc: 'Comprehensive field events training at championship-standard facilities' },
+      { name: 'Endurance & Cross Country', price: '€850/week', desc: 'Distance training utilizing Margaret Island and Buda Hills trail networks' }
+    ],
+    coaches: [
+      { name: 'László Nagy', credential: 'MASZ Level 4 Coach', background: 'Hungarian national team field events coach, specialist in high jump and pole vault development', atpWta: false, bestRanking: null, rankingNote: null, languages: ['Hungarian', 'English', 'German'], instagram: null },
+      { name: 'Katalin Szabó', credential: 'World Athletics Level 4 Coach', background: 'Former European Championship athlete, specialist in sprint and relay coaching', atpWta: false, bestRanking: null, rankingNote: null, languages: ['Hungarian', 'English'], instagram: null }
+    ],
+    photos: ['https://images.unsplash.com/photo-1461896836934-bd45ba0fcfca?w=800', 'https://images.unsplash.com/photo-1544717297-fa95b6ee9643?w=800'],
+    upcomingCamps: [
+      { name: 'Spring Sprint Camp', startDate: '2026-04-13', endDate: '2026-04-20', price: '€950', level: 'Advanced' },
+      { name: 'Summer Field Events Week', startDate: '2026-06-22', endDate: '2026-06-29', price: '€1,000', level: 'Intermediate' },
+      { name: 'Autumn Endurance Camp', startDate: '2026-10-05', endDate: '2026-10-12', price: '€850', level: 'All Levels' }
+    ],
+    accommodation: {
+      types: [
+        { type: 'hotel', label: 'Danube Sport Hotel', pricePerWeek: 520, maxOccupancy: 2, bathType: 'ensuite', mealsIncluded: true },
+        { type: 'shared', label: 'Athletes Village', pricePerWeek: 300, maxOccupancy: 4, bathType: 'shared', mealsIncluded: true }
+      ],
+      companionsAllowed: true,
+      childrenAllowed: true,
+      minStay: '1 week',
+      shuttleToTraining: true,
+      notes: 'Near the National Athletics Centre on the Danube. Hungarian cuisine with sports nutrition, thermal spa recovery included.'
+    },
+    availability: {
+      status: 'open',
+      nextIntake: '2026-04-01',
+      spotsLeft: 22,
+      responseTime: '24h',
+      privateLessons: true,
+      yearRound: true
+    },
+    juniorInfo: {
+      minAge: 10,
+      maxAge: 18,
+      supervision: '24/7',
+      guardianStay: true,
+      schooling: 'Hungarian sports school partnerships',
+      medicalStaff: true,
+      safeguarding: 'MASZ child protection framework, background-checked coaches',
+      airportPickup: true,
+      mealPlan: 'Full board with Hungarian sports nutrition',
+      curfew: '21:00 weekdays, 22:00 weekends',
+      roommatePairing: 'Age-based groups',
+      languageSupport: ['English', 'Hungarian', 'German'],
+      emergencyProtocol: 'On-site medical facility, Semmelweis University Hospital 15 min'
+    }
+  },
+  {
+    id: 'bucharest-athletics-academy',
+    name: 'Bucharest Athletics Academy',
+    country: 'Romania',
+    countryFlag: '🇷🇴',
+    city: 'Bucharest',
+    lat: 44.4268,
+    lng: 26.1025,
+    website: 'https://www.bucharestathletics.ro',
+    contact: '+40 21 345 6789',
+    contactEmail: 'info@bucharestathletics.ro',
+    description: 'Romanian athletics academy drawing on the country\'s proud tradition in middle distance, steeplechase and race walking. Modern training facilities with experienced coaches who have produced European-level athletes.',
+    ageGroups: ['Junior', 'Adult'],
+    level: 'All levels',
+    individualLessons: true,
+    boarding: true,
+    beach: { distance: null, description: 'No beach nearby — inland city' },
+    priceRange: { from: 600, to: 1200, unit: 'week', display: '€600 - €1,200/week' },
+    socialMedia: { instagram: '@bucharestathletics', facebook: 'https://facebook.com/bucharestathletics', twitter: '@bucharestath' },
+    climate: 'bucharest',
+    facilities: 'IAAF-certified 400m track, indoor 200m hall, steeplechase water jump, race walking circuit, sports medicine clinic, strength training center',
+    courtSurfaces: ['Sprint track', 'Distance track', 'Field events', 'Steeplechase'],
+    programs: [
+      { name: 'Steeplechase & Distance Camp', price: '€700/week', desc: 'Water jump technique and distance training in Romania\'s strong endurance tradition' },
+      { name: 'Sprint Development Program', price: '€750/week', desc: 'Acceleration and maximum velocity training with reaction time analysis' },
+      { name: 'Field Events Introduction', price: '€650/week', desc: 'Multi-discipline field events program for developing athletes' }
+    ],
+    coaches: [
+      { name: 'Ionuț Popescu', credential: 'FRA Level 3 Coach', background: 'Former Romanian national steeplechase coach, developed multiple Balkan Championship medalists', atpWta: false, bestRanking: null, rankingNote: null, languages: ['Romanian', 'English', 'French'], instagram: null }
+    ],
+    photos: ['https://images.unsplash.com/photo-1461896836934-bd45ba0fcfca?w=800', 'https://images.unsplash.com/photo-1544717297-fa95b6ee9643?w=800'],
+    upcomingCamps: [
+      { name: 'Spring Distance Camp', startDate: '2026-04-20', endDate: '2026-04-27', price: '€700', level: 'Intermediate' },
+      { name: 'Summer Sprint Week', startDate: '2026-07-13', endDate: '2026-07-20', price: '€750', level: 'All Levels' },
+      { name: 'Autumn Field Events Clinic', startDate: '2026-09-28', endDate: '2026-10-05', price: '€650', level: 'All Levels' }
+    ],
+    accommodation: {
+      types: [
+        { type: 'hotel', label: 'Sport Hotel Bucharest', pricePerWeek: 380, maxOccupancy: 2, bathType: 'ensuite', mealsIncluded: true },
+        { type: 'shared', label: 'Athletes Hostel', pricePerWeek: 200, maxOccupancy: 4, bathType: 'shared', mealsIncluded: true }
+      ],
+      companionsAllowed: true,
+      childrenAllowed: true,
+      minStay: '1 week',
+      shuttleToTraining: true,
+      notes: 'Centrally located accommodation with excellent value. Romanian cuisine with sports nutrition options.'
+    },
+    availability: {
+      status: 'open',
+      nextIntake: '2026-04-15',
+      spotsLeft: 18,
+      responseTime: '48h',
+      privateLessons: true,
+      yearRound: true
+    },
+    juniorInfo: {
+      minAge: 10,
+      maxAge: 18,
+      supervision: '24/7',
+      guardianStay: true,
+      schooling: 'Romanian sports school partnerships',
+      medicalStaff: true,
+      safeguarding: 'FRA child protection policies, police-checked coaches',
+      airportPickup: true,
+      mealPlan: 'Full board with sports nutrition',
+      curfew: '21:00 weekdays, 22:00 weekends',
+      roommatePairing: 'Age-based groups',
+      languageSupport: ['English', 'Romanian', 'French'],
+      emergencyProtocol: 'On-site medical room, Floreasca Emergency Hospital 15 min'
+    }
+  },
+  {
+    id: 'zagreb-athletics-center',
+    name: 'Zagreb Athletics Center',
+    country: 'Croatia',
+    countryFlag: '🇭🇷',
+    city: 'Zagreb',
+    lat: 45.8150,
+    lng: 15.9819,
+    website: 'https://www.zagrebathletics.hr',
+    contact: '+385 1 234 5678',
+    contactEmail: 'info@zagrebathletics.hr',
+    description: 'Croatian athletics development center in Zagreb, home to the Zagreb Meeting World Athletics Continental Tour event. Strong tradition in high jump, discus and sprints with well-equipped training facilities.',
+    ageGroups: ['Junior', 'Adult'],
+    level: 'All levels',
+    individualLessons: true,
+    boarding: true,
+    beach: { distance: null, description: 'No beach nearby — inland city' },
+    priceRange: { from: 650, to: 1400, unit: 'week', display: '€650 - €1,400/week' },
+    socialMedia: { instagram: '@zagrebathletics', facebook: 'https://facebook.com/zagrebathletics', twitter: '@zagrebathl' },
+    climate: 'zagreb',
+    facilities: 'IAAF-certified 400m track, indoor athletics hall, discus cage, high jump area with fan pit, sports science lab, physiotherapy center',
+    courtSurfaces: ['Sprint track', 'Distance track', 'Field events', 'Indoor track'],
+    programs: [
+      { name: 'High Jump & Vertical Events', price: '€850/week', desc: 'Specialized high jump and pole vault technique training with video analysis' },
+      { name: 'Discus & Throws Camp', price: '€800/week', desc: 'Rotational throwing technique development with Croatian national-level coaching' },
+      { name: 'Sprint & Relay Training', price: '€900/week', desc: 'Individual sprint development and relay baton exchange technique' }
+    ],
+    coaches: [
+      { name: 'Marko Horvat', credential: 'HAS Level 3 Coach', background: 'Former Croatian national team coach, specialist in high jump and combined events', atpWta: false, bestRanking: null, rankingNote: null, languages: ['Croatian', 'English', 'German'], instagram: null },
+      { name: 'Ivana Perković', credential: 'World Athletics Level 4 Coach', background: 'Former international discus thrower, specialist in rotational throwing events', atpWta: false, bestRanking: null, rankingNote: null, languages: ['Croatian', 'English', 'Italian'], instagram: null }
+    ],
+    photos: ['https://images.unsplash.com/photo-1461896836934-bd45ba0fcfca?w=800', 'https://images.unsplash.com/photo-1544717297-fa95b6ee9643?w=800'],
+    upcomingCamps: [
+      { name: 'Spring High Jump Clinic', startDate: '2026-04-27', endDate: '2026-05-04', price: '€850', level: 'Intermediate' },
+      { name: 'Summer Throws Camp', startDate: '2026-07-06', endDate: '2026-07-13', price: '€800', level: 'All Levels' },
+      { name: 'Winter Indoor Sprint Week', startDate: '2027-02-01', endDate: '2027-02-08', price: '€900', level: 'Advanced' }
+    ],
+    accommodation: {
+      types: [
+        { type: 'hotel', label: 'Zagreb Sport Hotel', pricePerWeek: 420, maxOccupancy: 2, bathType: 'ensuite', mealsIncluded: true },
+        { type: 'shared', label: 'Athletes Residence', pricePerWeek: 250, maxOccupancy: 3, bathType: 'shared', mealsIncluded: true }
+      ],
+      companionsAllowed: true,
+      childrenAllowed: true,
+      minStay: '1 week',
+      shuttleToTraining: true,
+      notes: 'Central Zagreb accommodation near training facilities. Croatian cuisine with sports nutrition options.'
+    },
+    availability: {
+      status: 'open',
+      nextIntake: '2026-04-20',
+      spotsLeft: 14,
+      responseTime: '48h',
+      privateLessons: true,
+      yearRound: true
+    },
+    juniorInfo: {
+      minAge: 10,
+      maxAge: 18,
+      supervision: '24/7',
+      guardianStay: true,
+      schooling: 'Croatian sports school partnerships',
+      medicalStaff: true,
+      safeguarding: 'HAS child protection framework, background-checked coaches',
+      airportPickup: true,
+      mealPlan: 'Full board with Mediterranean sports nutrition',
+      curfew: '21:00 weekdays, 22:00 weekends',
+      roommatePairing: 'Age-based groups',
+      languageSupport: ['English', 'Croatian'],
+      emergencyProtocol: 'On-site medical room, KBC Zagreb Hospital 10 min'
+    }
+  },
+  {
+    id: 'dublin-athletics-academy',
+    name: 'Dublin Athletics Academy',
+    country: 'Ireland',
+    countryFlag: '🇮🇪',
+    city: 'Dublin',
+    lat: 53.3498,
+    lng: -6.2603,
+    website: 'https://www.dublinathletics.ie',
+    contact: '+353 1 234 5678',
+    contactEmail: 'info@dublinathletics.ie',
+    description: 'Irish athletics academy based at Morton Stadium in Santry, the historic home of Irish athletics where Roger Bannister\'s sub-4-minute mile was first bettered. Modern facilities with Ireland\'s top coaching talent.',
+    ageGroups: ['Junior', 'Adult'],
+    level: 'All levels',
+    individualLessons: true,
+    boarding: true,
+    beach: { distance: 8, description: 'Dublin Bay beaches at Sandymount and Dollymount within 20 minutes' },
+    priceRange: { from: 900, to: 1800, unit: 'week', display: '€900 - €1,800/week' },
+    socialMedia: { instagram: '@dublinathletics', facebook: 'https://facebook.com/dublinathletics', twitter: '@dublinathl' },
+    climate: 'dublin',
+    facilities: 'IAAF-certified 400m track at Morton Stadium, indoor training hall, throws area, jumps runway, Sport Ireland campus access, physiotherapy center',
+    courtSurfaces: ['Sprint track', 'Distance track', 'Field events', 'Cross country'],
+    programs: [
+      { name: 'Middle Distance Excellence', price: '€1,200/week', desc: 'Ireland\'s proud middle distance tradition with structured 800m-5000m training programs' },
+      { name: 'Sprint & Hurdles Camp', price: '€1,100/week', desc: 'Speed development and hurdle clearance technique with electronic timing' },
+      { name: 'Cross Country & Road Running', price: '€1,000/week', desc: 'Endurance training utilizing Phoenix Park trails and Dublin Bay coastal routes' }
+    ],
+    coaches: [
+      { name: 'Feidhlim Kelly', credential: 'Athletics Ireland Level 3 Coach', background: 'Experienced Irish athletics coach, specialist in middle distance development with multiple national champions', atpWta: false, bestRanking: null, rankingNote: null, languages: ['English', 'Irish'], instagram: null }
+    ],
+    photos: ['https://images.unsplash.com/photo-1461896836934-bd45ba0fcfca?w=800', 'https://images.unsplash.com/photo-1544717297-fa95b6ee9643?w=800'],
+    upcomingCamps: [
+      { name: 'Spring Distance Camp', startDate: '2026-04-13', endDate: '2026-04-20', price: '€1,200', level: 'Intermediate' },
+      { name: 'Summer Sprint Week', startDate: '2026-07-06', endDate: '2026-07-13', price: '€1,100', level: 'Advanced' },
+      { name: 'Autumn Cross Country Clinic', startDate: '2026-10-12', endDate: '2026-10-19', price: '€1,000', level: 'All Levels' }
+    ],
+    accommodation: {
+      types: [
+        { type: 'hotel', label: 'Santry Sports Hotel', pricePerWeek: 600, maxOccupancy: 2, bathType: 'ensuite', mealsIncluded: true },
+        { type: 'shared', label: 'Athletes Guesthouse', pricePerWeek: 380, maxOccupancy: 3, bathType: 'shared', mealsIncluded: true }
+      ],
+      companionsAllowed: true,
+      childrenAllowed: true,
+      minStay: '1 week',
+      shuttleToTraining: true,
+      notes: 'Near Morton Stadium in Santry. Irish hospitality with sports nutrition meal plan included.'
+    },
+    availability: {
+      status: 'open',
+      nextIntake: '2026-04-01',
+      spotsLeft: 16,
+      responseTime: '24h',
+      privateLessons: true,
+      yearRound: true
+    },
+    juniorInfo: {
+      minAge: 10,
+      maxAge: 18,
+      supervision: '24/7',
+      guardianStay: true,
+      schooling: 'Irish school partnerships available',
+      medicalStaff: true,
+      safeguarding: 'Athletics Ireland child welfare policies, Garda-vetted coaches',
+      airportPickup: true,
+      mealPlan: 'Full board with sports nutrition guidance',
+      curfew: '21:00 weekdays, 22:00 weekends',
+      roommatePairing: 'Age-based groups',
+      languageSupport: ['English', 'Irish'],
+      emergencyProtocol: 'On-site medical room, Beaumont Hospital 10 min'
+    }
+  },
+  {
+    id: 'oslo-athletics-center',
+    name: 'Oslo Athletics Center',
+    country: 'Norway',
+    countryFlag: '🇳🇴',
+    city: 'Oslo',
+    lat: 59.9139,
+    lng: 10.7522,
+    website: 'https://www.osloathletics.no',
+    contact: '+47 22 34 56 78',
+    contactEmail: 'info@osloathletics.no',
+    description: 'Norwegian athletics center near the legendary Bislett Stadium, home of the Bislett Games Diamond League meeting. Excellent facilities combining Scandinavian sports science with Norway\'s strong distance running and javelin traditions.',
+    ageGroups: ['Junior', 'Adult'],
+    level: 'All levels',
+    individualLessons: true,
+    boarding: true,
+    beach: { distance: 10, description: 'Oslo fjord beaches at Bygdøy within 20 minutes' },
+    priceRange: { from: 1100, to: 2200, unit: 'week', display: 'NOK 12,000 - NOK 24,000/week' },
+    socialMedia: { instagram: '@osloathletics', facebook: 'https://facebook.com/osloathletics', twitter: '@osloathl' },
+    climate: 'oslo',
+    facilities: 'IAAF-certified 400m track, Bislett Stadium access for competitions, indoor 200m hall, javelin runway, sports science lab at Norwegian School of Sport Sciences, altitude simulation',
+    courtSurfaces: ['Sprint track', 'Distance track', 'Field events', 'Cross country'],
+    programs: [
+      { name: 'Distance Running Excellence', price: 'NOK 14,000/week', desc: 'Norwegian distance tradition training with forest trail running and structured interval sessions' },
+      { name: 'Javelin & Throws Development', price: 'NOK 15,000/week', desc: 'Scandinavian javelin technique with video analysis and strength programming' },
+      { name: 'Hurdling & Sprint Camp', price: 'NOK 13,000/week', desc: 'Sprint and hurdle technique with Norwegian School of Sport Sciences biomechanics support' }
+    ],
+    coaches: [
+      { name: 'Erik Solberg', credential: 'NFIF Level 4 Coach', background: 'Former Norwegian national distance coach, developed multiple European Championship finalists', atpWta: false, bestRanking: null, rankingNote: null, languages: ['Norwegian', 'English', 'Swedish'], instagram: null },
+      { name: 'Hanne Kristiansen', credential: 'World Athletics Level 4 Coach', background: 'Former international javelin thrower, specialist in throwing event biomechanics', atpWta: false, bestRanking: null, rankingNote: null, languages: ['Norwegian', 'English'], instagram: null }
+    ],
+    photos: ['https://images.unsplash.com/photo-1461896836934-bd45ba0fcfca?w=800', 'https://images.unsplash.com/photo-1544717297-fa95b6ee9643?w=800'],
+    upcomingCamps: [
+      { name: 'Summer Distance Camp', startDate: '2026-06-15', endDate: '2026-06-22', price: 'NOK 14,000', level: 'Intermediate' },
+      { name: 'Midsummer Javelin Intensive', startDate: '2026-07-06', endDate: '2026-07-13', price: 'NOK 15,000', level: 'Advanced' },
+      { name: 'Spring Sprint & Hurdles', startDate: '2026-05-04', endDate: '2026-05-11', price: 'NOK 13,000', level: 'All Levels' }
+    ],
+    accommodation: {
+      types: [
+        { type: 'hotel', label: 'Bislett Sport Hotel', pricePerWeek: 800, maxOccupancy: 2, bathType: 'ensuite', mealsIncluded: true },
+        { type: 'shared', label: 'Athletes Residence Oslo', pricePerWeek: 500, maxOccupancy: 3, bathType: 'shared', mealsIncluded: true }
+      ],
+      companionsAllowed: true,
+      childrenAllowed: true,
+      minStay: '1 week',
+      shuttleToTraining: true,
+      notes: 'Near Bislett Stadium in central Oslo. Scandinavian sports nutrition with full board included.'
+    },
+    availability: {
+      status: 'open',
+      nextIntake: '2026-05-01',
+      spotsLeft: 14,
+      responseTime: '48h',
+      privateLessons: true,
+      yearRound: true
+    },
+    juniorInfo: {
+      minAge: 10,
+      maxAge: 18,
+      supervision: '24/7',
+      guardianStay: true,
+      schooling: 'Norwegian sports school (toppidrettsgymnas) partnerships',
+      medicalStaff: true,
+      safeguarding: 'NFIF child protection framework, police-certified coaches',
+      airportPickup: true,
+      mealPlan: 'Full board with Scandinavian sports nutrition',
+      curfew: '21:00 weekdays, 22:00 weekends',
+      roommatePairing: 'Age-based groups',
+      languageSupport: ['English', 'Norwegian'],
+      emergencyProtocol: 'On-site medical room, Ullevål University Hospital 10 min'
+    }
+  },
+  {
+    id: 'copenhagen-athletics-academy',
+    name: 'Copenhagen Athletics Academy',
+    country: 'Denmark',
+    countryFlag: '🇩🇰',
+    city: 'Copenhagen',
+    lat: 55.6761,
+    lng: 12.5683,
+    website: 'https://www.copenhagenath.dk',
+    contact: '+45 33 45 67 89',
+    contactEmail: 'info@copenhagenath.dk',
+    description: 'Danish athletics development center in Copenhagen, combining Scandinavian sports science with practical coaching. Strong programs in sprints, hurdles and jumps, with access to the Danish Institute for Sports Studies.',
+    ageGroups: ['Junior', 'Adult'],
+    level: 'All levels',
+    individualLessons: true,
+    boarding: true,
+    beach: { distance: 5, description: 'Amager Strandpark beach within 15 minutes' },
+    priceRange: { from: 1000, to: 2000, unit: 'week', display: 'DKK 8,000 - DKK 16,000/week' },
+    socialMedia: { instagram: '@cphath', facebook: 'https://facebook.com/copenhagenath', twitter: '@cphath' },
+    climate: 'copenhagen-athletics',
+    facilities: 'IAAF-certified 400m track, indoor athletics hall, jumps complex, sprint training corridor with electronic timing, sports science lab, recovery center',
+    courtSurfaces: ['Sprint track', 'Distance track', 'Field events', 'Indoor track'],
+    programs: [
+      { name: 'Sprint & Hurdles Clinic', price: 'DKK 10,000/week', desc: 'Danish sprint tradition training with biomechanical analysis and reaction time development' },
+      { name: 'Jumps Development Camp', price: 'DKK 9,000/week', desc: 'Long jump, triple jump and high jump technique with approach run optimization' },
+      { name: 'Multi-Event Training Week', price: 'DKK 11,000/week', desc: 'Heptathlon/decathlon preparation with event-by-event technical coaching' }
+    ],
+    coaches: [
+      { name: 'Mikkel Andersen', credential: 'DAF Level 3 Coach', background: 'Former Danish national team sprint coach, specialist in 100m-200m development', atpWta: false, bestRanking: null, rankingNote: null, languages: ['Danish', 'English', 'Swedish'], instagram: null }
+    ],
+    photos: ['https://images.unsplash.com/photo-1461896836934-bd45ba0fcfca?w=800', 'https://images.unsplash.com/photo-1544717297-fa95b6ee9643?w=800'],
+    upcomingCamps: [
+      { name: 'Spring Sprint Camp', startDate: '2026-04-20', endDate: '2026-04-27', price: 'DKK 10,000', level: 'Intermediate' },
+      { name: 'Summer Jumps Intensive', startDate: '2026-07-13', endDate: '2026-07-20', price: 'DKK 9,000', level: 'All Levels' },
+      { name: 'Autumn Multi-Event Week', startDate: '2026-10-05', endDate: '2026-10-12', price: 'DKK 11,000', level: 'Advanced' }
+    ],
+    accommodation: {
+      types: [
+        { type: 'hotel', label: 'Copenhagen Sport Hotel', pricePerWeek: 700, maxOccupancy: 2, bathType: 'ensuite', mealsIncluded: true },
+        { type: 'shared', label: 'Athletes Kollegium', pricePerWeek: 420, maxOccupancy: 3, bathType: 'shared', mealsIncluded: true }
+      ],
+      companionsAllowed: true,
+      childrenAllowed: true,
+      minStay: '1 week',
+      shuttleToTraining: true,
+      notes: 'Central Copenhagen accommodation, bike-friendly city. Nordic sports nutrition with full board included.'
+    },
+    availability: {
+      status: 'open',
+      nextIntake: '2026-04-15',
+      spotsLeft: 16,
+      responseTime: '48h',
+      privateLessons: true,
+      yearRound: true
+    },
+    juniorInfo: {
+      minAge: 10,
+      maxAge: 18,
+      supervision: '24/7',
+      guardianStay: true,
+      schooling: 'Danish sports school (idrætsefterskole) partnerships',
+      medicalStaff: true,
+      safeguarding: 'DAF child protection policies, background-checked coaches',
+      airportPickup: true,
+      mealPlan: 'Full board with Nordic sports nutrition',
+      curfew: '21:00 weekdays, 22:00 weekends',
+      roommatePairing: 'Age-based groups',
+      languageSupport: ['English', 'Danish'],
+      emergencyProtocol: 'On-site medical room, Rigshospitalet 15 min'
+    }
+  },
+  {
+    id: 'st-moritz-altitude-center',
+    name: 'St. Moritz Altitude Training Center',
+    country: 'Switzerland',
+    countryFlag: '🇨🇭',
+    city: 'St. Moritz',
+    lat: 46.4908,
+    lng: 9.8355,
+    website: 'https://www.stmoritzaltitude.ch',
+    contact: '+41 81 834 5678',
+    contactEmail: 'info@stmoritzaltitude.ch',
+    description: 'Elite altitude training center at 1,800m in St. Moritz, Switzerland. World-renowned for endurance sport preparation, used by Olympic champions across multiple disciplines. Pristine Alpine environment with Swiss precision sports science.',
+    ageGroups: ['Junior', 'Adult'],
+    level: 'All levels',
+    individualLessons: true,
+    boarding: true,
+    beach: { distance: null, description: 'No beach nearby — Alpine mountain location' },
+    priceRange: { from: 1400, to: 2500, unit: 'week', display: 'CHF 1,400 - CHF 2,500/week' },
+    socialMedia: { instagram: '@stmoritzaltitude', facebook: 'https://facebook.com/stmoritzaltitude', twitter: '@stmoritzalt' },
+    climate: 'st-moritz',
+    facilities: 'IAAF-certified 400m track at 1,800m altitude, indoor training hall, sports science lab with altitude physiology testing, VO2max lab, recovery center, cross country trail network',
+    courtSurfaces: ['Sprint track', 'Distance track', 'Field events', 'Cross country'],
+    programs: [
+      { name: 'Altitude Endurance Camp', price: 'CHF 2,000/week', desc: 'Live-high train-high endurance program at 1,800m with blood marker monitoring and VO2max testing' },
+      { name: 'Pre-Competition Altitude Block', price: 'CHF 2,200/week', desc: 'Structured altitude training block for competition preparation with Swiss sports science support' },
+      { name: 'Sprint & Power at Altitude', price: 'CHF 1,800/week', desc: 'Altitude-enhanced sprint and power training exploring reduced air resistance benefits' }
+    ],
+    coaches: [
+      { name: 'Dr. Andreas Keller', credential: 'Swiss Athletics Level 4 Coach', background: 'Sports scientist and coach, specialist in altitude training physiology and endurance performance', atpWta: false, bestRanking: null, rankingNote: null, languages: ['German', 'English', 'French', 'Italian'], instagram: null },
+      { name: 'Sandra Müller', credential: 'World Athletics Level 5 Lecturer', background: 'Former Swiss national distance runner, expert in altitude acclimatization and periodization', atpWta: false, bestRanking: null, rankingNote: null, languages: ['German', 'English', 'French'], instagram: null }
+    ],
+    photos: ['https://images.unsplash.com/photo-1461896836934-bd45ba0fcfca?w=800', 'https://images.unsplash.com/photo-1544717297-fa95b6ee9643?w=800'],
+    upcomingCamps: [
+      { name: 'Summer Altitude Block', startDate: '2026-06-22', endDate: '2026-07-06', price: 'CHF 3,800', level: 'Advanced' },
+      { name: 'Pre-Season Altitude Camp', startDate: '2026-05-04', endDate: '2026-05-18', price: 'CHF 3,600', level: 'Intermediate' },
+      { name: 'Autumn Training Block', startDate: '2026-09-07', endDate: '2026-09-21', price: 'CHF 3,800', level: 'Advanced' }
+    ],
+    accommodation: {
+      types: [
+        { type: 'hotel', label: 'Alpine Sport Hotel', pricePerWeek: 900, maxOccupancy: 2, bathType: 'ensuite', mealsIncluded: true },
+        { type: 'shared', label: 'Athletes Chalet', pricePerWeek: 550, maxOccupancy: 3, bathType: 'shared', mealsIncluded: true }
+      ],
+      companionsAllowed: true,
+      childrenAllowed: true,
+      minStay: '1 week',
+      shuttleToTraining: true,
+      notes: 'Alpine accommodation in St. Moritz. Swiss cuisine with altitude-adapted sports nutrition included.'
+    },
+    availability: {
+      status: 'open',
+      nextIntake: '2026-05-01',
+      spotsLeft: 12,
+      responseTime: '24h',
+      privateLessons: true,
+      yearRound: false
+    },
+    juniorInfo: {
+      minAge: 14,
+      maxAge: 18,
+      supervision: '24/7',
+      guardianStay: true,
+      schooling: 'Swiss sports school partnerships available',
+      medicalStaff: true,
+      safeguarding: 'Swiss Athletics child protection framework, background-checked coaches',
+      airportPickup: true,
+      mealPlan: 'Full board with altitude-adapted nutrition',
+      curfew: '21:00 weekdays, 22:00 weekends',
+      roommatePairing: 'Age-based groups',
+      languageSupport: ['English', 'German', 'French', 'Italian'],
+      emergencyProtocol: 'On-site medical room, Spital Oberengadin 5 min'
+    }
+  },
+  {
+    id: 'innsbruck-athletics-academy',
+    name: 'Innsbruck Athletics Academy',
+    country: 'Austria',
+    countryFlag: '🇦🇹',
+    city: 'Innsbruck',
+    lat: 47.2692,
+    lng: 11.4041,
+    website: 'https://www.innsbruckathletics.at',
+    contact: '+43 512 345 678',
+    contactEmail: 'info@innsbruckathletics.at',
+    description: 'Austrian Alpine athletics academy in Innsbruck, combining moderate altitude training (574m) with world-class facilities from the city\'s Olympic heritage. Strong programs in combined events, distance running and throws.',
+    ageGroups: ['Junior', 'Adult'],
+    level: 'All levels',
+    individualLessons: true,
+    boarding: true,
+    beach: { distance: null, description: 'No beach nearby — Alpine city' },
+    priceRange: { from: 900, to: 1900, unit: 'week', display: '€900 - €1,900/week' },
+    socialMedia: { instagram: '@innsbruckathletics', facebook: 'https://facebook.com/innsbruckathletics', twitter: '@ibkathl' },
+    climate: 'innsbruck-athletics',
+    facilities: 'IAAF-certified 400m track, indoor athletics hall, Olympic sports center access, throws area, altitude trail network, sports science lab at University of Innsbruck, recovery center',
+    courtSurfaces: ['Sprint track', 'Distance track', 'Field events', 'Mountain trails'],
+    programs: [
+      { name: 'Combined Events Academy', price: '€1,200/week', desc: 'Austrian decathlon/heptathlon tradition with systematic multi-event development' },
+      { name: 'Mountain Endurance Camp', price: '€1,100/week', desc: 'Alpine trail running and endurance development with altitude integration from 574m to 2,000m+' },
+      { name: 'Throws & Field Events', price: '€1,000/week', desc: 'Shot put, discus and javelin training with strength programming and video analysis' }
+    ],
+    coaches: [
+      { name: 'Thomas Berger', credential: 'ÖLV Level 4 Coach', background: 'Former Austrian national combined events coach, developed European Championship medalists', atpWta: false, bestRanking: null, rankingNote: null, languages: ['German', 'English', 'Italian'], instagram: null }
+    ],
+    photos: ['https://images.unsplash.com/photo-1461896836934-bd45ba0fcfca?w=800', 'https://images.unsplash.com/photo-1544717297-fa95b6ee9643?w=800'],
+    upcomingCamps: [
+      { name: 'Spring Combined Events', startDate: '2026-04-13', endDate: '2026-04-20', price: '€1,200', level: 'Intermediate' },
+      { name: 'Summer Mountain Endurance', startDate: '2026-07-06', endDate: '2026-07-13', price: '€1,100', level: 'All Levels' },
+      { name: 'Autumn Throws Clinic', startDate: '2026-10-05', endDate: '2026-10-12', price: '€1,000', level: 'Advanced' }
+    ],
+    accommodation: {
+      types: [
+        { type: 'hotel', label: 'Innsbruck Sport Hotel', pricePerWeek: 600, maxOccupancy: 2, bathType: 'ensuite', mealsIncluded: true },
+        { type: 'shared', label: 'Alpine Athletes Residence', pricePerWeek: 380, maxOccupancy: 3, bathType: 'shared', mealsIncluded: true }
+      ],
+      companionsAllowed: true,
+      childrenAllowed: true,
+      minStay: '1 week',
+      shuttleToTraining: true,
+      notes: 'Central Innsbruck with Alpine views. Austrian cuisine with sports nutrition, mountain activities available on rest days.'
+    },
+    availability: {
+      status: 'open',
+      nextIntake: '2026-04-01',
+      spotsLeft: 14,
+      responseTime: '48h',
+      privateLessons: true,
+      yearRound: true
+    },
+    juniorInfo: {
+      minAge: 10,
+      maxAge: 18,
+      supervision: '24/7',
+      guardianStay: true,
+      schooling: 'Austrian sports school (Sportgymnasium) partnerships',
+      medicalStaff: true,
+      safeguarding: 'ÖLV child protection framework, background-checked coaches',
+      airportPickup: true,
+      mealPlan: 'Full board with Alpine sports nutrition',
+      curfew: '21:00 weekdays, 22:00 weekends',
+      roommatePairing: 'Age-based groups',
+      languageSupport: ['English', 'German'],
+      emergencyProtocol: 'On-site medical room, Universitätsklinik Innsbruck 10 min'
+    }
+  },
+  {
+    id: 'sport-ireland-athletics-abbotstown',
+    name: 'Sport Ireland Athletics Academy',
+    country: 'Ireland',
+    countryFlag: '🇮🇪',
+    city: 'Dublin',
+    lat: 53.3867,
+    lng: -6.3800,
+    website: 'https://www.athleticsireland.ie',
+    contact: '+353 1 886 9933',
+    contactEmail: 'academy@athleticsireland.ie',
+    description: 'The official Sport Ireland athletics academy at the National Sports Campus in Abbotstown, Dublin. World-class facilities for all athletics disciplines with a focus on developing Ireland\'s next generation of international athletes.',
+    ageGroups: ['Junior', 'Adult'],
+    level: 'All levels',
+    individualLessons: true,
+    boarding: true,
+    beach: { distance: 12, description: 'Dublin Bay coast at Dollymount Strand, 12 km east' },
+    priceRange: { from: 800, to: 1800, unit: 'week', display: '€800 - €1,800/week' },
+    socialMedia: { instagram: '@athleticsireland', facebook: 'https://facebook.com/athleticsireland', twitter: '@AthsIreland' },
+    climate: 'dublin',
+    facilities: 'IAAF-certified 400m outdoor track (8 lanes), 200m indoor track at Sport Ireland National Indoor Arena, throws area, jump pits, biomechanics lab, strength and conditioning centre',
+    courtSurfaces: ['Sprint track', 'Distance track', 'Field events', 'Cross country'],
+    programs: [
+      { name: 'Sprint & Hurdles Academy', price: '€1,200/week', desc: 'Block start technique, speed development and hurdle drills with video analysis and biomechanics' },
+      { name: 'Endurance Training Camp', price: '€900/week', desc: 'Middle and long distance training on Dublin\'s parks and Phoenix Park trails' },
+      { name: 'Field Events Specialist', price: '€1,000/week', desc: 'Throws, jumps and combined events training with dedicated field event coaching staff' }
+    ],
+    coaches: [
+      { name: 'Feidhlim Kelly', credential: 'Athletics Ireland Level 3 Coach', background: 'Irish national team sprints coach, developed European Championship representatives', atpWta: false, bestRanking: null, rankingNote: null, languages: ['English', 'Irish'], instagram: null },
+      { name: 'Teresa McDaid', credential: 'World Athletics Level 5 Lecturer', background: 'Veteran Irish athletics coach, specialist in endurance events and women\'s athletics development', atpWta: false, bestRanking: null, rankingNote: null, languages: ['English', 'Irish'], instagram: null }
+    ],
+    photos: ['https://images.unsplash.com/photo-1461896836934-bd45ba0fcfca?w=800', 'https://images.unsplash.com/photo-1544717297-fa95b6ee9643?w=800'],
+    upcomingCamps: [
+      { name: 'Summer Sprint Camp', startDate: '2026-07-06', endDate: '2026-07-13', price: '€1,200', level: 'Advanced' },
+      { name: 'Spring Distance Camp', startDate: '2026-04-13', endDate: '2026-04-20', price: '€900', level: 'Intermediate' },
+      { name: 'Autumn Field Events Clinic', startDate: '2026-10-05', endDate: '2026-10-12', price: '€1,000', level: 'All Levels' }
+    ],
+    accommodation: {
+      types: [
+        { type: 'hotel', label: 'Sport Ireland Campus Hotel', pricePerWeek: 500, maxOccupancy: 2, bathType: 'ensuite', mealsIncluded: true },
+        { type: 'shared', label: 'Athletes Residence', pricePerWeek: 320, maxOccupancy: 3, bathType: 'shared', mealsIncluded: true }
+      ],
+      companionsAllowed: true,
+      childrenAllowed: true,
+      minStay: '1 week',
+      shuttleToTraining: true,
+      notes: 'On-site accommodation at Sport Ireland National Sports Campus. Irish cuisine with sports nutrition meal plans.'
+    },
+    availability: {
+      status: 'open',
+      nextIntake: '2026-06-01',
+      spotsLeft: 16,
+      responseTime: '24h',
+      privateLessons: true,
+      yearRound: true
+    },
+    juniorInfo: {
+      minAge: 10,
+      maxAge: 18,
+      supervision: '24/7',
+      guardianStay: true,
+      schooling: 'Partnership with local schools and online support',
+      medicalStaff: true,
+      safeguarding: 'Athletics Ireland child protection framework, Garda-vetted coaches',
+      airportPickup: true,
+      mealPlan: 'Full board with athlete-specific nutrition',
+      curfew: '21:00 weekdays, 22:00 weekends',
+      roommatePairing: 'Age-based groups',
+      languageSupport: ['English', 'Irish'],
+      emergencyProtocol: 'On-site medical room, Connolly Hospital 5 min away'
+    }
+  },
+  {
+    id: 'serbian-athletics-centre',
+    name: 'Serbian Athletics Training Centre',
+    country: 'Serbia',
+    countryFlag: '🇷🇸',
+    city: 'Belgrade',
+    lat: 44.7866,
+    lng: 20.4489,
+    website: 'https://www.serbianathletics.rs',
+    contact: '+381 11 567 8901',
+    contactEmail: 'info@serbianathletics.rs',
+    description: 'Serbia\'s national athletics training centre in Belgrade, training ground of world-class athletes like Ivana Španović. Elite track and field coaching with modern facilities.',
+    ageGroups: ['Junior', 'Adult'],
+    level: 'All levels',
+    individualLessons: true,
+    boarding: true,
+    beach: { distance: null, description: 'No beach nearby, Ada Ciganlija lake for outdoor training' },
+    priceRange: { from: 500, to: 1200, unit: 'week', display: '€500 - €1,200/week' },
+    socialMedia: { instagram: '@serbianathletics', facebook: 'https://facebook.com/serbianathletics', twitter: '@serbianathletics' },
+    climate: 'belgrade',
+    facilities: 'IAAF certified 400m track, indoor athletics hall, long jump and throwing areas, high-performance gym, biomechanics lab, recovery centre',
+    courtSurfaces: ['400m track', 'Indoor track', 'Throwing area', 'Jumping area'],
+    programs: [
+      { name: 'Serbian Elite Athletics', price: '€1,000/week', desc: 'Elite training following the methodology that produced Ivana Španović and other Serbian champions' },
+      { name: 'Youth Athletics Development', price: '€500/week', desc: 'Multi-event athletics development for young athletes' }
+    ],
+    coaches: [
+      { name: 'Milan Todorović', credential: 'World Athletics Level 5 Coach', background: 'Former Serbian national team coach and developer of European Championship medallists', atpWta: false, bestRanking: null, rankingNote: null, languages: ['English', 'Serbian'], instagram: null }
+    ],
+    photos: ['https://images.unsplash.com/photo-1544717297-fa95b6ee9643?w=800'],
+    upcomingCamps: [
+      { name: 'Belgrade Athletics Summer Camp', startDate: '2026-07-06', endDate: '2026-07-13', price: '€1,000', level: 'All levels' }
+    ],
+    accommodation: {
+      types: [
+        { type: 'hotel', label: 'Belgrade Athletics Hotel', pricePerWeek: 280, maxOccupancy: 2, bathType: 'ensuite', mealsIncluded: true }
+      ],
+      companionsAllowed: true,
+      childrenAllowed: true,
+      minStay: '1 week',
+      shuttleToTraining: true,
+      notes: 'Hotel near the national athletics stadium with direct transport links'
+    },
+    availability: {
+      status: 'open',
+      nextIntake: '2026-06-01',
+      spotsLeft: 20,
+      responseTime: '48h',
+      privateLessons: true,
+      yearRound: true
+    },
+    juniorInfo: {
+      minAge: 10,
+      maxAge: 18,
+      supervision: '24/7',
+      guardianStay: true,
+      schooling: 'Serbian sports school partnerships',
+      medicalStaff: true,
+      safeguarding: 'Serbian Athletics Federation child protection framework',
+      airportPickup: true,
+      mealPlan: 'Full board with Serbian cuisine and athlete nutrition',
+      curfew: '21:00 weekdays, 22:00 weekends',
+      roommatePairing: 'Age-based groups',
+      languageSupport: ['Serbian', 'English'],
+      emergencyProtocol: 'On-site medical room, Clinical Centre of Serbia 10 minutes'
+    }
   }
 ];
 
@@ -863,7 +1860,20 @@ const CLIMATE_DATA = {
   antalya: { spring: { tempHigh: 22, tempLow: 11, rainDays: 5, sunshine: 9 }, summer: { tempHigh: 34, tempLow: 22, rainDays: 0, sunshine: 12 }, autumn: { tempHigh: 24, tempLow: 14, rainDays: 4, sunshine: 8 }, winter: { tempHigh: 15, tempLow: 6, rainDays: 10, sunshine: 5 } },
   athens: { spring: { tempHigh: 21, tempLow: 11, rainDays: 5, sunshine: 9 }, summer: { tempHigh: 33, tempLow: 22, rainDays: 1, sunshine: 12 }, autumn: { tempHigh: 23, tempLow: 14, rainDays: 5, sunshine: 8 }, winter: { tempHigh: 13, tempLow: 5, rainDays: 8, sunshine: 4 } },
   rome: { spring: { tempHigh: 20, tempLow: 9, rainDays: 7, sunshine: 7 }, summer: { tempHigh: 31, tempLow: 19, rainDays: 2, sunshine: 10 }, autumn: { tempHigh: 21, tempLow: 11, rainDays: 8, sunshine: 6 }, winter: { tempHigh: 12, tempLow: 3, rainDays: 7, sunshine: 4 } },
-  gothenburg: { spring: { tempHigh: 12, tempLow: 3, rainDays: 9, sunshine: 6 }, summer: { tempHigh: 22, tempLow: 13, rainDays: 9, sunshine: 8 }, autumn: { tempHigh: 12, tempLow: 5, rainDays: 12, sunshine: 3 }, winter: { tempHigh: 4, tempLow: -2, rainDays: 13, sunshine: 1 } }
+  gothenburg: { spring: { tempHigh: 12, tempLow: 3, rainDays: 9, sunshine: 6 }, summer: { tempHigh: 22, tempLow: 13, rainDays: 9, sunshine: 8 }, autumn: { tempHigh: 12, tempLow: 5, rainDays: 12, sunshine: 3 }, winter: { tempHigh: 4, tempLow: -2, rainDays: 13, sunshine: 1 } },
+  papendal: { spring: { tempHigh: 15, tempLow: 5, rainDays: 9, sunshine: 6 }, summer: { tempHigh: 24, tempLow: 13, rainDays: 8, sunshine: 7 }, autumn: { tempHigh: 14, tempLow: 6, rainDays: 10, sunshine: 4 }, winter: { tempHigh: 6, tempLow: 0, rainDays: 11, sunshine: 2 } },
+  louvain: { spring: { tempHigh: 14, tempLow: 5, rainDays: 10, sunshine: 5 }, summer: { tempHigh: 23, tempLow: 13, rainDays: 9, sunshine: 7 }, autumn: { tempHigh: 14, tempLow: 7, rainDays: 11, sunshine: 4 }, winter: { tempHigh: 6, tempLow: 1, rainDays: 12, sunshine: 2 } },
+  warsaw: { spring: { tempHigh: 15, tempLow: 4, rainDays: 8, sunshine: 6 }, summer: { tempHigh: 25, tempLow: 14, rainDays: 9, sunshine: 8 }, autumn: { tempHigh: 13, tempLow: 5, rainDays: 8, sunshine: 4 }, winter: { tempHigh: 2, tempLow: -4, rainDays: 9, sunshine: 1 } },
+  prague: { spring: { tempHigh: 15, tempLow: 5, rainDays: 8, sunshine: 6 }, summer: { tempHigh: 25, tempLow: 14, rainDays: 9, sunshine: 8 }, autumn: { tempHigh: 13, tempLow: 5, rainDays: 7, sunshine: 4 }, winter: { tempHigh: 3, tempLow: -3, rainDays: 8, sunshine: 2 } },
+  budapest: { spring: { tempHigh: 17, tempLow: 7, rainDays: 8, sunshine: 7 }, summer: { tempHigh: 28, tempLow: 16, rainDays: 7, sunshine: 9 }, autumn: { tempHigh: 16, tempLow: 7, rainDays: 7, sunshine: 5 }, winter: { tempHigh: 4, tempLow: -2, rainDays: 8, sunshine: 2 } },
+  bucharest: { spring: { tempHigh: 18, tempLow: 6, rainDays: 9, sunshine: 7 }, summer: { tempHigh: 30, tempLow: 17, rainDays: 7, sunshine: 9 }, autumn: { tempHigh: 17, tempLow: 7, rainDays: 6, sunshine: 5 }, winter: { tempHigh: 4, tempLow: -3, rainDays: 7, sunshine: 2 } },
+  zagreb: { spring: { tempHigh: 17, tempLow: 6, rainDays: 9, sunshine: 6 }, summer: { tempHigh: 27, tempLow: 16, rainDays: 8, sunshine: 8 }, autumn: { tempHigh: 16, tempLow: 7, rainDays: 9, sunshine: 4 }, winter: { tempHigh: 5, tempLow: -1, rainDays: 9, sunshine: 2 } },
+  dublin: { spring: { tempHigh: 12, tempLow: 5, rainDays: 11, sunshine: 5 }, summer: { tempHigh: 19, tempLow: 11, rainDays: 10, sunshine: 6 }, autumn: { tempHigh: 13, tempLow: 7, rainDays: 12, sunshine: 3 }, winter: { tempHigh: 8, tempLow: 3, rainDays: 13, sunshine: 2 } },
+  oslo: { spring: { tempHigh: 11, tempLow: 2, rainDays: 8, sunshine: 6 }, summer: { tempHigh: 22, tempLow: 13, rainDays: 9, sunshine: 8 }, autumn: { tempHigh: 10, tempLow: 3, rainDays: 10, sunshine: 3 }, winter: { tempHigh: 0, tempLow: -6, rainDays: 9, sunshine: 1 } },
+  'copenhagen-athletics': { spring: { tempHigh: 12, tempLow: 4, rainDays: 8, sunshine: 6 }, summer: { tempHigh: 22, tempLow: 14, rainDays: 9, sunshine: 8 }, autumn: { tempHigh: 12, tempLow: 6, rainDays: 11, sunshine: 3 }, winter: { tempHigh: 4, tempLow: -1, rainDays: 11, sunshine: 1 } },
+  'st-moritz': { spring: { tempHigh: 8, tempLow: -2, rainDays: 8, sunshine: 6 }, summer: { tempHigh: 18, tempLow: 8, rainDays: 10, sunshine: 8 }, autumn: { tempHigh: 9, tempLow: 0, rainDays: 7, sunshine: 5 }, winter: { tempHigh: 0, tempLow: -10, rainDays: 6, sunshine: 4 } },
+  'innsbruck-athletics': { spring: { tempHigh: 15, tempLow: 4, rainDays: 9, sunshine: 6 }, summer: { tempHigh: 25, tempLow: 13, rainDays: 11, sunshine: 7 }, autumn: { tempHigh: 14, tempLow: 4, rainDays: 8, sunshine: 5 }, winter: { tempHigh: 4, tempLow: -4, rainDays: 7, sunshine: 3 } },
+  belgrade: { spring: { tempHigh: 19, tempLow: 7, rainDays: 9, sunshine: 7 }, summer: { tempHigh: 28, tempLow: 16, rainDays: 7, sunshine: 9 }, autumn: { tempHigh: 17, tempLow: 7, rainDays: 8, sunshine: 5 }, winter: { tempHigh: 4, tempLow: -2, rainDays: 8, sunshine: 2 } }
 };
 
 const NEWS_ITEMS = [
@@ -874,4 +1884,4 @@ const NEWS_ITEMS = [
   { date: '2025-04-10', title: 'Kuortane Javelin Program Goes International', summary: 'Finnish javelin excellence now available to international athletes with dedicated English-language javelin training camps.' }
 ];
 
-const COUNTRIES = ['Spain', 'Portugal', 'France', 'Germany', 'UK', 'Finland', 'Turkey', 'Greece', 'Italy', 'Sweden'];
+const COUNTRIES = ['Spain', 'Portugal', 'France', 'Germany', 'UK', 'Finland', 'Turkey', 'Greece', 'Italy', 'Sweden', 'Netherlands', 'Belgium', 'Poland', 'Czech Republic', 'Hungary', 'Romania', 'Croatia', 'Ireland', 'Norway', 'Denmark', 'Switzerland', 'Austria', 'Serbia'];

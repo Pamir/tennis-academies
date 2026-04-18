@@ -103,7 +103,8 @@ const SPORT_CONFIG = {
   padel: { icon: '🎾', name: 'Padel Academies', statsLabel: 'Certified Coaches', storagePrefix: 'padel', surfaceLabel: 'Court Types' },
   triathlon: { icon: '🏊', name: 'Triathlon Camps', statsLabel: 'Certified Coaches', storagePrefix: 'triathlon', surfaceLabel: 'Disciplines' },
   equestrian: { icon: '🏇', name: 'Equestrian Centres', statsLabel: 'Certified Instructors', storagePrefix: 'equestrian', surfaceLabel: 'Disciplines' },
-  surfing: { icon: '🏄', name: 'Surf Schools', statsLabel: 'Certified Instructors', storagePrefix: 'surfing', surfaceLabel: 'Break Types' }
+  surfing: { icon: '🏄', name: 'Surf Schools', statsLabel: 'Certified Instructors', storagePrefix: 'surfing', surfaceLabel: 'Break Types' },
+  art: { icon: '🎨', name: 'Art', statsLabel: 'Master Artists', storagePrefix: 'art', surfaceLabel: 'Medium', coachLabel: 'Master Artists', coachFilterLabel: '🎨 Master Artists' }
 };
 
 const SPORT_PAGES = {
@@ -129,7 +130,8 @@ const SPORT_PAGES = {
   padel: 'padel.html',
   triathlon: 'triathlon.html',
   equestrian: 'equestrian.html',
-  surfing: 'surfing.html'
+  surfing: 'surfing.html',
+  art: 'art.html'
 };
 
 const SPORT_DATA_FILES = {
@@ -155,7 +157,8 @@ const SPORT_DATA_FILES = {
   padel: './padel-data.js',
   triathlon: './triathlon-data.js',
   equestrian: './equestrian-data.js',
-  surfing: './surfing-data.js'
+  surfing: './surfing-data.js',
+  art: './art-data.js'
 };
 
 const SPORT_NUTRITION = {
@@ -278,7 +281,8 @@ const SPORT_NUTRITION = {
   padel: { title: 'Padel Player Nutrition', intro: 'Similar to tennis but with more explosive movements. Anti-inflammatory foods for joints, potassium for cramp prevention, quick energy between sets.' },
   triathlon: { title: 'Triathlete Nutrition Plan', intro: 'The ultimate endurance diet. Periodized nutrition across swim/bike/run, race-day fueling strategy, 4,000-6,000 cal/day during peak training.' },
   equestrian: { title: 'Equestrian Nutrition Plan', intro: 'Core strength and mental focus. Sustained energy for long competition days, anti-inflammatory for back health, brain foods for horse-rider connection.' },
-  surfing: { title: 'Surfer Nutrition Plan', intro: 'Ocean athlete fuel. Anti-inflammatory for paddle endurance, sun exposure recovery (vitamin D, antioxidants), light meals before water sessions.' }
+  surfing: { title: 'Surfer Nutrition Plan', intro: 'Ocean athlete fuel. Anti-inflammatory for paddle endurance, sun exposure recovery (vitamin D, antioxidants), light meals before water sessions.' },
+  art: { title: 'Artist Nutrition Plan', intro: 'Brain-boosting fuel for creative focus. Omega-3 rich foods for cognitive function, antioxidant-rich berries for mental clarity, and steady energy to sustain long studio sessions.' }
 };
 
 let _crossSportCache = null;

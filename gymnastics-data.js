@@ -782,6 +782,991 @@ const ACADEMIES = [
       languageSupport: ['English', 'German', 'French'],
       emergencyProtocol: 'On-site first aid with Inselspital Bern university hospital nearby'
     }
+  },
+  {
+    id: 'budapest-gymnastics-academy',
+    name: 'Budapest Gymnastics Academy',
+    country: 'Hungary',
+    countryFlag: '🇭🇺',
+    city: 'Budapest',
+    lat: 47.4979,
+    lng: 19.0402,
+    website: 'https://www.budapestgymnastics.hu',
+    contact: '+36 1 234 5678',
+    contactEmail: 'info@budapestgymnastics.hu',
+    description: 'A prestigious gymnastics academy in Budapest continuing Hungary\'s proud tradition in artistic and rhythmic gymnastics, with world-class coaching and modern facilities.',
+    ageGroups: ['Junior', 'Adult'],
+    level: 'All levels',
+    individualLessons: true,
+    boarding: true,
+    beach: { distance: null, description: 'No beach nearby, Danube River runs through the city' },
+    priceRange: { from: 550, to: 1300, unit: 'week', display: '€550 - €1,300/week' },
+    socialMedia: { instagram: '@budapestgym', facebook: 'https://facebook.com/budapestgym', twitter: '@budapestgym' },
+    climate: 'budapest',
+    facilities: 'Sprung floor, vault runway, beam, bars, rings, foam pit, trampoline, dance studio, strength training room',
+    courtSurfaces: ['Artistic gymnastics', 'Rhythmic gymnastics', 'Trampoline', 'Tumbling'],
+    programs: [
+      { name: 'Hungarian Artistic Excellence', price: '€900/week', desc: 'Elite artistic gymnastics training in Hungary\'s Gadolla tradition' },
+      { name: 'Junior Development Programme', price: '€600/week', desc: 'Progressive training for young gymnasts aged 6-14' },
+      { name: 'Rhythmic Gymnastics Intensive', price: '€750/week', desc: 'Apparatus mastery and choreography for rhythmic gymnasts' }
+    ],
+    coaches: [
+      { name: 'Katalin Szabó', credential: 'FIG Level 3 Coach', background: 'Former Hungarian national team gymnast and head coach of the Budapest development programme', atpWta: false, bestRanking: null, rankingNote: null, languages: ['English', 'Hungarian', 'German'], instagram: null }
+    ],
+    photos: ['https://images.unsplash.com/photo-1566577739112-5180d4bf9390?w=800'],
+    upcomingCamps: [
+      { name: 'Budapest Summer Gymnastics Camp', startDate: '2026-07-06', endDate: '2026-07-13', price: '€900', level: 'Intermediate' }
+    ],
+    accommodation: {
+      types: [{ type: 'dormitory', label: 'Academy Dormitory', pricePerWeek: 300, maxOccupancy: 3, bathType: 'shared', mealsIncluded: true }],
+      companionsAllowed: true,
+      childrenAllowed: true,
+      minStay: '1 week',
+      shuttleToTraining: true,
+      notes: 'On-campus dormitory near the Danube with easy metro access'
+    },
+    availability: {
+      status: 'open',
+      nextIntake: '2026-06-01',
+      spotsLeft: 18,
+      responseTime: '24h',
+      privateLessons: true,
+      yearRound: true
+    },
+    juniorInfo: {
+      minAge: 6,
+      maxAge: 18,
+      supervision: '24/7',
+      guardianStay: true,
+      schooling: 'Hungarian sports school partnership with bilingual instruction',
+      medicalStaff: true,
+      safeguarding: 'Hungarian Gymnastics Federation child protection standards',
+      airportPickup: true,
+      mealPlan: 'Full board with Hungarian cuisine and sports nutrition',
+      curfew: '21:00 weekdays, 22:00 weekends',
+      roommatePairing: 'Age-based groups',
+      languageSupport: ['English', 'Hungarian'],
+      emergencyProtocol: 'On-site medical team with Szent János Hospital nearby'
+    }
+  },
+  {
+    id: 'warsaw-gymnastics-centre',
+    name: 'Warsaw Gymnastics Centre',
+    country: 'Poland',
+    countryFlag: '🇵🇱',
+    city: 'Warsaw',
+    lat: 52.2297,
+    lng: 21.0122,
+    website: 'https://www.warsawgymnastics.pl',
+    contact: '+48 22 345 6789',
+    contactEmail: 'info@warsawgymnastics.pl',
+    description: 'Poland\'s leading gymnastics centre in Warsaw, offering comprehensive training across all gymnastics disciplines with experienced international coaches.',
+    ageGroups: ['Junior', 'Adult'],
+    level: 'All levels',
+    individualLessons: true,
+    boarding: false,
+    beach: { distance: null, description: 'No beach nearby' },
+    priceRange: { from: 500, to: 1200, unit: 'week', display: '€500 - €1,200/week' },
+    socialMedia: { instagram: '@warsawgym', facebook: 'https://facebook.com/warsawgym', twitter: '@warsawgym' },
+    climate: 'warsaw',
+    facilities: 'Sprung floor, vault runway, beam, bars, rings, foam pit, trampoline, dance studio, video analysis room',
+    courtSurfaces: ['Artistic gymnastics', 'Rhythmic gymnastics', 'Trampoline', 'Tumbling'],
+    programs: [
+      { name: 'Polish Artistic Programme', price: '€750/week', desc: 'Artistic gymnastics training following Polish coaching methodology' },
+      { name: 'Trampoline & Tumbling Intensive', price: '€600/week', desc: 'Specialised acrobatic and trampoline training programme' }
+    ],
+    coaches: [
+      { name: 'Marek Kowalski', credential: 'FIG Level 2 Coach', background: 'Former Polish national team coach with 15 years of international competition experience', atpWta: false, bestRanking: null, rankingNote: null, languages: ['English', 'Polish', 'Russian'], instagram: null }
+    ],
+    photos: ['https://images.unsplash.com/photo-1518611012118-696072aa579a?w=800'],
+    upcomingCamps: [
+      { name: 'Warsaw Spring Gymnastics Camp', startDate: '2026-04-06', endDate: '2026-04-13', price: '€750', level: 'All levels' }
+    ],
+    accommodation: {
+      types: [{ type: 'hotel', label: 'Warsaw City Hotel', pricePerWeek: 400, maxOccupancy: 2, bathType: 'ensuite', mealsIncluded: false }],
+      companionsAllowed: true,
+      childrenAllowed: true,
+      minStay: '1 week',
+      shuttleToTraining: true,
+      notes: 'Partner hotel in central Warsaw with public transport links'
+    },
+    availability: {
+      status: 'limited',
+      nextIntake: '2026-04-01',
+      spotsLeft: 10,
+      responseTime: '48h',
+      privateLessons: true,
+      yearRound: true
+    },
+    juniorInfo: {
+      minAge: 6,
+      maxAge: 18,
+      supervision: '24/7',
+      guardianStay: true,
+      schooling: 'Polish sports school integration available',
+      medicalStaff: true,
+      safeguarding: 'Polish Gymnastics Association child welfare standards',
+      airportPickup: true,
+      mealPlan: 'Full board with Polish cuisine and dietary options',
+      curfew: '21:00 weekdays, 22:00 weekends',
+      roommatePairing: 'Age-based groups',
+      languageSupport: ['English', 'Polish'],
+      emergencyProtocol: 'On-site physiotherapy with hospital partnership in Warsaw'
+    }
+  },
+  {
+    id: 'prague-gymnastics-school',
+    name: 'Prague Gymnastics School',
+    country: 'Czech Republic',
+    countryFlag: '🇨🇿',
+    city: 'Prague',
+    lat: 50.0755,
+    lng: 14.4378,
+    website: 'https://www.praguegymnastics.cz',
+    contact: '+420 222 345 678',
+    contactEmail: 'info@praguegymnastics.cz',
+    description: 'A renowned gymnastics school in the heart of Prague, blending Czech gymnastics heritage with modern training methods and a supportive environment.',
+    ageGroups: ['Junior', 'Adult'],
+    level: 'All levels',
+    individualLessons: true,
+    boarding: true,
+    beach: { distance: null, description: 'No beach nearby, Vltava River nearby' },
+    priceRange: { from: 550, to: 1250, unit: 'week', display: '€550 - €1,250/week' },
+    socialMedia: { instagram: '@praguegym', facebook: 'https://facebook.com/praguegym', twitter: '@praguegym' },
+    climate: 'prague',
+    facilities: 'Sprung floor, vault runway, beam, bars, rings, foam pit, trampoline, dance studio, conditioning room',
+    courtSurfaces: ['Artistic gymnastics', 'Rhythmic gymnastics', 'Trampoline', 'Tumbling'],
+    programs: [
+      { name: 'Czech Artistic Gymnastics', price: '€800/week', desc: 'Comprehensive artistic gymnastics in the Czech tradition' },
+      { name: 'Rhythmic & Dance Programme', price: '€650/week', desc: 'Rhythmic gymnastics with ballet and contemporary dance integration' },
+      { name: 'Youth Development Camp', price: '€550/week', desc: 'Foundational training camp for aspiring young gymnasts' }
+    ],
+    coaches: [
+      { name: 'Jana Novotná', credential: 'FIG Brevet Coach', background: 'Former Czech national team gymnast with European Championships experience', atpWta: false, bestRanking: null, rankingNote: null, languages: ['English', 'Czech', 'Slovak'], instagram: null }
+    ],
+    photos: ['https://images.unsplash.com/photo-1566577739112-5180d4bf9390?w=800'],
+    upcomingCamps: [
+      { name: 'Prague Summer Gymnastics', startDate: '2026-07-13', endDate: '2026-07-20', price: '€800', level: 'Intermediate' }
+    ],
+    accommodation: {
+      types: [{ type: 'dormitory', label: 'Prague Academy Residence', pricePerWeek: 320, maxOccupancy: 3, bathType: 'shared', mealsIncluded: true }],
+      companionsAllowed: true,
+      childrenAllowed: true,
+      minStay: '1 week',
+      shuttleToTraining: true,
+      notes: 'Academy residence in Prague with tram access to the city centre'
+    },
+    availability: {
+      status: 'open',
+      nextIntake: '2026-06-15',
+      spotsLeft: 16,
+      responseTime: '24h',
+      privateLessons: true,
+      yearRound: true
+    },
+    juniorInfo: {
+      minAge: 6,
+      maxAge: 18,
+      supervision: '24/7',
+      guardianStay: true,
+      schooling: 'Czech sports school partnership with English-language support',
+      medicalStaff: true,
+      safeguarding: 'Czech Gymnastics Federation child protection protocols',
+      airportPickup: true,
+      mealPlan: 'Full board with Czech cuisine and sports nutrition',
+      curfew: '21:00 weekdays, 22:00 weekends',
+      roommatePairing: 'Age-based groups',
+      languageSupport: ['English', 'Czech'],
+      emergencyProtocol: 'On-site medical support with Motol University Hospital nearby'
+    }
+  },
+  {
+    id: 'stockholm-gymnastics-academy',
+    name: 'Stockholm Gymnastics Academy',
+    country: 'Sweden',
+    countryFlag: '🇸🇪',
+    city: 'Stockholm',
+    lat: 59.3293,
+    lng: 18.0686,
+    website: 'https://www.stockholmgymnastics.se',
+    contact: '+46 8 234 5678',
+    contactEmail: 'info@stockholmgymnastics.se',
+    description: 'A top-tier gymnastics academy in Stockholm offering Scandinavian-quality training in artistic, rhythmic, and trampoline gymnastics with a focus on athlete wellbeing.',
+    ageGroups: ['Junior', 'Adult'],
+    level: 'All levels',
+    individualLessons: true,
+    boarding: true,
+    beach: { distance: 15, description: 'Stockholm archipelago beaches accessible by ferry' },
+    priceRange: { from: 800, to: 1800, unit: 'week', display: '€800 - €1,800/week' },
+    socialMedia: { instagram: '@stockholmgym', facebook: 'https://facebook.com/stockholmgym', twitter: '@stockholmgym' },
+    climate: 'stockholm',
+    facilities: 'Sprung floor, vault runway, beam, bars, rings, foam pit, trampoline, dance studio, sauna, recovery suite',
+    courtSurfaces: ['Artistic gymnastics', 'Rhythmic gymnastics', 'Trampoline', 'Tumbling'],
+    programs: [
+      { name: 'Swedish Artistic Programme', price: '€1200/week', desc: 'Elite artistic gymnastics with Swedish coaching philosophy' },
+      { name: 'Nordic Rhythmic Intensive', price: '€1000/week', desc: 'Rhythmic gymnastics training with Scandinavian choreography approach' }
+    ],
+    coaches: [
+      { name: 'Erik Lindström', credential: 'FIG Level 3 Coach', background: 'Former Swedish national team coach and Nordic Championships gold medallist coach', atpWta: false, bestRanking: null, rankingNote: null, languages: ['English', 'Swedish', 'Norwegian'], instagram: null }
+    ],
+    photos: ['https://images.unsplash.com/photo-1518611012118-696072aa579a?w=800'],
+    upcomingCamps: [
+      { name: 'Stockholm Midsummer Camp', startDate: '2026-06-22', endDate: '2026-06-29', price: '€1200', level: 'Advanced' }
+    ],
+    accommodation: {
+      types: [{ type: 'apartment', label: 'Stockholm Athlete Apartment', pricePerWeek: 600, maxOccupancy: 2, bathType: 'ensuite', mealsIncluded: false }],
+      companionsAllowed: true,
+      childrenAllowed: true,
+      minStay: '1 week',
+      shuttleToTraining: true,
+      notes: 'Modern apartment near the academy with T-bana metro access'
+    },
+    availability: {
+      status: 'limited',
+      nextIntake: '2026-06-01',
+      spotsLeft: 8,
+      responseTime: '48h',
+      privateLessons: true,
+      yearRound: true
+    },
+    juniorInfo: {
+      minAge: 6,
+      maxAge: 18,
+      supervision: '24/7',
+      guardianStay: true,
+      schooling: 'Swedish sports gymnasium integration with English instruction',
+      medicalStaff: true,
+      safeguarding: 'Swedish Gymnastics Federation safeguarding standards',
+      airportPickup: true,
+      mealPlan: 'Full board with Scandinavian cuisine and sports nutrition',
+      curfew: '21:00 weekdays, 22:00 weekends',
+      roommatePairing: 'Age-based groups',
+      languageSupport: ['English', 'Swedish'],
+      emergencyProtocol: 'On-site medical support with Karolinska University Hospital nearby'
+    }
+  },
+  {
+    id: 'copenhagen-gymnastics-centre',
+    name: 'Copenhagen Gymnastics Centre',
+    country: 'Denmark',
+    countryFlag: '🇩🇰',
+    city: 'Copenhagen',
+    lat: 55.6761,
+    lng: 12.5683,
+    website: 'https://www.copenhagengym.dk',
+    contact: '+45 33 234 567',
+    contactEmail: 'info@copenhagengym.dk',
+    description: 'Denmark\'s premier gymnastics centre in Copenhagen, rooted in the Danish gymnastics tradition and offering modern training across all disciplines.',
+    ageGroups: ['Junior', 'Adult'],
+    level: 'All levels',
+    individualLessons: true,
+    boarding: false,
+    beach: { distance: 10, description: 'Amager Strandpark beach accessible by metro' },
+    priceRange: { from: 750, to: 1700, unit: 'week', display: '€750 - €1,700/week' },
+    socialMedia: { instagram: '@copenhagengym', facebook: 'https://facebook.com/copenhagengym', twitter: '@copenhagengym' },
+    climate: 'copenhagen',
+    facilities: 'Sprung floor, vault runway, beam, bars, rings, foam pit, trampoline, dance studio, gymnastics hall',
+    courtSurfaces: ['Artistic gymnastics', 'Rhythmic gymnastics', 'Trampoline', 'Tumbling'],
+    programs: [
+      { name: 'Danish Artistic Gymnastics', price: '€1100/week', desc: 'Artistic gymnastics training in the Danish folk gymnastics tradition' },
+      { name: 'TeamGym Denmark Programme', price: '€900/week', desc: 'TeamGym training combining tumbling, trampette, and floor' },
+      { name: 'Youth Gymnastics Foundation', price: '€700/week', desc: 'Introductory programme for young gymnasts building fundamental skills' }
+    ],
+    coaches: [
+      { name: 'Mette Hansen', credential: 'Danish Gymnastics Federation Head Coach', background: 'Former Danish national team gymnast and TeamGym specialist with 12 years coaching experience', atpWta: false, bestRanking: null, rankingNote: null, languages: ['English', 'Danish', 'German'], instagram: null }
+    ],
+    photos: ['https://images.unsplash.com/photo-1566577739112-5180d4bf9390?w=800'],
+    upcomingCamps: [
+      { name: 'Copenhagen Easter Camp', startDate: '2027-03-29', endDate: '2027-04-05', price: '€1100', level: 'All levels' }
+    ],
+    accommodation: {
+      types: [{ type: 'hotel', label: 'Copenhagen City Hotel', pricePerWeek: 550, maxOccupancy: 2, bathType: 'ensuite', mealsIncluded: false }],
+      companionsAllowed: true,
+      childrenAllowed: true,
+      minStay: '1 week',
+      shuttleToTraining: true,
+      notes: 'Partner hotel in Copenhagen with bicycle rental included'
+    },
+    availability: {
+      status: 'open',
+      nextIntake: '2026-09-01',
+      spotsLeft: 14,
+      responseTime: '24h',
+      privateLessons: true,
+      yearRound: true
+    },
+    juniorInfo: {
+      minAge: 6,
+      maxAge: 18,
+      supervision: '24/7',
+      guardianStay: true,
+      schooling: 'Danish international school access for extended stays',
+      medicalStaff: true,
+      safeguarding: 'Danish Gymnastics Federation child welfare protocols',
+      airportPickup: true,
+      mealPlan: 'Full board with Danish cuisine and nutritional planning',
+      curfew: '21:00 weekdays, 22:00 weekends',
+      roommatePairing: 'Age-based groups',
+      languageSupport: ['English', 'Danish'],
+      emergencyProtocol: 'On-site first aid with Rigshospitalet university hospital nearby'
+    }
+  },
+  {
+    id: 'vienna-gymnastics-akademie',
+    name: 'Vienna Gymnastics Akademie',
+    country: 'Austria',
+    countryFlag: '🇦🇹',
+    city: 'Vienna',
+    lat: 48.2082,
+    lng: 16.3738,
+    website: 'https://www.viennagymnastik.at',
+    contact: '+43 1 234 5678',
+    contactEmail: 'info@viennagymnastik.at',
+    description: 'An elegant gymnastics academy in Vienna combining Austrian sporting heritage with world-class artistic and rhythmic gymnastics coaching in a historic setting.',
+    ageGroups: ['Junior', 'Adult'],
+    level: 'All levels',
+    individualLessons: true,
+    boarding: true,
+    beach: { distance: null, description: 'No beach nearby, Alte Donau lake nearby' },
+    priceRange: { from: 650, to: 1500, unit: 'week', display: '€650 - €1,500/week' },
+    socialMedia: { instagram: '@viennagym', facebook: 'https://facebook.com/viennagym', twitter: '@viennagym' },
+    climate: 'vienna',
+    facilities: 'Sprung floor, vault runway, beam, bars, rings, foam pit, trampoline, dance studio, ballet barre room',
+    courtSurfaces: ['Artistic gymnastics', 'Rhythmic gymnastics', 'Trampoline', 'Tumbling'],
+    programs: [
+      { name: 'Viennese Artistic Excellence', price: '€1000/week', desc: 'Artistic gymnastics training with Austrian coaching precision' },
+      { name: 'Rhythmic Gymnastics Vienna', price: '€850/week', desc: 'Rhythmic gymnastics with classical music and choreography integration' }
+    ],
+    coaches: [
+      { name: 'Claudia Berger', credential: 'ÖFT National Coach', background: 'Former Austrian national rhythmic gymnastics champion and European competition judge', atpWta: false, bestRanking: null, rankingNote: null, languages: ['English', 'German', 'Italian'], instagram: null }
+    ],
+    photos: ['https://images.unsplash.com/photo-1518611012118-696072aa579a?w=800'],
+    upcomingCamps: [
+      { name: 'Vienna Autumn Gymnastics', startDate: '2026-10-05', endDate: '2026-10-12', price: '€1000', level: 'Intermediate' }
+    ],
+    accommodation: {
+      types: [{ type: 'hotel', label: 'Vienna Academy Hotel', pricePerWeek: 500, maxOccupancy: 2, bathType: 'ensuite', mealsIncluded: true }],
+      companionsAllowed: true,
+      childrenAllowed: true,
+      minStay: '1 week',
+      shuttleToTraining: true,
+      notes: 'Charming hotel near the academy with U-Bahn metro access'
+    },
+    availability: {
+      status: 'open',
+      nextIntake: '2026-09-15',
+      spotsLeft: 12,
+      responseTime: '24h',
+      privateLessons: true,
+      yearRound: true
+    },
+    juniorInfo: {
+      minAge: 6,
+      maxAge: 18,
+      supervision: '24/7',
+      guardianStay: true,
+      schooling: 'Austrian international school partnership available',
+      medicalStaff: true,
+      safeguarding: 'Austrian Gymnastics Federation child protection standards',
+      airportPickup: true,
+      mealPlan: 'Full board with Viennese cuisine and sports nutrition',
+      curfew: '21:00 weekdays, 22:00 weekends',
+      roommatePairing: 'Age-based groups',
+      languageSupport: ['English', 'German'],
+      emergencyProtocol: 'On-site medical support with AKH Vienna university hospital nearby'
+    }
+  },
+  {
+    id: 'athens-gymnastics-academy',
+    name: 'Athens Gymnastics Academy',
+    country: 'Greece',
+    countryFlag: '🇬🇷',
+    city: 'Athens',
+    lat: 37.9838,
+    lng: 23.7275,
+    website: 'https://www.athensgymnastics.gr',
+    contact: '+30 210 345 6789',
+    contactEmail: 'info@athensgymnastics.gr',
+    description: 'A vibrant gymnastics academy in Athens, the birthplace of the Olympic Games, offering training in the cradle of gymnastics with Mediterranean flair.',
+    ageGroups: ['Junior', 'Adult'],
+    level: 'All levels',
+    individualLessons: true,
+    boarding: false,
+    beach: { distance: 20, description: 'Athens Riviera beaches along the Saronic Gulf coast' },
+    priceRange: { from: 500, to: 1100, unit: 'week', display: '€500 - €1,100/week' },
+    socialMedia: { instagram: '@athensgym', facebook: 'https://facebook.com/athensgym', twitter: '@athensgym' },
+    climate: 'athens',
+    facilities: 'Sprung floor, vault runway, beam, bars, rings, foam pit, trampoline, dance studio, outdoor conditioning area',
+    courtSurfaces: ['Artistic gymnastics', 'Rhythmic gymnastics', 'Trampoline', 'Tumbling'],
+    programs: [
+      { name: 'Olympic Heritage Artistic Programme', price: '€750/week', desc: 'Artistic gymnastics inspired by Greece\'s Olympic legacy' },
+      { name: 'Mediterranean Rhythmic Camp', price: '€600/week', desc: 'Rhythmic gymnastics with Greek dance influences and choreography' },
+      { name: 'Youth Olympic Foundations', price: '€500/week', desc: 'Introductory programme for young gymnasts aged 6-12' }
+    ],
+    coaches: [
+      { name: 'Nikolaos Papadopoulos', credential: 'Hellenic Gymnastics Federation Coach', background: 'Former Greek national team artistic gymnast and Athens 2004 Olympic volunteer coach', atpWta: false, bestRanking: null, rankingNote: null, languages: ['English', 'Greek', 'French'], instagram: null }
+    ],
+    photos: ['https://images.unsplash.com/photo-1566577739112-5180d4bf9390?w=800'],
+    upcomingCamps: [
+      { name: 'Athens Summer Olympic Camp', startDate: '2026-06-15', endDate: '2026-06-22', price: '€750', level: 'All levels' }
+    ],
+    accommodation: {
+      types: [{ type: 'hotel', label: 'Athens Centre Hotel', pricePerWeek: 350, maxOccupancy: 2, bathType: 'ensuite', mealsIncluded: false }],
+      companionsAllowed: true,
+      childrenAllowed: true,
+      minStay: '1 week',
+      shuttleToTraining: true,
+      notes: 'Partner hotel in central Athens near the Acropolis with metro access'
+    },
+    availability: {
+      status: 'open',
+      nextIntake: '2026-05-15',
+      spotsLeft: 20,
+      responseTime: '24h',
+      privateLessons: true,
+      yearRound: true
+    },
+    juniorInfo: {
+      minAge: 6,
+      maxAge: 18,
+      supervision: '24/7',
+      guardianStay: true,
+      schooling: 'Greek international school partnership for extended stays',
+      medicalStaff: true,
+      safeguarding: 'Hellenic Gymnastics Federation child protection standards',
+      airportPickup: true,
+      mealPlan: 'Full board with Mediterranean cuisine and dietary accommodations',
+      curfew: '21:00 weekdays, 22:00 weekends',
+      roommatePairing: 'Age-based groups',
+      languageSupport: ['English', 'Greek'],
+      emergencyProtocol: 'On-site first aid with Evangelismos Hospital nearby'
+    }
+  },
+  {
+    id: 'lisbon-gymnastics-academy',
+    name: 'Lisbon Gymnastics Academy',
+    country: 'Portugal',
+    countryFlag: '🇵🇹',
+    city: 'Lisbon',
+    lat: 38.7223,
+    lng: -9.1393,
+    website: 'https://www.lisbongymnastics.pt',
+    contact: '+351 21 345 6789',
+    contactEmail: 'info@lisbongymnastics.pt',
+    description: 'A dynamic gymnastics academy in Lisbon offering modern training in artistic and rhythmic gymnastics with a warm Portuguese welcome and Atlantic coast setting.',
+    ageGroups: ['Junior', 'Adult'],
+    level: 'All levels',
+    individualLessons: true,
+    boarding: true,
+    beach: { distance: 15, description: 'Atlantic coast beaches at Cascais and Costa da Caparica' },
+    priceRange: { from: 450, to: 1100, unit: 'week', display: '€450 - €1,100/week' },
+    socialMedia: { instagram: '@lisbongym', facebook: 'https://facebook.com/lisbongym', twitter: '@lisbongym' },
+    climate: 'lisbon',
+    facilities: 'Sprung floor, vault runway, beam, bars, rings, foam pit, trampoline, dance studio, Pilates room',
+    courtSurfaces: ['Artistic gymnastics', 'Rhythmic gymnastics', 'Trampoline', 'Tumbling'],
+    programs: [
+      { name: 'Portuguese Artistic Gymnastics', price: '€700/week', desc: 'Artistic gymnastics training with Portuguese coaching excellence' },
+      { name: 'Atlantic Rhythmic Programme', price: '€600/week', desc: 'Rhythmic gymnastics with creative choreography and apparatus mastery' }
+    ],
+    coaches: [
+      { name: 'Sofia Ferreira', credential: 'FGP National Coach', background: 'Former Portuguese national rhythmic gymnastics team member and World Championships participant', atpWta: false, bestRanking: null, rankingNote: null, languages: ['English', 'Portuguese', 'Spanish'], instagram: null }
+    ],
+    photos: ['https://images.unsplash.com/photo-1518611012118-696072aa579a?w=800'],
+    upcomingCamps: [
+      { name: 'Lisbon Spring Gymnastics', startDate: '2026-03-23', endDate: '2026-03-30', price: '€700', level: 'Intermediate' }
+    ],
+    accommodation: {
+      types: [{ type: 'apartment', label: 'Lisbon Athlete Apartment', pricePerWeek: 350, maxOccupancy: 2, bathType: 'ensuite', mealsIncluded: false }],
+      companionsAllowed: true,
+      childrenAllowed: true,
+      minStay: '1 week',
+      shuttleToTraining: true,
+      notes: 'Modern apartment in Lisbon with metro and tram access'
+    },
+    availability: {
+      status: 'limited',
+      nextIntake: '2026-03-01',
+      spotsLeft: 10,
+      responseTime: '48h',
+      privateLessons: true,
+      yearRound: true
+    },
+    juniorInfo: {
+      minAge: 6,
+      maxAge: 18,
+      supervision: '24/7',
+      guardianStay: true,
+      schooling: 'Portuguese international school access for long-term students',
+      medicalStaff: true,
+      safeguarding: 'Portuguese Gymnastics Federation child welfare standards',
+      airportPickup: true,
+      mealPlan: 'Full board with Portuguese cuisine and sports nutrition',
+      curfew: '21:00 weekdays, 22:00 weekends',
+      roommatePairing: 'Age-based groups',
+      languageSupport: ['English', 'Portuguese'],
+      emergencyProtocol: 'On-site medical support with Hospital de Santa Maria nearby'
+    }
+  },
+  {
+    id: 'bern-rhythmic-gymnastics-centre',
+    name: 'Bern Rhythmic Gymnastics Centre',
+    country: 'Switzerland',
+    countryFlag: '🇨🇭',
+    city: 'Bern',
+    lat: 46.9480,
+    lng: 7.4474,
+    website: 'https://www.bernrhythmicgym.ch',
+    contact: '+41 31 345 6789',
+    contactEmail: 'info@bernrhythmicgym.ch',
+    description: 'A specialised rhythmic gymnastics centre in Bern, offering elite-level rhythmic and aesthetic gymnastics training with Swiss precision and dedication.',
+    ageGroups: ['Junior', 'Adult'],
+    level: 'All levels',
+    individualLessons: true,
+    boarding: true,
+    beach: { distance: null, description: 'No beach nearby, Aare River nearby' },
+    priceRange: { from: 1000, to: 2200, unit: 'week', display: 'CHF 1,000 - CHF 2,200/week' },
+    socialMedia: { instagram: '@bernrhythmicgym', facebook: 'https://facebook.com/bernrhythmicgym', twitter: '@bernrhythmicgym' },
+    climate: 'bern',
+    facilities: 'Rhythmic gymnastics hall, sprung floor, apparatus storage, dance studio, ballet barre room, video analysis suite, Pilates room',
+    courtSurfaces: ['Artistic gymnastics', 'Rhythmic gymnastics', 'Trampoline', 'Tumbling'],
+    programs: [
+      { name: 'Swiss Rhythmic Excellence', price: 'CHF 1500/week', desc: 'Elite rhythmic gymnastics with apparatus mastery and expressive choreography' },
+      { name: 'Aesthetic Group Gymnastics', price: 'CHF 1200/week', desc: 'Group rhythmic gymnastics focusing on synchronisation and teamwork' },
+      { name: 'Junior Rhythmic Development', price: 'CHF 1000/week', desc: 'Progressive rhythmic gymnastics for young athletes aged 6-14' }
+    ],
+    coaches: [
+      { name: 'Lena Müller', credential: 'STV Rhythmic National Coach', background: 'Former Swiss national rhythmic gymnastics champion and international competition judge', atpWta: false, bestRanking: null, rankingNote: null, languages: ['English', 'German', 'French', 'Italian'], instagram: null }
+    ],
+    photos: ['https://images.unsplash.com/photo-1566577739112-5180d4bf9390?w=800'],
+    upcomingCamps: [
+      { name: 'Bern Rhythmic Winter Camp', startDate: '2027-01-11', endDate: '2027-01-18', price: 'CHF 1500', level: 'Advanced' }
+    ],
+    accommodation: {
+      types: [{ type: 'hotel', label: 'Bern Bellevue Hotel', pricePerWeek: 750, maxOccupancy: 2, bathType: 'ensuite', mealsIncluded: true }],
+      companionsAllowed: true,
+      childrenAllowed: true,
+      minStay: '1 week',
+      shuttleToTraining: true,
+      notes: 'Premium hotel in Bern\'s Old Town with tram access and mountain views'
+    },
+    availability: {
+      status: 'waitlist',
+      nextIntake: '2026-09-01',
+      spotsLeft: 4,
+      responseTime: '72h',
+      privateLessons: true,
+      yearRound: true
+    },
+    juniorInfo: {
+      minAge: 6,
+      maxAge: 18,
+      supervision: '24/7',
+      guardianStay: true,
+      schooling: 'Swiss bilingual school partnership for extended stays',
+      medicalStaff: true,
+      safeguarding: 'Swiss Olympic safeguarding standards with background checks',
+      airportPickup: true,
+      mealPlan: 'Full board with Swiss cuisine and sports nutrition',
+      curfew: '21:00 weekdays, 22:00 weekends',
+      roommatePairing: 'Age-based groups',
+      languageSupport: ['English', 'German', 'French'],
+      emergencyProtocol: 'On-site first aid with Inselspital Bern university hospital nearby'
+    }
+  },
+  {
+    id: 'dublin-gymnastics-centre',
+    name: 'Dublin Gymnastics Centre',
+    country: 'Ireland',
+    countryFlag: '🇮🇪',
+    city: 'Dublin',
+    lat: 53.3498,
+    lng: -6.2603,
+    website: 'https://www.dublingymnastics.ie',
+    contact: '+353 1 234 5678',
+    contactEmail: 'info@dublingymnastics.ie',
+    description: 'Ireland\'s leading gymnastics centre in Dublin, offering comprehensive training in artistic and trampoline gymnastics with a welcoming Irish atmosphere.',
+    ageGroups: ['Junior', 'Adult'],
+    level: 'All levels',
+    individualLessons: true,
+    boarding: false,
+    beach: { distance: 12, description: 'Dublin Bay beaches at Sandymount and Dollymount Strand' },
+    priceRange: { from: 600, to: 1400, unit: 'week', display: '€600 - €1,400/week' },
+    socialMedia: { instagram: '@dublingym', facebook: 'https://facebook.com/dublingym', twitter: '@dublingym' },
+    climate: 'dublin',
+    facilities: 'Sprung floor, vault runway, beam, bars, rings, foam pit, trampoline, dance studio, strength room',
+    courtSurfaces: ['Artistic gymnastics', 'Rhythmic gymnastics', 'Trampoline', 'Tumbling'],
+    programs: [
+      { name: 'Irish Artistic Gymnastics', price: '€950/week', desc: 'Artistic gymnastics training following Gymnastics Ireland standards' },
+      { name: 'Trampoline Ireland Programme', price: '€800/week', desc: 'Specialised trampoline and double-mini trampoline training' }
+    ],
+    coaches: [
+      { name: 'Aoife Murphy', credential: 'Gymnastics Ireland National Coach', background: 'Former Irish national team artistic gymnast and Commonwealth Games participant', atpWta: false, bestRanking: null, rankingNote: null, languages: ['English', 'Irish'], instagram: null }
+    ],
+    photos: ['https://images.unsplash.com/photo-1518611012118-696072aa579a?w=800'],
+    upcomingCamps: [
+      { name: 'Dublin Summer Gymnastics', startDate: '2026-07-20', endDate: '2026-07-27', price: '€950', level: 'All levels' }
+    ],
+    accommodation: {
+      types: [{ type: 'hotel', label: 'Dublin City Hotel', pricePerWeek: 480, maxOccupancy: 2, bathType: 'ensuite', mealsIncluded: false }],
+      companionsAllowed: true,
+      childrenAllowed: true,
+      minStay: '1 week',
+      shuttleToTraining: true,
+      notes: 'Partner hotel in Dublin city centre with DART rail access'
+    },
+    availability: {
+      status: 'open',
+      nextIntake: '2026-07-01',
+      spotsLeft: 16,
+      responseTime: '24h',
+      privateLessons: true,
+      yearRound: true
+    },
+    juniorInfo: {
+      minAge: 6,
+      maxAge: 18,
+      supervision: '24/7',
+      guardianStay: true,
+      schooling: 'Irish school integration available for extended stays',
+      medicalStaff: true,
+      safeguarding: 'Gymnastics Ireland child protection and welfare standards',
+      airportPickup: true,
+      mealPlan: 'Full board with Irish cuisine and dietary accommodations',
+      curfew: '21:00 weekdays, 22:00 weekends',
+      roommatePairing: 'Age-based groups',
+      languageSupport: ['English', 'Irish'],
+      emergencyProtocol: 'On-site first aid with St James\'s Hospital nearby'
+    }
+  },
+  {
+    id: 'zagreb-gymnastics-akademija',
+    name: 'Zagreb Gymnastics Akademija',
+    country: 'Croatia',
+    countryFlag: '🇭🇷',
+    city: 'Zagreb',
+    lat: 45.8150,
+    lng: 15.9819,
+    website: 'https://www.zagrebgymnastics.hr',
+    contact: '+385 1 234 5678',
+    contactEmail: 'info@zagrebgymnastics.hr',
+    description: 'A growing gymnastics academy in Zagreb, drawing on Croatia\'s strong sporting culture to deliver quality artistic and rhythmic gymnastics training.',
+    ageGroups: ['Junior', 'Adult'],
+    level: 'All levels',
+    individualLessons: true,
+    boarding: true,
+    beach: { distance: null, description: 'No beach nearby, Adriatic coast 2 hours south' },
+    priceRange: { from: 450, to: 1050, unit: 'week', display: '€450 - €1,050/week' },
+    socialMedia: { instagram: '@zagrebgym', facebook: 'https://facebook.com/zagrebgym', twitter: '@zagrebgym' },
+    climate: 'zagreb',
+    facilities: 'Sprung floor, vault runway, beam, bars, rings, foam pit, trampoline, dance studio, conditioning area',
+    courtSurfaces: ['Artistic gymnastics', 'Rhythmic gymnastics', 'Trampoline', 'Tumbling'],
+    programs: [
+      { name: 'Croatian Artistic Programme', price: '€700/week', desc: 'Artistic gymnastics with Croatian coaching and competition preparation' },
+      { name: 'Adriatic Rhythmic Camp', price: '€550/week', desc: 'Rhythmic gymnastics combining technical training and creative expression' },
+      { name: 'Junior Gymnastics Foundations', price: '€450/week', desc: 'Fundamental gymnastics skills for young athletes aged 6-12' }
+    ],
+    coaches: [
+      { name: 'Ivan Horvat', credential: 'Croatian Gymnastics Federation Coach', background: 'Former Croatian national team artistic gymnast and Balkan Championships medallist', atpWta: false, bestRanking: null, rankingNote: null, languages: ['English', 'Croatian', 'Serbian'], instagram: null }
+    ],
+    photos: ['https://images.unsplash.com/photo-1566577739112-5180d4bf9390?w=800'],
+    upcomingCamps: [
+      { name: 'Zagreb Autumn Gymnastics', startDate: '2026-10-19', endDate: '2026-10-26', price: '€700', level: 'Intermediate' }
+    ],
+    accommodation: {
+      types: [{ type: 'dormitory', label: 'Zagreb Academy Dormitory', pricePerWeek: 250, maxOccupancy: 3, bathType: 'shared', mealsIncluded: true }],
+      companionsAllowed: true,
+      childrenAllowed: true,
+      minStay: '1 week',
+      shuttleToTraining: true,
+      notes: 'On-campus dormitory in Zagreb with tram access to the city centre'
+    },
+    availability: {
+      status: 'open',
+      nextIntake: '2026-10-01',
+      spotsLeft: 18,
+      responseTime: '24h',
+      privateLessons: true,
+      yearRound: true
+    },
+    juniorInfo: {
+      minAge: 6,
+      maxAge: 18,
+      supervision: '24/7',
+      guardianStay: true,
+      schooling: 'Croatian sports school partnership with English support',
+      medicalStaff: true,
+      safeguarding: 'Croatian Gymnastics Federation child protection protocols',
+      airportPickup: true,
+      mealPlan: 'Full board with Croatian cuisine and dietary options',
+      curfew: '21:00 weekdays, 22:00 weekends',
+      roommatePairing: 'Age-based groups',
+      languageSupport: ['English', 'Croatian'],
+      emergencyProtocol: 'On-site medical support with KBC Zagreb university hospital nearby'
+    }
+  },
+  {
+    id: 'helsinki-gymnastics-centre',
+    name: 'Helsinki Gymnastics Centre',
+    country: 'Finland',
+    countryFlag: '🇫🇮',
+    city: 'Helsinki',
+    lat: 60.1699,
+    lng: 24.9384,
+    website: 'https://www.helsinkigymnastics.fi',
+    contact: '+358 9 234 5678',
+    contactEmail: 'info@helsinkigymnastics.fi',
+    description: 'Finland\'s top gymnastics centre in Helsinki, offering Nordic-quality training in artistic and rhythmic gymnastics with excellent sports science support.',
+    ageGroups: ['Junior', 'Adult'],
+    level: 'All levels',
+    individualLessons: true,
+    boarding: false,
+    beach: { distance: 8, description: 'Helsinki waterfront and Hietaniemi Beach nearby' },
+    priceRange: { from: 750, to: 1700, unit: 'week', display: '€750 - €1,700/week' },
+    socialMedia: { instagram: '@helsinkigym', facebook: 'https://facebook.com/helsinkigym', twitter: '@helsinkigym' },
+    climate: 'helsinki',
+    facilities: 'Sprung floor, vault runway, beam, bars, rings, foam pit, trampoline, dance studio, sauna, ice bath recovery',
+    courtSurfaces: ['Artistic gymnastics', 'Rhythmic gymnastics', 'Trampoline', 'Tumbling'],
+    programs: [
+      { name: 'Finnish Artistic Gymnastics', price: '€1100/week', desc: 'Artistic gymnastics training with Finnish sports science methodology' },
+      { name: 'Nordic Trampoline Programme', price: '€900/week', desc: 'Trampoline and tumbling with Nordic coaching philosophy' }
+    ],
+    coaches: [
+      { name: 'Annika Virtanen', credential: 'Finnish Gymnastics Federation Head Coach', background: 'Former Finnish national team rhythmic gymnast and Nordic Championships medallist', atpWta: false, bestRanking: null, rankingNote: null, languages: ['English', 'Finnish', 'Swedish'], instagram: null }
+    ],
+    photos: ['https://images.unsplash.com/photo-1518611012118-696072aa579a?w=800'],
+    upcomingCamps: [
+      { name: 'Helsinki Winter Gymnastics', startDate: '2027-02-01', endDate: '2027-02-08', price: '€1100', level: 'Advanced' }
+    ],
+    accommodation: {
+      types: [{ type: 'apartment', label: 'Helsinki Athlete Apartment', pricePerWeek: 550, maxOccupancy: 2, bathType: 'ensuite', mealsIncluded: false }],
+      companionsAllowed: true,
+      childrenAllowed: true,
+      minStay: '1 week',
+      shuttleToTraining: true,
+      notes: 'Modern apartment in Helsinki with metro and tram access'
+    },
+    availability: {
+      status: 'waitlist',
+      nextIntake: '2026-08-15',
+      spotsLeft: 6,
+      responseTime: '72h',
+      privateLessons: true,
+      yearRound: true
+    },
+    juniorInfo: {
+      minAge: 6,
+      maxAge: 18,
+      supervision: '24/7',
+      guardianStay: true,
+      schooling: 'Finnish international school access with English instruction',
+      medicalStaff: true,
+      safeguarding: 'Finnish Gymnastics Federation child welfare standards',
+      airportPickup: true,
+      mealPlan: 'Full board with Finnish cuisine and sports nutrition',
+      curfew: '21:00 weekdays, 22:00 weekends',
+      roommatePairing: 'Age-based groups',
+      languageSupport: ['English', 'Finnish', 'Swedish'],
+      emergencyProtocol: 'On-site medical support with HUS Helsinki University Hospital nearby'
+    }
+  },
+  {
+    id: 'gymnastics-ireland-national-centre',
+    name: 'Gymnastics Ireland National Centre',
+    country: 'Ireland',
+    countryFlag: '🇮🇪',
+    city: 'Dublin',
+    lat: 53.3558,
+    lng: -6.2489,
+    website: 'https://www.gymnasticsireland.com',
+    contact: '+353 1 625 1125',
+    contactEmail: 'info@gymnasticsireland.com',
+    description: 'The national gymnastics centre for Ireland in Dublin, developing talent across artistic, rhythmic, and trampoline disciplines with world-class coaching.',
+    ageGroups: ['Junior', 'Adult'],
+    level: 'All levels',
+    individualLessons: true,
+    boarding: true,
+    beach: { distance: null, description: 'No beach nearby' },
+    priceRange: { from: 550, to: 1300, unit: 'week', display: '€550 - €1,300/week' },
+    socialMedia: { instagram: '@gymnasticsireland', facebook: 'https://facebook.com/gymnasticsireland', twitter: '@gymireland' },
+    climate: 'dublin',
+    facilities: 'Sprung floor, vault runway, beam, bars, rings, foam pit, trampoline, dance studio, Pilates room',
+    courtSurfaces: ['Artistic gymnastics', 'Rhythmic gymnastics', 'Trampoline', 'Tumbling'],
+    programs: [
+      { name: 'Irish Artistic Gymnastics Camp', price: '€850/week', desc: 'Comprehensive artistic gymnastics training with national-level coaches' },
+      { name: 'Junior Development Programme', price: '€600/week', desc: 'Structured progression for young gymnasts aged 6-12' },
+      { name: 'Trampoline & Tumbling Intensive', price: '€750/week', desc: 'Specialised trampoline and tumbling training with competition preparation' }
+    ],
+    coaches: [
+      { name: 'Aoife Kelly', credential: 'FIG Brevet Judge & Coach', background: 'Former Irish national team gymnast and international level coach with 18 years experience', atpWta: false, bestRanking: null, rankingNote: null, languages: ['English', 'Irish'], instagram: null }
+    ],
+    photos: ['https://images.unsplash.com/photo-1566577739112-5180d4bf9390?w=800'],
+    upcomingCamps: [
+      { name: 'Dublin Summer Gymnastics Camp', startDate: '2026-07-06', endDate: '2026-07-13', price: '€850', level: 'Intermediate' }
+    ],
+    accommodation: {
+      types: [{ type: 'dormitory', label: 'Academy Dormitory', pricePerWeek: 300, maxOccupancy: 3, bathType: 'shared', mealsIncluded: true }],
+      companionsAllowed: true,
+      childrenAllowed: true,
+      minStay: '1 week',
+      shuttleToTraining: true,
+      notes: 'On-campus dormitory with full meal service and recovery facilities'
+    },
+    availability: {
+      status: 'open',
+      nextIntake: '2026-06-01',
+      spotsLeft: 18,
+      responseTime: '24h',
+      privateLessons: true,
+      yearRound: true
+    },
+    juniorInfo: {
+      minAge: 6,
+      maxAge: 18,
+      supervision: '24/7',
+      guardianStay: true,
+      schooling: 'Irish school integration with English-language instruction',
+      medicalStaff: true,
+      safeguarding: 'Gymnastics Ireland child protection standards, Garda-vetted coaches',
+      airportPickup: true,
+      mealPlan: 'Full board with sports nutrition and dietary accommodations',
+      curfew: '21:00 weekdays, 22:00 weekends',
+      roommatePairing: 'Age-based groups',
+      languageSupport: ['English', 'Irish'],
+      emergencyProtocol: 'On-site physiotherapy and medical team with Beaumont Hospital partnership'
+    }
+  },
+  {
+    id: 'serbian-gymnastics-centre',
+    name: 'Serbian Gymnastics Centre',
+    country: 'Serbia',
+    countryFlag: '🇷🇸',
+    city: 'Belgrade',
+    lat: 44.7866,
+    lng: 20.4489,
+    website: 'https://www.gymnasticsserbia.rs',
+    contact: '+381 11 901 2345',
+    contactEmail: 'info@gymnasticsserbia.rs',
+    description: 'Serbia\'s central gymnastics facility in Belgrade, offering artistic and rhythmic gymnastics training with national-level coaching and modern apparatus.',
+    ageGroups: ['Junior', 'Adult'],
+    level: 'All levels',
+    individualLessons: true,
+    boarding: false,
+    beach: { distance: null, description: 'No beach nearby, Ada Ciganlija lake recreation' },
+    priceRange: { from: 500, to: 1300, unit: 'week', display: '€500 - €1,300/week' },
+    socialMedia: { instagram: '@gymnasticsserbia', facebook: 'https://facebook.com/gymnasticsserbia', twitter: '@gymnasticsserbia' },
+    climate: 'belgrade',
+    facilities: 'Sprung floor, vault runway, beam, bars, rings, foam pit, trampoline, rhythmic gymnastics hall, dance studio, gym',
+    courtSurfaces: ['Artistic gymnastics', 'Rhythmic gymnastics', 'Trampoline', 'Tumbling'],
+    programs: [
+      { name: 'Serbian Artistic Gymnastics', price: '€1,000/week', desc: 'Artistic gymnastics training with Serbian national coaching methodology' },
+      { name: 'Youth Gymnastics Foundation', price: '€500/week', desc: 'Fundamental gymnastics skills for children and beginners' }
+    ],
+    coaches: [
+      { name: 'Jelena Popović', credential: 'Serbian Gymnastics Federation Head Coach', background: 'Former Serbian national team rhythmic gymnast and European Championships competitor', atpWta: false, bestRanking: null, rankingNote: null, languages: ['English', 'Serbian'], instagram: null }
+    ],
+    photos: ['https://images.unsplash.com/photo-1518611012118-696072aa579a?w=800'],
+    upcomingCamps: [
+      { name: 'Belgrade Gymnastics Camp', startDate: '2026-08-03', endDate: '2026-08-10', price: '€1,000', level: 'All levels' }
+    ],
+    accommodation: {
+      types: [{ type: 'apartment', label: 'Belgrade Sport Apartment', pricePerWeek: 250, maxOccupancy: 2, bathType: 'ensuite', mealsIncluded: false }],
+      companionsAllowed: true,
+      childrenAllowed: true,
+      minStay: '1 week',
+      shuttleToTraining: true,
+      notes: 'Modern apartment near the gymnastics centre with public transport access'
+    },
+    availability: {
+      status: 'open',
+      nextIntake: '2026-07-01',
+      spotsLeft: 14,
+      responseTime: '48h',
+      privateLessons: true,
+      yearRound: true
+    },
+    juniorInfo: {
+      minAge: 6,
+      maxAge: 18,
+      supervision: '24/7',
+      guardianStay: true,
+      schooling: 'Serbian school integration available',
+      medicalStaff: true,
+      safeguarding: 'Serbian Gymnastics Federation child welfare standards',
+      airportPickup: true,
+      mealPlan: 'Full board with Serbian cuisine and sports nutrition',
+      curfew: '21:00 weekdays, 22:00 weekends',
+      roommatePairing: 'Age-based groups',
+      languageSupport: ['Serbian', 'English'],
+      emergencyProtocol: 'On-site medical support, Clinical Centre of Serbia nearby'
+    }
+  },
+  {
+    id: 'turkish-gymnastics-federation-centre',
+    name: 'Turkish Gymnastics Federation Centre',
+    country: 'Turkey',
+    countryFlag: '',
+    city: 'Ankara',
+    lat: 39.9334,
+    lng: 32.8597,
+    website: 'https://www.tgf.gov.tr',
+    contact: '+90 312 310 1234',
+    contactEmail: 'info@tgf.gov.tr',
+    description: 'Turkey\'s national gymnastics training centre in Ankara, home of the Turkish Gymnastics Federation. Modern indoor facilities for artistic, rhythmic and trampoline gymnastics.',
+    ageGroups: ['Junior', 'Adult'],
+    level: 'All levels',
+    individualLessons: true,
+    boarding: true,
+    beach: { distance: null, description: 'Landlocked capital, no beach access' },
+    priceRange: { from: 500, to: 1400, unit: 'week', display: '500 - 1,400/week' },
+    socialMedia: { instagram: '@turkishgymnastics', facebook: 'https://facebook.com/turkishgymnastics', twitter: '@tgf_official' },
+    climate: 'ankara',
+    facilities: 'Full artistic gymnastics hall with Olympic apparatus, rhythmic gymnastics floor, trampoline area, foam pit, strength conditioning gym, physiotherapy, video analysis',
+    courtSurfaces: ['Artistic gymnastics hall', 'Rhythmic gymnastics floor', 'Trampoline area'],
+    programs: [
+      { name: 'Artistic Gymnastics Performance', price: '1,200/week', desc: 'Intensive artistic gymnastics training on all apparatus with Turkish national coaches' },
+      { name: 'Junior Development Programme', price: '500/week', desc: 'Age-appropriate gymnastics development with safety and fun focus' },
+      { name: 'Rhythmic Gymnastics Intensive', price: '1,000/week', desc: 'Rhythmic gymnastics training with choreography and apparatus work' },
+      { name: 'Trampoline & Tumbling Camp', price: '700/week', desc: 'Specialised trampoline and tumbling training for acrobatic skills development' }
+    ],
+    coaches: [
+      { name: 'Ayşe Yıldız', credential: 'FIG Level 4 Coach', background: 'Former Turkish national team gymnast and Olympic Games coach. 20 years of coaching experience at international level.', atpWta: false, bestRanking: null, rankingNote: null, languages: ['Turkish', 'English'], instagram: null }
+    ],
+    photos: ['https://images.unsplash.com/photo-1566241440091-ec10de8db2e1?w=800'],
+    upcomingCamps: [
+      { name: 'Summer Gymnastics Camp', startDate: '2026-07-06', endDate: '2026-07-13', price: '1,200', level: 'All levels' },
+      { name: 'Winter Training Camp', startDate: '2027-01-12', endDate: '2027-01-19', price: '1,000', level: 'Intermediate' }
+    ],
+    accommodation: {
+      types: [{ type: 'hotel', label: 'Ankara Sports Hotel', pricePerWeek: 350, maxOccupancy: 2, bathType: 'ensuite', mealsIncluded: true }],
+      companionsAllowed: true,
+      childrenAllowed: true,
+      minStay: '1 week',
+      shuttleToTraining: true,
+      notes: 'On-site athlete accommodation at the national training centre'
+    },
+    availability: {
+      status: 'open',
+      nextIntake: '2026-06-01',
+      spotsLeft: 15,
+      responseTime: '48h',
+      privateLessons: true,
+      yearRound: true
+    },
+    juniorInfo: {
+      minAge: 6,
+      maxAge: 18,
+      supervision: '24/7',
+      guardianStay: true,
+      schooling: 'Partnership with Ankara international schools',
+      medicalStaff: true,
+      safeguarding: 'Turkish Gymnastics Federation child protection protocols',
+      airportPickup: true,
+      mealPlan: 'Full board with Turkish sports nutrition',
+      curfew: '21:00 weekdays, 22:00 weekends',
+      roommatePairing: 'Age-based groups',
+      languageSupport: ['Turkish', 'English'],
+      emergencyProtocol: '24/7 medical staff on-site, Ankara City Hospital 15 minutes'
+    }
   }
 ];
 
@@ -857,6 +1842,84 @@ const CLIMATE_DATA = {
     rainyDays: 125,
     humidity: 76,
     description: 'Continental climate with warm summers and cold winters in the Swiss Mittelland'
+  },
+  budapest: {
+    averageTemp: { summer: 22, winter: 0 },
+    rainyDays: 100,
+    humidity: 70,
+    description: 'Continental climate with warm summers and cold winters'
+  },
+  warsaw: {
+    averageTemp: { summer: 20, winter: -1 },
+    rainyDays: 110,
+    humidity: 75,
+    description: 'Continental climate with warm summers and cold winters'
+  },
+  prague: {
+    averageTemp: { summer: 19, winter: 0 },
+    rainyDays: 110,
+    humidity: 73,
+    description: 'Oceanic-continental climate with warm summers and cold winters'
+  },
+  stockholm: {
+    averageTemp: { summer: 18, winter: -1 },
+    rainyDays: 108,
+    humidity: 76,
+    description: 'Humid continental climate with mild summers and cold winters'
+  },
+  copenhagen: {
+    averageTemp: { summer: 18, winter: 2 },
+    rainyDays: 120,
+    humidity: 80,
+    description: 'Maritime climate with mild summers and cool winters'
+  },
+  vienna: {
+    averageTemp: { summer: 21, winter: 1 },
+    rainyDays: 105,
+    humidity: 70,
+    description: 'Continental climate with warm summers and cold winters'
+  },
+  athens: {
+    averageTemp: { summer: 28, winter: 10 },
+    rainyDays: 50,
+    humidity: 55,
+    description: 'Mediterranean climate with hot, dry summers and mild winters'
+  },
+  lisbon: {
+    averageTemp: { summer: 24, winter: 12 },
+    rainyDays: 60,
+    humidity: 65,
+    description: 'Mediterranean climate with warm, dry summers and mild, wet winters'
+  },
+  dublin: {
+    averageTemp: { summer: 16, winter: 5 },
+    rainyDays: 150,
+    humidity: 82,
+    description: 'Oceanic climate with cool summers and mild, damp winters'
+  },
+  zagreb: {
+    averageTemp: { summer: 22, winter: 2 },
+    rainyDays: 115,
+    humidity: 72,
+    description: 'Continental climate with warm summers and cold winters'
+  },
+  helsinki: {
+    averageTemp: { summer: 17, winter: -4 },
+    rainyDays: 115,
+    humidity: 78,
+    description: 'Humid continental climate with mild summers and cold, snowy winters'
+  },
+  belgrade: {
+    averageTemp: { summer: 23, winter: 1 },
+    rainyDays: 95,
+    humidity: 70,
+    description: 'Continental climate with warm summers and cold winters'
+  },
+  ankara: {
+    averageTemp: { summer: 25, winter: 1 },
+    rainyDays: 100,
+    humidity: 60,
+    description: 'Continental climate with hot dry summers and cold snowy winters'
   }
 };
 
@@ -868,4 +1931,4 @@ const NEWS_ITEMS = [
   { title: 'Trampoline gymnastics sees surge in global popularity', date: '2024-12-15', summary: 'FIG reports a 40% increase in trampoline gymnastics registrations worldwide over the past two years.' }
 ];
 
-const COUNTRIES = ['Romania', 'France', 'Germany', 'UK', 'Italy', 'Spain', 'Netherlands', 'Belgium', 'Switzerland'];
+const COUNTRIES = ['Romania', 'France', 'Germany', 'UK', 'Italy', 'Spain', 'Netherlands', 'Belgium', 'Switzerland', 'Hungary', 'Poland', 'Czech Republic', 'Sweden', 'Denmark', 'Austria', 'Greece', 'Portugal', 'Ireland', 'Croatia', 'Finland', 'Serbia', 'Turkey'];

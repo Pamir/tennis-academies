@@ -1148,6 +1148,231 @@ const ACADEMIES = [
       languageSupport: ['English', 'Croatian'],
       emergencyProtocol: true
     }
+  },
+  {
+    id: 'national-aquatic-centre-dublin',
+    availability: { status: 'open', nextIntake: '2026-09-01', spotsLeft: 10, responseTime: '3-5 days', privateLessons: true, yearRound: true },
+    name: 'National Aquatic Centre',
+    country: 'Ireland',
+    countryFlag: '🇮🇪',
+    city: 'Dublin',
+    lat: 53.3867, lng: -6.3750,
+    website: 'https://www.nationalaquaticcentre.ie',
+    contactEmail: 'info@nationalaquaticcentre.ie',
+    individualLessons: true,
+    boarding: false,
+    level: 'All levels',
+    starred: false,
+    airport: { name: 'Dublin Airport', code: 'DUB', distance: '15 km', driveTime: '20 min' },
+    beach: { distance: 10, description: 'Dublin Bay coast at Dollymount Strand, 10 km east' },
+    climate: 'dublin',
+    priceRange: { from: 600, to: 2000, unit: 'month', display: '€600–€2,000/mo' },
+    programs: [
+      { name: 'Junior Squad', price: '€600/mo', desc: 'Technique-focused training for ages 8-16, 8 pool sessions/week' },
+      { name: 'Competitive Program', price: '€1,200/mo', desc: 'Race preparation, video analysis, strength & conditioning in Olympic-size pool' },
+      { name: 'Elite Performance', price: '€2,000/mo', desc: 'Full-time training, sports science support, international competition calendar' }
+    ],
+    coaches: [
+      { name: 'Ben Higson', credential: 'Swim Ireland Level 3', background: 'Head coach of Ireland national performance squad, developed multiple Olympians', atpWta: false, bestRanking: null, rankingNote: '', languages: ['English'], instagram: '' },
+      { name: 'Orlagh Aisling', credential: 'FINA Certified Coach', background: 'Former Irish international swimmer, specialist in freestyle and IM coaching', atpWta: false, bestRanking: null, rankingNote: '', languages: ['English', 'Irish'], instagram: '' }
+    ],
+    bestCoachRanking: null,
+    facilities: 'Olympic-size 50m competition pool (10 lanes), 25m training pool, diving pool, dry-land training area, gym, sports science lab',
+    courtSurfaces: ['50m Pool', '25m Pool'],
+    notableAlumni: [],
+    photos: [
+      'https://picsum.photos/seed/nac-dublin-1/800/500',
+      'https://picsum.photos/seed/nac-dublin-2/800/500',
+      'https://picsum.photos/seed/nac-dublin-3/800/500'
+    ],
+    description: 'Ireland\'s premier swimming facility, the National Aquatic Centre in Abbotstown features an Olympic-size 50m pool and world-class training environment. Home to Swim Ireland\'s national performance programmes.',
+    nearbyHotels: [
+      { name: 'Castleknock Hotel', stars: 4, distanceKm: 2.0, features: ['Restaurant', 'Spa', 'Gym', 'Golf'], pool: true, wifi: true, pricePerNight: '€150' },
+      { name: 'Carlton Hotel Blanchardstown', stars: 4, distanceKm: 3.0, features: ['Restaurant', 'Bar', 'Parking'], pool: true, wifi: true, pricePerNight: '€120' },
+      { name: 'Premier Inn Dublin Airport', stars: 3, distanceKm: 8.0, features: ['Restaurant', 'Parking'], pool: false, wifi: true, pricePerNight: '€90' }
+    ],
+    nearbyRestaurants: [
+      { name: 'Myos Bar & Grill', cuisine: 'Modern Irish', distanceKm: 2.0, priceRange: '€€€', rating: 4.4, vegetarian: true, outdoor: true },
+      { name: 'The Old Mill Café', cuisine: 'Café', distanceKm: 1.5, priceRange: '€', rating: 4.3, vegetarian: true, outdoor: false }
+    ],
+    nearbyMedical: [
+      { name: 'Connolly Hospital Blanchardstown', type: 'Hospital', distanceKm: 2.0, phone: '+353 1 646 5000', emergency: true }
+    ],
+    costOfLiving: { rent1Bed: '€1,800', meal: '€15', monthlyFood: '€400', transport: '€120', currency: 'EUR', summary: 'Dublin is expensive but the NAC offers excellent value for elite swim training' },
+    scholarships: { available: true, details: 'Swim Ireland performance scholarships for nationally ranked swimmers.' },
+    visaInfo: { schengen: false, eu: true, visaFreeCountries: 'EU/EEA citizens, USA, Canada, Australia, UK — visa-free up to 90 days', notes: 'Ireland is EU but not Schengen. Non-EU citizens may need an Irish visa.' },
+    airportTransfers: [
+      { mode: 'Taxi', duration: '20 min', cost: '€25-35', notes: 'Taxi from Dublin Airport to Abbotstown' },
+      { mode: 'Bus', duration: '35 min', cost: '€3.80', notes: 'Dublin Bus route 38 to Blanchardstown' }
+    ],
+    nearbyTournaments: [
+      { name: 'Irish Open Swimming Championships', level: 'National', surface: '50m Pool', month: 'April', venue: 'National Aquatic Centre' }
+    ],
+    upcomingCamps: [
+      { name: 'Summer Swim Intensive', startDate: '2026-07-06', endDate: '2026-07-17', price: '€1,500', level: 'Advanced' }
+    ],
+    accommodation: {
+      types: [
+        { type: 'private', label: 'Private Room', pricePerWeek: 400, maxOccupancy: 1, bathType: 'ensuite', mealsIncluded: true },
+        { type: 'twin', label: 'Twin Shared Room', pricePerWeek: 260, maxOccupancy: 2, bathType: 'ensuite', mealsIncluded: true }
+      ],
+      companionsAllowed: true,
+      childrenAllowed: true,
+      minStay: 1,
+      shuttleToTraining: true,
+      notes: 'Partner accommodation near Abbotstown campus with pool access'
+    },
+    videoTour: null,
+    juniorInfo: {
+      minAge: 8,
+      maxAge: 18,
+      supervision: 'daytime',
+      guardianStay: true,
+      schooling: 'online-support',
+      medicalStaff: true,
+      safeguarding: true,
+      airportPickup: true,
+      mealPlan: 'half-board',
+      curfew: '22:00',
+      roommatePairing: 'age-gender',
+      languageSupport: ['English', 'Irish'],
+      emergencyProtocol: true
+    }
+  },
+  {
+    id: 'istanbul-aquatic-centre',
+    availability: { status: 'open', nextIntake: '2026-06-01', spotsLeft: 12, responseTime: '24h', privateLessons: true, yearRound: true },
+    name: 'Istanbul Aquatic Centre',
+    country: 'Turkey',
+    countryFlag: '',
+    city: 'Istanbul',
+    lat: 41.0082, lng: 28.9784,
+    website: 'https://www.istanbulaquatic.com.tr',
+    contactEmail: 'info@istanbulaquatic.com.tr',
+    individualLessons: true,
+    boarding: false,
+    level: 'All levels',
+    starred: false,
+    airport: { name: 'Istanbul Airport', code: 'IST', distance: '35 km', driveTime: '45 min' },
+    beach: { distance: 10, description: 'Bosphorus shoreline and Princes Islands beaches accessible' },
+    climate: 'istanbul',
+    priceRange: { from: 400, to: 1200, unit: 'month', display: '4001,200/mo' },
+    programs: [
+      { name: 'Youth Development', price: '400/mo', desc: 'Training for young swimmers with technique and endurance focus' },
+      { name: 'Competitive Squad', price: '800/mo', desc: 'High-performance squad training with race preparation and sports science' },
+      { name: 'Performance Elite', price: '1,200/mo', desc: 'Full competitive program with strength conditioning, video analysis and nutrition planning' }
+    ],
+    coaches: [
+      { name: 'Emre Demir', credential: 'Turkish Swimming Federation Level 3', background: 'Former Turkish Olympic swimmer and national team coach with 15 years experience', atpWta: false, bestRanking: null, rankingNote: '', languages: ['Turkish', 'English'], instagram: '' }
+    ],
+    bestCoachRanking: null,
+    facilities: '50m Olympic pool, 25m training pool, diving well, dry-land training area, gym, physiotherapy, video analysis',
+    courtSurfaces: ['50m Pool', '25m Pool'],
+    notableAlumni: [],
+    photos: [
+      'https://picsum.photos/seed/istanbul-swim-1/800/500',
+      'https://picsum.photos/seed/istanbul-swim-2/800/500'
+    ],
+    description: 'Modern Olympic-standard aquatic centre in Istanbul featuring a 50m pool and comprehensive training facilities. A growing hub for Turkish and international swimmers.',
+    nearbyHotels: [
+      { name: 'Hilton Istanbul Bosphorus', stars: 5, distanceKm: 5, features: ['Restaurant', 'Spa', 'Pool'], pool: true, wifi: true, pricePerNight: '120' },
+      { name: 'ibis Istanbul City', stars: 3, distanceKm: 3, features: ['Restaurant', 'Bar'], pool: false, wifi: true, pricePerNight: '50' }
+    ],
+    nearbyRestaurants: [
+      { name: 'Mikla', cuisine: 'Modern Turkish', distanceKm: 5, priceRange: '', rating: 4.7, vegetarian: true, outdoor: true }
+    ],
+    nearbyMedical: [
+      { name: 'Istanbul University Hospital', type: 'Hospital', distanceKm: 5, phone: '+90 212 414 0000', emergency: true }
+    ],
+    costOfLiving: { rent1Bed: '350', meal: '5', monthlyFood: '200', transport: '25', currency: 'TRY', summary: 'Istanbul offers good value for a major world city' },
+    scholarships: { available: true, details: 'Turkish Swimming Federation talent scholarships for promising swimmers.' },
+    visaInfo: { schengen: false, eu: false, visaFreeCountries: 'EU/EEA citizens, USA, Canada, Australia, UK  visa-free or e-Visa up to 90 days', notes: 'Turkey offers e-Visa for most nationalities.' },
+    airportTransfers: [
+      { mode: 'Metro + Taxi', duration: '45 min', cost: '10-20', notes: 'Istanbul Airport has metro connection to city centre' },
+      { mode: 'Taxi', duration: '40 min', cost: '30-40', notes: '' }
+    ],
+    nearbyTournaments: [],
+    upcomingCamps: [
+      { name: 'Summer Swim Camp', startDate: '2026-07-06', endDate: '2026-07-17', price: '600', level: 'Intermediate' }
+    ],
+    videoTour: null,
+    juniorInfo: {
+      minAge: 8,
+      maxAge: 18,
+      supervision: 'daytime',
+      guardianStay: true,
+      schooling: 'online-support',
+      medicalStaff: true,
+      safeguarding: true,
+      airportPickup: true,
+      mealPlan: 'half-board',
+      curfew: '22:00',
+      roommatePairing: 'age-only',
+      languageSupport: ['Turkish', 'English'],
+      emergencyProtocol: true
+    }
+  },
+  {
+    id: 'belgrade-swimming-centre',
+    availability: { status: 'open', nextIntake: '2026-06-01', spotsLeft: 18, responseTime: '48h', privateLessons: true, yearRound: true },
+    name: 'Serbian Swimming Federation Centre',
+    country: 'Serbia',
+    countryFlag: '🇷🇸',
+    city: 'Belgrade',
+    lat: 44.7866, lng: 20.4489,
+    website: 'https://www.swimserbia.rs',
+    contact: '+381 11 345 6789',
+    contactEmail: 'info@swimserbia.rs',
+    individualLessons: true,
+    boarding: true,
+    level: 'All levels',
+    starred: false,
+    beach: { distance: null, description: 'No beach nearby, Ada Ciganlija lake swimming in summer' },
+    climate: 'belgrade',
+    priceRange: { from: 500, to: 1200, unit: 'week', display: '€500 - €1,200/week' },
+    socialMedia: { instagram: '@swimserbia', facebook: 'https://facebook.com/swimserbia', twitter: '@swimserbia' },
+    programs: [
+      { name: 'Serbian Olympic Swim Programme', price: '€1,000/week', desc: 'Elite swim training following the Serbian national team methodology' },
+      { name: 'Youth Swim Development', price: '€500/week', desc: 'Age-group swimming development with technique focus' }
+    ],
+    coaches: [
+      { name: 'Nikola Petrović', credential: 'FINA A License Coach', background: 'Former Serbian national team coach who developed multiple European Championship medallists', atpWta: false, bestRanking: null, rankingNote: null, languages: ['English', 'Serbian'], instagram: null }
+    ],
+    bestCoachRanking: null,
+    facilities: 'Olympic 50m pool, 25m training pool, diving pool, dry-land training area, sports science lab, video analysis, recovery centre',
+    courtSurfaces: ['50m Olympic pool', '25m Training pool', 'Diving pool', 'Open water'],
+    notableAlumni: [],
+    photos: ['https://images.unsplash.com/photo-1519315901367-f34ff9154487?w=800'],
+    description: "The official training centre of the Serbian Swimming Federation in Belgrade, producing Olympic-level swimmers with world-class aquatic facilities and coaching.",
+    upcomingCamps: [
+      { name: 'Belgrade Winter Swim Camp', startDate: '2026-12-14', endDate: '2026-12-21', price: '€900', level: 'Intermediate-Advanced' }
+    ],
+    accommodation: {
+      types: [
+        { type: 'hotel', label: 'Belgrade Sport Hotel', pricePerWeek: 280, maxOccupancy: 2, bathType: 'ensuite', mealsIncluded: true }
+      ],
+      companionsAllowed: true,
+      childrenAllowed: true,
+      minStay: '1 week',
+      shuttleToTraining: true,
+      notes: 'Sports hotel near the Tašmajdan pool complex with easy public transport links'
+    },
+    videoTour: null,
+    juniorInfo: {
+      minAge: 8,
+      maxAge: 18,
+      supervision: '24/7',
+      guardianStay: true,
+      schooling: 'Serbian school integration for international athletes',
+      medicalStaff: true,
+      safeguarding: 'Serbian Swimming Federation child protection standards',
+      airportPickup: true,
+      mealPlan: 'Full board with Serbian and international cuisine',
+      curfew: '21:00 weekdays, 22:00 weekends',
+      roommatePairing: 'Age-based groups',
+      languageSupport: ['Serbian', 'English'],
+      emergencyProtocol: 'On-site medical team with Clinical Centre of Serbia partnership'
+    }
   }
 ];
 
@@ -1391,10 +1616,61 @@ const CLIMATE_DATA = {
       { month: 'Nov', temp: 13, rain: 142, rainyDays: 11, wind: 11 },
       { month: 'Dec', temp: 10, rain: 120, rainyDays: 11, wind: 11 }
     ]
+  },
+  'dublin': {
+    city: 'Dublin', country: 'Ireland',
+    months: [
+      { month: 'Jan', temp: 5, rain: 67, rainyDays: 13, wind: 18 },
+      { month: 'Feb', temp: 5, rain: 50, rainyDays: 11, wind: 17 },
+      { month: 'Mar', temp: 7, rain: 53, rainyDays: 11, wind: 16 },
+      { month: 'Apr', temp: 9, rain: 51, rainyDays: 11, wind: 14 },
+      { month: 'May', temp: 12, rain: 56, rainyDays: 11, wind: 13 },
+      { month: 'Jun', temp: 14, rain: 56, rainyDays: 10, wind: 12 },
+      { month: 'Jul', temp: 16, rain: 56, rainyDays: 11, wind: 12 },
+      { month: 'Aug', temp: 16, rain: 73, rainyDays: 12, wind: 12 },
+      { month: 'Sep', temp: 14, rain: 59, rainyDays: 10, wind: 13 },
+      { month: 'Oct', temp: 11, rain: 70, rainyDays: 12, wind: 15 },
+      { month: 'Nov', temp: 7, rain: 65, rainyDays: 12, wind: 16 },
+      { month: 'Dec', temp: 5, rain: 73, rainyDays: 13, wind: 17 }
+    ]
+  },
+  'istanbul': {
+    city: 'Istanbul', country: 'Turkey',
+    months: [
+      { month: 'Jan', temp: 6, rain: 99, rainyDays: 12, wind: 14 },
+      { month: 'Feb', temp: 6, rain: 72, rainyDays: 10, wind: 14 },
+      { month: 'Mar', temp: 8, rain: 66, rainyDays: 10, wind: 14 },
+      { month: 'Apr', temp: 12, rain: 46, rainyDays: 8, wind: 11 },
+      { month: 'May', temp: 17, rain: 33, rainyDays: 6, wind: 11 },
+      { month: 'Jun', temp: 22, rain: 23, rainyDays: 4, wind: 11 },
+      { month: 'Jul', temp: 24, rain: 14, rainyDays: 2, wind: 14 },
+      { month: 'Aug', temp: 24, rain: 15, rainyDays: 3, wind: 14 },
+      { month: 'Sep', temp: 21, rain: 28, rainyDays: 4, wind: 11 },
+      { month: 'Oct', temp: 16, rain: 64, rainyDays: 8, wind: 11 },
+      { month: 'Nov', temp: 12, rain: 93, rainyDays: 10, wind: 14 },
+      { month: 'Dec', temp: 8, rain: 109, rainyDays: 12, wind: 14 }
+    ]
+  },
+  'belgrade': {
+    city: 'Belgrade', country: 'Serbia',
+    months: [
+      { month: 'Jan', temp: 1, rain: 47, rainyDays: 8, wind: 12 },
+      { month: 'Feb', temp: 3, rain: 40, rainyDays: 7, wind: 13 },
+      { month: 'Mar', temp: 8, rain: 45, rainyDays: 8, wind: 13 },
+      { month: 'Apr', temp: 13, rain: 56, rainyDays: 9, wind: 12 },
+      { month: 'May', temp: 18, rain: 67, rainyDays: 10, wind: 11 },
+      { month: 'Jun', temp: 22, rain: 72, rainyDays: 9, wind: 10 },
+      { month: 'Jul', temp: 24, rain: 55, rainyDays: 7, wind: 9 },
+      { month: 'Aug', temp: 23, rain: 48, rainyDays: 6, wind: 9 },
+      { month: 'Sep', temp: 19, rain: 42, rainyDays: 7, wind: 10 },
+      { month: 'Oct', temp: 13, rain: 48, rainyDays: 8, wind: 11 },
+      { month: 'Nov', temp: 7, rain: 52, rainyDays: 9, wind: 12 },
+      { month: 'Dec', temp: 2, rain: 50, rainyDays: 9, wind: 12 }
+    ]
   }
 };
 
-const NEWS_ITEMS = [
+const NEWS_ITEMS= [
   { date: '2026-04-14', text: 'Duna Arena Academy swimmers dominate Hungarian National Championships with 12 gold medals', academy: 'duna-arena-academy' },
   { date: '2026-04-07', text: 'London Aquatics Centre announces expanded elite pathway program for 2026-27 season', academy: 'london-aquatics-centre' },
   { date: '2026-03-28', text: 'Club Natació Barcelona hosts Mare Nostrum Series with record international participation', academy: 'club-natacio-barcelona' },

@@ -2033,6 +2033,172 @@ const ACADEMIES = [
       languageSupport: ['English', 'Spanish', 'French'],
       emergencyProtocol: 'Mountain rescue on call, Sierra Nevada medical center on-site, Granada hospital 45 min away'
     }
+  },
+  {
+    id: 'ski-club-ireland-kilternan',
+    name: 'Ski Club of Ireland Training',
+    country: 'Ireland',
+    countryFlag: '🇮🇪',
+    city: 'Kilternan',
+    lat: 53.2333,
+    lng: -6.1833,
+    website: 'https://www.skiclub.ie',
+    contact: '+353 1 295 5658',
+    contactEmail: 'info@skiclub.ie',
+    description: 'Ireland\'s premier ski training facility in Kilternan, south Dublin. Featuring an indoor dry slope and organising regular Alpine training trips, the Ski Club of Ireland develops competitive skiers from beginner to national team level.',
+    ageGroups: ['Junior', 'Adult'],
+    level: 'All levels',
+    individualLessons: true,
+    boarding: false,
+    beach: { distance: null, description: 'No beach nearby — suburban Dublin hills' },
+    priceRange: { from: 500, to: 1200, unit: 'week', display: '€500 - €1,200/week' },
+    socialMedia: { instagram: '@skiclubofireland', facebook: 'https://facebook.com/skiclubofireland', twitter: '@skiclubirl' },
+    climate: 'kilternan',
+    facilities: 'Indoor dry slope, Dendix artificial surface, ski and snowboard rental, video analysis room, fitness area, classroom for theory sessions, regular access to Alpine resorts for on-snow training',
+    courtSurfaces: ['Alpine skiing', 'Snowboarding', 'Freestyle'],
+    programs: [
+      { name: 'Indoor Race Training', price: '€500/week', desc: 'Weekly indoor slope sessions with gate training, video analysis and technique drills on dry slope' },
+      { name: 'Junior Development Camp', price: '€700/week', desc: 'Progressive ski training for young athletes aged 6-16 combining indoor slope and fitness sessions' },
+      { name: 'Alps Training Trip', price: '€1,200/week', desc: 'Guided training trip to Alpine resorts with on-snow coaching, race training and video analysis' }
+    ],
+    coaches: [
+      {
+        name: 'Sean Callaghan',
+        credential: 'IASI Level 3, FIS Coach',
+        background: 'Former Irish national team skier and national champion, 15 years coaching experience developing Irish alpine talent',
+        atpWta: false,
+        bestRanking: null,
+        rankingNote: null,
+        languages: ['English', 'Irish'],
+        instagram: null
+      },
+      {
+        name: 'Ciara O\'Donnell',
+        credential: 'IASI Level 2, SnowSport England certified',
+        background: 'Junior development specialist, former competitive alpine skier with European racing experience',
+        atpWta: false,
+        bestRanking: null,
+        rankingNote: null,
+        languages: ['English', 'Irish', 'French'],
+        instagram: null
+      }
+    ],
+    photos: [
+      'https://images.unsplash.com/photo-1551524559-8af4e6624178?w=800',
+      'https://images.unsplash.com/photo-1565992441121-4367c2967103?w=800'
+    ],
+    upcomingCamps: [
+      { name: 'Winter Indoor Race Series', startDate: '2026-12-07', endDate: '2026-12-14', price: '€500', level: 'All levels' },
+      { name: 'Christmas Alps Trip', startDate: '2026-12-21', endDate: '2026-12-28', price: '€1,200', level: 'Intermediate' },
+      { name: 'February Half-Term Camp', startDate: '2027-02-15', endDate: '2027-02-22', price: '€1,100', level: 'All levels' }
+    ],
+    accommodation: {
+      types: [
+        { type: 'hotel', label: 'Partner Hotel Kilternan', pricePerWeek: 450, maxOccupancy: 2, bathType: 'ensuite', mealsIncluded: true },
+        { type: 'apartment', label: 'Self-Catering Apartment', pricePerWeek: 350, maxOccupancy: 4, bathType: 'ensuite', mealsIncluded: false }
+      ],
+      companionsAllowed: true,
+      childrenAllowed: true,
+      minStay: '1 week',
+      shuttleToTraining: true,
+      notes: 'Accommodation options near Kilternan with shuttle to training. Alps trip accommodation included in trip price.'
+    },
+    availability: {
+      status: 'open',
+      nextIntake: '2026-12-01',
+      spotsLeft: 20,
+      responseTime: '48h',
+      privateLessons: true,
+      yearRound: true
+    },
+    juniorInfo: {
+      minAge: 6,
+      maxAge: 18,
+      supervision: '24/7',
+      guardianStay: true,
+      schooling: 'Available during season',
+      medicalStaff: false,
+      safeguarding: 'Ski Club of Ireland child protection policies, Garda-vetted coaches',
+      airportPickup: true,
+      mealPlan: 'Half board available',
+      curfew: '21:00 weekdays, 22:00 weekends',
+      roommatePairing: 'Age-based groups',
+      languageSupport: ['English', 'Irish'],
+      emergencyProtocol: 'On-site first aid, Beacon Hospital 10 min away'
+    }
+  },
+  {
+    id: 'uludag-ski-academy',
+    name: 'Uludağ Ski Academy',
+    country: 'Turkey',
+    countryFlag: '',
+    city: 'Bursa',
+    lat: 40.0975,
+    lng: 29.2150,
+    website: 'https://www.uludagskiacademy.com.tr',
+    contact: '+90 224 285 2100',
+    contactEmail: 'info@uludagskiacademy.com.tr',
+    description: 'Turkey\'s premier ski resort on Mount Uludağ near Bursa, offering alpine skiing at 1750-2543m altitude with stunning views over the Sea of Marmara. A unique blend of Turkish culture and winter sports.',
+    ageGroups: ['Junior', 'Adult'],
+    level: 'All levels',
+    individualLessons: true,
+    boarding: true,
+    beach: { distance: null, description: 'Alpine resort, no beach access' },
+    priceRange: { from: 400, to: 900, unit: 'week', display: '400 - 900/week' },
+    socialMedia: { instagram: '@uludagski', facebook: 'https://facebook.com/uludagskiacademy', twitter: '@uludagski' },
+    climate: 'uludag',
+    facilities: 'Altitude: 1750-2543m, 28km of pistes, 15 lifts, snowmaking, FIS-homologated race course, terrain park, ski storage, equipment rental, video analysis, fitness center',
+    courtSurfaces: ['Alpine skiing', 'Snowboard', 'Cross-country'],
+    programs: [
+      { name: 'Alpine Performance Programme', price: '900/week', desc: 'Intensive alpine race training on FIS-homologated courses with Turkish national team coaches' },
+      { name: 'Junior Ski Camp', price: '500/week', desc: 'Fun and structured ski development for juniors with certified instructors' },
+      { name: 'Freeride & Off-Piste', price: '€700/week', desc: 'Explore Uludağ\'s off-piste terrain with mountain safety and avalanche awareness' },
+      { name: 'Beginner Week', price: '400/week', desc: 'First-timer programme on gentle nursery slopes with equipment included' }
+    ],
+    coaches: [
+      { name: 'Deniz Aydın', credential: 'Turkish Ski Federation A License', background: 'Former Turkish national slalom team member with FIS World Cup experience. 12 years coaching.', atpWta: false, bestRanking: null, rankingNote: null, languages: ['Turkish', 'English', 'German'], instagram: null },
+      { name: 'Zeynep Güneş', credential: 'ISIA Level 3', background: 'International ski instructor with experience across Turkey and Austria. Youth specialist.', atpWta: false, bestRanking: null, rankingNote: null, languages: ['Turkish', 'English'], instagram: null }
+    ],
+    photos: ['https://images.unsplash.com/photo-1565992441121-4367c2967103?w=800'],
+    upcomingCamps: [
+      { name: 'Winter Intensive Camp', startDate: '2026-12-21', endDate: '2026-12-28', price: '900', level: 'Intermediate' },
+      { name: 'Junior Holiday Camp', startDate: '2027-02-08', endDate: '2027-02-15', price: '500', level: 'All Levels' },
+      { name: 'Spring Skiing Week', startDate: '2027-03-15', endDate: '2027-03-22', price: '700', level: 'All Levels' }
+    ],
+    accommodation: {
+      types: [
+        { type: 'hotel', label: 'Uludağ Mountain Hotel', pricePerWeek: 400, maxOccupancy: 2, bathType: 'ensuite', mealsIncluded: true },
+        { type: 'shared', label: 'Mountain Lodge Shared', pricePerWeek: 250, maxOccupancy: 4, bathType: 'shared', mealsIncluded: true }
+      ],
+      companionsAllowed: true,
+      childrenAllowed: true,
+      minStay: '1 week',
+      shuttleToTraining: true,
+      notes: 'Mountain-top accommodation with ski-in/ski-out access and traditional Turkish hospitality'
+    },
+    availability: {
+      status: 'open',
+      nextIntake: '2026-12-01',
+      spotsLeft: 18,
+      responseTime: '24h',
+      privateLessons: true,
+      yearRound: false
+    },
+    juniorInfo: {
+      minAge: 6,
+      maxAge: 18,
+      supervision: '24/7',
+      guardianStay: true,
+      schooling: 'Online schooling support available during season',
+      medicalStaff: true,
+      safeguarding: 'Turkish Ski Federation child protection protocols',
+      airportPickup: true,
+      mealPlan: 'Full board with Turkish cuisine',
+      curfew: '21:00 weekdays, 22:00 weekends',
+      roommatePairing: 'Age-based groups',
+      languageSupport: ['Turkish', 'English'],
+      emergencyProtocol: 'On-site ski patrol, Bursa City Hospital 45 minutes by cable car and road'
+    }
   }
 ];
 
@@ -2450,6 +2616,42 @@ const CLIMATE_DATA = {
       { month: 'Nov', tempHigh: 4, tempLow: -3, rain: 48, sun: 5 },
       { month: 'Dec', tempHigh: 0, tempLow: -7, rain: 50, sun: 5 }
     ]
+  },
+  'kilternan': {
+    city: 'Kilternan',
+    country: 'Ireland',
+    months: [
+      { month: 'Jan', tempHigh: 8, tempLow: 2, rain: 67, sun: 2 },
+      { month: 'Feb', tempHigh: 8, tempLow: 2, rain: 50, sun: 3 },
+      { month: 'Mar', tempHigh: 10, tempLow: 3, rain: 53, sun: 4 },
+      { month: 'Apr', tempHigh: 12, tempLow: 4, rain: 51, sun: 5 },
+      { month: 'May', tempHigh: 15, tempLow: 7, rain: 56, sun: 6 },
+      { month: 'Jun', tempHigh: 18, tempLow: 10, rain: 56, sun: 6 },
+      { month: 'Jul', tempHigh: 19, tempLow: 12, rain: 56, sun: 5 },
+      { month: 'Aug', tempHigh: 19, tempLow: 11, rain: 73, sun: 5 },
+      { month: 'Sep', tempHigh: 17, tempLow: 10, rain: 59, sun: 4 },
+      { month: 'Oct', tempHigh: 13, tempLow: 7, rain: 70, sun: 3 },
+      { month: 'Nov', tempHigh: 10, tempLow: 4, rain: 65, sun: 2 },
+      { month: 'Dec', tempHigh: 8, tempLow: 3, rain: 73, sun: 2 }
+    ]
+  },
+  'uludag': {
+    city: 'Uludağ',
+    country: 'Turkey',
+    months: [
+      { month: 'Jan', tempHigh: -3, tempLow: -10, rain: 55, sun: 3 },
+      { month: 'Feb', tempHigh: -2, tempLow: -9, rain: 50, sun: 3 },
+      { month: 'Mar', tempHigh: 2, tempLow: -5, rain: 55, sun: 4 },
+      { month: 'Apr', tempHigh: 7, tempLow: 0, rain: 60, sun: 5 },
+      { month: 'May', tempHigh: 12, tempLow: 4, rain: 65, sun: 7 },
+      { month: 'Jun', tempHigh: 17, tempLow: 8, rain: 45, sun: 9 },
+      { month: 'Jul', tempHigh: 20, tempLow: 11, rain: 25, sun: 10 },
+      { month: 'Aug', tempHigh: 20, tempLow: 11, rain: 20, sun: 10 },
+      { month: 'Sep', tempHigh: 16, tempLow: 7, rain: 30, sun: 8 },
+      { month: 'Oct', tempHigh: 10, tempLow: 3, rain: 45, sun: 5 },
+      { month: 'Nov', tempHigh: 4, tempLow: -3, rain: 50, sun: 3 },
+      { month: 'Dec', tempHigh: -1, tempLow: -8, rain: 55, sun: 3 }
+    ]
   }
 };
 
@@ -2461,4 +2663,4 @@ const NEWS_ITEMS = [
   { title: 'Nordic Countries Launch Cross-Border Ski Pass Initiative', summary: 'Norway, Sweden, and Finland announce a joint multi-resort ski pass covering Lillehammer, Åre, and Levi, making it easier for visitors to experience Scandinavian skiing across borders.', date: '2025-01-20', url: '#' }
 ];
 
-const COUNTRIES = ['Austria', 'Switzerland', 'France', 'Italy', 'Norway', 'Sweden', 'Finland', 'Andorra', 'Slovenia', 'Bulgaria', 'Romania', 'Slovakia', 'Czech Republic', 'Poland', 'Georgia', 'Spain'];
+const COUNTRIES = ['Austria', 'Switzerland', 'France', 'Italy', 'Norway', 'Sweden', 'Finland', 'Andorra', 'Slovenia', 'Bulgaria', 'Romania', 'Slovakia', 'Czech Republic', 'Poland', 'Georgia', 'Spain', 'Ireland', 'Turkey'];

@@ -4215,6 +4215,188 @@ const ACADEMIES = [
     }
   },
 
+  {
+    id: "fitzwilliam-tennis-club",
+    availability: { status: 'open', nextIntake: '2026-06-01', spotsLeft: 12, responseTime: '48h', privateLessons: true, yearRound: true },
+    name: "Fitzwilliam Tennis Club Academy",
+    country: "Ireland",
+    countryFlag: "🇮🇪",
+    city: "Dublin",
+    lat: 53.3301, lng: -6.2488,
+    website: "https://www.fitzwilliamltc.ie",
+    contact: "+353 1 660 1979",
+    contactEmail: "academy@fitzwilliamltc.ie",
+    individualLessons: true,
+    boarding: false,
+    level: "All Levels",
+    starred: false,
+    airport: { name: "Dublin Airport", code: "DUB", distance: "12 km", driveTime: "25 min" },
+    beach: { distance: "8 km", description: "Sandymount Strand and Dublin Bay beaches" },
+    climate: "dublin",
+    priceRange: { from: 800, to: 2200, unit: "week", display: "€800–€2,200/wk" },
+    programs: [
+        { name: "Junior Development Program", price: "€800/wk", desc: "Structured junior training for ages 8-16, focusing on technique, match play and fitness. (Weekly, All Levels)" },
+        { name: "Performance Squad", price: "€1,500/wk", desc: "Intensive training for competitive players with tournament preparation and strength conditioning. (Weekly, Advanced)" },
+        { name: "Adult Coaching Clinic", price: "€600/wk", desc: "Group and private coaching for adult players of all standards. (Weekly, All Levels)" },
+        { name: "Summer Intensive Camp", price: "€2,200/wk", desc: "Full-day immersive camp with accommodation, coaching and match play. (1-2 weeks, Intermediate/Advanced)" }
+      ],
+    coaches: [
+        { name: "Conor Niland", credential: "Tennis Ireland National Coach", background: "Former Irish Davis Cup player and professional tour competitor with extensive coaching experience.", atpWta: true, bestRanking: 129, rankingNote: "Career-high ATP singles ranking", languages: ["English", "Irish"], instagram: null },
+        { name: "Sinéad Lohan", credential: "Tennis Ireland Level 3", background: "Experienced coach specialising in junior development and women's tennis in Ireland.", atpWta: false, bestRanking: null, rankingNote: null, languages: ["English", "Irish"], instagram: null }
+      ],
+    bestCoachRanking: 129,
+    facilities: "8 outdoor courts (4 hard, 4 artificial grass), 3 indoor hard courts, fitness centre, clubhouse with lounge and dining",
+    courtSurfaces: ["Hard", "Artificial Grass"],
+    notableAlumni: ["Matt Dooley", "Conor Niland"],
+    photos: [
+        "https://picsum.photos/seed/fitzwilliam-tennis-1/800/500",
+        "https://picsum.photos/seed/fitzwilliam-tennis-2/800/500",
+        "https://picsum.photos/seed/fitzwilliam-tennis-3/800/500"
+      ],
+    description: "Founded in 1877, Fitzwilliam Lawn Tennis Club is Ireland's oldest and most prestigious tennis club. Located in the heart of Dublin, the academy offers world-class coaching in a historic setting, producing generations of Irish tennis talent.",
+    nearbyHotels: [
+        { name: "The Shelbourne Hotel", stars: 5, distanceKm: 0.5, features: ["Restaurant", "Spa", "Gym", "Bar"], pool: true, wifi: true, pricePerNight: "€350" },
+        { name: "The Merrion Hotel", stars: 5, distanceKm: 0.8, features: ["Restaurant", "Spa", "Garden"], pool: true, wifi: true, pricePerNight: "€300" },
+        { name: "Clayton Hotel Burlington Road", stars: 4, distanceKm: 0.3, features: ["Restaurant", "Bar", "Parking"], pool: false, wifi: true, pricePerNight: "€150" },
+        { name: "Mespil Hotel", stars: 3, distanceKm: 0.5, features: ["Restaurant", "Parking"], pool: false, wifi: true, pricePerNight: "€120" },
+        { name: "Generator Dublin", stars: 2, distanceKm: 1.5, features: ["Bar", "WiFi"], pool: false, wifi: true, pricePerNight: "€40" }
+      ],
+    nearbyRestaurants: [
+        { name: "Chapter One", cuisine: "Michelin Star Irish", distanceKm: 2.5, priceRange: "€€€€", rating: 4.7, vegetarian: true, outdoor: false },
+        { name: "The Chop House", cuisine: "Gastropub", distanceKm: 0.8, priceRange: "€€€", rating: 4.4, vegetarian: true, outdoor: true },
+        { name: "Locks Brasserie", cuisine: "Modern Irish", distanceKm: 1.0, priceRange: "€€€", rating: 4.5, vegetarian: true, outdoor: true },
+        { name: "Farmer Brown's", cuisine: "Irish Contemporary", distanceKm: 1.2, priceRange: "€€", rating: 4.3, vegetarian: true, outdoor: false }
+      ],
+    nearbyMedical: [
+        { name: "St Vincent's University Hospital", type: "Hospital", distanceKm: 3.0, phone: "+353 1 221 4000", emergency: true },
+        { name: "Blackrock Clinic", type: "Hospital", distanceKm: 5.0, phone: "+353 1 283 2222", emergency: true },
+        { name: "PhysioFit Dublin", type: "Physiotherapy", distanceKm: 1.0, phone: "+353 1 660 3456", emergency: false }
+      ],
+    costOfLiving: { rent1Bed: "€1,800", meal: "€15", monthlyFood: "€400", transport: "€120", currency: "EUR", summary: "Dublin is one of Europe's more expensive cities but offers excellent quality of life" },
+    scholarships: { available: true, details: "Tennis Ireland performance scholarships available for nationally ranked juniors. Club bursaries for talented local players." },
+    visaInfo: { schengen: false, eu: true, visaFreeCountries: "EU/EEA citizens, USA, Canada, Australia, UK — visa-free up to 90 days", notes: "Ireland is in the EU but not in the Schengen Area. Separate Irish visa required for non-EU citizens." },
+    airportTransfers: [
+        { mode: "Taxi", duration: "30 min", cost: "€30-40", notes: "Fixed fare taxi from Dublin Airport" },
+        { mode: "Aircoach", duration: "40 min", cost: "€8", notes: "Direct coach service to city centre" },
+        { mode: "Dublin Bus", duration: "50 min", cost: "€3.80", notes: "Routes 16 and 41 to city centre" }
+      ],
+    nearbyTournaments: [
+        { name: "Irish Open Tennis Championships", level: "National", surface: "Hard", month: "July", venue: "Fitzwilliam LTC, Dublin" },
+        { name: "Davis Cup Ireland", level: "Davis Cup", surface: "Hard", month: "Various", venue: "Dublin" },
+        { name: "Leinster Junior Open", level: "Provincial Junior", surface: "Hard", month: "June", venue: "Various Dublin venues" }
+      ],
+    upcomingCamps: [
+        { name: "Summer Tennis Intensive", startDate: "2026-07-06", endDate: "2026-07-17", price: "€2,200", level: "Advanced" },
+        { name: "Easter Junior Camp", startDate: "2026-04-06", endDate: "2026-04-10", price: "€600", level: "All Levels" },
+        { name: "Autumn Performance Camp", startDate: "2026-10-26", endDate: "2026-10-30", price: "€800", level: "Intermediate" }
+      ],
+    accommodation: {
+        types: [
+            { type: 'private', label: 'Private Room', pricePerWeek: 450, maxOccupancy: 1, bathType: 'ensuite', mealsIncluded: true },
+            { type: 'twin', label: 'Twin Shared Room', pricePerWeek: 300, maxOccupancy: 2, bathType: 'ensuite', mealsIncluded: true },
+            { type: 'apartment', label: 'Self-Catering Apartment', pricePerWeek: 550, maxOccupancy: 2, bathType: 'ensuite', mealsIncluded: false }
+        ],
+        companionsAllowed: true,
+        childrenAllowed: true,
+        minStay: 1,
+        shuttleToTraining: false,
+        notes: 'Partner accommodation near the club in Dublin 4, walking distance to training courts'
+    },
+    videoTour: null,
+    juniorInfo: {
+      minAge: 8,
+      maxAge: 18,
+      supervision: 'training-only',
+      guardianStay: true,
+      schooling: 'tutoring',
+      medicalStaff: false,
+      safeguarding: true,
+      airportPickup: true,
+      mealPlan: 'half-board',
+      curfew: '22:00',
+      roommatePairing: 'age-only',
+      languageSupport: ['English', 'Irish'],
+      emergencyProtocol: true
+    }
+  },
+,
+  {
+    id: "antalya-tennis-academy",
+    availability: { status: 'open', nextIntake: '2026-06-01', spotsLeft: 15, responseTime: '24h', privateLessons: true, yearRound: true },
+    name: "Antalya Tennis Academy",
+    country: "Turkey",
+    countryFlag: "",
+    city: "Antalya",
+    lat: 36.8969, lng: 30.7133,
+    website: "https://www.antalyatennis.com.tr",
+    contact: "+90 242 312 4567",
+    contactEmail: "info@antalyatennis.com.tr",
+    individualLessons: true,
+    boarding: true,
+    level: "All Levels",
+    starred: false,
+    airport: { name: "Antalya Airport", code: "AYT", distance: "12 km", driveTime: "20 min" },
+    beach: { distance: "< 2 km", description: "Konyaaltı Beach nearby" },
+    climate: "antalya",
+    priceRange: { from: 600, to: 1800, unit: "week", display: "6001800/wk" },
+    programs: [
+        { name: "Performance Program", price: "1200/wk", desc: "Intensive performance training on clay and hard courts with Turkish and international coaches. (Full Year, Advanced/Elite)" },
+        { name: "Junior Academy", price: "800/wk", desc: "Year-round junior development program with academic support and Mediterranean climate training. (Full Year, Intermediate/Advanced)" },
+        { name: "Holiday Camp", price: "600/wk", desc: "Short-term holiday training camp combining tennis with beach and cultural activities. (1-2 weeks, All Levels)" },
+        { name: "Adult Intensive", price: "700/wk", desc: "Adult training combining coaching sessions with Turkish Riviera lifestyle. (1-2 weeks, All Levels)" }
+      ],
+    coaches: [
+        { name: "Mehmet Yıldırım", credential: "ITF Level 3 Coach", background: "Former Turkish Davis Cup player with 15 years coaching experience developing junior talent.", atpWta: false, bestRanking: null, rankingNote: null, languages: ["Turkish", "English", "German"], instagram: null },
+        { name: "Ayşe Kaya", credential: "ITF Level 2 Coach", background: "Turkish national champion and experienced academy coach specializing in women's development.", atpWta: false, bestRanking: null, rankingNote: null, languages: ["Turkish", "English"], instagram: null },
+        { name: "Dimitris Papadopoulos", credential: "Senior Coach", background: "Greek-born coach with ATP Challenger circuit experience, fluent in multiple languages.", atpWta: false, bestRanking: null, rankingNote: null, languages: ["English", "Greek", "Turkish"], instagram: null }
+      ],
+    bestCoachRanking: 10,
+    facilities: "10 tennis courts (6 clay, 4 hard), covered courts, fitness center, swimming pool, player accommodation, Mediterranean garden setting",
+    courtSurfaces: ["Clay", "Hard"],
+    notableAlumni: [],
+    description: "Premier tennis academy on the Turkish Riviera offering year-round training in an ideal Mediterranean climate. Antalya's warm weather, affordable costs, and modern facilities make it a top destination for players seeking quality coaching.",
+    nearbyHotels: [
+        { name: "Academy Residence", stars: 4, distanceKm: 0, features: ["Restaurant", "WiFi", "Pool"], pool: true, wifi: true, pricePerNight: "Included in residential program" },
+        { name: "Hotel Su", stars: 5, distanceKm: 3, features: ["Restaurant", "WiFi", "Spa"], pool: true, wifi: true, pricePerNight: "80-150/night" },
+        { name: "Rixos Downtown Antalya", stars: 5, distanceKm: 5, features: ["Restaurant", "WiFi", "Pool"], pool: true, wifi: true, pricePerNight: "100-200/night" }
+      ],
+    nearbyRestaurants: [
+        { name: "Seraser Fine Dining", cuisine: "Mediterranean/Turkish", distanceKm: 4, priceRange: "", rating: 4.6, vegetarian: true, outdoor: true },
+        { name: "Vanilla Lounge", cuisine: "Turkish", distanceKm: 3, priceRange: "", rating: 4.5, vegetarian: true, outdoor: true }
+      ],
+    nearbyMedical: [
+        { name: "Antalya Eğitim ve Araştırma Hastanesi", type: "Hospital", distanceKm: 5, phone: "+90 242 249 4400", emergency: true },
+        { name: "Medical Park Antalya", type: "Hospital", distanceKm: 8, phone: "+90 242 314 3434", emergency: true }
+      ],
+    costOfLiving: { rent1Bed: "300", meal: "5", monthlyFood: "200", transport: "30", currency: "TRY", summary: "Antalya offers excellent value for money compared to Western Europe" },
+    scholarships: { available: true, details: "Merit-based scholarships available for talented Turkish and international juniors through the Turkish Tennis Federation." },
+    visaInfo: { schengen: false, eu: false, visaFreeCountries: "EU/EEA citizens, USA, Canada, Australia, UK  visa-free or e-Visa up to 90 days", notes: "Turkey offers e-Visa for most nationalities. Non-visa-free citizens can apply online." },
+    airportTransfers: [
+        { mode: "Taxi (~15)", duration: "20 min", cost: "Varies", notes: "Taxi or hotel shuttle from Antalya Airport" },
+        { mode: "Hotel Shuttle", duration: "25 min", cost: "Free/included", notes: "Many hotels offer free airport transfers" }
+      ],
+    nearbyTournaments: [
+        { name: "Antalya Open", level: "ATP 250", surface: "Grass", month: "June", venue: "Antalya" },
+        { name: "Turkish Junior Championships", level: "National", surface: "Clay", month: "August", venue: "Antalya" },
+        { name: "Istanbul Open", level: "WTA 250", surface: "Hard", month: "April", venue: "Istanbul" }
+      ],
+    videoTour: null,
+    juniorInfo: {
+      minAge: 8,
+      maxAge: 18,
+      supervision: '24/7',
+      guardianStay: true,
+      schooling: 'online-support',
+      medicalStaff: true,
+      safeguarding: true,
+      airportPickup: true,
+      mealPlan: 'full-board',
+      curfew: '22:00',
+      roommatePairing: 'age-only',
+      languageSupport: ['Turkish', 'English'],
+      emergencyProtocol: true
+    }
+  }
 ];
 
 const CLIMATE_DATA = {
@@ -4797,6 +4979,40 @@ const CLIMATE_DATA = {
     ]
   },
 
+  dublin: {
+    city: "Dublin", country: "Ireland",
+    months: [
+      { month: "Jan", temp: 5, rain: 67, rainyDays: 13, wind: 18 },
+      { month: "Feb", temp: 5, rain: 50, rainyDays: 11, wind: 17 },
+      { month: "Mar", temp: 7, rain: 53, rainyDays: 11, wind: 16 },
+      { month: "Apr", temp: 9, rain: 51, rainyDays: 11, wind: 14 },
+      { month: "May", temp: 12, rain: 56, rainyDays: 11, wind: 13 },
+      { month: "Jun", temp: 14, rain: 56, rainyDays: 10, wind: 12 },
+      { month: "Jul", temp: 16, rain: 56, rainyDays: 11, wind: 12 },
+      { month: "Aug", temp: 16, rain: 73, rainyDays: 12, wind: 12 },
+      { month: "Sep", temp: 14, rain: 59, rainyDays: 10, wind: 13 },
+      { month: "Oct", temp: 11, rain: 70, rainyDays: 12, wind: 15 },
+      { month: "Nov", temp: 7, rain: 65, rainyDays: 12, wind: 16 },
+      { month: "Dec", temp: 5, rain: 73, rainyDays: 13, wind: 17 }
+    ]
+  }
+,
+  'antalya': { city: "Antalya", country: "Turkey",
+    months: [
+      { month: "Jan", temp: 10, rain: 243, rainyDays: 11, wind: 11 },
+      { month: "Feb", temp: 11, rain: 152, rainyDays: 9, wind: 11 },
+      { month: "Mar", temp: 13, rain: 77, rainyDays: 7, wind: 11 },
+      { month: "Apr", temp: 16, rain: 47, rainyDays: 5, wind: 11 },
+      { month: "May", temp: 21, rain: 22, rainyDays: 3, wind: 11 },
+      { month: "Jun", temp: 26, rain: 8, rainyDays: 1, wind: 11 },
+      { month: "Jul", temp: 29, rain: 3, rainyDays: 0, wind: 11 },
+      { month: "Aug", temp: 29, rain: 3, rainyDays: 0, wind: 11 },
+      { month: "Sep", temp: 25, rain: 13, rainyDays: 2, wind: 11 },
+      { month: "Oct", temp: 20, rain: 70, rainyDays: 5, wind: 11 },
+      { month: "Nov", temp: 15, rain: 130, rainyDays: 8, wind: 11 },
+      { month: "Dec", temp: 12, rain: 245, rainyDays: 11, wind: 11 }
+    ]
+  }
 };
 
 const NEWS_ITEMS = [

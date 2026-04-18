@@ -32,149 +32,210 @@
       <input type="text" id="hubSearch" class="hub-search-input" placeholder="Search academies across all sports…" aria-label="Search academies">
       <button type="submit" class="hub-search-btn" aria-label="Search"><span aria-hidden="true">🔍</span></button>
     </form>
+    <div class="country-explorer" id="countryExplorer">
+      <select id="countrySelect" class="country-select" aria-label="Explore by country">
+        <option value="">🌍 Explore by Country...</option>
+      </select>
+    </div>
     <button class="btn-darkmode" id="btnDarkMode" title="Toggle dark mode" aria-label="Toggle dark mode">🌙</button>
   </header>
 
   <div class="hub-search-results" id="hubSearchResults" style="display:none;"></div>
 
+  <div class="country-results" id="countryResults" style="display:none;">
+    <h3 id="countryResultsTitle"></h3>
+    <div id="countryResultsList" class="country-results-list"></div>
+  </div>
+
+  <div class="sport-filter-bar" id="sportFilterBar">
+    <input type="text" id="sportSearch" class="sport-search-input" placeholder="🔍 Filter sports..." aria-label="Filter sports by name">
+    <div class="sport-category-tabs" id="sportCategoryTabs">
+      <button class="sport-tab active" data-category="all">All Sports</button>
+      <button class="sport-tab" data-category="ball">⚽ Ball Sports</button>
+      <button class="sport-tab" data-category="water">🌊 Water Sports</button>
+      <button class="sport-tab" data-category="winter">❄️ Winter Sports</button>
+      <button class="sport-tab" data-category="racquet">🎾 Racquet Sports</button>
+      <button class="sport-tab" data-category="combat">🥊 Combat Sports</button>
+      <button class="sport-tab" data-category="outdoor">🌿 Outdoor & Adventure</button>
+      <button class="sport-tab" data-category="track">🏃 Track & Field</button>
+    </div>
+  </div>
+
   <main class="hub-main" id="main-content" role="main">
-    <div class="hub-grid">
-      <a href="tennis.html" class="hub-card hub-tennis">
-        <span class="hub-icon" aria-hidden="true">🎾</span>
-        <h2>Tennis</h2>
-        <p><strong class="hub-count" data-file="data.js">—</strong> Academies across Europe</p>
-        <span class="hub-arrow">→</span>
-      </a>
-      <a href="golf.html" class="hub-card hub-golf">
-        <span class="hub-icon" aria-hidden="true">⛳</span>
-        <h2>Golf</h2>
-        <p><strong class="hub-count" data-file="golf-data.js">—</strong> Academies across Europe</p>
-        <span class="hub-arrow">→</span>
-      </a>
-      <a href="football.html" class="hub-card hub-football">
+    <div class="hub-grid" id="hubGrid">
+      <div class="hub-category-section" data-category="ball">
+        <h3 class="hub-category-title">⚽ Ball Sports</h3>
+      </div>
+      <a href="football.html" class="hub-card hub-football" data-category="ball" data-sport="football">
         <span class="hub-icon" aria-hidden="true">⚽</span>
         <h2>Football</h2>
         <p><strong class="hub-count" data-file="football-data.js">—</strong> Academies across Europe</p>
         <span class="hub-arrow">→</span>
       </a>
-      <a href="basketball.html" class="hub-card hub-basketball">
+      <a href="basketball.html" class="hub-card hub-basketball" data-category="ball" data-sport="basketball">
         <span class="hub-icon" aria-hidden="true">🏀</span>
         <h2>Basketball</h2>
         <p><strong class="hub-count" data-file="basketball-data.js">—</strong> Academies across Europe</p>
         <span class="hub-arrow">→</span>
       </a>
-      <a href="swimming.html" class="hub-card hub-swimming">
-        <span class="hub-icon" aria-hidden="true">🏊</span>
-        <h2>Swimming</h2>
-        <p><strong class="hub-count" data-file="swimming-data.js">—</strong> Academies across Europe</p>
-        <span class="hub-arrow">→</span>
-      </a>
-      <a href="volleyball.html" class="hub-card hub-volleyball">
+      <a href="volleyball.html" class="hub-card hub-volleyball" data-category="ball" data-sport="volleyball">
         <span class="hub-icon" aria-hidden="true">🏐</span>
         <h2>Volleyball</h2>
         <p><strong class="hub-count" data-file="volleyball-data.js">—</strong> Academies across Europe</p>
         <span class="hub-arrow">→</span>
       </a>
-      <a href="rugby.html" class="hub-card hub-rugby">
+      <a href="rugby.html" class="hub-card hub-rugby" data-category="ball" data-sport="rugby">
         <span class="hub-icon" aria-hidden="true">🏉</span>
         <h2>Rugby</h2>
         <p><strong class="hub-count" data-file="rugby-data.js">—</strong> Academies across Europe</p>
         <span class="hub-arrow">→</span>
       </a>
-      <a href="ski.html" class="hub-card hub-ski">
-        <span class="hub-icon" aria-hidden="true">⛷️</span>
-        <h2>Ski Camps</h2>
-        <p><strong class="hub-count" data-file="ski-data.js">—</strong> Academies across Europe</p>
-        <span class="hub-arrow">→</span>
-      </a>
-      <a href="cycling.html" class="hub-card hub-cycling">
-        <span class="hub-icon" aria-hidden="true">🚴</span>
-        <h2>Cycling Camps</h2>
-        <p><strong class="hub-count" data-file="cycling-data.js">—</strong> Academies across Europe</p>
-        <span class="hub-arrow">→</span>
-      </a>
-      <a href="athletics.html" class="hub-card hub-athletics">
-        <span class="hub-icon" aria-hidden="true">🏃</span>
-        <h2>Athletics Camps</h2>
-        <p><strong class="hub-count" data-file="athletics-data.js">—</strong> Academies across Europe</p>
-        <span class="hub-arrow">→</span>
-      </a>
-      <a href="sailing.html" class="hub-card hub-sailing">
-        <span class="hub-icon" aria-hidden="true">⛵</span>
-        <h2>Sailing Schools</h2>
-        <p><strong class="hub-count" data-file="sailing-data.js">—</strong> Academies across Europe</p>
-        <span class="hub-arrow">→</span>
-      </a>
-      <a href="rowing.html" class="hub-card hub-rowing">
-        <span class="hub-icon" aria-hidden="true">🚣</span>
-        <h2>Rowing Camps</h2>
-        <p><strong class="hub-count" data-file="rowing-data.js">—</strong> Academies across Europe</p>
-        <span class="hub-arrow">→</span>
-      </a>
-      <a href="hockey.html" class="hub-card hub-hockey">
+      <a href="hockey.html" class="hub-card hub-hockey" data-category="ball" data-sport="hockey">
         <span class="hub-icon" aria-hidden="true">🏑</span>
         <h2>Hockey Academies</h2>
         <p><strong class="hub-count" data-file="hockey-data.js">—</strong> Academies across Europe</p>
         <span class="hub-arrow">→</span>
       </a>
-      <a href="ice-hockey.html" class="hub-card hub-ice-hockey">
-        <span class="hub-icon" aria-hidden="true">🏒</span>
-        <h2>Ice Hockey Academies</h2>
-        <p><strong class="hub-count" data-file="ice-hockey-data.js">—</strong> Academies across Europe</p>
-        <span class="hub-arrow">→</span>
-      </a>
-      <a href="handball.html" class="hub-card hub-handball">
+      <a href="handball.html" class="hub-card hub-handball" data-category="ball" data-sport="handball">
         <span class="hub-icon" aria-hidden="true">🤾</span>
         <h2>Handball Academies</h2>
         <p><strong class="hub-count" data-file="handball-data.js">—</strong> Academies across Europe</p>
         <span class="hub-arrow">→</span>
       </a>
-      <a href="fencing.html" class="hub-card hub-fencing">
-        <span class="hub-icon" aria-hidden="true">🤺</span>
-        <h2>Fencing Academies</h2>
-        <p><strong class="hub-count" data-file="fencing-data.js">—</strong> Academies across Europe</p>
+
+      <div class="hub-category-section" data-category="racquet">
+        <h3 class="hub-category-title">🎾 Racquet Sports</h3>
+      </div>
+      <a href="tennis.html" class="hub-card hub-tennis" data-category="racquet" data-sport="tennis">
+        <span class="hub-icon" aria-hidden="true">🎾</span>
+        <h2>Tennis</h2>
+        <p><strong class="hub-count" data-file="data.js">—</strong> Academies across Europe</p>
         <span class="hub-arrow">→</span>
       </a>
-      <a href="gymnastics.html" class="hub-card hub-gymnastics">
-        <span class="hub-icon" aria-hidden="true">🤸</span>
-        <h2>Gymnastics Academies</h2>
-        <p><strong class="hub-count" data-file="gymnastics-data.js">—</strong> Academies across Europe</p>
-        <span class="hub-arrow">→</span>
-      </a>
-      <a href="waterpolo.html" class="hub-card hub-waterpolo">
-        <span class="hub-icon" aria-hidden="true">🤽</span>
-        <h2>Water Polo Academies</h2>
-        <p><strong class="hub-count" data-file="waterpolo-data.js">—</strong> Academies across Europe</p>
-        <span class="hub-arrow">→</span>
-      </a>
-      <a href="boxing.html" class="hub-card hub-boxing">
-        <span class="hub-icon" aria-hidden="true">🥊</span>
-        <h2>Boxing Academies</h2>
-        <p><strong class="hub-count" data-file="boxing-data.js">—</strong> Academies across Europe</p>
-        <span class="hub-arrow">→</span>
-      </a>
-      <a href="padel.html" class="hub-card hub-padel">
+      <a href="padel.html" class="hub-card hub-padel" data-category="racquet" data-sport="padel">
         <span class="hub-icon" aria-hidden="true">🎾</span>
         <h2>Padel Academies</h2>
         <p><strong class="hub-count" data-file="padel-data.js">—</strong> Academies across Europe</p>
         <span class="hub-arrow">→</span>
       </a>
-      <a href="triathlon.html" class="hub-card hub-triathlon">
+
+      <div class="hub-category-section" data-category="water">
+        <h3 class="hub-category-title">🌊 Water Sports</h3>
+      </div>
+      <a href="swimming.html" class="hub-card hub-swimming" data-category="water" data-sport="swimming">
         <span class="hub-icon" aria-hidden="true">🏊</span>
-        <h2>Triathlon Camps</h2>
-        <p><strong class="hub-count" data-file="triathlon-data.js">—</strong> Academies across Europe</p>
+        <h2>Swimming</h2>
+        <p><strong class="hub-count" data-file="swimming-data.js">—</strong> Academies across Europe</p>
         <span class="hub-arrow">→</span>
       </a>
-      <a href="equestrian.html" class="hub-card hub-equestrian">
+      <a href="sailing.html" class="hub-card hub-sailing" data-category="water" data-sport="sailing">
+        <span class="hub-icon" aria-hidden="true">⛵</span>
+        <h2>Sailing Schools</h2>
+        <p><strong class="hub-count" data-file="sailing-data.js">—</strong> Academies across Europe</p>
+        <span class="hub-arrow">→</span>
+      </a>
+      <a href="rowing.html" class="hub-card hub-rowing" data-category="water" data-sport="rowing">
+        <span class="hub-icon" aria-hidden="true">🚣</span>
+        <h2>Rowing Camps</h2>
+        <p><strong class="hub-count" data-file="rowing-data.js">—</strong> Academies across Europe</p>
+        <span class="hub-arrow">→</span>
+      </a>
+      <a href="waterpolo.html" class="hub-card hub-waterpolo" data-category="water" data-sport="waterpolo">
+        <span class="hub-icon" aria-hidden="true">🤽</span>
+        <h2>Water Polo Academies</h2>
+        <p><strong class="hub-count" data-file="waterpolo-data.js">—</strong> Academies across Europe</p>
+        <span class="hub-arrow">→</span>
+      </a>
+      <a href="surfing.html" class="hub-card hub-surfing" data-category="water" data-sport="surfing">
+        <span class="hub-icon" aria-hidden="true">🏄</span>
+        <h2>Surf Schools</h2>
+        <p><strong class="hub-count" data-file="surfing-data.js">—</strong> Academies across Europe</p>
+        <span class="hub-arrow">→</span>
+      </a>
+
+      <div class="hub-category-section" data-category="winter">
+        <h3 class="hub-category-title">❄️ Winter Sports</h3>
+      </div>
+      <a href="ski.html" class="hub-card hub-ski" data-category="winter" data-sport="ski">
+        <span class="hub-icon" aria-hidden="true">⛷️</span>
+        <h2>Ski Camps</h2>
+        <p><strong class="hub-count" data-file="ski-data.js">—</strong> Academies across Europe</p>
+        <span class="hub-arrow">→</span>
+      </a>
+      <a href="ice-hockey.html" class="hub-card hub-ice-hockey" data-category="winter" data-sport="ice-hockey">
+        <span class="hub-icon" aria-hidden="true">🏒</span>
+        <h2>Ice Hockey Academies</h2>
+        <p><strong class="hub-count" data-file="ice-hockey-data.js">—</strong> Academies across Europe</p>
+        <span class="hub-arrow">→</span>
+      </a>
+
+      <div class="hub-category-section" data-category="combat">
+        <h3 class="hub-category-title">🥊 Combat Sports</h3>
+      </div>
+      <a href="fencing.html" class="hub-card hub-fencing" data-category="combat" data-sport="fencing">
+        <span class="hub-icon" aria-hidden="true">🤺</span>
+        <h2>Fencing Academies</h2>
+        <p><strong class="hub-count" data-file="fencing-data.js">—</strong> Academies across Europe</p>
+        <span class="hub-arrow">→</span>
+      </a>
+      <a href="boxing.html" class="hub-card hub-boxing" data-category="combat" data-sport="boxing">
+        <span class="hub-icon" aria-hidden="true">🥊</span>
+        <h2>Boxing Academies</h2>
+        <p><strong class="hub-count" data-file="boxing-data.js">—</strong> Academies across Europe</p>
+        <span class="hub-arrow">→</span>
+      </a>
+
+      <div class="hub-category-section" data-category="outdoor">
+        <h3 class="hub-category-title">🌿 Outdoor & Adventure</h3>
+      </div>
+      <a href="golf.html" class="hub-card hub-golf" data-category="outdoor" data-sport="golf">
+        <span class="hub-icon" aria-hidden="true">⛳</span>
+        <h2>Golf</h2>
+        <p><strong class="hub-count" data-file="golf-data.js">—</strong> Academies across Europe</p>
+        <span class="hub-arrow">→</span>
+      </a>
+      <a href="cycling.html" class="hub-card hub-cycling" data-category="outdoor" data-sport="cycling">
+        <span class="hub-icon" aria-hidden="true">🚴</span>
+        <h2>Cycling Camps</h2>
+        <p><strong class="hub-count" data-file="cycling-data.js">—</strong> Academies across Europe</p>
+        <span class="hub-arrow">→</span>
+      </a>
+      <a href="equestrian.html" class="hub-card hub-equestrian" data-category="outdoor" data-sport="equestrian">
         <span class="hub-icon" aria-hidden="true">🏇</span>
         <h2>Equestrian Centres</h2>
         <p><strong class="hub-count" data-file="equestrian-data.js">—</strong> Academies across Europe</p>
         <span class="hub-arrow">→</span>
       </a>
-      <a href="surfing.html" class="hub-card hub-surfing">
-        <span class="hub-icon" aria-hidden="true">🏄</span>
-        <h2>Surf Schools</h2>
-        <p><strong class="hub-count" data-file="surfing-data.js">—</strong> Academies across Europe</p>
+
+      <div class="hub-category-section" data-category="track">
+        <h3 class="hub-category-title">🏃 Track & Field</h3>
+      </div>
+      <a href="athletics.html" class="hub-card hub-athletics" data-category="track" data-sport="athletics">
+        <span class="hub-icon" aria-hidden="true">🏃</span>
+        <h2>Athletics Camps</h2>
+        <p><strong class="hub-count" data-file="athletics-data.js">—</strong> Academies across Europe</p>
+        <span class="hub-arrow">→</span>
+      </a>
+      <a href="gymnastics.html" class="hub-card hub-gymnastics" data-category="track" data-sport="gymnastics">
+        <span class="hub-icon" aria-hidden="true">🤸</span>
+        <h2>Gymnastics Academies</h2>
+        <p><strong class="hub-count" data-file="gymnastics-data.js">—</strong> Academies across Europe</p>
+        <span class="hub-arrow">→</span>
+      </a>
+      <a href="triathlon.html" class="hub-card hub-triathlon" data-category="track" data-sport="triathlon">
+        <span class="hub-icon" aria-hidden="true">🏊</span>
+        <h2>Triathlon Camps</h2>
+        <p><strong class="hub-count" data-file="triathlon-data.js">—</strong> Academies across Europe</p>
+        <span class="hub-arrow">→</span>
+      </a>
+
+      <div class="hub-category-section" data-category="creative">
+        <h3 class="hub-category-title">🎨 Creative Arts</h3>
+      </div>
+      <a href="art.html" class="hub-card hub-art" data-category="creative" data-sport="art">
+        <span class="hub-icon" aria-hidden="true">🎨</span>
+        <h2>Art</h2>
+        <p><strong>24</strong> Academies across Europe</p>
         <span class="hub-arrow">→</span>
       </a>
     </div>
@@ -389,6 +450,173 @@
         if (hrs < 24) return hrs + 'h ago';
         const days = Math.floor(hrs / 24);
         return days + 'd ago';
+      }
+    })();
+
+    // Sport category filter
+    const sportTabs = document.querySelectorAll('.sport-tab');
+    const sportCards = document.querySelectorAll('.hub-card');
+    const categorySections = document.querySelectorAll('.hub-category-section');
+    const sportSearchInput = document.getElementById('sportSearch');
+
+    function filterSports() {
+      const activeTab = document.querySelector('.sport-tab.active');
+      const category = activeTab ? activeTab.dataset.category : 'all';
+      const searchTerm = sportSearchInput.value.toLowerCase().trim();
+
+      sportCards.forEach(card => {
+        const cardCategory = card.dataset.category;
+        const cardSport = card.dataset.sport || '';
+        const cardName = card.querySelector('h2').textContent.toLowerCase();
+
+        const matchesCategory = category === 'all' || cardCategory === category;
+        const matchesSearch = !searchTerm || cardName.includes(searchTerm) || cardSport.includes(searchTerm);
+
+        card.style.display = (matchesCategory && matchesSearch) ? '' : 'none';
+      });
+
+      // Show/hide category headers based on visible cards
+      categorySections.forEach(section => {
+        const cat = section.dataset.category;
+        const hasVisible = Array.from(sportCards).some(card =>
+          card.dataset.category === cat && card.style.display !== 'none'
+        );
+        section.style.display = hasVisible ? '' : 'none';
+      });
+    }
+
+    sportTabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        sportTabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+        filterSports();
+      });
+    });
+
+    sportSearchInput.addEventListener('input', filterSports);
+
+    // Country Explorer
+    (function() {
+      const SPORTS = [
+        { key: 'tennis', file: 'data.js', icon: '🎾', name: 'Tennis', page: 'tennis.html' },
+        { key: 'golf', file: 'golf-data.js', icon: '⛳', name: 'Golf', page: 'golf.html' },
+        { key: 'football', file: 'football-data.js', icon: '⚽', name: 'Football', page: 'football.html' },
+        { key: 'basketball', file: 'basketball-data.js', icon: '🏀', name: 'Basketball', page: 'basketball.html' },
+        { key: 'swimming', file: 'swimming-data.js', icon: '🏊', name: 'Swimming', page: 'swimming.html' },
+        { key: 'volleyball', file: 'volleyball-data.js', icon: '🏐', name: 'Volleyball', page: 'volleyball.html' },
+        { key: 'rugby', file: 'rugby-data.js', icon: '🏉', name: 'Rugby', page: 'rugby.html' },
+        { key: 'ski', file: 'ski-data.js', icon: '⛷️', name: 'Ski', page: 'ski.html' },
+        { key: 'cycling', file: 'cycling-data.js', icon: '🚴', name: 'Cycling', page: 'cycling.html' },
+        { key: 'athletics', file: 'athletics-data.js', icon: '🏃', name: 'Athletics', page: 'athletics.html' },
+        { key: 'sailing', file: 'sailing-data.js', icon: '⛵', name: 'Sailing', page: 'sailing.html' },
+        { key: 'rowing', file: 'rowing-data.js', icon: '🚣', name: 'Rowing', page: 'rowing.html' },
+        { key: 'hockey', file: 'hockey-data.js', icon: '🏑', name: 'Hockey', page: 'hockey.html' },
+        { key: 'ice-hockey', file: 'ice-hockey-data.js', icon: '🏒', name: 'Ice Hockey', page: 'ice-hockey.html' },
+        { key: 'handball', file: 'handball-data.js', icon: '🤾', name: 'Handball', page: 'handball.html' },
+        { key: 'fencing', file: 'fencing-data.js', icon: '🤺', name: 'Fencing', page: 'fencing.html' },
+        { key: 'gymnastics', file: 'gymnastics-data.js', icon: '🤸', name: 'Gymnastics', page: 'gymnastics.html' },
+        { key: 'waterpolo', file: 'waterpolo-data.js', icon: '🤽', name: 'Water Polo', page: 'waterpolo.html' },
+        { key: 'boxing', file: 'boxing-data.js', icon: '🥊', name: 'Boxing', page: 'boxing.html' },
+        { key: 'padel', file: 'padel-data.js', icon: '🎾', name: 'Padel', page: 'padel.html' },
+        { key: 'triathlon', file: 'triathlon-data.js', icon: '🏊', name: 'Triathlon', page: 'triathlon.html' },
+        { key: 'equestrian', file: 'equestrian-data.js', icon: '🏇', name: 'Equestrian', page: 'equestrian.html' },
+        { key: 'surfing', file: 'surfing-data.js', icon: '🏄', name: 'Surfing', page: 'surfing.html' }
+      ];
+
+      const allAcademies = [];
+      const countryFlags = {};
+      let loaded = 0;
+
+      SPORTS.forEach(function(sport) {
+        fetch(sport.file)
+          .then(function(r) { return r.text(); })
+          .then(function(text) {
+            var nameMatches = text.match(/name:\s*['"]([^'"]+)['"]/g) || [];
+            var countryMatches = text.match(/country:\s*['"]([^'"]+)['"]/g) || [];
+            var flagMatches = text.match(/countryFlag:\s*['"]([^'"]+)['"]/g) || [];
+            var cityMatches = text.match(/city:\s*['"]([^'"]+)['"]/g) || [];
+            var idMatches = text.match(/^\s*id:\s*['"]([^'"]+)['"]/gm) || [];
+
+            for (var i = 0; i < idMatches.length; i++) {
+              var name = nameMatches[i] ? nameMatches[i].match(/['"]([^'"]+)['"]/)[1] : 'Unknown';
+              var country = countryMatches[i] ? countryMatches[i].match(/['"]([^'"]+)['"]/)[1] : 'Unknown';
+              var flag = flagMatches[i] ? flagMatches[i].match(/['"]([^'"]+)['"]/)[1] : '🏳️';
+              var city = cityMatches[i] ? cityMatches[i].match(/['"]([^'"]+)['"]/)[1] : '';
+
+              allAcademies.push({
+                sport: sport.name, icon: sport.icon, page: sport.page,
+                name: name, country: country, countryFlag: flag, city: city
+              });
+              countryFlags[country] = flag;
+            }
+          })
+          .catch(function() {})
+          .finally(function() {
+            loaded++;
+            if (loaded === SPORTS.length) populateCountryDropdown();
+          });
+      });
+
+      function populateCountryDropdown() {
+        var select = document.getElementById('countrySelect');
+        var countries = [];
+        var seen = {};
+        allAcademies.forEach(function(a) {
+          if (!seen[a.country]) { seen[a.country] = true; countries.push(a.country); }
+        });
+        countries.sort();
+        countries.forEach(function(c) {
+          var opt = document.createElement('option');
+          opt.value = c;
+          var count = allAcademies.filter(function(a) { return a.country === c; }).length;
+          opt.textContent = (countryFlags[c] || '') + ' ' + c + ' (' + count + ')';
+          select.appendChild(opt);
+        });
+
+        select.addEventListener('change', function() {
+          var country = select.value;
+          var resultsDiv = document.getElementById('countryResults');
+          var listDiv = document.getElementById('countryResultsList');
+          var titleEl = document.getElementById('countryResultsTitle');
+
+          if (!country) { resultsDiv.style.display = 'none'; return; }
+
+          var matches = allAcademies.filter(function(a) { return a.country === country; });
+          var sportSet = {};
+          matches.forEach(function(m) { sportSet[m.sport] = true; });
+          titleEl.textContent = (countryFlags[country] || '') + ' ' + country + ' — ' + matches.length + ' Academies across ' + Object.keys(sportSet).length + ' Sports';
+
+          var bySport = {};
+          matches.forEach(function(m) {
+            if (!bySport[m.sport]) bySport[m.sport] = { icon: m.icon, page: m.page, items: [] };
+            bySport[m.sport].items.push(m);
+          });
+
+          var html = '';
+          Object.keys(bySport).forEach(function(sport) {
+            var data = bySport[sport];
+            data.items.forEach(function(item) {
+              html += '<a href="' + data.page + '#q=' + encodeURIComponent(item.name) + '" class="country-result-card">' +
+                '<span class="country-result-icon">' + data.icon + '</span>' +
+                '<div class="country-result-info">' +
+                '<div class="country-result-name">' + escapeHtml(item.name) + '</div>' +
+                '<div class="country-result-meta">' + escapeHtml(sport) + ' · ' + escapeHtml(item.city) + '</div>' +
+                '</div>' +
+                '<span class="country-result-arrow">→</span>' +
+                '</a>';
+            });
+          });
+
+          listDiv.innerHTML = html;
+          resultsDiv.style.display = 'block';
+          resultsDiv.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+      }
+
+      function escapeHtml(s) {
+        var d = document.createElement('div');
+        d.textContent = s || '';
+        return d.innerHTML;
       }
     })();
   </script>

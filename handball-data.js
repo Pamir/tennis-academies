@@ -781,6 +781,990 @@ const ACADEMIES = [
       languageSupport: ['English', 'Croatian'],
       emergencyProtocol: 'On-site first aid with KBC Zagreb hospital nearby'
     }
+  },
+  {
+    id: 'oslo-handball-akademi',
+    name: 'Oslo Handball Akademi',
+    country: 'Norway',
+    countryFlag: '🇳🇴',
+    city: 'Oslo',
+    lat: 59.9139,
+    lng: 10.7522,
+    website: 'https://www.oslohandball.no',
+    contact: '+47 21 00 1234',
+    contactEmail: 'info@oslohandball.no',
+    description: 'Norway\'s leading handball academy in Oslo, combining Scandinavian training philosophy with world-class indoor facilities and a focus on tactical excellence.',
+    ageGroups: ['Junior', 'Adult'],
+    level: 'All levels',
+    individualLessons: true,
+    boarding: true,
+    beach: { distance: null, description: 'No beach nearby' },
+    priceRange: { from: 8000, to: 18000, unit: 'week', display: 'NOK 8,000 - 18,000/week' },
+    socialMedia: { instagram: '@oslohandball', facebook: 'https://facebook.com/oslohandball', twitter: '@oslohandball' },
+    climate: 'oslo',
+    facilities: 'Indoor sports hall, video analysis suite, modern gym, recovery area, tactical room',
+    courtSurfaces: ['Indoor court', 'Training court'],
+    programs: [
+      { name: 'Nordic Handball Intensive', price: 'NOK 12000/week', desc: 'Full-day training with tactical workshops and match play' },
+      { name: 'Youth Development Programme', price: 'NOK 8000/week', desc: 'Age-appropriate skill building for juniors aged 8-16' },
+      { name: 'Goalkeeping Specialist', price: 'NOK 10000/week', desc: 'Specialised goalkeeper training with video analysis' }
+    ],
+    coaches: [
+      { name: 'Erik Lindqvist', credential: 'IHF Master Coach', background: 'Former Norwegian national team player with European Championship experience', atpWta: false, bestRanking: null, rankingNote: null, languages: ['English', 'Norwegian', 'Swedish'], instagram: null }
+    ],
+    photos: ['https://images.unsplash.com/photo-1554068865-24cecd4e34b8?w=800'],
+    upcomingCamps: [
+      { name: 'Oslo Winter Handball Camp', startDate: '2026-01-05', endDate: '2026-01-12', price: 'NOK 12000', level: 'Intermediate' }
+    ],
+    accommodation: {
+      types: [{ type: 'hotel', label: 'Partner Hotel near Training Hall', pricePerWeek: 5000, maxOccupancy: 2, bathType: 'ensuite', mealsIncluded: true }],
+      companionsAllowed: true,
+      childrenAllowed: true,
+      minStay: '1 week',
+      shuttleToTraining: true,
+      notes: 'Central Oslo location with easy public transport access'
+    },
+    availability: {
+      status: 'open',
+      nextIntake: '2026-01-05',
+      spotsLeft: 20,
+      responseTime: '48h',
+      privateLessons: true,
+      yearRound: true
+    },
+    juniorInfo: {
+      minAge: 7,
+      maxAge: 18,
+      supervision: '24/7',
+      guardianStay: true,
+      schooling: 'Norwegian school integration for long-term athletes',
+      medicalStaff: true,
+      safeguarding: 'Norwegian Olympic Committee child protection standards',
+      airportPickup: true,
+      mealPlan: 'Full board with Scandinavian meals',
+      curfew: '21:00 weekdays, 22:00 weekends',
+      roommatePairing: 'Age-based groups',
+      languageSupport: ['English', 'Norwegian'],
+      emergencyProtocol: 'On-site first aid with Oslo University Hospital nearby'
+    }
+  },
+  {
+    id: 'kielce-handball-academy',
+    name: 'Kielce Handball Academy',
+    country: 'Poland',
+    countryFlag: '🇵🇱',
+    city: 'Kielce',
+    lat: 50.8661,
+    lng: 20.6286,
+    website: 'https://www.kielcehandball.pl',
+    contact: '+48 41 234 5678',
+    contactEmail: 'info@kielcehandball.pl',
+    description: 'Located in Poland\'s handball heartland, Kielce Handball Academy draws on the city\'s rich handball tradition and passionate sporting culture.',
+    ageGroups: ['Junior', 'Adult'],
+    level: 'All levels',
+    individualLessons: true,
+    boarding: false,
+    beach: { distance: null, description: 'No beach nearby' },
+    priceRange: { from: 1500, to: 3500, unit: 'week', display: 'PLN 1,500 - 3,500/week' },
+    socialMedia: { instagram: '@kielcehandball', facebook: 'https://facebook.com/kielcehandball', twitter: '@kielcehandball' },
+    climate: 'kielce',
+    facilities: 'Indoor sports hall, video analysis room, gym, recovery area, tactical room',
+    courtSurfaces: ['Indoor court', 'Training court', 'Beach handball'],
+    programs: [
+      { name: 'Polish Handball Camp', price: 'PLN 2500/week', desc: 'Intensive training in the Polish handball tradition' },
+      { name: 'Youth Talent Programme', price: 'PLN 1500/week', desc: 'Development programme for aspiring young players' }
+    ],
+    coaches: [
+      { name: 'Tomasz Kowalski', credential: 'EHF Master Coach', background: 'Former Vive Kielce player and Polish national team member', atpWta: false, bestRanking: null, rankingNote: null, languages: ['English', 'Polish', 'German'], instagram: null }
+    ],
+    photos: ['https://images.unsplash.com/photo-1519766304817-4f37bda74a26?w=800'],
+    upcomingCamps: [
+      { name: 'Kielce Summer Handball', startDate: '2026-07-06', endDate: '2026-07-13', price: 'PLN 2500', level: 'All levels' }
+    ],
+    accommodation: {
+      types: [{ type: 'residence', label: 'Sports Residence', pricePerWeek: 1000, maxOccupancy: 2, bathType: 'shared', mealsIncluded: true }],
+      companionsAllowed: true,
+      childrenAllowed: true,
+      minStay: '1 week',
+      shuttleToTraining: true,
+      notes: 'Comfortable sports residence near the training facility'
+    },
+    availability: {
+      status: 'open',
+      nextIntake: '2026-06-01',
+      spotsLeft: 30,
+      responseTime: '48h',
+      privateLessons: true,
+      yearRound: true
+    },
+    juniorInfo: {
+      minAge: 8,
+      maxAge: 18,
+      supervision: '24/7',
+      guardianStay: true,
+      schooling: 'Polish school partnership for term-time athletes',
+      medicalStaff: true,
+      safeguarding: 'Polish Handball Federation child protection standards',
+      airportPickup: true,
+      mealPlan: 'Full board with traditional Polish meals',
+      curfew: '21:00 weekdays, 22:00 weekends',
+      roommatePairing: 'Age-based groups',
+      languageSupport: ['English', 'Polish'],
+      emergencyProtocol: 'On-site first aid with Kielce regional hospital nearby'
+    }
+  },
+  {
+    id: 'bucharest-handball-club',
+    name: 'Bucharest Handball Club',
+    country: 'Romania',
+    countryFlag: '🇷🇴',
+    city: 'Bucharest',
+    lat: 44.4268,
+    lng: 26.1025,
+    website: 'https://www.bucharesthandball.ro',
+    contact: '+40 21 234 5678',
+    contactEmail: 'info@bucharesthandball.ro',
+    description: 'Romania\'s premier handball training centre in the capital, building on the country\'s strong handball heritage with modern coaching methods.',
+    ageGroups: ['Junior', 'Adult'],
+    level: 'All levels',
+    individualLessons: true,
+    boarding: true,
+    beach: { distance: null, description: 'No beach nearby, Black Sea coast 230 km away' },
+    priceRange: { from: 400, to: 900, unit: 'week', display: '€400 - €900/week' },
+    socialMedia: { instagram: '@bucharesthandball', facebook: 'https://facebook.com/bucharesthandball', twitter: '@bucharesthandball' },
+    climate: 'bucharest',
+    facilities: 'Indoor sports hall, video analysis, gym, recovery pool, tactical room',
+    courtSurfaces: ['Indoor court', 'Training court', 'Beach handball'],
+    programs: [
+      { name: 'Romanian Handball Intensive', price: '€600/week', desc: 'Full-day training with match play and tactical analysis' },
+      { name: 'Youth Development', price: '€400/week', desc: 'Structured development for young players aged 8-16' },
+      { name: 'Defence Masterclass', price: '€550/week', desc: 'Specialised defensive systems and techniques' }
+    ],
+    coaches: [
+      { name: 'Alexandru Popescu', credential: 'IHF Coach Licence', background: 'Former Romanian national team captain with extensive European club experience', atpWta: false, bestRanking: null, rankingNote: null, languages: ['English', 'Romanian', 'French'], instagram: null }
+    ],
+    photos: ['https://images.unsplash.com/photo-1544723795-3fb6469f5b39?w=800'],
+    upcomingCamps: [
+      { name: 'Bucharest Autumn Handball', startDate: '2026-09-07', endDate: '2026-09-14', price: '€600', level: 'All levels' }
+    ],
+    accommodation: {
+      types: [{ type: 'hotel', label: 'Bucharest City Hotel', pricePerWeek: 300, maxOccupancy: 2, bathType: 'ensuite', mealsIncluded: true }],
+      companionsAllowed: true,
+      childrenAllowed: true,
+      minStay: '1 week',
+      shuttleToTraining: true,
+      notes: 'Central Bucharest hotel with metro access to training venue'
+    },
+    availability: {
+      status: 'limited',
+      nextIntake: '2026-09-01',
+      spotsLeft: 12,
+      responseTime: '24h',
+      privateLessons: true,
+      yearRound: true
+    },
+    juniorInfo: {
+      minAge: 7,
+      maxAge: 18,
+      supervision: '24/7',
+      guardianStay: true,
+      schooling: 'Romanian school integration for long-term athletes',
+      medicalStaff: true,
+      safeguarding: 'Romanian Handball Federation child protection policy',
+      airportPickup: true,
+      mealPlan: 'Full board with Romanian cuisine',
+      curfew: '21:00 weekdays, 22:00 weekends',
+      roommatePairing: 'Age-based groups',
+      languageSupport: ['English', 'Romanian'],
+      emergencyProtocol: 'On-site medical staff with Bucharest University Hospital partnership'
+    }
+  },
+  {
+    id: 'reykjavik-handball-centre',
+    name: 'Reykjavik Handball Centre',
+    country: 'Iceland',
+    countryFlag: '🇮🇸',
+    city: 'Reykjavik',
+    lat: 64.1466,
+    lng: -21.9426,
+    website: 'https://www.reykjavikhandball.is',
+    contact: '+354 520 1234',
+    contactEmail: 'info@reykjavikhandball.is',
+    description: 'Iceland\'s top handball training facility in Reykjavik, reflecting the nation\'s passion for handball with world-class indoor facilities and innovative coaching.',
+    ageGroups: ['Junior', 'Adult'],
+    level: 'All levels',
+    individualLessons: true,
+    boarding: false,
+    beach: { distance: null, description: 'No beach handball facilities' },
+    priceRange: { from: 120000, to: 280000, unit: 'week', display: 'ISK 120,000 - 280,000/week' },
+    socialMedia: { instagram: '@reykjavikhandball', facebook: 'https://facebook.com/reykjavikhandball', twitter: '@reykjavikhandball' },
+    climate: 'reykjavik',
+    facilities: 'Indoor sports hall, video analysis suite, gym, geothermal recovery pool, tactical room',
+    courtSurfaces: ['Indoor court', 'Training court'],
+    programs: [
+      { name: 'Icelandic Handball Experience', price: 'ISK 180000/week', desc: 'Intensive programme combining handball with Icelandic sports culture' },
+      { name: 'Youth Viking Camp', price: 'ISK 120000/week', desc: 'Fun and development-focused camp for young players' }
+    ],
+    coaches: [
+      { name: 'Gunnar Sigurdsson', credential: 'EHF Pro Licence', background: 'Former Icelandic national team member and Olympic participant', atpWta: false, bestRanking: null, rankingNote: null, languages: ['English', 'Icelandic', 'Danish'], instagram: null }
+    ],
+    photos: ['https://images.unsplash.com/photo-1554068865-24cecd4e34b8?w=800'],
+    upcomingCamps: [
+      { name: 'Midnight Sun Handball Camp', startDate: '2026-06-15', endDate: '2026-06-22', price: 'ISK 180000', level: 'All levels' }
+    ],
+    accommodation: {
+      types: [{ type: 'guesthouse', label: 'Reykjavik Guesthouse', pricePerWeek: 80000, maxOccupancy: 2, bathType: 'shared', mealsIncluded: false }],
+      companionsAllowed: true,
+      childrenAllowed: true,
+      minStay: '1 week',
+      shuttleToTraining: true,
+      notes: 'Cosy guesthouse in central Reykjavik with bus access to training hall'
+    },
+    availability: {
+      status: 'open',
+      nextIntake: '2026-06-01',
+      spotsLeft: 16,
+      responseTime: '48h',
+      privateLessons: true,
+      yearRound: true
+    },
+    juniorInfo: {
+      minAge: 8,
+      maxAge: 18,
+      supervision: '24/7',
+      guardianStay: true,
+      schooling: 'Icelandic school placement assistance available',
+      medicalStaff: true,
+      safeguarding: 'Icelandic Sports Federation child protection standards',
+      airportPickup: true,
+      mealPlan: 'Full board with Icelandic cuisine',
+      curfew: '21:00 weekdays, 22:00 weekends',
+      roommatePairing: 'Age-based groups',
+      languageSupport: ['English', 'Icelandic'],
+      emergencyProtocol: 'On-site first aid with Landspitali University Hospital nearby'
+    }
+  },
+  {
+    id: 'celje-handball-akademija',
+    name: 'Celje Handball Akademija',
+    country: 'Slovenia',
+    countryFlag: '🇸🇮',
+    city: 'Celje',
+    lat: 46.2364,
+    lng: 15.2681,
+    website: 'https://www.celjehandball.si',
+    contact: '+386 3 428 1234',
+    contactEmail: 'info@celjehandball.si',
+    description: 'Based in the handball city of Celje, this academy continues the proud tradition of RK Celje Pivovarna Laško with professional coaching and excellent facilities.',
+    ageGroups: ['Junior', 'Adult'],
+    level: 'All levels',
+    individualLessons: true,
+    boarding: true,
+    beach: { distance: null, description: 'No beach nearby, Adriatic coast 200 km away' },
+    priceRange: { from: 450, to: 1000, unit: 'week', display: '€450 - €1,000/week' },
+    socialMedia: { instagram: '@celjehandball', facebook: 'https://facebook.com/celjehandball', twitter: '@celjehandball' },
+    climate: 'celje',
+    facilities: 'Indoor sports hall, video analysis, gym, recovery area, tactical room',
+    courtSurfaces: ['Indoor court', 'Training court', 'Beach handball'],
+    programs: [
+      { name: 'Celje Handball Heritage', price: '€650/week', desc: 'Training in the tradition of one of Europe\'s most storied clubs' },
+      { name: 'Junior Development', price: '€450/week', desc: 'Structured development pathway for young talents' },
+      { name: 'Pivot Play Specialist', price: '€600/week', desc: 'Specialised training for pivot and line player positions' }
+    ],
+    coaches: [
+      { name: 'Matej Novak', credential: 'EHF Master Coach', background: 'Former RK Celje player and Slovenian national team coach', atpWta: false, bestRanking: null, rankingNote: null, languages: ['English', 'Slovenian', 'Croatian'], instagram: null }
+    ],
+    photos: ['https://images.unsplash.com/photo-1519766304817-4f37bda74a26?w=800'],
+    upcomingCamps: [
+      { name: 'Celje Spring Handball', startDate: '2026-04-06', endDate: '2026-04-13', price: '€650', level: 'Intermediate' }
+    ],
+    accommodation: {
+      types: [{ type: 'residence', label: 'Sports Residence Celje', pricePerWeek: 280, maxOccupancy: 2, bathType: 'shared', mealsIncluded: true }],
+      companionsAllowed: true,
+      childrenAllowed: true,
+      minStay: '1 week',
+      shuttleToTraining: true,
+      notes: 'Modern sports residence adjacent to the Zlatorog Arena'
+    },
+    availability: {
+      status: 'limited',
+      nextIntake: '2026-04-01',
+      spotsLeft: 10,
+      responseTime: '24h',
+      privateLessons: true,
+      yearRound: true
+    },
+    juniorInfo: {
+      minAge: 6,
+      maxAge: 18,
+      supervision: '24/7',
+      guardianStay: true,
+      schooling: 'Slovenian school integration for long-term athletes',
+      medicalStaff: true,
+      safeguarding: 'Slovenian Handball Federation child protection standards',
+      airportPickup: true,
+      mealPlan: 'Full board with Slovenian cuisine',
+      curfew: '21:00 weekdays, 22:00 weekends',
+      roommatePairing: 'Age-based groups',
+      languageSupport: ['English', 'Slovenian'],
+      emergencyProtocol: 'On-site first aid with Celje General Hospital nearby'
+    }
+  },
+  {
+    id: 'porto-handball-academy',
+    name: 'Porto Handball Academy',
+    country: 'Portugal',
+    countryFlag: '🇵🇹',
+    city: 'Porto',
+    lat: 41.1579,
+    lng: -8.6291,
+    website: 'https://www.portohandball.pt',
+    contact: '+351 22 000 1234',
+    contactEmail: 'info@portohandball.pt',
+    description: 'Portugal\'s premier handball academy in Porto, combining Atlantic coast lifestyle with professional coaching and modern training facilities.',
+    ageGroups: ['Junior', 'Adult'],
+    level: 'All levels',
+    individualLessons: true,
+    boarding: true,
+    beach: { distance: 5, description: 'Atlantic beach 5 km away with beach handball facilities' },
+    priceRange: { from: 500, to: 1100, unit: 'week', display: '€500 - €1,100/week' },
+    socialMedia: { instagram: '@portohandball', facebook: 'https://facebook.com/portohandball', twitter: '@portohandball' },
+    climate: 'porto',
+    facilities: 'Indoor sports hall, video analysis room, gym, recovery pool, outdoor beach court',
+    courtSurfaces: ['Indoor court', 'Beach handball', 'Training court'],
+    programs: [
+      { name: 'Atlantic Handball Camp', price: '€700/week', desc: 'Intensive training with beach handball sessions included' },
+      { name: 'Youth Academy', price: '€500/week', desc: 'Development programme for young Portuguese and international players' }
+    ],
+    coaches: [
+      { name: 'Miguel Santos', credential: 'IHF Coach Licence', background: 'Former FC Porto handball coach with Portuguese league championship experience', atpWta: false, bestRanking: null, rankingNote: null, languages: ['English', 'Portuguese', 'Spanish'], instagram: null }
+    ],
+    photos: ['https://images.unsplash.com/photo-1544723795-3fb6469f5b39?w=800'],
+    upcomingCamps: [
+      { name: 'Porto Summer Beach Handball', startDate: '2026-07-20', endDate: '2026-07-27', price: '€700', level: 'All levels' }
+    ],
+    accommodation: {
+      types: [{ type: 'hotel', label: 'Porto Riverside Hotel', pricePerWeek: 380, maxOccupancy: 2, bathType: 'ensuite', mealsIncluded: true }],
+      companionsAllowed: true,
+      childrenAllowed: true,
+      minStay: '1 week',
+      shuttleToTraining: true,
+      notes: 'Charming hotel in Porto\'s riverside district with metro access'
+    },
+    availability: {
+      status: 'open',
+      nextIntake: '2026-07-01',
+      spotsLeft: 24,
+      responseTime: '48h',
+      privateLessons: true,
+      yearRound: true
+    },
+    juniorInfo: {
+      minAge: 7,
+      maxAge: 18,
+      supervision: '24/7',
+      guardianStay: true,
+      schooling: 'Portuguese school partnership for international students',
+      medicalStaff: true,
+      safeguarding: 'Portuguese Handball Federation child protection policy',
+      airportPickup: true,
+      mealPlan: 'Full board with Portuguese cuisine',
+      curfew: '21:00 weekdays, 22:00 weekends',
+      roommatePairing: 'Age-based groups',
+      languageSupport: ['English', 'Portuguese'],
+      emergencyProtocol: 'On-site medical staff with Hospital de Santo António nearby'
+    }
+  },
+  {
+    id: 'belgrade-handball-akademija',
+    name: 'Belgrade Handball Akademija',
+    country: 'Serbia',
+    countryFlag: '🇷🇸',
+    city: 'Belgrade',
+    lat: 44.7866,
+    lng: 20.4489,
+    website: 'https://www.belgradehandball.rs',
+    contact: '+381 11 234 5678',
+    contactEmail: 'info@belgradehandball.rs',
+    description: 'Serbia\'s elite handball academy in Belgrade, building on the nation\'s strong Yugoslav handball legacy with modern training methodology.',
+    ageGroups: ['Junior', 'Adult'],
+    level: 'All levels',
+    individualLessons: true,
+    boarding: false,
+    beach: { distance: null, description: 'No beach nearby' },
+    priceRange: { from: 350, to: 800, unit: 'week', display: '€350 - €800/week' },
+    socialMedia: { instagram: '@belgradehandball', facebook: 'https://facebook.com/belgradehandball', twitter: '@belgradehandball' },
+    climate: 'belgrade',
+    facilities: 'Indoor sports hall, video analysis, gym, recovery area, tactical room',
+    courtSurfaces: ['Indoor court', 'Training court'],
+    programs: [
+      { name: 'Serbian Handball Intensive', price: '€550/week', desc: 'Full-day training rooted in Serbian handball tradition' },
+      { name: 'Wing Play Specialist', price: '€500/week', desc: 'Specialised training for wing positions with speed and shooting drills' },
+      { name: 'Youth Foundation', price: '€350/week', desc: 'Fundamental skills development for beginners and juniors' }
+    ],
+    coaches: [
+      { name: 'Nikola Jovanović', credential: 'EHF Pro Licence', background: 'Former Serbian national team player with Champions League experience', atpWta: false, bestRanking: null, rankingNote: null, languages: ['English', 'Serbian', 'Croatian'], instagram: null }
+    ],
+    photos: ['https://images.unsplash.com/photo-1554068865-24cecd4e34b8?w=800'],
+    upcomingCamps: [
+      { name: 'Belgrade Easter Handball', startDate: '2026-04-13', endDate: '2026-04-20', price: '€550', level: 'All levels' }
+    ],
+    accommodation: {
+      types: [{ type: 'hotel', label: 'Belgrade City Hotel', pricePerWeek: 250, maxOccupancy: 2, bathType: 'ensuite', mealsIncluded: true }],
+      companionsAllowed: true,
+      childrenAllowed: true,
+      minStay: '1 week',
+      shuttleToTraining: true,
+      notes: 'Central Belgrade hotel with easy bus access to training venue'
+    },
+    availability: {
+      status: 'open',
+      nextIntake: '2026-04-01',
+      spotsLeft: 28,
+      responseTime: '24h',
+      privateLessons: true,
+      yearRound: true
+    },
+    juniorInfo: {
+      minAge: 7,
+      maxAge: 18,
+      supervision: '24/7',
+      guardianStay: true,
+      schooling: 'Serbian school integration for long-term athletes',
+      medicalStaff: true,
+      safeguarding: 'Serbian Handball Federation child protection standards',
+      airportPickup: true,
+      mealPlan: 'Full board with Serbian cuisine',
+      curfew: '21:00 weekdays, 22:00 weekends',
+      roommatePairing: 'Age-based groups',
+      languageSupport: ['English', 'Serbian'],
+      emergencyProtocol: 'On-site first aid with Clinical Centre of Serbia nearby'
+    }
+  },
+  {
+    id: 'skopje-handball-academy',
+    name: 'Skopje Handball Academy',
+    country: 'North Macedonia',
+    countryFlag: '🇲🇰',
+    city: 'Skopje',
+    lat: 41.9973,
+    lng: 21.4280,
+    website: 'https://www.skopjehandball.mk',
+    contact: '+389 2 312 1234',
+    contactEmail: 'info@skopjehandball.mk',
+    description: 'North Macedonia\'s top handball academy in Skopje, inspired by the success of RK Vardar and the nation\'s handball passion.',
+    ageGroups: ['Junior', 'Adult'],
+    level: 'All levels',
+    individualLessons: true,
+    boarding: true,
+    beach: { distance: null, description: 'No beach nearby' },
+    priceRange: { from: 300, to: 700, unit: 'week', display: '€300 - €700/week' },
+    socialMedia: { instagram: '@skopjehandball', facebook: 'https://facebook.com/skopjehandball', twitter: '@skopjehandball' },
+    climate: 'skopje',
+    facilities: 'Indoor sports hall, video analysis room, gym, recovery area, tactical room',
+    courtSurfaces: ['Indoor court', 'Training court', 'Beach handball'],
+    programs: [
+      { name: 'Macedonian Handball Camp', price: '€500/week', desc: 'Intensive training following RK Vardar development methodology' },
+      { name: 'Junior Talent Pathway', price: '€300/week', desc: 'Structured development for young Macedonian and international talents' }
+    ],
+    coaches: [
+      { name: 'Darko Dimitrov', credential: 'EHF Master Coach', background: 'Former RK Vardar academy director and Macedonian national team assistant', atpWta: false, bestRanking: null, rankingNote: null, languages: ['English', 'Macedonian', 'Serbian'], instagram: null }
+    ],
+    photos: ['https://images.unsplash.com/photo-1519766304817-4f37bda74a26?w=800'],
+    upcomingCamps: [
+      { name: 'Skopje Summer Handball', startDate: '2026-08-03', endDate: '2026-08-10', price: '€500', level: 'All levels' }
+    ],
+    accommodation: {
+      types: [{ type: 'hotel', label: 'Skopje Centre Hotel', pricePerWeek: 200, maxOccupancy: 2, bathType: 'ensuite', mealsIncluded: true }],
+      companionsAllowed: true,
+      childrenAllowed: true,
+      minStay: '1 week',
+      shuttleToTraining: true,
+      notes: 'City centre hotel with shuttle service to Jane Sandanski Arena'
+    },
+    availability: {
+      status: 'waitlist',
+      nextIntake: '2026-08-01',
+      spotsLeft: 0,
+      responseTime: '72h',
+      privateLessons: true,
+      yearRound: true
+    },
+    juniorInfo: {
+      minAge: 6,
+      maxAge: 18,
+      supervision: '24/7',
+      guardianStay: true,
+      schooling: 'Macedonian school integration available',
+      medicalStaff: true,
+      safeguarding: 'Macedonian Handball Federation child protection policy',
+      airportPickup: true,
+      mealPlan: 'Full board with Macedonian cuisine',
+      curfew: '21:00 weekdays, 22:00 weekends',
+      roommatePairing: 'Age-based groups',
+      languageSupport: ['English', 'Macedonian'],
+      emergencyProtocol: 'On-site first aid with Skopje City Hospital nearby'
+    }
+  },
+  {
+    id: 'vienna-handball-akademie',
+    name: 'Vienna Handball Akademie',
+    country: 'Austria',
+    countryFlag: '🇦🇹',
+    city: 'Vienna',
+    lat: 48.2082,
+    lng: 16.3738,
+    website: 'https://www.viennahandball.at',
+    contact: '+43 1 234 5678',
+    contactEmail: 'info@viennahandball.at',
+    description: 'Austria\'s leading handball academy in Vienna, combining Central European sporting tradition with modern coaching and outstanding indoor facilities.',
+    ageGroups: ['Junior', 'Adult'],
+    level: 'All levels',
+    individualLessons: true,
+    boarding: true,
+    beach: { distance: null, description: 'No beach nearby' },
+    priceRange: { from: 600, to: 1400, unit: 'week', display: '€600 - €1,400/week' },
+    socialMedia: { instagram: '@viennahandball', facebook: 'https://facebook.com/viennahandball', twitter: '@viennahandball' },
+    climate: 'vienna',
+    facilities: 'Indoor sports hall, video analysis suite, modern gym, recovery pool, tactical room',
+    courtSurfaces: ['Indoor court', 'Training court', 'Beach handball'],
+    programs: [
+      { name: 'Vienna Handball Intensive', price: '€900/week', desc: 'Full-day training with tactical analysis and match play' },
+      { name: 'Youth Academy Programme', price: '€600/week', desc: 'Structured development for young players aged 8-16' },
+      { name: 'Backcourt Shooting Masterclass', price: '€800/week', desc: 'Specialised backcourt shooting and playmaking training' }
+    ],
+    coaches: [
+      { name: 'Stefan Maier', credential: 'IHF Master Coach', background: 'Former Austrian national team player and Fivers WAT Margareten head coach', atpWta: false, bestRanking: null, rankingNote: null, languages: ['English', 'German', 'Hungarian'], instagram: null }
+    ],
+    photos: ['https://images.unsplash.com/photo-1544723795-3fb6469f5b39?w=800'],
+    upcomingCamps: [
+      { name: 'Vienna Winter Handball', startDate: '2026-12-28', endDate: '2027-01-04', price: '€900', level: 'Intermediate' }
+    ],
+    accommodation: {
+      types: [{ type: 'hotel', label: 'Vienna Sports Hotel', pricePerWeek: 450, maxOccupancy: 2, bathType: 'ensuite', mealsIncluded: true }],
+      companionsAllowed: true,
+      childrenAllowed: true,
+      minStay: '1 week',
+      shuttleToTraining: true,
+      notes: 'Modern hotel with U-Bahn access to training facilities'
+    },
+    availability: {
+      status: 'open',
+      nextIntake: '2026-09-01',
+      spotsLeft: 20,
+      responseTime: '48h',
+      privateLessons: true,
+      yearRound: true
+    },
+    juniorInfo: {
+      minAge: 7,
+      maxAge: 18,
+      supervision: '24/7',
+      guardianStay: true,
+      schooling: 'Austrian school integration for international students',
+      medicalStaff: true,
+      safeguarding: 'Austrian Handball Federation child protection standards',
+      airportPickup: true,
+      mealPlan: 'Full board with Austrian and international cuisine',
+      curfew: '21:00 weekdays, 22:00 weekends',
+      roommatePairing: 'Age-based groups',
+      languageSupport: ['English', 'German'],
+      emergencyProtocol: 'On-site medical team with AKH Vienna hospital partnership'
+    }
+  },
+  {
+    id: 'prague-handball-school',
+    name: 'Prague Handball School',
+    country: 'Czech Republic',
+    countryFlag: '🇨🇿',
+    city: 'Prague',
+    lat: 50.0755,
+    lng: 14.4378,
+    website: 'https://www.praguehandball.cz',
+    contact: '+420 2 234 5678',
+    contactEmail: 'info@praguehandball.cz',
+    description: 'Czech Republic\'s top handball training school in Prague, offering professional coaching in a historic European capital with modern sports infrastructure.',
+    ageGroups: ['Junior', 'Adult'],
+    level: 'All levels',
+    individualLessons: true,
+    boarding: false,
+    beach: { distance: null, description: 'No beach nearby' },
+    priceRange: { from: 12000, to: 28000, unit: 'week', display: 'CZK 12,000 - 28,000/week' },
+    socialMedia: { instagram: '@praguehandball', facebook: 'https://facebook.com/praguehandball', twitter: '@praguehandball' },
+    climate: 'prague',
+    facilities: 'Indoor sports hall, video analysis room, gym, recovery area, tactical room',
+    courtSurfaces: ['Indoor court', 'Training court'],
+    programs: [
+      { name: 'Prague Handball Camp', price: 'CZK 18000/week', desc: 'Intensive training with Czech handball coaching methodology' },
+      { name: 'Junior Development', price: 'CZK 12000/week', desc: 'Structured programme for young developing players' }
+    ],
+    coaches: [
+      { name: 'Jan Procházka', credential: 'EHF Pro Licence', background: 'Former Czech national team member and Dukla Praha coach', atpWta: false, bestRanking: null, rankingNote: null, languages: ['English', 'Czech', 'Slovak'], instagram: null }
+    ],
+    photos: ['https://images.unsplash.com/photo-1554068865-24cecd4e34b8?w=800'],
+    upcomingCamps: [
+      { name: 'Prague Spring Handball', startDate: '2026-05-04', endDate: '2026-05-11', price: 'CZK 18000', level: 'All levels' }
+    ],
+    accommodation: {
+      types: [{ type: 'hotel', label: 'Prague Old Town Hotel', pricePerWeek: 8000, maxOccupancy: 2, bathType: 'ensuite', mealsIncluded: false }],
+      companionsAllowed: true,
+      childrenAllowed: true,
+      minStay: '1 week',
+      shuttleToTraining: true,
+      notes: 'Historic district hotel with tram access to training hall'
+    },
+    availability: {
+      status: 'open',
+      nextIntake: '2026-05-01',
+      spotsLeft: 22,
+      responseTime: '48h',
+      privateLessons: true,
+      yearRound: true
+    },
+    juniorInfo: {
+      minAge: 8,
+      maxAge: 18,
+      supervision: '24/7',
+      guardianStay: true,
+      schooling: 'Czech school partnership for international students',
+      medicalStaff: true,
+      safeguarding: 'Czech Handball Federation child protection policy',
+      airportPickup: true,
+      mealPlan: 'Full board with Czech and international cuisine',
+      curfew: '21:00 weekdays, 22:00 weekends',
+      roommatePairing: 'Age-based groups',
+      languageSupport: ['English', 'Czech'],
+      emergencyProtocol: 'On-site first aid with Motol University Hospital partnership'
+    }
+  },
+  {
+    id: 'zurich-handball-akademie',
+    name: 'Zurich Handball Akademie',
+    country: 'Switzerland',
+    countryFlag: '🇨🇭',
+    city: 'Zurich',
+    lat: 47.3769,
+    lng: 8.5417,
+    website: 'https://www.zurichhandball.ch',
+    contact: '+41 44 234 5678',
+    contactEmail: 'info@zurichhandball.ch',
+    description: 'Switzerland\'s premier handball academy in Zurich, offering precision coaching in world-class facilities with the Swiss tradition of excellence.',
+    ageGroups: ['Junior', 'Adult'],
+    level: 'All levels',
+    individualLessons: true,
+    boarding: true,
+    beach: { distance: null, description: 'No beach nearby, Lake Zurich for aquatic recovery' },
+    priceRange: { from: 1200, to: 2800, unit: 'week', display: 'CHF 1,200 - 2,800/week' },
+    socialMedia: { instagram: '@zurichhandball', facebook: 'https://facebook.com/zurichhandball', twitter: '@zurichhandball' },
+    climate: 'zurich',
+    facilities: 'Indoor sports hall, video analysis suite, modern gym, recovery pool, tactical room',
+    courtSurfaces: ['Indoor court', 'Training court', 'Beach handball'],
+    programs: [
+      { name: 'Swiss Handball Intensive', price: 'CHF 1800/week', desc: 'Full-day professional training with match analysis' },
+      { name: 'Youth Excellence Programme', price: 'CHF 1200/week', desc: 'Development pathway for talented young players' },
+      { name: 'Fast Break Specialist', price: 'CHF 1600/week', desc: 'Speed and transition play specialisation' }
+    ],
+    coaches: [
+      { name: 'Lukas Keller', credential: 'IHF Master Coach', background: 'Former Swiss national team captain and Kadetten Schaffhausen head coach', atpWta: false, bestRanking: null, rankingNote: null, languages: ['English', 'German', 'French', 'Italian'], instagram: null }
+    ],
+    photos: ['https://images.unsplash.com/photo-1519766304817-4f37bda74a26?w=800'],
+    upcomingCamps: [
+      { name: 'Zurich Autumn Handball', startDate: '2026-10-12', endDate: '2026-10-19', price: 'CHF 1800', level: 'All levels' }
+    ],
+    accommodation: {
+      types: [{ type: 'hotel', label: 'Zurich Lakeside Hotel', pricePerWeek: 900, maxOccupancy: 2, bathType: 'ensuite', mealsIncluded: true }],
+      companionsAllowed: true,
+      childrenAllowed: true,
+      minStay: '1 week',
+      shuttleToTraining: true,
+      notes: 'Lakeside hotel with tram access to training facilities'
+    },
+    availability: {
+      status: 'limited',
+      nextIntake: '2026-10-01',
+      spotsLeft: 8,
+      responseTime: '24h',
+      privateLessons: true,
+      yearRound: true
+    },
+    juniorInfo: {
+      minAge: 7,
+      maxAge: 18,
+      supervision: '24/7',
+      guardianStay: true,
+      schooling: 'Swiss school integration for international students',
+      medicalStaff: true,
+      safeguarding: 'Swiss Handball Association child protection standards',
+      airportPickup: true,
+      mealPlan: 'Full board with Swiss and international cuisine',
+      curfew: '21:00 weekdays, 22:00 weekends',
+      roommatePairing: 'Age-based groups',
+      languageSupport: ['English', 'German', 'French'],
+      emergencyProtocol: 'On-site medical team with University Hospital Zurich partnership'
+    }
+  },
+  {
+    id: 'budapest-handball-academy',
+    name: 'Budapest Handball Academy',
+    country: 'Hungary',
+    countryFlag: '🇭🇺',
+    city: 'Budapest',
+    lat: 47.4979,
+    lng: 19.0402,
+    website: 'https://www.budapesthandball.hu',
+    contact: '+36 1 234 5678',
+    contactEmail: 'info@budapesthandball.hu',
+    description: 'Hungary\'s flagship handball academy in Budapest, drawing on the nation\'s legendary handball tradition and multiple Olympic gold medals.',
+    ageGroups: ['Junior', 'Adult'],
+    level: 'All levels',
+    individualLessons: true,
+    boarding: true,
+    beach: { distance: null, description: 'No beach nearby, Danube riverfront for recovery activities' },
+    priceRange: { from: 500, to: 1200, unit: 'week', display: '€500 - €1,200/week' },
+    socialMedia: { instagram: '@budapesthandball', facebook: 'https://facebook.com/budapesthandball', twitter: '@budapesthandball' },
+    climate: 'budapest',
+    facilities: 'Indoor sports hall, video analysis suite, modern gym, recovery pool, tactical room, handball museum',
+    courtSurfaces: ['Indoor court', 'Training court', 'Beach handball'],
+    programs: [
+      { name: 'Hungarian Handball Heritage', price: '€800/week', desc: 'Training in the storied Hungarian handball tradition' },
+      { name: 'Olympic Pathway Programme', price: '€700/week', desc: 'Elite development inspired by Hungary\'s Olympic handball legacy' },
+      { name: 'Youth Foundation', price: '€500/week', desc: 'Fundamental skills and game understanding for young players' }
+    ],
+    coaches: [
+      { name: 'László Nagy', credential: 'IHF Master Coach', background: 'Former Hungarian national team legend and Champions League winner with Veszprém', atpWta: false, bestRanking: null, rankingNote: null, languages: ['English', 'Hungarian', 'German'], instagram: null }
+    ],
+    photos: ['https://images.unsplash.com/photo-1544723795-3fb6469f5b39?w=800'],
+    upcomingCamps: [
+      { name: 'Budapest Summer Handball Festival', startDate: '2026-06-22', endDate: '2026-06-29', price: '€800', level: 'All levels' }
+    ],
+    accommodation: {
+      types: [{ type: 'hotel', label: 'Budapest Danube Hotel', pricePerWeek: 350, maxOccupancy: 2, bathType: 'ensuite', mealsIncluded: true }],
+      companionsAllowed: true,
+      childrenAllowed: true,
+      minStay: '1 week',
+      shuttleToTraining: true,
+      notes: 'Riverside hotel with metro access to training facilities at Papp László Sportaréna'
+    },
+    availability: {
+      status: 'open',
+      nextIntake: '2026-06-01',
+      spotsLeft: 25,
+      responseTime: '48h',
+      privateLessons: true,
+      yearRound: true
+    },
+    juniorInfo: {
+      minAge: 6,
+      maxAge: 18,
+      supervision: '24/7',
+      guardianStay: true,
+      schooling: 'Hungarian school integration for international athletes',
+      medicalStaff: true,
+      safeguarding: 'Hungarian Handball Federation child protection standards',
+      airportPickup: true,
+      mealPlan: 'Full board with Hungarian and international cuisine',
+      curfew: '21:00 weekdays, 22:00 weekends',
+      roommatePairing: 'Age-based groups',
+      languageSupport: ['English', 'Hungarian'],
+      emergencyProtocol: 'On-site medical team with Semmelweis University Hospital partnership'
+    }
+  },
+  {
+    id: 'olympic-handball-ireland',
+    name: 'Olympic Handball Ireland',
+    country: 'Ireland',
+    countryFlag: '🇮🇪',
+    city: 'Dublin',
+    lat: 53.3498,
+    lng: -6.2603,
+    website: 'https://www.olympichandballireland.ie',
+    contact: '+353 1 678 9012',
+    contactEmail: 'info@olympichandballireland.ie',
+    description: 'Ireland\'s premier handball training centre in Dublin, combining the rich GAA handball tradition with Olympic team handball development. A growing force in European handball.',
+    ageGroups: ['Junior', 'Adult'],
+    level: 'All levels',
+    individualLessons: true,
+    boarding: true,
+    beach: { distance: 8, description: 'Sandymount Strand 8 km from the centre' },
+    priceRange: { from: 600, to: 1400, unit: 'week', display: '€600 - €1,400/week' },
+    socialMedia: { instagram: '@olympichandballirl', facebook: 'https://facebook.com/olympichandballireland', twitter: '@handballirl' },
+    climate: 'dublin',
+    facilities: 'Indoor sports hall, video analysis suite, modern gym, recovery pool, tactical room',
+    courtSurfaces: ['Indoor court', 'Training court'],
+    programs: [
+      { name: 'Olympic Handball Development', price: '€800/week', desc: 'Full-day training focused on Olympic team handball skills and tactics' },
+      { name: 'Youth Introduction Camp', price: '€600/week', desc: 'Age-appropriate handball fundamentals for juniors aged 8-16' },
+      { name: 'Goalkeeping Intensive', price: '€750/week', desc: 'Specialised goalkeeper training with video analysis and reflex drills' }
+    ],
+    coaches: [
+      { name: 'Declan Byrne', credential: 'EHF Master Coach', background: 'Former Ireland national team player with 12 years coaching experience at international level', atpWta: false, bestRanking: null, rankingNote: null, languages: ['English', 'Irish'], instagram: null }
+    ],
+    photos: ['https://images.unsplash.com/photo-1554068865-24cecd4e34b8?w=800'],
+    upcomingCamps: [
+      { name: 'Summer Handball Academy', startDate: '2026-07-06', endDate: '2026-07-13', price: '€800', level: 'All levels' }
+    ],
+    accommodation: {
+      types: [{ type: 'hotel', label: 'Dublin City Hotel Partner', pricePerWeek: 480, maxOccupancy: 2, bathType: 'ensuite', mealsIncluded: true }],
+      companionsAllowed: true,
+      childrenAllowed: true,
+      minStay: '1 week',
+      shuttleToTraining: true,
+      notes: 'Central Dublin location with easy public transport access to training facility'
+    },
+    availability: {
+      status: 'open',
+      nextIntake: '2026-06-01',
+      spotsLeft: 20,
+      responseTime: '48h',
+      privateLessons: true,
+      yearRound: true
+    },
+    juniorInfo: {
+      minAge: 8,
+      maxAge: 18,
+      supervision: '24/7',
+      guardianStay: true,
+      schooling: 'Partnership with Dublin international schools for term-time athletes',
+      medicalStaff: true,
+      safeguarding: 'Sport Ireland child protection standards, Garda-vetted staff',
+      airportPickup: true,
+      mealPlan: 'Full board with sports nutrition guidance',
+      curfew: '21:00 weekdays, 22:00 weekends',
+      roommatePairing: 'Age-based groups',
+      languageSupport: ['English', 'Irish'],
+      emergencyProtocol: '24/7 on-call medical team with St James\'s Hospital partnership'
+    }
+  },
+  {
+    id: 'metaloplastika-academy',
+    name: 'RK Metaloplastika Academy',
+    country: 'Serbia',
+    countryFlag: '🇷🇸',
+    city: 'Šabac',
+    lat: 44.7479,
+    lng: 19.6911,
+    website: 'https://www.metaloplastika.rs',
+    contact: '+381 15 345 678',
+    contactEmail: 'academy@metaloplastika.rs',
+    description: 'The legendary RK Metaloplastika\'s youth academy in Šabac, carrying on the tradition of one of European handball\'s most decorated clubs from the former Yugoslavia.',
+    ageGroups: ['Junior', 'Adult'],
+    level: 'All levels',
+    individualLessons: true,
+    boarding: true,
+    beach: { distance: null, description: 'No beach nearby, Sava river recreation areas' },
+    priceRange: { from: 350, to: 900, unit: 'week', display: '€350 - €900/week' },
+    socialMedia: { instagram: '@metaloplastika', facebook: 'https://facebook.com/metaloplastika', twitter: '@metaloplastika' },
+    climate: 'sabac',
+    facilities: 'Handball hall, outdoor training court, gym, video analysis, recovery room, club museum',
+    courtSurfaces: ['Indoor court', 'Training court', 'Outdoor court'],
+    programs: [
+      { name: 'Metaloplastika Legacy Programme', price: '€700/week', desc: 'Train in the tradition of one of European handball\'s greatest clubs' },
+      { name: 'Youth Handball Foundation', price: '€350/week', desc: 'Fundamental handball skills for young players' }
+    ],
+    coaches: [
+      { name: 'Dragan Marković', credential: 'IHF Master Coach', background: 'Former Metaloplastika player and Serbian national team assistant coach', atpWta: false, bestRanking: null, rankingNote: null, languages: ['English', 'Serbian'], instagram: null }
+    ],
+    photos: ['https://images.unsplash.com/photo-1544723795-3fb6469f5b39?w=800'],
+    upcomingCamps: [
+      { name: 'Šabac Handball Summer Camp', startDate: '2026-07-06', endDate: '2026-07-13', price: '€700', level: 'All levels' }
+    ],
+    accommodation: {
+      types: [{ type: 'hotel', label: 'Hotel Sloboda Šabac', pricePerWeek: 200, maxOccupancy: 2, bathType: 'ensuite', mealsIncluded: true }],
+      companionsAllowed: true,
+      childrenAllowed: true,
+      minStay: '1 week',
+      shuttleToTraining: true,
+      notes: 'Central Šabac hotel with walking distance to the handball hall'
+    },
+    availability: {
+      status: 'open',
+      nextIntake: '2026-06-01',
+      spotsLeft: 20,
+      responseTime: '48h',
+      privateLessons: true,
+      yearRound: true
+    },
+    juniorInfo: {
+      minAge: 6,
+      maxAge: 18,
+      supervision: '24/7',
+      guardianStay: true,
+      schooling: 'Serbian school coordination for visiting athletes',
+      medicalStaff: true,
+      safeguarding: 'Serbian Handball Federation child protection standards',
+      airportPickup: true,
+      mealPlan: 'Full board with Serbian cuisine',
+      curfew: '21:00 weekdays, 22:00 weekends',
+      roommatePairing: 'Age-based groups',
+      languageSupport: ['Serbian', 'English'],
+      emergencyProtocol: 'On-site first aid, Šabac General Hospital 10 minutes'
+    }
+  },
+  {
+    id: 'besiktas-handball-academy',
+    name: 'Beşiktaş Handball Academy',
+    country: 'Turkey',
+    countryFlag: '',
+    city: 'Istanbul',
+    lat: 41.0082,
+    lng: 28.9784,
+    website: 'https://www.besiktashandball.com.tr',
+    contact: '+90 212 345 6789',
+    contactEmail: 'info@besiktashandball.com.tr',
+    description: 'Istanbul\'s premier handball training centre, combining Turkish sporting passion with European handball methodology. Developing the next generation of handball players in one of Europe\'s most vibrant cities.',
+    ageGroups: ['Junior', 'Adult'],
+    level: 'All levels',
+    individualLessons: true,
+    boarding: true,
+    beach: { distance: 8, description: 'Bosphorus waterfront and beaches accessible' },
+    priceRange: { from: 500, to: 1200, unit: 'week', display: '500 - 1,200/week' },
+    socialMedia: { instagram: '@besiktashandball', facebook: 'https://facebook.com/besiktashandball', twitter: '@bjkhandball' },
+    climate: 'istanbul',
+    facilities: 'Indoor sports hall, video analysis suite, modern gym, recovery pool, tactical room',
+    courtSurfaces: ['Indoor court', 'Training court'],
+    programs: [
+      { name: 'Handball Development Programme', price: '800/week', desc: 'Full-day training focused on handball skills, tactics and physical conditioning' },
+      { name: 'Youth Introduction Camp', price: '500/week', desc: 'Age-appropriate handball fundamentals for juniors aged 8-16' },
+      { name: 'Goalkeeping Intensive', price: '700/week', desc: 'Specialised goalkeeper training with video analysis and reflex drills' }
+    ],
+    coaches: [
+      { name: 'Okan Yılmaz', credential: 'EHF Master Coach', background: 'Former Turkish national team player with 15 years coaching experience at club and international level', atpWta: false, bestRanking: null, rankingNote: null, languages: ['Turkish', 'English'], instagram: null }
+    ],
+    photos: ['https://images.unsplash.com/photo-1554068865-24cecd4e34b8?w=800'],
+    upcomingCamps: [
+      { name: 'Summer Handball Academy', startDate: '2026-07-06', endDate: '2026-07-13', price: '800', level: 'All levels' }
+    ],
+    accommodation: {
+      types: [{ type: 'hotel', label: 'Istanbul City Hotel Partner', pricePerWeek: 400, maxOccupancy: 2, bathType: 'ensuite', mealsIncluded: true }],
+      companionsAllowed: true,
+      childrenAllowed: true,
+      minStay: '1 week',
+      shuttleToTraining: true,
+      notes: 'Central Istanbul location with excellent public transport access'
+    },
+    availability: {
+      status: 'open',
+      nextIntake: '2026-06-01',
+      spotsLeft: 20,
+      responseTime: '48h',
+      privateLessons: true,
+      yearRound: true
+    },
+    juniorInfo: {
+      minAge: 8,
+      maxAge: 18,
+      supervision: '24/7',
+      guardianStay: true,
+      schooling: 'Partnership with Istanbul international schools for term-time athletes',
+      medicalStaff: true,
+      safeguarding: 'Turkish Handball Federation child protection standards',
+      airportPickup: true,
+      mealPlan: 'Full board with Turkish and international cuisine',
+      curfew: '21:00 weekdays, 22:00 weekends',
+      roommatePairing: 'Age-based groups',
+      languageSupport: ['Turkish', 'English'],
+      emergencyProtocol: '24/7 on-call medical team with Istanbul hospital partnership'
+    }
   }
 ];
 
@@ -856,6 +1840,96 @@ const CLIMATE_DATA = {
     rainyDays: 115,
     humidity: 72,
     description: 'Continental climate with warm summers and cold winters'
+  },
+  oslo: {
+    averageTemp: { summer: 17, winter: -3 },
+    rainyDays: 120,
+    humidity: 76,
+    description: 'Cool maritime climate with mild summers and cold winters'
+  },
+  kielce: {
+    averageTemp: { summer: 19, winter: -2 },
+    rainyDays: 110,
+    humidity: 74,
+    description: 'Continental climate with warm summers and cold winters'
+  },
+  bucharest: {
+    averageTemp: { summer: 24, winter: 0 },
+    rainyDays: 95,
+    humidity: 70,
+    description: 'Humid continental climate with hot summers and cold winters'
+  },
+  reykjavik: {
+    averageTemp: { summer: 11, winter: 0 },
+    rainyDays: 148,
+    humidity: 77,
+    description: 'Subarctic oceanic climate with cool summers and mild winters for its latitude'
+  },
+  celje: {
+    averageTemp: { summer: 20, winter: 0 },
+    rainyDays: 115,
+    humidity: 74,
+    description: 'Continental climate with warm summers and cold winters in the Savinja Valley'
+  },
+  porto: {
+    averageTemp: { summer: 21, winter: 10 },
+    rainyDays: 108,
+    humidity: 75,
+    description: 'Mediterranean climate with warm, dry summers and mild, rainy winters'
+  },
+  belgrade: {
+    averageTemp: { summer: 23, winter: 1 },
+    rainyDays: 100,
+    humidity: 68,
+    description: 'Humid continental climate with hot summers and cold winters'
+  },
+  skopje: {
+    averageTemp: { summer: 25, winter: 2 },
+    rainyDays: 90,
+    humidity: 65,
+    description: 'Continental climate with hot summers and cold winters'
+  },
+  vienna: {
+    averageTemp: { summer: 21, winter: 1 },
+    rainyDays: 105,
+    humidity: 70,
+    description: 'Continental climate with warm summers and cold winters'
+  },
+  prague: {
+    averageTemp: { summer: 19, winter: 0 },
+    rainyDays: 110,
+    humidity: 73,
+    description: 'Oceanic-continental climate with warm summers and cold winters'
+  },
+  zurich: {
+    averageTemp: { summer: 19, winter: 1 },
+    rainyDays: 120,
+    humidity: 74,
+    description: 'Continental climate with warm summers and cold winters, influenced by the Alps'
+  },
+  budapest: {
+    averageTemp: { summer: 22, winter: 0 },
+    rainyDays: 100,
+    humidity: 70,
+    description: 'Continental climate with warm summers and cold winters'
+  },
+  dublin: {
+    averageTemp: { summer: 16, winter: 5 },
+    rainyDays: 150,
+    humidity: 82,
+    description: 'Oceanic climate with cool summers and mild, damp winters'
+  },
+  sabac: {
+    averageTemp: { summer: 23, winter: 1 },
+    rainyDays: 90,
+    humidity: 72,
+    description: 'Continental climate in the Sava river valley with warm summers and cold winters'
+  },
+  istanbul: {
+    averageTemp: { summer: 25, winter: 6 },
+    rainyDays: 90,
+    humidity: 72,
+    description: 'Mediterranean-influenced climate with warm summers and mild winters'
   }
 };
 
@@ -867,4 +1941,4 @@ const NEWS_ITEMS = [
   { title: 'European clubs invest in youth handball academies', date: '2024-12-10', summary: 'Top European clubs are increasing investment in grassroots and academy handball programmes.' }
 ];
 
-const COUNTRIES = ['France', 'Germany', 'Denmark', 'Spain', 'Sweden', 'Croatia'];
+const COUNTRIES = ['France', 'Germany', 'Denmark', 'Spain', 'Sweden', 'Croatia', 'Norway', 'Poland', 'Romania', 'Iceland', 'Slovenia', 'Portugal', 'Serbia', 'North Macedonia', 'Austria', 'Czech Republic', 'Switzerland', 'Hungary', 'Ireland', 'Turkey'];

@@ -2081,6 +2081,144 @@ const ACADEMIES = [
       languageSupport: ['English'],
       emergencyProtocol: true
     }
+  },
+  {
+    id: "belek-golf-academy",
+    availability: { status: 'open', nextIntake: '2026-04-01', spotsLeft: 20, responseTime: '24h', privateLessons: true, yearRound: true },
+    name: "Belek Golf Academy",
+    country: "Turkey",
+    countryFlag: "",
+    city: "Belek",
+    lat: 36.8587,
+    lng: 31.0539,
+    website: "https://www.belekgolfacademy.com.tr",
+    contact: "+90 242 715 1234",
+    contactEmail: "info@belekgolfacademy.com.tr",
+    individualLessons: true,
+    boarding: true,
+    level: "All Levels",
+    starred: false,
+    airport: { name: "Antalya Airport", code: "AYT", distance: "30 km", driveTime: "35 min" },
+    beach: { distance: "< 3 km", description: "Belek sandy beaches on Mediterranean coast" },
+    climate: "belek",
+    priceRange: { from: 800, to: 2500, unit: "week", display: "8002500/wk" },
+    programs: [
+        { name: "Performance Programme", price: "2000/wk", desc: "Intensive golf training on championship courses with PGA-qualified instructors, video analysis and course management. (1-4 weeks, Advanced)" },
+        { name: "Junior Academy", price: "1200/wk", desc: "Junior development on purpose-built academy courses with short game focus and on-course play. (1-4 weeks, All Levels)" },
+        { name: "Winter Sun Camp", price: "800/wk", desc: "Escape European winter for warm-weather golf on Turkey's Mediterranean coast. (1-2 weeks, All Levels)" },
+        { name: "Golf & Wellness Retreat", price: "1500/wk", desc: "Combine golf coaching with spa treatments and Mediterranean cuisine. (1 week, All Levels)" }
+      ],
+    coaches: [
+        { name: "Ali Karahan", credential: "PGA Turkey A Class", background: "Turkish national team coach and former European Tour caddie with deep knowledge of Belek courses.", atpWta: false, bestRanking: null, rankingNote: null, languages: ["Turkish", "English", "German"], instagram: null },
+        { name: "James Wheeler", credential: "PGA Professional", background: "British PGA pro with 20 years teaching experience, based in Turkey for 10 years.", atpWta: false, bestRanking: null, rankingNote: null, languages: ["English", "Turkish"], instagram: null }
+      ],
+    bestCoachRanking: null,
+    facilities: "Access to 15+ championship courses, driving range, short game area, putting greens, video analysis studio, fitness center, pro shop",
+    courtSurfaces: ["Championship course", "Links course", "Parkland course"],
+    notableAlumni: [],
+    description: "Turkey's golf capital in Belek, Antalya region, offering access to over 15 championship courses designed by legends like Nick Faldo, Colin Montgomerie and PGA Sultan. Year-round Mediterranean sunshine and exceptional value.",
+    nearbyHotels: [
+        { name: "Regnum Carya Golf & Spa Resort", stars: 5, distanceKm: 2, features: ["Restaurant", "Spa", "Pool", "Golf Course"], pool: true, wifi: true, pricePerNight: "150-350/night" },
+        { name: "Cornelia Diamond Golf Resort", stars: 5, distanceKm: 3, features: ["Restaurant", "Spa", "Pool"], pool: true, wifi: true, pricePerNight: "120-280/night" },
+        { name: "Sirene Belek Hotel", stars: 5, distanceKm: 4, features: ["Restaurant", "Pool", "Beach"], pool: true, wifi: true, pricePerNight: "100-250/night" }
+      ],
+    nearbyRestaurants: [
+        { name: "The Montgomerie Clubhouse", cuisine: "International", distanceKm: 2, priceRange: "", rating: 4.4, vegetarian: true, outdoor: true },
+        { name: "Kazan Restaurant", cuisine: "Turkish", distanceKm: 5, priceRange: "€", rating: 4.5, vegetarian: true, outdoor: true }
+      ],
+    nearbyMedical: [
+        { name: "Medical Park Antalya", type: "Hospital", distanceKm: 30, phone: "+90 242 314 3434", emergency: true }
+      ],
+    costOfLiving: { rent1Bed: "300", meal: "5", monthlyFood: "200", transport: "30", currency: "TRY", summary: "Belek resort area is excellent value compared to similar European golf destinations" },
+    scholarships: { available: false, details: "" },
+    visaInfo: { schengen: false, eu: false, visaFreeCountries: "EU/EEA citizens, USA, Canada, Australia, UK  visa-free or e-Visa up to 90 days", notes: "Turkey offers e-Visa for most nationalities." },
+    airportTransfers: [
+        { mode: "Hotel Shuttle", duration: "35 min", cost: "Often included", notes: "Most resorts offer free airport transfers" },
+        { mode: "Taxi", duration: "30 min", cost: "25-35", notes: "Taxi from Antalya Airport" }
+      ],
+    nearbyTournaments: [
+        { name: "Turkish Airlines Open", level: "DP World Tour", surface: "Grass", month: "November", venue: "Antalya" },
+        { name: "Turkish Airlines Challenge", level: "Challenge Tour", surface: "Grass", month: "Various", venue: "Belek" }
+      ],
+    videoTour: null,
+    juniorInfo: {
+      minAge: 8,
+      maxAge: 18,
+      supervision: '24/7',
+      guardianStay: true,
+      schooling: 'online-support',
+      medicalStaff: true,
+      safeguarding: true,
+      airportPickup: true,
+      mealPlan: 'full-board',
+      curfew: '22:00',
+      roommatePairing: 'age-only',
+      languageSupport: ['Turkish', 'English'],
+      emergencyProtocol: true
+    }
+  },
+  {
+    id: "belgrade-golf-club",
+    availability: { status: 'open', nextIntake: '2026-06-01', spotsLeft: 20, responseTime: '48h', privateLessons: true, yearRound: false },
+    name: "Belgrade Golf Club Academy",
+    country: "Serbia",
+    countryFlag: "🇷🇸",
+    city: "Beograd",
+    lat: 44.7866,
+    lng: 20.4489,
+    website: "https://www.belgradegolfclub.rs",
+    contact: "+381 11 234 5678",
+    contactEmail: "academy@belgradegolfclub.rs",
+    individualLessons: true,
+    boarding: false,
+    level: "All levels",
+    starred: false,
+    beach: { distance: null, description: "No beach nearby, Ada Ciganlija lake 15 minutes away" },
+    climate: "belgrade",
+    priceRange: { from: 400, to: 1000, unit: "week", display: "€400 - €1,000/week" },
+    socialMedia: { instagram: '@belgradegolfclub', facebook: 'https://facebook.com/belgradegolfclub', twitter: '@belgradegolf' },
+    programs: [
+      { name: "Serbian Golf Development", price: "€700/week", desc: "Comprehensive golf training programme developing the next generation of Serbian golfers" },
+      { name: "Junior Golf Camp", price: "€400/week", desc: "Fun and skills-focused golf camp for young beginners" }
+    ],
+    coaches: [
+      { name: "Marko Jovanović", credential: "PGA Level 3 Coach", background: "Leading Serbian golf coach with European Tour development experience", atpWta: false, bestRanking: null, rankingNote: null, languages: ["English", "Serbian"], instagram: null }
+    ],
+    bestCoachRanking: null,
+    facilities: "18-hole course, driving range, putting green, short game area, video analysis studio, pro shop, clubhouse restaurant",
+    courtSurfaces: ["18-hole course", "Driving range", "Putting green", "Short game area"],
+    notableAlumni: [],
+    photos: ["https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?w=800"],
+    description: "Serbia's premier golf academy in Beograd, contributing to the country's growing golf scene with European-standard coaching and facilities.",
+    upcomingCamps: [
+      { name: "Belgrade Summer Golf Camp", startDate: "2026-07-06", endDate: "2026-07-13", price: "€700", level: "All levels" }
+    ],
+    accommodation: {
+      types: [
+        { type: 'hotel', label: 'Belgrade Golf Resort Hotel', pricePerWeek: 300, maxOccupancy: 2, bathType: 'ensuite', mealsIncluded: true }
+      ],
+      companionsAllowed: true,
+      childrenAllowed: true,
+      minStay: '1 week',
+      shuttleToTraining: true,
+      notes: 'Modern hotel adjacent to the golf course with views of the Danube'
+    },
+    videoTour: null,
+    juniorInfo: {
+      minAge: 8,
+      maxAge: 18,
+      supervision: 'daytime',
+      guardianStay: true,
+      schooling: 'none',
+      medicalStaff: true,
+      safeguarding: false,
+      airportPickup: true,
+      mealPlan: 'half-board',
+      curfew: '22:00',
+      roommatePairing: 'age-only',
+      languageSupport: ['Serbian', 'English'],
+      emergencyProtocol: true
+    }
   }
 ];
 
@@ -2476,6 +2614,40 @@ const CLIMATE_DATA = {
       { month: "Oct", temp: 10, rain: 65, rainyDays: 13, wind: 15 },
       { month: "Nov", temp: 7, rain: 55, rainyDays: 14, wind: 17 },
       { month: "Dec", temp: 5, rain: 55, rainyDays: 14, wind: 18 }
+    ]
+  },
+  "belek": {
+    city: "Belek", country: "Turkey",
+    months: [
+      { month: "Jan", temp: 10, rain: 243, rainyDays: 11, wind: 11 },
+      { month: "Feb", temp: 11, rain: 152, rainyDays: 9, wind: 11 },
+      { month: "Mar", temp: 13, rain: 77, rainyDays: 7, wind: 11 },
+      { month: "Apr", temp: 16, rain: 47, rainyDays: 5, wind: 11 },
+      { month: "May", temp: 21, rain: 22, rainyDays: 3, wind: 11 },
+      { month: "Jun", temp: 26, rain: 8, rainyDays: 1, wind: 11 },
+      { month: "Jul", temp: 29, rain: 3, rainyDays: 0, wind: 11 },
+      { month: "Aug", temp: 29, rain: 3, rainyDays: 0, wind: 11 },
+      { month: "Sep", temp: 25, rain: 13, rainyDays: 2, wind: 11 },
+      { month: "Oct", temp: 20, rain: 70, rainyDays: 5, wind: 11 },
+      { month: "Nov", temp: 15, rain: 130, rainyDays: 8, wind: 11 },
+      { month: "Dec", temp: 12, rain: 245, rainyDays: 11, wind: 11 }
+    ]
+  },
+  belgrade: {
+    city: "Belgrade", country: "Serbia",
+    months: [
+      { month: "Jan", temp: 1, rain: 47, rainyDays: 8, wind: 12 },
+      { month: "Feb", temp: 3, rain: 40, rainyDays: 7, wind: 13 },
+      { month: "Mar", temp: 8, rain: 45, rainyDays: 8, wind: 13 },
+      { month: "Apr", temp: 13, rain: 56, rainyDays: 9, wind: 12 },
+      { month: "May", temp: 18, rain: 67, rainyDays: 10, wind: 11 },
+      { month: "Jun", temp: 22, rain: 72, rainyDays: 9, wind: 10 },
+      { month: "Jul", temp: 24, rain: 55, rainyDays: 7, wind: 9 },
+      { month: "Aug", temp: 23, rain: 48, rainyDays: 6, wind: 9 },
+      { month: "Sep", temp: 19, rain: 42, rainyDays: 7, wind: 10 },
+      { month: "Oct", temp: 13, rain: 48, rainyDays: 8, wind: 11 },
+      { month: "Nov", temp: 7, rain: 52, rainyDays: 9, wind: 12 },
+      { month: "Dec", temp: 2, rain: 50, rainyDays: 9, wind: 12 }
     ]
   }
 };
