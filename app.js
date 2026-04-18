@@ -530,13 +530,15 @@ function populateSurfaceDropdown() {
 
 function updateSportLabels() {
   const config = getSportConfig();
+  const defaultCoachLabel = config.coachLabel || config.statsLabel || 'Certified Coaches';
+  const defaultFilterLabel = config.coachFilterLabel || (config.icon + ' ' + defaultCoachLabel);
   const atpLabel = document.querySelector('[data-stat="atpWta"]');
   if (atpLabel) {
     const labelEl = atpLabel.parentElement.querySelector('.stat-label');
-    if (labelEl) labelEl.textContent = config.coachLabel;
+    if (labelEl) labelEl.textContent = defaultCoachLabel;
   }
   const atpBtn = document.getElementById('toggleATP');
-  if (atpBtn) atpBtn.innerHTML = config.coachFilterLabel;
+  if (atpBtn) atpBtn.innerHTML = defaultFilterLabel;
 }
 
 /* ===== Filter Functions ===== */
