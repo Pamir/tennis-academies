@@ -4319,13 +4319,12 @@ const ACADEMIES = [
       emergencyProtocol: true
     }
   },
-,
   {
     id: "antalya-tennis-academy",
     availability: { status: 'open', nextIntake: '2026-06-01', spotsLeft: 15, responseTime: '24h', privateLessons: true, yearRound: true },
     name: "Antalya Tennis Academy",
     country: "Turkey",
-    countryFlag: "",
+    countryFlag: "🇹🇷",
     city: "Antalya",
     lat: 36.8969, lng: 30.7133,
     website: "https://www.antalyatennis.com.tr",
